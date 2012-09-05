@@ -68,7 +68,7 @@
    <dd>HTML-Diffs mailing list (diff-marked HTML versions for each change): <a href="http://lists.w3.org/Archives/Public/public-html-diffs/latest">http://lists.w3.org/Archives/Public/public-html-diffs/latest</a></dd>
    <dt>Browsable version-control record of all changes:</dt>
    <dd>CVSWeb interface with side-by-side diffs: <a href="http://dev.w3.org/cvsweb/html5/spec/">http://dev.w3.org/cvsweb/html5/spec/</a></dd>
-   <dd>Github repo <a href="https://github.com/w3c/html/commits/master">https://github.com/w3c/html/commits/master</a></dd>
+   <dd>Github repository <a href="https://github.com/w3c/html/commits/master">https://github.com/w3c/html/commits/master</a></dd>
   </dl>
   </p>
 
