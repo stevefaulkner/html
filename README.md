@@ -106,8 +106,7 @@ Create a new feature branch:
 [make sure your .gitconfig defaults push to upstream]
 
     $ git checkout master
-    $ git branch feature/blah
-    $ git checkout feature/blah
+    $ git checkout -b feature/blah
     $ git push --set-upstream origin feature/blah
 
 
