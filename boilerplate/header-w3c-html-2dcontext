@@ -12,8 +12,8 @@
 <!--SET LONGDAY=29 March-->
 <!--SET TRNAME=2dcontext-->
 <!--SET DEVURL=http://dev.w3.org/html5/2dcontext/-->
-<!--SET COMPONENT=HTML Canvas 2D Context (editor: Ian Hickson)-->
-<html lang="en-US-x-Hixie">
+<!--SET COMPONENT=HTML Canvas 2D Context-->
+<html lang="en-US">
  <head>
   <title>HTML Canvas 2D Context</title>
   <!--BOILERPLATE middle-w3c-styles-->
