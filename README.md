@@ -34,6 +34,11 @@ To continue editing at a later stage:
     $ git pull --rebase
     Then check out each branch and:
     $ git rebase master
+
+To commit and push code to GitHub:
+
+    $ git commit -a
+    $ git push
         
 Configuring git
 ---
