@@ -83,7 +83,7 @@ https://github.com/w3c/html/tree/feature/whatwg
 
 Checkout the WHATWG spec:
 
-    $ git checkout whatwg
+    $ git checkout feature/whatwg
 
 Find out commit differences to html branch:
 
