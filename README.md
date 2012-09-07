@@ -113,6 +113,28 @@ Show changes to GitHub:
 
     $ git diff origin
 
+If you want to abort a cherry-pick:
+
+    $ git cherry-pick --abort
+
+If you need a merge strategy:
+
+    $ git cherry-pick --strategy=ours -x 56446c4536af1ec5b39bde03b402d0772625fd92
+
+Only pick parts of the commit (no-commit, then add selectively):
+
+    $ git cherry-pick -n -x 56446c4536af1ec5b39bde03b402d0772625fd92
+    $ git add -i
+       r = revert a file
+       p = go through by hunk and re-patch
+       (when “>>” hit ENTER to start)
+       q = bye
+    To just commit the staged parts:
+    $ git commit
+    To reset the unselected hunks:
+    $ git checkout complete.html index source
+
+
 Create a new feature branch:
 ---
 [make sure your .gitconfig defaults push to upstream]
