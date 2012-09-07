@@ -28,6 +28,13 @@ Pull the code from GitHub:
     Check what branches you now have:
     $ git branch
 
+To continue editing at a later stage:
+
+    $ git checkout master
+    $ git pull --rebase
+    Then check out each branch and:
+    $ git rebase master
+        
 Configuring git
 ---
 
