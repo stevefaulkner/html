@@ -51,7 +51,10 @@
   <h2 class="no-num no-toc">Abstract</h2>
 
   <p>This specification defines the 2D Context for the HTML
-  <code>canvas</code> element.</p>
+  <code>canvas</code> element. The 2D Context provides
+   objects, methods, and properties to draw and manipulate 
+   graphics on a <code>canvas</code> drawing surface.
+</p>
 
   <h2 class="no-num no-toc">Status of This document</h2>
   <!--BOILERPLATE middle-w3c-feedback-->
