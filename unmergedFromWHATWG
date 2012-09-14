@@ -4,4 +4,5 @@ https://github.com/w3c/html/compare/master...feature;whatwg_window_find
 https://github.com/w3c/html/compare/master...feature;whatwg_canvas
 
 Patches from WHATWG that were not merged:
-https://github.com/w3c/html/commit/c21a8f6c8f6b3ca1b0e469bbb7fcc9d84c571706 (7188)
+https://github.com/w3c/html/commit/c21a8f6c8f6b3ca1b0e469bbb7fcc9d84c571706 (7188) (tables)
+https://github.com/w3c/html/commit/773df9415936aadb53c00aec24c7d2a001f9b4da (7183) (validator)
