@@ -52,7 +52,7 @@
 <!--PUB-Y-->  progress!</strong> For the latest updates from the HTML WG, possibly
 <!--PUB-Y-->  including important bug fixes, please look at the <a
 <!--PUB-Y-->  href="<!--INSERT DEVURL-->">editor's draft</a> instead.
-<!--PUB-Y-->  <input type=button onclick="closeWarning(this.parentNode)" value="&#x2573;&#x20DD;">
+<!--PUB-Y-->  <input type=button onclick="closeWarning(this.parentNode)" value="X">
 <!--PUB-Y-->  </p>
 <!--PUB-Y-->  <script>
 <!--PUB-Y-->   function closeWarning(element) {
