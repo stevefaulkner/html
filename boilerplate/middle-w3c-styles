@@ -62,6 +62,9 @@
    .diff-chg, .diff-new { text-decoration: underline; color: green; background: transparent; }
    a .diff-new { border-bottom: 1px blue solid; }
 
+   figure.diagrams { border: double black; background: white; padding: 1em; }
+   figure.diagrams img { display: block; margin: 1em auto; } 
+
    h2 { page-break-before: always; }
    h1, h2, h3, h4, h5, h6 { page-break-after: avoid; }
    h1 + h2, hr + h2.no-toc { page-break-before: auto; }
