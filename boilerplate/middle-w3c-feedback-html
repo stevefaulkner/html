@@ -1,32 +1,12 @@
 
-  <p>If you cannot do this then you can also e-mail feedback to <a
-  href="mailto:public-html-comments@w3.org">public-html-comments@w3.org</a>
-  (<a
-  href="mailto:public-html-comments-request@w3.org?subject=subscribe">subscribe</a>,
-  <a
-  href="http://lists.w3.org/Archives/Public/public-html-comments/">archives</a>),
-  and arrangements will be made to transpose the comments to our
-  public bug database.
-
-  <!-- UNDER NO CIRCUMSTANCES IS THE FOLLOWING SENTENCE TO BE REMOVED OR EDITED WITHOUT TALKING TO IAN FIRST -->  
-  Alternatively, you can e-mail feedback to <a
-  href="mailto:whatwg@whatwg.org">whatwg@whatwg.org</a> (<a
-  href="http://lists.whatwg.org/listinfo.cgi/whatwg-whatwg.org">subscribe</a>,
-  <a
-  href="http://lists.whatwg.org/pipermail/whatwg-whatwg.org/">archives</a>).
-  However, such feedback is not considered formal feedback for the W3C process.
-  <!-- UNDER NO CIRCUMSTANCES IS THE PRECEDING SENTENCE TO BE REMOVED OR EDITED WITHOUT TALKING TO IAN FIRST -->
-
-  All feedback is welcome.</p>
-
   <!-- UNDER NO CIRCUMSTANCES IS THE FOLLOWING PARAGRAPH TO BE REMOVED OR EDITED WITHOUT TALKING TO IAN FIRST -->  
   <p>The working groups maintains <a
   href="http://www.w3.org/Bugs/Public/buglist.cgi?query_format=advanced&amp;short_desc_type=allwordssubstr&amp;short_desc=&amp;product=HTML+WG&amp;longdesc_type=allwordssubstr&amp;longdesc=&amp;bug_file_loc_type=allwordssubstr&amp;bug_file_loc=&amp;status_whiteboard_type=allwordssubstr&amp;status_whiteboard=&amp;keywords_type=allwords&amp;keywords=&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;emailtype1=substring&amp;email1=&amp;emailtype2=substring&amp;email2=&amp;bug_id_type=anyexact&amp;bug_id=&amp;votes=&amp;chfieldfrom=&amp;chfieldto=Now&amp;chfieldvalue=&amp;cmdtype=doit&amp;order=Reuse+same+sort+as+last+time&amp;field0-0-0=noop&amp;type0-0-0=noop&amp;value0-0-0=">a
   list of all bug reports that the editors have not yet tried to
   address</a> and <a
   href="http://www.w3.org/html/wg/tracker/products/1">a list of issues
-  for which the chairs have not yet declared a decision</a>. These bugs,
-  issues, and e-mails apply to multiple HTML-related specifications,
+  for which the chairs have not yet declared a decision</a>. These bugs and
+  issues apply to multiple HTML-related specifications,
   not just this one.</p>
   <!-- UNDER NO CIRCUMSTANCES IS THE PRECEDING PARAGRAPH TO BE REMOVED OR EDITED WITHOUT TALKING TO IAN FIRST -->
 
@@ -80,15 +60,7 @@
   <!-- version history or list of changes (required) -->
   <p>The latest stable version of the editor's draft of this
   specification is always available on <a
-  href="http://dev.w3.org/html5/">the W3C CVS server</a> and in the <a
-  href="http://svn.whatwg.org/webapps/">WHATWG Subversion
-  repository</a>. The <a
-  href="http://www.whatwg.org/specs/web-apps/current-work/complete.html">latest
-  editor's working copy</a> (which may contain unfinished text in the
-  process of being prepared) contains the latest draft text of this
-  specification (amongst others). For more details, please see the <a
-  href="http://wiki.whatwg.org/wiki/FAQ#What_are_the_various_versions_of_the_spec.3F">WHATWG
-  FAQ</a>.</p></p>
+  href="http://dev.w3.org/html5/">the W3C CVS server</a>.</p>
   <!-- UNDER NO CIRCUMSTANCES IS THE PRECEDING PARAGRAPH TO BE REMOVED OR EDITED WITHOUT TALKING TO IAN FIRST -->
 
   <!-- UNDER NO CIRCUMSTANCES IS THE FOLLOWING LIST TO BE REMOVED OR EDITED WITHOUT TALKING TO IAN FIRST -->
