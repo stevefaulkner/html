@@ -134,6 +134,10 @@ Only pick parts of the commit (no-commit, then add selectively):
     To reset the unselected hunks:
     $ git checkout complete.html index source
 
+Check if a specific commit is contained in the master:
+
+    $ git checkout master
+    $ git branch --contains 56446c4536af1ec5b39bde03b402d0772625fd92
 
 Create a new feature branch:
 ---
