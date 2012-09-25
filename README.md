@@ -50,6 +50,15 @@ Configuring git
 If you're editing the spec on Windows, be sure to read up on
 [how to deal with line endings](https://help.github.com/articles/dealing-with-line-endings).
 
+You'll probably want to configure Git to automatically rebase on pull.
+To do this, edit `.git/config` in your repository. In the
+`[branch "master"]` section, add a `rebase = true` line. To ensure
+this happens for any new branches you create, add a new section like so:
+
+    [branch]
+        autosetuprebase = always
+
+
 Installing the necessary software
 ---
 
