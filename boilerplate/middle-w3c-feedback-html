@@ -68,7 +68,7 @@
   HTML specifications:</p>
   <dl>
    <dt>E-mail notifications of changes</dt>
-   <dd>HTML-Diffs mailing list (diff-marked HTML versions for each change): <a href="http://lists.w3.org/Archives/Public/public-html-diffs/latest">http://lists.w3.org/Archives/Public/public-html-diffs/latest</a></dd>
+   <dd>HTML-Commits mailing list (commit notifications for dev.w3.org/html5): <a href="http://lists.w3.org/Archives/Public/public-html-commits/latest">http://lists.w3.org/Archives/Public/public-html-commits/latest</a></dd>
    <dd>Commit-Watchers mailing list (complete source diffs): <a href="http://lists.whatwg.org/listinfo.cgi/commit-watchers-whatwg.org">http://lists.whatwg.org/listinfo.cgi/commit-watchers-whatwg.org</a></dd>
    <dt>Browsable version-control record of all changes:</dt>
    <dd>CVSWeb interface with side-by-side diffs: <a href="http://dev.w3.org/cvsweb/html5/spec/">http://dev.w3.org/cvsweb/html5/spec/</a></dd>
