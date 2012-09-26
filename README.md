@@ -74,8 +74,9 @@ Installing the necessary software
         $ cd anolis
         $ hg pull
 
-     If there have been changes, reinstall:
+     If there have been changes, update and reinstall:
 
+        $ hg update
         $ sudo python setup.py install
 
   3. Install [html5lib](http://code.google.com/p/html5lib/):
@@ -88,8 +89,9 @@ Installing the necessary software
         $ cd html5lib
         $ hg pull
 
-     If there have been changes, reinstall:
+     If there have been changes, update and reinstall:
 
+        $ hg update
         $ cd python; sudo python setup.py install
 
   4. Install [lxml](http://lxml.de):
