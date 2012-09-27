@@ -60,21 +60,15 @@
   <!-- version history or list of changes (required) -->
   <p>The latest stable version of the editor's draft of this
   specification is always available on <a
-  href="http://dev.w3.org/html5/">the W3C CVS server</a>.</p>
-  <!-- UNDER NO CIRCUMSTANCES IS THE PRECEDING PARAGRAPH TO BE REMOVED OR EDITED WITHOUT TALKING TO IAN FIRST -->
-
-  <!-- UNDER NO CIRCUMSTANCES IS THE FOLLOWING LIST TO BE REMOVED OR EDITED WITHOUT TALKING TO IAN FIRST -->
-  <p>There are various ways to follow the change history for the
-  HTML specifications:</p>
+  href="http://dev.w3.org/html5/">the W3C CVS server</a>.
+  There are various ways to follow the change history for this specification:
+  </p>
   <dl>
-   <dt>E-mail notifications of changes</dt>
-   <dd>HTML-Commits mailing list (commit notifications for dev.w3.org/html5): <a href="http://lists.w3.org/Archives/Public/public-html-commits/latest">http://lists.w3.org/Archives/Public/public-html-commits/latest</a></dd>
-   <dd>Commit-Watchers mailing list (complete source diffs): <a href="http://lists.whatwg.org/listinfo.cgi/commit-watchers-whatwg.org">http://lists.whatwg.org/listinfo.cgi/commit-watchers-whatwg.org</a></dd>
    <dt>Browsable version-control record of all changes:</dt>
-   <dd>CVSWeb interface with side-by-side diffs: <a href="http://dev.w3.org/cvsweb/html5/spec/">http://dev.w3.org/cvsweb/html5/spec/</a></dd>
-   <dd>Github repository <a href="https://github.com/w3c/html/commits/master">https://github.com/w3c/html/commits/master</a></dd>
-   <dd>Annotated summary with unified diffs: <a href="http://html5.org/tools/web-apps-tracker">http://html5.org/tools/web-apps-tracker</a></dd>
-   <dd>Raw Subversion interface: <code>svn checkout http://svn.whatwg.org/webapps/</code></dd>
+   <dd>Github repository (real-time updates): <a href="https://github.com/w3c/html/commits/master">https://github.com/w3c/html/commits/master</a></dd>
+   <dd>CVSWeb interface (hourly updates): <a href="http://dev.w3.org/cvsweb/html5/spec/">http://dev.w3.org/cvsweb/html5/spec/</a></dd>
+   <dt>E-mail notifications of changes:</dt>
+   <dd>HTML-Commits mailing list (commit notifications for dev.w3.org/html5): <a href="http://lists.w3.org/Archives/Public/public-html-commits/latest">http://lists.w3.org/Archives/Public/public-html-commits/latest</a></dd>
   </dl>
   <!-- UNDER NO CIRCUMSTANCES IS THE PRECEDING LIST TO BE REMOVED OR EDITED WITHOUT TALKING TO IAN FIRST -->
 
@@ -94,5 +88,10 @@
   href="http://www.whatwg.org/">WHATWG</a>. The W3C HTML working group
   actively pursues convergence with the WHATWG, as required by the <a
   href="http://www.w3.org/2007/03/HTML-WG-charter">W3C HTML working
-  group charter</a>.</p>
+  group charter</a>. There are various ways to follow this work at the WHATWG:</p>
+  <ul>
+      <li>Commit-Watchers mailing list (complete source diffs): <a href="http://lists.whatwg.org/listinfo.cgi/commit-watchers-whatwg.org">http://lists.whatwg.org/listinfo.cgi/commit-watchers-whatwg.org</a></li>
+      <li>Annotated summary with unified diffs: <a href="http://html5.org/tools/web-apps-tracker">http://html5.org/tools/web-apps-tracker</a></li>
+      <li>Raw Subversion interface: <code>svn checkout http://svn.whatwg.org/webapps/</code></li>
+  </ul>
   <!-- UNDER NO CIRCUMSTANCES IS THE FOLLOWING PARAGRAPH TO BE REMOVED OR EDITED WITHOUT TALKING TO IAN FIRST -->
