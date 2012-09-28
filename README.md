@@ -7,9 +7,9 @@ Deliverables of the HTML Working Group
 
 Build instructions:
 
-    python scripts/publish.py [html|2dcontext]
+    make [html|2dcontext|all]
 
-    output is placed in output/[html|2dcontext]
+Output is placed in `output/[html|2dcontext]`.
 
 Spec Editing Cheatsheet
 ===
@@ -22,56 +22,89 @@ Checking out the HTML spec
 
 Pull the code from GitHub:
 
-    $ git clone git@github.com:w3c/html.git
+    $ git clone ssh://git@github.com/w3c/html.git
     $ cd html
     $ git checkout -b whatwg origin/feature/whatwg
-    Check what branches you now have:
+
+To check what branches you have:
+
     $ git branch
 
 To continue editing at a later stage:
 
     $ git checkout master
     $ git pull --rebase
-    Then check out each branch and:
+
+Then check out each branch and:
+
     $ git rebase master
 
 To commit and push code to GitHub:
 
     $ git commit -a
     $ git push
-        
+
 Configuring git
 ---
 
-   * [Dealing with line endings](https://help.github.com/articles/dealing-with-line-endings)
+If you're editing the spec on Windows, be sure to read up on
+[how to deal with line endings](https://help.github.com/articles/dealing-with-line-endings).
+
+You'll probably want to configure Git to automatically rebase on pull.
+To do this, edit `.git/config` in your repository. In the
+`[branch "master"]` section, add a `rebase = true` line. To ensure
+this happens for any new branches you create, add a new section like so:
+
+    [branch]
+        autosetuprebase = always
+
 
 Installing the necessary software
 ---
 
-  1. you need to have python installed
+  1. You need to have python installed on your system.
 
-  2. install anolislib:
-https://github.com/sideshowbarker/html5forAuthors/tree/master/anolis/anolislib
+  2. Install [Anolis](http://anolis.gsnedders.com/):
 
-Get anolislib from Mike’s github repo:
+        $ hg clone ssh://hg@bitbucket.org/ms2ger/anolis
+        $ cd anolis; sudo python setup.py install
 
-    $ git clone git://github.com/sideshowbarker/html5forAuthors.git
-    $ mkdir ~/opt
-    $ easy_install -d ~/opt html5lib
-    $ easy_install -d ~/opt lxml
-        
-Build the HTML spec
+     Periodically, make sure your Anolis is up to date:
+
+        $ cd anolis
+        $ hg pull
+
+     If there have been changes, reinstall:
+
+        $ sudo python setup.py install
+
+  3. Install [html5lib](http://code.google.com/p/html5lib/):
+
+        $ hg clone https://code.google.com/p/html5lib/
+        $ cd html5lib/python; sudo python setup.py install
+
+     Periodically, make sure your html5lib is up to date:
+
+        $ cd html5lib
+        $ hg pull
+
+     If there have been changes, reinstall:
+
+        $ cd python; sudo python setup.py install
+
+  4. Install [lxml](http://lxml.de):
+
+        $ sudo easy_install lxml
+
+Build the spec
 ---
 
     $ cd html
-    $ git checkout master
-    $ export PYTHONPATH=~/opt:~/Sites/html5/html5forAuthors/anolis/
-    $ python scripts/publish.py html
+    $ make html    # or 'make 2dcontext' for the Canvas spec, or 'make all' for both
 
-Resulting page is in output/html/single-page.html
-Or the multipage version at output/html/spec.html
-
-
+If successful, the single page version of the spec can be found at
+`output/html/single-page.html`, and the multipage version at
+`output/html/spec.html`.
 
 Cherry pick commits from the WHATWG spec
 ---
