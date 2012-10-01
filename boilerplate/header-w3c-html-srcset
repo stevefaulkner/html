@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!-- when publishing, change bits marked ZZZ
+     ZZZ: Set PUB to 1 for TR/ drafts, 0 for dev drafts; PUB-Y lines are used if it's 1 and PUB-N lines if it's 0.
+     ZZZ: Set YEAR, SHORTDAY (month/day), and LONGDAY accordingly. They are used by the INSERT FOO bits below.
+  -->
+<!--SET PUB=0-->
+<!--SET SHORTSTATUS=ED-->
+<!--SET URLSTATUS=ED-->
+<!--SET LONGSTATUS=Editor's Draft-->
+<!--SET YEAR=2012-->
+<!--SET SHORTDAY=0329-->
+<!--SET LONGDAY=29 March-->
+<!--SET TRNAME=html5-->
+<!--SET DEVURL=http://dev.w3.org/html5/spec/Overview.html-->
+<!--SET COMPONENT=HTML5 spec (editor: Ian Hickson)-->
+<html lang="en-US-x-Hixie">
+ <head>
+  <title>The srcset attribute</title>
+  <!--BOILERPLATE middle-w3c-styles-->
+  <!--BOILERPLATE middle-override-styles-->
+  <!--BOILERPLATE middle-author-mode-links-->
+  <!--BOILERPLATE middle-w3c-html-magic-->
+   <h1>The srcset attribute</h1>
+   <h2 class="no-num no-toc">An HTML extension for adaptive images</h2>
+<!--BOILERPLATE middle-w3c-version-->
+<!-- ZZZ: add the new version after it has shipped -->
+<!-- :ZZZ -->
+   <dl>
+    <dt>Editor:</dt>
+    <dd><a href="mailto:eoconnor@apple.com">Edward O'Connor</a>, Apple Inc.</dd>
+    <dt>Derived from the HTML Living Standard edited by:</dt>
+    <dd><a href="mailto:ian@hixie.ch">Ian Hickson</a>, Google, Inc.</dd>
+   </dl>
+   <p>This specification is available in the following formats:
+    <a href="Overview.html">single page HTML</a>.
+   </p> 
+  <!--BOILERPLATE middle-w3c-copyright-->
+
+  <h2 class="no-num no-toc">Abstract</h2>
+
+  <p>When authors adapt their sites for high-resolution displays, they
+  often need to be able to use different assets representing the same
+  image. We address this need for adaptive, bitmapped content images by
+  adding a <code>srcset</code> attribute to the <code>img</code>
+  element.</p>
+
+  <h2 class="no-num no-toc">Status of This document</h2>
+  <!--BOILERPLATE middle-w3c-feedback-->
+  <!--BOILERPLATE middle-w3c-feedback-srcset-->
+  <!--BOILERPLATE middle-w3c-html-pp-->
+
+  <h2 class="no-num no-toc" id="contents">Table of Contents</h2>
+  <!--toc-->
+  <hr>
