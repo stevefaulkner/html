@@ -1,0 +1,11 @@
+
+PUBLISHING:
+    - make branch
+    - install local link checker
+    - install local pubrules
+    - change params in boilerplate until correct
+    - link check until good
+    - pubrules until good
+    - stage for publication
+    
+    
