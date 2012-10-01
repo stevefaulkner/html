@@ -7,9 +7,9 @@ Deliverables of the HTML Working Group
 
 Build instructions:
 
-    make [html|2dcontext|all]
+    make [html|2dcontext|srcset|all]
 
-Output is placed in `output/[html|2dcontext]`.
+Output is placed in `output/[html|2dcontext|srcset]`.
 
 Spec Editing Cheatsheet
 ===
@@ -102,7 +102,7 @@ Build the spec
 ---
 
     $ cd html
-    $ make html    # or 'make 2dcontext' for the Canvas spec, or 'make all' for both
+    $ make html    # or 'make 2dcontext' for the Canvas spec, 'make srcset for the srcset spec, or 'make all' for all
 
 If successful, the single page version of the spec can be found at
 `output/html/single-page.html`, and the multipage version at

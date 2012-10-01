@@ -8,8 +8,10 @@ if len(sys.argv)>1 and sys.argv[1] == 'html':
   spec = 'html'
 elif len(sys.argv)>1 and sys.argv[1] == '2dcontext':
   spec = select = '2dcontext'
+elif len(sys.argv)>1 and sys.argv[1] == 'srcset':
+  spec = select = 'srcset'
 else:
-  sys.stderr.write("Usage: python %s [html|2dcontext]\n" % sys.argv[0])
+  sys.stderr.write("Usage: python %s [html|2dcontext|srcset]\n" % sys.argv[0])
   exit()
 
 print 'parsing'

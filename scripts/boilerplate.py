@@ -7,6 +7,8 @@ def main(stdin, stdout, select='w3c-html'):
   # select document
   if select == '2dcontext':
     header = open("boilerplate/header-w3c-html-2dcontext").read()
+  elif select == 'srcset':
+    header = open("boilerplate/header-w3c-html-srcset").read()
   else:
     header = open("boilerplate/header-w3c-html-core").read()
 
