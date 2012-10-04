@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-var fs  = require("fs")
+var fs  = require("fs.extra")
 ,   pth = require("path")
 ,   exec = require("child_process").exec
 ,   wrench = require("wrench")
@@ -27,8 +27,12 @@ exec("make html", { cwd: rootDir }, function (err, stdout, stderr) {
         var file = pth.join(hbDir, files[i]);
         if (!file.match(/\.html$/)) continue;
         var content = fs.readFileSync(file, "utf-8");
+        // the below looks weird because for reasons beyond human understanding,
+        // JS does not support zero-width negative lookbehinds
         content = content
-                    .replace(/(?<!section-)\bindex\.html\b/g, "section-index.html")
+                    .replace(/\bsection-index\.html/g, "REPLACE-ME-SECTION-INDEX")
+                    .replace(/\bindex\.html\b/g, "section-index.html")
+                    .replace(/REPLACE-ME-SECTION-INDEX/g, "section-index.html")
                     .replace(/\bspec\.html\b/g, "index.html");
         fs.writeFileSync(file, content, "utf-8");
     }
@@ -37,7 +41,7 @@ exec("make html", { cwd: rootDir }, function (err, stdout, stderr) {
     fs.mkdirSync(imgDir);
     wrench.copyDirSyncRecursive(pth.join(rootDir, "images/"), imgDir);
     // copy entities stuff
-    wrench.copyDirSyncRecursive(pth.join(rootDir, "entities.json"), hbDir);
+    fs.copy(pth.join(rootDir, "entities.json"), pth.join(hbDir, "entities.json"));
     // link to author doc
     var index = fs.readFileSync(pth.join(hbDir, "index.html"), "utf-8")
     ,   findDate = /<dt>This Version:<\/dt>\s*<dd><a href="">http:\/\/www.w3.org\/TR\/(\d{4})\/(\w+)-html5-(\d+)/

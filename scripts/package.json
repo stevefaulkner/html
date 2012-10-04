@@ -5,6 +5,7 @@
   "author": "Robin Berjon <robin@w3.org>",
   "private": true,
   "dependencies": {
-      "wrench": "*"
+      "wrench": "*",
+      "fs.extra": "*"
   }
 }
