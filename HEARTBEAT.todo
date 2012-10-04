@@ -16,28 +16,6 @@ ERRORS:
     Processing	file:///Projects/html/html/heartbeat/index.html
 
 
-    List of broken links and other issues
-    http://www.w3.org/TR/2012/WD-html5-20121011/	
-      Line: 365
-      Code: 404 Not Found
-     To do: The link is broken. Double-check that you have not made any typo,
-    	or mistake in copy-pasting. If the link points to a resource that
-    	no longer exists, you may want to remove or fix the link.
-
-    file:///Projects/html/html/heartbeat/author/	
-      Line: 395
-      Code: 404 File `/Projects/html/html/heartbeat/author/' does not exist
-     To do: The link is broken. Double-check that you have not made any typo,
-    	or mistake in copy-pasting. If the link points to a resource that
-    	no longer exists, you may want to remove or fix the link.
-
-    file:///Projects/html/html/heartbeat/Overview.html	
-      Line: 393
-      Code: 404 File `/Projects/html/html/heartbeat/Overview.html' does not exist
-     To do: The link is broken. Double-check that you have not made any typo,
-    	or mistake in copy-pasting. If the link points to a resource that
-    	no longer exists, you may want to remove or fix the link.
-
     file:///Projects/html/html/heartbeat/index.html	
      Lines: 394, 1314, 1315, 1316, 1317, 1318, 1319, 1320
       Code: 200 (no message)
@@ -51,21 +29,3 @@ ERRORS:
     	element-content-categories    	Line: 1316
     	element-interfaces            	Line: 1318
     	all-interfaces                	Line: 1319
-
-    
-    #####
-
-    Checking file 164 of 171 (the-xhtml-syntax.html)
-
-    Processing	file:///Projects/html/html/heartbeat/the-xhtml-syntax.html
-
-
-    List of broken links and other issues
-    file:///Projects/html/html/heartbeat/!--BOILERPLATE%20entities-dtd.url--	
-      Line: 446
-      Code: 404 File `/Projects/html/html/heartbeat/!--BOILERPLATE entities-dtd.url--' does not exist
-     To do: The link is broken. Double-check that you have not made any typo,
-    	or mistake in copy-pasting. If the link points to a resource that
-    	no longer exists, you may want to remove or fix the link.
-
-
