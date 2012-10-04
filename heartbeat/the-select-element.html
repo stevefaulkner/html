@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en-US-x-Hixie"><head><title>4.10.9 The select element &#8212; HTML5</title><style type="text/css">
+   pre { margin-left: 2em; white-space: pre-wrap; }
+   h2 { margin: 3em 0 1em 0; }
+   h3 { margin: 2.5em 0 1em 0; }
+   h4 { margin: 2.5em 0 0.75em 0; }
+   h5, h6 { margin: 2.5em 0 1em; }
+   h1 + h2, h1 + h2 + h2 { margin: 0.75em 0 0.75em; }
+   h2 + h3, h3 + h4, h4 + h5, h5 + h6 { margin-top: 0.5em; }
+   p { margin: 1em 0; }
+   hr:not(.top) { display: block; background: none; border: none; padding: 0; margin: 2em 0; height: auto; }
+   dl, dd { margin-top: 0; margin-bottom: 0; }
+   dt { margin-top: 0.75em; margin-bottom: 0.25em; clear: left; }
+   dt + dt { margin-top: 0; }
+   dd dt { margin-top: 0.25em; margin-bottom: 0; }
+   dd p { margin-top: 0; }
+   dd dl + p { margin-top: 1em; }
+   dd table + p { margin-top: 1em; }
+   p + * > li, dd li { margin: 1em 0; }
+   dt, dfn { font-weight: bold; font-style: normal; }
+   i, em { font-style: italic; }
+   dt dfn { font-style: italic; }
+   pre, code { font-size: inherit; font-family: monospace; font-variant: normal; }
+   pre strong { color: black; font: inherit; font-weight: bold; background: yellow; }
+   pre em { font-weight: bolder; font-style: normal; }
+   @media screen { code { color: orangered; } code :link, code :visited { color: inherit; } }
+   var sub { vertical-align: bottom; font-size: smaller; position: relative; top: 0.1em; }
+   table { border-collapse: collapse; border-style: hidden hidden none hidden; }
+   table thead, table tbody { border-bottom: solid; }
+   table tbody th:first-child { border-left: solid; }
+   table tbody th { text-align: left; }
+   table td, table th { border-left: solid; border-right: solid; border-bottom: solid thin; vertical-align: top; padding: 0.2em; }
+   blockquote { margin: 0 0 0 2em; border: 0; padding: 0; font-style: italic; }
+
+   .bad, .bad *:not(.XXX) { color: gray; border-color: gray; background: transparent; }
+   .matrix, .matrix td { border: none; text-align: right; }
+   .matrix { margin-left: 2em; }
+   .dice-example { border-collapse: collapse; border-style: hidden solid solid hidden; border-width: thin; margin-left: 3em; }
+   .dice-example caption { width: 30em; font-size: smaller; font-style: italic; padding: 0.75em 0; text-align: left; }
+   .dice-example td, .dice-example th { border: solid thin; width: 1.35em; height: 1.05em; text-align: center; padding: 0; }
+
+   .toc dfn, h1 dfn, h2 dfn, h3 dfn, h4 dfn, h5 dfn, h6 dfn { font: inherit; }
+   img.extra, p.overview { float: right; }
+   pre.idl { border: solid thin; background: #EEEEEE; color: black; padding: 0.5em 1em; position: relative; }
+   pre.idl :link, pre.idl :visited { color: inherit; background: transparent; }
+   pre.idl::before { content: "IDL"; font: bold small sans-serif; padding: 0.5em; background: white; position: absolute; top: 0; margin: -1px 0 0 -4em; width: 1.5em; border: thin solid; border-radius: 0 0 0 0.5em }
+   pre.css { border: solid thin; background: #FFFFEE; color: black; padding: 0.5em 1em; }
+   pre.css:first-line { color: #AAAA50; }
+   dl.domintro { color: green; margin: 2em 0 2em 2em; padding: 0.5em 1em; border: none; background: #DDFFDD; }
+   hr + dl.domintro, div.impl + dl.domintro { margin-top: 2.5em; margin-bottom: 1.5em; }
+   dl.domintro dt, dl.domintro dt * { color: black; text-decoration: none; }
+   dl.domintro dd { margin: 0.5em 0 1em 2em; padding: 0; }
+   dl.domintro dd p { margin: 0.5em 0; }
+   dl.domintro:before { display: table; margin: -1em -0.5em -0.5em auto; width: auto; content: 'This box is non-normative. Implementation requirements are given below this box.'; color: black; font-style: italic; border: solid 2px; background: white; padding: 0 0.25em; }
+   dl.switch { padding-left: 2em; }
+   dl.switch > dt { text-indent: -1.5em; }
+   dl.switch > dt:before { content: '\21AA'; padding: 0 0.5em 0 0; display: inline-block; width: 1em; text-align: right; line-height: 0.5em; }
+   dl.triple { padding: 0 0 0 1em; }
+   dl.triple dt, dl.triple dd { margin: 0; display: inline }
+   dl.triple dt:after { content: ':'; }
+   dl.triple dd:after { content: '\A'; white-space: pre; }
+   .diff-old { text-decoration: line-through; color: silver; background: transparent; }
+   .diff-chg, .diff-new { text-decoration: underline; color: green; background: transparent; }
+   a .diff-new { border-bottom: 1px blue solid; }
+
+   figure.diagrams { border: double black; background: white; padding: 1em; }
+   figure.diagrams img { display: block; margin: 1em auto; } 
+
+   h2 { page-break-before: always; }
+   h1, h2, h3, h4, h5, h6 { page-break-after: avoid; }
+   h1 + h2, hr + h2.no-toc { page-break-before: auto; }
+
+   p  > span:not([title=""]):not([class="XXX"]):not([class="impl"]):not([class="note"]),
+   li > span:not([title=""]):not([class="XXX"]):not([class="impl"]):not([class="note"]), { border-bottom: solid #9999CC; }
+
+   div.head { margin: 0 0 1em; padding: 1em 0 0 0; }
+   div.head p { margin: 0; }
+   div.head h1 { margin: 0; }
+   div.head .logo { float: right; margin: 0 1em; }
+   div.head .logo img { border: none } /* remove border from top image */
+   div.head dl { margin: 1em 0; }
+   div.head p.copyright, div.head p.alt { font-size: x-small; font-style: oblique; margin: 0; }
+
+   body > .toc > li { margin-top: 1em; margin-bottom: 1em; }
+   body > .toc.brief > li { margin-top: 0.35em; margin-bottom: 0.35em; }
+   body > .toc > li > * { margin-bottom: 0.5em; }
+   body > .toc > li > * > li > * { margin-bottom: 0.25em; }
+   .toc, .toc li { list-style: none; }
+
+   .brief { margin-top: 1em; margin-bottom: 1em; line-height: 1.1; }
+   .brief li { margin: 0; padding: 0; }
+   .brief li p { margin: 0; padding: 0; }
+
+   .category-list { margin-top: -0.75em; margin-bottom: 1em; line-height: 1.5; }
+   .category-list::before { content: '\21D2\A0'; font-size: 1.2em; font-weight: 900; }
+   .category-list li { display: inline; }
+   .category-list li:not(:last-child)::after { content: ', '; }
+   .category-list li > span, .category-list li > a { text-transform: lowercase; }
+   .category-list li * { text-transform: none; } /* don't affect <code> nested in <a> */
+
+   .XXX { color: #E50000; background: white; border: solid red; padding: 0.5em; margin: 1em 0; }
+   .XXX > :first-child { margin-top: 0; }
+   p .XXX { line-height: 3em; }
+   .annotation { border: solid thin black; background: #0C479D; color: white; position: relative; margin: 8px 0 20px 0; }
+   .annotation:before { position: absolute; left: 0; top: 0; width: 100%; height: 100%; margin: 6px -6px -6px 6px; background: #333333; z-index: -1; content: ''; }
+   .annotation :link, .annotation :visited { color: inherit; }
+   .annotation :link:hover, .annotation :visited:hover { background: transparent; }
+   .annotation span { border: none ! important; }
+   .note { color: green; background: transparent; font-family: sans-serif; }
+   .warning { color: red; background: transparent; }
+   .note, .warning { font-weight: bolder; font-style: italic; }
+   .note em, .warning em, .note i, .warning i { font-style: normal; }
+   p.note, div.note { padding: 0.5em 2em; }
+   span.note { padding: 0 2em; }
+   .note p:first-child, .warning p:first-child { margin-top: 0; }
+   .note p:last-child, .warning p:last-child { margin-bottom: 0; }
+   .warning:before { font-style: normal; }
+   p.note:before { content: 'Note: '; }
+   p.warning:before { content: '\26A0 Warning! '; }
+
+   .bookkeeping:before { display: block; content: 'Bookkeeping details'; font-weight: bolder; font-style: italic; }
+   .bookkeeping { font-size: 0.8em; margin: 2em 0; }
+   .bookkeeping p { margin: 0.5em 2em; display: list-item; list-style: square; }
+   .bookkeeping dt { margin: 0.5em 2em 0; }
+   .bookkeeping dd { margin: 0 3em 0.5em; }
+
+   h4 { position: relative; z-index: 3; }
+   h4 + .element, h4 + div + .element { margin-top: -2.5em; padding-top: 2em; }
+   .element {
+     background: #EEEEFF;
+     color: black;
+     margin: 0 0 1em 0.15em;
+     padding: 0 1em 0.25em 0.75em;
+     border-left: solid #9999FF 0.25em;
+     position: relative;
+     z-index: 1;
+   }
+   .element:before {
+     position: absolute;
+     z-index: 2;
+     top: 0;
+     left: -1.15em;
+     height: 2em;
+     width: 0.9em;
+     background: #EEEEFF;
+     content: ' ';
+     border-style: none none solid solid;
+     border-color: #9999FF;
+     border-width: 0.25em;
+   }
+
+   .example { display: block; color: #222222; background: #FCFCFC; border-left: double; margin-left: 2em; padding-left: 1em; }
+   td > .example:only-child { margin: 0 0 0 0.1em; }
+
+   ul.domTree, ul.domTree ul { padding: 0 0 0 1em; margin: 0; }
+   ul.domTree li { padding: 0; margin: 0; list-style: none; position: relative; }
+   ul.domTree li li { list-style: none; }
+   ul.domTree li:first-child::before { position: absolute; top: 0; height: 0.6em; left: -0.75em; width: 0.5em; border-style: none none solid solid; content: ''; border-width: 0.1em; }
+   ul.domTree li:not(:last-child)::after { position: absolute; top: 0; bottom: -0.6em; left: -0.75em; width: 0.5em; border-style: none none solid solid; content: ''; border-width: 0.1em; }
+   ul.domTree span { font-style: italic; font-family: serif; }
+   ul.domTree .t1 code { color: purple; font-weight: bold; }
+   ul.domTree .t2 { font-style: normal; font-family: monospace; }
+   ul.domTree .t2 .name { color: black; font-weight: bold; }
+   ul.domTree .t2 .value { color: blue; font-weight: normal; }
+   ul.domTree .t3 code, .domTree .t4 code, .domTree .t5 code { color: gray; }
+   ul.domTree .t7 code, .domTree .t8 code { color: green; }
+   ul.domTree .t10 code { color: teal; }
+
+   body.dfnEnabled dfn { cursor: pointer; }
+   .dfnPanel {
+     display: inline;
+     position: absolute;
+     z-index: 10;
+     height: auto;
+     width: auto;
+     padding: 0.5em 0.75em;
+     font: small sans-serif, Droid Sans Fallback;
+     background: #DDDDDD;
+     color: black;
+     border: outset 0.2em;
+   }
+   .dfnPanel * { margin: 0; padding: 0; font: inherit; text-indent: 0; }
+   .dfnPanel :link, .dfnPanel :visited { color: black; }
+   .dfnPanel p { font-weight: bolder; }
+   .dfnPanel * + p { margin-top: 0.25em; }
+   .dfnPanel li { list-style-position: inside; }
+
+   #configUI { position: absolute; z-index: 20; top: 10em; right: 1em; width: 11em; font-size: small; }
+   #configUI p { margin: 0.5em 0; padding: 0.3em; background: #EEEEEE; color: black; border: inset thin; }
+   #configUI p label { display: block; }
+   #configUI #updateUI, #configUI .loginUI { text-align: center; }
+   #configUI input[type=button] { display: block; margin: auto; }
+
+   fieldset { margin: 1em; padding: 0.5em 1em; }
+   fieldset > legend + * { margin-top: 0; }
+   fieldset > :last-child { margin-bottom: 0; }
+   fieldset p { margin: 0.5em 0; }
+
+   .stability {
+     position: fixed;
+     bottom: 0;
+     left: 0; right: 0;
+     margin: 0 auto 0 auto;
+     width: 50%;
+     background: maroon; color: yellow;
+     -webkit-border-radius: 1em 1em 0 0;
+     -moz-border-radius: 1em 1em 0 0;
+     border-radius: 1em 1em 0 0;
+     -moz-box-shadow: 0 0 1em #500;
+     -webkit-box-shadow: 0 0 1em #500;
+     box-shadow: 0 0 1em red;
+     padding: 0.5em 1em;
+     text-align: center;
+   }
+   .stability strong {
+     display: block;
+   }
+   .stability input {
+     appearance: none; margin: 0; border: 0; padding: 0.25em 0.5em; background: transparent; color: black;
+     position: absolute; top: -0.5em; right: 0; font: 1.25em sans-serif; text-align: center;
+   }
+   .stability input:hover {
+     color: white;
+     text-shadow: 0 0 2px black;
+   }
+   .stability input:active {
+     padding: 0.3em 0.45em 0.2em 0.55em;
+   }
+   .stability :link, .stability :visited,
+   .stability :link:hover, .stability :visited:hover {
+     background: transparent;
+     color: white;
+   }
+
+  </style><link href="http://www.w3.org/StyleSheets/TR/W3C-WD" rel="stylesheet" type="text/css"><meta content="noindex" name="robots"><style type="text/css">
+
+   .applies thead th > * { display: block; }
+   .applies thead code { display: block; }
+   .applies tbody th { whitespace: nowrap; }
+   .applies td { text-align: center; }
+   .applies .yes { background: yellow; }
+
+   .matrix, .matrix td { border: hidden; text-align: right; }
+   .matrix { margin-left: 2em; }
+
+   .dice-example { border-collapse: collapse; border-style: hidden solid solid hidden; border-width: thin; margin-left: 3em; }
+   .dice-example caption { width: 30em; font-size: smaller; font-style: italic; padding: 0.75em 0; text-align: left; }
+   .dice-example td, .dice-example th { border: solid thin; width: 1.35em; height: 1.05em; text-align: center; padding: 0; }
+
+   td.eg { border-width: thin; text-align: center; }
+
+   #table-example-1 { border: solid thin; border-collapse: collapse; margin-left: 3em; }
+   #table-example-1 * { font-family: "Essays1743", serif; line-height: 1.01em; }
+   #table-example-1 caption { padding-bottom: 0.5em; }
+   #table-example-1 thead, #table-example-1 tbody { border: none; }
+   #table-example-1 th, #table-example-1 td { border: solid thin; }
+   #table-example-1 th { font-weight: normal; }
+   #table-example-1 td { border-style: none solid; vertical-align: top; }
+   #table-example-1 th { padding: 0.5em; vertical-align: middle; text-align: center; }
+   #table-example-1 tbody tr:first-child td { padding-top: 0.5em; }
+   #table-example-1 tbody tr:last-child td { padding-bottom: 1.5em; }
+   #table-example-1 tbody td:first-child { padding-left: 2.5em; padding-right: 0; width: 9em; }
+   #table-example-1 tbody td:first-child::after { content: leader(". "); }
+   #table-example-1 tbody td { padding-left: 2em; padding-right: 2em; }
+   #table-example-1 tbody td:first-child + td { width: 10em; }
+   #table-example-1 tbody td:first-child + td ~ td { width: 2.5em; }
+   #table-example-1 tbody td:first-child + td + td + td ~ td { width: 1.25em; }
+
+   .apple-table-examples { border: none; border-collapse: separate; border-spacing: 1.5em 0em; width: 40em; margin-left: 3em; }
+   .apple-table-examples * { font-family: "Times", serif; }
+   .apple-table-examples td, .apple-table-examples th { border: none; white-space: nowrap; padding-top: 0; padding-bottom: 0; }
+   .apple-table-examples tbody th:first-child { border-left: none; width: 100%; }
+   .apple-table-examples thead th:first-child ~ th { font-size: smaller; font-weight: bolder; border-bottom: solid 2px; text-align: center; }
+   .apple-table-examples tbody th::after, .apple-table-examples tfoot th::after { content: leader(". ") }
+   .apple-table-examples tbody th, .apple-table-examples tfoot th { font: inherit; text-align: left; }
+   .apple-table-examples td { text-align: right; vertical-align: top; }
+   .apple-table-examples.e1 tbody tr:last-child td { border-bottom: solid 1px; }
+   .apple-table-examples.e1 tbody + tbody tr:last-child td { border-bottom: double 3px; }
+   .apple-table-examples.e2 th[scope=row] { padding-left: 1em; }
+   .apple-table-examples sup { line-height: 0; }
+
+   .details-example img { vertical-align: top; }
+
+   #base64-table {
+     white-space: nowrap;
+     font-size: 0.6em;
+     column-width: 6em;
+     column-count: 5;
+     column-gap: 1em;
+     -moz-column-width: 6em;
+     -moz-column-count: 5;
+     -moz-column-gap: 1em;
+     -webkit-column-width: 6em;
+     -webkit-column-count: 5;
+     -webkit-column-gap: 1em;
+   }
+   #base64-table thead { display: none; }
+   #base64-table * { border: none; }
+   #base64-table tbody td:first-child:after { content: ':'; }
+   #base64-table tbody td:last-child { text-align: right; }
+
+   #named-character-references-table {
+     white-space: nowrap;
+     font-size: 0.6em;
+     column-width: 30em;
+     column-gap: 1em;
+     -moz-column-width: 30em;
+     -moz-column-gap: 1em;
+     -webkit-column-width: 30em;
+     -webkit-column-gap: 1em;
+   }
+   #named-character-references-table > table > tbody > tr > td:first-child + td,
+   #named-character-references-table > table > tbody > tr > td:last-child { text-align: center; }
+   #named-character-references-table > table > tbody > tr > td:last-child:hover > span { position: absolute; top: auto; left: auto; margin-left: 0.5em; line-height: 1.2; font-size: 5em; border: outset; padding: 0.25em 0.5em; background: white; width: 1.25em; height: auto; text-align: center; }
+   #named-character-references-table > table > tbody > tr#entity-CounterClockwiseContourIntegral > td:first-child { font-size: 0.5em; }
+
+   .glyph.control { color: red; }
+
+   @font-face {
+     font-family: 'Essays1743';
+     src: url('../fonts/Essays1743.ttf');
+   }
+   @font-face {
+     font-family: 'Essays1743';
+     font-weight: bold;
+     src: url('../fonts/Essays1743-Bold.ttf');
+   }
+   @font-face {
+     font-family: 'Essays1743';
+     font-style: italic;
+     src: url('../fonts/Essays1743-Italic.ttf');
+   }
+   @font-face {
+     font-family: 'Essays1743';
+     font-style: italic;
+     font-weight: bold;
+     src: url('../fonts/Essays1743-BoldItalic.ttf');
+   }
+
+  </style><link href="data:text/css," id="complete" rel="stylesheet" title="Complete specification"><link href="data:text/css,.impl%20%7B%20display:%20none;%20%7D%0Ahtml%20%7B%20border:%20solid%20yellow;%20%7D%20.domintro:before%20%7B%20display:%20none;%20%7D" id="author" rel="alternate stylesheet" title="Author documentation only"><link href="data:text/css,.impl%20%7B%20background:%20%23FFEEEE;%20%7D%20.domintro:before%20%7B%20background:%20%23FFEEEE;%20%7D" id="highlight" rel="alternate stylesheet" title="Highlight implementation requirements"><script>
+   function getCookie(name) {
+     var params = location.search.substr(1).split("&");
+     for (var index = 0; index < params.length; index++) {
+       if (params[index] == name)
+         return "1";
+       var data = params[index].split("=");
+       if (data[0] == name)
+         return unescape(data[1]);
+     }
+     var cookies = document.cookie.split("; ");
+     for (var index = 0; index < cookies.length; index++) {
+       var data = cookies[index].split("=");
+       if (data[0] == name)
+         return unescape(data[1]);
+     }
+     return null;
+   }
+  </script><link href="the-button-element.html" title="4.10.8 The button element" rel="prev">
+  <link href="spec.html#contents" title="Table of contents" rel="contents">
+  <link href="the-datalist-element.html" title="4.10.10 The datalist element" rel="next">
+  </head><body onload="fixBrokenLink();" class="split chapter"><div class="head" id="head">
+   <p><a href="http://www.w3.org/"><img alt="W3C" height="48" src="http://www.w3.org/Icons/w3c_home" width="72"></a></p>
+
+   <h1>HTML5</h1>
+   <h2 class="no-num no-toc" id="a-vocabulary-and-associated-apis-for-html-and-xhtml">A vocabulary and associated APIs for HTML and XHTML</h2>
+   <h2 class="no-num no-toc" id="w3c-working-draft-11-october-2012">W3C Working Draft 11 October 2012</h2>
+   </div>
+   <div class="prev_next">
+   <a href="the-button-element.html">&#8592; 4.10.8 The button element</a> &#8211;
+   <a href="spec.html#contents">Table of contents</a> &#8211;
+   <a href="the-datalist-element.html">4.10.10 The datalist element &#8594;</a>
+  </div>
+
+  <h4 id="the-select-element"><span class="secno">4.10.9 </span>The <dfn><code>select</code></dfn> element</h4>
+
+  <dl class="element"><dt><a href="element-definitions.html#element-dfn-categories" title="element-dfn-categories">Categories</a>:</dt>
+   <dd><a href="content-models.html#flow-content-1">Flow content</a>.</dd>
+   <dd><a href="content-models.html#phrasing-content-1">Phrasing content</a>.</dd>
+   <dd><a href="content-models.html#interactive-content-0">Interactive content</a>.</dd>
+   <dd><a href="forms.html#category-listed" title="category-listed">Listed</a>, <a href="forms.html#category-label" title="category-label">labelable</a>, <a href="forms.html#category-submit" title="category-submit">submittable</a>, and <a href="forms.html#category-reset" title="category-reset">resettable</a> <a href="forms.html#form-associated-element">form-associated element</a>.</dd>
+   <dd><a href="content-models.html#palpable-content-0">Palpable content</a>.</dd>
+   <dt><a href="element-definitions.html#element-dfn-contexts" title="element-dfn-contexts">Contexts in which this element can be used</a>:</dt>
+   <dd>Where <a href="content-models.html#phrasing-content-1">phrasing content</a> is expected.</dd>
+   <dt><a href="element-definitions.html#element-dfn-content-model" title="element-dfn-content-model">Content model</a>:</dt>
+   <dd>Zero or more <code><a href="the-option-element.html#the-option-element">option</a></code> or <code><a href="the-optgroup-element.html#the-optgroup-element">optgroup</a></code> elements.</dd>
+   <dt><a href="element-definitions.html#element-dfn-attributes" title="element-dfn-attributes">Content attributes</a>:</dt>
+   <dd><a href="global-attributes.html#global-attributes">Global attributes</a></dd>
+   <dd><code title="attr-fe-autofocus"><a href="attributes-common-to-form-controls.html#attr-fe-autofocus">autofocus</a></code></dd>
+   <dd><code title="attr-fe-disabled"><a href="attributes-common-to-form-controls.html#attr-fe-disabled">disabled</a></code></dd>
+   <dd><code title="attr-fae-form"><a href="association-of-controls-and-forms.html#attr-fae-form">form</a></code></dd>
+   <dd><code title="attr-select-multiple"><a href="#attr-select-multiple">multiple</a></code></dd>
+   <dd><code title="attr-fe-name"><a href="attributes-common-to-form-controls.html#attr-fe-name">name</a></code></dd>
+   <dd><code title="attr-select-required"><a href="#attr-select-required">required</a></code></dd>
+   <dd><code title="attr-select-size"><a href="#attr-select-size">size</a></code></dd>
+   <dt><a href="element-definitions.html#element-dfn-dom" title="element-dfn-dom">DOM interface</a>:</dt><!--TOPIC:DOM APIs-->
+   <dd>
+<pre class="idl">interface <dfn id="htmlselectelement">HTMLSelectElement</dfn> : <a href="elements.html#htmlelement">HTMLElement</a> {
+           attribute boolean <a href="attributes-common-to-form-controls.html#dom-fe-autofocus" title="dom-fe-autofocus">autofocus</a>;
+           attribute boolean <a href="attributes-common-to-form-controls.html#dom-fe-disabled" title="dom-fe-disabled">disabled</a>;
+  readonly attribute <a href="the-form-element.html#htmlformelement">HTMLFormElement</a>? <a href="association-of-controls-and-forms.html#dom-fae-form" title="dom-fae-form">form</a>;
+           attribute boolean <a href="#dom-select-multiple" title="dom-select-multiple">multiple</a>;
+           attribute DOMString <a href="attributes-common-to-form-controls.html#dom-fe-name" title="dom-fe-name">name</a>;
+           attribute boolean <a href="#dom-select-required" title="dom-select-required">required</a>;
+           attribute unsigned long <a href="#dom-select-size" title="dom-select-size">size</a>;
+
+  readonly attribute DOMString <a href="#dom-select-type" title="dom-select-type">type</a>;
+
+  readonly attribute <a href="common-dom-interfaces.html#htmloptionscollection-0">HTMLOptionsCollection</a> <a href="#dom-select-options" title="dom-select-options">options</a>;
+           attribute unsigned long <a href="#dom-select-length" title="dom-select-length">length</a>;
+  getter <a href="infrastructure.html#element">Element</a> <a href="#dom-select-item" title="dom-select-item">item</a>(unsigned long index);
+  object <a href="#dom-select-nameditem" title="dom-select-namedItem">namedItem</a>(DOMString name);
+  void <a href="#dom-select-add" title="dom-select-add">add</a>((<a href="the-option-element.html#htmloptionelement">HTMLOptionElement</a> or <a href="the-optgroup-element.html#htmloptgroupelement">HTMLOptGroupElement</a>) element, optional (<a href="elements.html#htmlelement">HTMLElement</a> or long)? before = null);
+  void <a href="#dom-select-remove" title="dom-select-remove">remove</a>(long index);
+  <a href="common-dom-interfaces.html#dom-htmloptionscollection-setter" title="dom-HTMLOptionsCollection-setter">setter creator</a> void (unsigned long index, <a href="the-option-element.html#htmloptionelement">HTMLOptionElement</a>? option);
+
+  readonly attribute <a href="infrastructure.html#htmlcollection">HTMLCollection</a> <a href="#dom-select-selectedoptions" title="dom-select-selectedOptions">selectedOptions</a>;
+           attribute long <a href="#dom-select-selectedindex" title="dom-select-selectedIndex">selectedIndex</a>;
+           attribute DOMString <a href="#dom-select-value" title="dom-select-value">value</a>;
+
+  readonly attribute boolean <a href="constraints.html#dom-cva-willvalidate" title="dom-cva-willValidate">willValidate</a>;
+  readonly attribute <a href="constraints.html#validitystate">ValidityState</a> <a href="constraints.html#dom-cva-validity" title="dom-cva-validity">validity</a>;
+  readonly attribute DOMString <a href="constraints.html#dom-cva-validationmessage" title="dom-cva-validationMessage">validationMessage</a>;
+  boolean <a href="constraints.html#dom-cva-checkvalidity" title="dom-cva-checkValidity">checkValidity</a>();
+  void <a href="constraints.html#dom-cva-setcustomvalidity" title="dom-cva-setCustomValidity">setCustomValidity</a>(DOMString error);
+
+  readonly attribute <a href="infrastructure.html#nodelist">NodeList</a> <a href="the-label-element.html#dom-lfe-labels" title="dom-lfe-labels">labels</a>;
+};</pre>
+   </dd>
+  </dl><!--TOPIC:HTML--><!-- Proposals for v2:
+       * <select value=""> as an alternative to <option selected>
+         http://developers.slashdot.org/comments.pl?sid=426306&cid=22142072
+         <Philip`> http://www.ipiao.com.cn/ does <select size="1" name="to"><script>City_Default="PEK"</script><SCRIPT language=javascript
+                   src="/js/flightcity.js"></SCRIPT></select> which is the kind of thing that could be much simpler with <select value="PEK">
+    --><p>The <code><a href="#the-select-element">select</a></code> element represents a control for
+  selecting amongst a set of options.</p>
+
+  <p>The <dfn id="attr-select-multiple" title="attr-select-multiple"><code>multiple</code></dfn>
+  attribute is a <a href="common-microsyntaxes.html#boolean-attribute">boolean attribute</a>. If the attribute is
+  present, then the <code><a href="#the-select-element">select</a></code> element
+  <a href="rendering.html#represents">represents</a> a control for selecting zero or more options
+  from the <a href="#concept-select-option-list" title="concept-select-option-list">list of
+  options</a>. If the attribute is absent, then the
+  <code><a href="#the-select-element">select</a></code> element <a href="rendering.html#represents">represents</a> a control for
+  selecting a single option from the <a href="#concept-select-option-list" title="concept-select-option-list">list of options</a>.</p>
+
+  <p>The <dfn id="attr-select-size" title="attr-select-size"><code>size</code></dfn>
+  attribute gives the number of options to show to the user. The <code title="attr-select-size"><a href="#attr-select-size">size</a></code> attribute, if specified, must
+  have a value that is a <a href="common-microsyntaxes.html#valid-non-negative-integer">valid non-negative integer</a>
+  greater than zero.</p>
+
+  <div class="impl">
+
+  <p>The <dfn id="concept-select-size" title="concept-select-size">display size</dfn> of a
+  <code><a href="#the-select-element">select</a></code> element is the result of applying the
+  <a href="common-microsyntaxes.html#rules-for-parsing-non-negative-integers">rules for parsing non-negative integers</a> to the value of
+  element's <code title="attr-select-size"><a href="#attr-select-size">size</a></code> attribute, if
+  it has one and parsing it is successful. If applying those rules to
+  the attribute's value is not successful, or if the <code title="attr-select-size"><a href="#attr-select-size">size</a></code> attribute is absent, then the
+  element's <a href="#concept-select-size" title="concept-select-size">display size</a> is 4
+  if the element's <code title="attr-select-multiple"><a href="#attr-select-multiple">multiple</a></code>
+  content attribute is present, and 1 otherwise.</p>
+
+  </div>
+
+  <p>The <dfn id="concept-select-option-list" title="concept-select-option-list">list of options</dfn>
+  for a <code><a href="#the-select-element">select</a></code> element consists of all the
+  <code><a href="the-option-element.html#the-option-element">option</a></code> element children of the <code><a href="#the-select-element">select</a></code>
+  element, and all the <code><a href="the-option-element.html#the-option-element">option</a></code> element children of all the
+  <code><a href="the-optgroup-element.html#the-optgroup-element">optgroup</a></code> element children of the <code><a href="#the-select-element">select</a></code>
+  element, in <a href="infrastructure.html#tree-order">tree order</a>.</p>
+
+  <p>The <dfn id="attr-select-required" title="attr-select-required"><code>required</code></dfn>
+  attribute is a <a href="common-microsyntaxes.html#boolean-attribute">boolean attribute</a>. When specified, the
+  user will be required to select a value before submitting the
+  form.</p>
+
+  <p>If a <code><a href="#the-select-element">select</a></code> element has a <code title="attr-select-required"><a href="#attr-select-required">required</a></code> attribute specified,
+  does not have a <code title="attr-select-multiple"><a href="#attr-select-multiple">multiple</a></code>
+  attribute specified, and has a <a href="#concept-select-size" title="concept-select-size">display size</a> of 1;
+  and if the <a href="the-option-element.html#concept-option-value" title="concept-option-value">value</a> of the
+  first <code><a href="the-option-element.html#the-option-element">option</a></code> element in the <code><a href="#the-select-element">select</a></code>
+  element's <a href="#concept-select-option-list" title="concept-select-option-list">list of
+  options</a> (if any) is the empty string, and that
+  <code><a href="the-option-element.html#the-option-element">option</a></code> element's parent node is the <code><a href="#the-select-element">select</a></code>
+  element (and not an <code><a href="the-optgroup-element.html#the-optgroup-element">optgroup</a></code> element), then that
+  <code><a href="the-option-element.html#the-option-element">option</a></code> is the <code><a href="#the-select-element">select</a></code> element's
+  <dfn id="placeholder-label-option">placeholder label option</dfn>.</p>
+
+  <p>If a <code><a href="#the-select-element">select</a></code> element has a <code title="attr-select-required"><a href="#attr-select-required">required</a></code> attribute specified,
+  does not have a <code title="attr-select-multiple"><a href="#attr-select-multiple">multiple</a></code>
+  attribute specified, and has a <a href="#concept-select-size" title="concept-select-size">display size</a> of 1,
+  then the <code><a href="#the-select-element">select</a></code> element must have a <a href="#placeholder-label-option">placeholder
+  label option</a>.</p>
+
+  <div class="impl">
+
+  <p><strong>Constraint validation</strong>: If the element has its
+  <code title="attr-select-required"><a href="#attr-select-required">required</a></code> attribute
+  specified, and either none of the <code><a href="the-option-element.html#the-option-element">option</a></code> elements in
+  the <code><a href="#the-select-element">select</a></code> element's <a href="#concept-select-option-list" title="concept-select-option-list">list of options</a> have their
+  <a href="the-option-element.html#concept-option-selectedness" title="concept-option-selectedness">selectedness</a> set to
+  true, or the only <code><a href="the-option-element.html#the-option-element">option</a></code> element in the
+  <code><a href="#the-select-element">select</a></code> element's <a href="#concept-select-option-list" title="concept-select-option-list">list of options</a> with its
+  <a href="the-option-element.html#concept-option-selectedness" title="concept-option-selectedness">selectedness</a> set to
+  true is the <a href="#placeholder-label-option">placeholder label option</a>, then the element
+  is <a href="constraints.html#suffering-from-being-missing">suffering from being missing</a>.</p>
+
+  </div>
+
+  <div class="impl">
+
+  <p>If the <code title="attr-select-multiple"><a href="#attr-select-multiple">multiple</a></code>
+  attribute is absent, and the element is not <a href="attributes-common-to-form-controls.html#concept-fe-disabled" title="concept-fe-disabled">disabled</a>, then the user agent
+  should allow the user to pick an <code><a href="the-option-element.html#the-option-element">option</a></code> element in its
+  <a href="#concept-select-option-list" title="concept-select-option-list">list of options</a> that
+  is itself not <a href="the-option-element.html#concept-option-disabled" title="concept-option-disabled">disabled</a>.
+  Upon this <code><a href="the-option-element.html#the-option-element">option</a></code> element being <dfn id="concept-select-pick" title="concept-select-pick">picked</dfn> (either through a click, or
+  through unfocusing the element after changing its value, or through
+  a <a href="commands.html#using-the-option-element-to-define-a-command" title="option-command">menu command</a>, or through any
+  other mechanism), and before the relevant user interaction event
+  <!-- interaction event spec point --> is queued (e.g. before the
+  <code title="event-click"><a href="infrastructure.html#event-click">click</a></code> event), the user agent must
+  set the <a href="the-option-element.html#concept-option-selectedness" title="concept-option-selectedness">selectedness</a> of the
+  picked <code><a href="the-option-element.html#the-option-element">option</a></code> element to true and then <a href="webappapis.html#queue-a-task">queue a
+  task</a> to <a href="webappapis.html#fire-a-simple-event">fire a simple event</a> that bubbles named
+  <code title="event-change">change</code> at the <code><a href="#the-select-element">select</a></code>
+  element, using the <a href="webappapis.html#user-interaction-task-source">user interaction task source</a> as the
+  task source.</p>
+
+  <p>If the <code title="attr-select-multiple"><a href="#attr-select-multiple">multiple</a></code>
+  attribute is absent, whenever an <code><a href="the-option-element.html#the-option-element">option</a></code> element in the
+  <code><a href="#the-select-element">select</a></code> element's <a href="#concept-select-option-list" title="concept-select-option-list">list of options</a> has its
+  <a href="the-option-element.html#concept-option-selectedness" title="concept-option-selectedness">selectedness</a> set to
+  true, and whenever an <code><a href="the-option-element.html#the-option-element">option</a></code> element with its <a href="the-option-element.html#concept-option-selectedness" title="concept-option-selectedness">selectedness</a> set to true
+  is added to the <code><a href="#the-select-element">select</a></code> element's <a href="#concept-select-option-list" title="concept-select-option-list">list of options</a>, the user
+  agent must set the <a href="the-option-element.html#concept-option-selectedness" title="concept-option-selectedness">selectedness</a> of all the
+  other <code><a href="the-option-element.html#the-option-element">option</a></code> element in its <a href="#concept-select-option-list" title="concept-select-option-list">list of options</a> to
+  false.</p>
+
+  <p>If the <code title="attr-select-multiple"><a href="#attr-select-multiple">multiple</a></code>
+  attribute is absent and the element's <a href="#concept-select-size" title="concept-select-size">display size</a> is greater than 1,
+  then the user agent should also allow the user to request that the
+  <code><a href="the-option-element.html#the-option-element">option</a></code> whose <a href="the-option-element.html#concept-option-selectedness" title="concept-option-selectedness">selectedness</a> is true, if
+  any, be unselected. Upon this request being conveyed to the user
+  agent, and before the relevant user interaction event <!--
+  interaction event spec point --> is queued (e.g. before the <code title="event-click"><a href="infrastructure.html#event-click">click</a></code> event), the user agent must set the
+  <a href="the-option-element.html#concept-option-selectedness" title="concept-option-selectedness">selectedness</a> of
+  that <code><a href="the-option-element.html#the-option-element">option</a></code> element to false and then <a href="webappapis.html#queue-a-task">queue a
+  task</a> to <a href="webappapis.html#fire-a-simple-event">fire a simple event</a> that bubbles named
+  <code title="event-change">change</code> at the <code><a href="#the-select-element">select</a></code>
+  element, using the <a href="webappapis.html#user-interaction-task-source">user interaction task source</a> as the
+  task source.</p>
+
+  <p>If the <code title="attr-select-multiple"><a href="#attr-select-multiple">multiple</a></code>
+  attribute is absent and the element's <a href="#concept-select-size" title="concept-select-size">display size</a> is 1, then whenever
+  there are no <code><a href="the-option-element.html#the-option-element">option</a></code> elements in the <code><a href="#the-select-element">select</a></code>
+  element's <a href="#concept-select-option-list" title="concept-select-option-list">list of
+  options</a> that have their <a href="the-option-element.html#concept-option-selectedness" title="concept-option-selectedness">selectedness</a> set to true,
+  the user agent must set the <a href="the-option-element.html#concept-option-selectedness" title="concept-option-selectedness">selectedness</a> of the first
+  <code><a href="the-option-element.html#the-option-element">option</a></code> element in the <a href="#concept-select-option-list" title="concept-select-option-list">list of options</a> in
+  <a href="infrastructure.html#tree-order">tree order</a> that is not <a href="the-option-element.html#concept-option-disabled" title="concept-option-disabled">disabled</a>, if any, to
+  true.</p>
+
+  <p>If the <code title="attr-select-multiple"><a href="#attr-select-multiple">multiple</a></code>
+  attribute is present, and the element is not <a href="attributes-common-to-form-controls.html#concept-fe-disabled" title="concept-fe-disabled">disabled</a>, then the user agent
+  should allow the user to <dfn id="concept-select-toggle" title="concept-select-toggle">toggle</dfn> the <a href="the-option-element.html#concept-option-selectedness" title="concept-option-selectedness">selectedness</a> of the
+  <code><a href="the-option-element.html#the-option-element">option</a></code> elements in its <a href="#concept-select-option-list" title="concept-select-option-list">list of options</a> that are
+  themselves not <a href="the-option-element.html#concept-option-disabled" title="concept-option-disabled">disabled</a>
+  (either through a click, or through a <a href="commands.html#using-the-option-element-to-define-a-command" title="option-command">menu command</a>, or any other mechanism).
+  Upon the <a href="the-option-element.html#concept-option-selectedness" title="concept-option-selectedness">selectedness</a> of one or
+  more <code><a href="the-option-element.html#the-option-element">option</a></code> elements being changed by the user, and
+  before the relevant user interaction event <!-- interaction event
+  spec point --> is queued (e.g. before a related <code title="event-click"><a href="infrastructure.html#event-click">click</a></code> event), the user agent must
+  <a href="webappapis.html#queue-a-task">queue a task</a> to <a href="webappapis.html#fire-a-simple-event">fire a simple event</a> that
+  bubbles named <code title="event-change">change</code> at the
+  <code><a href="#the-select-element">select</a></code> element, using the <a href="webappapis.html#user-interaction-task-source">user interaction task
+  source</a> as the task source.</p>
+
+  <p>The <a href="constraints.html#concept-form-reset-control" title="concept-form-reset-control">reset
+  algorithm</a> for <code><a href="#the-select-element">select</a></code> elements is to go through
+  all the <code><a href="the-option-element.html#the-option-element">option</a></code> elements in the element's <a href="#concept-select-option-list" title="concept-select-option-list">list of options</a>, and set
+  their <a href="the-option-element.html#concept-option-selectedness" title="concept-option-selectedness">selectedness</a>
+  to true if the <code><a href="the-option-element.html#the-option-element">option</a></code> element has a <code title="attr-option-selected"><a href="the-option-element.html#attr-option-selected">selected</a></code> attribute, and false
+  otherwise.</p>
+
+  </div>
+
+  <p>The <code title="attr-fae-form"><a href="association-of-controls-and-forms.html#attr-fae-form">form</a></code> attribute is used to
+  explicitly associate the <code><a href="#the-select-element">select</a></code> element with its
+  <a href="association-of-controls-and-forms.html#form-owner">form owner</a>. The <code title="attr-fe-name"><a href="attributes-common-to-form-controls.html#attr-fe-name">name</a></code>
+  attribute represents the element's name. The <code title="attr-fe-disabled"><a href="attributes-common-to-form-controls.html#attr-fe-disabled">disabled</a></code> attribute is used to make
+  the control non-interactive and to prevent its value from being
+  submitted. The <code title="attr-fe-autofocus"><a href="attributes-common-to-form-controls.html#attr-fe-autofocus">autofocus</a></code>
+  attribute controls focus.</p>
+
+<!--TOPIC:DOM APIs-->
+  <dl class="domintro"><dt><var title="">select</var> . <code title="dom-select-type"><a href="#dom-select-type">type</a></code></dt>
+
+   <dd>
+
+    <p>Returns "<code title="">select-multiple</code>" if the element
+    has a <code title="attr-select-multiple"><a href="#attr-select-multiple">multiple</a></code>
+    attribute, and "<code title="">select-one</code>"
+    otherwise.</p>
+
+   </dd>
+
+   <dt><var title="">select</var> . <code title="dom-select-options"><a href="#dom-select-options">options</a></code></dt>
+
+   <dd>
+
+    <p>Returns an <code><a href="common-dom-interfaces.html#htmloptionscollection-0">HTMLOptionsCollection</a></code> of the <a href="#concept-select-option-list" title="concept-select-option-list">list of options</a>.</p>
+
+   </dd>
+
+   <dt><var title="">select</var> . <code title="dom-select-length"><a href="#dom-select-length">length</a></code> [ = <var title="">value</var> ]</dt>
+   <dd>
+    <p>Returns the number of elements in the <a href="#concept-select-option-list" title="concept-select-option-list">list of options</a>.</p>
+    <p>When set to a smaller number, truncates the number of <code><a href="the-option-element.html#the-option-element">option</a></code> elements in the <code><a href="#the-select-element">select</a></code>.</p>
+    <p>When set to a greater number, adds new blank <code><a href="the-option-element.html#the-option-element">option</a></code> elements to the <code><a href="#the-select-element">select</a></code>.</p>
+   </dd>
+
+   <dt><var title="">element</var> = <var title="">select</var> . <code title="dom-select-item"><a href="#dom-select-item">item</a></code>(<var title="">index</var>)</dt>
+   <dt><var title="">select</var>[<var title="">index</var>]</dt>
+   <dd>
+    <p>Returns the item with index <var title="">index</var> from the <a href="#concept-select-option-list" title="concept-select-option-list">list of options</a>. The items are sorted in <a href="infrastructure.html#tree-order">tree order</a>.</p>
+   </dd>
+
+   <dt><var title="">element</var> = <var title="">select</var> . <code title="dom-select-item"><a href="#dom-select-item">namedItem</a></code>(<var title="">name</var>)</dt>
+   <dd>
+    <p>Returns the item with <a href="infrastructure.html#concept-id" title="concept-id">ID</a> or <code title="attr-option-name"><a href="obsolete.html#attr-option-name">name</a></code> <var title="">name</var> from the <a href="#concept-select-option-list" title="concept-select-option-list">list of options</a>.</p>
+    <p>If there are multiple matching items, then a <code><a href="infrastructure.html#nodelist">NodeList</a></code> object containing all those elements is returned.</p>
+    <p>Returns null if no element with that <a href="infrastructure.html#concept-id" title="concept-id">ID</a> could be found.</p>
+   </dd>
+
+   <dt><var title="">select</var> . <code title="dom-select-add"><a href="#dom-select-add">add</a></code>(<var title="">element</var> [, <var title="">before</var> ])</dt>
+   <dd>
+    <p>Inserts <var title="">element</var> before the node given by <var title="">before</var>.</p>
+    <p>The <var title="">before</var> argument can be a number, in
+    which case <var title="">element</var> is inserted before the item
+    with that number, or an element from the <a href="#concept-select-option-list" title="concept-select-option-list">list of options</a>, in
+    which case <var title="">element</var> is inserted before that
+    element.</p>
+    <p>If <var title="">before</var> is omitted, null, or a number out
+    of range, then <var title="">element</var> will be added at the
+    end of the list.</p>
+    <p>This method will throw a <code><a href="infrastructure.html#hierarchyrequesterror">HierarchyRequestError</a></code>
+    exception if <var title="">element</var> is an ancestor of the
+    element into which it is to be inserted.</p>
+   </dd>
+
+   <dt><var title="">select</var> . <code title="dom-select-selectedOptions"><a href="#dom-select-selectedoptions">selectedOptions</a></code></dt>
+
+   <dd>
+
+    <p>Returns an <code><a href="infrastructure.html#htmlcollection">HTMLCollection</a></code> of the <a href="#concept-select-option-list" title="concept-select-option-list">list of options</a> that are
+    selected.</p>
+
+   </dd>
+
+   <dt><var title="">select</var> . <code title="dom-select-selectedIndex"><a href="#dom-select-selectedindex">selectedIndex</a></code> [ = <var title="">value</var> ]</dt>
+
+   <dd>
+
+    <p>Returns the index of the first selected item, if any, or
+    &#8722;1 if there is no selected item.</p>
+
+    <p>Can be set, to change the selection.</p>
+
+   </dd>
+
+   <dt><var title="">select</var> . <code title="dom-select-value"><a href="#dom-select-value">value</a></code> [ = <var title="">value</var> ]</dt>
+
+   <dd>
+
+    <p>Returns the <a href="attributes-common-to-form-controls.html#concept-fe-value" title="concept-fe-value">value</a> of the
+    first selected item, if any, or the empty string if there is no
+    selected item.</p>
+
+    <p>Can be set, to change the selection.</p>
+
+   </dd>
+
+  </dl><div class="impl">
+
+  <p>The <dfn id="dom-select-type" title="dom-select-type"><code>type</code></dfn> IDL
+  attribute, on getting, must return the string "<code title="">select-one</code>" if the <code title="attr-select-multiple"><a href="#attr-select-multiple">multiple</a></code> attribute is absent,
+  and the string "<code title="">select-multiple</code>" if the <code title="attr-select-multiple"><a href="#attr-select-multiple">multiple</a></code> attribute is
+  present.</p>
+
+  <p>The <dfn id="dom-select-options" title="dom-select-options"><code>options</code></dfn>
+  IDL attribute must return an <code><a href="common-dom-interfaces.html#htmloptionscollection-0">HTMLOptionsCollection</a></code>
+  rooted at the <code><a href="#the-select-element">select</a></code> node, whose filter matches the
+  elements in the <a href="#concept-select-option-list" title="concept-select-option-list">list of
+  options</a>.</p>
+
+  <p>The <code title="dom-select-options"><a href="#dom-select-options">options</a></code> collection is
+  also mirrored on the <code><a href="#htmlselectelement">HTMLSelectElement</a></code> object. The
+  <a href="infrastructure.html#supported-property-indices">supported property indices</a> at any instant are the
+  indices supported by the object returned by the <code title="dom-select-options"><a href="#dom-select-options">options</a></code> attribute at that
+  instant.</p>
+
+  <p>The <dfn id="dom-select-length" title="dom-select-length"><code>length</code></dfn> IDL
+  attribute must return the number of nodes <a href="infrastructure.html#represented-by-the-collection" title="represented
+  by the collection">represented</a> by the <code title="dom-select-options"><a href="#dom-select-options">options</a></code> collection. On setting, it
+  must act like the attribute of the same name on the <code title="dom-select-options"><a href="#dom-select-options">options</a></code> collection.</p>
+
+  <p>The <dfn id="dom-select-item" title="dom-select-item"><code>item(<var title="">index</var>)</code></dfn> method must return the value
+  returned by the method of the same name on the <code title="dom-select-options"><a href="#dom-select-options">options</a></code> collection, when invoked
+  with the same argument.</p>
+
+  <p>The <dfn id="dom-select-nameditem" title="dom-select-namedItem"><code>namedItem(<var title="">name</var>)</code></dfn> method must return the value
+  returned by the method of the same name on the <code title="dom-select-options"><a href="#dom-select-options">options</a></code> collection, when invoked
+  with the same argument.</p>
+
+  <p>When the user agent is to <dfn id="dom-htmlselectelement-setter" title="dom-HTMLSelectElement-setter">set the value of a new indexed
+  property</dfn> for a given property index <var title="">index</var>
+  to a new value <var title="">value</var>, it must instead <a href="common-dom-interfaces.html#dom-htmloptionscollection-setter" title="dom-HTMLOptionsCollection-setter">set the value of a new
+  indexed property</a> with the given property index <var title="">index</var> to the new value <var title="">value</var> on the
+  <code title="dom-select-options"><a href="#dom-select-options">options</a></code> collection.</p>
+
+  <p>Similarly, the <dfn id="dom-select-add" title="dom-select-add"><code>add()</code></dfn> and <dfn id="dom-select-remove" title="dom-select-remove"><code>remove()</code></dfn> methods must
+  act like their namesake methods on that same <code title="dom-select-options"><a href="#dom-select-options">options</a></code> collection.</p>
+
+  <p>The <dfn id="dom-select-selectedoptions" title="dom-select-selectedOptions"><code>selectedOptions</code></dfn>
+  IDL attribute must return an <code><a href="infrastructure.html#htmlcollection">HTMLCollection</a></code> rooted at
+  the <code><a href="#the-select-element">select</a></code> node, whose filter matches the elements in
+  the <a href="#concept-select-option-list" title="concept-select-option-list">list of options</a>
+  that have their <a href="the-option-element.html#concept-option-selectedness" title="concept-option-selectedness">selectedness</a> set to
+  true.</p>
+
+  <p>The <dfn id="dom-select-selectedindex" title="dom-select-selectedIndex"><code>selectedIndex</code></dfn>
+  IDL attribute, on getting, must return the <a href="the-option-element.html#concept-option-index" title="concept-option-index">index</a> of the first
+  <code><a href="the-option-element.html#the-option-element">option</a></code> element in the <a href="#concept-select-option-list" title="concept-select-option-list">list of options</a> in
+  <a href="infrastructure.html#tree-order">tree order</a> that has its <a href="the-option-element.html#concept-option-selectedness" title="concept-option-selectedness">selectedness</a> set to true,
+  if any. If there isn't one, then it must return &#8722;1.</p>
+
+  <p>On setting, the <code title="dom-select-selectedIndex"><a href="#dom-select-selectedindex">selectedIndex</a></code> attribute must
+  set the <a href="the-option-element.html#concept-option-selectedness" title="concept-option-selectedness">selectedness</a> of all the
+  <code><a href="the-option-element.html#the-option-element">option</a></code> elements in the <a href="#concept-select-option-list" title="concept-select-option-list">list of options</a> to false,
+  and then the <code><a href="the-option-element.html#the-option-element">option</a></code> element in the <a href="#concept-select-option-list" title="concept-select-option-list">list of options</a> whose
+  <a href="the-option-element.html#concept-option-index" title="concept-option-index">index</a> is the given new
+  value, if any, must have its <a href="the-option-element.html#concept-option-selectedness" title="concept-option-selectedness">selectedness</a> set to
+  true.</p>
+
+  <p>The <dfn id="dom-select-value" title="dom-select-value"><code>value</code></dfn> IDL
+  attribute, on getting, must return the <a href="the-option-element.html#concept-option-value" title="concept-option-value">value</a> of the first
+  <code><a href="the-option-element.html#the-option-element">option</a></code> element in the <a href="#concept-select-option-list" title="concept-select-option-list">list of options</a> in
+  <a href="infrastructure.html#tree-order">tree order</a> that has its <a href="the-option-element.html#concept-option-selectedness" title="concept-option-selectedness">selectedness</a> set to true,
+  if any. If there isn't one, then it must return the empty
+  string.</p>
+
+  <p>On setting, the <code title="dom-select-value"><a href="#dom-select-value">value</a></code>
+  attribute must set the <a href="the-option-element.html#concept-option-selectedness" title="concept-option-selectedness">selectedness</a> of all the
+  <code><a href="the-option-element.html#the-option-element">option</a></code> elements in the <a href="#concept-select-option-list" title="concept-select-option-list">list of options</a> to false,
+  and then the first <code><a href="the-option-element.html#the-option-element">option</a></code> element in the <a href="#concept-select-option-list" title="concept-select-option-list">list of options</a>, in
+  <a href="infrastructure.html#tree-order">tree order</a>, whose <a href="the-option-element.html#concept-option-value" title="concept-option-value">value</a> is equal to the given new
+  value, if any, must have its <a href="the-option-element.html#concept-option-selectedness" title="concept-option-selectedness">selectedness</a> set to
+  true.</p>
+
+  <p>The <dfn id="dom-select-multiple" title="dom-select-multiple"><code>multiple</code></dfn>,
+  <dfn id="dom-select-required" title="dom-select-required"><code>required</code></dfn>, and
+  <dfn id="dom-select-size" title="dom-select-size"><code>size</code></dfn> IDL attributes
+  must <a href="common-dom-interfaces.html#reflect">reflect</a> the respective content attributes of the
+  same name. The <code title="dom-select-size"><a href="#dom-select-size">size</a></code> IDL
+  attribute has a default value of zero.</p> <!-- see bug 12288 for
+  compat reasons why .size allows zero (it's not limited to values
+  greater than zero) even though that value really makes no sense -->
+
+  <p class="note">For historical reasons, the default value of the
+  <code title="dom-select-size"><a href="#dom-select-size">size</a></code> IDL attribute does not
+  return the actual size used, which, in the absence of the <code title="attr-select-size"><a href="#attr-select-size">size</a></code> content attribute, is either 1
+  or 4 depending on the presence of the <code title="attr-select-multiple"><a href="#attr-select-multiple">multiple</a></code> attribute.</p>
+
+  <p>The <code title="dom-cva-willValidate"><a href="constraints.html#dom-cva-willvalidate">willValidate</a></code>, <code title="dom-cva-validity"><a href="constraints.html#dom-cva-validity">validity</a></code>, and <code title="dom-cva-validationMessage"><a href="constraints.html#dom-cva-validationmessage">validationMessage</a></code> IDL
+  attributes, and the <code title="dom-cva-checkValidity"><a href="constraints.html#dom-cva-checkvalidity">checkValidity()</a></code> and <code title="dom-cva-setCustomValidity"><a href="constraints.html#dom-cva-setcustomvalidity">setCustomValidity()</a></code>
+  methods, are part of the <a href="constraints.html#the-constraint-validation-api">constraint validation API</a>. The
+  <code title="dom-lfe-labels"><a href="the-label-element.html#dom-lfe-labels">labels</a></code> IDL attribute provides a
+  list of the element's <code><a href="the-label-element.html#the-label-element">label</a></code>s. The <code title="dom-fe-autofocus"><a href="attributes-common-to-form-controls.html#dom-fe-autofocus">autofocus</a></code>, <code title="dom-fe-disabled"><a href="attributes-common-to-form-controls.html#dom-fe-disabled">disabled</a></code>, <code title="dom-fae-form"><a href="association-of-controls-and-forms.html#dom-fae-form">form</a></code>, and <code title="dom-fe-name"><a href="attributes-common-to-form-controls.html#dom-fe-name">name</a></code> IDL attributes are part of the
+  element's forms API.</p>
+
+  </div>
+<!--TOPIC:HTML-->
+
+  <div class="example">
+
+   <p>The following example shows how a <code><a href="#the-select-element">select</a></code> element
+   can be used to offer the user with a set of options from which the
+   user can select a single option. The default option is
+   preselected.</p>
+
+   <pre>&lt;p&gt;
+ &lt;label for="unittype"&gt;Select unit type:&lt;/label&gt;
+ &lt;select id="unittype" name="unittype"&gt;
+  &lt;option value="1"&gt; Miner &lt;/option&gt;
+  &lt;option value="2"&gt; Puffer &lt;/option&gt;
+  &lt;option value="3" selected&gt; Snipey &lt;/option&gt;
+  &lt;option value="4"&gt; Max &lt;/option&gt;
+  &lt;option value="5"&gt; Firebot &lt;/option&gt;
+ &lt;/select&gt;
+&lt;/p&gt;</pre>
+
+   <p>When there is no default option, a placeholder can be used
+   instead:</p>
+
+   <pre>&lt;select name="unittype" <strong>required</strong>&gt;
+ <strong>&lt;option value=""&gt; Select unit type &lt;/option&gt;</strong>
+ &lt;option value="1"&gt; Miner &lt;/option&gt;
+ &lt;option value="2"&gt; Puffer &lt;/option&gt;
+ &lt;option value="3"&gt; Snipey &lt;/option&gt;
+ &lt;option value="4"&gt; Max &lt;/option&gt;
+ &lt;option value="5"&gt; Firebot &lt;/option&gt;
+&lt;/select&gt;</pre>
+
+  </div>
+
+  <div class="example">
+
+   <p>Here, the user is offered a set of options from which he can
+   select any number. By default, all five options are selected.</p>
+
+   <pre>&lt;p&gt;
+ &lt;label for="allowedunits"&gt;Select unit types to enable on this map:&lt;/label&gt;
+ &lt;select id="allowedunits" name="allowedunits" multiple&gt;
+  &lt;option value="1" selected&gt; Miner &lt;/option&gt;
+  &lt;option value="2" selected&gt; Puffer &lt;/option&gt;
+  &lt;option value="3" selected&gt; Snipey &lt;/option&gt;
+  &lt;option value="4" selected&gt; Max &lt;/option&gt;
+  &lt;option value="5" selected&gt; Firebot &lt;/option&gt;
+ &lt;/select&gt;
+&lt;/p&gt;</pre>
+
+  </div>
+
+  <div class="example">
+
+   <p>Sometimes, a user has to select one or more items. This example
+   shows such an interface.</p>
+
+   <pre>&lt;p&gt;Select the songs from that you would like on your Act II Mix Tape:&lt;/p&gt;
+&lt;select multiple required name="act2"&gt;
+ &lt;option value="s1"&gt;It Sucks to Be Me (Reprise)
+ &lt;option value="s2"&gt;There is Life Outside Your Apartment
+ &lt;option value="s3"&gt;The More You Ruv Someone
+ &lt;option value="s4"&gt;Schadenfreude
+ &lt;option value="s5"&gt;I Wish I Could Go Back to College
+ &lt;option value="s6"&gt;The Money Song
+ &lt;option value="s7"&gt;School for Monsters
+ &lt;option value="s8"&gt;The Money Song (Reprise)
+ &lt;option value="s9"&gt;There's a Fine, Fine Line (Reprise)
+ &lt;option value="s10"&gt;What Do You Do With a B.A. in English? (Reprise)
+ &lt;option value="s11"&gt;For Now
+&lt;/select&gt;</pre>
+
+  </div>
+
+
+
+  </body></html>
