@@ -22,7 +22,9 @@ exec("make html", { cwd: rootDir }, function (err, stdout, stderr) {
     fs.renameSync(pth.join(hbDir, "index.html"), pth.join(hbDir, "section-index.html"));
     fs.renameSync(pth.join(hbDir, "spec.html"), pth.join(hbDir, "index.html"));
     // in every single file in there, replace spec.html with index.html
-    var files = fs.readdirSync(hbDir);
+    var files = fs.readdirSync(hbDir)
+    ,   entContent = fs.readFileSync(pth.join(rootDir, "boilerplate/entities-dtd.url"))
+    ;
     for (var i = 0, n = files.length; i < n; i++) {
         var file = pth.join(hbDir, files[i]);
         if (!file.match(/\.html$/)) continue;
@@ -30,6 +32,8 @@ exec("make html", { cwd: rootDir }, function (err, stdout, stderr) {
         // the below looks weird because for reasons beyond human understanding,
         // JS does not support zero-width negative lookbehinds
         content = content
+                    .replace(/&lt;!--BOILERPLATE%20entities-dtd\.url--&gt;/g, entContent)
+                    .replace(/<!--BOILERPLATE entities-dtd\.url-->/g, entContent)
                     .replace(/\bsection-index\.html/g, "REPLACE-ME-SECTION-INDEX")
                     .replace(/\"index\.html\b/g, "\"section-index.html")
                     .replace(/REPLACE-ME-SECTION-INDEX/g, "section-index.html")

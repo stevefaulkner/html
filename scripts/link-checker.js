@@ -27,7 +27,7 @@ var files = fs.readdirSync(hbDir)
         var file = files.shift();
         console.log("Checking file " + done + " of " + total + " (" + file + ")");
         if (file.match(/\.html$/)) {
-            exec("checklink -s -b -q -X (?:http:\\/\\/www\\.w3\\.org\\/\\$)|(?:Icons\\/w3c_home)|(?:\\/StyleSheets\\/) " +
+            exec("checklink -s -b -q -X \"(?:http:\\/\\/www\\.w3\\.org\\/\\$)|(?:Icons\\/w3c_home)|(?:\\/StyleSheets\\/)\" " +
                     pth.join(hbDir, file), { cwd: hbDir }, function (err, stdout, stderr) {
                 console.log(stdout);
                 if (err) throw err;
