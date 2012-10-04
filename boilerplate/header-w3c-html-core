@@ -3,13 +3,13 @@
      ZZZ: Set PUB to 1 for TR/ drafts, 0 for dev drafts; PUB-Y lines are used if it's 1 and PUB-N lines if it's 0.
      ZZZ: Set YEAR, SHORTDAY (month/day), and LONGDAY accordingly. They are used by the INSERT FOO bits below.
   -->
-<!--SET PUB=0-->
-<!--SET SHORTSTATUS=ED-->
-<!--SET URLSTATUS=ED-->
-<!--SET LONGSTATUS=Editor's Draft-->
+<!--SET PUB=1-->
+<!--SET SHORTSTATUS=WD-->
+<!--SET URLSTATUS=WD-->
+<!--SET LONGSTATUS=Working Draft-->
 <!--SET YEAR=2012-->
-<!--SET SHORTDAY=0329-->
-<!--SET LONGDAY=29 March-->
+<!--SET SHORTDAY=1011-->
+<!--SET LONGDAY=11 October-->
 <!--SET TRNAME=html5-->
 <!--SET DEVURL=http://dev.w3.org/html5/spec/Overview.html-->
 <!--SET COMPONENT=HTML5 spec (editor: Ian Hickson)-->
