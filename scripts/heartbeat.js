@@ -44,7 +44,7 @@ exec("make html", { cwd: rootDir }, function (err, stdout, stderr) {
     fs.copy(pth.join(rootDir, "entities.json"), pth.join(hbDir, "entities.json"));
     // link to author doc
     var index = fs.readFileSync(pth.join(hbDir, "index.html"), "utf-8")
-    ,   findDate = /<dt>This Version:<\/dt>\s*<dd><a href="">http:\/\/www.w3.org\/TR\/(\d{4})\/(\w+)-html5-(\d+)/
+    ,   findDate = /<dt>This Version:<\/dt>\s*<dd><a href="http:\/\/www.w3.org\/TR\/(\d{4})\/(\w+)-html5-(\d+)/
     ,   res = findDate.exec(index)
     ,   year = res[1]
     ,   status = res[2]
