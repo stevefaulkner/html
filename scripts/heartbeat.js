@@ -29,6 +29,10 @@ exec("make html", { cwd: rootDir }, function (err, stdout, stderr) {
         content = content.replace(/\bspec\.html\b/g, "index.html");
         fs.writeFileSync(file, content, "utf-8");
     }
+    // copy the images
+    var imgDir = pth.join(hbDir, "images");
+    fs.mkdirSync(imgDir);
+    wrench.copyDirSyncRecursive(pth.join(rootDir, "images/"), imgDir);
     console.log([   "The specification has been generated. You may now wish to:"
                 ,   "\t\u2022 Run the link checker on everything (link-checker.js)"
                 ,   "\t\u2022 Run pubrules on everything (pubrules.js)"
