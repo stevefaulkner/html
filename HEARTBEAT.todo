@@ -1,6 +1,6 @@
 
 PUBLISHING:
-    - make branch
+    ✓ make branch
     - install local link checker
     - install local pubrules
     - change params in boilerplate until correct
