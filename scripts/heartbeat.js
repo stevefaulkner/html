@@ -31,7 +31,7 @@ exec("make html", { cwd: rootDir }, function (err, stdout, stderr) {
         // JS does not support zero-width negative lookbehinds
         content = content
                     .replace(/\bsection-index\.html/g, "REPLACE-ME-SECTION-INDEX")
-                    .replace(/\bindex\.html\b/g, "section-index.html")
+                    .replace(/\"index\.html\b/g, "\"section-index.html")
                     .replace(/REPLACE-ME-SECTION-INDEX/g, "section-index.html")
                     .replace(/\bspec\.html\b/g, "index.html");
         fs.writeFileSync(file, content, "utf-8");
