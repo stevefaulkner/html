@@ -5,8 +5,10 @@ PUBLISHING:
     X install local pubrules
     ✓ change params in boilerplate until correct
     - generate entities.json
+    - fonts
     - link check until good
     - pubrules until good
+    - do author spec
     - stage for publication
     
 ERRORS:

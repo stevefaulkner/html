@@ -32,6 +32,7 @@ exec("make html", { cwd: rootDir }, function (err, stdout, stderr) {
         // the below looks weird because for reasons beyond human understanding,
         // JS does not support zero-width negative lookbehinds
         content = content
+                    .replace(/src: url\('..\/fonts\/Essays1743/g, "src: url('fonts/Essays1743")
                     .replace(/&lt;!--BOILERPLATE%20entities-dtd\.url--&gt;/g, entContent)
                     .replace(/<!--BOILERPLATE entities-dtd\.url-->/g, entContent)
                     .replace(/\bsection-index\.html/g, "REPLACE-ME-SECTION-INDEX")
@@ -41,9 +42,13 @@ exec("make html", { cwd: rootDir }, function (err, stdout, stderr) {
         fs.writeFileSync(file, content, "utf-8");
     }
     // copy the images
-    var imgDir = pth.join(hbDir, "images");
+    var imgDir = pth.join(hbDir, "images")
+    ,   fontDir = pth.join(hbDir, "fonts")
+    ;
     fs.mkdirSync(imgDir);
+    fs.mkdirSync(fontDir);
     wrench.copyDirSyncRecursive(pth.join(rootDir, "images/"), imgDir);
+    wrench.copyDirSyncRecursive(pth.join(rootDir, "fonts/"), fontDir);
     // copy entities stuff
     fs.copy(pth.join(rootDir, "entities.json"), pth.join(hbDir, "entities.json"));
     // link to author doc

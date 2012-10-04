@@ -7,10 +7,10 @@ author: output/author/single-page.html
 2dcontext: output/2dcontext/single-page.html
 
 output/html/single-page.html: source
-    python scripts/publish.py html
+	python scripts/publish.py html
 
 output/author/single-page.html: source
-    python scripts/publish.py author
+	python scripts/publish.py author
 
 output/2dcontext/single-page.html: source
 	python scripts/publish.py 2dcontext

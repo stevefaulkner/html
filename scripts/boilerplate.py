@@ -59,6 +59,8 @@ def main(stdin, stdout, select='w3c-html'):
 if __name__ == '__main__':
   if len(sys.argv)>1 and sys.argv[1] == '2dcontext':
     select = '2dcontext'
+  elif len(sys.argv)>1 and sys.argv[1] == 'author':
+    select = 'dev-html'
   else:
     select = 'w3c-html'
 
