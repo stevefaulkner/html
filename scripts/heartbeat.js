@@ -33,6 +33,8 @@ exec("make html", { cwd: rootDir }, function (err, stdout, stderr) {
     var imgDir = pth.join(hbDir, "images");
     fs.mkdirSync(imgDir);
     wrench.copyDirSyncRecursive(pth.join(rootDir, "images/"), imgDir);
+    // copy entities stuff
+    wrench.copyDirSyncRecursive(pth.join(rootDir, "entities.json"), hbDir);
     console.log([   "The specification has been generated. You may now wish to:"
                 ,   "\t\u2022 Run the link checker on everything (link-checker.js)"
                 ,   "\t\u2022 Run pubrules on everything (pubrules.js)"
