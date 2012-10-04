@@ -11,10 +11,15 @@ var rootDir = pth.join(__dirname, "..")
 ,   hbDir = pth.join(rootDir, "heartbeat")
 ;
 
-// check, check, check
-var files = fs.readdirSync(hbDir);
-console.log("Checking " + files.length + " files");
-
 // rsync to http://berjon.com/TR/html5/
-// run pubrules on every document in there, with the right options
-
+exec(   "rsync -avze ssh /Projects/html/html/heartbeat/ darobin@$POING:/var/www/sites/berjon.com/htdocs/TR/html5/"
+    ,   { cwd: hbDir }
+    ,   function (err, stdout, stderr) {
+            console.log(stdout);
+            console.log(stderr);
+            if (err) throw err;
+            // pubrules
+            // check, check, check
+            var files = fs.readdirSync(hbDir);
+            console.log("Checking " + files.length + " files");
+});
