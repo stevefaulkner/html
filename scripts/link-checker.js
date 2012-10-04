@@ -11,6 +11,12 @@ var rootDir = pth.join(__dirname, "..")
 ,   hbDir = pth.join(rootDir, "heartbeat")
 ;
 
+// excludes
+//  (?:http:\\/\\/www\\.w3\\.org\\/\\$)|(?:Icons\\/w3c_home)|(?:\\/StyleSheets\\/)
+//  http://www.w3.org/
+//  http://www.w3.org/Icons/w3c_home
+//  http://www.w3.org/StyleSheets/*
+
 // check, check, check
 var files = fs.readdirSync(hbDir)
 ,   done = 0
@@ -21,7 +27,8 @@ var files = fs.readdirSync(hbDir)
         var file = files.shift();
         console.log("Checking file " + done + " of " + total + " (" + file + ")");
         if (file.match(/\.html$/)) {
-            exec("checklink -s -b -q  " + pth.join(hbDir, file), { cwd: hbDir }, function (err, stdout, stderr) {
+            exec("checklink -s -b -q -X (?:http:\\/\\/www\\.w3\\.org\\/\\$)|(?:Icons\\/w3c_home)|(?:\\/StyleSheets\\/) " +
+                    pth.join(hbDir, file), { cwd: hbDir }, function (err, stdout, stderr) {
                 console.log(stdout);
                 if (err) throw err;
                 checkLink();

@@ -34,7 +34,7 @@ def main(stdin, stdout, select='w3c-html'):
 
     # use content as the replacement
     return content
-  header = re.sub('<!--BOILERPLATE ([-\w]+)-->', boilerplate, header)
+  header = re.sub('<!--BOILERPLATE ([-\w\.]+)-->', boilerplate, header)
 
   source = stdin.read()
   source = re.compile('^.*?<!--START %s-->' % select, re.DOTALL).sub('', source)

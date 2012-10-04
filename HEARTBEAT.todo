@@ -10,3 +10,26 @@ PUBLISHING:
     - stage for publication
     
 ERRORS:
+
+
+    Processing	file:///Projects/html/html/heartbeat/references.html
+    List of broken links and other issues
+    http://dvcs.w3.org/hg/innerhtml/raw-file/tip/section-index.html
+    -> https://dvcs.w3.org/hg/innerhtml/raw-file/tip/section-index.html	
+      Line: 546
+      Code: 301 -> 404 Not Found
+     To do: The link is broken. Double-check that you have not made any typo,
+    	or mistake in copy-pasting. If the link points to a resource that
+    	no longer exists, you may want to remove or fix the link.
+
+    #######
+    
+    Processing	file:///Projects/html/html/heartbeat/the-xhtml-syntax.html
+
+    List of broken links and other issues
+    file:///Projects/html/html/heartbeat/!--BOILERPLATE%20entities-dtd.url--	
+      Line: 446
+      Code: 404 File `/Projects/html/html/heartbeat/!--BOILERPLATE entities-dtd.url--' does not exist
+     To do: The link is broken. Double-check that you have not made any typo,
+    	or mistake in copy-pasting. If the link points to a resource that
+    	no longer exists, you may want to remove or fix the link.
