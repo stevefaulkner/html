@@ -4,12 +4,15 @@ from StringIO import StringIO
 from anolislib import generator, utils
 
 if len(sys.argv)>1 and sys.argv[1] == 'html':
-  select = 'w3c-html' 
+  select = 'w3c-html'
   spec = 'html'
+elif len(sys.argv)>1 and sys.argv[1] == 'author':
+  select = 'dev-html'
+  spec = 'author'
 elif len(sys.argv)>1 and sys.argv[1] == '2dcontext':
   spec = select = '2dcontext'
 else:
-  sys.stderr.write("Usage: python %s [html|2dcontext]\n" % sys.argv[0])
+  sys.stderr.write("Usage: python %s [html|2dcontext|author]\n" % sys.argv[0])
   exit()
 
 print 'parsing'
@@ -66,20 +69,20 @@ try:
 except:
   pass
 
-if spec == 'html':
+if spec == 'html' or spec == 'author':
   from glob import glob
-  for name in glob('output/html/*.html'):
+  for name in glob('output/%s/*.html' % spec):
     os.remove(name)
 
-  output = open('output/html/single-page.html', 'wb')
+  output = open('output/%s/single-page.html' % spec, 'wb')
 else:
   output = open('output/%s/Overview.html' % spec, 'wb')
 
 generator.toFile(tree, output, **opts)
 output.close()
 
-if spec == 'html':
+if spec == 'html' or spec == 'author':
   print 'splitting'
   import spec_splitter
   spec_splitter.w3c = True
-  spec_splitter.main('output/html/single-page.html', 'output/html')
+  spec_splitter.main('output/%s/single-page.html' % spec, 'output/%s' % spec)
