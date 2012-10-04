@@ -10,22 +10,3 @@ PUBLISHING:
     - stage for publication
     
 ERRORS:
-
-    Checking file 35 of 171 (index.html)
-
-    Processing	file:///Projects/html/html/heartbeat/index.html
-
-
-    file:///Projects/html/html/heartbeat/index.html	
-     Lines: 394, 1314, 1315, 1316, 1317, 1318, 1319, 1320
-      Code: 200 (no message)
-     To do: Some of the links to this resource point to broken URI fragments
-    	(such as index.html#fragment).
-    The following fragments need to be fixed
-    	events-0                      	Line: 1320
-    	index                         	Line: 1314
-    	attributes-1                  	Line: 1317
-    	elements-1                    	Line: 1315
-    	element-content-categories    	Line: 1316
-    	element-interfaces            	Line: 1318
-    	all-interfaces                	Line: 1319

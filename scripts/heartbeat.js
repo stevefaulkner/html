@@ -19,6 +19,7 @@ exec("make html", { cwd: rootDir }, function (err, stdout, stderr) {
     console.log(stderr);
     if (err) throw err;
     wrench.copyDirSyncRecursive(pth.join(rootDir, "output/html/"), hbDir);
+    fs.renameSync(pth.join(hbDir, "index.html"), pth.join(hbDir, "section-index.html"));
     fs.renameSync(pth.join(hbDir, "spec.html"), pth.join(hbDir, "index.html"));
     // in every single file in there, replace spec.html with index.html
     var files = fs.readdirSync(hbDir);
@@ -26,7 +27,9 @@ exec("make html", { cwd: rootDir }, function (err, stdout, stderr) {
         var file = pth.join(hbDir, files[i]);
         if (!file.match(/\.html$/)) continue;
         var content = fs.readFileSync(file, "utf-8");
-        content = content.replace(/\bspec\.html\b/g, "index.html");
+        content = content
+                    .replace(/(?<!section-)\bindex\.html\b/g, "section-index.html")
+                    .replace(/\bspec\.html\b/g, "index.html");
         fs.writeFileSync(file, content, "utf-8");
     }
     // copy the images
