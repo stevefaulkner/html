@@ -17,9 +17,9 @@
  <head>
   <meta charset='utf-8'>
   <title>HTML Canvas 2D Context</title>
-  <!--BOILERPLATE middle-w3c-styles-->
   <!--BOILERPLATE middle-override-styles-->
   <!--BOILERPLATE middle-author-mode-links-->
+  <!--BOILERPLATE middle-w3c-styles-->
   <!--BOILERPLATE middle-w3c-html-magic-->
    <h1>HTML Canvas 2D Context</h1>
    <h2 class="no-num no-toc"></h2>
@@ -44,7 +44,6 @@
     <dd><a href="mailto:eliot.graff@microsoft.com">Eliot Graff</a>, Microsoft Corporation</dd>
     <dd><a href="mailto:jaymunro@microsoft.com">Jay Munro</a>, Microsoft Corporation</dd>
     <dd><a href="mailto:wiltzius@google.com">Tom Wiltzius</a>, Google, Inc.</dd>
-   </dl>	
    <dt>Previous Editor:</dt>
     <dd><a href="mailto:ian@hixie.ch">Ian Hickson</a>, Google, Inc.</dd>
    </dl>

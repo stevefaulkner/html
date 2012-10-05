@@ -8,7 +8,7 @@ MASTER PLAN:
         - pubrules
         - TR install (check date)
     - Canvas (make 2dcontext)
-        - generate using own tools
+        ✓ generate using own tools
         - linkcheck
         - pubrules
         - TR install (check date)

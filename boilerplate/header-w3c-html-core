@@ -17,9 +17,9 @@
  <head>
   <meta charset='utf-8'>
   <title>HTML5</title>
-  <!--BOILERPLATE middle-w3c-styles-->
   <!--BOILERPLATE middle-override-styles-->
   <!--BOILERPLATE middle-author-mode-links-->
+  <!--BOILERPLATE middle-w3c-styles-->
   <!--BOILERPLATE middle-w3c-html-magic-->
    <h1>HTML5</h1>
    <h2 class="no-num no-toc">A vocabulary and associated APIs for HTML and XHTML</h2>
