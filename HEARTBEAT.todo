@@ -9,7 +9,7 @@ MASTER PLAN:
         - TR install (check date)
     - Canvas (make 2dcontext)
         ✓ generate using own tools
-        - linkcheck
+        ✓ linkcheck
         - pubrules
         - TR install (check date)
     - Author
