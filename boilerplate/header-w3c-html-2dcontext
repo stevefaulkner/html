@@ -15,6 +15,7 @@
 <!--SET COMPONENT=HTML Canvas 2D Context (editor: Ian Hickson)-->
 <html lang="en-US-x-Hixie">
  <head>
+  <meta charset='utf-8'>
   <title>HTML Canvas 2D Context</title>
   <!--BOILERPLATE middle-w3c-styles-->
   <!--BOILERPLATE middle-override-styles-->
@@ -25,6 +26,7 @@
 <!--BOILERPLATE middle-w3c-version-->
 <!-- ZZZ: add the new version after it has shipped -->
     <dt>Previous Versions:</dt>
+    <dd><a href='http://www.w3.org/TR/2012/WD-2dcontext-20120329/'>http://www.w3.org/TR/2012/WD-2dcontext-20120329/</a></dd>
     <dd><a href="http://www.w3.org/TR/2011/WD-2dcontext-20110525/">http://www.w3.org/TR/2011/WD-2dcontext-20110525/</a></dd>
     <dd><a href="http://www.w3.org/TR/2011/WD-2dcontext-20110405/">http://www.w3.org/TR/2011/WD-2dcontext-20110405/</a></dd>
     <dd><a href="http://www.w3.org/TR/2011/WD-2dcontext-20110113/">http://www.w3.org/TR/2011/WD-2dcontext-20110113/</a></dd>

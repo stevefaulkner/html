@@ -15,6 +15,7 @@
 <!--SET COMPONENT=HTML5 spec (editor: Ian Hickson)-->
 <html lang="en-US-x-Hixie">
  <head>
+  <meta charset='utf-8'>
   <title>HTML5</title>
   <!--BOILERPLATE middle-w3c-styles-->
   <!--BOILERPLATE middle-override-styles-->
