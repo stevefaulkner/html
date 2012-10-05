@@ -215,7 +215,8 @@
 <!--PUB-Y-->     display: block;
 <!--PUB-Y-->   }
 <!--PUB-Y-->   .stability input {
-<!--PUB-Y-->     appearance: none; margin: 0; border: 0; padding: 0.25em 0.5em; background: transparent; color: black;
+<!--PUB-Y-->     -moz-appearance: none; -webkit-appearance: none; margin: 0; 
+<!--PUB-Y-->     border: 0; padding: 0.25em 0.5em; background: transparent; color: black;
 <!--PUB-Y-->     position: absolute; top: -0.5em; right: 0; font: 1.25em sans-serif; text-align: center;
 <!--PUB-Y-->   }
 <!--PUB-Y-->   .stability input:hover {
