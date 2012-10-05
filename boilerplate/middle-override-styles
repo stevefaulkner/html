@@ -2,7 +2,7 @@
 
    .applies thead th > * { display: block; }
    .applies thead code { display: block; }
-   .applies tbody th { whitespace: nowrap; }
+   .applies tbody th { white-space: nowrap; }
    .applies td { text-align: center; }
    .applies .yes { background: yellow; }
 
