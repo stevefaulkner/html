@@ -1,4 +1,95 @@
 
+Target date: 20121011
+
+MASTER PLAN:
+    - HTML core
+        - generate using own tools
+        - linkcheck
+        - pubrules
+        - TR install (check date)
+    - Canvas (make 2dcontext)
+        - generate using own tools
+        - linkcheck
+        - pubrules
+        - TR install (check date)
+    - Author
+        - Mike's got that one covered for generation
+        - linkcheck
+        - pubrules
+        - TR install (check date)
+    - +RDFa
+        - draft in CVS/rdfa
+        - ReSpec, has a draft
+        - linkcheck
+        - pubrules
+        - TR install (check date)
+    - Microdata
+        - generate using own tools
+        - not sure how that works
+        - linkcheck
+        - pubrules
+        - TR install (check date)
+    - Polyglot
+        - draft in CVS/html-xhtml-authoring-guide
+        - not sure what to do in this, ask Eliot
+        - linkcheck
+        - pubrules
+        - TR install (check date)
+    - Alt Techniques
+        - draft in CVS/alt-techniques
+        - ReSpec, has a draft
+        - linkcheck
+        - pubrules
+        - TR install (check date)
+    - api-map
+        - in hg, http://dvcs.w3.org/hg/html-api-map/
+        - draft at http://dvcs.w3.org/hg/html-api-map/raw-file/tip/WD/index.html
+        - linkcheck
+        - pubrules
+        - TR install (check date)
+    - Diff
+        - draft in CVS/html4-differences
+        - linkcheck
+        - pubrules
+        - TR install (check date)
+    - Markup
+        - linkcheck
+        - pubrules
+        - TR install
+
+grep "<!--START" source | perl -lne "print m/<!--START\s+(.*?)-->/" | sort | uniq
+    2dcontext
+    complete
+    dev-html
+    eventsource
+    html-device
+    microdata
+    postmsg
+    storage
+    vCard
+    vEvent
+    validation
+    vocabs
+    w3c-html
+    websocket-api
+    webvtt
+    whatwg-workers
+    work
+    workers
+
+PROBLEMS:
+    - multipage pubrules: http://www.w3.org/2007/06/pubby/1349430247-infos-.txt
+    - I reckon it does
+        - validation
+        - validation of CSS
+        - right stylesheet (for the given release type)
+        - stylesheet last
+        - IDs on headers
+        - logo
+        - h1 title and "W3C Working Draft 29 March 2012" in .head
+        - a .toc
+
+
 PUBLISHING:
     ✓ make branch
     ✓ install local link checker
