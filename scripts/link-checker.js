@@ -7,8 +7,9 @@ var fs  = require("fs")
 ;
 
 // where are we?
-var rootDir = pth.join(__dirname, "..")
-,   hbDir = pth.join(rootDir, "heartbeat")
+var target = process.argv[2] || "html"
+,   rootDir = pth.join(__dirname, "..")
+,   hbDir = pth.join(rootDir, target === "html" ? "heartbeat" : "heartbeat-2d")
 ;
 
 // excludes
