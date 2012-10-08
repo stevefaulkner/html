@@ -97,3 +97,10 @@ else:
   import spec_splitter
   spec_splitter.w3c = True
   spec_splitter.main('output/html/single-page.html', 'output/html')
+
+  entities = open('boilerplate/entities.inc')
+  json = open('output/html/entities.json', 'w')
+  from entity_processor_json import entity_processor_json
+  entity_processor_json(entities, json)
+  entities.close()
+  json.close()
