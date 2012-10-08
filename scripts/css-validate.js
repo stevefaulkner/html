@@ -46,6 +46,7 @@ function pubrules () {
         }
         if (errCount) console.log("Error, check " + css);
         else console.log("\tCSS OK!");
+        pubrules();
     });
 }
 

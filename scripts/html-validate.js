@@ -29,7 +29,7 @@ function pubrules () {
         if (err) return console.log(err);
         if (resp.headers["x-w3c-validator-errors"] !== "0") console.log("Error, check " + valid);
         else console.log("\tHTML OK!");
-        
+        pubrules();
     });
 }
 
