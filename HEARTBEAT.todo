@@ -103,3 +103,17 @@ PUBLISHING:
     
 ERRORS:
 
+
+    Processing infrastructure.html, 30/145
+    Error, check http://validator.w3.org/check?uri=http%3A%2F%2Fberjon.com%2FTR%2Fhtml5%2Finfrastructure.html
+    
+    Processing media-elements.html, 34/145
+    Error, check http://validator.w3.org/check?uri=http%3A%2F%2Fberjon.com%2FTR%2Fhtml5%2Fmedia-elements.html
+    
+    Processing single-page.html, 40/145
+    Error, check http://validator.w3.org/check?uri=http%3A%2F%2Fberjon.com%2FTR%2Fhtml5%2Fsingle-page.html
+    
+    Processing textFieldSelection.html, 45/145
+    Error, check http://validator.w3.org/check?uri=http%3A%2F%2Fberjon.com%2FTR%2Fhtml5%2FtextFieldSelection.html
+    
+    

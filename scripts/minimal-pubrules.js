@@ -21,7 +21,7 @@ function pubrules () {
     
     jsdom.env(
         pth.join(hbDir, file)
-    ,   ["http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"]
+    ,   [pth.join(hbDir, "scripts/jquery.min.js")]
     ,   function (err, window) {
             if (err) return console.log(err);
             var $ = window.$;
