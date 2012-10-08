@@ -94,6 +94,7 @@ PUBLISHING:
     ✓ fonts
     - link check until good
     - pubrules until good
+    - fixBrokenLink?
     - do author spec (this seems to be problematic)
         - support it for all tools!
     - stage for publication

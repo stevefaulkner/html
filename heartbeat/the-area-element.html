@@ -1,5 +1,110 @@
 <!DOCTYPE html>
-<html lang="en-US-x-Hixie"><head><title>4.8.13 The area element &#8212; HTML5</title><style type="text/css">
+<html lang="en-US-x-Hixie"><head><meta charset="utf-8"><title>4.8.13 The area element &#8212; HTML5</title><style type="text/css">
+
+   .applies thead th > * { display: block; }
+   .applies thead code { display: block; }
+   .applies tbody th { white-space: nowrap; }
+   .applies td { text-align: center; }
+   .applies .yes { background: yellow; }
+
+   .matrix, .matrix td { border: hidden; text-align: right; }
+   .matrix { margin-left: 2em; }
+
+   .dice-example { border-collapse: collapse; border-style: hidden solid solid hidden; border-width: thin; margin-left: 3em; }
+   .dice-example caption { width: 30em; font-size: smaller; font-style: italic; padding: 0.75em 0; text-align: left; }
+   .dice-example td, .dice-example th { border: solid thin; width: 1.35em; height: 1.05em; text-align: center; padding: 0; }
+
+   td.eg { border-width: thin; text-align: center; }
+
+   #table-example-1 { border: solid thin; border-collapse: collapse; margin-left: 3em; }
+   #table-example-1 * { font-family: "Essays1743", serif; line-height: 1.01em; }
+   #table-example-1 caption { padding-bottom: 0.5em; }
+   #table-example-1 thead, #table-example-1 tbody { border: none; }
+   #table-example-1 th, #table-example-1 td { border: solid thin; }
+   #table-example-1 th { font-weight: normal; }
+   #table-example-1 td { border-style: none solid; vertical-align: top; }
+   #table-example-1 th { padding: 0.5em; vertical-align: middle; text-align: center; }
+   #table-example-1 tbody tr:first-child td { padding-top: 0.5em; }
+   #table-example-1 tbody tr:last-child td { padding-bottom: 1.5em; }
+   #table-example-1 tbody td:first-child { padding-left: 2.5em; padding-right: 0; width: 9em; }
+   #table-example-1 tbody td:first-child::after { content: leader(". "); }
+   #table-example-1 tbody td { padding-left: 2em; padding-right: 2em; }
+   #table-example-1 tbody td:first-child + td { width: 10em; }
+   #table-example-1 tbody td:first-child + td ~ td { width: 2.5em; }
+   #table-example-1 tbody td:first-child + td + td + td ~ td { width: 1.25em; }
+
+   .apple-table-examples { border: none; border-collapse: separate; border-spacing: 1.5em 0em; width: 40em; margin-left: 3em; }
+   .apple-table-examples * { font-family: "Times", serif; }
+   .apple-table-examples td, .apple-table-examples th { border: none; white-space: nowrap; padding-top: 0; padding-bottom: 0; }
+   .apple-table-examples tbody th:first-child { border-left: none; width: 100%; }
+   .apple-table-examples thead th:first-child ~ th { font-size: smaller; font-weight: bolder; border-bottom: solid 2px; text-align: center; }
+   .apple-table-examples tbody th::after, .apple-table-examples tfoot th::after { content: leader(". ") }
+   .apple-table-examples tbody th, .apple-table-examples tfoot th { font: inherit; text-align: left; }
+   .apple-table-examples td { text-align: right; vertical-align: top; }
+   .apple-table-examples.e1 tbody tr:last-child td { border-bottom: solid 1px; }
+   .apple-table-examples.e1 tbody + tbody tr:last-child td { border-bottom: double 3px; }
+   .apple-table-examples.e2 th[scope=row] { padding-left: 1em; }
+   .apple-table-examples sup { line-height: 0; }
+
+   .details-example img { vertical-align: top; }
+
+   #base64-table {
+     white-space: nowrap;
+     font-size: 0.6em;
+     column-width: 6em;
+     column-count: 5;
+     column-gap: 1em;
+     -moz-column-width: 6em;
+     -moz-column-count: 5;
+     -moz-column-gap: 1em;
+     -webkit-column-width: 6em;
+     -webkit-column-count: 5;
+     -webkit-column-gap: 1em;
+   }
+   #base64-table thead { display: none; }
+   #base64-table * { border: none; }
+   #base64-table tbody td:first-child:after { content: ':'; }
+   #base64-table tbody td:last-child { text-align: right; }
+
+   #named-character-references-table {
+     white-space: nowrap;
+     font-size: 0.6em;
+     column-width: 30em;
+     column-gap: 1em;
+     -moz-column-width: 30em;
+     -moz-column-gap: 1em;
+     -webkit-column-width: 30em;
+     -webkit-column-gap: 1em;
+   }
+   #named-character-references-table > table > tbody > tr > td:first-child + td,
+   #named-character-references-table > table > tbody > tr > td:last-child { text-align: center; }
+   #named-character-references-table > table > tbody > tr > td:last-child:hover > span { position: absolute; top: auto; left: auto; margin-left: 0.5em; line-height: 1.2; font-size: 5em; border: outset; padding: 0.25em 0.5em; background: white; width: 1.25em; height: auto; text-align: center; }
+   #named-character-references-table > table > tbody > tr#entity-CounterClockwiseContourIntegral > td:first-child { font-size: 0.5em; }
+
+   .glyph.control { color: red; }
+
+   @font-face {
+     font-family: 'Essays1743';
+     src: url('fonts/Essays1743.ttf');
+   }
+   @font-face {
+     font-family: 'Essays1743';
+     font-weight: bold;
+     src: url('fonts/Essays1743-Bold.ttf');
+   }
+   @font-face {
+     font-family: 'Essays1743';
+     font-style: italic;
+     src: url('fonts/Essays1743-Italic.ttf');
+   }
+   @font-face {
+     font-family: 'Essays1743';
+     font-style: italic;
+     font-weight: bold;
+     src: url('fonts/Essays1743-BoldItalic.ttf');
+   }
+
+  </style><link href="data:text/css," id="complete" rel="stylesheet" title="Complete specification"><link href="data:text/css,.impl%20%7B%20display:%20none;%20%7D%0Ahtml%20%7B%20border:%20solid%20yellow;%20%7D%20.domintro:before%20%7B%20display:%20none;%20%7D" id="author" rel="alternate stylesheet" title="Author documentation only"><link href="data:text/css,.impl%20%7B%20background:%20%23FFEEEE;%20%7D%20.domintro:before%20%7B%20background:%20%23FFEEEE;%20%7D" id="highlight" rel="alternate stylesheet" title="Highlight implementation requirements"><style type="text/css">
    pre { margin-left: 2em; white-space: pre-wrap; }
    h2 { margin: 3em 0 1em 0; }
    h3 { margin: 2.5em 0 1em 0; }
@@ -71,7 +176,7 @@
    h1 + h2, hr + h2.no-toc { page-break-before: auto; }
 
    p  > span:not([title=""]):not([class="XXX"]):not([class="impl"]):not([class="note"]),
-   li > span:not([title=""]):not([class="XXX"]):not([class="impl"]):not([class="note"]), { border-bottom: solid #9999CC; }
+   li > span:not([title=""]):not([class="XXX"]):not([class="impl"]):not([class="note"]) { border-bottom: solid #9999CC; }
 
    div.head { margin: 0 0 1em; padding: 1em 0 0 0; }
    div.head p { margin: 0; }
@@ -216,7 +321,8 @@
      display: block;
    }
    .stability input {
-     appearance: none; margin: 0; border: 0; padding: 0.25em 0.5em; background: transparent; color: black;
+     -moz-appearance: none; -webkit-appearance: none; margin: 0; 
+     border: 0; padding: 0.25em 0.5em; background: transparent; color: black;
      position: absolute; top: -0.5em; right: 0; font: 1.25em sans-serif; text-align: center;
    }
    .stability input:hover {
@@ -232,112 +338,7 @@
      color: white;
    }
 
-  </style><link href="http://www.w3.org/StyleSheets/TR/W3C-WD" rel="stylesheet" type="text/css"><meta content="noindex" name="robots"><style type="text/css">
-
-   .applies thead th > * { display: block; }
-   .applies thead code { display: block; }
-   .applies tbody th { whitespace: nowrap; }
-   .applies td { text-align: center; }
-   .applies .yes { background: yellow; }
-
-   .matrix, .matrix td { border: hidden; text-align: right; }
-   .matrix { margin-left: 2em; }
-
-   .dice-example { border-collapse: collapse; border-style: hidden solid solid hidden; border-width: thin; margin-left: 3em; }
-   .dice-example caption { width: 30em; font-size: smaller; font-style: italic; padding: 0.75em 0; text-align: left; }
-   .dice-example td, .dice-example th { border: solid thin; width: 1.35em; height: 1.05em; text-align: center; padding: 0; }
-
-   td.eg { border-width: thin; text-align: center; }
-
-   #table-example-1 { border: solid thin; border-collapse: collapse; margin-left: 3em; }
-   #table-example-1 * { font-family: "Essays1743", serif; line-height: 1.01em; }
-   #table-example-1 caption { padding-bottom: 0.5em; }
-   #table-example-1 thead, #table-example-1 tbody { border: none; }
-   #table-example-1 th, #table-example-1 td { border: solid thin; }
-   #table-example-1 th { font-weight: normal; }
-   #table-example-1 td { border-style: none solid; vertical-align: top; }
-   #table-example-1 th { padding: 0.5em; vertical-align: middle; text-align: center; }
-   #table-example-1 tbody tr:first-child td { padding-top: 0.5em; }
-   #table-example-1 tbody tr:last-child td { padding-bottom: 1.5em; }
-   #table-example-1 tbody td:first-child { padding-left: 2.5em; padding-right: 0; width: 9em; }
-   #table-example-1 tbody td:first-child::after { content: leader(". "); }
-   #table-example-1 tbody td { padding-left: 2em; padding-right: 2em; }
-   #table-example-1 tbody td:first-child + td { width: 10em; }
-   #table-example-1 tbody td:first-child + td ~ td { width: 2.5em; }
-   #table-example-1 tbody td:first-child + td + td + td ~ td { width: 1.25em; }
-
-   .apple-table-examples { border: none; border-collapse: separate; border-spacing: 1.5em 0em; width: 40em; margin-left: 3em; }
-   .apple-table-examples * { font-family: "Times", serif; }
-   .apple-table-examples td, .apple-table-examples th { border: none; white-space: nowrap; padding-top: 0; padding-bottom: 0; }
-   .apple-table-examples tbody th:first-child { border-left: none; width: 100%; }
-   .apple-table-examples thead th:first-child ~ th { font-size: smaller; font-weight: bolder; border-bottom: solid 2px; text-align: center; }
-   .apple-table-examples tbody th::after, .apple-table-examples tfoot th::after { content: leader(". ") }
-   .apple-table-examples tbody th, .apple-table-examples tfoot th { font: inherit; text-align: left; }
-   .apple-table-examples td { text-align: right; vertical-align: top; }
-   .apple-table-examples.e1 tbody tr:last-child td { border-bottom: solid 1px; }
-   .apple-table-examples.e1 tbody + tbody tr:last-child td { border-bottom: double 3px; }
-   .apple-table-examples.e2 th[scope=row] { padding-left: 1em; }
-   .apple-table-examples sup { line-height: 0; }
-
-   .details-example img { vertical-align: top; }
-
-   #base64-table {
-     white-space: nowrap;
-     font-size: 0.6em;
-     column-width: 6em;
-     column-count: 5;
-     column-gap: 1em;
-     -moz-column-width: 6em;
-     -moz-column-count: 5;
-     -moz-column-gap: 1em;
-     -webkit-column-width: 6em;
-     -webkit-column-count: 5;
-     -webkit-column-gap: 1em;
-   }
-   #base64-table thead { display: none; }
-   #base64-table * { border: none; }
-   #base64-table tbody td:first-child:after { content: ':'; }
-   #base64-table tbody td:last-child { text-align: right; }
-
-   #named-character-references-table {
-     white-space: nowrap;
-     font-size: 0.6em;
-     column-width: 30em;
-     column-gap: 1em;
-     -moz-column-width: 30em;
-     -moz-column-gap: 1em;
-     -webkit-column-width: 30em;
-     -webkit-column-gap: 1em;
-   }
-   #named-character-references-table > table > tbody > tr > td:first-child + td,
-   #named-character-references-table > table > tbody > tr > td:last-child { text-align: center; }
-   #named-character-references-table > table > tbody > tr > td:last-child:hover > span { position: absolute; top: auto; left: auto; margin-left: 0.5em; line-height: 1.2; font-size: 5em; border: outset; padding: 0.25em 0.5em; background: white; width: 1.25em; height: auto; text-align: center; }
-   #named-character-references-table > table > tbody > tr#entity-CounterClockwiseContourIntegral > td:first-child { font-size: 0.5em; }
-
-   .glyph.control { color: red; }
-
-   @font-face {
-     font-family: 'Essays1743';
-     src: url('fonts/Essays1743.ttf');
-   }
-   @font-face {
-     font-family: 'Essays1743';
-     font-weight: bold;
-     src: url('fonts/Essays1743-Bold.ttf');
-   }
-   @font-face {
-     font-family: 'Essays1743';
-     font-style: italic;
-     src: url('fonts/Essays1743-Italic.ttf');
-   }
-   @font-face {
-     font-family: 'Essays1743';
-     font-style: italic;
-     font-weight: bold;
-     src: url('fonts/Essays1743-BoldItalic.ttf');
-   }
-
-  </style><link href="data:text/css," id="complete" rel="stylesheet" title="Complete specification"><link href="data:text/css,.impl%20%7B%20display:%20none;%20%7D%0Ahtml%20%7B%20border:%20solid%20yellow;%20%7D%20.domintro:before%20%7B%20display:%20none;%20%7D" id="author" rel="alternate stylesheet" title="Author documentation only"><link href="data:text/css,.impl%20%7B%20background:%20%23FFEEEE;%20%7D%20.domintro:before%20%7B%20background:%20%23FFEEEE;%20%7D" id="highlight" rel="alternate stylesheet" title="Highlight implementation requirements"><script>
+  </style><link href="http://www.w3.org/StyleSheets/TR/W3C-WD" rel="stylesheet" type="text/css"><meta content="noindex" name="robots"><script>
    function getCookie(name) {
      var params = location.search.substr(1).split("&");
      for (var index = 0; index < params.length; index++) {
@@ -365,7 +366,9 @@
    <h2 class="no-num no-toc" id="a-vocabulary-and-associated-apis-for-html-and-xhtml">A vocabulary and associated APIs for HTML and XHTML</h2>
    <h2 class="no-num no-toc" id="w3c-working-draft-11-october-2012">W3C Working Draft 11 October 2012</h2>
    </div>
-   <div class="prev_next">
+  
+
+  <div class="prev_next">
    <a href="the-map-element.html">&#8592; 4.8.12 The map element</a> &#8211;
    <a href="index.html#contents">Table of contents</a> &#8211;
    <a href="image-maps.html">4.8.14 Image maps &#8594;</a>
@@ -385,13 +388,13 @@
    <dd><code title="attr-area-alt"><a href="#attr-area-alt">alt</a></code></dd>
    <dd><code title="attr-area-coords"><a href="#attr-area-coords">coords</a></code></dd>
    <dd><code title="attr-area-shape"><a href="#attr-area-shape">shape</a></code></dd>
-   <dd><code title="attr-hyperlink-href"><a href="links.html#attr-hyperlink-href">href</a></code></dd>
-   <dd><code title="attr-hyperlink-target"><a href="links.html#attr-hyperlink-target">target</a></code></dd>
+   <dd><code title="attr-hyperlink-href"><a href="textFieldSelection.html#attr-hyperlink-href">href</a></code></dd>
+   <dd><code title="attr-hyperlink-target"><a href="textFieldSelection.html#attr-hyperlink-target">target</a></code></dd>
 <!--DOWNLOAD--><!--PING-->
-   <dd><code title="attr-hyperlink-rel"><a href="links.html#attr-hyperlink-rel">rel</a></code></dd>
-   <dd><code title="attr-hyperlink-media"><a href="links.html#attr-hyperlink-media">media</a></code></dd>
-   <dd><code title="attr-hyperlink-hreflang"><a href="links.html#attr-hyperlink-hreflang">hreflang</a></code></dd>
-   <dd><code title="attr-hyperlink-type"><a href="links.html#attr-hyperlink-type">type</a></code></dd>
+   <dd><code title="attr-hyperlink-rel"><a href="textFieldSelection.html#attr-hyperlink-rel">rel</a></code></dd>
+   <dd><code title="attr-hyperlink-media"><a href="textFieldSelection.html#attr-hyperlink-media">media</a></code></dd>
+   <dd><code title="attr-hyperlink-hreflang"><a href="textFieldSelection.html#attr-hyperlink-hreflang">hreflang</a></code></dd>
+   <dd><code title="attr-hyperlink-type"><a href="textFieldSelection.html#attr-hyperlink-type">type</a></code></dd>
    <dt><a href="element-definitions.html#element-dfn-dom" title="element-dfn-dom">DOM interface</a>:</dt><!--TOPIC:DOM APIs-->
    <dd>
 <pre class="idl">interface <dfn id="htmlareaelement">HTMLAreaElement</dfn> : <a href="elements.html#htmlelement">HTMLElement</a> {
@@ -417,12 +420,12 @@
            attribute DOMString <a href="#dom-area-hash" title="dom-area-hash">hash</a>;
 };</pre>
    </dd>
-  </dl><!--TOPIC:HTML--><p>The <code><a href="#the-area-element">area</a></code> element <a href="rendering.html#represents">represents</a> either a
+  </dl><!--TOPIC:HTML--><p>The <code><a href="#the-area-element">area</a></code> element <a href="textFieldSelection.html#represents">represents</a> either a
   hyperlink with some text and a corresponding area on an <a href="image-maps.html#image-map">image
   map</a>, or a dead area on an image map.</p>
 
-  <p>If the <code><a href="#the-area-element">area</a></code> element has an <code title="attr-hyperlink-href"><a href="links.html#attr-hyperlink-href">href</a></code> attribute, then the
-  <code><a href="#the-area-element">area</a></code> element represents a <a href="links.html#hyperlink">hyperlink</a>. In
+  <p>If the <code><a href="#the-area-element">area</a></code> element has an <code title="attr-hyperlink-href"><a href="textFieldSelection.html#attr-hyperlink-href">href</a></code> attribute, then the
+  <code><a href="#the-area-element">area</a></code> element represents a <a href="textFieldSelection.html#hyperlink">hyperlink</a>. In
   this case, the <dfn id="attr-area-alt" title="attr-area-alt"><code>alt</code></dfn>
   attribute must be present. It specifies the text of the
   hyperlink. Its value must be text that, when presented with the
@@ -436,7 +439,7 @@
   resource and has a non-blank <code title="attr-area-alt"><a href="#attr-area-alt">alt</a></code>
   attribute.</p>
 
-  <p>If the <code><a href="#the-area-element">area</a></code> element has no <code title="attr-hyperlink-href"><a href="links.html#attr-hyperlink-href">href</a></code> attribute, then the area
+  <p>If the <code><a href="#the-area-element">area</a></code> element has no <code title="attr-hyperlink-href"><a href="textFieldSelection.html#attr-hyperlink-href">href</a></code> attribute, then the area
   represented by the element cannot be selected, and the <code title="attr-area-alt"><a href="#attr-area-alt">alt</a></code> attribute must be omitted.</p>
 
   <p>In both cases, the <code title="attr-area-shape"><a href="#attr-area-shape">shape</a></code> and
@@ -519,26 +522,26 @@
 
   <div class="impl">
 
-  <p>When user agents allow users to <a href="links.html#following-hyperlinks-0" title="following
+  <p>When user agents allow users to <a href="textFieldSelection.html#following-hyperlinks-0" title="following
   hyperlinks">follow hyperlinks</a>
 <!--DOWNLOAD-->
   created using the <code><a href="#the-area-element">area</a></code> element, as described in the
   next section, the
-  <code title="attr-hyperlink-href"><a href="links.html#attr-hyperlink-href">href</a></code>,
-  <code title="attr-hyperlink-target"><a href="links.html#attr-hyperlink-target">target</a></code>,
+  <code title="attr-hyperlink-href"><a href="textFieldSelection.html#attr-hyperlink-href">href</a></code>,
+  <code title="attr-hyperlink-target"><a href="textFieldSelection.html#attr-hyperlink-target">target</a></code>,
 <!--DOWNLOAD--><!--PING-->
   attributes decide how the link is followed.
-  The <code title="attr-hyperlink-rel"><a href="links.html#attr-hyperlink-rel">rel</a></code>,
-  <code title="attr-hyperlink-media"><a href="links.html#attr-hyperlink-media">media</a></code>, <code title="attr-hyperlink-hreflang"><a href="links.html#attr-hyperlink-hreflang">hreflang</a></code>, and <code title="attr-hyperlink-type"><a href="links.html#attr-hyperlink-type">type</a></code> attributes may be used to
+  The <code title="attr-hyperlink-rel"><a href="textFieldSelection.html#attr-hyperlink-rel">rel</a></code>,
+  <code title="attr-hyperlink-media"><a href="textFieldSelection.html#attr-hyperlink-media">media</a></code>, <code title="attr-hyperlink-hreflang"><a href="textFieldSelection.html#attr-hyperlink-hreflang">hreflang</a></code>, and <code title="attr-hyperlink-type"><a href="textFieldSelection.html#attr-hyperlink-type">type</a></code> attributes may be used to
   indicate to the user the likely nature of the target resource before
   the user follows the link.</p>
 
   </div>
 
-  <p>The <code title="attr-hyperlink-target"><a href="links.html#attr-hyperlink-target">target</a></code>,
+  <p>The <code title="attr-hyperlink-target"><a href="textFieldSelection.html#attr-hyperlink-target">target</a></code>,
 <!--DOWNLOAD--><!--PING-->
-  <code title="attr-hyperlink-rel"><a href="links.html#attr-hyperlink-rel">rel</a></code>, <code title="attr-hyperlink-media"><a href="links.html#attr-hyperlink-media">media</a></code>, <code title="attr-hyperlink-hreflang"><a href="links.html#attr-hyperlink-hreflang">hreflang</a></code>, and <code title="attr-hyperlink-type"><a href="links.html#attr-hyperlink-type">type</a></code> attributes must be omitted
-  if the <code title="attr-hyperlink-href"><a href="links.html#attr-hyperlink-href">href</a></code> attribute is
+  <code title="attr-hyperlink-rel"><a href="textFieldSelection.html#attr-hyperlink-rel">rel</a></code>, <code title="attr-hyperlink-media"><a href="textFieldSelection.html#attr-hyperlink-media">media</a></code>, <code title="attr-hyperlink-hreflang"><a href="textFieldSelection.html#attr-hyperlink-hreflang">hreflang</a></code>, and <code title="attr-hyperlink-type"><a href="textFieldSelection.html#attr-hyperlink-type">type</a></code> attributes must be omitted
+  if the <code title="attr-hyperlink-href"><a href="textFieldSelection.html#attr-hyperlink-href">href</a></code> attribute is
   not present.</p>
 
 <!--MD-->
@@ -550,19 +553,19 @@
 
   <ol><li><p>If the <code title="event-click"><a href="infrastructure.html#event-click">click</a></code> event in
    question is not <a href="infrastructure.html#concept-events-trusted" title="concept-events-trusted">trusted</a>
-   (i.e. a <code title="dom-click"><a href="editing.html#dom-click">click()</a></code> method call was the
+   (i.e. a <code title="dom-click"><a href="textFieldSelection.html#dom-click">click()</a></code> method call was the
    reason for the event being dispatched), and the <code><a href="#the-area-element">area</a></code>
 <!--DOWNLOAD-->
-   element's <code title="attr-hyperlink-target"><a href="links.html#attr-hyperlink-target">target</a></code>
-   attribute is present and applying <a href="browsers.html#the-rules-for-choosing-a-browsing-context-given-a-browsing-context-name">the rules for choosing a
+   element's <code title="attr-hyperlink-target"><a href="textFieldSelection.html#attr-hyperlink-target">target</a></code>
+   attribute is present and applying <a href="textFieldSelection.html#the-rules-for-choosing-a-browsing-context-given-a-browsing-context-name">the rules for choosing a
    browsing context given a browsing context name</a>, using the
-   value of the <code title="attr-hyperlink-target"><a href="links.html#attr-hyperlink-target">target</a></code>
+   value of the <code title="attr-hyperlink-target"><a href="textFieldSelection.html#attr-hyperlink-target">target</a></code>
    attribute as the browsing context name, would result in there not
    being a chosen browsing context, then throw an
    <code><a href="infrastructure.html#invalidaccesserror">InvalidAccessError</a></code> exception and abort these
    steps.</p></li>
 
-   <li><p>Otherwise, the user agent must <a href="links.html#following-hyperlinks-0" title="following
+   <li><p>Otherwise, the user agent must <a href="textFieldSelection.html#following-hyperlinks-0" title="following
    hyperlinks">follow the hyperlink</a>
 <!--DOWNLOAD-->
    created by the <code><a href="#the-area-element">area</a></code> element, if any, and as determined by
@@ -580,17 +583,17 @@
   content attribute.</p>
 
   <p>The IDL attribute <dfn id="dom-area-rellist" title="dom-area-rellist"><code>relList</code></dfn> must
-  <a href="common-dom-interfaces.html#reflect">reflect</a> the <code title="attr-hyperlink-rel"><a href="links.html#attr-hyperlink-rel">rel</a></code>
+  <a href="common-dom-interfaces.html#reflect">reflect</a> the <code title="attr-hyperlink-rel"><a href="textFieldSelection.html#attr-hyperlink-rel">rel</a></code>
   content attribute.</p>
 
   <p>The <code><a href="#the-area-element">area</a></code> element also supports the complement of
   <a href="urls.html#url-decomposition-idl-attributes">URL decomposition IDL attributes</a>, <dfn id="dom-area-protocol" title="dom-area-protocol"><code>protocol</code></dfn>, <dfn id="dom-area-host" title="dom-area-host"><code>host</code></dfn>, <dfn id="dom-area-port" title="dom-area-port"><code>port</code></dfn>, <dfn id="dom-area-hostname" title="dom-area-hostname"><code>hostname</code></dfn>, <dfn id="dom-area-pathname" title="dom-area-pathname"><code>pathname</code></dfn>, <dfn id="dom-area-search" title="dom-area-search"><code>search</code></dfn>, and <dfn id="dom-area-hash" title="dom-area-hash"><code>hash</code></dfn>. These must follow the
   rules given for <a href="urls.html#url-decomposition-idl-attributes">URL decomposition IDL attributes</a>, with
   the <a href="urls.html#concept-uda-input" title="concept-uda-input">input</a> being the result of
-  <a href="urls.html#resolve-a-url" title="resolve a url">resolving</a> the element's <code title="attr-hyperlink-href"><a href="links.html#attr-hyperlink-href">href</a></code> attribute relative to the
+  <a href="urls.html#resolve-a-url" title="resolve a url">resolving</a> the element's <code title="attr-hyperlink-href"><a href="textFieldSelection.html#attr-hyperlink-href">href</a></code> attribute relative to the
   element, if there is such an attribute and resolving it is
   successful, or the empty string otherwise; and the <a href="urls.html#concept-uda-setter" title="concept-uda-setter">common setter action</a> being the
-  same as setting the element's <code title="attr-hyperlink-href"><a href="links.html#attr-hyperlink-href">href</a></code> attribute to the new output
+  same as setting the element's <code title="attr-hyperlink-href"><a href="textFieldSelection.html#attr-hyperlink-href">href</a></code> attribute to the new output
   value.</p>
 
   </div>

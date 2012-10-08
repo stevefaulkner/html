@@ -1,5 +1,110 @@
 <!DOCTYPE html>
-<html lang="en-US-x-Hixie"><head><title>1 Introduction &#8212; HTML5</title><style type="text/css">
+<html lang="en-US-x-Hixie"><head><meta charset="utf-8"><title>1 Introduction &#8212; HTML5</title><style type="text/css">
+
+   .applies thead th > * { display: block; }
+   .applies thead code { display: block; }
+   .applies tbody th { white-space: nowrap; }
+   .applies td { text-align: center; }
+   .applies .yes { background: yellow; }
+
+   .matrix, .matrix td { border: hidden; text-align: right; }
+   .matrix { margin-left: 2em; }
+
+   .dice-example { border-collapse: collapse; border-style: hidden solid solid hidden; border-width: thin; margin-left: 3em; }
+   .dice-example caption { width: 30em; font-size: smaller; font-style: italic; padding: 0.75em 0; text-align: left; }
+   .dice-example td, .dice-example th { border: solid thin; width: 1.35em; height: 1.05em; text-align: center; padding: 0; }
+
+   td.eg { border-width: thin; text-align: center; }
+
+   #table-example-1 { border: solid thin; border-collapse: collapse; margin-left: 3em; }
+   #table-example-1 * { font-family: "Essays1743", serif; line-height: 1.01em; }
+   #table-example-1 caption { padding-bottom: 0.5em; }
+   #table-example-1 thead, #table-example-1 tbody { border: none; }
+   #table-example-1 th, #table-example-1 td { border: solid thin; }
+   #table-example-1 th { font-weight: normal; }
+   #table-example-1 td { border-style: none solid; vertical-align: top; }
+   #table-example-1 th { padding: 0.5em; vertical-align: middle; text-align: center; }
+   #table-example-1 tbody tr:first-child td { padding-top: 0.5em; }
+   #table-example-1 tbody tr:last-child td { padding-bottom: 1.5em; }
+   #table-example-1 tbody td:first-child { padding-left: 2.5em; padding-right: 0; width: 9em; }
+   #table-example-1 tbody td:first-child::after { content: leader(". "); }
+   #table-example-1 tbody td { padding-left: 2em; padding-right: 2em; }
+   #table-example-1 tbody td:first-child + td { width: 10em; }
+   #table-example-1 tbody td:first-child + td ~ td { width: 2.5em; }
+   #table-example-1 tbody td:first-child + td + td + td ~ td { width: 1.25em; }
+
+   .apple-table-examples { border: none; border-collapse: separate; border-spacing: 1.5em 0em; width: 40em; margin-left: 3em; }
+   .apple-table-examples * { font-family: "Times", serif; }
+   .apple-table-examples td, .apple-table-examples th { border: none; white-space: nowrap; padding-top: 0; padding-bottom: 0; }
+   .apple-table-examples tbody th:first-child { border-left: none; width: 100%; }
+   .apple-table-examples thead th:first-child ~ th { font-size: smaller; font-weight: bolder; border-bottom: solid 2px; text-align: center; }
+   .apple-table-examples tbody th::after, .apple-table-examples tfoot th::after { content: leader(". ") }
+   .apple-table-examples tbody th, .apple-table-examples tfoot th { font: inherit; text-align: left; }
+   .apple-table-examples td { text-align: right; vertical-align: top; }
+   .apple-table-examples.e1 tbody tr:last-child td { border-bottom: solid 1px; }
+   .apple-table-examples.e1 tbody + tbody tr:last-child td { border-bottom: double 3px; }
+   .apple-table-examples.e2 th[scope=row] { padding-left: 1em; }
+   .apple-table-examples sup { line-height: 0; }
+
+   .details-example img { vertical-align: top; }
+
+   #base64-table {
+     white-space: nowrap;
+     font-size: 0.6em;
+     column-width: 6em;
+     column-count: 5;
+     column-gap: 1em;
+     -moz-column-width: 6em;
+     -moz-column-count: 5;
+     -moz-column-gap: 1em;
+     -webkit-column-width: 6em;
+     -webkit-column-count: 5;
+     -webkit-column-gap: 1em;
+   }
+   #base64-table thead { display: none; }
+   #base64-table * { border: none; }
+   #base64-table tbody td:first-child:after { content: ':'; }
+   #base64-table tbody td:last-child { text-align: right; }
+
+   #named-character-references-table {
+     white-space: nowrap;
+     font-size: 0.6em;
+     column-width: 30em;
+     column-gap: 1em;
+     -moz-column-width: 30em;
+     -moz-column-gap: 1em;
+     -webkit-column-width: 30em;
+     -webkit-column-gap: 1em;
+   }
+   #named-character-references-table > table > tbody > tr > td:first-child + td,
+   #named-character-references-table > table > tbody > tr > td:last-child { text-align: center; }
+   #named-character-references-table > table > tbody > tr > td:last-child:hover > span { position: absolute; top: auto; left: auto; margin-left: 0.5em; line-height: 1.2; font-size: 5em; border: outset; padding: 0.25em 0.5em; background: white; width: 1.25em; height: auto; text-align: center; }
+   #named-character-references-table > table > tbody > tr#entity-CounterClockwiseContourIntegral > td:first-child { font-size: 0.5em; }
+
+   .glyph.control { color: red; }
+
+   @font-face {
+     font-family: 'Essays1743';
+     src: url('fonts/Essays1743.ttf');
+   }
+   @font-face {
+     font-family: 'Essays1743';
+     font-weight: bold;
+     src: url('fonts/Essays1743-Bold.ttf');
+   }
+   @font-face {
+     font-family: 'Essays1743';
+     font-style: italic;
+     src: url('fonts/Essays1743-Italic.ttf');
+   }
+   @font-face {
+     font-family: 'Essays1743';
+     font-style: italic;
+     font-weight: bold;
+     src: url('fonts/Essays1743-BoldItalic.ttf');
+   }
+
+  </style><link href="data:text/css," id="complete" rel="stylesheet" title="Complete specification"><link href="data:text/css,.impl%20%7B%20display:%20none;%20%7D%0Ahtml%20%7B%20border:%20solid%20yellow;%20%7D%20.domintro:before%20%7B%20display:%20none;%20%7D" id="author" rel="alternate stylesheet" title="Author documentation only"><link href="data:text/css,.impl%20%7B%20background:%20%23FFEEEE;%20%7D%20.domintro:before%20%7B%20background:%20%23FFEEEE;%20%7D" id="highlight" rel="alternate stylesheet" title="Highlight implementation requirements"><style type="text/css">
    pre { margin-left: 2em; white-space: pre-wrap; }
    h2 { margin: 3em 0 1em 0; }
    h3 { margin: 2.5em 0 1em 0; }
@@ -71,7 +176,7 @@
    h1 + h2, hr + h2.no-toc { page-break-before: auto; }
 
    p  > span:not([title=""]):not([class="XXX"]):not([class="impl"]):not([class="note"]),
-   li > span:not([title=""]):not([class="XXX"]):not([class="impl"]):not([class="note"]), { border-bottom: solid #9999CC; }
+   li > span:not([title=""]):not([class="XXX"]):not([class="impl"]):not([class="note"]) { border-bottom: solid #9999CC; }
 
    div.head { margin: 0 0 1em; padding: 1em 0 0 0; }
    div.head p { margin: 0; }
@@ -216,7 +321,8 @@
      display: block;
    }
    .stability input {
-     appearance: none; margin: 0; border: 0; padding: 0.25em 0.5em; background: transparent; color: black;
+     -moz-appearance: none; -webkit-appearance: none; margin: 0; 
+     border: 0; padding: 0.25em 0.5em; background: transparent; color: black;
      position: absolute; top: -0.5em; right: 0; font: 1.25em sans-serif; text-align: center;
    }
    .stability input:hover {
@@ -232,112 +338,7 @@
      color: white;
    }
 
-  </style><link href="http://www.w3.org/StyleSheets/TR/W3C-WD" rel="stylesheet" type="text/css"><meta content="noindex" name="robots"><style type="text/css">
-
-   .applies thead th > * { display: block; }
-   .applies thead code { display: block; }
-   .applies tbody th { whitespace: nowrap; }
-   .applies td { text-align: center; }
-   .applies .yes { background: yellow; }
-
-   .matrix, .matrix td { border: hidden; text-align: right; }
-   .matrix { margin-left: 2em; }
-
-   .dice-example { border-collapse: collapse; border-style: hidden solid solid hidden; border-width: thin; margin-left: 3em; }
-   .dice-example caption { width: 30em; font-size: smaller; font-style: italic; padding: 0.75em 0; text-align: left; }
-   .dice-example td, .dice-example th { border: solid thin; width: 1.35em; height: 1.05em; text-align: center; padding: 0; }
-
-   td.eg { border-width: thin; text-align: center; }
-
-   #table-example-1 { border: solid thin; border-collapse: collapse; margin-left: 3em; }
-   #table-example-1 * { font-family: "Essays1743", serif; line-height: 1.01em; }
-   #table-example-1 caption { padding-bottom: 0.5em; }
-   #table-example-1 thead, #table-example-1 tbody { border: none; }
-   #table-example-1 th, #table-example-1 td { border: solid thin; }
-   #table-example-1 th { font-weight: normal; }
-   #table-example-1 td { border-style: none solid; vertical-align: top; }
-   #table-example-1 th { padding: 0.5em; vertical-align: middle; text-align: center; }
-   #table-example-1 tbody tr:first-child td { padding-top: 0.5em; }
-   #table-example-1 tbody tr:last-child td { padding-bottom: 1.5em; }
-   #table-example-1 tbody td:first-child { padding-left: 2.5em; padding-right: 0; width: 9em; }
-   #table-example-1 tbody td:first-child::after { content: leader(". "); }
-   #table-example-1 tbody td { padding-left: 2em; padding-right: 2em; }
-   #table-example-1 tbody td:first-child + td { width: 10em; }
-   #table-example-1 tbody td:first-child + td ~ td { width: 2.5em; }
-   #table-example-1 tbody td:first-child + td + td + td ~ td { width: 1.25em; }
-
-   .apple-table-examples { border: none; border-collapse: separate; border-spacing: 1.5em 0em; width: 40em; margin-left: 3em; }
-   .apple-table-examples * { font-family: "Times", serif; }
-   .apple-table-examples td, .apple-table-examples th { border: none; white-space: nowrap; padding-top: 0; padding-bottom: 0; }
-   .apple-table-examples tbody th:first-child { border-left: none; width: 100%; }
-   .apple-table-examples thead th:first-child ~ th { font-size: smaller; font-weight: bolder; border-bottom: solid 2px; text-align: center; }
-   .apple-table-examples tbody th::after, .apple-table-examples tfoot th::after { content: leader(". ") }
-   .apple-table-examples tbody th, .apple-table-examples tfoot th { font: inherit; text-align: left; }
-   .apple-table-examples td { text-align: right; vertical-align: top; }
-   .apple-table-examples.e1 tbody tr:last-child td { border-bottom: solid 1px; }
-   .apple-table-examples.e1 tbody + tbody tr:last-child td { border-bottom: double 3px; }
-   .apple-table-examples.e2 th[scope=row] { padding-left: 1em; }
-   .apple-table-examples sup { line-height: 0; }
-
-   .details-example img { vertical-align: top; }
-
-   #base64-table {
-     white-space: nowrap;
-     font-size: 0.6em;
-     column-width: 6em;
-     column-count: 5;
-     column-gap: 1em;
-     -moz-column-width: 6em;
-     -moz-column-count: 5;
-     -moz-column-gap: 1em;
-     -webkit-column-width: 6em;
-     -webkit-column-count: 5;
-     -webkit-column-gap: 1em;
-   }
-   #base64-table thead { display: none; }
-   #base64-table * { border: none; }
-   #base64-table tbody td:first-child:after { content: ':'; }
-   #base64-table tbody td:last-child { text-align: right; }
-
-   #named-character-references-table {
-     white-space: nowrap;
-     font-size: 0.6em;
-     column-width: 30em;
-     column-gap: 1em;
-     -moz-column-width: 30em;
-     -moz-column-gap: 1em;
-     -webkit-column-width: 30em;
-     -webkit-column-gap: 1em;
-   }
-   #named-character-references-table > table > tbody > tr > td:first-child + td,
-   #named-character-references-table > table > tbody > tr > td:last-child { text-align: center; }
-   #named-character-references-table > table > tbody > tr > td:last-child:hover > span { position: absolute; top: auto; left: auto; margin-left: 0.5em; line-height: 1.2; font-size: 5em; border: outset; padding: 0.25em 0.5em; background: white; width: 1.25em; height: auto; text-align: center; }
-   #named-character-references-table > table > tbody > tr#entity-CounterClockwiseContourIntegral > td:first-child { font-size: 0.5em; }
-
-   .glyph.control { color: red; }
-
-   @font-face {
-     font-family: 'Essays1743';
-     src: url('fonts/Essays1743.ttf');
-   }
-   @font-face {
-     font-family: 'Essays1743';
-     font-weight: bold;
-     src: url('fonts/Essays1743-Bold.ttf');
-   }
-   @font-face {
-     font-family: 'Essays1743';
-     font-style: italic;
-     src: url('fonts/Essays1743-Italic.ttf');
-   }
-   @font-face {
-     font-family: 'Essays1743';
-     font-style: italic;
-     font-weight: bold;
-     src: url('fonts/Essays1743-BoldItalic.ttf');
-   }
-
-  </style><link href="data:text/css," id="complete" rel="stylesheet" title="Complete specification"><link href="data:text/css,.impl%20%7B%20display:%20none;%20%7D%0Ahtml%20%7B%20border:%20solid%20yellow;%20%7D%20.domintro:before%20%7B%20display:%20none;%20%7D" id="author" rel="alternate stylesheet" title="Author documentation only"><link href="data:text/css,.impl%20%7B%20background:%20%23FFEEEE;%20%7D%20.domintro:before%20%7B%20background:%20%23FFEEEE;%20%7D" id="highlight" rel="alternate stylesheet" title="Highlight implementation requirements"><script>
+  </style><link href="http://www.w3.org/StyleSheets/TR/W3C-WD" rel="stylesheet" type="text/css"><meta content="noindex" name="robots"><script>
    function getCookie(name) {
      var params = location.search.substr(1).split("&");
      for (var index = 0; index < params.length; index++) {
@@ -364,7 +365,9 @@
    <h2 class="no-num no-toc" id="a-vocabulary-and-associated-apis-for-html-and-xhtml">A vocabulary and associated APIs for HTML and XHTML</h2>
    <h2 class="no-num no-toc" id="w3c-working-draft-11-october-2012">W3C Working Draft 11 October 2012</h2>
    </div>
-   <div class="prev_next">
+  
+
+  <div class="prev_next">
    <a href="index.html#contents">Table of contents</a> &#8211;
    <a href="infrastructure.html">2 Common infrastructure &#8594;</a>
   <ol class="toc"><li><a href="introduction.html#introduction"><span class="secno">1 </span>Introduction</a>
@@ -544,13 +547,13 @@
   other features were omitted because at the W3C they are published as
   separate specifications. At time of publication of this document,
   patches from the WHATWG spec have been merged until revision
-  <a href="http://html5.org/r/7340">7340</a> inclusive.</p>
+  <a href="http://html5.org/r/7389">7389</a> inclusive.</p>
 
 <!--w3c-html--><!--VERSION-->
 
   <p>A separate document has been published by the W3C HTML working
   group to document the differences between the HTML specified in this
-  document and the language described in the HTML4 specification. <a href="references.html#refsHTMLDIFF">[HTMLDIFF]</a></p>
+  document and the language described in the HTML4 specification. <a href="textFieldSelection.html#refsHTMLDIFF">[HTMLDIFF]</a></p>
 
 
 
@@ -585,9 +588,9 @@
   script can ever detect the simultaneous execution of other
   scripts. Even with <span title="Worker">workers</span>, the intent
   is that the behavior of implementations can be thought of as
-  completely serializing the execution of all scripts in all <a href="browsers.html#browsing-context" title="browsing context">browsing contexts</a>.</p>
+  completely serializing the execution of all scripts in all <a href="textFieldSelection.html#browsing-context" title="browsing context">browsing contexts</a>.</p>
 
-  <p class="note">The <code title="dom-navigator-yieldForStorageUpdates"><a href="system-state-and-capabilities.html#dom-navigator-yieldforstorageupdates">navigator.yieldForStorageUpdates()</a></code>
+  <p class="note">The <code title="dom-navigator-yieldForStorageUpdates"><a href="textFieldSelection.html#dom-navigator-yieldforstorageupdates">navigator.yieldForStorageUpdates()</a></code>
   method, in this model, is equivalent to allowing other scripts to
   run while the calling script is blocked.</p>
 
@@ -623,7 +626,7 @@
   <p>The first such concrete syntax is the HTML syntax. This is the
   format suggested for most authors. It is compatible with most legacy
   Web browsers. If a document is transmitted with the
-  <code><a href="iana.html#text/html">text/html</a></code> <a href="infrastructure.html#mime-type">MIME type</a>, then it will be
+  <code><a href="textFieldSelection.html#text/html">text/html</a></code> <a href="infrastructure.html#mime-type">MIME type</a>, then it will be
   processed as an HTML document by Web browsers.
 
   <!--VERSION-->
@@ -635,7 +638,7 @@
 
   <p>The second concrete syntax is the XHTML syntax, which is an
   application of XML. When a document is transmitted with an <a href="infrastructure.html#xml-mime-type">XML
-  MIME type</a>, such as <code><a href="iana.html#application/xhtml+xml">application/xhtml+xml</a></code>, then
+  MIME type</a>, such as <code><a href="textFieldSelection.html#application/xhtml+xml">application/xhtml+xml</a></code>, then
   it is treated as an XML document by Web browsers, to be parsed by an
   XML processor. Authors are reminded that the processing for XML and
   HTML differs; in particular, even minor syntax errors will prevent a
@@ -687,18 +690,18 @@
 
 <!--MD-->
 
-   <dt><a href="browsers.html#browsers">Loading Web pages</a></dt>
+   <dt><a href="textFieldSelection.html#browsers">Loading Web pages</a></dt>
 
    <dd>HTML documents do not exist in a vacuum &#8212; this section
    defines many of the features that affect environments that deal
    with multiple pages.</dd>
 
-   <dt><a href="webappapis.html#webappapis">Web application APIs</a></dt>
+   <dt><a href="textFieldSelection.html#webappapis">Web application APIs</a></dt>
 
    <dd>This section introduces basic features for scripting of
    applications in HTML.</dd>
 
-   <dt><a href="editing.html#editing">User interaction</a></dt>
+   <dt><a href="textFieldSelection.html#editing">User interaction</a></dt>
 
    <dd>HTML documents can provide a number of mechanisms for users to
    interact with and modify content, which are described in this
@@ -709,8 +712,8 @@
 <!--POSTMSG-->
 
 
-   <dt><a href="syntax.html#syntax">The HTML syntax</a></dt>
-   <dt><a href="the-xhtml-syntax.html#xhtml">The XHTML syntax</a></dt>
+   <dt><a href="textFieldSelection.html#syntax">The HTML syntax</a></dt>
+   <dt><a href="textFieldSelection.html#xhtml">The XHTML syntax</a></dt>
 
    <dd>All of these features would be for naught if they couldn't be
    represented in a serialized form and sent to other people, and so
@@ -718,8 +721,8 @@
    rules for how to parse content using those syntaxes.</dd>
 
 
-  </dl><p>There are also some appendices, defining <a href="rendering.html#rendering">rendering rules</a> for Web browsers and listing
-  <a href="obsolete.html#obsolete">obsolete features</a> and <a href="iana.html#iana">IANA
+  </dl><p>There are also some appendices, defining <a href="textFieldSelection.html#rendering">rendering rules</a> for Web browsers and listing
+  <a href="textFieldSelection.html#obsolete">obsolete features</a> and <a href="textFieldSelection.html#iana">IANA
   considerations</a>.</p>
 
 
@@ -893,7 +896,7 @@
    <li>The maximum allowed stack depth for recursion in script.</li>
 
    <li>Features that describe the user's environment, like Media
-   Queries and the <code>Screen</code> object. <a href="references.html#refsMQ">[MQ]</a> <a href="references.html#refsCSSOMVIEW">[CSSOMVIEW]</a></li>
+   Queries and the <code>Screen</code> object. <a href="textFieldSelection.html#refsMQ">[MQ]</a> <a href="textFieldSelection.html#refsCSSOMVIEW">[CSSOMVIEW]</a></li>
 
    <li>The user's time zone.</li>
 
@@ -915,9 +918,9 @@
 &lt;/html&gt;</pre>
 
   <p>HTML documents consist of a tree of elements and text. Each
-  element is denoted in the source by a <a href="syntax.html#syntax-start-tag" title="syntax-start-tag">start tag</a>, such as "<code title="">&lt;body&gt;</code>", and an <a href="syntax.html#syntax-end-tag" title="syntax-end-tag">end
+  element is denoted in the source by a <a href="textFieldSelection.html#syntax-start-tag" title="syntax-start-tag">start tag</a>, such as "<code title="">&lt;body&gt;</code>", and an <a href="textFieldSelection.html#syntax-end-tag" title="syntax-end-tag">end
   tag</a>, such as "<code title="">&lt;/body&gt;</code>". (Certain
-  start tags and end tags can in certain cases be <a href="syntax.html#syntax-tag-omission" title="syntax-tag-omission">omitted</a> and are implied by other
+  start tags and end tags can in certain cases be <a href="textFieldSelection.html#syntax-tag-omission" title="syntax-tag-omission">omitted</a> and are implied by other
   tags.)</p>
 
   <p>Tags have to be nested such that elements are all completely
@@ -931,13 +934,13 @@
   nested.</p>
 
   <p>Elements can have attributes, which control how the elements
-  work. In the example below, there is a <a href="links.html#hyperlink">hyperlink</a>,
-  formed using the <code><a href="the-a-element.html#the-a-element">a</a></code> element and its <code title="attr-hyperlink-href"><a href="links.html#attr-hyperlink-href">href</a></code> attribute:</p>
+  work. In the example below, there is a <a href="textFieldSelection.html#hyperlink">hyperlink</a>,
+  formed using the <code><a href="the-a-element.html#the-a-element">a</a></code> element and its <code title="attr-hyperlink-href"><a href="textFieldSelection.html#attr-hyperlink-href">href</a></code> attribute:</p>
 
   <pre>&lt;a href="demo.html"&gt;simple&lt;/a&gt;</pre>
 
-  <p><a href="syntax.html#syntax-attributes" title="syntax-attributes">Attributes</a> are placed
-  inside the start tag, and consist of a <a href="syntax.html#syntax-attribute-name" title="syntax-attribute-name">name</a> and a <a href="syntax.html#syntax-attribute-value" title="syntax-attribute-value">value</a>, separated by an "<code title="">=</code>" character. The attribute value can remain <a href="syntax.html#unquoted">unquoted</a> if it doesn't contain <a href="common-microsyntaxes.html#space-character" title="space character">space characters</a> or any of <code title="">"</code> <code title="">'</code> <code title="">`</code>
+  <p><a href="textFieldSelection.html#syntax-attributes" title="syntax-attributes">Attributes</a> are placed
+  inside the start tag, and consist of a <a href="textFieldSelection.html#syntax-attribute-name" title="syntax-attribute-name">name</a> and a <a href="textFieldSelection.html#syntax-attribute-value" title="syntax-attribute-value">value</a>, separated by an "<code title="">=</code>" character. The attribute value can remain <a href="textFieldSelection.html#unquoted">unquoted</a> if it doesn't contain <a href="common-microsyntaxes.html#space-character" title="space character">space characters</a> or any of <code title="">"</code> <code title="">'</code> <code title="">`</code>
   <code title="">=</code> <code title="">&lt;</code> or <code title="">&gt;</code>. Otherwise, it has to be quoted using either
   single or double quotes. The value, along with the "<code title="">=</code>" character, can be omitted altogether if the value
   is the empty string.</p>
@@ -988,7 +991,7 @@
   <hr><p>This DOM tree can be manipulated from scripts in the
   page. Scripts (typically in JavaScript) are small programs that can
   be embedded using the <code><a href="the-script-element.html#the-script-element">script</a></code> element or using
-  <a href="webappapis.html#event-handler-content-attributes">event handler content attributes</a>. For example, here is
+  <a href="textFieldSelection.html#event-handler-content-attributes">event handler content attributes</a>. For example, here is
   a form with a script that sets the value of the form's
   <code><a href="the-output-element.html#the-output-element">output</a></code> element to say "Hello World":</p>
 
@@ -1002,7 +1005,7 @@
   <p>Each element in the DOM tree is represented by an object, and
   these objects have APIs so that they can be manipulated. For
   instance, a link (e.g. the <code><a href="the-a-element.html#the-a-element">a</a></code> element in the tree above)
-  can have its "<code title="attr-hyperlink-href"><a href="links.html#attr-hyperlink-href">href</a></code>"
+  can have its "<code title="attr-hyperlink-href"><a href="textFieldSelection.html#attr-hyperlink-href">href</a></code>"
   attribute changed in several ways:</p>
 
   <pre>var a = <a href="dom.html#document" title="Document">document</a>.<a href="dom.html#dom-document-links" title="dom-document-links">links</a>[0]; // obtain the first link in the document
@@ -1063,7 +1066,7 @@ a.setAttribute('href', 'http://example.com/'); // change the content attribute d
 
   <p>The security model of the Web is based on the concept of
   "origins", and correspondingly many of the potential attacks on the
-  Web involve cross-origin actions. <a href="references.html#refsORIGIN">[ORIGIN]</a></p>
+  Web involve cross-origin actions. <a href="textFieldSelection.html#refsORIGIN">[ORIGIN]</a></p>
 
   <dl><dt>Not validating user input</dt>
    <dt>Cross-site scripting (XSS)</dt>
@@ -1126,7 +1129,7 @@ a.setAttribute('href', 'http://example.com/'); // change the content attribute d
     <ul><li>When allowing harmless-seeming elements like
      <code><a href="the-img-element.html#the-img-element">img</a></code>, it is important to whitelist any provided
      attributes as well. If one allowed all attributes then an
-     attacker could, for instance, use the <code title="handler-onload"><a href="webappapis.html#handler-onload">onload</a></code> attribute to run arbitrary
+     attacker could, for instance, use the <code title="handler-onload"><a href="textFieldSelection.html#handler-onload">onload</a></code> attribute to run arbitrary
      script.</li>
 
      <li>When allowing URLs to be provided (e.g. for links), the
@@ -1185,7 +1188,7 @@ a.setAttribute('href', 'http://example.com/'); // change the content attribute d
 
     <p>To avoid this, sites that do not expect to be used in frames
     are encouraged to only enable their interface if they detect that
-    they are not in a frame (e.g. by comparing the <code title="dom-window"><a href="browsers.html#dom-window">window</a></code> object to the value of the <code title="dom-top"><a href="browsers.html#dom-top">top</a></code> attribute).</p>
+    they are not in a frame (e.g. by comparing the <code title="dom-window"><a href="textFieldSelection.html#dom-window">window</a></code> object to the value of the <code title="dom-top"><a href="textFieldSelection.html#dom-top">top</a></code> attribute).</p>
 
    </dd>
 
@@ -1203,7 +1206,7 @@ a.setAttribute('href', 'http://example.com/'); // change the content attribute d
   that authors need to be careful to avoid hooking event handlers
   after the events could have possibly fired.</p>
 
-  <p>There are two techniques for doing this reliably: use <a href="webappapis.html#event-handler-content-attributes">event
+  <p>There are two techniques for doing this reliably: use <a href="textFieldSelection.html#event-handler-content-attributes">event
   handler content attributes</a>, or create the element and add the
   event handlers in the same script. The latter is safe because, as
   mentioned earlier, scripts are run to completion before further
@@ -1216,7 +1219,7 @@ a.setAttribute('href', 'http://example.com/'); // change the content attribute d
    event could fire as soon as the element has been parsed, especially
    if the image has already been cached (which is common).</p>
 
-   <p>Here, the author uses the <code title="handler-onload"><a href="webappapis.html#handler-onload">onload</a></code> handler on an <code><a href="the-img-element.html#the-img-element">img</a></code>
+   <p>Here, the author uses the <code title="handler-onload"><a href="textFieldSelection.html#handler-onload">onload</a></code> handler on an <code><a href="the-img-element.html#the-img-element">img</a></code>
    element to catch the <code title="event-load">load</code> event:</p>
 
    <pre>&lt;img src="games.png" alt="Games" onload="gamesLogoHasLoaded(event)"&gt;</pre>
@@ -1377,7 +1380,7 @@ a.setAttribute('href', 'http://example.com/'); // change the content attribute d
     <p>To allow user agents to be used in controlled environments
     without having to implement the more bizarre and convoluted error
     handling rules, user agents are permitted to fail whenever
-    encountering a <a href="parsing.html#parse-error">parse error</a>.</p>
+    encountering a <a href="textFieldSelection.html#parse-error">parse error</a>.</p>
 
    </dd>
 
@@ -1825,7 +1828,7 @@ a.setAttribute('href', 'http://example.com/'); // change the content attribute d
     on the content models of elements and values of attributes are
     intended to allow for future expansion of the HTML vocabulary.</p>
 
-    <p class="example">For example, limiting the values of the <code title="attr-hyperlink-target"><a href="links.html#attr-hyperlink-target">target</a></code> attribute that start
+    <p class="example">For example, limiting the values of the <code title="attr-hyperlink-target"><a href="textFieldSelection.html#attr-hyperlink-target">target</a></code> attribute that start
     with an "_" (U+005F) character to only specific predefined
     values allows new predefined values to be introduced at a future
     time without conflicting with author-defined values.</p>
@@ -1853,7 +1856,7 @@ a.setAttribute('href', 'http://example.com/'); // change the content attribute d
   <p>The following documents might be of interest to readers of this
   specification.</p>
 
-  <dl><dt><cite>Character Model for the World Wide Web 1.0: Fundamentals</cite> <a href="references.html#refsCHARMOD">[CHARMOD]</a></dt>
+  <dl><dt><cite>Character Model for the World Wide Web 1.0: Fundamentals</cite> <a href="textFieldSelection.html#refsCHARMOD">[CHARMOD]</a></dt>
 
    <dd><blockquote><p>This Architectural Specification provides
    authors of specifications, software developers, and content
@@ -1865,7 +1868,7 @@ a.setAttribute('href', 'http://example.com/'); // change the content attribute d
    identification of character encodings, character escaping, and
    string indexing.</p></blockquote></dd>
 
-   <dt><cite>Unicode Security Considerations</cite> <a href="references.html#refsUTR36">[UTR36]</a></dt>
+   <dt><cite>Unicode Security Considerations</cite> <a href="textFieldSelection.html#refsUTR36">[UTR36]</a></dt>
 
    <dd><blockquote><p>Because Unicode contains such a large number of
    characters and incorporates the varied writing systems of the
@@ -1877,7 +1880,7 @@ a.setAttribute('href', 'http://example.com/'); // change the content attribute d
    provides specific recommendations to reduce the risk of
    problems.</p></blockquote></dd>
 
-   <dt><cite>Web Content Accessibility Guidelines (WCAG) 2.0</cite> <a href="references.html#refsWCAG">[WCAG]</a></dt>
+   <dt><cite>Web Content Accessibility Guidelines (WCAG) 2.0</cite> <a href="textFieldSelection.html#refsWCAG">[WCAG]</a></dt>
 
    <dd><blockquote><p>Web Content Accessibility Guidelines (WCAG) 2.0
    covers a wide range of recommendations for making Web content more
@@ -1889,7 +1892,7 @@ a.setAttribute('href', 'http://example.com/'); // change the content attribute d
    guidelines will also often make your Web content more usable to
    users in general.</p></blockquote></dd>
 
-   <dt class="impl"><cite>Authoring Tool Accessibility Guidelines (ATAG) 2.0</cite> <a href="references.html#refsATAG">[ATAG]</a></dt>
+   <dt class="impl"><cite>Authoring Tool Accessibility Guidelines (ATAG) 2.0</cite> <a href="textFieldSelection.html#refsATAG">[ATAG]</a></dt>
 
    <dd class="impl"><blockquote><p>This specification provides
    guidelines for designing Web content authoring tools that are more
@@ -1899,7 +1902,7 @@ a.setAttribute('href', 'http://example.com/'); // change the content attribute d
    as well as by enabling, supporting, and promoting the production of
    accessible Web content by all authors.</p></blockquote></dd>
 
-   <dt class="impl"><cite>User Agent Accessibility Guidelines (UAAG) 2.0</cite> <a href="references.html#refsUAAG">[UAAG]</a></dt>
+   <dt class="impl"><cite>User Agent Accessibility Guidelines (UAAG) 2.0</cite> <a href="textFieldSelection.html#refsUAAG">[UAAG]</a></dt>
 
    <dd class="impl"><blockquote><p>This document provides guidelines
    for designing user agents that lower barriers to Web accessibility
@@ -1913,7 +1916,7 @@ a.setAttribute('href', 'http://example.com/'); // change the content attribute d
    disabilities, should find conforming user agents to be more
    usable.</p></blockquote></dd>
 
-   <dt><cite>Polyglot Markup: HTML-Compatible XHTML Documents</cite> <a href="references.html#refsPOLYGLOT">[POLYGLOT]</a></dt>
+   <dt><cite>Polyglot Markup: HTML-Compatible XHTML Documents</cite> <a href="textFieldSelection.html#refsPOLYGLOT">[POLYGLOT]</a></dt>
 
    <dd><blockquote><p>A document that uses polyglot markup is a document
    that is a stream of bytes that parses into identical document trees
@@ -1931,7 +1934,7 @@ a.setAttribute('href', 'http://example.com/'); // change the content attribute d
 
 <!--(the following is not included in the WHATWG spec for quality reasons)-->
 <!--HPAAIG--><!--FORK-->
-   <dt><cite>HTML to Platform Accessibility APIs Implementation Guide</cite> <a href="references.html#refsHPAAIG">[HPAAIG]</a></dt>
+   <dt><cite>HTML to Platform Accessibility APIs Implementation Guide</cite> <a href="textFieldSelection.html#refsHPAAIG">[HPAAIG]</a></dt>
 
    <dd><blockquote><p>This is draft documentation mapping HTML
    elements and attributes to accessibility API Roles, States and

@@ -25,6 +25,14 @@ var target = process.argv[2] || "html"
 ,   hbDir = pth.join(rootDir, conf.outDir)
 ;
 
+function rename (src, to) {
+    try {
+        fs.renameSync(src, to);
+    }
+    catch (e) {
+        console.log("Error renaming " + src + " to " + to);
+    }
+}
 
 if (fs.existsSync(hbDir)) wrench.rmdirSyncRecursive(hbDir);
 fs.mkdirSync(hbDir);
@@ -37,8 +45,8 @@ exec("make " + conf.make, { cwd: rootDir }, function (err, stdout, stderr) {
     wrench.copyDirSyncRecursive(pth.join(rootDir, conf.makeDir), hbDir);
     // file renames
     if (target === "html") {
-        fs.renameSync(pth.join(hbDir, "index.html"), pth.join(hbDir, "section-index.html"));
-        fs.renameSync(pth.join(hbDir, "spec.html"), pth.join(hbDir, "index.html"));
+        rename(pth.join(hbDir, "index.html"), pth.join(hbDir, "section-index.html"));
+        rename(pth.join(hbDir, "spec.html"), pth.join(hbDir, "index.html"));
         // in every single file in there, replace spec.html with index.html
         var files = fs.readdirSync(hbDir)
         ,   entContent = fs.readFileSync(pth.join(rootDir, "boilerplate/entities-dtd.url"))

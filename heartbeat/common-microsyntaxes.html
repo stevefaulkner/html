@@ -1,5 +1,110 @@
 <!DOCTYPE html>
-<html lang="en-US-x-Hixie"><head><title>2.5 Common microsyntaxes &#8212; HTML5</title><style type="text/css">
+<html lang="en-US-x-Hixie"><head><meta charset="utf-8"><title>2.5 Common microsyntaxes &#8212; HTML5</title><style type="text/css">
+
+   .applies thead th > * { display: block; }
+   .applies thead code { display: block; }
+   .applies tbody th { white-space: nowrap; }
+   .applies td { text-align: center; }
+   .applies .yes { background: yellow; }
+
+   .matrix, .matrix td { border: hidden; text-align: right; }
+   .matrix { margin-left: 2em; }
+
+   .dice-example { border-collapse: collapse; border-style: hidden solid solid hidden; border-width: thin; margin-left: 3em; }
+   .dice-example caption { width: 30em; font-size: smaller; font-style: italic; padding: 0.75em 0; text-align: left; }
+   .dice-example td, .dice-example th { border: solid thin; width: 1.35em; height: 1.05em; text-align: center; padding: 0; }
+
+   td.eg { border-width: thin; text-align: center; }
+
+   #table-example-1 { border: solid thin; border-collapse: collapse; margin-left: 3em; }
+   #table-example-1 * { font-family: "Essays1743", serif; line-height: 1.01em; }
+   #table-example-1 caption { padding-bottom: 0.5em; }
+   #table-example-1 thead, #table-example-1 tbody { border: none; }
+   #table-example-1 th, #table-example-1 td { border: solid thin; }
+   #table-example-1 th { font-weight: normal; }
+   #table-example-1 td { border-style: none solid; vertical-align: top; }
+   #table-example-1 th { padding: 0.5em; vertical-align: middle; text-align: center; }
+   #table-example-1 tbody tr:first-child td { padding-top: 0.5em; }
+   #table-example-1 tbody tr:last-child td { padding-bottom: 1.5em; }
+   #table-example-1 tbody td:first-child { padding-left: 2.5em; padding-right: 0; width: 9em; }
+   #table-example-1 tbody td:first-child::after { content: leader(". "); }
+   #table-example-1 tbody td { padding-left: 2em; padding-right: 2em; }
+   #table-example-1 tbody td:first-child + td { width: 10em; }
+   #table-example-1 tbody td:first-child + td ~ td { width: 2.5em; }
+   #table-example-1 tbody td:first-child + td + td + td ~ td { width: 1.25em; }
+
+   .apple-table-examples { border: none; border-collapse: separate; border-spacing: 1.5em 0em; width: 40em; margin-left: 3em; }
+   .apple-table-examples * { font-family: "Times", serif; }
+   .apple-table-examples td, .apple-table-examples th { border: none; white-space: nowrap; padding-top: 0; padding-bottom: 0; }
+   .apple-table-examples tbody th:first-child { border-left: none; width: 100%; }
+   .apple-table-examples thead th:first-child ~ th { font-size: smaller; font-weight: bolder; border-bottom: solid 2px; text-align: center; }
+   .apple-table-examples tbody th::after, .apple-table-examples tfoot th::after { content: leader(". ") }
+   .apple-table-examples tbody th, .apple-table-examples tfoot th { font: inherit; text-align: left; }
+   .apple-table-examples td { text-align: right; vertical-align: top; }
+   .apple-table-examples.e1 tbody tr:last-child td { border-bottom: solid 1px; }
+   .apple-table-examples.e1 tbody + tbody tr:last-child td { border-bottom: double 3px; }
+   .apple-table-examples.e2 th[scope=row] { padding-left: 1em; }
+   .apple-table-examples sup { line-height: 0; }
+
+   .details-example img { vertical-align: top; }
+
+   #base64-table {
+     white-space: nowrap;
+     font-size: 0.6em;
+     column-width: 6em;
+     column-count: 5;
+     column-gap: 1em;
+     -moz-column-width: 6em;
+     -moz-column-count: 5;
+     -moz-column-gap: 1em;
+     -webkit-column-width: 6em;
+     -webkit-column-count: 5;
+     -webkit-column-gap: 1em;
+   }
+   #base64-table thead { display: none; }
+   #base64-table * { border: none; }
+   #base64-table tbody td:first-child:after { content: ':'; }
+   #base64-table tbody td:last-child { text-align: right; }
+
+   #named-character-references-table {
+     white-space: nowrap;
+     font-size: 0.6em;
+     column-width: 30em;
+     column-gap: 1em;
+     -moz-column-width: 30em;
+     -moz-column-gap: 1em;
+     -webkit-column-width: 30em;
+     -webkit-column-gap: 1em;
+   }
+   #named-character-references-table > table > tbody > tr > td:first-child + td,
+   #named-character-references-table > table > tbody > tr > td:last-child { text-align: center; }
+   #named-character-references-table > table > tbody > tr > td:last-child:hover > span { position: absolute; top: auto; left: auto; margin-left: 0.5em; line-height: 1.2; font-size: 5em; border: outset; padding: 0.25em 0.5em; background: white; width: 1.25em; height: auto; text-align: center; }
+   #named-character-references-table > table > tbody > tr#entity-CounterClockwiseContourIntegral > td:first-child { font-size: 0.5em; }
+
+   .glyph.control { color: red; }
+
+   @font-face {
+     font-family: 'Essays1743';
+     src: url('fonts/Essays1743.ttf');
+   }
+   @font-face {
+     font-family: 'Essays1743';
+     font-weight: bold;
+     src: url('fonts/Essays1743-Bold.ttf');
+   }
+   @font-face {
+     font-family: 'Essays1743';
+     font-style: italic;
+     src: url('fonts/Essays1743-Italic.ttf');
+   }
+   @font-face {
+     font-family: 'Essays1743';
+     font-style: italic;
+     font-weight: bold;
+     src: url('fonts/Essays1743-BoldItalic.ttf');
+   }
+
+  </style><link href="data:text/css," id="complete" rel="stylesheet" title="Complete specification"><link href="data:text/css,.impl%20%7B%20display:%20none;%20%7D%0Ahtml%20%7B%20border:%20solid%20yellow;%20%7D%20.domintro:before%20%7B%20display:%20none;%20%7D" id="author" rel="alternate stylesheet" title="Author documentation only"><link href="data:text/css,.impl%20%7B%20background:%20%23FFEEEE;%20%7D%20.domintro:before%20%7B%20background:%20%23FFEEEE;%20%7D" id="highlight" rel="alternate stylesheet" title="Highlight implementation requirements"><style type="text/css">
    pre { margin-left: 2em; white-space: pre-wrap; }
    h2 { margin: 3em 0 1em 0; }
    h3 { margin: 2.5em 0 1em 0; }
@@ -71,7 +176,7 @@
    h1 + h2, hr + h2.no-toc { page-break-before: auto; }
 
    p  > span:not([title=""]):not([class="XXX"]):not([class="impl"]):not([class="note"]),
-   li > span:not([title=""]):not([class="XXX"]):not([class="impl"]):not([class="note"]), { border-bottom: solid #9999CC; }
+   li > span:not([title=""]):not([class="XXX"]):not([class="impl"]):not([class="note"]) { border-bottom: solid #9999CC; }
 
    div.head { margin: 0 0 1em; padding: 1em 0 0 0; }
    div.head p { margin: 0; }
@@ -216,7 +321,8 @@
      display: block;
    }
    .stability input {
-     appearance: none; margin: 0; border: 0; padding: 0.25em 0.5em; background: transparent; color: black;
+     -moz-appearance: none; -webkit-appearance: none; margin: 0; 
+     border: 0; padding: 0.25em 0.5em; background: transparent; color: black;
      position: absolute; top: -0.5em; right: 0; font: 1.25em sans-serif; text-align: center;
    }
    .stability input:hover {
@@ -232,112 +338,7 @@
      color: white;
    }
 
-  </style><link href="http://www.w3.org/StyleSheets/TR/W3C-WD" rel="stylesheet" type="text/css"><meta content="noindex" name="robots"><style type="text/css">
-
-   .applies thead th > * { display: block; }
-   .applies thead code { display: block; }
-   .applies tbody th { whitespace: nowrap; }
-   .applies td { text-align: center; }
-   .applies .yes { background: yellow; }
-
-   .matrix, .matrix td { border: hidden; text-align: right; }
-   .matrix { margin-left: 2em; }
-
-   .dice-example { border-collapse: collapse; border-style: hidden solid solid hidden; border-width: thin; margin-left: 3em; }
-   .dice-example caption { width: 30em; font-size: smaller; font-style: italic; padding: 0.75em 0; text-align: left; }
-   .dice-example td, .dice-example th { border: solid thin; width: 1.35em; height: 1.05em; text-align: center; padding: 0; }
-
-   td.eg { border-width: thin; text-align: center; }
-
-   #table-example-1 { border: solid thin; border-collapse: collapse; margin-left: 3em; }
-   #table-example-1 * { font-family: "Essays1743", serif; line-height: 1.01em; }
-   #table-example-1 caption { padding-bottom: 0.5em; }
-   #table-example-1 thead, #table-example-1 tbody { border: none; }
-   #table-example-1 th, #table-example-1 td { border: solid thin; }
-   #table-example-1 th { font-weight: normal; }
-   #table-example-1 td { border-style: none solid; vertical-align: top; }
-   #table-example-1 th { padding: 0.5em; vertical-align: middle; text-align: center; }
-   #table-example-1 tbody tr:first-child td { padding-top: 0.5em; }
-   #table-example-1 tbody tr:last-child td { padding-bottom: 1.5em; }
-   #table-example-1 tbody td:first-child { padding-left: 2.5em; padding-right: 0; width: 9em; }
-   #table-example-1 tbody td:first-child::after { content: leader(". "); }
-   #table-example-1 tbody td { padding-left: 2em; padding-right: 2em; }
-   #table-example-1 tbody td:first-child + td { width: 10em; }
-   #table-example-1 tbody td:first-child + td ~ td { width: 2.5em; }
-   #table-example-1 tbody td:first-child + td + td + td ~ td { width: 1.25em; }
-
-   .apple-table-examples { border: none; border-collapse: separate; border-spacing: 1.5em 0em; width: 40em; margin-left: 3em; }
-   .apple-table-examples * { font-family: "Times", serif; }
-   .apple-table-examples td, .apple-table-examples th { border: none; white-space: nowrap; padding-top: 0; padding-bottom: 0; }
-   .apple-table-examples tbody th:first-child { border-left: none; width: 100%; }
-   .apple-table-examples thead th:first-child ~ th { font-size: smaller; font-weight: bolder; border-bottom: solid 2px; text-align: center; }
-   .apple-table-examples tbody th::after, .apple-table-examples tfoot th::after { content: leader(". ") }
-   .apple-table-examples tbody th, .apple-table-examples tfoot th { font: inherit; text-align: left; }
-   .apple-table-examples td { text-align: right; vertical-align: top; }
-   .apple-table-examples.e1 tbody tr:last-child td { border-bottom: solid 1px; }
-   .apple-table-examples.e1 tbody + tbody tr:last-child td { border-bottom: double 3px; }
-   .apple-table-examples.e2 th[scope=row] { padding-left: 1em; }
-   .apple-table-examples sup { line-height: 0; }
-
-   .details-example img { vertical-align: top; }
-
-   #base64-table {
-     white-space: nowrap;
-     font-size: 0.6em;
-     column-width: 6em;
-     column-count: 5;
-     column-gap: 1em;
-     -moz-column-width: 6em;
-     -moz-column-count: 5;
-     -moz-column-gap: 1em;
-     -webkit-column-width: 6em;
-     -webkit-column-count: 5;
-     -webkit-column-gap: 1em;
-   }
-   #base64-table thead { display: none; }
-   #base64-table * { border: none; }
-   #base64-table tbody td:first-child:after { content: ':'; }
-   #base64-table tbody td:last-child { text-align: right; }
-
-   #named-character-references-table {
-     white-space: nowrap;
-     font-size: 0.6em;
-     column-width: 30em;
-     column-gap: 1em;
-     -moz-column-width: 30em;
-     -moz-column-gap: 1em;
-     -webkit-column-width: 30em;
-     -webkit-column-gap: 1em;
-   }
-   #named-character-references-table > table > tbody > tr > td:first-child + td,
-   #named-character-references-table > table > tbody > tr > td:last-child { text-align: center; }
-   #named-character-references-table > table > tbody > tr > td:last-child:hover > span { position: absolute; top: auto; left: auto; margin-left: 0.5em; line-height: 1.2; font-size: 5em; border: outset; padding: 0.25em 0.5em; background: white; width: 1.25em; height: auto; text-align: center; }
-   #named-character-references-table > table > tbody > tr#entity-CounterClockwiseContourIntegral > td:first-child { font-size: 0.5em; }
-
-   .glyph.control { color: red; }
-
-   @font-face {
-     font-family: 'Essays1743';
-     src: url('fonts/Essays1743.ttf');
-   }
-   @font-face {
-     font-family: 'Essays1743';
-     font-weight: bold;
-     src: url('fonts/Essays1743-Bold.ttf');
-   }
-   @font-face {
-     font-family: 'Essays1743';
-     font-style: italic;
-     src: url('fonts/Essays1743-Italic.ttf');
-   }
-   @font-face {
-     font-family: 'Essays1743';
-     font-style: italic;
-     font-weight: bold;
-     src: url('fonts/Essays1743-BoldItalic.ttf');
-   }
-
-  </style><link href="data:text/css," id="complete" rel="stylesheet" title="Complete specification"><link href="data:text/css,.impl%20%7B%20display:%20none;%20%7D%0Ahtml%20%7B%20border:%20solid%20yellow;%20%7D%20.domintro:before%20%7B%20display:%20none;%20%7D" id="author" rel="alternate stylesheet" title="Author documentation only"><link href="data:text/css,.impl%20%7B%20background:%20%23FFEEEE;%20%7D%20.domintro:before%20%7B%20background:%20%23FFEEEE;%20%7D" id="highlight" rel="alternate stylesheet" title="Highlight implementation requirements"><script>
+  </style><link href="http://www.w3.org/StyleSheets/TR/W3C-WD" rel="stylesheet" type="text/css"><meta content="noindex" name="robots"><script>
    function getCookie(name) {
      var params = location.search.substr(1).split("&");
      for (var index = 0; index < params.length; index++) {
@@ -365,7 +366,9 @@
    <h2 class="no-num no-toc" id="a-vocabulary-and-associated-apis-for-html-and-xhtml">A vocabulary and associated APIs for HTML and XHTML</h2>
    <h2 class="no-num no-toc" id="w3c-working-draft-11-october-2012">W3C Working Draft 11 October 2012</h2>
    </div>
-   <div class="prev_next">
+  
+
+  <div class="prev_next">
    <a href="infrastructure.html">&#8592; 2 Common infrastructure</a> &#8211;
    <a href="index.html#contents">Table of contents</a> &#8211;
    <a href="urls.html">2.6 URLs &#8594;</a>
@@ -407,7 +410,7 @@
 
   <p>The <dfn id="white_space" title="White_Space">White_Space characters</dfn> are
   those that have the Unicode property "White_Space" in the Unicode
-  <code title="">PropList.txt</code> data file. <a href="references.html#refsUNICODE">[UNICODE]</a></p>
+  <code title="">PropList.txt</code> data file. <a href="textFieldSelection.html#refsUNICODE">[UNICODE]</a></p>
 
   <p class="note">This should not be confused with the "White_Space"
   value (abbreviated "WS") of the "Bidi_Class" property in the <code title="">Unicode.txt</code> data file.</p>
@@ -451,7 +454,7 @@
   White_Space characters</dfn> means that the user agent must
   <a href="#collect-a-sequence-of-characters">collect a sequence of characters</a> that are
   <a href="#white_space">White_Space</a> characters. In both cases, the collected
-  characters are not used. <a href="references.html#refsUNICODE">[UNICODE]</a></p>
+  characters are not used. <a href="textFieldSelection.html#refsUNICODE">[UNICODE]</a></p>
 
   <p>When a user agent is to <dfn id="strip-line-breaks">strip line breaks</dfn> from a
   string, the user agent must remove any "LF" (U+000A) and
@@ -1371,7 +1374,7 @@
   12; <em>30</em> if <var title="">month</var> is 4, 6, 9, or 11;
   <em>29</em> if <var title="">month</var> is 2 and <var title="">year</var> is a number divisible by 400, or if <var title="">year</var> is a number divisible by 4 but not by 100; and
   <em>28</em> otherwise. This takes into account leap years in the
-  Gregorian calendar. <a href="references.html#refsGREGORIAN">[GREGORIAN]</a></p>
+  Gregorian calendar. <a href="textFieldSelection.html#refsGREGORIAN">[GREGORIAN]</a></p>
 
   <p>The <dfn id="concept-datetime-digit" title="concept-datetime-digit">digits</dfn> in the date
   and time syntaxes defined in this section must be characters in the
@@ -1386,7 +1389,7 @@
   Implementors are therefore encouraged to carefully examine any date
   parsing libraries before using them to implement the parsing rules
   described below; ISO8601 libraries might not parse dates and times
-  in exactly the same manner. <a href="references.html#refsISO8601">[ISO8601]</a></p>
+  in exactly the same manner. <a href="textFieldSelection.html#refsISO8601">[ISO8601]</a></p>
 
   </div>
 
@@ -1395,7 +1398,7 @@
 
   <p>A <dfn id="concept-month" title="concept-month">month</dfn> consists of a specific
   proleptic Gregorian date with no time-zone information and no date
-  information beyond a year and a month. <a href="references.html#refsGREGORIAN">[GREGORIAN]</a></p>
+  information beyond a year and a month. <a href="textFieldSelection.html#refsGREGORIAN">[GREGORIAN]</a></p>
 
   <p>A string is a <dfn id="valid-month-string">valid month string</dfn> representing a year
   <var title="">year</var> and month <var title="">month</var> if it
@@ -1467,7 +1470,7 @@
 
   <p>A <dfn id="concept-date" title="concept-date">date</dfn> consists of a specific
   proleptic Gregorian date with no time-zone information, consisting
-  of a year, a month, and a day. <a href="references.html#refsGREGORIAN">[GREGORIAN]</a></p>
+  of a year, a month, and a day. <a href="textFieldSelection.html#refsGREGORIAN">[GREGORIAN]</a></p>
 
   <p>A string is a <dfn id="valid-date-string">valid date string</dfn> representing a year
   <var title="">year</var>, month <var title="">month</var>, and day
@@ -1539,7 +1542,7 @@
 
   <p>A <dfn id="concept-yearless-date" title="concept-yearless-date">yearless date</dfn> consists
   of a Gregorian month and a day within that month, but with no
-  associated year. <a href="references.html#refsGREGORIAN">[GREGORIAN]</a></p>
+  associated year. <a href="textFieldSelection.html#refsGREGORIAN">[GREGORIAN]</a></p>
 
   <p>A string is a <dfn id="valid-yearless-date-string">valid yearless date string</dfn> representing
   a month <var title="">month</var> and a day <var title="">day</var>
@@ -1770,7 +1773,7 @@
   consists of a specific proleptic Gregorian date, consisting of a
   year, a month, and a day, and a time, consisting of an hour, a
   minute, a second, and a fraction of a second, but expressed without
-  a time zone. <a href="references.html#refsGREGORIAN">[GREGORIAN]</a></p>
+  a time zone. <a href="textFieldSelection.html#refsGREGORIAN">[GREGORIAN]</a></p>
 
   <p>A string is a <dfn id="valid-local-date-and-time-string">valid local date and time string</dfn>
   representing a date and time if it consists of the following
@@ -1984,7 +1987,7 @@
   year, a month, and a day, and a time, consisting of an hour, a
   minute, a second, and a fraction of a second, expressed with a
   time-zone offset, consisting of a signed number of hours and
-  minutes. <a href="references.html#refsGREGORIAN">[GREGORIAN]</a></p>
+  minutes. <a href="textFieldSelection.html#refsGREGORIAN">[GREGORIAN]</a></p>
 
   <p>A string is a <dfn id="valid-global-date-and-time-string">valid global date and time string</dfn>
   representing a date, time, and a time-zone offset if it consists of
@@ -2068,7 +2071,7 @@
 
   <p class="note">The zone offset is not a complete time zone specification. When working
     with real date and time values, consider using a separate field for time zone,
-    perhaps using IANA time zone IDs. <a href="references.html#refsTIMEZONES">[TIMEZONES]</a></p>
+    perhaps using IANA time zone IDs. <a href="textFieldSelection.html#refsTIMEZONES">[TIMEZONES]</a></p>
 
   <p>A string is a <dfn id="valid-normalized-forced-utc-global-date-and-time-string">valid normalized forced-UTC global date and time
   string</dfn> representing a date, time, and a time-zone offset if it
@@ -2137,7 +2140,7 @@
   (1969-12-29) is defined as week number 1 in week-year
   1970. Consecutive weeks are numbered sequentially. The week before
   the number 1 week in a week-year is the last week in the previous
-  week-year, and vice versa. <a href="references.html#refsGREGORIAN">[GREGORIAN]</a></p>
+  week-year, and vice versa. <a href="textFieldSelection.html#refsGREGORIAN">[GREGORIAN]</a></p>
 
   <p>A week-year with a number <var title="">year</var> has 53 weeks
   if it corresponds to either a year <var title="">year</var> in the
@@ -2158,7 +2161,7 @@
   the Gregorian year <var title="">y</var>.</p>
 
   <p class="note">For modern purposes, a <a href="#concept-week" title="concept-week">week</a> as defined here is equivalent to
-  ISO weeks as defined in ISO 8601. <a href="references.html#refsISO8601">[ISO8601]</a></p>
+  ISO weeks as defined in ISO 8601. <a href="textFieldSelection.html#refsISO8601">[ISO8601]</a></p>
 
   <p>A string is a <dfn id="valid-week-string">valid week string</dfn> representing a
   week-year <var title="">year</var> and week <var title="">week</var>
@@ -2313,7 +2316,7 @@
 
     </ol><p class="note">This, as with a number of other date- and
     time-related microsyntaxes defined in this specification, is based
-    on one of the formats defined in ISO 8601. <a href="references.html#refsISO8601">[ISO8601]</a></p>
+    on one of the formats defined in ISO 8601. <a href="textFieldSelection.html#refsISO8601">[ISO8601]</a></p>
 
    </li>
 
@@ -2697,7 +2700,7 @@
 
   <p>A <dfn id="simple-color">simple color</dfn> consists of three 8-bit numbers in the
   range 0..255, representing the red, green, and blue components of
-  the color respectively, in the sRGB color space. <a href="references.html#refsSRGB">[SRGB]</a></p>
+  the color respectively, in the sRGB color space. <a href="textFieldSelection.html#refsSRGB">[SRGB]</a></p>
 
   <p>A string is a <dfn id="valid-simple-color">valid simple color</dfn> if it is exactly
   seven characters long, and the first character is a "#" (U+0023) character, and the remaining six characters are all in the
@@ -2792,7 +2795,7 @@
     href="http://www.w3.org/TR/css3-color/#css2-system">CSS2 System
     Colors</a> --> section<!--s--> of the CSS3 Color specification,
     then return the <a href="#simple-color">simple color</a> corresponding to that
-    keyword. <a href="references.html#refsCSSCOLOR">[CSSCOLOR]</a></p>
+    keyword. <a href="textFieldSelection.html#refsCSSCOLOR">[CSSCOLOR]</a></p>
 
     <p class="note"><a href="http://www.w3.org/TR/css3-color/#css2-system">CSS2 System
     Colors</a> are not recognised.</p>
@@ -3104,13 +3107,13 @@
 
   <p>A string is a <dfn id="valid-media-query">valid media query</dfn> if it matches the
   <code title="">media_query_list</code> production of the Media
-  Queries specification. <a href="references.html#refsMQ">[MQ]</a></p>
+  Queries specification. <a href="textFieldSelection.html#refsMQ">[MQ]</a></p>
 
   <p>A string <dfn id="matches-the-environment">matches the environment</dfn> of the user if it is
   the empty string, a string consisting of only <a href="#space-character" title="space
   character">space characters</a>, or is a media query that matches
   the user's environment according to the definitions given in the
-  Media Queries specification. <a href="references.html#refsMQ">[MQ]</a></p>
+  Media Queries specification. <a href="textFieldSelection.html#refsMQ">[MQ]</a></p>
 
 
 

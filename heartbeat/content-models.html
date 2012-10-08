@@ -1,5 +1,110 @@
 <!DOCTYPE html>
-<html lang="en-US-x-Hixie"><head><title>3.2.5 Content models &#8212; HTML5</title><style type="text/css">
+<html lang="en-US-x-Hixie"><head><meta charset="utf-8"><title>3.2.5 Content models &#8212; HTML5</title><style type="text/css">
+
+   .applies thead th > * { display: block; }
+   .applies thead code { display: block; }
+   .applies tbody th { white-space: nowrap; }
+   .applies td { text-align: center; }
+   .applies .yes { background: yellow; }
+
+   .matrix, .matrix td { border: hidden; text-align: right; }
+   .matrix { margin-left: 2em; }
+
+   .dice-example { border-collapse: collapse; border-style: hidden solid solid hidden; border-width: thin; margin-left: 3em; }
+   .dice-example caption { width: 30em; font-size: smaller; font-style: italic; padding: 0.75em 0; text-align: left; }
+   .dice-example td, .dice-example th { border: solid thin; width: 1.35em; height: 1.05em; text-align: center; padding: 0; }
+
+   td.eg { border-width: thin; text-align: center; }
+
+   #table-example-1 { border: solid thin; border-collapse: collapse; margin-left: 3em; }
+   #table-example-1 * { font-family: "Essays1743", serif; line-height: 1.01em; }
+   #table-example-1 caption { padding-bottom: 0.5em; }
+   #table-example-1 thead, #table-example-1 tbody { border: none; }
+   #table-example-1 th, #table-example-1 td { border: solid thin; }
+   #table-example-1 th { font-weight: normal; }
+   #table-example-1 td { border-style: none solid; vertical-align: top; }
+   #table-example-1 th { padding: 0.5em; vertical-align: middle; text-align: center; }
+   #table-example-1 tbody tr:first-child td { padding-top: 0.5em; }
+   #table-example-1 tbody tr:last-child td { padding-bottom: 1.5em; }
+   #table-example-1 tbody td:first-child { padding-left: 2.5em; padding-right: 0; width: 9em; }
+   #table-example-1 tbody td:first-child::after { content: leader(". "); }
+   #table-example-1 tbody td { padding-left: 2em; padding-right: 2em; }
+   #table-example-1 tbody td:first-child + td { width: 10em; }
+   #table-example-1 tbody td:first-child + td ~ td { width: 2.5em; }
+   #table-example-1 tbody td:first-child + td + td + td ~ td { width: 1.25em; }
+
+   .apple-table-examples { border: none; border-collapse: separate; border-spacing: 1.5em 0em; width: 40em; margin-left: 3em; }
+   .apple-table-examples * { font-family: "Times", serif; }
+   .apple-table-examples td, .apple-table-examples th { border: none; white-space: nowrap; padding-top: 0; padding-bottom: 0; }
+   .apple-table-examples tbody th:first-child { border-left: none; width: 100%; }
+   .apple-table-examples thead th:first-child ~ th { font-size: smaller; font-weight: bolder; border-bottom: solid 2px; text-align: center; }
+   .apple-table-examples tbody th::after, .apple-table-examples tfoot th::after { content: leader(". ") }
+   .apple-table-examples tbody th, .apple-table-examples tfoot th { font: inherit; text-align: left; }
+   .apple-table-examples td { text-align: right; vertical-align: top; }
+   .apple-table-examples.e1 tbody tr:last-child td { border-bottom: solid 1px; }
+   .apple-table-examples.e1 tbody + tbody tr:last-child td { border-bottom: double 3px; }
+   .apple-table-examples.e2 th[scope=row] { padding-left: 1em; }
+   .apple-table-examples sup { line-height: 0; }
+
+   .details-example img { vertical-align: top; }
+
+   #base64-table {
+     white-space: nowrap;
+     font-size: 0.6em;
+     column-width: 6em;
+     column-count: 5;
+     column-gap: 1em;
+     -moz-column-width: 6em;
+     -moz-column-count: 5;
+     -moz-column-gap: 1em;
+     -webkit-column-width: 6em;
+     -webkit-column-count: 5;
+     -webkit-column-gap: 1em;
+   }
+   #base64-table thead { display: none; }
+   #base64-table * { border: none; }
+   #base64-table tbody td:first-child:after { content: ':'; }
+   #base64-table tbody td:last-child { text-align: right; }
+
+   #named-character-references-table {
+     white-space: nowrap;
+     font-size: 0.6em;
+     column-width: 30em;
+     column-gap: 1em;
+     -moz-column-width: 30em;
+     -moz-column-gap: 1em;
+     -webkit-column-width: 30em;
+     -webkit-column-gap: 1em;
+   }
+   #named-character-references-table > table > tbody > tr > td:first-child + td,
+   #named-character-references-table > table > tbody > tr > td:last-child { text-align: center; }
+   #named-character-references-table > table > tbody > tr > td:last-child:hover > span { position: absolute; top: auto; left: auto; margin-left: 0.5em; line-height: 1.2; font-size: 5em; border: outset; padding: 0.25em 0.5em; background: white; width: 1.25em; height: auto; text-align: center; }
+   #named-character-references-table > table > tbody > tr#entity-CounterClockwiseContourIntegral > td:first-child { font-size: 0.5em; }
+
+   .glyph.control { color: red; }
+
+   @font-face {
+     font-family: 'Essays1743';
+     src: url('fonts/Essays1743.ttf');
+   }
+   @font-face {
+     font-family: 'Essays1743';
+     font-weight: bold;
+     src: url('fonts/Essays1743-Bold.ttf');
+   }
+   @font-face {
+     font-family: 'Essays1743';
+     font-style: italic;
+     src: url('fonts/Essays1743-Italic.ttf');
+   }
+   @font-face {
+     font-family: 'Essays1743';
+     font-style: italic;
+     font-weight: bold;
+     src: url('fonts/Essays1743-BoldItalic.ttf');
+   }
+
+  </style><link href="data:text/css," id="complete" rel="stylesheet" title="Complete specification"><link href="data:text/css,.impl%20%7B%20display:%20none;%20%7D%0Ahtml%20%7B%20border:%20solid%20yellow;%20%7D%20.domintro:before%20%7B%20display:%20none;%20%7D" id="author" rel="alternate stylesheet" title="Author documentation only"><link href="data:text/css,.impl%20%7B%20background:%20%23FFEEEE;%20%7D%20.domintro:before%20%7B%20background:%20%23FFEEEE;%20%7D" id="highlight" rel="alternate stylesheet" title="Highlight implementation requirements"><style type="text/css">
    pre { margin-left: 2em; white-space: pre-wrap; }
    h2 { margin: 3em 0 1em 0; }
    h3 { margin: 2.5em 0 1em 0; }
@@ -71,7 +176,7 @@
    h1 + h2, hr + h2.no-toc { page-break-before: auto; }
 
    p  > span:not([title=""]):not([class="XXX"]):not([class="impl"]):not([class="note"]),
-   li > span:not([title=""]):not([class="XXX"]):not([class="impl"]):not([class="note"]), { border-bottom: solid #9999CC; }
+   li > span:not([title=""]):not([class="XXX"]):not([class="impl"]):not([class="note"]) { border-bottom: solid #9999CC; }
 
    div.head { margin: 0 0 1em; padding: 1em 0 0 0; }
    div.head p { margin: 0; }
@@ -216,7 +321,8 @@
      display: block;
    }
    .stability input {
-     appearance: none; margin: 0; border: 0; padding: 0.25em 0.5em; background: transparent; color: black;
+     -moz-appearance: none; -webkit-appearance: none; margin: 0; 
+     border: 0; padding: 0.25em 0.5em; background: transparent; color: black;
      position: absolute; top: -0.5em; right: 0; font: 1.25em sans-serif; text-align: center;
    }
    .stability input:hover {
@@ -232,112 +338,7 @@
      color: white;
    }
 
-  </style><link href="http://www.w3.org/StyleSheets/TR/W3C-WD" rel="stylesheet" type="text/css"><meta content="noindex" name="robots"><style type="text/css">
-
-   .applies thead th > * { display: block; }
-   .applies thead code { display: block; }
-   .applies tbody th { whitespace: nowrap; }
-   .applies td { text-align: center; }
-   .applies .yes { background: yellow; }
-
-   .matrix, .matrix td { border: hidden; text-align: right; }
-   .matrix { margin-left: 2em; }
-
-   .dice-example { border-collapse: collapse; border-style: hidden solid solid hidden; border-width: thin; margin-left: 3em; }
-   .dice-example caption { width: 30em; font-size: smaller; font-style: italic; padding: 0.75em 0; text-align: left; }
-   .dice-example td, .dice-example th { border: solid thin; width: 1.35em; height: 1.05em; text-align: center; padding: 0; }
-
-   td.eg { border-width: thin; text-align: center; }
-
-   #table-example-1 { border: solid thin; border-collapse: collapse; margin-left: 3em; }
-   #table-example-1 * { font-family: "Essays1743", serif; line-height: 1.01em; }
-   #table-example-1 caption { padding-bottom: 0.5em; }
-   #table-example-1 thead, #table-example-1 tbody { border: none; }
-   #table-example-1 th, #table-example-1 td { border: solid thin; }
-   #table-example-1 th { font-weight: normal; }
-   #table-example-1 td { border-style: none solid; vertical-align: top; }
-   #table-example-1 th { padding: 0.5em; vertical-align: middle; text-align: center; }
-   #table-example-1 tbody tr:first-child td { padding-top: 0.5em; }
-   #table-example-1 tbody tr:last-child td { padding-bottom: 1.5em; }
-   #table-example-1 tbody td:first-child { padding-left: 2.5em; padding-right: 0; width: 9em; }
-   #table-example-1 tbody td:first-child::after { content: leader(". "); }
-   #table-example-1 tbody td { padding-left: 2em; padding-right: 2em; }
-   #table-example-1 tbody td:first-child + td { width: 10em; }
-   #table-example-1 tbody td:first-child + td ~ td { width: 2.5em; }
-   #table-example-1 tbody td:first-child + td + td + td ~ td { width: 1.25em; }
-
-   .apple-table-examples { border: none; border-collapse: separate; border-spacing: 1.5em 0em; width: 40em; margin-left: 3em; }
-   .apple-table-examples * { font-family: "Times", serif; }
-   .apple-table-examples td, .apple-table-examples th { border: none; white-space: nowrap; padding-top: 0; padding-bottom: 0; }
-   .apple-table-examples tbody th:first-child { border-left: none; width: 100%; }
-   .apple-table-examples thead th:first-child ~ th { font-size: smaller; font-weight: bolder; border-bottom: solid 2px; text-align: center; }
-   .apple-table-examples tbody th::after, .apple-table-examples tfoot th::after { content: leader(". ") }
-   .apple-table-examples tbody th, .apple-table-examples tfoot th { font: inherit; text-align: left; }
-   .apple-table-examples td { text-align: right; vertical-align: top; }
-   .apple-table-examples.e1 tbody tr:last-child td { border-bottom: solid 1px; }
-   .apple-table-examples.e1 tbody + tbody tr:last-child td { border-bottom: double 3px; }
-   .apple-table-examples.e2 th[scope=row] { padding-left: 1em; }
-   .apple-table-examples sup { line-height: 0; }
-
-   .details-example img { vertical-align: top; }
-
-   #base64-table {
-     white-space: nowrap;
-     font-size: 0.6em;
-     column-width: 6em;
-     column-count: 5;
-     column-gap: 1em;
-     -moz-column-width: 6em;
-     -moz-column-count: 5;
-     -moz-column-gap: 1em;
-     -webkit-column-width: 6em;
-     -webkit-column-count: 5;
-     -webkit-column-gap: 1em;
-   }
-   #base64-table thead { display: none; }
-   #base64-table * { border: none; }
-   #base64-table tbody td:first-child:after { content: ':'; }
-   #base64-table tbody td:last-child { text-align: right; }
-
-   #named-character-references-table {
-     white-space: nowrap;
-     font-size: 0.6em;
-     column-width: 30em;
-     column-gap: 1em;
-     -moz-column-width: 30em;
-     -moz-column-gap: 1em;
-     -webkit-column-width: 30em;
-     -webkit-column-gap: 1em;
-   }
-   #named-character-references-table > table > tbody > tr > td:first-child + td,
-   #named-character-references-table > table > tbody > tr > td:last-child { text-align: center; }
-   #named-character-references-table > table > tbody > tr > td:last-child:hover > span { position: absolute; top: auto; left: auto; margin-left: 0.5em; line-height: 1.2; font-size: 5em; border: outset; padding: 0.25em 0.5em; background: white; width: 1.25em; height: auto; text-align: center; }
-   #named-character-references-table > table > tbody > tr#entity-CounterClockwiseContourIntegral > td:first-child { font-size: 0.5em; }
-
-   .glyph.control { color: red; }
-
-   @font-face {
-     font-family: 'Essays1743';
-     src: url('fonts/Essays1743.ttf');
-   }
-   @font-face {
-     font-family: 'Essays1743';
-     font-weight: bold;
-     src: url('fonts/Essays1743-Bold.ttf');
-   }
-   @font-face {
-     font-family: 'Essays1743';
-     font-style: italic;
-     src: url('fonts/Essays1743-Italic.ttf');
-   }
-   @font-face {
-     font-family: 'Essays1743';
-     font-style: italic;
-     font-weight: bold;
-     src: url('fonts/Essays1743-BoldItalic.ttf');
-   }
-
-  </style><link href="data:text/css," id="complete" rel="stylesheet" title="Complete specification"><link href="data:text/css,.impl%20%7B%20display:%20none;%20%7D%0Ahtml%20%7B%20border:%20solid%20yellow;%20%7D%20.domintro:before%20%7B%20display:%20none;%20%7D" id="author" rel="alternate stylesheet" title="Author documentation only"><link href="data:text/css,.impl%20%7B%20background:%20%23FFEEEE;%20%7D%20.domintro:before%20%7B%20background:%20%23FFEEEE;%20%7D" id="highlight" rel="alternate stylesheet" title="Highlight implementation requirements"><script>
+  </style><link href="http://www.w3.org/StyleSheets/TR/W3C-WD" rel="stylesheet" type="text/css"><meta content="noindex" name="robots"><script>
    function getCookie(name) {
      var params = location.search.substr(1).split("&");
      for (var index = 0; index < params.length; index++) {
@@ -365,7 +366,9 @@
    <h2 class="no-num no-toc" id="a-vocabulary-and-associated-apis-for-html-and-xhtml">A vocabulary and associated APIs for HTML and XHTML</h2>
    <h2 class="no-num no-toc" id="w3c-working-draft-11-october-2012">W3C Working Draft 11 October 2012</h2>
    </div>
-   <div class="prev_next">
+  
+
+  <div class="prev_next">
    <a href="element-definitions.html">&#8592; 3.2.4 Element definitions</a> &#8211;
    <a href="index.html#contents">Table of contents</a> &#8211;
    <a href="requirements-relating-to-bidirectional-algorithm-formatting-characters.html">3.2.6 Requirements relating to bidirectional-algorithm formatting characters &#8594;</a>
@@ -414,7 +417,7 @@
    <p>For example, the Atom specification defines a <code title="">content</code> element. When its <code title="">type</code> attribute has the value <code title="">xhtml</code>, the Atom specification requires that it
    contain a single HTML <code><a href="the-div-element.html#the-div-element">div</a></code> element. Thus, a
    <code><a href="the-div-element.html#the-div-element">div</a></code> element is allowed in that context, even though
-   this is not explicitly normatively stated by this specification. <a href="references.html#refsATOM">[ATOM]</a></p>
+   this is not explicitly normatively stated by this specification. <a href="textFieldSelection.html#refsATOM">[ATOM]</a></p>
   </div>
 
   <p>In addition, <a href="infrastructure.html#html-elements">HTML elements</a> may be orphan nodes
@@ -477,7 +480,7 @@
 
   <!-- when updating this also update the category index -->
   <ul class="brief category-list"><li><code><a href="the-base-element.html#the-base-element">base</a></code></li>
-   <li><code><a href="the-command-element.html#the-command-element">command</a></code></li>
+   <li><code><a href="textFieldSelection.html#the-command-element">command</a></code></li>
    <li><code><a href="the-link-element.html#the-link-element">link</a></code></li>
    <li><code><a href="the-meta-element.html#the-meta-element">meta</a></code></li>
    <li><code><a href="the-noscript-element.html#the-noscript-element">noscript</a></code></li>
@@ -539,13 +542,13 @@
    <li><code><a href="the-canvas-element.html#the-canvas-element">canvas</a></code></li>
    <li><code><a href="the-cite-element.html#the-cite-element">cite</a></code></li>
    <li><code><a href="the-code-element.html#the-code-element">code</a></code></li>
-   <li><code><a href="the-command-element.html#the-command-element">command</a></code></li>
+   <li><code><a href="textFieldSelection.html#the-command-element">command</a></code></li>
 <!--DATA--><!--FORK-->
    <li><code><a href="the-datalist-element.html#the-datalist-element">datalist</a></code></li>
    <li><code><a href="the-del-element.html#the-del-element">del</a></code></li>
-   <li><code><a href="the-details-element.html#the-details-element">details</a></code></li>
+   <li><code><a href="textFieldSelection.html#the-details-element">details</a></code></li>
    <li><code><a href="the-dfn-element.html#the-dfn-element">dfn</a></code></li>
-   <li><code><a href="commands.html#the-dialog-element">dialog</a></code></li>
+   <li><code><a href="textFieldSelection.html#the-dialog-element">dialog</a></code></li>
    <li><code><a href="the-div-element.html#the-div-element">div</a></code></li>
    <li><code><a href="the-dl-element.html#the-dl-element">dl</a></code></li>
    <li><code><a href="the-em-element.html#the-em-element">em</a></code></li>
@@ -575,7 +578,7 @@
    <li><code><a href="the-map-element.html#the-map-element">map</a></code></li>
    <li><code><a href="the-mark-element.html#the-mark-element">mark</a></code></li>
    <li><code><a href="mathml.html#math">math</a></code></li>
-   <li><code><a href="the-menu-element.html#the-menu-element">menu</a></code></li>
+   <li><code><a href="textFieldSelection.html#the-menu-element">menu</a></code></li>
 <!--MD-->
    <li><code><a href="the-meter-element.html#the-meter-element">meter</a></code></li>
    <li><code><a href="the-nav-element.html#the-nav-element">nav</a></code></li>
@@ -661,7 +664,7 @@
    <li><code><a href="the-canvas-element.html#the-canvas-element">canvas</a></code></li>
    <li><code><a href="the-cite-element.html#the-cite-element">cite</a></code></li>
    <li><code><a href="the-code-element.html#the-code-element">code</a></code></li>
-   <li><code><a href="the-command-element.html#the-command-element">command</a></code></li>
+   <li><code><a href="textFieldSelection.html#the-command-element">command</a></code></li>
 <!--DATA--><!--FORK-->
    <li><code><a href="the-datalist-element.html#the-datalist-element">datalist</a></code></li>
    <li><code><a href="the-del-element.html#the-del-element">del</a></code></li>
@@ -796,14 +799,14 @@ http://software.hixie.ch/utilities/js/live-dom-viewer/?%3C%21DOCTYPE%20HTML%3E%0
   <ul class="brief category-list"><li><code><a href="the-a-element.html#the-a-element">a</a></code></li>
    <li><code><a href="the-audio-element.html#the-audio-element">audio</a></code> (if the <code title="attr-media-controls"><a href="media-elements.html#attr-media-controls">controls</a></code> attribute is present)</li>
    <li><code><a href="the-button-element.html#the-button-element">button</a></code></li>
-   <li><code><a href="the-details-element.html#the-details-element">details</a></code></li>
+   <li><code><a href="textFieldSelection.html#the-details-element">details</a></code></li>
    <li><code><a href="the-embed-element.html#the-embed-element">embed</a></code></li>
    <li><code><a href="the-iframe-element.html#the-iframe-element">iframe</a></code></li>
    <li><code><a href="the-img-element.html#the-img-element">img</a></code> (if the <code title="attr-hyperlink-usemap"><a href="image-maps.html#attr-hyperlink-usemap">usemap</a></code> attribute is present)</li>
    <li><code><a href="the-input-element.html#the-input-element">input</a></code> (if the <code title="attr-input-type"><a href="the-input-element.html#attr-input-type">type</a></code> attribute is <em>not</em> in the <a href="states-of-the-type-attribute.html#hidden-state-(type=hidden)" title="attr-input-type-hidden">Hidden</a> state)</li>
    <li><code><a href="the-keygen-element.html#the-keygen-element">keygen</a></code></li>
    <li><code><a href="the-label-element.html#the-label-element">label</a></code></li>
-   <li><code><a href="the-menu-element.html#the-menu-element">menu</a></code> (if the <code title="attr-menu-type"><a href="the-menu-element.html#attr-menu-type">type</a></code> attribute is in the <a href="the-menu-element.html#toolbar-state" title="toolbar state">toolbar</a> state)</li>
+   <li><code><a href="textFieldSelection.html#the-menu-element">menu</a></code> (if the <code title="attr-menu-type"><a href="textFieldSelection.html#attr-menu-type">type</a></code> attribute is in the <a href="textFieldSelection.html#toolbar-state" title="toolbar state">toolbar</a> state)</li>
    <li><code><a href="the-object-element.html#the-object-element">object</a></code> (if the <code title="attr-hyperlink-usemap"><a href="image-maps.html#attr-hyperlink-usemap">usemap</a></code> attribute is present)<!-- see also comment in <object> section --></li>
    <li><code><a href="the-select-element.html#the-select-element">select</a></code></li>
    <li><code><a href="the-textarea-element.html#the-textarea-element">textarea</a></code></li>
@@ -840,7 +843,7 @@ http://software.hixie.ch/utilities/js/live-dom-viewer/?%3C%21DOCTYPE%20HTML%3E%0
    <li><p><a href="#run-pre-click-activation-steps">Run pre-click activation steps</a> on the
    element.</p></li>
 
-   <li><p><a href="webappapis.html#fire-a-click-event">Fire a <code title="event-click">click</code>
+   <li><p><a href="textFieldSelection.html#fire-a-click-event">Fire a <code title="event-click">click</code>
    event</a> at the element.</p></li>
 
    <li>
@@ -892,7 +895,7 @@ http://software.hixie.ch/utilities/js/live-dom-viewer/?%3C%21DOCTYPE%20HTML%3E%0
    element to false.</p></li>
 
   </ol><p class="note">The above doesn't happen for arbitrary synthetic
-  events dispatched by author script. However, the <code title="dom-click"><a href="editing.html#dom-click">click()</a></code> method can be used to make it
+  events dispatched by author script. However, the <code title="dom-click"><a href="textFieldSelection.html#dom-click">click()</a></code> method can be used to make it
   happen programmatically.</p>
 
   <p class="note">Click-focusing behavior (e.g. the focusing of a text
@@ -939,7 +942,7 @@ http://software.hixie.ch/utilities/js/live-dom-viewer/?%3C%21DOCTYPE%20HTML%3E%0
   <p>As a general rule, elements whose content model allows any
   <a href="#flow-content-1">flow content</a> or <a href="#phrasing-content-1">phrasing content</a> should
   have at least one child node that is <dfn id="palpable-content-0">palpable content</dfn>
-  and that does not have the <code title="attr-hidden"><a href="editing.html#the-hidden-attribute">hidden</a></code>
+  and that does not have the <code title="attr-hidden"><a href="textFieldSelection.html#the-hidden-attribute">hidden</a></code>
   attribute specified.</p>
 
   <p>This requirement is not a hard requirement, however, as there are
@@ -970,7 +973,7 @@ http://software.hixie.ch/utilities/js/live-dom-viewer/?%3C%21DOCTYPE%20HTML%3E%0
    <li><code><a href="the-cite-element.html#the-cite-element">cite</a></code></li>
    <li><code><a href="the-code-element.html#the-code-element">code</a></code></li>
 <!--DATA--><!--FORK-->
-   <li><code><a href="the-details-element.html#the-details-element">details</a></code></li>
+   <li><code><a href="textFieldSelection.html#the-details-element">details</a></code></li>
    <li><code><a href="the-dfn-element.html#the-dfn-element">dfn</a></code></li>
    <li><code><a href="the-div-element.html#the-div-element">div</a></code></li>
    <li><code><a href="the-dl-element.html#the-dl-element">dl</a></code> (if the element's children include at least one name-value group)</li>
@@ -999,7 +1002,7 @@ http://software.hixie.ch/utilities/js/live-dom-viewer/?%3C%21DOCTYPE%20HTML%3E%0
    <li><code><a href="the-map-element.html#the-map-element">map</a></code></li>
    <li><code><a href="the-mark-element.html#the-mark-element">mark</a></code></li>
    <li><code><a href="mathml.html#math">math</a></code></li>
-   <li><code><a href="the-menu-element.html#the-menu-element">menu</a></code> (if the <code title="attr-menu-type"><a href="the-menu-element.html#attr-menu-type">type</a></code> attribute is in the <a href="the-menu-element.html#toolbar-state" title="toolbar state">toolbar</a> state or the <a href="the-menu-element.html#list-state" title="list state">list</a> state)</li>
+   <li><code><a href="textFieldSelection.html#the-menu-element">menu</a></code> (if the <code title="attr-menu-type"><a href="textFieldSelection.html#attr-menu-type">type</a></code> attribute is in the <a href="textFieldSelection.html#toolbar-state" title="toolbar state">toolbar</a> state or the <a href="textFieldSelection.html#list-state" title="list state">list</a> state)</li>
    <li><code><a href="the-meter-element.html#the-meter-element">meter</a></code></li>
    <li><code><a href="the-nav-element.html#the-nav-element">nav</a></code></li>
    <li><code><a href="the-object-element.html#the-object-element">object</a></code></li>

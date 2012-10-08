@@ -1,5 +1,110 @@
 <!DOCTYPE html>
-<html lang="en-US-x-Hixie"><head><title>4.2.5 The meta element &#8212; HTML5</title><style type="text/css">
+<html lang="en-US-x-Hixie"><head><meta charset="utf-8"><title>4.2.5 The meta element &#8212; HTML5</title><style type="text/css">
+
+   .applies thead th > * { display: block; }
+   .applies thead code { display: block; }
+   .applies tbody th { white-space: nowrap; }
+   .applies td { text-align: center; }
+   .applies .yes { background: yellow; }
+
+   .matrix, .matrix td { border: hidden; text-align: right; }
+   .matrix { margin-left: 2em; }
+
+   .dice-example { border-collapse: collapse; border-style: hidden solid solid hidden; border-width: thin; margin-left: 3em; }
+   .dice-example caption { width: 30em; font-size: smaller; font-style: italic; padding: 0.75em 0; text-align: left; }
+   .dice-example td, .dice-example th { border: solid thin; width: 1.35em; height: 1.05em; text-align: center; padding: 0; }
+
+   td.eg { border-width: thin; text-align: center; }
+
+   #table-example-1 { border: solid thin; border-collapse: collapse; margin-left: 3em; }
+   #table-example-1 * { font-family: "Essays1743", serif; line-height: 1.01em; }
+   #table-example-1 caption { padding-bottom: 0.5em; }
+   #table-example-1 thead, #table-example-1 tbody { border: none; }
+   #table-example-1 th, #table-example-1 td { border: solid thin; }
+   #table-example-1 th { font-weight: normal; }
+   #table-example-1 td { border-style: none solid; vertical-align: top; }
+   #table-example-1 th { padding: 0.5em; vertical-align: middle; text-align: center; }
+   #table-example-1 tbody tr:first-child td { padding-top: 0.5em; }
+   #table-example-1 tbody tr:last-child td { padding-bottom: 1.5em; }
+   #table-example-1 tbody td:first-child { padding-left: 2.5em; padding-right: 0; width: 9em; }
+   #table-example-1 tbody td:first-child::after { content: leader(". "); }
+   #table-example-1 tbody td { padding-left: 2em; padding-right: 2em; }
+   #table-example-1 tbody td:first-child + td { width: 10em; }
+   #table-example-1 tbody td:first-child + td ~ td { width: 2.5em; }
+   #table-example-1 tbody td:first-child + td + td + td ~ td { width: 1.25em; }
+
+   .apple-table-examples { border: none; border-collapse: separate; border-spacing: 1.5em 0em; width: 40em; margin-left: 3em; }
+   .apple-table-examples * { font-family: "Times", serif; }
+   .apple-table-examples td, .apple-table-examples th { border: none; white-space: nowrap; padding-top: 0; padding-bottom: 0; }
+   .apple-table-examples tbody th:first-child { border-left: none; width: 100%; }
+   .apple-table-examples thead th:first-child ~ th { font-size: smaller; font-weight: bolder; border-bottom: solid 2px; text-align: center; }
+   .apple-table-examples tbody th::after, .apple-table-examples tfoot th::after { content: leader(". ") }
+   .apple-table-examples tbody th, .apple-table-examples tfoot th { font: inherit; text-align: left; }
+   .apple-table-examples td { text-align: right; vertical-align: top; }
+   .apple-table-examples.e1 tbody tr:last-child td { border-bottom: solid 1px; }
+   .apple-table-examples.e1 tbody + tbody tr:last-child td { border-bottom: double 3px; }
+   .apple-table-examples.e2 th[scope=row] { padding-left: 1em; }
+   .apple-table-examples sup { line-height: 0; }
+
+   .details-example img { vertical-align: top; }
+
+   #base64-table {
+     white-space: nowrap;
+     font-size: 0.6em;
+     column-width: 6em;
+     column-count: 5;
+     column-gap: 1em;
+     -moz-column-width: 6em;
+     -moz-column-count: 5;
+     -moz-column-gap: 1em;
+     -webkit-column-width: 6em;
+     -webkit-column-count: 5;
+     -webkit-column-gap: 1em;
+   }
+   #base64-table thead { display: none; }
+   #base64-table * { border: none; }
+   #base64-table tbody td:first-child:after { content: ':'; }
+   #base64-table tbody td:last-child { text-align: right; }
+
+   #named-character-references-table {
+     white-space: nowrap;
+     font-size: 0.6em;
+     column-width: 30em;
+     column-gap: 1em;
+     -moz-column-width: 30em;
+     -moz-column-gap: 1em;
+     -webkit-column-width: 30em;
+     -webkit-column-gap: 1em;
+   }
+   #named-character-references-table > table > tbody > tr > td:first-child + td,
+   #named-character-references-table > table > tbody > tr > td:last-child { text-align: center; }
+   #named-character-references-table > table > tbody > tr > td:last-child:hover > span { position: absolute; top: auto; left: auto; margin-left: 0.5em; line-height: 1.2; font-size: 5em; border: outset; padding: 0.25em 0.5em; background: white; width: 1.25em; height: auto; text-align: center; }
+   #named-character-references-table > table > tbody > tr#entity-CounterClockwiseContourIntegral > td:first-child { font-size: 0.5em; }
+
+   .glyph.control { color: red; }
+
+   @font-face {
+     font-family: 'Essays1743';
+     src: url('fonts/Essays1743.ttf');
+   }
+   @font-face {
+     font-family: 'Essays1743';
+     font-weight: bold;
+     src: url('fonts/Essays1743-Bold.ttf');
+   }
+   @font-face {
+     font-family: 'Essays1743';
+     font-style: italic;
+     src: url('fonts/Essays1743-Italic.ttf');
+   }
+   @font-face {
+     font-family: 'Essays1743';
+     font-style: italic;
+     font-weight: bold;
+     src: url('fonts/Essays1743-BoldItalic.ttf');
+   }
+
+  </style><link href="data:text/css," id="complete" rel="stylesheet" title="Complete specification"><link href="data:text/css,.impl%20%7B%20display:%20none;%20%7D%0Ahtml%20%7B%20border:%20solid%20yellow;%20%7D%20.domintro:before%20%7B%20display:%20none;%20%7D" id="author" rel="alternate stylesheet" title="Author documentation only"><link href="data:text/css,.impl%20%7B%20background:%20%23FFEEEE;%20%7D%20.domintro:before%20%7B%20background:%20%23FFEEEE;%20%7D" id="highlight" rel="alternate stylesheet" title="Highlight implementation requirements"><style type="text/css">
    pre { margin-left: 2em; white-space: pre-wrap; }
    h2 { margin: 3em 0 1em 0; }
    h3 { margin: 2.5em 0 1em 0; }
@@ -71,7 +176,7 @@
    h1 + h2, hr + h2.no-toc { page-break-before: auto; }
 
    p  > span:not([title=""]):not([class="XXX"]):not([class="impl"]):not([class="note"]),
-   li > span:not([title=""]):not([class="XXX"]):not([class="impl"]):not([class="note"]), { border-bottom: solid #9999CC; }
+   li > span:not([title=""]):not([class="XXX"]):not([class="impl"]):not([class="note"]) { border-bottom: solid #9999CC; }
 
    div.head { margin: 0 0 1em; padding: 1em 0 0 0; }
    div.head p { margin: 0; }
@@ -216,7 +321,8 @@
      display: block;
    }
    .stability input {
-     appearance: none; margin: 0; border: 0; padding: 0.25em 0.5em; background: transparent; color: black;
+     -moz-appearance: none; -webkit-appearance: none; margin: 0; 
+     border: 0; padding: 0.25em 0.5em; background: transparent; color: black;
      position: absolute; top: -0.5em; right: 0; font: 1.25em sans-serif; text-align: center;
    }
    .stability input:hover {
@@ -232,112 +338,7 @@
      color: white;
    }
 
-  </style><link href="http://www.w3.org/StyleSheets/TR/W3C-WD" rel="stylesheet" type="text/css"><meta content="noindex" name="robots"><style type="text/css">
-
-   .applies thead th > * { display: block; }
-   .applies thead code { display: block; }
-   .applies tbody th { whitespace: nowrap; }
-   .applies td { text-align: center; }
-   .applies .yes { background: yellow; }
-
-   .matrix, .matrix td { border: hidden; text-align: right; }
-   .matrix { margin-left: 2em; }
-
-   .dice-example { border-collapse: collapse; border-style: hidden solid solid hidden; border-width: thin; margin-left: 3em; }
-   .dice-example caption { width: 30em; font-size: smaller; font-style: italic; padding: 0.75em 0; text-align: left; }
-   .dice-example td, .dice-example th { border: solid thin; width: 1.35em; height: 1.05em; text-align: center; padding: 0; }
-
-   td.eg { border-width: thin; text-align: center; }
-
-   #table-example-1 { border: solid thin; border-collapse: collapse; margin-left: 3em; }
-   #table-example-1 * { font-family: "Essays1743", serif; line-height: 1.01em; }
-   #table-example-1 caption { padding-bottom: 0.5em; }
-   #table-example-1 thead, #table-example-1 tbody { border: none; }
-   #table-example-1 th, #table-example-1 td { border: solid thin; }
-   #table-example-1 th { font-weight: normal; }
-   #table-example-1 td { border-style: none solid; vertical-align: top; }
-   #table-example-1 th { padding: 0.5em; vertical-align: middle; text-align: center; }
-   #table-example-1 tbody tr:first-child td { padding-top: 0.5em; }
-   #table-example-1 tbody tr:last-child td { padding-bottom: 1.5em; }
-   #table-example-1 tbody td:first-child { padding-left: 2.5em; padding-right: 0; width: 9em; }
-   #table-example-1 tbody td:first-child::after { content: leader(". "); }
-   #table-example-1 tbody td { padding-left: 2em; padding-right: 2em; }
-   #table-example-1 tbody td:first-child + td { width: 10em; }
-   #table-example-1 tbody td:first-child + td ~ td { width: 2.5em; }
-   #table-example-1 tbody td:first-child + td + td + td ~ td { width: 1.25em; }
-
-   .apple-table-examples { border: none; border-collapse: separate; border-spacing: 1.5em 0em; width: 40em; margin-left: 3em; }
-   .apple-table-examples * { font-family: "Times", serif; }
-   .apple-table-examples td, .apple-table-examples th { border: none; white-space: nowrap; padding-top: 0; padding-bottom: 0; }
-   .apple-table-examples tbody th:first-child { border-left: none; width: 100%; }
-   .apple-table-examples thead th:first-child ~ th { font-size: smaller; font-weight: bolder; border-bottom: solid 2px; text-align: center; }
-   .apple-table-examples tbody th::after, .apple-table-examples tfoot th::after { content: leader(". ") }
-   .apple-table-examples tbody th, .apple-table-examples tfoot th { font: inherit; text-align: left; }
-   .apple-table-examples td { text-align: right; vertical-align: top; }
-   .apple-table-examples.e1 tbody tr:last-child td { border-bottom: solid 1px; }
-   .apple-table-examples.e1 tbody + tbody tr:last-child td { border-bottom: double 3px; }
-   .apple-table-examples.e2 th[scope=row] { padding-left: 1em; }
-   .apple-table-examples sup { line-height: 0; }
-
-   .details-example img { vertical-align: top; }
-
-   #base64-table {
-     white-space: nowrap;
-     font-size: 0.6em;
-     column-width: 6em;
-     column-count: 5;
-     column-gap: 1em;
-     -moz-column-width: 6em;
-     -moz-column-count: 5;
-     -moz-column-gap: 1em;
-     -webkit-column-width: 6em;
-     -webkit-column-count: 5;
-     -webkit-column-gap: 1em;
-   }
-   #base64-table thead { display: none; }
-   #base64-table * { border: none; }
-   #base64-table tbody td:first-child:after { content: ':'; }
-   #base64-table tbody td:last-child { text-align: right; }
-
-   #named-character-references-table {
-     white-space: nowrap;
-     font-size: 0.6em;
-     column-width: 30em;
-     column-gap: 1em;
-     -moz-column-width: 30em;
-     -moz-column-gap: 1em;
-     -webkit-column-width: 30em;
-     -webkit-column-gap: 1em;
-   }
-   #named-character-references-table > table > tbody > tr > td:first-child + td,
-   #named-character-references-table > table > tbody > tr > td:last-child { text-align: center; }
-   #named-character-references-table > table > tbody > tr > td:last-child:hover > span { position: absolute; top: auto; left: auto; margin-left: 0.5em; line-height: 1.2; font-size: 5em; border: outset; padding: 0.25em 0.5em; background: white; width: 1.25em; height: auto; text-align: center; }
-   #named-character-references-table > table > tbody > tr#entity-CounterClockwiseContourIntegral > td:first-child { font-size: 0.5em; }
-
-   .glyph.control { color: red; }
-
-   @font-face {
-     font-family: 'Essays1743';
-     src: url('fonts/Essays1743.ttf');
-   }
-   @font-face {
-     font-family: 'Essays1743';
-     font-weight: bold;
-     src: url('fonts/Essays1743-Bold.ttf');
-   }
-   @font-face {
-     font-family: 'Essays1743';
-     font-style: italic;
-     src: url('fonts/Essays1743-Italic.ttf');
-   }
-   @font-face {
-     font-family: 'Essays1743';
-     font-style: italic;
-     font-weight: bold;
-     src: url('fonts/Essays1743-BoldItalic.ttf');
-   }
-
-  </style><link href="data:text/css," id="complete" rel="stylesheet" title="Complete specification"><link href="data:text/css,.impl%20%7B%20display:%20none;%20%7D%0Ahtml%20%7B%20border:%20solid%20yellow;%20%7D%20.domintro:before%20%7B%20display:%20none;%20%7D" id="author" rel="alternate stylesheet" title="Author documentation only"><link href="data:text/css,.impl%20%7B%20background:%20%23FFEEEE;%20%7D%20.domintro:before%20%7B%20background:%20%23FFEEEE;%20%7D" id="highlight" rel="alternate stylesheet" title="Highlight implementation requirements"><script>
+  </style><link href="http://www.w3.org/StyleSheets/TR/W3C-WD" rel="stylesheet" type="text/css"><meta content="noindex" name="robots"><script>
    function getCookie(name) {
      var params = location.search.substr(1).split("&");
      for (var index = 0; index < params.length; index++) {
@@ -365,7 +366,9 @@
    <h2 class="no-num no-toc" id="a-vocabulary-and-associated-apis-for-html-and-xhtml">A vocabulary and associated APIs for HTML and XHTML</h2>
    <h2 class="no-num no-toc" id="w3c-working-draft-11-october-2012">W3C Working Draft 11 October 2012</h2>
    </div>
-   <div class="prev_next">
+  
+
+  <div class="prev_next">
    <a href="the-link-element.html">&#8592; 4.2.4 The link element</a> &#8211;
    <a href="index.html#contents">Table of contents</a> &#8211;
    <a href="the-style-element.html">4.2.6 The style element &#8594;</a>
@@ -399,7 +402,7 @@
            attribute DOMString <a href="#dom-meta-content" title="dom-meta-content">content</a>;
 };</pre>
    </dd>
-  </dl><!--TOPIC:HTML--><p>The <code><a href="#the-meta-element">meta</a></code> element <a href="rendering.html#represents">represents</a> various
+  </dl><!--TOPIC:HTML--><p>The <code><a href="#the-meta-element">meta</a></code> element <a href="textFieldSelection.html#represents">represents</a> various
   kinds of metadata that cannot be expressed using the
   <code><a href="the-title-element.html#the-title-element">title</a></code>, <code><a href="the-base-element.html#the-base-element">base</a></code>, <code><a href="the-link-element.html#the-link-element">link</a></code>,
   <code><a href="the-style-element.html#the-style-element">style</a></code>, and <code><a href="the-script-element.html#the-script-element">script</a></code> elements.</p>
@@ -597,7 +600,7 @@
 
   <p><dfn id="concept-meta-extensions" title="concept-meta-extensions">Extensions to the predefined
   set of metadata names</dfn> may be registered in the <a href="http://wiki.whatwg.org/wiki/MetaExtensions">WHATWG Wiki
-  MetaExtensions page</a>. <a href="references.html#refsWHATWGWIKI">[WHATWGWIKI]</a></p>
+  MetaExtensions page</a>. <a href="textFieldSelection.html#refsWHATWGWIKI">[WHATWGWIKI]</a></p>
 
   <p>Anyone is free to edit the WHATWG Wiki MetaExtensions page at any
   time to add a type. These new names must be specified with the
@@ -834,7 +837,7 @@ people expect to have work and what is necessary.
      string that resulted from the previous step.</p></li>
 
     </ol><p class="note">This pragma is not exactly equivalent to the HTTP
-    <code>Content-Language</code> header. <a href="references.html#refsHTTP">[HTTP]</a></p>
+    <code>Content-Language</code> header. <a href="textFieldSelection.html#refsHTTP">[HTTP]</a></p>
 
    </dd>
 
@@ -884,7 +887,7 @@ people expect to have work and what is necessary.
      steps.</p></li>
 
      <li><p>Set the <a href="infrastructure.html#preferred-style-sheet-set">preferred style sheet set</a> to the
-     value of the element's <code title="attr-meta-content"><a href="#attr-meta-content">content</a></code> attribute. <a href="references.html#refsCSSOM">[CSSOM]</a></p></li>
+     value of the element's <code title="attr-meta-content"><a href="#attr-meta-content">content</a></code> attribute. <a href="textFieldSelection.html#refsCSSOM">[CSSOM]</a></p></li>
 
     </ol></div>
 
@@ -995,19 +998,19 @@ people expect to have work and what is necessary.
         <p>After the refresh has come due (as defined below), if the
         user has not canceled the redirect and if the
         <code><a href="#the-meta-element">meta</a></code> element's <code><a href="dom.html#document">Document</a></code>'s
-        <a href="browsers.html#active-sandboxing-flag-set">active sandboxing flag set</a> does not have the
-        <a href="browsers.html#sandboxed-automatic-features-browsing-context-flag">sandboxed automatic features browsing context
-        flag</a> set, <a href="history.html#navigate" title="navigate">navigate</a><!--DONAV meta refresh--> the
-        <code><a href="dom.html#document">Document</a></code>'s <a href="browsers.html#browsing-context">browsing context</a> to <var title="">url</var>, with <a href="history.html#replacement-enabled">replacement enabled</a>, and
-        with the <code><a href="dom.html#document">Document</a></code>'s <a href="browsers.html#browsing-context">browsing context</a>
-        as the <a href="history.html#source-browsing-context">source browsing context</a>.</p>
+        <a href="textFieldSelection.html#active-sandboxing-flag-set">active sandboxing flag set</a> does not have the
+        <a href="textFieldSelection.html#sandboxed-automatic-features-browsing-context-flag">sandboxed automatic features browsing context
+        flag</a> set, <a href="textFieldSelection.html#navigate" title="navigate">navigate</a><!--DONAV meta refresh--> the
+        <code><a href="dom.html#document">Document</a></code>'s <a href="textFieldSelection.html#browsing-context">browsing context</a> to <var title="">url</var>, with <a href="textFieldSelection.html#replacement-enabled">replacement enabled</a>, and
+        with the <code><a href="dom.html#document">Document</a></code>'s <a href="textFieldSelection.html#browsing-context">browsing context</a>
+        as the <a href="textFieldSelection.html#source-browsing-context">source browsing context</a>.</p>
 
         <p>For the purposes of the previous paragraph, a refresh is
         said to have come due as soon as the <em>later</em> of the
         following two conditions occurs:</p>
 
         <ul><li>At least <var title="">time</var> seconds have elapsed
-         since the document has <a href="the-end.html#completely-loaded">completely loaded</a>,
+         since the document has <a href="textFieldSelection.html#completely-loaded">completely loaded</a>,
          adjusted to take into account user or user agent
          preferences.</li>
          <!-- http://software.hixie.ch/utilities/js/live-dom-viewer/saved/774 -->
@@ -1022,9 +1025,9 @@ people expect to have work and what is necessary.
         </ul></li>
 
        <li><p>Provide the user with an interface that, when selected,
-       <a href="history.html#navigate" title="navigate">navigates</a><!--DONAV meta
-       refresh--> a <a href="browsers.html#browsing-context">browsing context</a> to <var title="">url</var>, with the document's browsing context as the
-       <a href="history.html#source-browsing-context">source browsing context</a>.</p></li>
+       <a href="textFieldSelection.html#navigate" title="navigate">navigates</a><!--DONAV meta
+       refresh--> a <a href="textFieldSelection.html#browsing-context">browsing context</a> to <var title="">url</var>, with the document's browsing context as the
+       <a href="textFieldSelection.html#source-browsing-context">source browsing context</a>.</p></li>
 
        <li><p>Do nothing.</p></li>
 
@@ -1083,7 +1086,7 @@ people expect to have work and what is necessary.
 
    </dt><dd class="impl">
 
-    <p>This pragma sets an HTTP cookie. <a href="references.html#refsCOOKIES">[COOKIES]</a></p>
+    <p>This pragma sets an HTTP cookie. <a href="textFieldSelection.html#refsCOOKIES">[COOKIES]</a></p>
 
     <p>It is non-conforming. Real HTTP headers should be used instead.</p>
 
@@ -1091,13 +1094,13 @@ people expect to have work and what is necessary.
      attribute's value is the empty string, then abort these
      steps.</p></li>
 
-     <li><p><a href="webappapis.html#obtain-the-storage-mutex">Obtain the storage mutex</a>.</p></li>
+     <li><p><a href="textFieldSelection.html#obtain-the-storage-mutex">Obtain the storage mutex</a>.</p></li>
 
      <li><p>Act as if <a href="infrastructure.html#receives-a-set-cookie-string" title="receives a
      set-cookie-string">receiving a set-cookie-string</a> for
      <a href="dom.html#the-document's-address">the document's address</a> via a "non-HTTP" API,
      consisting of the value of the element's <code title="attr-meta-content"><a href="#attr-meta-content">content</a></code> attribute encoded as
-     UTF-8. <a href="references.html#refsCOOKIES">[COOKIES]</a> <a href="references.html#refsRFC3629">[RFC3629]</a></p></li>
+     UTF-8. <a href="textFieldSelection.html#refsCOOKIES">[COOKIES]</a> <a href="textFieldSelection.html#refsRFC3629">[RFC3629]</a></p></li>
 
     </ol></dd>
 
@@ -1110,12 +1113,12 @@ people expect to have work and what is necessary.
   <p><dfn id="concept-http-equiv-extensions" title="concept-http-equiv-extensions">Extensions to the
   predefined set of pragma directives</dfn> may, under certain
   conditions, be registered in the <a href="http://wiki.whatwg.org/wiki/PragmaExtensions">WHATWG Wiki
-  PragmaExtensions page</a>. <a href="references.html#refsWHATWGWIKI">[WHATWGWIKI]</a></p>
+  PragmaExtensions page</a>. <a href="textFieldSelection.html#refsWHATWGWIKI">[WHATWGWIKI]</a></p>
 
   <p>Such extensions must use a name that is identical to an HTTP
   header registered in the Permanent Message Header Field Registry,
   and must have behavior identical to that described for the HTTP
-  header. <a href="references.html#refsIANAPERMHEADERS">[IANAPERMHEADERS]</a></p>
+  header. <a href="textFieldSelection.html#refsIANAPERMHEADERS">[IANAPERMHEADERS]</a></p>
 
   <p>Pragma directives corresponding to headers describing metadata,
   or not requiring specific user agent processing, must not be
@@ -1183,10 +1186,10 @@ people expect to have work and what is necessary.
 
    <li>The value must be a valid character encoding name, and must be
    an <a href="infrastructure.html#ascii-case-insensitive">ASCII case-insensitive</a> match for the
-   <a href="infrastructure.html#preferred-mime-name">preferred MIME name</a> for that encoding. <a href="references.html#refsIANACHARSET">[IANACHARSET]</a></li>
+   <a href="infrastructure.html#preferred-mime-name">preferred MIME name</a> for that encoding. <a href="textFieldSelection.html#refsIANACHARSET">[IANACHARSET]</a></li>
 
    <li>The character encoding declaration must be serialized without
-   the use of <a href="syntax.html#syntax-charref" title="syntax-charref">character references</a>
+   the use of <a href="textFieldSelection.html#syntax-charref" title="syntax-charref">character references</a>
    or character escapes of any kind.</li>
 
    <li id="charset1024"><span id="charset512" title="">The element
@@ -1233,12 +1236,12 @@ people expect to have work and what is necessary.
   <a href="infrastructure.html#ascii-compatible-character-encoding">ASCII-compatible character encoding</a>.</p>
 
   <p>Authors are encouraged to use UTF-8. Conformance checkers may
-  advise authors against using legacy encodings. <a href="references.html#refsRFC3629">[RFC3629]</a></p>
+  advise authors against using legacy encodings. <a href="textFieldSelection.html#refsRFC3629">[RFC3629]</a></p>
 
   <div class="impl">
 
   <p>Authoring tools should default to using UTF-8 for newly-created
-  documents. <a href="references.html#refsRFC3629">[RFC3629]</a></p>
+  documents. <a href="textFieldSelection.html#refsRFC3629">[RFC3629]</a></p>
 
   </div>
 
@@ -1263,24 +1266,24 @@ people expect to have work and what is necessary.
   use the CESU-8, UTF-7, BOCU-1 and SCSU encodings, which also fall
   into this category, because these encodings were never intended for
   use for Web content.
-  <a href="references.html#refsRFC1345">[RFC1345]</a><!-- for the JIS types -->
-  <a href="references.html#refsRFC1842">[RFC1842]</a><!-- HZ-GB-2312 -->
-  <a href="references.html#refsRFC1468">[RFC1468]</a><!-- ISO-2022-JP -->
-  <a href="references.html#refsRFC2237">[RFC2237]</a><!-- ISO-2022-JP-1 -->
-  <a href="references.html#refsRFC1554">[RFC1554]</a><!-- ISO-2022-JP-2 -->
-  <a href="references.html#refsCP50220">[CP50220]</a><!-- CP50220, the compatibility replacement for ISO-2022-JP -->
-  <a href="references.html#refsRFC1922">[RFC1922]</a><!-- ISO-2022-CN and ISO-2022-CN-EXT -->
-  <a href="references.html#refsRFC1557">[RFC1557]</a><!-- ISO-2022-KR -->
-  <a href="references.html#refsCESU8">[CESU8]</a>
-  <a href="references.html#refsUTF7">[UTF7]</a>
-  <a href="references.html#refsBOCU1">[BOCU1]</a>
-  <a href="references.html#refsSCSU">[SCSU]</a>
+  <a href="textFieldSelection.html#refsRFC1345">[RFC1345]</a><!-- for the JIS types -->
+  <a href="textFieldSelection.html#refsRFC1842">[RFC1842]</a><!-- HZ-GB-2312 -->
+  <a href="textFieldSelection.html#refsRFC1468">[RFC1468]</a><!-- ISO-2022-JP -->
+  <a href="textFieldSelection.html#refsRFC2237">[RFC2237]</a><!-- ISO-2022-JP-1 -->
+  <a href="textFieldSelection.html#refsRFC1554">[RFC1554]</a><!-- ISO-2022-JP-2 -->
+  <a href="textFieldSelection.html#refsCP50220">[CP50220]</a><!-- CP50220, the compatibility replacement for ISO-2022-JP -->
+  <a href="textFieldSelection.html#refsRFC1922">[RFC1922]</a><!-- ISO-2022-CN and ISO-2022-CN-EXT -->
+  <a href="textFieldSelection.html#refsRFC1557">[RFC1557]</a><!-- ISO-2022-KR -->
+  <a href="textFieldSelection.html#refsCESU8">[CESU8]</a>
+  <a href="textFieldSelection.html#refsUTF7">[UTF7]</a>
+  <a href="textFieldSelection.html#refsBOCU1">[BOCU1]</a>
+  <a href="textFieldSelection.html#refsSCSU">[SCSU]</a>
   <!-- no idea what to reference for JOHAB or EBCDIC, so... -->
   </p>
 
   <p>Authors should not use UTF-32, as the encoding detection
   algorithms described in this specification intentionally do not
-  distinguish it from UTF-16. <a href="references.html#refsUNICODE">[UNICODE]</a></p>
+  distinguish it from UTF-16. <a href="textFieldSelection.html#refsUNICODE">[UNICODE]</a></p>
 
   <p class="note">Using non-UTF-8 encodings can have unexpected
   results on form submission and URL encodings, which use the

@@ -1,5 +1,110 @@
 <!DOCTYPE html>
-<html lang="en-US-x-Hixie"><head><title>4.10.7 The input element &#8212; HTML5</title><style type="text/css">
+<html lang="en-US-x-Hixie"><head><meta charset="utf-8"><title>4.10.7 The input element &#8212; HTML5</title><style type="text/css">
+
+   .applies thead th > * { display: block; }
+   .applies thead code { display: block; }
+   .applies tbody th { white-space: nowrap; }
+   .applies td { text-align: center; }
+   .applies .yes { background: yellow; }
+
+   .matrix, .matrix td { border: hidden; text-align: right; }
+   .matrix { margin-left: 2em; }
+
+   .dice-example { border-collapse: collapse; border-style: hidden solid solid hidden; border-width: thin; margin-left: 3em; }
+   .dice-example caption { width: 30em; font-size: smaller; font-style: italic; padding: 0.75em 0; text-align: left; }
+   .dice-example td, .dice-example th { border: solid thin; width: 1.35em; height: 1.05em; text-align: center; padding: 0; }
+
+   td.eg { border-width: thin; text-align: center; }
+
+   #table-example-1 { border: solid thin; border-collapse: collapse; margin-left: 3em; }
+   #table-example-1 * { font-family: "Essays1743", serif; line-height: 1.01em; }
+   #table-example-1 caption { padding-bottom: 0.5em; }
+   #table-example-1 thead, #table-example-1 tbody { border: none; }
+   #table-example-1 th, #table-example-1 td { border: solid thin; }
+   #table-example-1 th { font-weight: normal; }
+   #table-example-1 td { border-style: none solid; vertical-align: top; }
+   #table-example-1 th { padding: 0.5em; vertical-align: middle; text-align: center; }
+   #table-example-1 tbody tr:first-child td { padding-top: 0.5em; }
+   #table-example-1 tbody tr:last-child td { padding-bottom: 1.5em; }
+   #table-example-1 tbody td:first-child { padding-left: 2.5em; padding-right: 0; width: 9em; }
+   #table-example-1 tbody td:first-child::after { content: leader(". "); }
+   #table-example-1 tbody td { padding-left: 2em; padding-right: 2em; }
+   #table-example-1 tbody td:first-child + td { width: 10em; }
+   #table-example-1 tbody td:first-child + td ~ td { width: 2.5em; }
+   #table-example-1 tbody td:first-child + td + td + td ~ td { width: 1.25em; }
+
+   .apple-table-examples { border: none; border-collapse: separate; border-spacing: 1.5em 0em; width: 40em; margin-left: 3em; }
+   .apple-table-examples * { font-family: "Times", serif; }
+   .apple-table-examples td, .apple-table-examples th { border: none; white-space: nowrap; padding-top: 0; padding-bottom: 0; }
+   .apple-table-examples tbody th:first-child { border-left: none; width: 100%; }
+   .apple-table-examples thead th:first-child ~ th { font-size: smaller; font-weight: bolder; border-bottom: solid 2px; text-align: center; }
+   .apple-table-examples tbody th::after, .apple-table-examples tfoot th::after { content: leader(". ") }
+   .apple-table-examples tbody th, .apple-table-examples tfoot th { font: inherit; text-align: left; }
+   .apple-table-examples td { text-align: right; vertical-align: top; }
+   .apple-table-examples.e1 tbody tr:last-child td { border-bottom: solid 1px; }
+   .apple-table-examples.e1 tbody + tbody tr:last-child td { border-bottom: double 3px; }
+   .apple-table-examples.e2 th[scope=row] { padding-left: 1em; }
+   .apple-table-examples sup { line-height: 0; }
+
+   .details-example img { vertical-align: top; }
+
+   #base64-table {
+     white-space: nowrap;
+     font-size: 0.6em;
+     column-width: 6em;
+     column-count: 5;
+     column-gap: 1em;
+     -moz-column-width: 6em;
+     -moz-column-count: 5;
+     -moz-column-gap: 1em;
+     -webkit-column-width: 6em;
+     -webkit-column-count: 5;
+     -webkit-column-gap: 1em;
+   }
+   #base64-table thead { display: none; }
+   #base64-table * { border: none; }
+   #base64-table tbody td:first-child:after { content: ':'; }
+   #base64-table tbody td:last-child { text-align: right; }
+
+   #named-character-references-table {
+     white-space: nowrap;
+     font-size: 0.6em;
+     column-width: 30em;
+     column-gap: 1em;
+     -moz-column-width: 30em;
+     -moz-column-gap: 1em;
+     -webkit-column-width: 30em;
+     -webkit-column-gap: 1em;
+   }
+   #named-character-references-table > table > tbody > tr > td:first-child + td,
+   #named-character-references-table > table > tbody > tr > td:last-child { text-align: center; }
+   #named-character-references-table > table > tbody > tr > td:last-child:hover > span { position: absolute; top: auto; left: auto; margin-left: 0.5em; line-height: 1.2; font-size: 5em; border: outset; padding: 0.25em 0.5em; background: white; width: 1.25em; height: auto; text-align: center; }
+   #named-character-references-table > table > tbody > tr#entity-CounterClockwiseContourIntegral > td:first-child { font-size: 0.5em; }
+
+   .glyph.control { color: red; }
+
+   @font-face {
+     font-family: 'Essays1743';
+     src: url('fonts/Essays1743.ttf');
+   }
+   @font-face {
+     font-family: 'Essays1743';
+     font-weight: bold;
+     src: url('fonts/Essays1743-Bold.ttf');
+   }
+   @font-face {
+     font-family: 'Essays1743';
+     font-style: italic;
+     src: url('fonts/Essays1743-Italic.ttf');
+   }
+   @font-face {
+     font-family: 'Essays1743';
+     font-style: italic;
+     font-weight: bold;
+     src: url('fonts/Essays1743-BoldItalic.ttf');
+   }
+
+  </style><link href="data:text/css," id="complete" rel="stylesheet" title="Complete specification"><link href="data:text/css,.impl%20%7B%20display:%20none;%20%7D%0Ahtml%20%7B%20border:%20solid%20yellow;%20%7D%20.domintro:before%20%7B%20display:%20none;%20%7D" id="author" rel="alternate stylesheet" title="Author documentation only"><link href="data:text/css,.impl%20%7B%20background:%20%23FFEEEE;%20%7D%20.domintro:before%20%7B%20background:%20%23FFEEEE;%20%7D" id="highlight" rel="alternate stylesheet" title="Highlight implementation requirements"><style type="text/css">
    pre { margin-left: 2em; white-space: pre-wrap; }
    h2 { margin: 3em 0 1em 0; }
    h3 { margin: 2.5em 0 1em 0; }
@@ -71,7 +176,7 @@
    h1 + h2, hr + h2.no-toc { page-break-before: auto; }
 
    p  > span:not([title=""]):not([class="XXX"]):not([class="impl"]):not([class="note"]),
-   li > span:not([title=""]):not([class="XXX"]):not([class="impl"]):not([class="note"]), { border-bottom: solid #9999CC; }
+   li > span:not([title=""]):not([class="XXX"]):not([class="impl"]):not([class="note"]) { border-bottom: solid #9999CC; }
 
    div.head { margin: 0 0 1em; padding: 1em 0 0 0; }
    div.head p { margin: 0; }
@@ -216,7 +321,8 @@
      display: block;
    }
    .stability input {
-     appearance: none; margin: 0; border: 0; padding: 0.25em 0.5em; background: transparent; color: black;
+     -moz-appearance: none; -webkit-appearance: none; margin: 0; 
+     border: 0; padding: 0.25em 0.5em; background: transparent; color: black;
      position: absolute; top: -0.5em; right: 0; font: 1.25em sans-serif; text-align: center;
    }
    .stability input:hover {
@@ -232,112 +338,7 @@
      color: white;
    }
 
-  </style><link href="http://www.w3.org/StyleSheets/TR/W3C-WD" rel="stylesheet" type="text/css"><meta content="noindex" name="robots"><style type="text/css">
-
-   .applies thead th > * { display: block; }
-   .applies thead code { display: block; }
-   .applies tbody th { whitespace: nowrap; }
-   .applies td { text-align: center; }
-   .applies .yes { background: yellow; }
-
-   .matrix, .matrix td { border: hidden; text-align: right; }
-   .matrix { margin-left: 2em; }
-
-   .dice-example { border-collapse: collapse; border-style: hidden solid solid hidden; border-width: thin; margin-left: 3em; }
-   .dice-example caption { width: 30em; font-size: smaller; font-style: italic; padding: 0.75em 0; text-align: left; }
-   .dice-example td, .dice-example th { border: solid thin; width: 1.35em; height: 1.05em; text-align: center; padding: 0; }
-
-   td.eg { border-width: thin; text-align: center; }
-
-   #table-example-1 { border: solid thin; border-collapse: collapse; margin-left: 3em; }
-   #table-example-1 * { font-family: "Essays1743", serif; line-height: 1.01em; }
-   #table-example-1 caption { padding-bottom: 0.5em; }
-   #table-example-1 thead, #table-example-1 tbody { border: none; }
-   #table-example-1 th, #table-example-1 td { border: solid thin; }
-   #table-example-1 th { font-weight: normal; }
-   #table-example-1 td { border-style: none solid; vertical-align: top; }
-   #table-example-1 th { padding: 0.5em; vertical-align: middle; text-align: center; }
-   #table-example-1 tbody tr:first-child td { padding-top: 0.5em; }
-   #table-example-1 tbody tr:last-child td { padding-bottom: 1.5em; }
-   #table-example-1 tbody td:first-child { padding-left: 2.5em; padding-right: 0; width: 9em; }
-   #table-example-1 tbody td:first-child::after { content: leader(". "); }
-   #table-example-1 tbody td { padding-left: 2em; padding-right: 2em; }
-   #table-example-1 tbody td:first-child + td { width: 10em; }
-   #table-example-1 tbody td:first-child + td ~ td { width: 2.5em; }
-   #table-example-1 tbody td:first-child + td + td + td ~ td { width: 1.25em; }
-
-   .apple-table-examples { border: none; border-collapse: separate; border-spacing: 1.5em 0em; width: 40em; margin-left: 3em; }
-   .apple-table-examples * { font-family: "Times", serif; }
-   .apple-table-examples td, .apple-table-examples th { border: none; white-space: nowrap; padding-top: 0; padding-bottom: 0; }
-   .apple-table-examples tbody th:first-child { border-left: none; width: 100%; }
-   .apple-table-examples thead th:first-child ~ th { font-size: smaller; font-weight: bolder; border-bottom: solid 2px; text-align: center; }
-   .apple-table-examples tbody th::after, .apple-table-examples tfoot th::after { content: leader(". ") }
-   .apple-table-examples tbody th, .apple-table-examples tfoot th { font: inherit; text-align: left; }
-   .apple-table-examples td { text-align: right; vertical-align: top; }
-   .apple-table-examples.e1 tbody tr:last-child td { border-bottom: solid 1px; }
-   .apple-table-examples.e1 tbody + tbody tr:last-child td { border-bottom: double 3px; }
-   .apple-table-examples.e2 th[scope=row] { padding-left: 1em; }
-   .apple-table-examples sup { line-height: 0; }
-
-   .details-example img { vertical-align: top; }
-
-   #base64-table {
-     white-space: nowrap;
-     font-size: 0.6em;
-     column-width: 6em;
-     column-count: 5;
-     column-gap: 1em;
-     -moz-column-width: 6em;
-     -moz-column-count: 5;
-     -moz-column-gap: 1em;
-     -webkit-column-width: 6em;
-     -webkit-column-count: 5;
-     -webkit-column-gap: 1em;
-   }
-   #base64-table thead { display: none; }
-   #base64-table * { border: none; }
-   #base64-table tbody td:first-child:after { content: ':'; }
-   #base64-table tbody td:last-child { text-align: right; }
-
-   #named-character-references-table {
-     white-space: nowrap;
-     font-size: 0.6em;
-     column-width: 30em;
-     column-gap: 1em;
-     -moz-column-width: 30em;
-     -moz-column-gap: 1em;
-     -webkit-column-width: 30em;
-     -webkit-column-gap: 1em;
-   }
-   #named-character-references-table > table > tbody > tr > td:first-child + td,
-   #named-character-references-table > table > tbody > tr > td:last-child { text-align: center; }
-   #named-character-references-table > table > tbody > tr > td:last-child:hover > span { position: absolute; top: auto; left: auto; margin-left: 0.5em; line-height: 1.2; font-size: 5em; border: outset; padding: 0.25em 0.5em; background: white; width: 1.25em; height: auto; text-align: center; }
-   #named-character-references-table > table > tbody > tr#entity-CounterClockwiseContourIntegral > td:first-child { font-size: 0.5em; }
-
-   .glyph.control { color: red; }
-
-   @font-face {
-     font-family: 'Essays1743';
-     src: url('fonts/Essays1743.ttf');
-   }
-   @font-face {
-     font-family: 'Essays1743';
-     font-weight: bold;
-     src: url('fonts/Essays1743-Bold.ttf');
-   }
-   @font-face {
-     font-family: 'Essays1743';
-     font-style: italic;
-     src: url('fonts/Essays1743-Italic.ttf');
-   }
-   @font-face {
-     font-family: 'Essays1743';
-     font-style: italic;
-     font-weight: bold;
-     src: url('fonts/Essays1743-BoldItalic.ttf');
-   }
-
-  </style><link href="data:text/css," id="complete" rel="stylesheet" title="Complete specification"><link href="data:text/css,.impl%20%7B%20display:%20none;%20%7D%0Ahtml%20%7B%20border:%20solid%20yellow;%20%7D%20.domintro:before%20%7B%20display:%20none;%20%7D" id="author" rel="alternate stylesheet" title="Author documentation only"><link href="data:text/css,.impl%20%7B%20background:%20%23FFEEEE;%20%7D%20.domintro:before%20%7B%20background:%20%23FFEEEE;%20%7D" id="highlight" rel="alternate stylesheet" title="Highlight implementation requirements"><script>
+  </style><link href="http://www.w3.org/StyleSheets/TR/W3C-WD" rel="stylesheet" type="text/css"><meta content="noindex" name="robots"><script>
    function getCookie(name) {
      var params = location.search.substr(1).split("&");
      for (var index = 0; index < params.length; index++) {
@@ -365,7 +366,9 @@
    <h2 class="no-num no-toc" id="a-vocabulary-and-associated-apis-for-html-and-xhtml">A vocabulary and associated APIs for HTML and XHTML</h2>
    <h2 class="no-num no-toc" id="w3c-working-draft-11-october-2012">W3C Working Draft 11 October 2012</h2>
    </div>
-   <div class="prev_next">
+  
+
+  <div class="prev_next">
    <a href="the-label-element.html">&#8592; 4.10.6 The label element</a> &#8211;
    <a href="index.html#contents">Table of contents</a> &#8211;
    <a href="states-of-the-type-attribute.html">4.10.7.1 States of the type attribute &#8594;</a>
@@ -459,23 +462,23 @@
   void <a href="common-input-element-apis.html#dom-input-stepup" title="dom-input-stepUp">stepUp</a>(optional long n);
   void <a href="common-input-element-apis.html#dom-input-stepdown" title="dom-input-stepDown">stepDown</a>(optional long n);
 
-  readonly attribute boolean <a href="constraints.html#dom-cva-willvalidate" title="dom-cva-willValidate">willValidate</a>;
-  readonly attribute <a href="constraints.html#validitystate">ValidityState</a> <a href="constraints.html#dom-cva-validity" title="dom-cva-validity">validity</a>;
-  readonly attribute DOMString <a href="constraints.html#dom-cva-validationmessage" title="dom-cva-validationMessage">validationMessage</a>;
-  boolean <a href="constraints.html#dom-cva-checkvalidity" title="dom-cva-checkValidity">checkValidity</a>();
-  void <a href="constraints.html#dom-cva-setcustomvalidity" title="dom-cva-setCustomValidity">setCustomValidity</a>(DOMString error);
+  readonly attribute boolean <a href="textFieldSelection.html#dom-cva-willvalidate" title="dom-cva-willValidate">willValidate</a>;
+  readonly attribute <a href="textFieldSelection.html#validitystate">ValidityState</a> <a href="textFieldSelection.html#dom-cva-validity" title="dom-cva-validity">validity</a>;
+  readonly attribute DOMString <a href="textFieldSelection.html#dom-cva-validationmessage" title="dom-cva-validationMessage">validationMessage</a>;
+  boolean <a href="textFieldSelection.html#dom-cva-checkvalidity" title="dom-cva-checkValidity">checkValidity</a>();
+  void <a href="textFieldSelection.html#dom-cva-setcustomvalidity" title="dom-cva-setCustomValidity">setCustomValidity</a>(DOMString error);
 
   readonly attribute <a href="infrastructure.html#nodelist">NodeList</a> <a href="the-label-element.html#dom-lfe-labels" title="dom-lfe-labels">labels</a>;
 
-  void <a href="textFieldSelection.html#dom-textarea/input-select" title="dom-textarea/input-select">select</a>();
-           attribute unsigned long <a href="textFieldSelection.html#dom-textarea/input-selectionstart" title="dom-textarea/input-selectionStart">selectionStart</a>;
-           attribute unsigned long <a href="textFieldSelection.html#dom-textarea/input-selectionend" title="dom-textarea/input-selectionEnd">selectionEnd</a>;
-           attribute DOMString <a href="textFieldSelection.html#dom-textarea/input-selectiondirection" title="dom-textarea/input-selectionDirection">selectionDirection</a>;
+  void <span title="dom-textarea/input-select">select</span>();
+           attribute unsigned long <span title="dom-textarea/input-selectionStart">selectionStart</span>;
+           attribute unsigned long <span title="dom-textarea/input-selectionEnd">selectionEnd</span>;
+           attribute DOMString <span title="dom-textarea/input-selectionDirection">selectionDirection</span>;
 
-  void <a href="textFieldSelection.html#dom-textarea/input-setselectionrange" title="dom-textarea/input-setSelectionRange">setSelectionRange</a>(unsigned long start, unsigned long end, optional DOMString direction);
+  void <span title="dom-textarea/input-setSelectionRange">setSelectionRange</span>(unsigned long start, unsigned long end, optional DOMString direction);
 };</pre>
    </dd>
-  </dl><!--TOPIC:HTML--><p>The <code><a href="#the-input-element">input</a></code> element <a href="rendering.html#represents">represents</a> a typed data field,
+  </dl><!--TOPIC:HTML--><p>The <code><a href="#the-input-element">input</a></code> element <a href="textFieldSelection.html#represents">represents</a> a typed data field,
   usually with a form control to allow the user to edit the data.</p>
 
   <p>The <dfn id="attr-input-type" title="attr-input-type"><code>type</code></dfn>
@@ -583,12 +586,12 @@
      </td><td> A button
   </td></tr></tbody></table><p>The <i>missing value default</i> is the <a href="states-of-the-type-attribute.html#text-(type=text)-state-and-search-state-(type=search)" title="attr-input-type-text">Text</a> state.</p>
 
-  <p>Which of the <code title="attr-input-accept"><a href="states-of-the-type-attribute.html#attr-input-accept">accept</a></code>, <code title="attr-input-alt"><a href="states-of-the-type-attribute.html#attr-input-alt">alt</a></code>, <code title="attr-input-autocomplete"><a href="common-input-element-attributes.html#attr-input-autocomplete">autocomplete</a></code>, <code title="attr-input-checked"><a href="#attr-input-checked">checked</a></code>, <code title="attr-input-dirname"><a href="common-input-element-attributes.html#attr-input-dirname">dirname</a></code>, <code title="attr-fs-formaction"><a href="form-submission.html#attr-fs-formaction">formaction</a></code>, <code title="attr-fs-formenctype"><a href="form-submission.html#attr-fs-formenctype">formenctype</a></code>, <code title="attr-fs-formmethod"><a href="form-submission.html#attr-fs-formmethod">formmethod</a></code>, <code title="attr-fs-formnovalidate"><a href="form-submission.html#attr-fs-formnovalidate">formnovalidate</a></code>, <code title="attr-fs-formtarget"><a href="form-submission.html#attr-fs-formtarget">formtarget</a></code>, <code title="attr-dim-height"><a href="dimension-attributes.html#attr-dim-height">height</a></code>, <code title="attr-input-list"><a href="common-input-element-attributes.html#attr-input-list">list</a></code>, <code title="attr-input-max"><a href="common-input-element-attributes.html#attr-input-max">max</a></code>, <code title="attr-input-maxlength"><a href="common-input-element-attributes.html#attr-input-maxlength">maxlength</a></code>, <code title="attr-input-min"><a href="common-input-element-attributes.html#attr-input-min">min</a></code>, <code title="attr-input-multiple"><a href="common-input-element-attributes.html#attr-input-multiple">multiple</a></code>, <code title="attr-input-pattern"><a href="common-input-element-attributes.html#attr-input-pattern">pattern</a></code>, <code title="attr-input-placeholder"><a href="common-input-element-attributes.html#attr-input-placeholder">placeholder</a></code>, <code title="attr-input-readonly"><a href="common-input-element-attributes.html#attr-input-readonly">readonly</a></code>, <code title="attr-input-required"><a href="common-input-element-attributes.html#attr-input-required">required</a></code>, <code title="attr-input-size"><a href="common-input-element-attributes.html#attr-input-size">size</a></code>, <code title="attr-input-src"><a href="states-of-the-type-attribute.html#attr-input-src">src</a></code>, <code title="attr-input-step"><a href="common-input-element-attributes.html#attr-input-step">step</a></code>, and <code title="attr-dim-width"><a href="dimension-attributes.html#attr-dim-width">width</a></code> content attributes, the <code title="dom-input-checked"><a href="common-input-element-apis.html#dom-input-checked">checked</a></code>, <code title="dom-input-files"><a href="common-input-element-apis.html#dom-input-files">files</a></code>, <code title="dom-input-valueAsDate"><a href="common-input-element-apis.html#dom-input-valueasdate">valueAsDate</a></code>, <code title="dom-input-valueAsNumber"><a href="common-input-element-apis.html#dom-input-valueasnumber">valueAsNumber</a></code>, and <code title="dom-input-list"><a href="common-input-element-apis.html#dom-input-list">list</a></code> IDL attributes, the <code title="dom-textarea/input-select"><a href="textFieldSelection.html#dom-textarea/input-select">select()</a></code> method, the <code title="dom-textarea/input-selectionStart"><a href="textFieldSelection.html#dom-textarea/input-selectionstart">selectionStart</a></code>,
-  <code title="dom-textarea/input-selectionEnd"><a href="textFieldSelection.html#dom-textarea/input-selectionend">selectionEnd</a></code>,
-  and <code title="dom-textarea/input-selectionDirection"><a href="textFieldSelection.html#dom-textarea/input-selectiondirection">selectionDirection</a></code>,
+  <p>Which of the <code title="attr-input-accept"><a href="states-of-the-type-attribute.html#attr-input-accept">accept</a></code>, <code title="attr-input-alt"><a href="states-of-the-type-attribute.html#attr-input-alt">alt</a></code>, <code title="attr-input-autocomplete"><a href="common-input-element-attributes.html#attr-input-autocomplete">autocomplete</a></code>, <code title="attr-input-checked"><a href="#attr-input-checked">checked</a></code>, <code title="attr-input-dirname"><a href="common-input-element-attributes.html#attr-input-dirname">dirname</a></code>, <code title="attr-fs-formaction"><a href="form-submission.html#attr-fs-formaction">formaction</a></code>, <code title="attr-fs-formenctype"><a href="form-submission.html#attr-fs-formenctype">formenctype</a></code>, <code title="attr-fs-formmethod"><a href="form-submission.html#attr-fs-formmethod">formmethod</a></code>, <code title="attr-fs-formnovalidate"><a href="form-submission.html#attr-fs-formnovalidate">formnovalidate</a></code>, <code title="attr-fs-formtarget"><a href="form-submission.html#attr-fs-formtarget">formtarget</a></code>, <code title="attr-dim-height"><a href="dimension-attributes.html#attr-dim-height">height</a></code>, <code title="attr-input-list"><a href="common-input-element-attributes.html#attr-input-list">list</a></code>, <code title="attr-input-max"><a href="common-input-element-attributes.html#attr-input-max">max</a></code>, <code title="attr-input-maxlength"><a href="common-input-element-attributes.html#attr-input-maxlength">maxlength</a></code>, <code title="attr-input-min"><a href="common-input-element-attributes.html#attr-input-min">min</a></code>, <code title="attr-input-multiple"><a href="common-input-element-attributes.html#attr-input-multiple">multiple</a></code>, <code title="attr-input-pattern"><a href="common-input-element-attributes.html#attr-input-pattern">pattern</a></code>, <code title="attr-input-placeholder"><a href="common-input-element-attributes.html#attr-input-placeholder">placeholder</a></code>, <code title="attr-input-readonly"><a href="common-input-element-attributes.html#attr-input-readonly">readonly</a></code>, <code title="attr-input-required"><a href="common-input-element-attributes.html#attr-input-required">required</a></code>, <code title="attr-input-size"><a href="common-input-element-attributes.html#attr-input-size">size</a></code>, <code title="attr-input-src"><a href="states-of-the-type-attribute.html#attr-input-src">src</a></code>, <code title="attr-input-step"><a href="common-input-element-attributes.html#attr-input-step">step</a></code>, and <code title="attr-dim-width"><a href="dimension-attributes.html#attr-dim-width">width</a></code> content attributes, the <code title="dom-input-checked"><a href="common-input-element-apis.html#dom-input-checked">checked</a></code>, <code title="dom-input-files"><a href="common-input-element-apis.html#dom-input-files">files</a></code>, <code title="dom-input-valueAsDate"><a href="common-input-element-apis.html#dom-input-valueasdate">valueAsDate</a></code>, <code title="dom-input-valueAsNumber"><a href="common-input-element-apis.html#dom-input-valueasnumber">valueAsNumber</a></code>, and <code title="dom-input-list"><a href="common-input-element-apis.html#dom-input-list">list</a></code> IDL attributes, the <code title="dom-textarea/input-select">select()</code> method, the <code title="dom-textarea/input-selectionStart">selectionStart</code>,
+  <code title="dom-textarea/input-selectionEnd">selectionEnd</code>,
+  and <code title="dom-textarea/input-selectionDirection">selectionDirection</code>,
   IDL attributes, the
 
-  <code title="dom-textarea/input-setSelectionRange"><a href="textFieldSelection.html#dom-textarea/input-setselectionrange">setSelectionRange()</a></code>
+  <code title="dom-textarea/input-setSelectionRange">setSelectionRange()</code>
   methods, the <code title="dom-input-stepUp"><a href="common-input-element-apis.html#dom-input-stepup">stepUp()</a></code> and
   <code title="dom-input-stepDown"><a href="common-input-element-apis.html#dom-input-stepdown">stepDown()</a></code> methods, and the
   <code title="event-input-input"><a href="common-input-element-apis.html#event-input-input">input</a></code> and <code title="event-input-change"><a href="common-input-element-apis.html#event-input-change">change</a></code> events apply to an
@@ -1346,7 +1349,7 @@
      </td><td class="no"> &#183; <!-- Reset Button -->
 <!-- <td class="no"> &middot;      Button -->
 
-    </td></tr><tr><th> <code title="dom-textarea/input-select"><a href="textFieldSelection.html#dom-textarea/input-select">select()</a></code>
+    </td></tr><tr><th> <code title="dom-textarea/input-select">select()</code>
      </th><td class="no"> &#183; <!-- Hidden -->
      </td><td class="yes"> Yes     <!-- Text -->
 <!-- <td class="yes"> Yes          Search -->
@@ -1370,7 +1373,7 @@
      </td><td class="no"> &#183; <!-- Reset Button -->
 <!-- <td class="no"> &middot;      Button -->
 
-    </td></tr><tr><th> <code title="dom-textarea/input-selectionStart"><a href="textFieldSelection.html#dom-textarea/input-selectionstart">selectionStart</a></code>
+    </td></tr><tr><th> <code title="dom-textarea/input-selectionStart">selectionStart</code>
      </th><td class="no"> &#183; <!-- Hidden -->
      </td><td class="yes"> Yes     <!-- Text -->
 <!-- <td class="yes"> Yes          Search -->
@@ -1394,7 +1397,7 @@
      </td><td class="no"> &#183; <!-- Reset Button -->
 <!-- <td class="no"> &middot;      Button -->
 
-    </td></tr><tr><th> <code title="dom-textarea/input-selectionEnd"><a href="textFieldSelection.html#dom-textarea/input-selectionend">selectionEnd</a></code>
+    </td></tr><tr><th> <code title="dom-textarea/input-selectionEnd">selectionEnd</code>
      </th><td class="no"> &#183; <!-- Hidden -->
      </td><td class="yes"> Yes     <!-- Text -->
 <!-- <td class="yes"> Yes          Search -->
@@ -1418,7 +1421,7 @@
      </td><td class="no"> &#183; <!-- Reset Button -->
 <!-- <td class="no"> &middot;      Button -->
 
-    </td></tr><tr><th> <code title="dom-textarea/input-selectionDirection"><a href="textFieldSelection.html#dom-textarea/input-selectiondirection">selectionDirection</a></code>
+    </td></tr><tr><th> <code title="dom-textarea/input-selectionDirection">selectionDirection</code>
      </th><td class="no"> &#183; <!-- Hidden -->
      </td><td class="yes"> Yes     <!-- Text -->
 <!-- <td class="yes"> Yes          Search -->
@@ -1444,7 +1447,7 @@
 
 
 
-    </td></tr><tr><th> <code title="dom-textarea/input-setSelectionRange"><a href="textFieldSelection.html#dom-textarea/input-setselectionrange">setSelectionRange()</a></code>
+    </td></tr><tr><th> <code title="dom-textarea/input-setSelectionRange">setSelectionRange()</code>
      </th><td class="no"> &#183; <!-- Hidden -->
      </td><td class="yes"> Yes     <!-- Text -->
 <!-- <td class="yes"> Yes          Search -->
@@ -1633,7 +1636,7 @@
 
   <div class="impl">
 
-  <p>The <a href="constraints.html#concept-form-reset-control" title="concept-form-reset-control">reset
+  <p>The <a href="textFieldSelection.html#concept-form-reset-control" title="concept-form-reset-control">reset
   algorithm</a> for <code><a href="#the-input-element">input</a></code> elements is to set the <a href="#concept-input-value-dirty-flag" title="concept-input-value-dirty-flag">dirty value flag</a> and
   <a href="#concept-input-checked-dirty-flag" title="concept-input-checked-dirty-flag">dirty checkedness
   flag</a> back to false, set the <a href="attributes-common-to-form-controls.html#concept-fe-value" title="concept-fe-value">value</a> of the element to the value of
@@ -1733,26 +1736,26 @@
 
   <p>The IDL attributes <dfn id="dom-input-width" title="dom-input-width"><code>width</code></dfn> and <dfn id="dom-input-height" title="dom-input-height"><code>height</code></dfn> must return the
   rendered width and height of the image, in CSS pixels, if an image
-  is <a href="rendering.html#being-rendered">being rendered</a>, and is being rendered to a visual
+  is <a href="textFieldSelection.html#being-rendered">being rendered</a>, and is being rendered to a visual
   medium; or else the intrinsic width and height of the image, in CSS
   pixels, if an image is <i title="input-img-available"><a href="states-of-the-type-attribute.html#input-img-available">available</a></i>
   but not being rendered to a visual medium; or else 0, if no image is
   <i title="input-img-available"><a href="states-of-the-type-attribute.html#input-img-available">available</a></i>. When the
   <code><a href="#the-input-element">input</a></code> element's <code title="attr-input-type"><a href="#attr-input-type">type</a></code> attribute is not in the <a href="states-of-the-type-attribute.html#image-button-state-(type=image)" title="attr-input-type-image">Image Button</a> state, then no
-  image is <i title="input-img-available"><a href="states-of-the-type-attribute.html#input-img-available">available</a></i>. <a href="references.html#refsCSS">[CSS]</a></p>
+  image is <i title="input-img-available"><a href="states-of-the-type-attribute.html#input-img-available">available</a></i>. <a href="textFieldSelection.html#refsCSS">[CSS]</a></p>
 
   <p>On setting, they must act as if they <a href="common-dom-interfaces.html#reflect" title="reflect">reflected</a> the respective content attributes
   of the same name.</p>
 
-  <p>The <code title="dom-cva-willValidate"><a href="constraints.html#dom-cva-willvalidate">willValidate</a></code>, <code title="dom-cva-validity"><a href="constraints.html#dom-cva-validity">validity</a></code>, and <code title="dom-cva-validationMessage"><a href="constraints.html#dom-cva-validationmessage">validationMessage</a></code> IDL
-  attributes, and the <code title="dom-cva-checkValidity"><a href="constraints.html#dom-cva-checkvalidity">checkValidity()</a></code> and <code title="dom-cva-setCustomValidity"><a href="constraints.html#dom-cva-setcustomvalidity">setCustomValidity()</a></code>
-  methods, are part of the <a href="constraints.html#the-constraint-validation-api">constraint validation API</a>. The
+  <p>The <code title="dom-cva-willValidate"><a href="textFieldSelection.html#dom-cva-willvalidate">willValidate</a></code>, <code title="dom-cva-validity"><a href="textFieldSelection.html#dom-cva-validity">validity</a></code>, and <code title="dom-cva-validationMessage"><a href="textFieldSelection.html#dom-cva-validationmessage">validationMessage</a></code> IDL
+  attributes, and the <code title="dom-cva-checkValidity"><a href="textFieldSelection.html#dom-cva-checkvalidity">checkValidity()</a></code> and <code title="dom-cva-setCustomValidity"><a href="textFieldSelection.html#dom-cva-setcustomvalidity">setCustomValidity()</a></code>
+  methods, are part of the <a href="textFieldSelection.html#the-constraint-validation-api">constraint validation API</a>. The
   <code title="dom-lfe-labels"><a href="the-label-element.html#dom-lfe-labels">labels</a></code> IDL attribute provides a
-  list of the element's <code><a href="the-label-element.html#the-label-element">label</a></code>s. The <code title="dom-textarea/input-select"><a href="textFieldSelection.html#dom-textarea/input-select">select()</a></code>, <code title="dom-textarea/input-selectionStart"><a href="textFieldSelection.html#dom-textarea/input-selectionstart">selectionStart</a></code>,
-  <code title="dom-textarea/input-selectionEnd"><a href="textFieldSelection.html#dom-textarea/input-selectionend">selectionEnd</a></code>,
-  <code title="dom-textarea/input-selectionDirection"><a href="textFieldSelection.html#dom-textarea/input-selectiondirection">selectionDirection</a></code>,
+  list of the element's <code><a href="the-label-element.html#the-label-element">label</a></code>s. The <code title="dom-textarea/input-select">select()</code>, <code title="dom-textarea/input-selectionStart">selectionStart</code>,
+  <code title="dom-textarea/input-selectionEnd">selectionEnd</code>,
+  <code title="dom-textarea/input-selectionDirection">selectionDirection</code>,
   <code title="dom-textarea/input-setRangeText">setRangeText()</code>,
-  and <code title="dom-textarea/input-setSelectionRange"><a href="textFieldSelection.html#dom-textarea/input-setselectionrange">setSelectionRange()</a></code>
+  and <code title="dom-textarea/input-setSelectionRange">setSelectionRange()</code>
   methods and IDL attributes expose the element's text selection. The
   <code title="dom-fe-autofocus"><a href="attributes-common-to-form-controls.html#dom-fe-autofocus">autofocus</a></code>, <code title="dom-fe-disabled"><a href="attributes-common-to-form-controls.html#dom-fe-disabled">disabled</a></code>, <code title="dom-fae-form"><a href="association-of-controls-and-forms.html#dom-fae-form">form</a></code>, and <code title="dom-fe-name"><a href="attributes-common-to-form-controls.html#dom-fe-name">name</a></code> IDL attributes are part of the
   element's forms API.</p>

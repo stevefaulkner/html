@@ -1,5 +1,110 @@
 <!DOCTYPE html>
-<html lang="en-US-x-Hixie"><head><title>4.8.11 The canvas element &#8212; HTML5</title><style type="text/css">
+<html lang="en-US-x-Hixie"><head><meta charset="utf-8"><title>4.8.11 The canvas element &#8212; HTML5</title><style type="text/css">
+
+   .applies thead th > * { display: block; }
+   .applies thead code { display: block; }
+   .applies tbody th { white-space: nowrap; }
+   .applies td { text-align: center; }
+   .applies .yes { background: yellow; }
+
+   .matrix, .matrix td { border: hidden; text-align: right; }
+   .matrix { margin-left: 2em; }
+
+   .dice-example { border-collapse: collapse; border-style: hidden solid solid hidden; border-width: thin; margin-left: 3em; }
+   .dice-example caption { width: 30em; font-size: smaller; font-style: italic; padding: 0.75em 0; text-align: left; }
+   .dice-example td, .dice-example th { border: solid thin; width: 1.35em; height: 1.05em; text-align: center; padding: 0; }
+
+   td.eg { border-width: thin; text-align: center; }
+
+   #table-example-1 { border: solid thin; border-collapse: collapse; margin-left: 3em; }
+   #table-example-1 * { font-family: "Essays1743", serif; line-height: 1.01em; }
+   #table-example-1 caption { padding-bottom: 0.5em; }
+   #table-example-1 thead, #table-example-1 tbody { border: none; }
+   #table-example-1 th, #table-example-1 td { border: solid thin; }
+   #table-example-1 th { font-weight: normal; }
+   #table-example-1 td { border-style: none solid; vertical-align: top; }
+   #table-example-1 th { padding: 0.5em; vertical-align: middle; text-align: center; }
+   #table-example-1 tbody tr:first-child td { padding-top: 0.5em; }
+   #table-example-1 tbody tr:last-child td { padding-bottom: 1.5em; }
+   #table-example-1 tbody td:first-child { padding-left: 2.5em; padding-right: 0; width: 9em; }
+   #table-example-1 tbody td:first-child::after { content: leader(". "); }
+   #table-example-1 tbody td { padding-left: 2em; padding-right: 2em; }
+   #table-example-1 tbody td:first-child + td { width: 10em; }
+   #table-example-1 tbody td:first-child + td ~ td { width: 2.5em; }
+   #table-example-1 tbody td:first-child + td + td + td ~ td { width: 1.25em; }
+
+   .apple-table-examples { border: none; border-collapse: separate; border-spacing: 1.5em 0em; width: 40em; margin-left: 3em; }
+   .apple-table-examples * { font-family: "Times", serif; }
+   .apple-table-examples td, .apple-table-examples th { border: none; white-space: nowrap; padding-top: 0; padding-bottom: 0; }
+   .apple-table-examples tbody th:first-child { border-left: none; width: 100%; }
+   .apple-table-examples thead th:first-child ~ th { font-size: smaller; font-weight: bolder; border-bottom: solid 2px; text-align: center; }
+   .apple-table-examples tbody th::after, .apple-table-examples tfoot th::after { content: leader(". ") }
+   .apple-table-examples tbody th, .apple-table-examples tfoot th { font: inherit; text-align: left; }
+   .apple-table-examples td { text-align: right; vertical-align: top; }
+   .apple-table-examples.e1 tbody tr:last-child td { border-bottom: solid 1px; }
+   .apple-table-examples.e1 tbody + tbody tr:last-child td { border-bottom: double 3px; }
+   .apple-table-examples.e2 th[scope=row] { padding-left: 1em; }
+   .apple-table-examples sup { line-height: 0; }
+
+   .details-example img { vertical-align: top; }
+
+   #base64-table {
+     white-space: nowrap;
+     font-size: 0.6em;
+     column-width: 6em;
+     column-count: 5;
+     column-gap: 1em;
+     -moz-column-width: 6em;
+     -moz-column-count: 5;
+     -moz-column-gap: 1em;
+     -webkit-column-width: 6em;
+     -webkit-column-count: 5;
+     -webkit-column-gap: 1em;
+   }
+   #base64-table thead { display: none; }
+   #base64-table * { border: none; }
+   #base64-table tbody td:first-child:after { content: ':'; }
+   #base64-table tbody td:last-child { text-align: right; }
+
+   #named-character-references-table {
+     white-space: nowrap;
+     font-size: 0.6em;
+     column-width: 30em;
+     column-gap: 1em;
+     -moz-column-width: 30em;
+     -moz-column-gap: 1em;
+     -webkit-column-width: 30em;
+     -webkit-column-gap: 1em;
+   }
+   #named-character-references-table > table > tbody > tr > td:first-child + td,
+   #named-character-references-table > table > tbody > tr > td:last-child { text-align: center; }
+   #named-character-references-table > table > tbody > tr > td:last-child:hover > span { position: absolute; top: auto; left: auto; margin-left: 0.5em; line-height: 1.2; font-size: 5em; border: outset; padding: 0.25em 0.5em; background: white; width: 1.25em; height: auto; text-align: center; }
+   #named-character-references-table > table > tbody > tr#entity-CounterClockwiseContourIntegral > td:first-child { font-size: 0.5em; }
+
+   .glyph.control { color: red; }
+
+   @font-face {
+     font-family: 'Essays1743';
+     src: url('fonts/Essays1743.ttf');
+   }
+   @font-face {
+     font-family: 'Essays1743';
+     font-weight: bold;
+     src: url('fonts/Essays1743-Bold.ttf');
+   }
+   @font-face {
+     font-family: 'Essays1743';
+     font-style: italic;
+     src: url('fonts/Essays1743-Italic.ttf');
+   }
+   @font-face {
+     font-family: 'Essays1743';
+     font-style: italic;
+     font-weight: bold;
+     src: url('fonts/Essays1743-BoldItalic.ttf');
+   }
+
+  </style><link href="data:text/css," id="complete" rel="stylesheet" title="Complete specification"><link href="data:text/css,.impl%20%7B%20display:%20none;%20%7D%0Ahtml%20%7B%20border:%20solid%20yellow;%20%7D%20.domintro:before%20%7B%20display:%20none;%20%7D" id="author" rel="alternate stylesheet" title="Author documentation only"><link href="data:text/css,.impl%20%7B%20background:%20%23FFEEEE;%20%7D%20.domintro:before%20%7B%20background:%20%23FFEEEE;%20%7D" id="highlight" rel="alternate stylesheet" title="Highlight implementation requirements"><style type="text/css">
    pre { margin-left: 2em; white-space: pre-wrap; }
    h2 { margin: 3em 0 1em 0; }
    h3 { margin: 2.5em 0 1em 0; }
@@ -71,7 +176,7 @@
    h1 + h2, hr + h2.no-toc { page-break-before: auto; }
 
    p  > span:not([title=""]):not([class="XXX"]):not([class="impl"]):not([class="note"]),
-   li > span:not([title=""]):not([class="XXX"]):not([class="impl"]):not([class="note"]), { border-bottom: solid #9999CC; }
+   li > span:not([title=""]):not([class="XXX"]):not([class="impl"]):not([class="note"]) { border-bottom: solid #9999CC; }
 
    div.head { margin: 0 0 1em; padding: 1em 0 0 0; }
    div.head p { margin: 0; }
@@ -216,7 +321,8 @@
      display: block;
    }
    .stability input {
-     appearance: none; margin: 0; border: 0; padding: 0.25em 0.5em; background: transparent; color: black;
+     -moz-appearance: none; -webkit-appearance: none; margin: 0; 
+     border: 0; padding: 0.25em 0.5em; background: transparent; color: black;
      position: absolute; top: -0.5em; right: 0; font: 1.25em sans-serif; text-align: center;
    }
    .stability input:hover {
@@ -232,112 +338,7 @@
      color: white;
    }
 
-  </style><link href="http://www.w3.org/StyleSheets/TR/W3C-WD" rel="stylesheet" type="text/css"><meta content="noindex" name="robots"><style type="text/css">
-
-   .applies thead th > * { display: block; }
-   .applies thead code { display: block; }
-   .applies tbody th { whitespace: nowrap; }
-   .applies td { text-align: center; }
-   .applies .yes { background: yellow; }
-
-   .matrix, .matrix td { border: hidden; text-align: right; }
-   .matrix { margin-left: 2em; }
-
-   .dice-example { border-collapse: collapse; border-style: hidden solid solid hidden; border-width: thin; margin-left: 3em; }
-   .dice-example caption { width: 30em; font-size: smaller; font-style: italic; padding: 0.75em 0; text-align: left; }
-   .dice-example td, .dice-example th { border: solid thin; width: 1.35em; height: 1.05em; text-align: center; padding: 0; }
-
-   td.eg { border-width: thin; text-align: center; }
-
-   #table-example-1 { border: solid thin; border-collapse: collapse; margin-left: 3em; }
-   #table-example-1 * { font-family: "Essays1743", serif; line-height: 1.01em; }
-   #table-example-1 caption { padding-bottom: 0.5em; }
-   #table-example-1 thead, #table-example-1 tbody { border: none; }
-   #table-example-1 th, #table-example-1 td { border: solid thin; }
-   #table-example-1 th { font-weight: normal; }
-   #table-example-1 td { border-style: none solid; vertical-align: top; }
-   #table-example-1 th { padding: 0.5em; vertical-align: middle; text-align: center; }
-   #table-example-1 tbody tr:first-child td { padding-top: 0.5em; }
-   #table-example-1 tbody tr:last-child td { padding-bottom: 1.5em; }
-   #table-example-1 tbody td:first-child { padding-left: 2.5em; padding-right: 0; width: 9em; }
-   #table-example-1 tbody td:first-child::after { content: leader(". "); }
-   #table-example-1 tbody td { padding-left: 2em; padding-right: 2em; }
-   #table-example-1 tbody td:first-child + td { width: 10em; }
-   #table-example-1 tbody td:first-child + td ~ td { width: 2.5em; }
-   #table-example-1 tbody td:first-child + td + td + td ~ td { width: 1.25em; }
-
-   .apple-table-examples { border: none; border-collapse: separate; border-spacing: 1.5em 0em; width: 40em; margin-left: 3em; }
-   .apple-table-examples * { font-family: "Times", serif; }
-   .apple-table-examples td, .apple-table-examples th { border: none; white-space: nowrap; padding-top: 0; padding-bottom: 0; }
-   .apple-table-examples tbody th:first-child { border-left: none; width: 100%; }
-   .apple-table-examples thead th:first-child ~ th { font-size: smaller; font-weight: bolder; border-bottom: solid 2px; text-align: center; }
-   .apple-table-examples tbody th::after, .apple-table-examples tfoot th::after { content: leader(". ") }
-   .apple-table-examples tbody th, .apple-table-examples tfoot th { font: inherit; text-align: left; }
-   .apple-table-examples td { text-align: right; vertical-align: top; }
-   .apple-table-examples.e1 tbody tr:last-child td { border-bottom: solid 1px; }
-   .apple-table-examples.e1 tbody + tbody tr:last-child td { border-bottom: double 3px; }
-   .apple-table-examples.e2 th[scope=row] { padding-left: 1em; }
-   .apple-table-examples sup { line-height: 0; }
-
-   .details-example img { vertical-align: top; }
-
-   #base64-table {
-     white-space: nowrap;
-     font-size: 0.6em;
-     column-width: 6em;
-     column-count: 5;
-     column-gap: 1em;
-     -moz-column-width: 6em;
-     -moz-column-count: 5;
-     -moz-column-gap: 1em;
-     -webkit-column-width: 6em;
-     -webkit-column-count: 5;
-     -webkit-column-gap: 1em;
-   }
-   #base64-table thead { display: none; }
-   #base64-table * { border: none; }
-   #base64-table tbody td:first-child:after { content: ':'; }
-   #base64-table tbody td:last-child { text-align: right; }
-
-   #named-character-references-table {
-     white-space: nowrap;
-     font-size: 0.6em;
-     column-width: 30em;
-     column-gap: 1em;
-     -moz-column-width: 30em;
-     -moz-column-gap: 1em;
-     -webkit-column-width: 30em;
-     -webkit-column-gap: 1em;
-   }
-   #named-character-references-table > table > tbody > tr > td:first-child + td,
-   #named-character-references-table > table > tbody > tr > td:last-child { text-align: center; }
-   #named-character-references-table > table > tbody > tr > td:last-child:hover > span { position: absolute; top: auto; left: auto; margin-left: 0.5em; line-height: 1.2; font-size: 5em; border: outset; padding: 0.25em 0.5em; background: white; width: 1.25em; height: auto; text-align: center; }
-   #named-character-references-table > table > tbody > tr#entity-CounterClockwiseContourIntegral > td:first-child { font-size: 0.5em; }
-
-   .glyph.control { color: red; }
-
-   @font-face {
-     font-family: 'Essays1743';
-     src: url('fonts/Essays1743.ttf');
-   }
-   @font-face {
-     font-family: 'Essays1743';
-     font-weight: bold;
-     src: url('fonts/Essays1743-Bold.ttf');
-   }
-   @font-face {
-     font-family: 'Essays1743';
-     font-style: italic;
-     src: url('fonts/Essays1743-Italic.ttf');
-   }
-   @font-face {
-     font-family: 'Essays1743';
-     font-style: italic;
-     font-weight: bold;
-     src: url('fonts/Essays1743-BoldItalic.ttf');
-   }
-
-  </style><link href="data:text/css," id="complete" rel="stylesheet" title="Complete specification"><link href="data:text/css,.impl%20%7B%20display:%20none;%20%7D%0Ahtml%20%7B%20border:%20solid%20yellow;%20%7D%20.domintro:before%20%7B%20display:%20none;%20%7D" id="author" rel="alternate stylesheet" title="Author documentation only"><link href="data:text/css,.impl%20%7B%20background:%20%23FFEEEE;%20%7D%20.domintro:before%20%7B%20background:%20%23FFEEEE;%20%7D" id="highlight" rel="alternate stylesheet" title="Highlight implementation requirements"><script>
+  </style><link href="http://www.w3.org/StyleSheets/TR/W3C-WD" rel="stylesheet" type="text/css"><meta content="noindex" name="robots"><script>
    function getCookie(name) {
      var params = location.search.substr(1).split("&");
      for (var index = 0; index < params.length; index++) {
@@ -365,7 +366,9 @@
    <h2 class="no-num no-toc" id="a-vocabulary-and-associated-apis-for-html-and-xhtml">A vocabulary and associated APIs for HTML and XHTML</h2>
    <h2 class="no-num no-toc" id="w3c-working-draft-11-october-2012">W3C Working Draft 11 October 2012</h2>
    </div>
-   <div class="prev_next">
+  
+
+  <div class="prev_next">
    <a href="media-elements.html">&#8592; 4.8.10 Media elements</a> &#8211;
    <a href="index.html#contents">Table of contents</a> &#8211;
    <a href="the-map-element.html">4.8.12 The map element &#8594;</a>
@@ -422,10 +425,10 @@
   element. The contents of the <code><a href="#the-canvas-element">canvas</a></code> element, if any,
   are the element's <a href="content-models.html#fallback-content">fallback content</a>.</p>
 
-  <p>In interactive visual media, if <a href="webappapis.html#concept-n-script" title="concept-n-script">scripting is enabled</a> for the
+  <p>In interactive visual media, if <a href="textFieldSelection.html#concept-n-script" title="concept-n-script">scripting is enabled</a> for the
   <code><a href="#the-canvas-element">canvas</a></code> element, and if support for <code><a href="#the-canvas-element">canvas</a></code>
   elements has been enabled, the <code><a href="#the-canvas-element">canvas</a></code> element
-  <a href="rendering.html#represents">represents</a> <a href="content-models.html#embedded-content-2">embedded content</a> consisting of
+  <a href="textFieldSelection.html#represents">represents</a> <a href="content-models.html#embedded-content-2">embedded content</a> consisting of
   a dynamically created image.</p>
 
   <p>In non-interactive, static, visual media, if the
@@ -433,18 +436,18 @@
   the page was viewed in an interactive visual medium and is now being
   printed, or if some script that ran during the page layout process
   painted on the element), then the <code><a href="#the-canvas-element">canvas</a></code> element
-  <a href="rendering.html#represents">represents</a> <a href="content-models.html#embedded-content-2">embedded content</a> with the
+  <a href="textFieldSelection.html#represents">represents</a> <a href="content-models.html#embedded-content-2">embedded content</a> with the
   current image and size. Otherwise, the element represents its
   <a href="content-models.html#fallback-content">fallback content</a> instead.</p>
 
-  <p>In non-visual media, and in visual media if <a href="webappapis.html#concept-n-noscript" title="concept-n-noscript">scripting is disabled</a> for the
+  <p>In non-visual media, and in visual media if <a href="textFieldSelection.html#concept-n-noscript" title="concept-n-noscript">scripting is disabled</a> for the
   <code><a href="#the-canvas-element">canvas</a></code> element or if support for <code><a href="#the-canvas-element">canvas</a></code>
   elements has been disabled, the <code><a href="#the-canvas-element">canvas</a></code> element
-  <a href="rendering.html#represents">represents</a> its <a href="content-models.html#fallback-content">fallback content</a>
+  <a href="textFieldSelection.html#represents">represents</a> its <a href="content-models.html#fallback-content">fallback content</a>
   instead.</p>
 
   <!-- CANVAS-FOCUS-FALLBACK -->
-  <p>When a <code><a href="#the-canvas-element">canvas</a></code> element <a href="rendering.html#represents">represents</a>
+  <p>When a <code><a href="#the-canvas-element">canvas</a></code> element <a href="textFieldSelection.html#represents">represents</a>
   <a href="content-models.html#embedded-content-2">embedded content</a>, the user can still focus descendants
   of the <code><a href="#the-canvas-element">canvas</a></code> element (in the <a href="content-models.html#fallback-content">fallback
   content</a>). When an element is focused, it is the target of
@@ -453,7 +456,7 @@
   keyboard-accessible: authors should have a one-to-one mapping of
   interactive regions to focusable elements in the <a href="content-models.html#fallback-content">fallback
   content</a>. (Focus has no effect on mouse interaction
-  events.) <a href="references.html#refsDOMEVENTS">[DOMEVENTS]</a></p>
+  events.) <a href="textFieldSelection.html#refsDOMEVENTS">[DOMEVENTS]</a></p>
 
   <p>The <code><a href="#the-canvas-element">canvas</a></code> element has two attributes to control the
   size of the coordinate space: <dfn id="attr-canvas-width" title="attr-canvas-width"><code>width</code></dfn> and <dfn id="attr-canvas-height" title="attr-canvas-height"><code>height</code></dfn>. These
@@ -526,7 +529,7 @@
 <!--2DCONTEXT-->
 
     <p>The list of defined contexts is given on the <a href="http://wiki.whatwg.org/wiki/CanvasContexts">WHATWG Wiki
-    CanvasContexts page</a>. <a href="references.html#refsWHATWGWIKI">[WHATWGWIKI]</a>
+    CanvasContexts page</a>. <a href="textFieldSelection.html#refsWHATWGWIKI">[WHATWGWIKI]</a>
 
     </p><p>Returns null if the given context ID is not supported or if the
     canvas has already been initialized with some other (incompatible)
@@ -573,7 +576,7 @@
    context's entry in the <a href="http://wiki.whatwg.org/wiki/CanvasContexts">WHATWG Wiki
    CanvasContexts page</a> does not list <var title="">contextId</var>
    as a context with which it is compatible, return null and abort
-   these steps. <a href="references.html#refsWHATWGWIKI">[WHATWGWIKI]</a></p></li>
+   these steps. <a href="textFieldSelection.html#refsWHATWGWIKI">[WHATWGWIKI]</a></p></li>
 
    <li><p>If the element does not have a <a href="#primary-context">primary context</a>,
    let the element's <a href="#primary-context">primary context</a> be <var title="">contextId</var>.</p></li>
@@ -585,10 +588,10 @@
 
    <li><p><dfn id="getcontext-return" title="getContext-return">Return a new object for <var title="">contextId</var></dfn>, as defined by the specification
    given for <var title="">contextId</var>'s entry in the <a href="http://wiki.whatwg.org/wiki/CanvasContexts">WHATWG Wiki
-   CanvasContexts page</a>. <a href="references.html#refsWHATWGWIKI">[WHATWGWIKI]</a></p></li>
+   CanvasContexts page</a>. <a href="textFieldSelection.html#refsWHATWGWIKI">[WHATWGWIKI]</a></p></li>
 
   </ol><p>New context types may be registered in the <a href="http://wiki.whatwg.org/wiki/CanvasContexts">WHATWG Wiki
-  CanvasContexts page</a>. <a href="references.html#refsWHATWGWIKI">[WHATWGWIKI]</a></p>
+  CanvasContexts page</a>. <a href="textFieldSelection.html#refsWHATWGWIKI">[WHATWGWIKI]</a></p>
 
   <p>Anyone is free to edit the WHATWG Wiki CanvasContexts page at any
   time to add a new context type. These new context types must be
@@ -682,7 +685,7 @@
    image as a file</a>, using the method's arguments (if any) as
    the <var title="">arguments</var>.</p></li>
 
-   <li><p>Return a <a href="infrastructure.html#data-protocol" title="data protocol"><code title="">data:</code> URL</a> representing <var title="">file</var>. <a href="references.html#refsRFC2397">[RFC2397]</a></p>
+   <li><p>Return a <a href="infrastructure.html#data-protocol" title="data protocol"><code title="">data:</code> URL</a> representing <var title="">file</var>. <a href="textFieldSelection.html#refsRFC2397">[RFC2397]</a></p>
 
    <!-- should we explicitly require the URL to be base64-encoded and
    not have any parameters, to ensure the same exact URL is generated
@@ -709,7 +712,7 @@
 
     <p>Otherwise, let <var title="">result</var> be a
     <code><a href="infrastructure.html#blob">Blob</a></code> object representing <a href="#a-serialization-of-the-image-as-a-file">a serialization of the
-    image as a file</a>, using <var title="">arguments</var>. <a href="references.html#refsFILEAPI">[FILEAPI]</a> </p>
+    image as a file</a>, using <var title="">arguments</var>. <a href="textFieldSelection.html#refsFILEAPI">[FILEAPI]</a> </p>
 
    </li>
 
@@ -719,15 +722,15 @@
    <li><p>If <var title="">callback</var> is null, abort these
    steps.</p></li>
 
-   <li><p><a href="webappapis.html#queue-a-task">Queue a task</a> to invoke the
-   <code><a href="infrastructure.html#filecallback">FileCallback</a></code> <var title="">callback</var> with <var title="">result</var> as its argument. The <a href="webappapis.html#task-source">task source</a>
+   <li><p><a href="textFieldSelection.html#queue-a-task">Queue a task</a> to invoke the
+   <code><a href="infrastructure.html#filecallback">FileCallback</a></code> <var title="">callback</var> with <var title="">result</var> as its argument. The <a href="textFieldSelection.html#task-source">task source</a>
    for this task is the <dfn id="canvas-blob-serialization-task-source">canvas blob serialization task
-   source</dfn>. <a href="references.html#refsFILESYSTEMAPI">[FILESYSTEMAPI]</a></p></li>
+   source</dfn>. <a href="textFieldSelection.html#refsFILESYSTEMAPI">[FILESYSTEMAPI]</a></p></li>
 
   </ol><p>When a user agent is to create <dfn id="a-serialization-of-the-image-as-a-file">a serialization of the image
   as a file</dfn>, optionally with some given <var title="">arguments</var>, it must create an image file in the format
   given by the first value of <var title="">arguments</var>, or, if
-  there are no <var title="">arguments</var>, in the PNG format. <a href="references.html#refsPNG">[PNG]</a></p>
+  there are no <var title="">arguments</var>, in the PNG format. <a href="textFieldSelection.html#refsPNG">[PNG]</a></p>
 
   <p>If <var title="">arguments</var> is not empty, the first value
   must be interpreted as a <a href="infrastructure.html#mime-type" title="MIME type">MIME type</a>
@@ -743,7 +746,7 @@
 
   <p>User agents must support PNG ("<code>image/png</code>"). User
   agents may support other types. If the user agent does not support
-  the requested type, it must create the file using the PNG format. <a href="references.html#refsPNG">[PNG]</a></p>
+  the requested type, it must create the file using the PNG format. <a href="textFieldSelection.html#refsPNG">[PNG]</a></p>
 
   <p>User agents must <a href="infrastructure.html#converted-to-ascii-lowercase" title="converted to ASCII
   lowercase">convert the provided type to ASCII lowercase</a>
@@ -768,13 +771,13 @@
      be</span> treated as the desired quality level. <span class="impl">If it is not a number or is outside that range, the
      user agent must use its default value, as if the argument had
      been omitted.</span>
-     </td><td> <a href="references.html#refsJPEG">[JPEG]</a>
+     </td><td> <a href="textFieldSelection.html#refsJPEG">[JPEG]</a>
   </td></tr></tbody></table><div class="impl">
 
   <p>For the purposes of these rules, an argument is considered to be
   a number if it is converted to an IDL double value by the rules for
   handling arguments of type <code title="">any</code> in the Web IDL
-  specification. <a href="references.html#refsWEBIDL">[WEBIDL]</a></p>
+  specification. <a href="textFieldSelection.html#refsWEBIDL">[WEBIDL]</a></p>
 
   <p>Other arguments must be ignored and must not cause the user agent
   to throw an exception. A future version of this specification will
@@ -836,8 +839,8 @@
   <h5 id="security-with-canvas-elements"><span class="secno">4.8.11.2 </span>Security with <code><a href="#the-canvas-element">canvas</a></code> elements</h5>
 
   <p><strong>Information leakage</strong> can occur if scripts from
-  one <a href="browsers.html#origin-0">origin</a> can access information (e.g. read pixels)
-  from images from another origin (one that isn't the <a href="browsers.html#same-origin" title="same origin">same</a>).</p>
+  one <a href="textFieldSelection.html#origin-0">origin</a> can access information (e.g. read pixels)
+  from images from another origin (one that isn't the <a href="textFieldSelection.html#same-origin" title="same origin">same</a>).</p>
 
   <p>To mitigate this, <code><a href="#the-canvas-element">canvas</a></code> elements are defined to
   have a flag indicating whether they are <i>origin-clean</i>. All
@@ -847,8 +850,8 @@
 
   <ul><li><p>The element's 2D context's <code title="dom-context-2d-drawImage">drawImage()</code> method is
    called with an <code><a href="the-img-element.html#htmlimageelement">HTMLImageElement</a></code> or an
-   <code><a href="the-video-element.html#htmlvideoelement">HTMLVideoElement</a></code> whose <a href="browsers.html#origin-0">origin</a> is not the
-   <a href="browsers.html#same-origin" title="same origin">same</a> as that of the
+   <code><a href="the-video-element.html#htmlvideoelement">HTMLVideoElement</a></code> whose <a href="textFieldSelection.html#origin-0">origin</a> is not the
+   <a href="textFieldSelection.html#same-origin" title="same origin">same</a> as that of the
    <code><a href="dom.html#document">Document</a></code> object that owns the <code><a href="#the-canvas-element">canvas</a></code>
    element.</p></li>
 
@@ -859,7 +862,7 @@
    <li><p>The element's 2D context's <code title="dom-context-2d-fillStyle">fillStyle</code> attribute is set
    to a <code>CanvasPattern</code> object that was created from an
    <code><a href="the-img-element.html#htmlimageelement">HTMLImageElement</a></code> or an <code><a href="the-video-element.html#htmlvideoelement">HTMLVideoElement</a></code>
-   whose <a href="browsers.html#origin-0">origin</a> was not the <a href="browsers.html#same-origin" title="same
+   whose <a href="textFieldSelection.html#origin-0">origin</a> was not the <a href="textFieldSelection.html#same-origin" title="same
    origin">same</a> as that of the <code><a href="dom.html#document">Document</a></code> object
    that owns the <code><a href="#the-canvas-element">canvas</a></code> element when the pattern was
    created.</p></li>
@@ -872,7 +875,7 @@
    <li><p>The element's 2D context's <code title="dom-context-2d-strokeStyle">strokeStyle</code> attribute is
    set to a <code>CanvasPattern</code> object that was created from an
    <code><a href="the-img-element.html#htmlimageelement">HTMLImageElement</a></code> or an <code><a href="the-video-element.html#htmlvideoelement">HTMLVideoElement</a></code>
-   whose <a href="browsers.html#origin-0">origin</a> was not the <a href="browsers.html#same-origin" title="same
+   whose <a href="textFieldSelection.html#origin-0">origin</a> was not the <a href="textFieldSelection.html#same-origin" title="same
    origin">same</a> as that of the <code><a href="dom.html#document">Document</a></code> object
    that owns the <code><a href="#the-canvas-element">canvas</a></code> element when the pattern was
    created.</p></li>
@@ -883,8 +886,8 @@
    false when the pattern was created.</p></li>
 
    <li><p>The element's 2D context's <code title="dom-context-2d-fillText">fillText()</code> or <code title="dom-context-2d-fillText">strokeText()</code> methods are
-   invoked and consider using a font that has an <a href="browsers.html#origin-0">origin</a>
-   that is not the <a href="browsers.html#same-origin" title="same origin">same</a> as that of
+   invoked and consider using a font that has an <a href="textFieldSelection.html#origin-0">origin</a>
+   that is not the <a href="textFieldSelection.html#same-origin" title="same origin">same</a> as that of
    the <code><a href="dom.html#document">Document</a></code> object that owns the <code><a href="#the-canvas-element">canvas</a></code>
    element. (The font doesn't even have to be used; all that matters
    is whether the font was considered for any of the glyphs

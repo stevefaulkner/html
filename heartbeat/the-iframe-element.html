@@ -1,5 +1,110 @@
 <!DOCTYPE html>
-<html lang="en-US-x-Hixie"><head><title>4.8.2 The iframe element &#8212; HTML5</title><style type="text/css">
+<html lang="en-US-x-Hixie"><head><meta charset="utf-8"><title>4.8.2 The iframe element &#8212; HTML5</title><style type="text/css">
+
+   .applies thead th > * { display: block; }
+   .applies thead code { display: block; }
+   .applies tbody th { white-space: nowrap; }
+   .applies td { text-align: center; }
+   .applies .yes { background: yellow; }
+
+   .matrix, .matrix td { border: hidden; text-align: right; }
+   .matrix { margin-left: 2em; }
+
+   .dice-example { border-collapse: collapse; border-style: hidden solid solid hidden; border-width: thin; margin-left: 3em; }
+   .dice-example caption { width: 30em; font-size: smaller; font-style: italic; padding: 0.75em 0; text-align: left; }
+   .dice-example td, .dice-example th { border: solid thin; width: 1.35em; height: 1.05em; text-align: center; padding: 0; }
+
+   td.eg { border-width: thin; text-align: center; }
+
+   #table-example-1 { border: solid thin; border-collapse: collapse; margin-left: 3em; }
+   #table-example-1 * { font-family: "Essays1743", serif; line-height: 1.01em; }
+   #table-example-1 caption { padding-bottom: 0.5em; }
+   #table-example-1 thead, #table-example-1 tbody { border: none; }
+   #table-example-1 th, #table-example-1 td { border: solid thin; }
+   #table-example-1 th { font-weight: normal; }
+   #table-example-1 td { border-style: none solid; vertical-align: top; }
+   #table-example-1 th { padding: 0.5em; vertical-align: middle; text-align: center; }
+   #table-example-1 tbody tr:first-child td { padding-top: 0.5em; }
+   #table-example-1 tbody tr:last-child td { padding-bottom: 1.5em; }
+   #table-example-1 tbody td:first-child { padding-left: 2.5em; padding-right: 0; width: 9em; }
+   #table-example-1 tbody td:first-child::after { content: leader(". "); }
+   #table-example-1 tbody td { padding-left: 2em; padding-right: 2em; }
+   #table-example-1 tbody td:first-child + td { width: 10em; }
+   #table-example-1 tbody td:first-child + td ~ td { width: 2.5em; }
+   #table-example-1 tbody td:first-child + td + td + td ~ td { width: 1.25em; }
+
+   .apple-table-examples { border: none; border-collapse: separate; border-spacing: 1.5em 0em; width: 40em; margin-left: 3em; }
+   .apple-table-examples * { font-family: "Times", serif; }
+   .apple-table-examples td, .apple-table-examples th { border: none; white-space: nowrap; padding-top: 0; padding-bottom: 0; }
+   .apple-table-examples tbody th:first-child { border-left: none; width: 100%; }
+   .apple-table-examples thead th:first-child ~ th { font-size: smaller; font-weight: bolder; border-bottom: solid 2px; text-align: center; }
+   .apple-table-examples tbody th::after, .apple-table-examples tfoot th::after { content: leader(". ") }
+   .apple-table-examples tbody th, .apple-table-examples tfoot th { font: inherit; text-align: left; }
+   .apple-table-examples td { text-align: right; vertical-align: top; }
+   .apple-table-examples.e1 tbody tr:last-child td { border-bottom: solid 1px; }
+   .apple-table-examples.e1 tbody + tbody tr:last-child td { border-bottom: double 3px; }
+   .apple-table-examples.e2 th[scope=row] { padding-left: 1em; }
+   .apple-table-examples sup { line-height: 0; }
+
+   .details-example img { vertical-align: top; }
+
+   #base64-table {
+     white-space: nowrap;
+     font-size: 0.6em;
+     column-width: 6em;
+     column-count: 5;
+     column-gap: 1em;
+     -moz-column-width: 6em;
+     -moz-column-count: 5;
+     -moz-column-gap: 1em;
+     -webkit-column-width: 6em;
+     -webkit-column-count: 5;
+     -webkit-column-gap: 1em;
+   }
+   #base64-table thead { display: none; }
+   #base64-table * { border: none; }
+   #base64-table tbody td:first-child:after { content: ':'; }
+   #base64-table tbody td:last-child { text-align: right; }
+
+   #named-character-references-table {
+     white-space: nowrap;
+     font-size: 0.6em;
+     column-width: 30em;
+     column-gap: 1em;
+     -moz-column-width: 30em;
+     -moz-column-gap: 1em;
+     -webkit-column-width: 30em;
+     -webkit-column-gap: 1em;
+   }
+   #named-character-references-table > table > tbody > tr > td:first-child + td,
+   #named-character-references-table > table > tbody > tr > td:last-child { text-align: center; }
+   #named-character-references-table > table > tbody > tr > td:last-child:hover > span { position: absolute; top: auto; left: auto; margin-left: 0.5em; line-height: 1.2; font-size: 5em; border: outset; padding: 0.25em 0.5em; background: white; width: 1.25em; height: auto; text-align: center; }
+   #named-character-references-table > table > tbody > tr#entity-CounterClockwiseContourIntegral > td:first-child { font-size: 0.5em; }
+
+   .glyph.control { color: red; }
+
+   @font-face {
+     font-family: 'Essays1743';
+     src: url('fonts/Essays1743.ttf');
+   }
+   @font-face {
+     font-family: 'Essays1743';
+     font-weight: bold;
+     src: url('fonts/Essays1743-Bold.ttf');
+   }
+   @font-face {
+     font-family: 'Essays1743';
+     font-style: italic;
+     src: url('fonts/Essays1743-Italic.ttf');
+   }
+   @font-face {
+     font-family: 'Essays1743';
+     font-style: italic;
+     font-weight: bold;
+     src: url('fonts/Essays1743-BoldItalic.ttf');
+   }
+
+  </style><link href="data:text/css," id="complete" rel="stylesheet" title="Complete specification"><link href="data:text/css,.impl%20%7B%20display:%20none;%20%7D%0Ahtml%20%7B%20border:%20solid%20yellow;%20%7D%20.domintro:before%20%7B%20display:%20none;%20%7D" id="author" rel="alternate stylesheet" title="Author documentation only"><link href="data:text/css,.impl%20%7B%20background:%20%23FFEEEE;%20%7D%20.domintro:before%20%7B%20background:%20%23FFEEEE;%20%7D" id="highlight" rel="alternate stylesheet" title="Highlight implementation requirements"><style type="text/css">
    pre { margin-left: 2em; white-space: pre-wrap; }
    h2 { margin: 3em 0 1em 0; }
    h3 { margin: 2.5em 0 1em 0; }
@@ -71,7 +176,7 @@
    h1 + h2, hr + h2.no-toc { page-break-before: auto; }
 
    p  > span:not([title=""]):not([class="XXX"]):not([class="impl"]):not([class="note"]),
-   li > span:not([title=""]):not([class="XXX"]):not([class="impl"]):not([class="note"]), { border-bottom: solid #9999CC; }
+   li > span:not([title=""]):not([class="XXX"]):not([class="impl"]):not([class="note"]) { border-bottom: solid #9999CC; }
 
    div.head { margin: 0 0 1em; padding: 1em 0 0 0; }
    div.head p { margin: 0; }
@@ -216,7 +321,8 @@
      display: block;
    }
    .stability input {
-     appearance: none; margin: 0; border: 0; padding: 0.25em 0.5em; background: transparent; color: black;
+     -moz-appearance: none; -webkit-appearance: none; margin: 0; 
+     border: 0; padding: 0.25em 0.5em; background: transparent; color: black;
      position: absolute; top: -0.5em; right: 0; font: 1.25em sans-serif; text-align: center;
    }
    .stability input:hover {
@@ -232,112 +338,7 @@
      color: white;
    }
 
-  </style><link href="http://www.w3.org/StyleSheets/TR/W3C-WD" rel="stylesheet" type="text/css"><meta content="noindex" name="robots"><style type="text/css">
-
-   .applies thead th > * { display: block; }
-   .applies thead code { display: block; }
-   .applies tbody th { whitespace: nowrap; }
-   .applies td { text-align: center; }
-   .applies .yes { background: yellow; }
-
-   .matrix, .matrix td { border: hidden; text-align: right; }
-   .matrix { margin-left: 2em; }
-
-   .dice-example { border-collapse: collapse; border-style: hidden solid solid hidden; border-width: thin; margin-left: 3em; }
-   .dice-example caption { width: 30em; font-size: smaller; font-style: italic; padding: 0.75em 0; text-align: left; }
-   .dice-example td, .dice-example th { border: solid thin; width: 1.35em; height: 1.05em; text-align: center; padding: 0; }
-
-   td.eg { border-width: thin; text-align: center; }
-
-   #table-example-1 { border: solid thin; border-collapse: collapse; margin-left: 3em; }
-   #table-example-1 * { font-family: "Essays1743", serif; line-height: 1.01em; }
-   #table-example-1 caption { padding-bottom: 0.5em; }
-   #table-example-1 thead, #table-example-1 tbody { border: none; }
-   #table-example-1 th, #table-example-1 td { border: solid thin; }
-   #table-example-1 th { font-weight: normal; }
-   #table-example-1 td { border-style: none solid; vertical-align: top; }
-   #table-example-1 th { padding: 0.5em; vertical-align: middle; text-align: center; }
-   #table-example-1 tbody tr:first-child td { padding-top: 0.5em; }
-   #table-example-1 tbody tr:last-child td { padding-bottom: 1.5em; }
-   #table-example-1 tbody td:first-child { padding-left: 2.5em; padding-right: 0; width: 9em; }
-   #table-example-1 tbody td:first-child::after { content: leader(". "); }
-   #table-example-1 tbody td { padding-left: 2em; padding-right: 2em; }
-   #table-example-1 tbody td:first-child + td { width: 10em; }
-   #table-example-1 tbody td:first-child + td ~ td { width: 2.5em; }
-   #table-example-1 tbody td:first-child + td + td + td ~ td { width: 1.25em; }
-
-   .apple-table-examples { border: none; border-collapse: separate; border-spacing: 1.5em 0em; width: 40em; margin-left: 3em; }
-   .apple-table-examples * { font-family: "Times", serif; }
-   .apple-table-examples td, .apple-table-examples th { border: none; white-space: nowrap; padding-top: 0; padding-bottom: 0; }
-   .apple-table-examples tbody th:first-child { border-left: none; width: 100%; }
-   .apple-table-examples thead th:first-child ~ th { font-size: smaller; font-weight: bolder; border-bottom: solid 2px; text-align: center; }
-   .apple-table-examples tbody th::after, .apple-table-examples tfoot th::after { content: leader(". ") }
-   .apple-table-examples tbody th, .apple-table-examples tfoot th { font: inherit; text-align: left; }
-   .apple-table-examples td { text-align: right; vertical-align: top; }
-   .apple-table-examples.e1 tbody tr:last-child td { border-bottom: solid 1px; }
-   .apple-table-examples.e1 tbody + tbody tr:last-child td { border-bottom: double 3px; }
-   .apple-table-examples.e2 th[scope=row] { padding-left: 1em; }
-   .apple-table-examples sup { line-height: 0; }
-
-   .details-example img { vertical-align: top; }
-
-   #base64-table {
-     white-space: nowrap;
-     font-size: 0.6em;
-     column-width: 6em;
-     column-count: 5;
-     column-gap: 1em;
-     -moz-column-width: 6em;
-     -moz-column-count: 5;
-     -moz-column-gap: 1em;
-     -webkit-column-width: 6em;
-     -webkit-column-count: 5;
-     -webkit-column-gap: 1em;
-   }
-   #base64-table thead { display: none; }
-   #base64-table * { border: none; }
-   #base64-table tbody td:first-child:after { content: ':'; }
-   #base64-table tbody td:last-child { text-align: right; }
-
-   #named-character-references-table {
-     white-space: nowrap;
-     font-size: 0.6em;
-     column-width: 30em;
-     column-gap: 1em;
-     -moz-column-width: 30em;
-     -moz-column-gap: 1em;
-     -webkit-column-width: 30em;
-     -webkit-column-gap: 1em;
-   }
-   #named-character-references-table > table > tbody > tr > td:first-child + td,
-   #named-character-references-table > table > tbody > tr > td:last-child { text-align: center; }
-   #named-character-references-table > table > tbody > tr > td:last-child:hover > span { position: absolute; top: auto; left: auto; margin-left: 0.5em; line-height: 1.2; font-size: 5em; border: outset; padding: 0.25em 0.5em; background: white; width: 1.25em; height: auto; text-align: center; }
-   #named-character-references-table > table > tbody > tr#entity-CounterClockwiseContourIntegral > td:first-child { font-size: 0.5em; }
-
-   .glyph.control { color: red; }
-
-   @font-face {
-     font-family: 'Essays1743';
-     src: url('fonts/Essays1743.ttf');
-   }
-   @font-face {
-     font-family: 'Essays1743';
-     font-weight: bold;
-     src: url('fonts/Essays1743-Bold.ttf');
-   }
-   @font-face {
-     font-family: 'Essays1743';
-     font-style: italic;
-     src: url('fonts/Essays1743-Italic.ttf');
-   }
-   @font-face {
-     font-family: 'Essays1743';
-     font-style: italic;
-     font-weight: bold;
-     src: url('fonts/Essays1743-BoldItalic.ttf');
-   }
-
-  </style><link href="data:text/css," id="complete" rel="stylesheet" title="Complete specification"><link href="data:text/css,.impl%20%7B%20display:%20none;%20%7D%0Ahtml%20%7B%20border:%20solid%20yellow;%20%7D%20.domintro:before%20%7B%20display:%20none;%20%7D" id="author" rel="alternate stylesheet" title="Author documentation only"><link href="data:text/css,.impl%20%7B%20background:%20%23FFEEEE;%20%7D%20.domintro:before%20%7B%20background:%20%23FFEEEE;%20%7D" id="highlight" rel="alternate stylesheet" title="Highlight implementation requirements"><script>
+  </style><link href="http://www.w3.org/StyleSheets/TR/W3C-WD" rel="stylesheet" type="text/css"><meta content="noindex" name="robots"><script>
    function getCookie(name) {
      var params = location.search.substr(1).split("&");
      for (var index = 0; index < params.length; index++) {
@@ -365,7 +366,9 @@
    <h2 class="no-num no-toc" id="a-vocabulary-and-associated-apis-for-html-and-xhtml">A vocabulary and associated APIs for HTML and XHTML</h2>
    <h2 class="no-num no-toc" id="w3c-working-draft-11-october-2012">W3C Working Draft 11 October 2012</h2>
    </div>
-   <div class="prev_next">
+  
+
+  <div class="prev_next">
    <a href="the-img-element.html">&#8592; 4.8.1 The img element</a> &#8211;
    <a href="index.html#contents">Table of contents</a> &#8211;
    <a href="the-embed-element.html">4.8.3 The embed element &#8594;</a>
@@ -403,14 +406,14 @@
            attribute DOMString <a href="dimension-attributes.html#dom-dim-width" title="dom-dim-width">width</a>;
            attribute DOMString <a href="dimension-attributes.html#dom-dim-height" title="dom-dim-height">height</a>;
   readonly attribute Document? <a href="#dom-iframe-contentdocument" title="dom-iframe-contentDocument">contentDocument</a>;
-  readonly attribute <a href="browsers.html#windowproxy">WindowProxy</a>? <a href="#dom-iframe-contentwindow" title="dom-iframe-contentWindow">contentWindow</a>;
+  readonly attribute <a href="textFieldSelection.html#windowproxy">WindowProxy</a>? <a href="#dom-iframe-contentwindow" title="dom-iframe-contentWindow">contentWindow</a>;
 };</pre>
    </dd>
-  </dl><!--TOPIC:HTML--><p>The <code><a href="#the-iframe-element">iframe</a></code> element <a href="rendering.html#represents">represents</a> a
-  <a href="browsers.html#nested-browsing-context">nested browsing context</a>.</p>
+  </dl><!--TOPIC:HTML--><p>The <code><a href="#the-iframe-element">iframe</a></code> element <a href="textFieldSelection.html#represents">represents</a> a
+  <a href="textFieldSelection.html#nested-browsing-context">nested browsing context</a>.</p>
 
   <p>The <dfn id="attr-iframe-src" title="attr-iframe-src"><code>src</code></dfn> attribute
-  gives the address of a page that the <a href="browsers.html#nested-browsing-context">nested browsing
+  gives the address of a page that the <a href="textFieldSelection.html#nested-browsing-context">nested browsing
   context</a> is to contain. The attribute, if present, must be a
   <a href="urls.html#valid-non-empty-url-potentially-surrounded-by-spaces">valid non-empty URL potentially surrounded by
   spaces</a>.</p>
@@ -418,32 +421,32 @@
 <!--MD-->
 
   <p>The <dfn id="attr-iframe-srcdoc" title="attr-iframe-srcdoc"><code>srcdoc</code></dfn>
-  attribute gives the content of the page that the <a href="browsers.html#nested-browsing-context">nested
+  attribute gives the content of the page that the <a href="textFieldSelection.html#nested-browsing-context">nested
   browsing context</a> is to contain. The value of the attribute is
   the source of <dfn id="an-iframe-srcdoc-document">an <code>iframe</code> <code title="attr-iframe-srcdoc">srcdoc</code> document</dfn>.</p>
 
   <p>For <code><a href="#the-iframe-element">iframe</a></code> elements in <a href="infrastructure.html#html-documents">HTML documents</a>,
-  the attribute, if present, must have a value using <a href="syntax.html#syntax">the HTML
+  the attribute, if present, must have a value using <a href="textFieldSelection.html#syntax">the HTML
   syntax</a> that consists of the following syntactic components,
   in the given order:</p>
 
-  <ol><li>Any number of <a href="syntax.html#syntax-comments" title="syntax-comments">comments</a> and
+  <ol><li>Any number of <a href="textFieldSelection.html#syntax-comments" title="syntax-comments">comments</a> and
    <a href="common-microsyntaxes.html#space-character" title="space character">space characters</a>.</li>
 
-   <li>Optionally, a <a href="syntax.html#syntax-doctype" title="syntax-doctype">DOCTYPE</a>.
+   <li>Optionally, a <a href="textFieldSelection.html#syntax-doctype" title="syntax-doctype">DOCTYPE</a>.
 
-   </li><li>Any number of <a href="syntax.html#syntax-comments" title="syntax-comments">comments</a> and
+   </li><li>Any number of <a href="textFieldSelection.html#syntax-comments" title="syntax-comments">comments</a> and
    <a href="common-microsyntaxes.html#space-character" title="space character">space characters</a>.</li>
 
-   <li>The root element, in the form of an <code><a href="the-html-element.html#the-html-element">html</a></code> <a href="syntax.html#syntax-elements" title="syntax-elements">element</a>.</li>
+   <li>The root element, in the form of an <code><a href="the-html-element.html#the-html-element">html</a></code> <a href="textFieldSelection.html#syntax-elements" title="syntax-elements">element</a>.</li>
 
-   <li>Any number of <a href="syntax.html#syntax-comments" title="syntax-comments">comments</a> and
+   <li>Any number of <a href="textFieldSelection.html#syntax-comments" title="syntax-comments">comments</a> and
    <a href="common-microsyntaxes.html#space-character" title="space character">space characters</a>.</li>
 
   </ol><p>For <code><a href="#the-iframe-element">iframe</a></code> elements in <a href="infrastructure.html#xml-documents">XML documents</a>,
   the attribute, if present, must have a value that matches the
   production labeled <code title="">document</code> in the XML
-  specification. <a href="references.html#refsXML">[XML]</a></p>
+  specification. <a href="textFieldSelection.html#refsXML">[XML]</a></p>
 
   <p>If the <code title="attr-iframe-src"><a href="#attr-iframe-src">src</a></code> attribute and the
   <code title="attr-iframe-srcdoc"><a href="#attr-iframe-srcdoc">srcdoc</a></code> attribute are both
@@ -456,26 +459,28 @@
 
   <p>When an <code><a href="#the-iframe-element">iframe</a></code> element is <a href="infrastructure.html#insert-an-element-into-a-document" title="insert an
   element into a document">inserted into a document</a>, the user
-  agent must create a <a href="browsers.html#nested-browsing-context">nested browsing context</a>, and then
+  agent must create a <a href="textFieldSelection.html#nested-browsing-context">nested browsing context</a>, and then
   <a href="#process-the-iframe-attributes">process the <code>iframe</code> attributes</a> for the
   first time.</p>
 
   <p>When an <code><a href="#the-iframe-element">iframe</a></code> element is <a href="infrastructure.html#remove-an-element-from-a-document" title="remove an
   element from a document">removed from a document</a>, the user
-  agent must <a href="browsers.html#a-browsing-context-is-discarded" title="a browsing context is
-  discarded">discard</a> the <a href="browsers.html#nested-browsing-context">nested browsing
+  agent must <a href="textFieldSelection.html#a-browsing-context-is-discarded" title="a browsing context is
+  discarded">discard</a> the <a href="textFieldSelection.html#nested-browsing-context">nested browsing
   context</a>.</p>
 
-  <p class="note">This happens without any <code title="event-unload">unload</code> events firing (the <a href="browsers.html#nested-browsing-context">nested
-  browsing context</a> and its <code><a href="dom.html#document">Document</a></code> are <em title="a browsing context is discarded"><a href="browsers.html#a-browsing-context-is-discarded">discarded</a></em>, not <em title="unload a document"><a href="history.html#unload-a-document">unloaded</a></em>).</p>
+  <p class="note">This happens without any <code title="event-unload">unload</code> events firing (the <a href="textFieldSelection.html#nested-browsing-context">nested
+  browsing context</a> and its <code><a href="dom.html#document">Document</a></code> are <em title="a browsing context is discarded"><a href="textFieldSelection.html#a-browsing-context-is-discarded">discarded</a></em>, not <em title="unload a document"><a href="textFieldSelection.html#unload-a-document">unloaded</a></em>).</p>
 
-  <p>Whenever an <code><a href="#the-iframe-element">iframe</a></code> element with a <a href="browsers.html#nested-browsing-context">nested
+  <!-- START of section that's very similar to <frame> -->
+
+  <p>Whenever an <code><a href="#the-iframe-element">iframe</a></code> element with a <a href="textFieldSelection.html#nested-browsing-context">nested
   browsing context</a> has its <code title="attr-iframe-srcdoc"><a href="#attr-iframe-srcdoc">srcdoc</a></code> attribute set, changed, or
   removed, the user agent must <a href="#process-the-iframe-attributes">process the <code>iframe</code>
   attributes</a>.</p>
 
   <p>Similarly, whenever an <code><a href="#the-iframe-element">iframe</a></code> element with a
-  <a href="browsers.html#nested-browsing-context">nested browsing context</a> but with no <code title="attr-iframe-srcdoc"><a href="#attr-iframe-srcdoc">srcdoc</a></code> attribute specified has its
+  <a href="textFieldSelection.html#nested-browsing-context">nested browsing context</a> but with no <code title="attr-iframe-srcdoc"><a href="#attr-iframe-srcdoc">srcdoc</a></code> attribute specified has its
   <code title="attr-iframe-src"><a href="#attr-iframe-src">src</a></code> attribute set, changed, or
   removed, the user agent must <a href="#process-the-iframe-attributes">process the <code>iframe</code>
   attributes</a>.</p> <!-- It doesn't happen when the base URL is
@@ -488,50 +493,24 @@
   <dl class="switch"><dt>If the <code title="attr-iframe-srcdoc"><a href="#attr-iframe-srcdoc">srcdoc</a></code> attribute
    is specified</dt>
 
-   <dd><p><a href="history.html#navigate">Navigate</a><!--DONAV iframe--> the element's
-   <a href="browsers.html#browsing-context">browsing context</a> to a resource whose
-   <a href="urls.html#content-type">Content-Type</a> is <code><a href="iana.html#text/html">text/html</a></code>, whose
+   <dd><p><a href="textFieldSelection.html#navigate">Navigate</a><!--DONAV iframe--> the element's
+   <a href="textFieldSelection.html#child-browsing-context">child browsing context</a> to a resource whose
+   <a href="urls.html#content-type">Content-Type</a> is <code><a href="textFieldSelection.html#text/html">text/html</a></code>, whose
    <a href="urls.html#url">URL</a> is <code><a href="urls.html#about:srcdoc">about:srcdoc</a></code>, and whose data
    consists of the value of the attribute. The resulting
    <code><a href="dom.html#document">Document</a></code> must be considered <a href="#an-iframe-srcdoc-document">an
    <code>iframe</code> <code title="attr-iframe-srcdoc">srcdoc</code>
    document</a>.</p></dd>
 
-   <dt>If the <code title="attr-iframe-src"><a href="#attr-iframe-src">src</a></code>
-   attribute is specified but the <code title="attr-iframe-srcdoc"><a href="#attr-iframe-srcdoc">srcdoc</a></code> attribute is not</dt>
+   <dt>Otherwise, if the element has no <code title="attr-iframe-src"><a href="#attr-iframe-src">src</a></code> attribute specified, and the
+   user agent is processing the <code><a href="#the-iframe-element">iframe</a></code>'s attributes for
+   the first time</dt>
 
    <dd>
 
-    <ol><li><p>If the value of the <code title="attr-iframe-src"><a href="#attr-iframe-src">src</a></code> attribute is the empty string,
-     jump to the <i title="">empty</i> step below.</p></li>
-
-     <li><p><a href="urls.html#resolve-a-url" title="resolve a url">Resolve</a> the value of
-     the <code title="attr-iframe-src"><a href="#attr-iframe-src">src</a></code> attribute, relative
-     to the <code><a href="#the-iframe-element">iframe</a></code> element.</p></li>
-
-     <li><p>If that is not successful, then jump to the <i title="">empty</i> step below.</p></li>
-
-     <li><p>If the resulting <a href="urls.html#absolute-url">absolute URL</a> is an
-     <a href="infrastructure.html#ascii-case-insensitive">ASCII case-insensitive</a> match for the string
-     "<code><a href="urls.html#about:blank">about:blank</a></code>", and the user agent is processing this
-     <code><a href="#the-iframe-element">iframe</a></code>'s attributes for the first time, then jump to
-     the <i title="">empty</i> step below. (In cases other than the
-     first time, <code><a href="urls.html#about:blank">about:blank</a></code> is loaded
-     normally.)</p></li>
-
-     <li><p><a href="history.html#navigate">Navigate</a><!--DONAV iframe--> the element's
-     <a href="browsers.html#browsing-context">browsing context</a> to the resulting <a href="urls.html#absolute-url">absolute
-     URL</a>.</p></li>
-
-    </ol><p><i>Empty</i>: When the steps above require the user agent to
-    jump to the <i title="">empty</i> step, if the user agent is
-    processing this <code><a href="#the-iframe-element">iframe</a></code>'s attributes for the first
-    time, then the user agent must <a href="webappapis.html#queue-a-task">queue a task</a> to
-    <a href="webappapis.html#fire-a-simple-event">fire a simple event</a> named <code title="event-load">load</code> at the <code><a href="#the-iframe-element">iframe</a></code> element.
-    (After jumping to this step, the above steps are not resumed.)
-    <span class="note">No <code title="event-load">load</code> event
-    is fired at the <code><a href="urls.html#about:blank">about:blank</a></code> document
-    itself.</span></p>
+    <p><a href="textFieldSelection.html#queue-a-task">Queue a task</a> to <a href="textFieldSelection.html#fire-a-simple-event">fire a simple event</a>
+    named <code title="event-load">load</code> at the
+    <code><a href="#the-iframe-element">iframe</a></code> element.</p>
 
    </dd>
 
@@ -539,30 +518,56 @@
 
    <dd>
 
-    <p><a href="webappapis.html#queue-a-task">Queue a task</a> to <a href="webappapis.html#fire-a-simple-event">fire a simple event</a>
-    named <code title="event-load">load</code> at the
-    <code><a href="#the-iframe-element">iframe</a></code> element.</p>
+    <ol><li>
 
-   </dd>
+      <p>If the value of the <code title="attr-iframe-src"><a href="#attr-iframe-src">src</a></code>
+      attribute is the empty string, let <var title="">url</var> be
+      the string "<code><a href="urls.html#about:blank">about:blank</a></code>".</p>
 
-  </dl><p>Any <a href="history.html#navigate" title="navigate">navigation</a> required of the user
+      <p>Otherwise, <a href="urls.html#resolve-a-url" title="resolve a url">resolve</a> the
+      value of the <code title="attr-iframe-src"><a href="#attr-iframe-src">src</a></code> attribute,
+      relative to the <code><a href="#the-iframe-element">iframe</a></code> element.</p>
+
+      <p>If that is not successful, then let <var title="">url</var>
+      be the string "<code><a href="urls.html#about:blank">about:blank</a></code>". Otherwise, let <var title="">url</var> be the resulting <a href="urls.html#absolute-url">absolute
+      URL</a>.</p>
+
+     </li>
+
+     <li>
+
+      <p><a href="textFieldSelection.html#navigate">Navigate</a><!--DONAV iframe--> the element's
+      <a href="textFieldSelection.html#child-browsing-context">child browsing context</a> to <var title="">url</var>.</p>
+      
+     </li>
+
+    </ol></dd>
+
+  </dl><p>Any <a href="textFieldSelection.html#navigate" title="navigate">navigation</a> required of the user
   agent in the <a href="#process-the-iframe-attributes">process the <code>iframe</code> attributes</a>
-  algorithm must be completed as an <a href="history.html#explicit-self-navigation-override">explicit self-navigation
+  algorithm must be completed as an <a href="textFieldSelection.html#explicit-self-navigation-override">explicit self-navigation
   override</a> and with the <code><a href="#the-iframe-element">iframe</a></code> element's
-  document's <a href="browsers.html#browsing-context">browsing context</a> as the <a href="history.html#source-browsing-context">source
+  document's <a href="textFieldSelection.html#browsing-context">browsing context</a> as the <a href="textFieldSelection.html#source-browsing-context">source
   browsing context</a>.</p>
 
-  <p>Furthermore, if the <a href="browsers.html#browsing-context">browsing context</a>'s <a href="history.html#session-history">session
-  history</a> contained only one <code><a href="dom.html#document">Document</a></code> when the
-  <a href="#process-the-iframe-attributes">process the <code>iframe</code> attributes</a> algorithm
-  was invoked, and that was the <code><a href="urls.html#about:blank">about:blank</a></code>
-  <code><a href="dom.html#document">Document</a></code> created when the <a href="browsers.html#browsing-context">browsing context</a>
-  was created, then any <a href="history.html#navigate" title="navigate">navigation</a>
-  required of the user agent in that algorithm must be completed with
-  <a href="history.html#replacement-enabled">replacement enabled</a>.</p> <!-- see also the note near
-  similar text for the location.assign() method -->
+  <p>Furthermore, if the <a href="textFieldSelection.html#active-document">active document</a> of the element's
+  <a href="textFieldSelection.html#child-browsing-context">child browsing context</a> before such a <a href="textFieldSelection.html#navigate" title="navigate">navigation</a> was not <a href="textFieldSelection.html#completely-loaded">completely
+  loaded</a> at the time of the new <a href="textFieldSelection.html#navigate" title="navigate">navigation</a>, then the <a href="textFieldSelection.html#navigate" title="navigate">navigation</a> must be completed with
+  <a href="textFieldSelection.html#replacement-enabled">replacement enabled</a>.</p>
+
+  <p>Similarly, if the <a href="textFieldSelection.html#child-browsing-context">child browsing context</a>'s
+  <a href="textFieldSelection.html#session-history">session history</a> contained only one
+  <code><a href="dom.html#document">Document</a></code> when the <a href="#process-the-iframe-attributes">process the <code>iframe</code>
+  attributes</a> algorithm was invoked, and that was the
+  <code><a href="urls.html#about:blank">about:blank</a></code> <code><a href="dom.html#document">Document</a></code> created when the
+  <a href="textFieldSelection.html#child-browsing-context">child browsing context</a> was created, then any <a href="textFieldSelection.html#navigate" title="navigate">navigation</a> required of the user agent in
+  that algorithm must be completed with <a href="textFieldSelection.html#replacement-enabled">replacement
+  enabled</a>.</p> <!-- see also the note near similar text for the
+  location.assign() method -->
 
   </div>
+
+  <!-- END of section that's very similar to <frame> -->
 
   <p class="note">If, when the element is created, the <code title="attr-iframe-srcdoc"><a href="#attr-iframe-srcdoc">srcdoc</a></code> attribute is not set, and
   the <code title="attr-iframe-src"><a href="#attr-iframe-src">src</a></code> attribute is either
@@ -570,9 +575,9 @@
   url">resolved</a>, the browsing context will remain at the
   initial <code><a href="urls.html#about:blank">about:blank</a></code> page.</p>
 
-  <p class="note">If the user <a href="history.html#navigate" title="navigate">navigates</a>
+  <p class="note">If the user <a href="textFieldSelection.html#navigate" title="navigate">navigates</a>
   away from this page, the <code><a href="#the-iframe-element">iframe</a></code>'s corresponding
-  <code><a href="browsers.html#windowproxy">WindowProxy</a></code> object will proxy new <code><a href="browsers.html#window">Window</a></code>
+  <code><a href="textFieldSelection.html#windowproxy">WindowProxy</a></code> object will proxy new <code><a href="textFieldSelection.html#window">Window</a></code>
   objects for new <code><a href="dom.html#document">Document</a></code> objects, but the <code title="attr-iframe-src"><a href="#attr-iframe-src">src</a></code> attribute will not change.</p>
 
   <div class="example">
@@ -617,65 +622,65 @@
 
   </div>
 
-  <p class="note">In <a href="syntax.html#syntax">the HTML syntax</a>, authors need only
+  <p class="note">In <a href="textFieldSelection.html#syntax">the HTML syntax</a>, authors need only
   remember to use """ (U+0022) characters to wrap the
   attribute contents and then to escape all """ (U+0022)
   and U+0026 AMPERSAND (&amp;) characters, and to specify the <code title="attr-iframe-sandbox"><a href="#attr-iframe-sandbox">sandbox</a></code> attribute, to ensure safe
   embedding of content.</p>
 
-  <p class="note">Due to restrictions of <a href="the-xhtml-syntax.html#the-xhtml-syntax">the XHTML
+  <p class="note">Due to restrictions of <a href="textFieldSelection.html#the-xhtml-syntax">the XHTML
   syntax</a>, in XML the U+003C LESS-THAN SIGN character (&lt;)
   needs to be escaped as well. In order to prevent <a href="http://www.w3.org/TR/REC-xml/#AVNormalize">attribute-value
   normalization</a>, some of XML's whitespace characters &#8212;
   specifically "tab" (U+0009), "LF" (U+000A), and "CR" (U+000D) &#8212; also need to be
-  escaped. <a href="references.html#refsXML">[XML]</a></p>
+  escaped. <a href="textFieldSelection.html#refsXML">[XML]</a></p>
 
   <hr><p>The <dfn id="attr-iframe-name" title="attr-iframe-name"><code>name</code></dfn>
-  attribute, if present, must be a <a href="browsers.html#valid-browsing-context-name">valid browsing context
-  name</a>. The given value is used to name the <a href="browsers.html#nested-browsing-context">nested
+  attribute, if present, must be a <a href="textFieldSelection.html#valid-browsing-context-name">valid browsing context
+  name</a>. The given value is used to name the <a href="textFieldSelection.html#nested-browsing-context">nested
   browsing context</a>. <span class="impl">When the browsing
-  context is created, if the attribute is present, the <a href="browsers.html#browsing-context-name">browsing
+  context is created, if the attribute is present, the <a href="textFieldSelection.html#browsing-context-name">browsing
   context name</a> must be set to the value of this attribute;
-  otherwise, the <a href="browsers.html#browsing-context-name">browsing context name</a> must be set to the
+  otherwise, the <a href="textFieldSelection.html#browsing-context-name">browsing context name</a> must be set to the
   empty string.</span></p>
 
   <div class="impl">
 
   <p>Whenever the <code title="attr-iframe-name"><a href="#attr-iframe-name">name</a></code> attribute
-  is set, the nested <a href="browsers.html#browsing-context">browsing context</a>'s <a href="browsers.html#browsing-context-name" title="browsing context name">name</a> must be changed to the new
-  value. If the attribute is removed, the <a href="browsers.html#browsing-context-name">browsing context
+  is set, the nested <a href="textFieldSelection.html#browsing-context">browsing context</a>'s <a href="textFieldSelection.html#browsing-context-name" title="browsing context name">name</a> must be changed to the new
+  value. If the attribute is removed, the <a href="textFieldSelection.html#browsing-context-name">browsing context
   name</a> must be set to the empty string.</p>
 
   <p>When content loads in an <code><a href="#the-iframe-element">iframe</a></code>, after any <code title="event-load">load</code> events are fired within the content
-  itself, the user agent must <a href="webappapis.html#queue-a-task">queue a task</a> to <a href="webappapis.html#fire-a-simple-event">fire
+  itself, the user agent must <a href="textFieldSelection.html#queue-a-task">queue a task</a> to <a href="textFieldSelection.html#fire-a-simple-event">fire
   a simple event</a> named <code title="event-load">load</code> at
   the <code><a href="#the-iframe-element">iframe</a></code> element. When content whose <a href="urls.html#url">URL</a>
-  has the <a href="browsers.html#same-origin">same origin</a> as the <code><a href="#the-iframe-element">iframe</a></code>
+  has the <a href="textFieldSelection.html#same-origin">same origin</a> as the <code><a href="#the-iframe-element">iframe</a></code>
   element's <code><a href="dom.html#document">Document</a></code> fails to load (e.g. due to a DNS
   error, network error, or if the server returned a 4xx or 5xx status
   code <a href="urls.html#concept-http-equivalent-codes" title="concept-http-equivalent-codes">or
-  equivalent</a>), then the user agent must <a href="webappapis.html#queue-a-task">queue a
-  task</a> to <a href="webappapis.html#fire-a-simple-event">fire a simple event</a> named <code title="event-error">error</code> at the element instead. (This event
-  does not fire for <a href="parsing.html#parse-error" title="parse error">parse errors</a>,
+  equivalent</a>), then the user agent must <a href="textFieldSelection.html#queue-a-task">queue a
+  task</a> to <a href="textFieldSelection.html#fire-a-simple-event">fire a simple event</a> named <code title="event-error">error</code> at the element instead. (This event
+  does not fire for <a href="textFieldSelection.html#parse-error" title="parse error">parse errors</a>,
   script errors, or any errors for cross-origin resources.)</p>
 
-  <p>The <a href="webappapis.html#task-source">task source</a> for these <a href="webappapis.html#concept-task" title="concept-task">tasks</a> is the <a href="webappapis.html#dom-manipulation-task-source">DOM manipulation
+  <p>The <a href="textFieldSelection.html#task-source">task source</a> for these <a href="textFieldSelection.html#concept-task" title="concept-task">tasks</a> is the <a href="textFieldSelection.html#dom-manipulation-task-source">DOM manipulation
   task source</a>.</p>
 
   <p class="note">A <code title="event-load">load</code> event is also
   fired at the <code><a href="#the-iframe-element">iframe</a></code> element when it is created if no
   other data is loaded in it.</p>
 
-  <p>When the <code><a href="#the-iframe-element">iframe</a></code>'s <a href="browsers.html#active-document">active document</a> is
-  not <a href="the-end.html#ready-for-post-load-tasks">ready for post-load tasks</a>, and when anything in the
-  <code><a href="#the-iframe-element">iframe</a></code> is <a href="the-end.html#delay-the-load-event" title="delay the load event">delaying
-  the load event</a> of the <code><a href="#the-iframe-element">iframe</a></code>'s <a href="browsers.html#browsing-context">browsing
-  context</a>'s <a href="browsers.html#active-document">active document</a>, the
-  <code><a href="#the-iframe-element">iframe</a></code> must <a href="the-end.html#delay-the-load-event">delay the load event</a> of its
+  <p>When the <code><a href="#the-iframe-element">iframe</a></code>'s <a href="textFieldSelection.html#active-document">active document</a> is
+  not <a href="textFieldSelection.html#ready-for-post-load-tasks">ready for post-load tasks</a>, and when anything in the
+  <code><a href="#the-iframe-element">iframe</a></code> is <a href="textFieldSelection.html#delay-the-load-event" title="delay the load event">delaying
+  the load event</a> of the <code><a href="#the-iframe-element">iframe</a></code>'s <a href="textFieldSelection.html#browsing-context">browsing
+  context</a>'s <a href="textFieldSelection.html#active-document">active document</a>, the
+  <code><a href="#the-iframe-element">iframe</a></code> must <a href="textFieldSelection.html#delay-the-load-event">delay the load event</a> of its
   document.</p>
 
-  <p class="note">If, during the handling of the <code title="event-load">load</code> event, the <a href="browsers.html#browsing-context">browsing
-  context</a> in the <code><a href="#the-iframe-element">iframe</a></code> is again <a href="history.html#navigate" title="navigate">navigated</a>, that will further <a href="the-end.html#delay-the-load-event">delay the
+  <p class="note">If, during the handling of the <code title="event-load">load</code> event, the <a href="textFieldSelection.html#browsing-context">browsing
+  context</a> in the <code><a href="#the-iframe-element">iframe</a></code> is again <a href="textFieldSelection.html#navigate" title="navigate">navigated</a>, that will further <a href="textFieldSelection.html#delay-the-load-event">delay the
   load event</a>.</p>
 
   </div>
@@ -685,27 +690,27 @@
   any content hosted by the <code><a href="#the-iframe-element">iframe</a></code>. Its value must be an
   <a href="common-microsyntaxes.html#unordered-set-of-unique-space-separated-tokens">unordered set of unique space-separated tokens</a> that are
   <a href="infrastructure.html#ascii-case-insensitive">ASCII case-insensitive</a>. The allowed values are
-  <code title="attr-iframe-sandbox-allow-forms"><a href="browsers.html#attr-iframe-sandbox-allow-forms">allow-forms</a></code>,
-  <code title="attr-iframe-sandbox-allow-popups"><a href="browsers.html#attr-iframe-sandbox-allow-popups">allow-popups</a></code>,
-  <code title="attr-iframe-sandbox-allow-same-origin"><a href="browsers.html#attr-iframe-sandbox-allow-same-origin">allow-same-origin</a></code>,
-  <code title="attr-iframe-sandbox-allow-scripts"><a href="browsers.html#attr-iframe-sandbox-allow-scripts">allow-scripts</a></code>, and
-  <code title="attr-iframe-sandbox-allow-top-navigation"><a href="browsers.html#attr-iframe-sandbox-allow-top-navigation">allow-top-navigation</a></code>.
+  <code title="attr-iframe-sandbox-allow-forms"><a href="textFieldSelection.html#attr-iframe-sandbox-allow-forms">allow-forms</a></code>,
+  <code title="attr-iframe-sandbox-allow-popups"><a href="textFieldSelection.html#attr-iframe-sandbox-allow-popups">allow-popups</a></code>,
+  <code title="attr-iframe-sandbox-allow-same-origin"><a href="textFieldSelection.html#attr-iframe-sandbox-allow-same-origin">allow-same-origin</a></code>,
+  <code title="attr-iframe-sandbox-allow-scripts"><a href="textFieldSelection.html#attr-iframe-sandbox-allow-scripts">allow-scripts</a></code>, and
+  <code title="attr-iframe-sandbox-allow-top-navigation"><a href="textFieldSelection.html#attr-iframe-sandbox-allow-top-navigation">allow-top-navigation</a></code>.
 
   When the attribute is set, the content is treated as being from a
-  unique <a href="browsers.html#origin-0">origin</a>, forms and scripts are disabled, links
-  are prevented from targeting other <a href="browsers.html#browsing-context" title="browsing
+  unique <a href="textFieldSelection.html#origin-0">origin</a>, forms and scripts are disabled, links
+  are prevented from targeting other <a href="textFieldSelection.html#browsing-context" title="browsing
   context">browsing contexts</a>, and plugins are secured. The
-  <code title="attr-iframe-sandbox-allow-same-origin"><a href="browsers.html#attr-iframe-sandbox-allow-same-origin">allow-same-origin</a></code>
+  <code title="attr-iframe-sandbox-allow-same-origin"><a href="textFieldSelection.html#attr-iframe-sandbox-allow-same-origin">allow-same-origin</a></code>
   keyword allows the content to be treated as being from the same
-  origin instead of forcing it into a unique origin, the <code title="attr-iframe-sandbox-allow-top-navigation"><a href="browsers.html#attr-iframe-sandbox-allow-top-navigation">allow-top-navigation</a></code>
-  keyword allows the content to <a href="history.html#navigate">navigate</a> its
-  <a href="browsers.html#top-level-browsing-context">top-level browsing context</a>, and the <code title="attr-iframe-sandbox-allow-forms"><a href="browsers.html#attr-iframe-sandbox-allow-forms">allow-forms</a></code>, <code title="attr-iframe-sandbox-allow-popups"><a href="browsers.html#attr-iframe-sandbox-allow-popups">allow-popups</a></code> and <code title="attr-iframe-sandbox-allow-scripts"><a href="browsers.html#attr-iframe-sandbox-allow-scripts">allow-scripts</a></code>
+  origin instead of forcing it into a unique origin, the <code title="attr-iframe-sandbox-allow-top-navigation"><a href="textFieldSelection.html#attr-iframe-sandbox-allow-top-navigation">allow-top-navigation</a></code>
+  keyword allows the content to <a href="textFieldSelection.html#navigate">navigate</a> its
+  <a href="textFieldSelection.html#top-level-browsing-context">top-level browsing context</a>, and the <code title="attr-iframe-sandbox-allow-forms"><a href="textFieldSelection.html#attr-iframe-sandbox-allow-forms">allow-forms</a></code>, <code title="attr-iframe-sandbox-allow-popups"><a href="textFieldSelection.html#attr-iframe-sandbox-allow-popups">allow-popups</a></code> and <code title="attr-iframe-sandbox-allow-scripts"><a href="textFieldSelection.html#attr-iframe-sandbox-allow-scripts">allow-scripts</a></code>
   keywords re-enable forms, popups, and scripts respectively.</p>
 
   <p class="warning">Setting both the
-  <code title="attr-iframe-sandbox-allow-scripts"><a href="browsers.html#attr-iframe-sandbox-allow-scripts">allow-scripts</a></code> and
-  <code title="attr-iframe-sandbox-allow-same-origin"><a href="browsers.html#attr-iframe-sandbox-allow-same-origin">allow-same-origin</a></code>
-  keywords together when the embedded page has the <a href="browsers.html#same-origin">same
+  <code title="attr-iframe-sandbox-allow-scripts"><a href="textFieldSelection.html#attr-iframe-sandbox-allow-scripts">allow-scripts</a></code> and
+  <code title="attr-iframe-sandbox-allow-same-origin"><a href="textFieldSelection.html#attr-iframe-sandbox-allow-same-origin">allow-same-origin</a></code>
+  keywords together when the embedded page has the <a href="textFieldSelection.html#same-origin">same
   origin</a> as the page containing the <code><a href="#the-iframe-element">iframe</a></code> allows
   the embedded page to simply remove the <code title="attr-iframe-sandbox"><a href="#attr-iframe-sandbox">sandbox</a></code> attribute.</p>
 
@@ -725,16 +730,16 @@
   -->
 
   <p>While the <code title="attr-iframe-sandbox"><a href="#attr-iframe-sandbox">sandbox</a></code>
-  attribute is set or changed, the user agent must <a href="browsers.html#parse-a-sandboxing-directive" title="parse
+  attribute is set or changed, the user agent must <a href="textFieldSelection.html#parse-a-sandboxing-directive" title="parse
   a sandboxing directive">parse the sandboxing directive</a> using
   the attribute's value as the <var title="">input</var> and the
-  <code><a href="#the-iframe-element">iframe</a></code> element's <a href="browsers.html#nested-browsing-context">nested browsing context</a>'s
-  <a href="browsers.html#iframe-sandboxing-flag-set"><code>iframe</code> sandboxing flag set</a> as the
+  <code><a href="#the-iframe-element">iframe</a></code> element's <a href="textFieldSelection.html#nested-browsing-context">nested browsing context</a>'s
+  <a href="textFieldSelection.html#iframe-sandboxing-flag-set"><code>iframe</code> sandboxing flag set</a> as the
   output.</p>
 
   <p class="warning">These flags only take effect when the
-  <a href="browsers.html#nested-browsing-context">nested browsing context</a> of the <code><a href="#the-iframe-element">iframe</a></code> is
-  <a href="history.html#navigate" title="navigate">navigated</a>. Removing them, or removing
+  <a href="textFieldSelection.html#nested-browsing-context">nested browsing context</a> of the <code><a href="#the-iframe-element">iframe</a></code> is
+  <a href="textFieldSelection.html#navigate" title="navigate">navigated</a>. Removing them, or removing
   the entire <code title="attr-iframe-sandbox"><a href="#attr-iframe-sandbox">sandbox</a></code>
   attribute, has no effect on an already-loaded page.</p>
 
@@ -789,23 +794,23 @@
    <pre>&lt;a href=D&gt;Link&lt;/a&gt;</pre>
 
    <p>For this example, suppose all the files were served as
-   <code><a href="iana.html#text/html">text/html</a></code>.</p>
+   <code><a href="textFieldSelection.html#text/html">text/html</a></code>.</p>
 
    <p>Page C in this scenario has all the sandboxing flags
    set. Scripts are disabled, because the <code><a href="#the-iframe-element">iframe</a></code> in A has
-   scripts disabled, and this overrides the <code title="attr-iframe-sandbox-allow-scripts"><a href="browsers.html#attr-iframe-sandbox-allow-scripts">allow-scripts</a></code>
+   scripts disabled, and this overrides the <code title="attr-iframe-sandbox-allow-scripts"><a href="textFieldSelection.html#attr-iframe-sandbox-allow-scripts">allow-scripts</a></code>
    keyword set on the <code><a href="#the-iframe-element">iframe</a></code> in B. Forms are also
    disabled, because the inner <code><a href="#the-iframe-element">iframe</a></code> (in B) does not
-   have the <code title="attr-iframe-sandbox-allow-forms"><a href="browsers.html#attr-iframe-sandbox-allow-forms">allow-forms</a></code> keyword
+   have the <code title="attr-iframe-sandbox-allow-forms"><a href="textFieldSelection.html#attr-iframe-sandbox-allow-forms">allow-forms</a></code> keyword
    set.</p>
 
    <p>Suppose now that a script in A removes all the <code title="attr-iframe-sandbox"><a href="#attr-iframe-sandbox">sandbox</a></code> attributes in A
    <!--grammar-check-override--> and B. This would change nothing
    immediately. If the user clicked the link in C, loading page D into
    the <code><a href="#the-iframe-element">iframe</a></code> in B, page D would now act as if the
-   <code><a href="#the-iframe-element">iframe</a></code> in B had the <code title="attr-iframe-sandbox-allow-same-origin"><a href="browsers.html#attr-iframe-sandbox-allow-same-origin">allow-same-origin</a></code>
-   and <code title="attr-iframe-sandbox-allow-forms"><a href="browsers.html#attr-iframe-sandbox-allow-forms">allow-forms</a></code> keywords
-   set, because that was the state of the <a href="browsers.html#nested-browsing-context">nested browsing
+   <code><a href="#the-iframe-element">iframe</a></code> in B had the <code title="attr-iframe-sandbox-allow-same-origin"><a href="textFieldSelection.html#attr-iframe-sandbox-allow-same-origin">allow-same-origin</a></code>
+   and <code title="attr-iframe-sandbox-allow-forms"><a href="textFieldSelection.html#attr-iframe-sandbox-allow-forms">allow-forms</a></code> keywords
+   set, because that was the state of the <a href="textFieldSelection.html#nested-browsing-context">nested browsing
    context</a> in the <code><a href="#the-iframe-element">iframe</a></code> in A when page B was
    loaded.</p>
 
@@ -821,9 +826,9 @@
   are unable to attack the site, even if the user is tricked into
   visiting those pages directly, without the protection of the <code title="attr-iframe-sandbox"><a href="#attr-iframe-sandbox">sandbox</a></code> attribute.</p>
 
-  <p class="warning">If the <code title="attr-iframe-sandbox-allow-scripts"><a href="browsers.html#attr-iframe-sandbox-allow-scripts">allow-scripts</a></code>
-  keyword is set along with <code title="attr-iframe-sandbox-allow-same-origin"><a href="browsers.html#attr-iframe-sandbox-allow-same-origin">allow-same-origin</a></code>
-  keyword, and the file is from the <a href="browsers.html#same-origin">same origin</a> as the
+  <p class="warning">If the <code title="attr-iframe-sandbox-allow-scripts"><a href="textFieldSelection.html#attr-iframe-sandbox-allow-scripts">allow-scripts</a></code>
+  keyword is set along with <code title="attr-iframe-sandbox-allow-same-origin"><a href="textFieldSelection.html#attr-iframe-sandbox-allow-same-origin">allow-same-origin</a></code>
+  keyword, and the file is from the <a href="textFieldSelection.html#same-origin">same origin</a> as the
   <code><a href="#the-iframe-element">iframe</a></code>'s <code><a href="dom.html#document">Document</a></code>, then a script in the
   "sandboxed" iframe could just reach out, remove the <code title="attr-iframe-sandbox"><a href="#attr-iframe-sandbox">sandbox</a></code> attribute, and then
   reload itself, effectively breaking out of the sandbox
@@ -834,7 +839,7 @@
   allowed event propagation of some sort, maybe based on the WICD
   work: http://www.w3.org/TR/WICD/ --><p>The <dfn id="attr-iframe-seamless" title="attr-iframe-seamless"><code>seamless</code></dfn>
   attribute is a <a href="common-microsyntaxes.html#boolean-attribute">boolean attribute</a>. When specified, it
-  indicates that the <code><a href="#the-iframe-element">iframe</a></code> element's <a href="browsers.html#browsing-context">browsing
+  indicates that the <code><a href="#the-iframe-element">iframe</a></code> element's <a href="textFieldSelection.html#browsing-context">browsing
   context</a> is to be rendered in a manner that makes it appear to
   be part of the containing document (seamlessly included in the
   parent document).</p>
@@ -848,21 +853,21 @@
    attribute is set on the <code><a href="#the-iframe-element">iframe</a></code> element, and
 
    </li><li>The <code><a href="#the-iframe-element">iframe</a></code> element's owner <code><a href="dom.html#document">Document</a></code>'s
-   <a href="browsers.html#active-sandboxing-flag-set">active sandboxing flag set</a> does not have the
-   <a href="browsers.html#sandboxed-seamless-iframes-flag">sandboxed seamless iframes flag</a> set, and
+   <a href="textFieldSelection.html#active-sandboxing-flag-set">active sandboxing flag set</a> does not have the
+   <a href="textFieldSelection.html#sandboxed-seamless-iframes-flag">sandboxed seamless iframes flag</a> set, and
 
    </li><li>Either:
 
-    <ul><li>The <a href="browsers.html#browsing-context">browsing context</a>'s <a href="browsers.html#active-document">active
-     document</a> has the <a href="browsers.html#same-origin">same origin</a> as the
+    <ul><li>The <a href="textFieldSelection.html#browsing-context">browsing context</a>'s <a href="textFieldSelection.html#active-document">active
+     document</a> has the <a href="textFieldSelection.html#same-origin">same origin</a> as the
      <code><a href="#the-iframe-element">iframe</a></code> element's <code><a href="dom.html#document">Document</a></code>, or
 
-     </li><li>The <a href="browsers.html#browsing-context">browsing context</a>'s <a href="browsers.html#active-document">active
+     </li><li>The <a href="textFieldSelection.html#browsing-context">browsing context</a>'s <a href="textFieldSelection.html#active-document">active
      document</a>'s <em><a href="the-address-element.html#the-address-element"><span title="the document's
-     address">address</span></a></em> has the <a href="browsers.html#same-origin">same origin</a> as
+     address">address</span></a></em> has the <a href="textFieldSelection.html#same-origin">same origin</a> as
      the <code><a href="#the-iframe-element">iframe</a></code> element's <code><a href="dom.html#document">Document</a></code>, or
 
-     </li><li>The <a href="browsers.html#browsing-context">browsing context</a>'s <a href="browsers.html#active-document">active
+     </li><li>The <a href="textFieldSelection.html#browsing-context">browsing context</a>'s <a href="textFieldSelection.html#active-document">active
      document</a> is <a href="#an-iframe-srcdoc-document">an <code>iframe</code> <code title="attr-iframe-srcdoc">srcdoc</code> document</a>.
 
     </li></ul></li>
@@ -871,31 +876,31 @@
   mode</a>, the following requirements apply:</p>
 
   <ul><li><p>The user agent must set the <dfn id="seamless-browsing-context-flag">seamless browsing context
-   flag</dfn> to true for that <a href="browsers.html#browsing-context">browsing context</a>. This
-   will <a href="history.html#seamlessLinks">cause links to open in the parent
-   browsing context</a> unless an <a href="history.html#explicit-self-navigation-override">explicit self-navigation
+   flag</dfn> to true for that <a href="textFieldSelection.html#browsing-context">browsing context</a>. This
+   will <a href="textFieldSelection.html#seamlessLinks">cause links to open in the parent
+   browsing context</a> unless an <a href="textFieldSelection.html#explicit-self-navigation-override">explicit self-navigation
    override</a> is used (<code title="">target="_self"</code>).</p></li>
 
    <li><p>Media queries in the context of the <code><a href="#the-iframe-element">iframe</a></code>'s
-   <a href="browsers.html#browsing-context">browsing context</a> (e.g. on <code title="attr-style-media"><a href="the-style-element.html#attr-style-media">media</a></code> attributes of
+   <a href="textFieldSelection.html#browsing-context">browsing context</a> (e.g. on <code title="attr-style-media"><a href="the-style-element.html#attr-style-media">media</a></code> attributes of
    <code><a href="the-style-element.html#the-style-element">style</a></code> elements in <code><a href="dom.html#document">Document</a></code>s in that
    <code><a href="#the-iframe-element">iframe</a></code>) must be evaluated with respect to the nearest
-   <a href="browsers.html#ancestor-browsing-context">ancestor browsing context</a> that is not itself being
-   <a href="browsers.html#browsing-context-nested-through" title="browsing context nested through">nested through</a>
+   <a href="textFieldSelection.html#ancestor-browsing-context">ancestor browsing context</a> that is not itself being
+   <a href="textFieldSelection.html#browsing-context-nested-through" title="browsing context nested through">nested through</a>
    an <code><a href="#the-iframe-element">iframe</a></code> that is <a href="#in-seamless-mode">in seamless
-   mode</a>. <a href="references.html#refsMQ">[MQ]</a></p></li>
+   mode</a>. <a href="textFieldSelection.html#refsMQ">[MQ]</a></p></li>
 
    <li><p>In a CSS-supporting user agent: the user agent must add all
    the style sheets that apply to the <code><a href="#the-iframe-element">iframe</a></code> element to
-   the cascade of the <a href="browsers.html#active-document">active document</a> of the
-   <code><a href="#the-iframe-element">iframe</a></code> element's <a href="browsers.html#nested-browsing-context">nested browsing context</a>,
+   the cascade of the <a href="textFieldSelection.html#active-document">active document</a> of the
+   <code><a href="#the-iframe-element">iframe</a></code> element's <a href="textFieldSelection.html#nested-browsing-context">nested browsing context</a>,
    at the appropriate cascade levels, before any style sheets
    specified by the document itself.</p></li>
 
    <li><p>In a CSS-supporting user agent: the user agent must, for the
    purpose of CSS property inheritance only, treat the root element of
-   the <a href="browsers.html#active-document">active document</a> of the <code><a href="#the-iframe-element">iframe</a></code>
-   element's <a href="browsers.html#nested-browsing-context">nested browsing context</a> as being a child of
+   the <a href="textFieldSelection.html#active-document">active document</a> of the <code><a href="#the-iframe-element">iframe</a></code>
+   element's <a href="textFieldSelection.html#nested-browsing-context">nested browsing context</a> as being a child of
    the <code><a href="#the-iframe-element">iframe</a></code> element. (Thus inherited properties on the
    root element of the document in the <code><a href="#the-iframe-element">iframe</a></code> will
    inherit the computed values of those properties on the
@@ -927,7 +932,7 @@
 
     <p>In visual media, in a CSS-supporting user agent: the user agent
     must force the height of the initial containing block of the
-    <a href="browsers.html#active-document">active document</a> of the <a href="browsers.html#nested-browsing-context">nested browsing
+    <a href="textFieldSelection.html#active-document">active document</a> of the <a href="textFieldSelection.html#nested-browsing-context">nested browsing
     context</a> of the <code><a href="#the-iframe-element">iframe</a></code> to zero.</p>
 
     <p class="note">This is intended to get around the otherwise
@@ -939,14 +944,14 @@
 
    </li>
 
-   <li><p>In speech media, the user agent should render the <a href="browsers.html#nested-browsing-context">nested
+   <li><p>In speech media, the user agent should render the <a href="textFieldSelection.html#nested-browsing-context">nested
    browsing context</a> without announcing that it is a separate
    document.</p></li>
 
    <li>
 
-    <p>User agents should, in general, act as if the <a href="browsers.html#active-document">active
-    document</a> of the <code><a href="#the-iframe-element">iframe</a></code>'s <a href="browsers.html#nested-browsing-context">nested browsing
+    <p>User agents should, in general, act as if the <a href="textFieldSelection.html#active-document">active
+    document</a> of the <code><a href="#the-iframe-element">iframe</a></code>'s <a href="textFieldSelection.html#nested-browsing-context">nested browsing
     context</a> was part of the document that the
     <code><a href="#the-iframe-element">iframe</a></code> is in, if any.</p>
 
@@ -957,18 +962,18 @@
 
    </li>
 
-  </ul><p>If the attribute is not specified, or if the <a href="browsers.html#origin-0">origin</a>
+  </ul><p>If the attribute is not specified, or if the <a href="textFieldSelection.html#origin-0">origin</a>
   conditions listed above are not met, then the user agent should
-  render the <a href="browsers.html#nested-browsing-context">nested browsing context</a> in a manner that is
-  clearly distinguishable as a separate <a href="browsers.html#browsing-context">browsing context</a>,
+  render the <a href="textFieldSelection.html#nested-browsing-context">nested browsing context</a> in a manner that is
+  clearly distinguishable as a separate <a href="textFieldSelection.html#browsing-context">browsing context</a>,
   and the <a href="#seamless-browsing-context-flag">seamless browsing context flag</a> must be set to
-  false for that <a href="browsers.html#browsing-context">browsing context</a>.</p>
+  false for that <a href="textFieldSelection.html#browsing-context">browsing context</a>.</p>
 
   <p class="warning">It is important that user agents recheck the
-  above conditions whenever the <a href="browsers.html#active-document">active document</a> of the
-  <a href="browsers.html#nested-browsing-context">nested browsing context</a> of the <code><a href="#the-iframe-element">iframe</a></code>
+  above conditions whenever the <a href="textFieldSelection.html#active-document">active document</a> of the
+  <a href="textFieldSelection.html#nested-browsing-context">nested browsing context</a> of the <code><a href="#the-iframe-element">iframe</a></code>
   changes, such that the <a href="#seamless-browsing-context-flag">seamless browsing context flag</a>
-  gets unset if the <a href="browsers.html#nested-browsing-context">nested browsing context</a> is <a href="history.html#navigate" title="navigate">navigated</a> to another origin.</p>
+  gets unset if the <a href="textFieldSelection.html#nested-browsing-context">nested browsing context</a> is <a href="textFieldSelection.html#navigate" title="navigate">navigated</a> to another origin.</p>
 
   </div>
 
@@ -993,7 +998,7 @@
 
   </div>
 
-  <p class="note">The <code title="attr-contenteditable"><a href="editing.html#attr-contenteditable">contenteditable</a></code> attribute does
+  <p class="note">The <code title="attr-contenteditable"><a href="textFieldSelection.html#attr-contenteditable">contenteditable</a></code> attribute does
   not propagate into <code title="attr-iframe-seamless"><a href="#attr-iframe-seamless">seamless</a></code>
   <code><a href="#the-iframe-element">iframe</a></code>s.</p>
 
@@ -1002,7 +1007,7 @@
   dimensions (e.g. ad units have well-defined dimensions).</p>
 
   <p>An <code><a href="#the-iframe-element">iframe</a></code> element never has <a href="content-models.html#fallback-content">fallback
-  content</a>, as it will always create a nested <a href="browsers.html#browsing-context">browsing
+  content</a>, as it will always create a nested <a href="textFieldSelection.html#browsing-context">browsing
   context</a>, regardless of whether the specified initial contents
   are successfully used.</p>
 
@@ -1013,12 +1018,12 @@
 
   <p id="iframe-content-model">When used in <a href="infrastructure.html#html-documents">HTML
   documents</a>, the allowed content model of <code><a href="#the-iframe-element">iframe</a></code>
-  elements is text, except that invoking the <a href="the-end.html#html-fragment-parsing-algorithm">HTML fragment
+  elements is text, except that invoking the <a href="textFieldSelection.html#html-fragment-parsing-algorithm">HTML fragment
   parsing algorithm</a> with the <code><a href="#the-iframe-element">iframe</a></code> element as the
-  <var title="concept-frag-parse-context"><a href="the-end.html#concept-frag-parse-context">context</a></var> element and
+  <var title="concept-frag-parse-context"><a href="textFieldSelection.html#concept-frag-parse-context">context</a></var> element and
   the text contents as the <var title="">input</var> must result in a
   list of nodes that are all <a href="content-models.html#phrasing-content-1">phrasing content</a>, with no
-  <a href="parsing.html#parse-error" title="parse error">parse errors</a> having occurred, with
+  <a href="textFieldSelection.html#parse-error" title="parse error">parse errors</a> having occurred, with
   no <code><a href="the-script-element.html#the-script-element">script</a></code> elements being anywhere in the list or as
   descendants of elements in the list, and with all the elements in
   the list (including their descendants) being themselves
@@ -1027,7 +1032,7 @@
   <p>The <code><a href="#the-iframe-element">iframe</a></code> element must be empty in <a href="infrastructure.html#xml-documents">XML
   documents</a>.</p>
 
-  <p class="note">The <a href="parsing.html#html-parser">HTML parser</a> treats markup inside
+  <p class="note">The <a href="textFieldSelection.html#html-parser">HTML parser</a> treats markup inside
   <code><a href="#the-iframe-element">iframe</a></code> elements as text.</p>
 
   <div class="impl">
@@ -1038,12 +1043,12 @@
 
   <p>The <dfn id="dom-iframe-contentdocument" title="dom-iframe-contentDocument"><code>contentDocument</code></dfn>
   IDL attribute must return the <code><a href="dom.html#document">Document</a></code> object of the
-  <a href="browsers.html#active-document">active document</a> of the <code><a href="#the-iframe-element">iframe</a></code> element's
-  <a href="browsers.html#nested-browsing-context">nested browsing context</a>, if any, or null otherwise.</p>
+  <a href="textFieldSelection.html#active-document">active document</a> of the <code><a href="#the-iframe-element">iframe</a></code> element's
+  <a href="textFieldSelection.html#nested-browsing-context">nested browsing context</a>, if any, or null otherwise.</p>
 
   <p>The <dfn id="dom-iframe-contentwindow" title="dom-iframe-contentWindow"><code>contentWindow</code></dfn>
-  IDL attribute must return the <code><a href="browsers.html#windowproxy">WindowProxy</a></code> object of the
-  <code><a href="#the-iframe-element">iframe</a></code> element's <a href="browsers.html#nested-browsing-context">nested browsing
+  IDL attribute must return the <code><a href="textFieldSelection.html#windowproxy">WindowProxy</a></code> object of the
+  <code><a href="#the-iframe-element">iframe</a></code> element's <a href="textFieldSelection.html#nested-browsing-context">nested browsing
   context</a>, if any, or null otherwise.</p>
 
   </div>

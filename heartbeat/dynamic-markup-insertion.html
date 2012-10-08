@@ -1,5 +1,110 @@
 <!DOCTYPE html>
-<html lang="en-US-x-Hixie"><head><title>3.4 Dynamic markup insertion &#8212; HTML5</title><style type="text/css">
+<html lang="en-US-x-Hixie"><head><meta charset="utf-8"><title>3.4 Dynamic markup insertion &#8212; HTML5</title><style type="text/css">
+
+   .applies thead th > * { display: block; }
+   .applies thead code { display: block; }
+   .applies tbody th { white-space: nowrap; }
+   .applies td { text-align: center; }
+   .applies .yes { background: yellow; }
+
+   .matrix, .matrix td { border: hidden; text-align: right; }
+   .matrix { margin-left: 2em; }
+
+   .dice-example { border-collapse: collapse; border-style: hidden solid solid hidden; border-width: thin; margin-left: 3em; }
+   .dice-example caption { width: 30em; font-size: smaller; font-style: italic; padding: 0.75em 0; text-align: left; }
+   .dice-example td, .dice-example th { border: solid thin; width: 1.35em; height: 1.05em; text-align: center; padding: 0; }
+
+   td.eg { border-width: thin; text-align: center; }
+
+   #table-example-1 { border: solid thin; border-collapse: collapse; margin-left: 3em; }
+   #table-example-1 * { font-family: "Essays1743", serif; line-height: 1.01em; }
+   #table-example-1 caption { padding-bottom: 0.5em; }
+   #table-example-1 thead, #table-example-1 tbody { border: none; }
+   #table-example-1 th, #table-example-1 td { border: solid thin; }
+   #table-example-1 th { font-weight: normal; }
+   #table-example-1 td { border-style: none solid; vertical-align: top; }
+   #table-example-1 th { padding: 0.5em; vertical-align: middle; text-align: center; }
+   #table-example-1 tbody tr:first-child td { padding-top: 0.5em; }
+   #table-example-1 tbody tr:last-child td { padding-bottom: 1.5em; }
+   #table-example-1 tbody td:first-child { padding-left: 2.5em; padding-right: 0; width: 9em; }
+   #table-example-1 tbody td:first-child::after { content: leader(". "); }
+   #table-example-1 tbody td { padding-left: 2em; padding-right: 2em; }
+   #table-example-1 tbody td:first-child + td { width: 10em; }
+   #table-example-1 tbody td:first-child + td ~ td { width: 2.5em; }
+   #table-example-1 tbody td:first-child + td + td + td ~ td { width: 1.25em; }
+
+   .apple-table-examples { border: none; border-collapse: separate; border-spacing: 1.5em 0em; width: 40em; margin-left: 3em; }
+   .apple-table-examples * { font-family: "Times", serif; }
+   .apple-table-examples td, .apple-table-examples th { border: none; white-space: nowrap; padding-top: 0; padding-bottom: 0; }
+   .apple-table-examples tbody th:first-child { border-left: none; width: 100%; }
+   .apple-table-examples thead th:first-child ~ th { font-size: smaller; font-weight: bolder; border-bottom: solid 2px; text-align: center; }
+   .apple-table-examples tbody th::after, .apple-table-examples tfoot th::after { content: leader(". ") }
+   .apple-table-examples tbody th, .apple-table-examples tfoot th { font: inherit; text-align: left; }
+   .apple-table-examples td { text-align: right; vertical-align: top; }
+   .apple-table-examples.e1 tbody tr:last-child td { border-bottom: solid 1px; }
+   .apple-table-examples.e1 tbody + tbody tr:last-child td { border-bottom: double 3px; }
+   .apple-table-examples.e2 th[scope=row] { padding-left: 1em; }
+   .apple-table-examples sup { line-height: 0; }
+
+   .details-example img { vertical-align: top; }
+
+   #base64-table {
+     white-space: nowrap;
+     font-size: 0.6em;
+     column-width: 6em;
+     column-count: 5;
+     column-gap: 1em;
+     -moz-column-width: 6em;
+     -moz-column-count: 5;
+     -moz-column-gap: 1em;
+     -webkit-column-width: 6em;
+     -webkit-column-count: 5;
+     -webkit-column-gap: 1em;
+   }
+   #base64-table thead { display: none; }
+   #base64-table * { border: none; }
+   #base64-table tbody td:first-child:after { content: ':'; }
+   #base64-table tbody td:last-child { text-align: right; }
+
+   #named-character-references-table {
+     white-space: nowrap;
+     font-size: 0.6em;
+     column-width: 30em;
+     column-gap: 1em;
+     -moz-column-width: 30em;
+     -moz-column-gap: 1em;
+     -webkit-column-width: 30em;
+     -webkit-column-gap: 1em;
+   }
+   #named-character-references-table > table > tbody > tr > td:first-child + td,
+   #named-character-references-table > table > tbody > tr > td:last-child { text-align: center; }
+   #named-character-references-table > table > tbody > tr > td:last-child:hover > span { position: absolute; top: auto; left: auto; margin-left: 0.5em; line-height: 1.2; font-size: 5em; border: outset; padding: 0.25em 0.5em; background: white; width: 1.25em; height: auto; text-align: center; }
+   #named-character-references-table > table > tbody > tr#entity-CounterClockwiseContourIntegral > td:first-child { font-size: 0.5em; }
+
+   .glyph.control { color: red; }
+
+   @font-face {
+     font-family: 'Essays1743';
+     src: url('fonts/Essays1743.ttf');
+   }
+   @font-face {
+     font-family: 'Essays1743';
+     font-weight: bold;
+     src: url('fonts/Essays1743-Bold.ttf');
+   }
+   @font-face {
+     font-family: 'Essays1743';
+     font-style: italic;
+     src: url('fonts/Essays1743-Italic.ttf');
+   }
+   @font-face {
+     font-family: 'Essays1743';
+     font-style: italic;
+     font-weight: bold;
+     src: url('fonts/Essays1743-BoldItalic.ttf');
+   }
+
+  </style><link href="data:text/css," id="complete" rel="stylesheet" title="Complete specification"><link href="data:text/css,.impl%20%7B%20display:%20none;%20%7D%0Ahtml%20%7B%20border:%20solid%20yellow;%20%7D%20.domintro:before%20%7B%20display:%20none;%20%7D" id="author" rel="alternate stylesheet" title="Author documentation only"><link href="data:text/css,.impl%20%7B%20background:%20%23FFEEEE;%20%7D%20.domintro:before%20%7B%20background:%20%23FFEEEE;%20%7D" id="highlight" rel="alternate stylesheet" title="Highlight implementation requirements"><style type="text/css">
    pre { margin-left: 2em; white-space: pre-wrap; }
    h2 { margin: 3em 0 1em 0; }
    h3 { margin: 2.5em 0 1em 0; }
@@ -71,7 +176,7 @@
    h1 + h2, hr + h2.no-toc { page-break-before: auto; }
 
    p  > span:not([title=""]):not([class="XXX"]):not([class="impl"]):not([class="note"]),
-   li > span:not([title=""]):not([class="XXX"]):not([class="impl"]):not([class="note"]), { border-bottom: solid #9999CC; }
+   li > span:not([title=""]):not([class="XXX"]):not([class="impl"]):not([class="note"]) { border-bottom: solid #9999CC; }
 
    div.head { margin: 0 0 1em; padding: 1em 0 0 0; }
    div.head p { margin: 0; }
@@ -216,7 +321,8 @@
      display: block;
    }
    .stability input {
-     appearance: none; margin: 0; border: 0; padding: 0.25em 0.5em; background: transparent; color: black;
+     -moz-appearance: none; -webkit-appearance: none; margin: 0; 
+     border: 0; padding: 0.25em 0.5em; background: transparent; color: black;
      position: absolute; top: -0.5em; right: 0; font: 1.25em sans-serif; text-align: center;
    }
    .stability input:hover {
@@ -232,112 +338,7 @@
      color: white;
    }
 
-  </style><link href="http://www.w3.org/StyleSheets/TR/W3C-WD" rel="stylesheet" type="text/css"><meta content="noindex" name="robots"><style type="text/css">
-
-   .applies thead th > * { display: block; }
-   .applies thead code { display: block; }
-   .applies tbody th { whitespace: nowrap; }
-   .applies td { text-align: center; }
-   .applies .yes { background: yellow; }
-
-   .matrix, .matrix td { border: hidden; text-align: right; }
-   .matrix { margin-left: 2em; }
-
-   .dice-example { border-collapse: collapse; border-style: hidden solid solid hidden; border-width: thin; margin-left: 3em; }
-   .dice-example caption { width: 30em; font-size: smaller; font-style: italic; padding: 0.75em 0; text-align: left; }
-   .dice-example td, .dice-example th { border: solid thin; width: 1.35em; height: 1.05em; text-align: center; padding: 0; }
-
-   td.eg { border-width: thin; text-align: center; }
-
-   #table-example-1 { border: solid thin; border-collapse: collapse; margin-left: 3em; }
-   #table-example-1 * { font-family: "Essays1743", serif; line-height: 1.01em; }
-   #table-example-1 caption { padding-bottom: 0.5em; }
-   #table-example-1 thead, #table-example-1 tbody { border: none; }
-   #table-example-1 th, #table-example-1 td { border: solid thin; }
-   #table-example-1 th { font-weight: normal; }
-   #table-example-1 td { border-style: none solid; vertical-align: top; }
-   #table-example-1 th { padding: 0.5em; vertical-align: middle; text-align: center; }
-   #table-example-1 tbody tr:first-child td { padding-top: 0.5em; }
-   #table-example-1 tbody tr:last-child td { padding-bottom: 1.5em; }
-   #table-example-1 tbody td:first-child { padding-left: 2.5em; padding-right: 0; width: 9em; }
-   #table-example-1 tbody td:first-child::after { content: leader(". "); }
-   #table-example-1 tbody td { padding-left: 2em; padding-right: 2em; }
-   #table-example-1 tbody td:first-child + td { width: 10em; }
-   #table-example-1 tbody td:first-child + td ~ td { width: 2.5em; }
-   #table-example-1 tbody td:first-child + td + td + td ~ td { width: 1.25em; }
-
-   .apple-table-examples { border: none; border-collapse: separate; border-spacing: 1.5em 0em; width: 40em; margin-left: 3em; }
-   .apple-table-examples * { font-family: "Times", serif; }
-   .apple-table-examples td, .apple-table-examples th { border: none; white-space: nowrap; padding-top: 0; padding-bottom: 0; }
-   .apple-table-examples tbody th:first-child { border-left: none; width: 100%; }
-   .apple-table-examples thead th:first-child ~ th { font-size: smaller; font-weight: bolder; border-bottom: solid 2px; text-align: center; }
-   .apple-table-examples tbody th::after, .apple-table-examples tfoot th::after { content: leader(". ") }
-   .apple-table-examples tbody th, .apple-table-examples tfoot th { font: inherit; text-align: left; }
-   .apple-table-examples td { text-align: right; vertical-align: top; }
-   .apple-table-examples.e1 tbody tr:last-child td { border-bottom: solid 1px; }
-   .apple-table-examples.e1 tbody + tbody tr:last-child td { border-bottom: double 3px; }
-   .apple-table-examples.e2 th[scope=row] { padding-left: 1em; }
-   .apple-table-examples sup { line-height: 0; }
-
-   .details-example img { vertical-align: top; }
-
-   #base64-table {
-     white-space: nowrap;
-     font-size: 0.6em;
-     column-width: 6em;
-     column-count: 5;
-     column-gap: 1em;
-     -moz-column-width: 6em;
-     -moz-column-count: 5;
-     -moz-column-gap: 1em;
-     -webkit-column-width: 6em;
-     -webkit-column-count: 5;
-     -webkit-column-gap: 1em;
-   }
-   #base64-table thead { display: none; }
-   #base64-table * { border: none; }
-   #base64-table tbody td:first-child:after { content: ':'; }
-   #base64-table tbody td:last-child { text-align: right; }
-
-   #named-character-references-table {
-     white-space: nowrap;
-     font-size: 0.6em;
-     column-width: 30em;
-     column-gap: 1em;
-     -moz-column-width: 30em;
-     -moz-column-gap: 1em;
-     -webkit-column-width: 30em;
-     -webkit-column-gap: 1em;
-   }
-   #named-character-references-table > table > tbody > tr > td:first-child + td,
-   #named-character-references-table > table > tbody > tr > td:last-child { text-align: center; }
-   #named-character-references-table > table > tbody > tr > td:last-child:hover > span { position: absolute; top: auto; left: auto; margin-left: 0.5em; line-height: 1.2; font-size: 5em; border: outset; padding: 0.25em 0.5em; background: white; width: 1.25em; height: auto; text-align: center; }
-   #named-character-references-table > table > tbody > tr#entity-CounterClockwiseContourIntegral > td:first-child { font-size: 0.5em; }
-
-   .glyph.control { color: red; }
-
-   @font-face {
-     font-family: 'Essays1743';
-     src: url('fonts/Essays1743.ttf');
-   }
-   @font-face {
-     font-family: 'Essays1743';
-     font-weight: bold;
-     src: url('fonts/Essays1743-Bold.ttf');
-   }
-   @font-face {
-     font-family: 'Essays1743';
-     font-style: italic;
-     src: url('fonts/Essays1743-Italic.ttf');
-   }
-   @font-face {
-     font-family: 'Essays1743';
-     font-style: italic;
-     font-weight: bold;
-     src: url('fonts/Essays1743-BoldItalic.ttf');
-   }
-
-  </style><link href="data:text/css," id="complete" rel="stylesheet" title="Complete specification"><link href="data:text/css,.impl%20%7B%20display:%20none;%20%7D%0Ahtml%20%7B%20border:%20solid%20yellow;%20%7D%20.domintro:before%20%7B%20display:%20none;%20%7D" id="author" rel="alternate stylesheet" title="Author documentation only"><link href="data:text/css,.impl%20%7B%20background:%20%23FFEEEE;%20%7D%20.domintro:before%20%7B%20background:%20%23FFEEEE;%20%7D" id="highlight" rel="alternate stylesheet" title="Highlight implementation requirements"><script>
+  </style><link href="http://www.w3.org/StyleSheets/TR/W3C-WD" rel="stylesheet" type="text/css"><meta content="noindex" name="robots"><script>
    function getCookie(name) {
      var params = location.search.substr(1).split("&");
      for (var index = 0; index < params.length; index++) {
@@ -365,7 +366,9 @@
    <h2 class="no-num no-toc" id="a-vocabulary-and-associated-apis-for-html-and-xhtml">A vocabulary and associated APIs for HTML and XHTML</h2>
    <h2 class="no-num no-toc" id="w3c-working-draft-11-october-2012">W3C Working Draft 11 October 2012</h2>
    </div>
-   <div class="prev_next">
+  
+
+  <div class="prev_next">
    <a href="interactions-with-xpath-and-xslt.html">&#8592; 3.3 Interactions with XPath and XSLT</a> &#8211;
    <a href="index.html#contents">Table of contents</a> &#8211;
    <a href="semantics.html">4 The elements of HTML &#8594;</a>
@@ -377,8 +380,8 @@
   <p class="note">APIs for dynamically inserting markup into the
   document interact with the parser, and thus their behavior varies
   depending on whether they are used with <a href="infrastructure.html#html-documents">HTML documents</a>
-  (and the <a href="parsing.html#html-parser">HTML parser</a>) or XHTML in <a href="infrastructure.html#xml-documents">XML
-  documents</a> (and the <a href="the-xhtml-syntax.html#xml-parser">XML parser</a>).</p>
+  (and the <a href="textFieldSelection.html#html-parser">HTML parser</a>) or XHTML in <a href="infrastructure.html#xml-documents">XML
+  documents</a> (and the <a href="textFieldSelection.html#xml-parser">XML parser</a>).</p>
 
 
 
@@ -397,7 +400,7 @@
     previous object, which is then returned.</p>
 
     <p>If the <var title="">type</var> argument is omitted or has the
-    value "<code><a href="iana.html#text/html">text/html</a></code>", then the resulting
+    value "<code><a href="textFieldSelection.html#text/html">text/html</a></code>", then the resulting
     <code><a href="dom.html#document">Document</a></code> has an HTML parser associated with it, which
     can be given data to parse using <code title="dom-document-write"><a href="#dom-document-write">document.write()</a></code>. Otherwise, all
     content passed to <code title="dom-document-write"><a href="#dom-document-write">document.write()</a></code> will be parsed
@@ -421,7 +424,7 @@
 
    <dd>
 
-    <p>Works like the <code title="dom-open"><a href="browsers.html#dom-open">window.open()</a></code>
+    <p>Works like the <code title="dom-open"><a href="textFieldSelection.html#dom-open">window.open()</a></code>
     method.</p>
 
    </dd>
@@ -431,7 +434,7 @@
   <p><code><a href="dom.html#document">Document</a></code> objects have an
   <dfn id="ignore-opens-during-unload-counter">ignore-opens-during-unload counter</dfn>, which is used to
   prevent scripts from invoking the <code title="dom-document-open"><a href="#dom-document-open">document.open()</a></code> method (directly or
-  indirectly) while the document is <a href="history.html#unload-a-document" title="unload a
+  indirectly) while the document is <a href="textFieldSelection.html#unload-a-document" title="unload a
   document">being unloaded</a>. Initially, the counter must be set
   to zero.</p> <!-- http://www.hixie.ch/tests/adhoc/dom/level0/document/open/unload/ -->
 
@@ -443,7 +446,7 @@
    steps.</li>
 
    <li><p>Let <var title="">type</var> be the value of the first
-   argument, if there is one, or "<code><a href="iana.html#text/html">text/html</a></code>"
+   argument, if there is one, or "<code><a href="textFieldSelection.html#text/html">text/html</a></code>"
    otherwise.</p></li>
 
    <li><p>Let <var title="">replace</var> be true if there is a second
@@ -454,8 +457,8 @@
 
     <p>If the <code><a href="dom.html#document">Document</a></code> has an <a href="dom.html#active-parser">active parser</a>
     that isn't a <a href="#script-created-parser">script-created parser</a>, and the
-    <a href="parsing.html#insertion-point">insertion point</a> associated with that parser's
-    <a href="parsing.html#input-stream">input stream</a> is not undefined (that is, it
+    <a href="textFieldSelection.html#insertion-point">insertion point</a> associated with that parser's
+    <a href="textFieldSelection.html#input-stream">input stream</a> is not undefined (that is, it
     <em>does</em> point to somewhere in the input stream), then the
     method does nothing. Abort these steps and return the
     <code><a href="dom.html#document">Document</a></code> object on which the method was invoked.</p>
@@ -477,34 +480,34 @@
     invoked.</p>
 
     <p class="note">This basically causes <code title="dom-document-open"><a href="#dom-document-open">document.open()</a></code> to be ignored
-    when it's called from a <code title="event-beforeunload">beforeunload</code> <code title="event-pagehide"><a href="history.html#event-pagehide">pagehide</a></code>, or <code title="event-unload">unload</code> event handler while the
+    when it's called from a <code title="event-beforeunload">beforeunload</code> <code title="event-pagehide"><a href="textFieldSelection.html#event-pagehide">pagehide</a></code>, or <code title="event-unload">unload</code> event handler while the
     <code><a href="dom.html#document">Document</a></code> is being unloaded.</p>
 
    </li>
 
-   <li><p>Release the <a href="webappapis.html#storage-mutex">storage mutex</a>.</p></li>
+   <li><p>Release the <a href="textFieldSelection.html#storage-mutex">storage mutex</a>.</p></li>
 
-   <li><p>Set the <code><a href="dom.html#document">Document</a></code>'s <var title="concept-document-salvageable"><a href="history.html#concept-document-salvageable">salvageable</a></var> state to
+   <li><p>Set the <code><a href="dom.html#document">Document</a></code>'s <var title="concept-document-salvageable"><a href="textFieldSelection.html#concept-document-salvageable">salvageable</a></var> state to
    false.</p></li>
 
-   <li><p><a href="history.html#prompt-to-unload-a-document" title="prompt to unload a document">Prompt to
+   <li><p><a href="textFieldSelection.html#prompt-to-unload-a-document" title="prompt to unload a document">Prompt to
    unload</a> the <code><a href="dom.html#document">Document</a></code> object. If the user
-   <a href="history.html#refused-to-allow-the-document-to-be-unloaded">refused to allow the document to be unloaded</a>, then
+   <a href="textFieldSelection.html#refused-to-allow-the-document-to-be-unloaded">refused to allow the document to be unloaded</a>, then
    abort these steps and return the <code><a href="dom.html#document">Document</a></code> object on
    which the method was invoked.</p></li>
 
-   <li><p><a href="history.html#unload-a-document" title="unload a document">Unload</a> the
+   <li><p><a href="textFieldSelection.html#unload-a-document" title="unload a document">Unload</a> the
    <code><a href="dom.html#document">Document</a></code> object, with the <var title="">recycle</var>
    parameter set to true.</p></li>
 
-   <li><p><a href="history.html#abort-a-document" title="abort a document">Abort</a> the
+   <li><p><a href="textFieldSelection.html#abort-a-document" title="abort a document">Abort</a> the
    <code><a href="dom.html#document">Document</a></code>.</p></li>
 
    <li><p>Unregister all event listeners registered on the
    <code><a href="dom.html#document">Document</a></code> node and its descendants.</p>
 
-   </li><li><p>Remove any <a href="webappapis.html#concept-task" title="concept-task">tasks</a>
-   associated with the <code><a href="dom.html#document">Document</a></code> in any <a href="webappapis.html#task-source">task
+   </li><li><p>Remove any <a href="textFieldSelection.html#concept-task" title="concept-task">tasks</a>
+   associated with the <code><a href="dom.html#document">Document</a></code> in any <a href="textFieldSelection.html#task-source">task
    source</a>.</p></li> <!-- removes callbacks that fired between
    this algorithm starting and the times and databases being aborted
    in the "unload" step above -->
@@ -515,9 +518,9 @@
 
    <li><p>Replace the <code><a href="dom.html#document">Document</a></code>'s singleton objects with
    new instances of those objects. (This includes in particular the
-   <code><a href="browsers.html#window">Window</a></code>, <code><a href="history.html#location">Location</a></code>, <code><a href="history.html#history-1">History</a></code>,
-   <code><a href="offline.html#applicationcache">ApplicationCache</a></code>, and <code><a href="system-state-and-capabilities.html#navigator">Navigator</a></code>, objects,
-   the various <code><a href="browsers.html#barprop">BarProp</a></code> objects, the two
+   <code><a href="textFieldSelection.html#window">Window</a></code>, <code><a href="textFieldSelection.html#location">Location</a></code>, <code><a href="textFieldSelection.html#history-1">History</a></code>,
+   <code><a href="textFieldSelection.html#applicationcache">ApplicationCache</a></code>, and <code><a href="textFieldSelection.html#navigator">Navigator</a></code>, objects,
+   the various <code><a href="textFieldSelection.html#barprop">BarProp</a></code> objects, the two
    <code>Storage</code> objects, the various
    <code><a href="infrastructure.html#htmlcollection">HTMLCollection</a></code> objects, and objects defined by other
    specifications, like <code>Selection</code> and the document's
@@ -535,19 +538,19 @@
    flag</a> and set the <code><a href="dom.html#document">Document</a></code>'s <a href="dom.html#reload-override-buffer">reload
    override buffer</a> to the empty string.</p></li>
 
-   <li><p>Set the <code><a href="dom.html#document">Document</a></code>'s <var title="concept-document-salvageable"><a href="history.html#concept-document-salvageable">salvageable</a></var> state back
+   <li><p>Set the <code><a href="dom.html#document">Document</a></code>'s <var title="concept-document-salvageable"><a href="textFieldSelection.html#concept-document-salvageable">salvageable</a></var> state back
    to true.</p></li>
 
    <li><p>Change <a href="dom.html#the-document's-address">the document's address</a> to the
-   <a href="browsers.html#entry-script">entry script</a>'s <a href="webappapis.html#script's-document" title="script's
+   <a href="textFieldSelection.html#entry-script">entry script</a>'s <a href="textFieldSelection.html#script's-document" title="script's
    document">document</a>'s <a href="dom.html#the-document's-address" title="the document's
    address">address</a>.</p></li>
 
-   <li><p>Create a new <a href="parsing.html#html-parser">HTML parser</a> and associate it with
+   <li><p>Create a new <a href="textFieldSelection.html#html-parser">HTML parser</a> and associate it with
    the document. This is a <dfn id="script-created-parser">script-created parser</dfn> (meaning
    that it can be closed by the <code title="dom-document-open"><a href="#dom-document-open">document.open()</a></code> and <code title="dom-document-close"><a href="#dom-document-close">document.close()</a></code> methods, and
    that the tokenizer will wait for an explicit call to <code title="dom-document-close"><a href="#dom-document-close">document.close()</a></code> before emitting
-   an end-of-file token). The encoding <a href="parsing.html#concept-encoding-confidence" title="concept-encoding-confidence">confidence</a> is
+   an end-of-file token). The encoding <a href="textFieldSelection.html#concept-encoding-confidence" title="concept-encoding-confidence">confidence</a> is
    <i>irrelevant</i>.</p></li>
 
    <li><p>Set the <a href="dom.html#current-document-readiness">current document readiness</a> of the
@@ -565,12 +568,12 @@
 
     <p>If <var title="">type</var> is <em>not</em> now an <a href="infrastructure.html#ascii-case-insensitive">ASCII
     case-insensitive</a> match for the string
-    "<code><a href="iana.html#text/html">text/html</a></code>", then act as if the tokenizer had emitted
+    "<code><a href="textFieldSelection.html#text/html">text/html</a></code>", then act as if the tokenizer had emitted
     a start tag token with the tag name "pre" followed by a single
     "LF" (U+000A) character<!-- to get eaten, so that a
     leading LF in the written text doesn't get eaten itself-->, then
-    switch the <a href="parsing.html#html-parser">HTML parser</a>'s tokenizer to the
-    <a href="tokenization.html#plaintext-state">PLAINTEXT state</a>.</p>
+    switch the <a href="textFieldSelection.html#html-parser">HTML parser</a>'s tokenizer to the
+    <a href="textFieldSelection.html#plaintext-state">PLAINTEXT state</a>.</p>
 
     <!--
  http://software.hixie.ch/utilities/js/live-dom-viewer/?%3C!DOCTYPE%20html%3E...%3Ciframe%3E%3C%2Fiframe%3E%3Cscript%3Eonload%20%3D%20function%20()%20%7B%20%0D%0A%20%20var%20d%20%3D%20document.getElementsByTagName('iframe')%5B0%5D.contentDocument%3B%0D%0A%20%20d.open('image%2Fsvg%2Bxml')%3B%0D%0A%20%20d.write(%22%3Cinput%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml'%20value%3D'(x)html'%2F%3E%22)%3B%0D%0A%20%20d.close()%3B%0D%0A%7D%3B%3C%2Fscript%3E
@@ -584,20 +587,20 @@
 
    <li>
 
-    <p>Remove all the entries in the <a href="browsers.html#browsing-context">browsing context</a>'s
-    <a href="history.html#session-history">session history</a> after the <a href="history.html#current-entry">current
-    entry</a>. If the <a href="history.html#current-entry">current entry</a> is the last entry
+    <p>Remove all the entries in the <a href="textFieldSelection.html#browsing-context">browsing context</a>'s
+    <a href="textFieldSelection.html#session-history">session history</a> after the <a href="textFieldSelection.html#current-entry">current
+    entry</a>. If the <a href="textFieldSelection.html#current-entry">current entry</a> is the last entry
     in the session history, then no entries are removed.</p>
 
-    <p class="note">This <a href="history.html#history-notes">doesn't necessarily
+    <p class="note">This <a href="textFieldSelection.html#history-notes">doesn't necessarily
     have to affect</a> the user agent's user interface.</p>
 
    </li>
 
-   <li><p>Remove any <a href="webappapis.html#concept-task" title="concept-task">tasks</a> queued by
-   the <a href="webappapis.html#history-traversal-task-source">history traversal task source</a> that are associated
-   with any <code><a href="dom.html#document">Document</a></code> objects in the <a href="browsers.html#top-level-browsing-context">top-level
-   browsing context</a>'s <a href="browsers.html#document-family">document family</a>.</p></li>
+   <li><p>Remove any <a href="textFieldSelection.html#concept-task" title="concept-task">tasks</a> queued by
+   the <a href="textFieldSelection.html#history-traversal-task-source">history traversal task source</a> that are associated
+   with any <code><a href="dom.html#document">Document</a></code> objects in the <a href="textFieldSelection.html#top-level-browsing-context">top-level
+   browsing context</a>'s <a href="textFieldSelection.html#document-family">document family</a>.</p></li>
 
    <li>Remove any earlier entries that share the same
    <code><a href="dom.html#document">Document</a></code>.</li>
@@ -613,23 +616,23 @@
    new one will be created if the session history is traversed to that
    entry.</p></li>
 
-   <li><p>Finally, set the <a href="parsing.html#insertion-point">insertion point</a> to point at
-   just before the end of the <a href="parsing.html#input-stream">input stream</a> (which at this
+   <li><p>Finally, set the <a href="textFieldSelection.html#insertion-point">insertion point</a> to point at
+   just before the end of the <a href="textFieldSelection.html#input-stream">input stream</a> (which at this
    point will be empty).</p></li>
 
    <li><p>Return the <code><a href="dom.html#document">Document</a></code> on which the method was
    invoked.</p></li>
 
   </ol><p class="note">The <code title="dom-document-open"><a href="#dom-document-open">document.open()</a></code> method does not
-  affect whether a <code><a href="dom.html#document">Document</a></code> is <a href="the-end.html#ready-for-post-load-tasks">ready for post-load
-  tasks</a> or <a href="the-end.html#completely-loaded">completely loaded</a>.</p>
+  affect whether a <code><a href="dom.html#document">Document</a></code> is <a href="textFieldSelection.html#ready-for-post-load-tasks">ready for post-load
+  tasks</a> or <a href="textFieldSelection.html#completely-loaded">completely loaded</a>.</p>
 
   <p>When called with three or more arguments, the <code title="dom-document-open"><a href="#dom-document-open">open()</a></code> method on the
-  <code><a href="dom.html#document">Document</a></code> object must call the <code title="dom-open"><a href="browsers.html#dom-open">open()</a></code> method on the <code><a href="browsers.html#window">Window</a></code>
+  <code><a href="dom.html#document">Document</a></code> object must call the <code title="dom-open"><a href="textFieldSelection.html#dom-open">open()</a></code> method on the <code><a href="textFieldSelection.html#window">Window</a></code>
   object of the <code><a href="dom.html#document">Document</a></code> object, with the same
   arguments as the original call to the <code title="dom-document-open"><a href="#dom-document-open">open()</a></code> method, and return whatever
   that method returned. If the <code><a href="dom.html#document">Document</a></code> object has no
-  <code><a href="browsers.html#window">Window</a></code> object, then the method must throw an
+  <code><a href="textFieldSelection.html#window">Window</a></code> object, then the method must throw an
   <code><a href="infrastructure.html#invalidaccesserror">InvalidAccessError</a></code> exception.</p>
 
   </div>
@@ -663,15 +666,15 @@
    <li><p>If there is no <a href="#script-created-parser">script-created parser</a> associated
    with the document, then abort these steps.</p></li>
 
-   <li><p>Insert an <a href="parsing.html#explicit-eof-character">explicit "EOF" character</a> at the end
-   of the parser's <a href="parsing.html#input-stream">input stream</a>.</p></li>
+   <li><p>Insert an <a href="textFieldSelection.html#explicit-eof-character">explicit "EOF" character</a> at the end
+   of the parser's <a href="textFieldSelection.html#input-stream">input stream</a>.</p></li>
 
    <li><p>If there is a <a href="the-script-element.html#pending-parsing-blocking-script">pending parsing-blocking script</a>,
    then abort these steps.</p></li>
 
    <li><p>Run the tokenizer, processing resulting tokens as they are
-   emitted, and stopping when the tokenizer reaches the <a href="parsing.html#explicit-eof-character">explicit
-   "EOF" character</a> or <a href="webappapis.html#spin-the-event-loop" title="spin the event loop">spins
+   emitted, and stopping when the tokenizer reaches the <a href="textFieldSelection.html#explicit-eof-character">explicit
+   "EOF" character</a> or <a href="textFieldSelection.html#spin-the-event-loop" title="spin the event loop">spins
    the event loop</a>.</p></li>
 
   </ol></div>
@@ -688,7 +691,7 @@
     <code><a href="dom.html#document">Document</a></code>'s input stream.</p>
 
     <p class="warning">This method has very idiosyncratic behavior. In
-    some cases, this method can affect the state of the <a href="parsing.html#html-parser">HTML
+    some cases, this method can affect the state of the <a href="textFieldSelection.html#html-parser">HTML
     parser</a> while the parser is running, resulting in a DOM that
     does not correspond to the source of the document (e.g. if the
     string written is the string "<code title="">&lt;plaintext&gt;</code>" or "<code title="">&lt;!--</code>"). In other cases, the call can clear the
@@ -740,7 +743,7 @@
 
    <li>
 
-    <p>If the <a href="parsing.html#insertion-point">insertion point</a> is undefined and either the
+    <p>If the <a href="textFieldSelection.html#insertion-point">insertion point</a> is undefined and either the
     <code><a href="dom.html#document">Document</a></code>'s <a href="#ignore-opens-during-unload-counter">ignore-opens-during-unload
     counter</a> is greater than zero or the <code><a href="dom.html#document">Document</a></code>'s
     <a href="#ignore-destructive-writes-counter">ignore-destructive-writes counter</a> is greater than
@@ -750,20 +753,20 @@
 
    <li>
 
-    <p>If the <a href="parsing.html#insertion-point">insertion point</a> is undefined, call the
+    <p>If the <a href="textFieldSelection.html#insertion-point">insertion point</a> is undefined, call the
     <code title="dom-document-open"><a href="#dom-document-open">open()</a></code> method on the <code title="Document"><a href="dom.html#document">document</a></code> object (with no arguments). If
-    the user <a href="history.html#refused-to-allow-the-document-to-be-unloaded">refused to allow the document to be
+    the user <a href="textFieldSelection.html#refused-to-allow-the-document-to-be-unloaded">refused to allow the document to be
     unloaded</a>, then abort these steps. Otherwise, the
-    <a href="parsing.html#insertion-point">insertion point</a> will point at just before the end of
-    the (empty) <a href="parsing.html#input-stream">input stream</a>.</p>
+    <a href="textFieldSelection.html#insertion-point">insertion point</a> will point at just before the end of
+    the (empty) <a href="textFieldSelection.html#input-stream">input stream</a>.</p>
 
    </li>
 
    <li>
 
     <p>Insert the string consisting of the concatenation of all the
-    arguments to the method into the <a href="parsing.html#input-stream">input stream</a> just
-    before the <a href="parsing.html#insertion-point">insertion point</a>.</p>
+    arguments to the method into the <a href="textFieldSelection.html#input-stream">input stream</a> just
+    before the <a href="textFieldSelection.html#insertion-point">insertion point</a>.</p>
 
    </li>
 
@@ -779,7 +782,7 @@
    <li>
 
     <p>If there is no <a href="the-script-element.html#pending-parsing-blocking-script">pending parsing-blocking script</a>,
-    have the <a href="parsing.html#html-parser">HTML parser</a> process the characters that were
+    have the <a href="textFieldSelection.html#html-parser">HTML parser</a> process the characters that were
     inserted, one at a time, processing resulting tokens as they are
     emitted, and stopping when the tokenizer reaches the insertion
     point or when the processing of the tokenizer is aborted by the
@@ -789,7 +792,7 @@
     </p><p class="note">If the <code title="dom-document-write"><a href="#dom-document-write">document.write()</a></code> method was
     called from script executing inline (i.e. executing because the
     parser parsed a set of <code><a href="the-script-element.html#the-script-element">script</a></code> tags), then this is a
-    <a href="parsing.html#nestedParsing">reentrant invocation of the
+    <a href="textFieldSelection.html#nestedParsing">reentrant invocation of the
     parser</a>.</p>
 
    </li>

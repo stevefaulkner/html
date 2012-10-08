@@ -1,5 +1,110 @@
 <!DOCTYPE html>
-<html lang="en-US-x-Hixie"><head><title>4.8.1 The img element &#8212; HTML5</title><style type="text/css">
+<html lang="en-US-x-Hixie"><head><meta charset="utf-8"><title>4.8.1 The img element &#8212; HTML5</title><style type="text/css">
+
+   .applies thead th > * { display: block; }
+   .applies thead code { display: block; }
+   .applies tbody th { white-space: nowrap; }
+   .applies td { text-align: center; }
+   .applies .yes { background: yellow; }
+
+   .matrix, .matrix td { border: hidden; text-align: right; }
+   .matrix { margin-left: 2em; }
+
+   .dice-example { border-collapse: collapse; border-style: hidden solid solid hidden; border-width: thin; margin-left: 3em; }
+   .dice-example caption { width: 30em; font-size: smaller; font-style: italic; padding: 0.75em 0; text-align: left; }
+   .dice-example td, .dice-example th { border: solid thin; width: 1.35em; height: 1.05em; text-align: center; padding: 0; }
+
+   td.eg { border-width: thin; text-align: center; }
+
+   #table-example-1 { border: solid thin; border-collapse: collapse; margin-left: 3em; }
+   #table-example-1 * { font-family: "Essays1743", serif; line-height: 1.01em; }
+   #table-example-1 caption { padding-bottom: 0.5em; }
+   #table-example-1 thead, #table-example-1 tbody { border: none; }
+   #table-example-1 th, #table-example-1 td { border: solid thin; }
+   #table-example-1 th { font-weight: normal; }
+   #table-example-1 td { border-style: none solid; vertical-align: top; }
+   #table-example-1 th { padding: 0.5em; vertical-align: middle; text-align: center; }
+   #table-example-1 tbody tr:first-child td { padding-top: 0.5em; }
+   #table-example-1 tbody tr:last-child td { padding-bottom: 1.5em; }
+   #table-example-1 tbody td:first-child { padding-left: 2.5em; padding-right: 0; width: 9em; }
+   #table-example-1 tbody td:first-child::after { content: leader(". "); }
+   #table-example-1 tbody td { padding-left: 2em; padding-right: 2em; }
+   #table-example-1 tbody td:first-child + td { width: 10em; }
+   #table-example-1 tbody td:first-child + td ~ td { width: 2.5em; }
+   #table-example-1 tbody td:first-child + td + td + td ~ td { width: 1.25em; }
+
+   .apple-table-examples { border: none; border-collapse: separate; border-spacing: 1.5em 0em; width: 40em; margin-left: 3em; }
+   .apple-table-examples * { font-family: "Times", serif; }
+   .apple-table-examples td, .apple-table-examples th { border: none; white-space: nowrap; padding-top: 0; padding-bottom: 0; }
+   .apple-table-examples tbody th:first-child { border-left: none; width: 100%; }
+   .apple-table-examples thead th:first-child ~ th { font-size: smaller; font-weight: bolder; border-bottom: solid 2px; text-align: center; }
+   .apple-table-examples tbody th::after, .apple-table-examples tfoot th::after { content: leader(". ") }
+   .apple-table-examples tbody th, .apple-table-examples tfoot th { font: inherit; text-align: left; }
+   .apple-table-examples td { text-align: right; vertical-align: top; }
+   .apple-table-examples.e1 tbody tr:last-child td { border-bottom: solid 1px; }
+   .apple-table-examples.e1 tbody + tbody tr:last-child td { border-bottom: double 3px; }
+   .apple-table-examples.e2 th[scope=row] { padding-left: 1em; }
+   .apple-table-examples sup { line-height: 0; }
+
+   .details-example img { vertical-align: top; }
+
+   #base64-table {
+     white-space: nowrap;
+     font-size: 0.6em;
+     column-width: 6em;
+     column-count: 5;
+     column-gap: 1em;
+     -moz-column-width: 6em;
+     -moz-column-count: 5;
+     -moz-column-gap: 1em;
+     -webkit-column-width: 6em;
+     -webkit-column-count: 5;
+     -webkit-column-gap: 1em;
+   }
+   #base64-table thead { display: none; }
+   #base64-table * { border: none; }
+   #base64-table tbody td:first-child:after { content: ':'; }
+   #base64-table tbody td:last-child { text-align: right; }
+
+   #named-character-references-table {
+     white-space: nowrap;
+     font-size: 0.6em;
+     column-width: 30em;
+     column-gap: 1em;
+     -moz-column-width: 30em;
+     -moz-column-gap: 1em;
+     -webkit-column-width: 30em;
+     -webkit-column-gap: 1em;
+   }
+   #named-character-references-table > table > tbody > tr > td:first-child + td,
+   #named-character-references-table > table > tbody > tr > td:last-child { text-align: center; }
+   #named-character-references-table > table > tbody > tr > td:last-child:hover > span { position: absolute; top: auto; left: auto; margin-left: 0.5em; line-height: 1.2; font-size: 5em; border: outset; padding: 0.25em 0.5em; background: white; width: 1.25em; height: auto; text-align: center; }
+   #named-character-references-table > table > tbody > tr#entity-CounterClockwiseContourIntegral > td:first-child { font-size: 0.5em; }
+
+   .glyph.control { color: red; }
+
+   @font-face {
+     font-family: 'Essays1743';
+     src: url('fonts/Essays1743.ttf');
+   }
+   @font-face {
+     font-family: 'Essays1743';
+     font-weight: bold;
+     src: url('fonts/Essays1743-Bold.ttf');
+   }
+   @font-face {
+     font-family: 'Essays1743';
+     font-style: italic;
+     src: url('fonts/Essays1743-Italic.ttf');
+   }
+   @font-face {
+     font-family: 'Essays1743';
+     font-style: italic;
+     font-weight: bold;
+     src: url('fonts/Essays1743-BoldItalic.ttf');
+   }
+
+  </style><link href="data:text/css," id="complete" rel="stylesheet" title="Complete specification"><link href="data:text/css,.impl%20%7B%20display:%20none;%20%7D%0Ahtml%20%7B%20border:%20solid%20yellow;%20%7D%20.domintro:before%20%7B%20display:%20none;%20%7D" id="author" rel="alternate stylesheet" title="Author documentation only"><link href="data:text/css,.impl%20%7B%20background:%20%23FFEEEE;%20%7D%20.domintro:before%20%7B%20background:%20%23FFEEEE;%20%7D" id="highlight" rel="alternate stylesheet" title="Highlight implementation requirements"><style type="text/css">
    pre { margin-left: 2em; white-space: pre-wrap; }
    h2 { margin: 3em 0 1em 0; }
    h3 { margin: 2.5em 0 1em 0; }
@@ -71,7 +176,7 @@
    h1 + h2, hr + h2.no-toc { page-break-before: auto; }
 
    p  > span:not([title=""]):not([class="XXX"]):not([class="impl"]):not([class="note"]),
-   li > span:not([title=""]):not([class="XXX"]):not([class="impl"]):not([class="note"]), { border-bottom: solid #9999CC; }
+   li > span:not([title=""]):not([class="XXX"]):not([class="impl"]):not([class="note"]) { border-bottom: solid #9999CC; }
 
    div.head { margin: 0 0 1em; padding: 1em 0 0 0; }
    div.head p { margin: 0; }
@@ -216,7 +321,8 @@
      display: block;
    }
    .stability input {
-     appearance: none; margin: 0; border: 0; padding: 0.25em 0.5em; background: transparent; color: black;
+     -moz-appearance: none; -webkit-appearance: none; margin: 0; 
+     border: 0; padding: 0.25em 0.5em; background: transparent; color: black;
      position: absolute; top: -0.5em; right: 0; font: 1.25em sans-serif; text-align: center;
    }
    .stability input:hover {
@@ -232,112 +338,7 @@
      color: white;
    }
 
-  </style><link href="http://www.w3.org/StyleSheets/TR/W3C-WD" rel="stylesheet" type="text/css"><meta content="noindex" name="robots"><style type="text/css">
-
-   .applies thead th > * { display: block; }
-   .applies thead code { display: block; }
-   .applies tbody th { whitespace: nowrap; }
-   .applies td { text-align: center; }
-   .applies .yes { background: yellow; }
-
-   .matrix, .matrix td { border: hidden; text-align: right; }
-   .matrix { margin-left: 2em; }
-
-   .dice-example { border-collapse: collapse; border-style: hidden solid solid hidden; border-width: thin; margin-left: 3em; }
-   .dice-example caption { width: 30em; font-size: smaller; font-style: italic; padding: 0.75em 0; text-align: left; }
-   .dice-example td, .dice-example th { border: solid thin; width: 1.35em; height: 1.05em; text-align: center; padding: 0; }
-
-   td.eg { border-width: thin; text-align: center; }
-
-   #table-example-1 { border: solid thin; border-collapse: collapse; margin-left: 3em; }
-   #table-example-1 * { font-family: "Essays1743", serif; line-height: 1.01em; }
-   #table-example-1 caption { padding-bottom: 0.5em; }
-   #table-example-1 thead, #table-example-1 tbody { border: none; }
-   #table-example-1 th, #table-example-1 td { border: solid thin; }
-   #table-example-1 th { font-weight: normal; }
-   #table-example-1 td { border-style: none solid; vertical-align: top; }
-   #table-example-1 th { padding: 0.5em; vertical-align: middle; text-align: center; }
-   #table-example-1 tbody tr:first-child td { padding-top: 0.5em; }
-   #table-example-1 tbody tr:last-child td { padding-bottom: 1.5em; }
-   #table-example-1 tbody td:first-child { padding-left: 2.5em; padding-right: 0; width: 9em; }
-   #table-example-1 tbody td:first-child::after { content: leader(". "); }
-   #table-example-1 tbody td { padding-left: 2em; padding-right: 2em; }
-   #table-example-1 tbody td:first-child + td { width: 10em; }
-   #table-example-1 tbody td:first-child + td ~ td { width: 2.5em; }
-   #table-example-1 tbody td:first-child + td + td + td ~ td { width: 1.25em; }
-
-   .apple-table-examples { border: none; border-collapse: separate; border-spacing: 1.5em 0em; width: 40em; margin-left: 3em; }
-   .apple-table-examples * { font-family: "Times", serif; }
-   .apple-table-examples td, .apple-table-examples th { border: none; white-space: nowrap; padding-top: 0; padding-bottom: 0; }
-   .apple-table-examples tbody th:first-child { border-left: none; width: 100%; }
-   .apple-table-examples thead th:first-child ~ th { font-size: smaller; font-weight: bolder; border-bottom: solid 2px; text-align: center; }
-   .apple-table-examples tbody th::after, .apple-table-examples tfoot th::after { content: leader(". ") }
-   .apple-table-examples tbody th, .apple-table-examples tfoot th { font: inherit; text-align: left; }
-   .apple-table-examples td { text-align: right; vertical-align: top; }
-   .apple-table-examples.e1 tbody tr:last-child td { border-bottom: solid 1px; }
-   .apple-table-examples.e1 tbody + tbody tr:last-child td { border-bottom: double 3px; }
-   .apple-table-examples.e2 th[scope=row] { padding-left: 1em; }
-   .apple-table-examples sup { line-height: 0; }
-
-   .details-example img { vertical-align: top; }
-
-   #base64-table {
-     white-space: nowrap;
-     font-size: 0.6em;
-     column-width: 6em;
-     column-count: 5;
-     column-gap: 1em;
-     -moz-column-width: 6em;
-     -moz-column-count: 5;
-     -moz-column-gap: 1em;
-     -webkit-column-width: 6em;
-     -webkit-column-count: 5;
-     -webkit-column-gap: 1em;
-   }
-   #base64-table thead { display: none; }
-   #base64-table * { border: none; }
-   #base64-table tbody td:first-child:after { content: ':'; }
-   #base64-table tbody td:last-child { text-align: right; }
-
-   #named-character-references-table {
-     white-space: nowrap;
-     font-size: 0.6em;
-     column-width: 30em;
-     column-gap: 1em;
-     -moz-column-width: 30em;
-     -moz-column-gap: 1em;
-     -webkit-column-width: 30em;
-     -webkit-column-gap: 1em;
-   }
-   #named-character-references-table > table > tbody > tr > td:first-child + td,
-   #named-character-references-table > table > tbody > tr > td:last-child { text-align: center; }
-   #named-character-references-table > table > tbody > tr > td:last-child:hover > span { position: absolute; top: auto; left: auto; margin-left: 0.5em; line-height: 1.2; font-size: 5em; border: outset; padding: 0.25em 0.5em; background: white; width: 1.25em; height: auto; text-align: center; }
-   #named-character-references-table > table > tbody > tr#entity-CounterClockwiseContourIntegral > td:first-child { font-size: 0.5em; }
-
-   .glyph.control { color: red; }
-
-   @font-face {
-     font-family: 'Essays1743';
-     src: url('fonts/Essays1743.ttf');
-   }
-   @font-face {
-     font-family: 'Essays1743';
-     font-weight: bold;
-     src: url('fonts/Essays1743-Bold.ttf');
-   }
-   @font-face {
-     font-family: 'Essays1743';
-     font-style: italic;
-     src: url('fonts/Essays1743-Italic.ttf');
-   }
-   @font-face {
-     font-family: 'Essays1743';
-     font-style: italic;
-     font-weight: bold;
-     src: url('fonts/Essays1743-BoldItalic.ttf');
-   }
-
-  </style><link href="data:text/css," id="complete" rel="stylesheet" title="Complete specification"><link href="data:text/css,.impl%20%7B%20display:%20none;%20%7D%0Ahtml%20%7B%20border:%20solid%20yellow;%20%7D%20.domintro:before%20%7B%20display:%20none;%20%7D" id="author" rel="alternate stylesheet" title="Author documentation only"><link href="data:text/css,.impl%20%7B%20background:%20%23FFEEEE;%20%7D%20.domintro:before%20%7B%20background:%20%23FFEEEE;%20%7D" id="highlight" rel="alternate stylesheet" title="Highlight implementation requirements"><script>
+  </style><link href="http://www.w3.org/StyleSheets/TR/W3C-WD" rel="stylesheet" type="text/css"><meta content="noindex" name="robots"><script>
    function getCookie(name) {
      var params = location.search.substr(1).split("&");
      for (var index = 0; index < params.length; index++) {
@@ -365,7 +366,9 @@
    <h2 class="no-num no-toc" id="a-vocabulary-and-associated-apis-for-html-and-xhtml">A vocabulary and associated APIs for HTML and XHTML</h2>
    <h2 class="no-num no-toc" id="w3c-working-draft-11-october-2012">W3C Working Draft 11 October 2012</h2>
    </div>
-   <div class="prev_next">
+  
+
+  <div class="prev_next">
    <a href="edits-and-lists.html">&#8592; 4.7.5 Edits and lists</a> &#8211;
    <a href="index.html#contents">Table of contents</a> &#8211;
    <a href="the-iframe-element.html">4.8.2 The iframe element &#8594;</a>
@@ -483,12 +486,14 @@ interface <dfn id="htmlimageelement">HTMLImageElement</dfn> : <a href="elements.
    <dd>The user agent has obtained some of the image data.</dd>
 
    <dt><dfn id="img-all" title="img-all">Completely available</dfn></dt>
-   <dd>The user agent has obtained all of the image data.</dd>
+   <dd>The user agent has obtained all of the image data and at least
+   the image dimensions are available.</dd>
 
    <dt><dfn id="img-error" title="img-error">Broken</dfn></dt>
    <dd>The user agent has obtained all of the image data that it can,
-   but it cannot decode the image (e.g. the image is corrupted, or the
-   format is not supported, or no data could be obtained).</dd>
+   but it cannot even decode the image enough to get the image
+   dimensions (e.g. the image is corrupted, or the format is not
+   supported, or no data could be obtained).</dd>
 
   </dl><p>When an <code><a href="#the-img-element">img</a></code> element is either in the <a href="#img-inc" title="img-inc">partially available</a> state or in the <a href="#img-all" title="img-all">completely available</a> state, it is said to be
   <dfn id="img-available" title="img-available">available</dfn>.</p>
@@ -551,7 +556,7 @@ interface <dfn id="htmlimageelement">HTMLImageElement</dfn> : <a href="elements.
   available images</dfn>. Each image in this list is identified by a
   tuple consisting of an <a href="urls.html#absolute-url">absolute URL</a>, a <a href="urls.html#cors-settings-attribute">CORS
   settings attribute</a> mode, and, if the mode is not <a href="urls.html#attr-crossorigin-none" title="attr-crossorigin-none">No CORS</a>, an
-  <a href="browsers.html#origin-0">origin</a>. User agents may copy entries from one
+  <a href="textFieldSelection.html#origin-0">origin</a>. User agents may copy entries from one
   <code><a href="dom.html#document">Document</a></code> object's <a href="#list-of-available-images">list of available images</a>
   to another at any time (e.g. when the <code><a href="dom.html#document">Document</a></code> is
   created, user agents can add to it all the images that are loaded in
@@ -566,7 +571,7 @@ interface <dfn id="htmlimageelement">HTMLImageElement</dfn> : <a href="elements.
 
    </li><li><p>If an instance of the <a href="urls.html#fetch" title="fetch">fetching</a>
    algorithm is still running for this element, then abort that
-   algorithm, discarding any pending <a href="webappapis.html#concept-task" title="concept-task">tasks</a> generated by that
+   algorithm, discarding any pending <a href="textFieldSelection.html#concept-task" title="concept-task">tasks</a> generated by that
    algorithm.</p></li>
 
    <li><p>Forget the <code><a href="#the-img-element">img</a></code> element's current image data, if
@@ -598,22 +603,22 @@ interface <dfn id="htmlimageelement">HTMLImageElement</dfn> : <a href="elements.
    resulting <a href="urls.html#absolute-url">absolute URL</a>, the <code><a href="#the-img-element">img</a></code> element's
    <code title="attr-img-crossorigin"><a href="#attr-img-crossorigin">crossorigin</a></code> attribute's
    mode, and, if that mode is not <a href="urls.html#attr-crossorigin-none" title="attr-crossorigin-none">No CORS</a>, the
-   <code><a href="dom.html#document">Document</a></code> object's <a href="browsers.html#origin-0">origin</a>.</p></li>
+   <code><a href="dom.html#document">Document</a></code> object's <a href="textFieldSelection.html#origin-0">origin</a>.</p></li>
 
    <li><p>If the <a href="#list-of-available-images">list of available images</a>, contains an
    entry for <var title="">key</var>, then set the <code><a href="#the-img-element">img</a></code>
    element to the <a href="#img-all" title="img-all">completely available</a>
    state, update the presentation of the image appropriately,
-   <a href="webappapis.html#queue-a-task">queue a task</a> to <a href="webappapis.html#fire-a-simple-event">fire a simple event</a> named
+   <a href="textFieldSelection.html#queue-a-task">queue a task</a> to <a href="textFieldSelection.html#fire-a-simple-event">fire a simple event</a> named
    <code title="event-load">load</code> at the <code><a href="#the-img-element">img</a></code>
    element, and abort these steps.</p></li>
 
-   <li><p>Asynchronously <a href="webappapis.html#await-a-stable-state">await a stable state</a>, allowing
-   the <a href="webappapis.html#concept-task" title="concept-task">task</a> that invoked this
-   algorithm to continue. The <a href="webappapis.html#synchronous-section">synchronous section</a>
+   <li><p>Asynchronously <a href="textFieldSelection.html#await-a-stable-state">await a stable state</a>, allowing
+   the <a href="textFieldSelection.html#concept-task" title="concept-task">task</a> that invoked this
+   algorithm to continue. The <a href="textFieldSelection.html#synchronous-section">synchronous section</a>
    consists of all the remaining steps of this algorithm until the
-   algorithm says the <a href="webappapis.html#synchronous-section">synchronous section</a> has
-   ended. (Steps in <a href="webappapis.html#synchronous-section" title="synchronous section">synchronous
+   algorithm says the <a href="textFieldSelection.html#synchronous-section">synchronous section</a> has
+   ended. (Steps in <a href="textFieldSelection.html#synchronous-section" title="synchronous section">synchronous
    sections</a> are marked with &#8987;.)</p></li>
 
    <li>
@@ -636,7 +641,7 @@ interface <dfn id="htmlimageelement">HTMLImageElement</dfn> : <a href="elements.
 
     <p>&#8987; If <var title="">selected source</var> is null, then
     set the element to the <a href="#img-error" title="img-error">broken</a>
-    state, <a href="webappapis.html#queue-a-task">queue a task</a> to <a href="webappapis.html#fire-a-simple-event">fire a simple
+    state, <a href="textFieldSelection.html#queue-a-task">queue a task</a> to <a href="textFieldSelection.html#fire-a-simple-event">fire a simple
     event</a> named <code title="event-error">error</code> at the
     <code><a href="#the-img-element">img</a></code> element, and abort these steps.</p>
 
@@ -644,52 +649,52 @@ interface <dfn id="htmlimageelement">HTMLImageElement</dfn> : <a href="elements.
 
    <li>
 
-    <p>Do a <a href="urls.html#potentially-cors-enabled-fetch">potentially CORS-enabled fetch</a> of the
-    <a href="urls.html#absolute-url">absolute URL</a> that resulted from the earlier step,
+    <p>Do a <a href="urls.html#potentially-cors-enabled-fetch">potentially CORS-enabled fetch</a><!--FETCH--> of
+    the <a href="urls.html#absolute-url">absolute URL</a> that resulted from the earlier step,
     with the <i>mode</i> being the state of the element's <code title="attr-img-crossorigin"><a href="#attr-img-crossorigin">crossorigin</a></code> content attribute,
-    the <i title="">origin</i> being the <a href="browsers.html#origin-0">origin</a> of the
+    the <i title="">origin</i> being the <a href="textFieldSelection.html#origin-0">origin</a> of the
     <code><a href="#the-img-element">img</a></code> element's <code><a href="dom.html#document">Document</a></code>, and the
     <i>default origin behaviour</i> set to <i>taint</i>.</p>
 
     <p>The resource obtained in this fashion, if any, is the
     <code><a href="#the-img-element">img</a></code> element's image data. It can be either
     <a href="urls.html#cors-same-origin">CORS-same-origin</a> or <a href="urls.html#cors-cross-origin">CORS-cross-origin</a>;
-    this affects the <a href="browsers.html#origin-0">origin</a> of the image itself (e.g.
+    this affects the <a href="textFieldSelection.html#origin-0">origin</a> of the image itself (e.g.
     when used on a <code><a href="the-canvas-element.html#the-canvas-element">canvas</a></code>).</p>
 
     <!-- same text in <input type=image> section and similar text
-    elsewhere --> <p>Fetching the image must <a href="the-end.html#delay-the-load-event">delay the load
-    event</a> of the element's document until the <a href="webappapis.html#concept-task" title="concept-task">task</a> that is <a href="webappapis.html#queue-a-task" title="queue a
-    task">queued</a> by the <a href="webappapis.html#networking-task-source">networking task source</a>
+    elsewhere --> <p>Fetching the image must <a href="textFieldSelection.html#delay-the-load-event">delay the load
+    event</a> of the element's document until the <a href="textFieldSelection.html#concept-task" title="concept-task">task</a> that is <a href="textFieldSelection.html#queue-a-task" title="queue a
+    task">queued</a> by the <a href="textFieldSelection.html#networking-task-source">networking task source</a>
     once the resource has been <a href="urls.html#fetch" title="fetch">fetched</a> (<a href="#img-load">defined below</a>) has been run.</p>
 
     <p class="warning">This, unfortunately, can be used to perform a
     rudimentary port scan of the user's local network (especially in
     conjunction with scripting, though scripting isn't actually
     necessary to carry out such an attack). User agents may implement
-    <a href="browsers.html#origin-0" title="origin">cross-origin</a> access control policies
+    <a href="textFieldSelection.html#origin-0" title="origin">cross-origin</a> access control policies
     that are stricter than those described above to mitigate this
     attack, but unfortunately such policies are typically not
     compatible with existing Web content.</p>
 
-    <p>The first <a href="webappapis.html#concept-task" title="concept-task">task</a> that is <a href="webappapis.html#queue-a-task" title="queue a task">queued</a> by the <a href="webappapis.html#networking-task-source">networking task
+    <p>The first <a href="textFieldSelection.html#concept-task" title="concept-task">task</a> that is <a href="textFieldSelection.html#queue-a-task" title="queue a task">queued</a> by the <a href="textFieldSelection.html#networking-task-source">networking task
     source</a> while the image is being <a href="urls.html#fetch" title="fetch">fetched</a> must set the <code><a href="#the-img-element">img</a></code> element's
     state to <a href="#img-inc" title="img-inc">partially available</a>.</p>
 
     <p id="img-load">If the resource is in a supported image format,
-    then each <a href="webappapis.html#concept-task" title="concept-task">task</a> that is <a href="webappapis.html#queue-a-task" title="queue a task">queued</a> by the <a href="webappapis.html#networking-task-source">networking task
+    then each <a href="textFieldSelection.html#concept-task" title="concept-task">task</a> that is <a href="textFieldSelection.html#queue-a-task" title="queue a task">queued</a> by the <a href="textFieldSelection.html#networking-task-source">networking task
     source</a> while the image is being <a href="urls.html#fetch" title="fetch">fetched</a> must update the presentation of the
     image appropriately (e.g. if the image is a progressive JPEG, each
     packet can improve the resolution of the image); furthermore, the
-    last <a href="webappapis.html#concept-task" title="concept-task">task</a> that is <a href="webappapis.html#queue-a-task" title="queue a task">queued</a> by the <a href="webappapis.html#networking-task-source">networking task
+    last <a href="textFieldSelection.html#concept-task" title="concept-task">task</a> that is <a href="textFieldSelection.html#queue-a-task" title="queue a task">queued</a> by the <a href="textFieldSelection.html#networking-task-source">networking task
     source</a> once the resource has been <a href="urls.html#fetch" title="fetch">fetched</a> must act as appropriate given the
     following alternatives:</p>
 
-    <dl class="switch"><dt>If the download was successful</dt>
+    <dl class="switch"><dt>If the download was successful and the user agent was able to determine the image's width and height</dt>
 
      <dd>Set the <code><a href="#the-img-element">img</a></code> element to the <a href="#img-all" title="img-all">completely available</a> state, update the
      presentation of the image appropriately, add the image to the
-     <a href="#list-of-available-images">list of available images</a> using the key <var title="">key</var>, and <a href="webappapis.html#fire-a-simple-event">fire a simple event</a> named
+     <a href="#list-of-available-images">list of available images</a> using the key <var title="">key</var>, and <a href="textFieldSelection.html#fire-a-simple-event">fire a simple event</a> named
      <code title="event-load">load</code> at the <code><a href="#the-img-element">img</a></code>
      element.</dd>
 
@@ -697,31 +702,30 @@ interface <dfn id="htmlimageelement">HTMLImageElement</dfn> : <a href="elements.
 
      <dt>Otherwise</dt>
 
-     <dd>Set the <code><a href="#the-img-element">img</a></code> element to the <a href="#img-error" title="img-error">broken</a> state, and <a href="webappapis.html#fire-a-simple-event">fire a simple
+     <dd>Set the <code><a href="#the-img-element">img</a></code> element to the <a href="#img-error" title="img-error">broken</a> state, and <a href="textFieldSelection.html#fire-a-simple-event">fire a simple
      event</a> named <code title="event-error">error</code> at the
      <code><a href="#the-img-element">img</a></code> element.</dd>
 
     </dl><p>On the other hand, if the resource type is
-    <code><a href="iana.html#multipart/x-mixed-replace">multipart/x-mixed-replace</a></code>, then each <a href="webappapis.html#concept-task" title="concept-task">task</a> that is <a href="webappapis.html#queue-a-task" title="queue a
-    task">queued</a> by the <a href="webappapis.html#networking-task-source">networking task source</a>
+    <code><a href="textFieldSelection.html#multipart/x-mixed-replace">multipart/x-mixed-replace</a></code>, then each <a href="textFieldSelection.html#concept-task" title="concept-task">task</a> that is <a href="textFieldSelection.html#queue-a-task" title="queue a
+    task">queued</a> by the <a href="textFieldSelection.html#networking-task-source">networking task source</a>
     while the image is being <a href="urls.html#fetch" title="fetch">fetched</a> must
     also update the presentation of the image, but as each new body
     part comes in, it must replace the previous image. Once one body
     part has been completely decoded, the user agent must set the
     <code><a href="#the-img-element">img</a></code> element to the <a href="#img-all" title="img-all">completely
-    available</a> state and <a href="webappapis.html#queue-a-task">queue a task</a> to <a href="webappapis.html#fire-a-simple-event">fire
+    available</a> state and <a href="textFieldSelection.html#queue-a-task">queue a task</a> to <a href="textFieldSelection.html#fire-a-simple-event">fire
     a simple event</a> named <code title="event-load">load</code>
     at the <code><a href="#the-img-element">img</a></code> element.</p>
 
-    <p>If at any point the user agent discovers that the image data is
-    corrupted in some fatal way, or that the image data is not in a
-    supported file format, then the user agent must set the
-    <code><a href="#the-img-element">img</a></code> element to the <a href="#img-error" title="img-error">broken</a> state. If the <a href="urls.html#fetch" title="fetch">fetching</a> algorithm is still running for this
-    element, then the user agent must also abort that algorithm,
-    discarding any pending <a href="webappapis.html#concept-task" title="concept-task">tasks</a>
-    generated by that algorithm, and then <a href="webappapis.html#queue-a-task">queue a task</a> to
-    <a href="webappapis.html#fire-a-simple-event">fire a simple event</a> named <code title="event-error">error</code> at the <code><a href="#the-img-element">img</a></code>
-    element.</p>
+    <p>Otherwise, either the image data is corrupted in some fatal way
+    such that the image dimensions cannot be obtained, or the image
+    data is not in a supported file format; the user agent must set
+    the <code><a href="#the-img-element">img</a></code> element to the <a href="#img-error" title="img-error">broken</a> state, abort the <a href="urls.html#fetch" title="fetch">fetching</a> algorithm, discarding any pending
+    <a href="textFieldSelection.html#concept-task" title="concept-task">tasks</a> generated by that
+    algorithm, and then <a href="textFieldSelection.html#queue-a-task">queue a task</a> to <a href="textFieldSelection.html#fire-a-simple-event">fire a
+    simple event</a> named <code title="event-error">error</code>
+    at the <code><a href="#the-img-element">img</a></code> element.</p>
 
    </li>
 
@@ -776,9 +780,9 @@ interface <dfn id="htmlimageelement">HTMLImageElement</dfn> : <a href="elements.
 
     <p>If the image is <a href="#img-available" title="img-available">available</a>
     and the user agent is configured to display that image, then the
-    element <a href="rendering.html#represents">represents</a> the element's image data.</p>
+    element <a href="textFieldSelection.html#represents">represents</a> the element's image data.</p>
 
-    <p>Otherwise, the element <a href="rendering.html#represents">represents</a> nothing, and may
+    <p>Otherwise, the element <a href="textFieldSelection.html#represents">represents</a> nothing, and may
     be omitted completely from the rendering. User agents may provide
     the user with a notification that an image is present but has been
     omitted from the rendering.</p>
@@ -796,9 +800,9 @@ interface <dfn id="htmlimageelement">HTMLImageElement</dfn> : <a href="elements.
 
     <p>If the image is <a href="#img-available" title="img-available">available</a>
     and the user agent is configured to display that image, then the
-    element <a href="rendering.html#represents">represents</a> the element's image data.</p>
+    element <a href="textFieldSelection.html#represents">represents</a> the element's image data.</p>
 
-    <p>Otherwise, the element <a href="rendering.html#represents">represents</a> the text given
+    <p>Otherwise, the element <a href="textFieldSelection.html#represents">represents</a> the text given
     by the <code title="attr-img-alt"><a href="#attr-img-alt">alt</a></code> attribute. User
     agents may provide the user with a notification that an image is
     present but has been omitted from the rendering.</p>
@@ -819,7 +823,7 @@ interface <dfn id="htmlimageelement">HTMLImageElement</dfn> : <a href="elements.
 
     <p>If the image is <a href="#img-available" title="img-available">available</a>
     and the user agent is configured to display that image, then the
-    element <a href="rendering.html#represents">represents</a> the element's image data.</p>
+    element <a href="textFieldSelection.html#represents">represents</a> the element's image data.</p>
 
     <p>Otherwise, the user agent should display some sort of indicator
     that there is an image that is not being rendered, and may, if
@@ -854,7 +858,7 @@ interface <dfn id="htmlimageelement">HTMLImageElement</dfn> : <a href="elements.
 
    <dd>
 
-    <p>The element <a href="rendering.html#represents">represents</a> nothing.</p>
+    <p>The element <a href="textFieldSelection.html#represents">represents</a> nothing.</p>
 
    </dd>
 
@@ -862,7 +866,7 @@ interface <dfn id="htmlimageelement">HTMLImageElement</dfn> : <a href="elements.
 
    <dd>
 
-    <p>The element <a href="rendering.html#represents">represents</a> the text given by the <code title="attr-img-alt"><a href="#attr-img-alt">alt</a></code> attribute.</p>
+    <p>The element <a href="textFieldSelection.html#represents">represents</a> the text given by the <code title="attr-img-alt"><a href="#attr-img-alt">alt</a></code> attribute.</p>
 
    </dd>
 
@@ -897,7 +901,7 @@ interface <dfn id="htmlimageelement">HTMLImageElement</dfn> : <a href="elements.
 
   <p>The <dfn id="attr-img-ismap" title="attr-img-ismap"><code>ismap</code></dfn>
   attribute, when used on an element that is a descendant of an
-  <code><a href="the-a-element.html#the-a-element">a</a></code> element with an <code title="attr-hyperlink-href"><a href="links.html#attr-hyperlink-href">href</a></code> attribute, indicates by its
+  <code><a href="the-a-element.html#the-a-element">a</a></code> element with an <code title="attr-hyperlink-href"><a href="textFieldSelection.html#attr-hyperlink-href">href</a></code> attribute, indicates by its
   presence that the element provides access to a server-side image
   map. This affects how events are handled on the corresponding
   <code><a href="the-a-element.html#the-a-element">a</a></code> element.</p>
@@ -905,7 +909,7 @@ interface <dfn id="htmlimageelement">HTMLImageElement</dfn> : <a href="elements.
   <p>The <code title="attr-img-ismap"><a href="#attr-img-ismap">ismap</a></code> attribute is a
   <a href="common-microsyntaxes.html#boolean-attribute">boolean attribute</a>. The attribute must not be specified
   on an element that does not have an ancestor <code><a href="the-a-element.html#the-a-element">a</a></code> element
-  with an <code title="attr-hyperlink-href"><a href="links.html#attr-hyperlink-href">href</a></code> attribute.</p>
+  with an <code title="attr-hyperlink-href"><a href="textFieldSelection.html#attr-hyperlink-href">href</a></code> attribute.</p>
 
   <p>The <code><a href="#the-img-element">img</a></code> element supports <a href="dimension-attributes.html#dimension-attributes">dimension
   attributes</a>.</p>
@@ -975,11 +979,11 @@ interface <dfn id="htmlimageelement">HTMLImageElement</dfn> : <a href="elements.
 
   <p>The IDL attributes <dfn id="dom-img-width" title="dom-img-width"><code>width</code></dfn> and <dfn id="dom-img-height" title="dom-img-height"><code>height</code></dfn> must return the
   rendered width and height of the image, in CSS pixels, if the image
-  is <a href="rendering.html#being-rendered">being rendered</a>, and is being rendered to a visual
+  is <a href="textFieldSelection.html#being-rendered">being rendered</a>, and is being rendered to a visual
   medium; or else the intrinsic width and height of the image, in CSS
   pixels, if the image is <i title="img-available"><a href="#img-available">available</a></i> but
   not being rendered to a visual medium; or else 0, if the image is
-  not <i title="img-available"><a href="#img-available">available</a></i>. <a href="references.html#refsCSS">[CSS]</a></p>
+  not <i title="img-available"><a href="#img-available">available</a></i>. <a href="textFieldSelection.html#refsCSS">[CSS]</a></p>
 
   <p>On setting, they must act as if they <a href="common-dom-interfaces.html#reflect" title="reflect">reflected</a> the respective content attributes
   of the same name.</p>
@@ -988,18 +992,18 @@ interface <dfn id="htmlimageelement">HTMLImageElement</dfn> : <a href="elements.
   <dfn id="dom-img-naturalheight" title="dom-img-naturalHeight"><code>naturalHeight</code></dfn>
   must return the intrinsic width and height of the image, in CSS
   pixels, if the image is <i title="img-available"><a href="#img-available">available</a></i>, or
-  else 0. <a href="references.html#refsCSS">[CSS]</a></p>
+  else 0. <a href="textFieldSelection.html#refsCSS">[CSS]</a></p>
 
   <p>The IDL attribute <dfn id="dom-img-complete" title="dom-img-complete"><code>complete</code></dfn> must return
   true if any of the following conditions is true:</p>
   <ul class="brief"><li>The <code title="attr-img-src"><a href="#attr-img-src">src</a></code> attribute is omitted.
    </li><li>The <code title="attr-img-src"><a href="#attr-img-src">src</a></code> attribute's value is the empty string.
-   </li><li>The final <a href="webappapis.html#concept-task" title="concept-task">task</a> that is <a href="webappapis.html#queue-a-task" title="queue a task">queued</a> by the <a href="webappapis.html#networking-task-source">networking task source</a> once the resource has been <a href="urls.html#fetch" title="fetch">fetched</a> has been <a href="webappapis.html#queue-a-task" title="queue a task">queued</a>, but has not yet been run, and the <code><a href="#the-img-element">img</a></code> element is not in the <a href="#img-error" title="img-error">broken</a> state.
+   </li><li>The final <a href="textFieldSelection.html#concept-task" title="concept-task">task</a> that is <a href="textFieldSelection.html#queue-a-task" title="queue a task">queued</a> by the <a href="textFieldSelection.html#networking-task-source">networking task source</a> once the resource has been <a href="urls.html#fetch" title="fetch">fetched</a> has been <a href="textFieldSelection.html#queue-a-task" title="queue a task">queued</a>, but has not yet been run, and the <code><a href="#the-img-element">img</a></code> element is not in the <a href="#img-error" title="img-error">broken</a> state.
    </li><li>The <code><a href="#the-img-element">img</a></code> element is <a href="#img-all" title="img-all">completely available</a>.
   </li></ul><p>Otherwise, the attribute must return false.</p>
 
   <p class="note">The value of <code title="dom-img-complete"><a href="#dom-img-complete">complete</a></code> can thus change while a
-  <a href="webappapis.html#concept-script" title="concept-script">script</a> is executing.</p>
+  <a href="textFieldSelection.html#concept-script" title="concept-script">script</a> is executing.</p>
 
   <p>Three constructors are provided for creating
   <code><a href="#htmlimageelement">HTMLImageElement</a></code> objects (in addition to the factory
@@ -1010,8 +1014,8 @@ interface <dfn id="htmlimageelement">HTMLImageElement</dfn> : <a href="elements.
   <var title="">width</var>. If the <var title="">height</var>
   argument is also present, the new object's <code title="attr-dim-height"><a href="dimension-attributes.html#attr-dim-height">height</a></code> content attribute must be set
   to <var title="">height</var>. The element's document must be the
-  <a href="browsers.html#active-document">active document</a> of the <a href="browsers.html#browsing-context">browsing context</a> of
-  the <code><a href="browsers.html#window">Window</a></code> object on which the interface object of the
+  <a href="textFieldSelection.html#active-document">active document</a> of the <a href="textFieldSelection.html#browsing-context">browsing context</a> of
+  the <code><a href="textFieldSelection.html#window">Window</a></code> object on which the interface object of the
   invoked constructor is found.</p>
 
   </div>
@@ -1166,7 +1170,7 @@ the time Marco had stuck his tongue out...&lt;/p&gt;</pre>
   <h6 id="a-link-or-button-containing-nothing-but-the-image"><span class="secno">4.8.1.1.2 </span>A link or button containing nothing but the image</h6>
 
   <p>When an <a href="the-a-element.html#the-a-element">a</a> element that creates a
-  <a href="links.html#hyperlink">hyperlink</a>, or a <code><a href="the-button-element.html#the-button-element">button</a></code> element, has no
+  <a href="textFieldSelection.html#hyperlink">hyperlink</a>, or a <code><a href="the-button-element.html#the-button-element">button</a></code> element, has no
   textual content but contains one or more images, the <code title="attr-img-alt"><a href="#attr-img-alt">alt</a></code> attributes must contain text that
   together convey the purpose of the link or button.</p>
 
@@ -1534,10 +1538,10 @@ Standards mode, and about 9% triggered the Standards mode.&lt;/p&gt;
 <!--FORK-->
   <p>Exceptions to this rule, in cases where CSS cannot be used to
   display an entirely decorative image, are covered by the HTML5:
-  Techniques for providing useful text alternatives. <a href="references.html#refsHTMLALTTECHS">[HTMLALTTECHS]</a>
+  Techniques for providing useful text alternatives. <a href="textFieldSelection.html#refsHTMLALTTECHS">[HTMLALTTECHS]</a>
   Authors are also encouraged to consult the Web Content Accessibility
   Guidelines 2.0 for more detailed information and acceptable
-  techniques. <a href="references.html#refsWCAG">[WCAG]</a></p>
+  techniques. <a href="textFieldSelection.html#refsWCAG">[WCAG]</a></p>
 <!--FORK-->
 
   <!-- The above paragraph is omitted in the WHATWG copy and replaced

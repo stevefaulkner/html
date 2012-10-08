@@ -1,5 +1,110 @@
 <!DOCTYPE html>
-<html lang="en-US-x-Hixie"><head><title>4.10.19 Attributes common to form controls &#8212; HTML5</title><style type="text/css">
+<html lang="en-US-x-Hixie"><head><meta charset="utf-8"><title>4.10.19 Attributes common to form controls &#8212; HTML5</title><style type="text/css">
+
+   .applies thead th > * { display: block; }
+   .applies thead code { display: block; }
+   .applies tbody th { white-space: nowrap; }
+   .applies td { text-align: center; }
+   .applies .yes { background: yellow; }
+
+   .matrix, .matrix td { border: hidden; text-align: right; }
+   .matrix { margin-left: 2em; }
+
+   .dice-example { border-collapse: collapse; border-style: hidden solid solid hidden; border-width: thin; margin-left: 3em; }
+   .dice-example caption { width: 30em; font-size: smaller; font-style: italic; padding: 0.75em 0; text-align: left; }
+   .dice-example td, .dice-example th { border: solid thin; width: 1.35em; height: 1.05em; text-align: center; padding: 0; }
+
+   td.eg { border-width: thin; text-align: center; }
+
+   #table-example-1 { border: solid thin; border-collapse: collapse; margin-left: 3em; }
+   #table-example-1 * { font-family: "Essays1743", serif; line-height: 1.01em; }
+   #table-example-1 caption { padding-bottom: 0.5em; }
+   #table-example-1 thead, #table-example-1 tbody { border: none; }
+   #table-example-1 th, #table-example-1 td { border: solid thin; }
+   #table-example-1 th { font-weight: normal; }
+   #table-example-1 td { border-style: none solid; vertical-align: top; }
+   #table-example-1 th { padding: 0.5em; vertical-align: middle; text-align: center; }
+   #table-example-1 tbody tr:first-child td { padding-top: 0.5em; }
+   #table-example-1 tbody tr:last-child td { padding-bottom: 1.5em; }
+   #table-example-1 tbody td:first-child { padding-left: 2.5em; padding-right: 0; width: 9em; }
+   #table-example-1 tbody td:first-child::after { content: leader(". "); }
+   #table-example-1 tbody td { padding-left: 2em; padding-right: 2em; }
+   #table-example-1 tbody td:first-child + td { width: 10em; }
+   #table-example-1 tbody td:first-child + td ~ td { width: 2.5em; }
+   #table-example-1 tbody td:first-child + td + td + td ~ td { width: 1.25em; }
+
+   .apple-table-examples { border: none; border-collapse: separate; border-spacing: 1.5em 0em; width: 40em; margin-left: 3em; }
+   .apple-table-examples * { font-family: "Times", serif; }
+   .apple-table-examples td, .apple-table-examples th { border: none; white-space: nowrap; padding-top: 0; padding-bottom: 0; }
+   .apple-table-examples tbody th:first-child { border-left: none; width: 100%; }
+   .apple-table-examples thead th:first-child ~ th { font-size: smaller; font-weight: bolder; border-bottom: solid 2px; text-align: center; }
+   .apple-table-examples tbody th::after, .apple-table-examples tfoot th::after { content: leader(". ") }
+   .apple-table-examples tbody th, .apple-table-examples tfoot th { font: inherit; text-align: left; }
+   .apple-table-examples td { text-align: right; vertical-align: top; }
+   .apple-table-examples.e1 tbody tr:last-child td { border-bottom: solid 1px; }
+   .apple-table-examples.e1 tbody + tbody tr:last-child td { border-bottom: double 3px; }
+   .apple-table-examples.e2 th[scope=row] { padding-left: 1em; }
+   .apple-table-examples sup { line-height: 0; }
+
+   .details-example img { vertical-align: top; }
+
+   #base64-table {
+     white-space: nowrap;
+     font-size: 0.6em;
+     column-width: 6em;
+     column-count: 5;
+     column-gap: 1em;
+     -moz-column-width: 6em;
+     -moz-column-count: 5;
+     -moz-column-gap: 1em;
+     -webkit-column-width: 6em;
+     -webkit-column-count: 5;
+     -webkit-column-gap: 1em;
+   }
+   #base64-table thead { display: none; }
+   #base64-table * { border: none; }
+   #base64-table tbody td:first-child:after { content: ':'; }
+   #base64-table tbody td:last-child { text-align: right; }
+
+   #named-character-references-table {
+     white-space: nowrap;
+     font-size: 0.6em;
+     column-width: 30em;
+     column-gap: 1em;
+     -moz-column-width: 30em;
+     -moz-column-gap: 1em;
+     -webkit-column-width: 30em;
+     -webkit-column-gap: 1em;
+   }
+   #named-character-references-table > table > tbody > tr > td:first-child + td,
+   #named-character-references-table > table > tbody > tr > td:last-child { text-align: center; }
+   #named-character-references-table > table > tbody > tr > td:last-child:hover > span { position: absolute; top: auto; left: auto; margin-left: 0.5em; line-height: 1.2; font-size: 5em; border: outset; padding: 0.25em 0.5em; background: white; width: 1.25em; height: auto; text-align: center; }
+   #named-character-references-table > table > tbody > tr#entity-CounterClockwiseContourIntegral > td:first-child { font-size: 0.5em; }
+
+   .glyph.control { color: red; }
+
+   @font-face {
+     font-family: 'Essays1743';
+     src: url('fonts/Essays1743.ttf');
+   }
+   @font-face {
+     font-family: 'Essays1743';
+     font-weight: bold;
+     src: url('fonts/Essays1743-Bold.ttf');
+   }
+   @font-face {
+     font-family: 'Essays1743';
+     font-style: italic;
+     src: url('fonts/Essays1743-Italic.ttf');
+   }
+   @font-face {
+     font-family: 'Essays1743';
+     font-style: italic;
+     font-weight: bold;
+     src: url('fonts/Essays1743-BoldItalic.ttf');
+   }
+
+  </style><link href="data:text/css," id="complete" rel="stylesheet" title="Complete specification"><link href="data:text/css,.impl%20%7B%20display:%20none;%20%7D%0Ahtml%20%7B%20border:%20solid%20yellow;%20%7D%20.domintro:before%20%7B%20display:%20none;%20%7D" id="author" rel="alternate stylesheet" title="Author documentation only"><link href="data:text/css,.impl%20%7B%20background:%20%23FFEEEE;%20%7D%20.domintro:before%20%7B%20background:%20%23FFEEEE;%20%7D" id="highlight" rel="alternate stylesheet" title="Highlight implementation requirements"><style type="text/css">
    pre { margin-left: 2em; white-space: pre-wrap; }
    h2 { margin: 3em 0 1em 0; }
    h3 { margin: 2.5em 0 1em 0; }
@@ -71,7 +176,7 @@
    h1 + h2, hr + h2.no-toc { page-break-before: auto; }
 
    p  > span:not([title=""]):not([class="XXX"]):not([class="impl"]):not([class="note"]),
-   li > span:not([title=""]):not([class="XXX"]):not([class="impl"]):not([class="note"]), { border-bottom: solid #9999CC; }
+   li > span:not([title=""]):not([class="XXX"]):not([class="impl"]):not([class="note"]) { border-bottom: solid #9999CC; }
 
    div.head { margin: 0 0 1em; padding: 1em 0 0 0; }
    div.head p { margin: 0; }
@@ -216,7 +321,8 @@
      display: block;
    }
    .stability input {
-     appearance: none; margin: 0; border: 0; padding: 0.25em 0.5em; background: transparent; color: black;
+     -moz-appearance: none; -webkit-appearance: none; margin: 0; 
+     border: 0; padding: 0.25em 0.5em; background: transparent; color: black;
      position: absolute; top: -0.5em; right: 0; font: 1.25em sans-serif; text-align: center;
    }
    .stability input:hover {
@@ -232,112 +338,7 @@
      color: white;
    }
 
-  </style><link href="http://www.w3.org/StyleSheets/TR/W3C-WD" rel="stylesheet" type="text/css"><meta content="noindex" name="robots"><style type="text/css">
-
-   .applies thead th > * { display: block; }
-   .applies thead code { display: block; }
-   .applies tbody th { whitespace: nowrap; }
-   .applies td { text-align: center; }
-   .applies .yes { background: yellow; }
-
-   .matrix, .matrix td { border: hidden; text-align: right; }
-   .matrix { margin-left: 2em; }
-
-   .dice-example { border-collapse: collapse; border-style: hidden solid solid hidden; border-width: thin; margin-left: 3em; }
-   .dice-example caption { width: 30em; font-size: smaller; font-style: italic; padding: 0.75em 0; text-align: left; }
-   .dice-example td, .dice-example th { border: solid thin; width: 1.35em; height: 1.05em; text-align: center; padding: 0; }
-
-   td.eg { border-width: thin; text-align: center; }
-
-   #table-example-1 { border: solid thin; border-collapse: collapse; margin-left: 3em; }
-   #table-example-1 * { font-family: "Essays1743", serif; line-height: 1.01em; }
-   #table-example-1 caption { padding-bottom: 0.5em; }
-   #table-example-1 thead, #table-example-1 tbody { border: none; }
-   #table-example-1 th, #table-example-1 td { border: solid thin; }
-   #table-example-1 th { font-weight: normal; }
-   #table-example-1 td { border-style: none solid; vertical-align: top; }
-   #table-example-1 th { padding: 0.5em; vertical-align: middle; text-align: center; }
-   #table-example-1 tbody tr:first-child td { padding-top: 0.5em; }
-   #table-example-1 tbody tr:last-child td { padding-bottom: 1.5em; }
-   #table-example-1 tbody td:first-child { padding-left: 2.5em; padding-right: 0; width: 9em; }
-   #table-example-1 tbody td:first-child::after { content: leader(". "); }
-   #table-example-1 tbody td { padding-left: 2em; padding-right: 2em; }
-   #table-example-1 tbody td:first-child + td { width: 10em; }
-   #table-example-1 tbody td:first-child + td ~ td { width: 2.5em; }
-   #table-example-1 tbody td:first-child + td + td + td ~ td { width: 1.25em; }
-
-   .apple-table-examples { border: none; border-collapse: separate; border-spacing: 1.5em 0em; width: 40em; margin-left: 3em; }
-   .apple-table-examples * { font-family: "Times", serif; }
-   .apple-table-examples td, .apple-table-examples th { border: none; white-space: nowrap; padding-top: 0; padding-bottom: 0; }
-   .apple-table-examples tbody th:first-child { border-left: none; width: 100%; }
-   .apple-table-examples thead th:first-child ~ th { font-size: smaller; font-weight: bolder; border-bottom: solid 2px; text-align: center; }
-   .apple-table-examples tbody th::after, .apple-table-examples tfoot th::after { content: leader(". ") }
-   .apple-table-examples tbody th, .apple-table-examples tfoot th { font: inherit; text-align: left; }
-   .apple-table-examples td { text-align: right; vertical-align: top; }
-   .apple-table-examples.e1 tbody tr:last-child td { border-bottom: solid 1px; }
-   .apple-table-examples.e1 tbody + tbody tr:last-child td { border-bottom: double 3px; }
-   .apple-table-examples.e2 th[scope=row] { padding-left: 1em; }
-   .apple-table-examples sup { line-height: 0; }
-
-   .details-example img { vertical-align: top; }
-
-   #base64-table {
-     white-space: nowrap;
-     font-size: 0.6em;
-     column-width: 6em;
-     column-count: 5;
-     column-gap: 1em;
-     -moz-column-width: 6em;
-     -moz-column-count: 5;
-     -moz-column-gap: 1em;
-     -webkit-column-width: 6em;
-     -webkit-column-count: 5;
-     -webkit-column-gap: 1em;
-   }
-   #base64-table thead { display: none; }
-   #base64-table * { border: none; }
-   #base64-table tbody td:first-child:after { content: ':'; }
-   #base64-table tbody td:last-child { text-align: right; }
-
-   #named-character-references-table {
-     white-space: nowrap;
-     font-size: 0.6em;
-     column-width: 30em;
-     column-gap: 1em;
-     -moz-column-width: 30em;
-     -moz-column-gap: 1em;
-     -webkit-column-width: 30em;
-     -webkit-column-gap: 1em;
-   }
-   #named-character-references-table > table > tbody > tr > td:first-child + td,
-   #named-character-references-table > table > tbody > tr > td:last-child { text-align: center; }
-   #named-character-references-table > table > tbody > tr > td:last-child:hover > span { position: absolute; top: auto; left: auto; margin-left: 0.5em; line-height: 1.2; font-size: 5em; border: outset; padding: 0.25em 0.5em; background: white; width: 1.25em; height: auto; text-align: center; }
-   #named-character-references-table > table > tbody > tr#entity-CounterClockwiseContourIntegral > td:first-child { font-size: 0.5em; }
-
-   .glyph.control { color: red; }
-
-   @font-face {
-     font-family: 'Essays1743';
-     src: url('fonts/Essays1743.ttf');
-   }
-   @font-face {
-     font-family: 'Essays1743';
-     font-weight: bold;
-     src: url('fonts/Essays1743-Bold.ttf');
-   }
-   @font-face {
-     font-family: 'Essays1743';
-     font-style: italic;
-     src: url('fonts/Essays1743-Italic.ttf');
-   }
-   @font-face {
-     font-family: 'Essays1743';
-     font-style: italic;
-     font-weight: bold;
-     src: url('fonts/Essays1743-BoldItalic.ttf');
-   }
-
-  </style><link href="data:text/css," id="complete" rel="stylesheet" title="Complete specification"><link href="data:text/css,.impl%20%7B%20display:%20none;%20%7D%0Ahtml%20%7B%20border:%20solid%20yellow;%20%7D%20.domintro:before%20%7B%20display:%20none;%20%7D" id="author" rel="alternate stylesheet" title="Author documentation only"><link href="data:text/css,.impl%20%7B%20background:%20%23FFEEEE;%20%7D%20.domintro:before%20%7B%20background:%20%23FFEEEE;%20%7D" id="highlight" rel="alternate stylesheet" title="Highlight implementation requirements"><script>
+  </style><link href="http://www.w3.org/StyleSheets/TR/W3C-WD" rel="stylesheet" type="text/css"><meta content="noindex" name="robots"><script>
    function getCookie(name) {
      var params = location.search.substr(1).split("&");
      for (var index = 0; index < params.length; index++) {
@@ -365,7 +366,9 @@
    <h2 class="no-num no-toc" id="a-vocabulary-and-associated-apis-for-html-and-xhtml">A vocabulary and associated APIs for HTML and XHTML</h2>
    <h2 class="no-num no-toc" id="w3c-working-draft-11-october-2012">W3C Working Draft 11 October 2012</h2>
    </div>
-   <div class="prev_next">
+  
+
+  <div class="prev_next">
    <a href="association-of-controls-and-forms.html">&#8592; 4.10.18 Association of controls and forms</a> &#8211;
    <a href="index.html#contents">Table of contents</a> &#8211;
    <a href="form-submission.html">4.10.19.6 Form submission &#8594;</a>
@@ -377,7 +380,7 @@
   <h5 id="naming-form-controls"><span class="secno">4.10.19.1 </span>Naming form controls</h5>
 
   <p>The <dfn id="attr-fe-name" title="attr-fe-name"><code>name</code></dfn> content
-  attribute gives the name of the form control, as used in <a href="constraints.html#form-submission-0">form
+  attribute gives the name of the form control, as used in <a href="textFieldSelection.html#form-submission-0">form
   submission</a> and in the <code><a href="the-form-element.html#the-form-element">form</a></code> element's <code title="dom-form-elements"><a href="the-form-element.html#dom-form-elements">elements</a></code> object. If the attribute
   is specified, its value must not be the empty string.</p>
 
@@ -422,11 +425,11 @@
 
   <div class="impl">
 
-  <p>A form control that is <a href="#concept-fe-disabled" title="concept-fe-disabled">disabled</a> must prevent any <code title="event-click"><a href="infrastructure.html#event-click">click</a></code> events that are <a href="webappapis.html#queue-a-task" title="queue
-  a task">queued</a> on the <a href="webappapis.html#user-interaction-task-source">user interaction task
+  <p>A form control that is <a href="#concept-fe-disabled" title="concept-fe-disabled">disabled</a> must prevent any <code title="event-click"><a href="infrastructure.html#event-click">click</a></code> events that are <a href="textFieldSelection.html#queue-a-task" title="queue
+  a task">queued</a> on the <a href="textFieldSelection.html#user-interaction-task-source">user interaction task
   source</a> from being dispatched on the element.</p>
 
-  <p><strong>Constraint validation</strong>: If an element is <a href="#concept-fe-disabled" title="concept-fe-disabled">disabled</a>, it is <a href="constraints.html#barred-from-constraint-validation">barred from
+  <p><strong>Constraint validation</strong>: If an element is <a href="#concept-fe-disabled" title="concept-fe-disabled">disabled</a>, it is <a href="textFieldSelection.html#barred-from-constraint-validation">barred from
   constraint validation</a>.</p>
 
   <p>The <dfn id="dom-fe-disabled" title="dom-fe-disabled"><code>disabled</code></dfn> IDL
@@ -457,13 +460,22 @@
 
   <p>The <dfn id="attr-fe-autofocus" title="attr-fe-autofocus"><code>autofocus</code></dfn>
   content attribute allows the author to indicate that a control is to
-  be focused as soon as the page is loaded, allowing the user to just
-  start typing without having to manually focus the main control.</p>
+  be focused as soon as the page is loaded or as soon as the
+  <code><a href="textFieldSelection.html#the-dialog-element">dialog</a></code> within which it finds itself is shown, allowing
+  the user to just start typing without having to manually focus the
+  main control.</p>
 
   <p>The <code title="attr-fe-autofocus"><a href="#attr-fe-autofocus">autofocus</a></code> attribute is
   a <a href="common-microsyntaxes.html#boolean-attribute">boolean attribute</a>.</p>
 
-  <p>There must not be more than one element in the document with the
+  <p>An element's <dfn id="nearest-ancestor-autofocus-scoping-root-element">nearest ancestor autofocus scoping root
+  element</dfn> is the element itself if the element is a
+  <code><a href="textFieldSelection.html#the-dialog-element">dialog</a></code> element, or else is the element's nearest
+  ancestor <code><a href="textFieldSelection.html#the-dialog-element">dialog</a></code> element, if any, or else is the
+  element's <a href="infrastructure.html#root-element">root element</a>.</p>
+
+  <p>There must not be two elements with the same <a href="#nearest-ancestor-autofocus-scoping-root-element">nearest
+  ancestor autofocus scoping root element</a> that both have the
   <code title="attr-fe-autofocus"><a href="#attr-fe-autofocus">autofocus</a></code> attribute
   specified.</p>
 
@@ -476,46 +488,46 @@
   <ol><li><p>Let <var title="">target</var> be the element's
    <code><a href="dom.html#document">Document</a></code>.</p></li>
 
-   <li><p>If <var title="">target</var> has no <a href="browsers.html#browsing-context">browsing
+   <li><p>If <var title="">target</var> has no <a href="textFieldSelection.html#browsing-context">browsing
    context</a>, abort these steps.</p></li>
 
-   <li><p>If <var title="">target</var>'s <a href="browsers.html#browsing-context">browsing
-   context</a> has no <a href="browsers.html#top-level-browsing-context">top-level browsing context</a> (e.g.
-   it is a <a href="browsers.html#nested-browsing-context">nested browsing context</a> with no <a href="browsers.html#parent-browsing-context">parent
+   <li><p>If <var title="">target</var>'s <a href="textFieldSelection.html#browsing-context">browsing
+   context</a> has no <a href="textFieldSelection.html#top-level-browsing-context">top-level browsing context</a> (e.g.
+   it is a <a href="textFieldSelection.html#nested-browsing-context">nested browsing context</a> with no <a href="textFieldSelection.html#parent-browsing-context">parent
    browsing context</a>), abort these steps.</p></li>
 
-   <li><p>If <var title="">target</var>'s <a href="browsers.html#active-sandboxing-flag-set">active sandboxing
-   flag set</a> has the <a href="browsers.html#sandboxed-automatic-features-browsing-context-flag">sandboxed automatic features
+   <li><p>If <var title="">target</var>'s <a href="textFieldSelection.html#active-sandboxing-flag-set">active sandboxing
+   flag set</a> has the <a href="textFieldSelection.html#sandboxed-automatic-features-browsing-context-flag">sandboxed automatic features
    browsing context flag</a>, abort these steps.</p></li>
 
-   <li><p>If <var title="">target</var>'s <a href="browsers.html#origin-0">origin</a> is not
-   the <a href="browsers.html#same-origin" title="same origin">same</a> as the
-   <a href="browsers.html#origin-0">origin</a> of the <code><a href="dom.html#document">Document</a></code> of the currently
-   focused element in <var title="">target</var>'s <a href="browsers.html#top-level-browsing-context">top-level
+   <li><p>If <var title="">target</var>'s <a href="textFieldSelection.html#origin-0">origin</a> is not
+   the <a href="textFieldSelection.html#same-origin" title="same origin">same</a> as the
+   <a href="textFieldSelection.html#origin-0">origin</a> of the <code><a href="dom.html#document">Document</a></code> of the currently
+   focused element in <var title="">target</var>'s <a href="textFieldSelection.html#top-level-browsing-context">top-level
    browsing context</a>, abort these steps.</p></li>
 
-   <li><p>If <var title="">target</var>'s <a href="browsers.html#origin-0">origin</a> is not
-   the <a href="browsers.html#same-origin" title="same origin">same</a> as the
-   <a href="browsers.html#origin-0">origin</a> of the <a href="browsers.html#active-document">active document</a> of <var title="">target</var>'s <a href="browsers.html#top-level-browsing-context">top-level browsing context</a>,
+   <li><p>If <var title="">target</var>'s <a href="textFieldSelection.html#origin-0">origin</a> is not
+   the <a href="textFieldSelection.html#same-origin" title="same origin">same</a> as the
+   <a href="textFieldSelection.html#origin-0">origin</a> of the <a href="textFieldSelection.html#active-document">active document</a> of <var title="">target</var>'s <a href="textFieldSelection.html#top-level-browsing-context">top-level browsing context</a>,
    abort these steps.</p></li>
 
    <li><p>If the user agent has already reached the last step of this
    list of steps in response to an element being <a href="infrastructure.html#insert-an-element-into-a-document" title="insert
    an element into a document">inserted</a> into a
-   <code><a href="dom.html#document">Document</a></code> whose <a href="browsers.html#top-level-browsing-context">top-level browsing
-   context</a>'s <a href="browsers.html#active-document">active document</a> is the same as <var title="">target</var>'s <a href="browsers.html#top-level-browsing-context">top-level browsing context</a>'s
-   <a href="browsers.html#active-document">active document</a>, abort these steps.</p></li>
+   <code><a href="dom.html#document">Document</a></code> whose <a href="textFieldSelection.html#top-level-browsing-context">top-level browsing
+   context</a>'s <a href="textFieldSelection.html#active-document">active document</a> is the same as <var title="">target</var>'s <a href="textFieldSelection.html#top-level-browsing-context">top-level browsing context</a>'s
+   <a href="textFieldSelection.html#active-document">active document</a>, abort these steps.</p></li>
 
    <li><p>If the user has indicated (for example, by starting to type
    in a form control) that he does not wish focus to be changed, then
    optionally abort these steps.</p></li>
 
-   <li><p><a href="webappapis.html#queue-a-task">Queue a task</a> that checks to see if the element
-   is <a href="editing.html#focusable">focusable</a>, and if so, runs the <a href="editing.html#focusing-steps">focusing
+   <li><p><a href="textFieldSelection.html#queue-a-task">Queue a task</a> that checks to see if the element
+   is <a href="textFieldSelection.html#focusable">focusable</a>, and if so, runs the <a href="textFieldSelection.html#focusing-steps">focusing
    steps</a> for that element. User agents may also change the
    scrolling position of the document, or perform some other action
-   that brings the element to the user's attention. The <a href="webappapis.html#task-source">task
-   source</a> for this task is the <a href="webappapis.html#dom-manipulation-task-source">DOM manipulation task
+   that brings the element to the user's attention. The <a href="textFieldSelection.html#task-source">task
+   source</a> for this task is the <a href="textFieldSelection.html#dom-manipulation-task-source">DOM manipulation task
    source</a>.</p></li>
 
   </ol><p class="note">Focusing the control does not imply that the user
@@ -558,7 +570,7 @@
   edit (as opposed to a change made by a script), and the
   <a href="infrastructure.html#code-unit-length">code-unit length</a> of the element's <a href="#concept-fe-value" title="concept-fe-value">value</a> is greater than the element's
   <a href="#maximum-allowed-value-length">maximum allowed value length</a>, then the element is
-  <a href="constraints.html#suffering-from-being-too-long">suffering from being too long</a>.</p>
+  <a href="textFieldSelection.html#suffering-from-being-too-long">suffering from being too long</a>.</p>
 
   <p>User agents may prevent the user from causing the element's <a href="#concept-fe-value" title="concept-fe-value">value</a> to be set to a value whose
   <a href="infrastructure.html#code-unit-length">code-unit length</a> is greater than the element's

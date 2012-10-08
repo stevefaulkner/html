@@ -1,5 +1,110 @@
 <!DOCTYPE html>
-<html lang="en-US-x-Hixie"><head><title>4.8.3 The embed element &#8212; HTML5</title><style type="text/css">
+<html lang="en-US-x-Hixie"><head><meta charset="utf-8"><title>4.8.3 The embed element &#8212; HTML5</title><style type="text/css">
+
+   .applies thead th > * { display: block; }
+   .applies thead code { display: block; }
+   .applies tbody th { white-space: nowrap; }
+   .applies td { text-align: center; }
+   .applies .yes { background: yellow; }
+
+   .matrix, .matrix td { border: hidden; text-align: right; }
+   .matrix { margin-left: 2em; }
+
+   .dice-example { border-collapse: collapse; border-style: hidden solid solid hidden; border-width: thin; margin-left: 3em; }
+   .dice-example caption { width: 30em; font-size: smaller; font-style: italic; padding: 0.75em 0; text-align: left; }
+   .dice-example td, .dice-example th { border: solid thin; width: 1.35em; height: 1.05em; text-align: center; padding: 0; }
+
+   td.eg { border-width: thin; text-align: center; }
+
+   #table-example-1 { border: solid thin; border-collapse: collapse; margin-left: 3em; }
+   #table-example-1 * { font-family: "Essays1743", serif; line-height: 1.01em; }
+   #table-example-1 caption { padding-bottom: 0.5em; }
+   #table-example-1 thead, #table-example-1 tbody { border: none; }
+   #table-example-1 th, #table-example-1 td { border: solid thin; }
+   #table-example-1 th { font-weight: normal; }
+   #table-example-1 td { border-style: none solid; vertical-align: top; }
+   #table-example-1 th { padding: 0.5em; vertical-align: middle; text-align: center; }
+   #table-example-1 tbody tr:first-child td { padding-top: 0.5em; }
+   #table-example-1 tbody tr:last-child td { padding-bottom: 1.5em; }
+   #table-example-1 tbody td:first-child { padding-left: 2.5em; padding-right: 0; width: 9em; }
+   #table-example-1 tbody td:first-child::after { content: leader(". "); }
+   #table-example-1 tbody td { padding-left: 2em; padding-right: 2em; }
+   #table-example-1 tbody td:first-child + td { width: 10em; }
+   #table-example-1 tbody td:first-child + td ~ td { width: 2.5em; }
+   #table-example-1 tbody td:first-child + td + td + td ~ td { width: 1.25em; }
+
+   .apple-table-examples { border: none; border-collapse: separate; border-spacing: 1.5em 0em; width: 40em; margin-left: 3em; }
+   .apple-table-examples * { font-family: "Times", serif; }
+   .apple-table-examples td, .apple-table-examples th { border: none; white-space: nowrap; padding-top: 0; padding-bottom: 0; }
+   .apple-table-examples tbody th:first-child { border-left: none; width: 100%; }
+   .apple-table-examples thead th:first-child ~ th { font-size: smaller; font-weight: bolder; border-bottom: solid 2px; text-align: center; }
+   .apple-table-examples tbody th::after, .apple-table-examples tfoot th::after { content: leader(". ") }
+   .apple-table-examples tbody th, .apple-table-examples tfoot th { font: inherit; text-align: left; }
+   .apple-table-examples td { text-align: right; vertical-align: top; }
+   .apple-table-examples.e1 tbody tr:last-child td { border-bottom: solid 1px; }
+   .apple-table-examples.e1 tbody + tbody tr:last-child td { border-bottom: double 3px; }
+   .apple-table-examples.e2 th[scope=row] { padding-left: 1em; }
+   .apple-table-examples sup { line-height: 0; }
+
+   .details-example img { vertical-align: top; }
+
+   #base64-table {
+     white-space: nowrap;
+     font-size: 0.6em;
+     column-width: 6em;
+     column-count: 5;
+     column-gap: 1em;
+     -moz-column-width: 6em;
+     -moz-column-count: 5;
+     -moz-column-gap: 1em;
+     -webkit-column-width: 6em;
+     -webkit-column-count: 5;
+     -webkit-column-gap: 1em;
+   }
+   #base64-table thead { display: none; }
+   #base64-table * { border: none; }
+   #base64-table tbody td:first-child:after { content: ':'; }
+   #base64-table tbody td:last-child { text-align: right; }
+
+   #named-character-references-table {
+     white-space: nowrap;
+     font-size: 0.6em;
+     column-width: 30em;
+     column-gap: 1em;
+     -moz-column-width: 30em;
+     -moz-column-gap: 1em;
+     -webkit-column-width: 30em;
+     -webkit-column-gap: 1em;
+   }
+   #named-character-references-table > table > tbody > tr > td:first-child + td,
+   #named-character-references-table > table > tbody > tr > td:last-child { text-align: center; }
+   #named-character-references-table > table > tbody > tr > td:last-child:hover > span { position: absolute; top: auto; left: auto; margin-left: 0.5em; line-height: 1.2; font-size: 5em; border: outset; padding: 0.25em 0.5em; background: white; width: 1.25em; height: auto; text-align: center; }
+   #named-character-references-table > table > tbody > tr#entity-CounterClockwiseContourIntegral > td:first-child { font-size: 0.5em; }
+
+   .glyph.control { color: red; }
+
+   @font-face {
+     font-family: 'Essays1743';
+     src: url('fonts/Essays1743.ttf');
+   }
+   @font-face {
+     font-family: 'Essays1743';
+     font-weight: bold;
+     src: url('fonts/Essays1743-Bold.ttf');
+   }
+   @font-face {
+     font-family: 'Essays1743';
+     font-style: italic;
+     src: url('fonts/Essays1743-Italic.ttf');
+   }
+   @font-face {
+     font-family: 'Essays1743';
+     font-style: italic;
+     font-weight: bold;
+     src: url('fonts/Essays1743-BoldItalic.ttf');
+   }
+
+  </style><link href="data:text/css," id="complete" rel="stylesheet" title="Complete specification"><link href="data:text/css,.impl%20%7B%20display:%20none;%20%7D%0Ahtml%20%7B%20border:%20solid%20yellow;%20%7D%20.domintro:before%20%7B%20display:%20none;%20%7D" id="author" rel="alternate stylesheet" title="Author documentation only"><link href="data:text/css,.impl%20%7B%20background:%20%23FFEEEE;%20%7D%20.domintro:before%20%7B%20background:%20%23FFEEEE;%20%7D" id="highlight" rel="alternate stylesheet" title="Highlight implementation requirements"><style type="text/css">
    pre { margin-left: 2em; white-space: pre-wrap; }
    h2 { margin: 3em 0 1em 0; }
    h3 { margin: 2.5em 0 1em 0; }
@@ -71,7 +176,7 @@
    h1 + h2, hr + h2.no-toc { page-break-before: auto; }
 
    p  > span:not([title=""]):not([class="XXX"]):not([class="impl"]):not([class="note"]),
-   li > span:not([title=""]):not([class="XXX"]):not([class="impl"]):not([class="note"]), { border-bottom: solid #9999CC; }
+   li > span:not([title=""]):not([class="XXX"]):not([class="impl"]):not([class="note"]) { border-bottom: solid #9999CC; }
 
    div.head { margin: 0 0 1em; padding: 1em 0 0 0; }
    div.head p { margin: 0; }
@@ -216,7 +321,8 @@
      display: block;
    }
    .stability input {
-     appearance: none; margin: 0; border: 0; padding: 0.25em 0.5em; background: transparent; color: black;
+     -moz-appearance: none; -webkit-appearance: none; margin: 0; 
+     border: 0; padding: 0.25em 0.5em; background: transparent; color: black;
      position: absolute; top: -0.5em; right: 0; font: 1.25em sans-serif; text-align: center;
    }
    .stability input:hover {
@@ -232,112 +338,7 @@
      color: white;
    }
 
-  </style><link href="http://www.w3.org/StyleSheets/TR/W3C-WD" rel="stylesheet" type="text/css"><meta content="noindex" name="robots"><style type="text/css">
-
-   .applies thead th > * { display: block; }
-   .applies thead code { display: block; }
-   .applies tbody th { whitespace: nowrap; }
-   .applies td { text-align: center; }
-   .applies .yes { background: yellow; }
-
-   .matrix, .matrix td { border: hidden; text-align: right; }
-   .matrix { margin-left: 2em; }
-
-   .dice-example { border-collapse: collapse; border-style: hidden solid solid hidden; border-width: thin; margin-left: 3em; }
-   .dice-example caption { width: 30em; font-size: smaller; font-style: italic; padding: 0.75em 0; text-align: left; }
-   .dice-example td, .dice-example th { border: solid thin; width: 1.35em; height: 1.05em; text-align: center; padding: 0; }
-
-   td.eg { border-width: thin; text-align: center; }
-
-   #table-example-1 { border: solid thin; border-collapse: collapse; margin-left: 3em; }
-   #table-example-1 * { font-family: "Essays1743", serif; line-height: 1.01em; }
-   #table-example-1 caption { padding-bottom: 0.5em; }
-   #table-example-1 thead, #table-example-1 tbody { border: none; }
-   #table-example-1 th, #table-example-1 td { border: solid thin; }
-   #table-example-1 th { font-weight: normal; }
-   #table-example-1 td { border-style: none solid; vertical-align: top; }
-   #table-example-1 th { padding: 0.5em; vertical-align: middle; text-align: center; }
-   #table-example-1 tbody tr:first-child td { padding-top: 0.5em; }
-   #table-example-1 tbody tr:last-child td { padding-bottom: 1.5em; }
-   #table-example-1 tbody td:first-child { padding-left: 2.5em; padding-right: 0; width: 9em; }
-   #table-example-1 tbody td:first-child::after { content: leader(". "); }
-   #table-example-1 tbody td { padding-left: 2em; padding-right: 2em; }
-   #table-example-1 tbody td:first-child + td { width: 10em; }
-   #table-example-1 tbody td:first-child + td ~ td { width: 2.5em; }
-   #table-example-1 tbody td:first-child + td + td + td ~ td { width: 1.25em; }
-
-   .apple-table-examples { border: none; border-collapse: separate; border-spacing: 1.5em 0em; width: 40em; margin-left: 3em; }
-   .apple-table-examples * { font-family: "Times", serif; }
-   .apple-table-examples td, .apple-table-examples th { border: none; white-space: nowrap; padding-top: 0; padding-bottom: 0; }
-   .apple-table-examples tbody th:first-child { border-left: none; width: 100%; }
-   .apple-table-examples thead th:first-child ~ th { font-size: smaller; font-weight: bolder; border-bottom: solid 2px; text-align: center; }
-   .apple-table-examples tbody th::after, .apple-table-examples tfoot th::after { content: leader(". ") }
-   .apple-table-examples tbody th, .apple-table-examples tfoot th { font: inherit; text-align: left; }
-   .apple-table-examples td { text-align: right; vertical-align: top; }
-   .apple-table-examples.e1 tbody tr:last-child td { border-bottom: solid 1px; }
-   .apple-table-examples.e1 tbody + tbody tr:last-child td { border-bottom: double 3px; }
-   .apple-table-examples.e2 th[scope=row] { padding-left: 1em; }
-   .apple-table-examples sup { line-height: 0; }
-
-   .details-example img { vertical-align: top; }
-
-   #base64-table {
-     white-space: nowrap;
-     font-size: 0.6em;
-     column-width: 6em;
-     column-count: 5;
-     column-gap: 1em;
-     -moz-column-width: 6em;
-     -moz-column-count: 5;
-     -moz-column-gap: 1em;
-     -webkit-column-width: 6em;
-     -webkit-column-count: 5;
-     -webkit-column-gap: 1em;
-   }
-   #base64-table thead { display: none; }
-   #base64-table * { border: none; }
-   #base64-table tbody td:first-child:after { content: ':'; }
-   #base64-table tbody td:last-child { text-align: right; }
-
-   #named-character-references-table {
-     white-space: nowrap;
-     font-size: 0.6em;
-     column-width: 30em;
-     column-gap: 1em;
-     -moz-column-width: 30em;
-     -moz-column-gap: 1em;
-     -webkit-column-width: 30em;
-     -webkit-column-gap: 1em;
-   }
-   #named-character-references-table > table > tbody > tr > td:first-child + td,
-   #named-character-references-table > table > tbody > tr > td:last-child { text-align: center; }
-   #named-character-references-table > table > tbody > tr > td:last-child:hover > span { position: absolute; top: auto; left: auto; margin-left: 0.5em; line-height: 1.2; font-size: 5em; border: outset; padding: 0.25em 0.5em; background: white; width: 1.25em; height: auto; text-align: center; }
-   #named-character-references-table > table > tbody > tr#entity-CounterClockwiseContourIntegral > td:first-child { font-size: 0.5em; }
-
-   .glyph.control { color: red; }
-
-   @font-face {
-     font-family: 'Essays1743';
-     src: url('fonts/Essays1743.ttf');
-   }
-   @font-face {
-     font-family: 'Essays1743';
-     font-weight: bold;
-     src: url('fonts/Essays1743-Bold.ttf');
-   }
-   @font-face {
-     font-family: 'Essays1743';
-     font-style: italic;
-     src: url('fonts/Essays1743-Italic.ttf');
-   }
-   @font-face {
-     font-family: 'Essays1743';
-     font-style: italic;
-     font-weight: bold;
-     src: url('fonts/Essays1743-BoldItalic.ttf');
-   }
-
-  </style><link href="data:text/css," id="complete" rel="stylesheet" title="Complete specification"><link href="data:text/css,.impl%20%7B%20display:%20none;%20%7D%0Ahtml%20%7B%20border:%20solid%20yellow;%20%7D%20.domintro:before%20%7B%20display:%20none;%20%7D" id="author" rel="alternate stylesheet" title="Author documentation only"><link href="data:text/css,.impl%20%7B%20background:%20%23FFEEEE;%20%7D%20.domintro:before%20%7B%20background:%20%23FFEEEE;%20%7D" id="highlight" rel="alternate stylesheet" title="Highlight implementation requirements"><script>
+  </style><link href="http://www.w3.org/StyleSheets/TR/W3C-WD" rel="stylesheet" type="text/css"><meta content="noindex" name="robots"><script>
    function getCookie(name) {
      var params = location.search.substr(1).split("&");
      for (var index = 0; index < params.length; index++) {
@@ -365,7 +366,9 @@
    <h2 class="no-num no-toc" id="a-vocabulary-and-associated-apis-for-html-and-xhtml">A vocabulary and associated APIs for HTML and XHTML</h2>
    <h2 class="no-num no-toc" id="w3c-working-draft-11-october-2012">W3C Working Draft 11 October 2012</h2>
    </div>
-   <div class="prev_next">
+  
+
+  <div class="prev_next">
    <a href="the-iframe-element.html">&#8592; 4.8.2 The iframe element</a> &#8211;
    <a href="index.html#contents">Table of contents</a> &#8211;
    <a href="the-object-element.html">4.8.4 The object element &#8594;</a>
@@ -421,7 +424,7 @@
     interfaces.</p>
     </div>
    </dd>
-  </dl><!--TOPIC:HTML--><p>The <code><a href="#the-embed-element">embed</a></code> element <a href="rendering.html#represents">represents</a> an
+  </dl><!--TOPIC:HTML--><p>The <code><a href="#the-embed-element">embed</a></code> element <a href="textFieldSelection.html#represents">represents</a> an
   integration point for an external (typically non-HTML) application
   or interactive content.</p>
 
@@ -453,20 +456,20 @@
   <p>An <code><a href="#the-embed-element">embed</a></code> element is said to be <dfn id="concept-embed-active" title="concept-embed-active">potentially active</dfn> when the
   following conditions are all met simultaneously:</p>
 
-  <ul class="brief"><li>The element is <a href="infrastructure.html#in-a-document" title="in a document">in a <code>Document</code></a> or was <a href="infrastructure.html#in-a-document" title="in a document">in a <code>Document</code></a> the last time the <a href="webappapis.html#event-loop">event loop</a> reached step 1.</li>
-   <li>The element's <code><a href="dom.html#document">Document</a></code> is <a href="browsers.html#fully-active">fully active</a>.</li>
+  <ul class="brief"><li>The element is <a href="infrastructure.html#in-a-document" title="in a document">in a <code>Document</code></a> or was <a href="infrastructure.html#in-a-document" title="in a document">in a <code>Document</code></a> the last time the <a href="textFieldSelection.html#event-loop">event loop</a> reached step 1.</li>
+   <li>The element's <code><a href="dom.html#document">Document</a></code> is <a href="textFieldSelection.html#fully-active">fully active</a>.</li>
    <li>The element has either a <code title="attr-embed-src"><a href="#attr-embed-src">src</a></code> attribute set or a <code title="attr-embed-type"><a href="#attr-embed-type">type</a></code> attribute set (or both).</li>
-   <li>The element's <code title="attr-embed-src"><a href="#attr-embed-src">src</a></code> attribute is either absent or its value is the empty string.</li>
+   <li>The element's <code title="attr-embed-src"><a href="#attr-embed-src">src</a></code> attribute is either absent or its value is not the empty string.</li>
    <li>The element is not a descendant of a <a href="media-elements.html#media-element">media element</a>.</li>
    <li>The element is not a descendant of an <code><a href="the-object-element.html#the-object-element">object</a></code> element that is not showing its <a href="content-models.html#fallback-content">fallback content</a>.</li>
-   <li>The element is <a href="rendering.html#being-rendered">being rendered</a>, or was <a href="rendering.html#being-rendered">being rendered</a> the last time the <a href="webappapis.html#event-loop">event loop</a> reached step 1.</li>
+   <li>The element is <a href="textFieldSelection.html#being-rendered">being rendered</a>, or was <a href="textFieldSelection.html#being-rendered">being rendered</a> the last time the <a href="textFieldSelection.html#event-loop">event loop</a> reached step 1.</li>
   </ul><p>Whenever an <code><a href="#the-embed-element">embed</a></code> element that was not <a href="#concept-embed-active" title="concept-embed-active">potentially active</a> becomes <a href="#concept-embed-active" title="concept-embed-active">potentially active</a>, and whenever
   a <a href="#concept-embed-active" title="concept-embed-active">potentially active</a>
-  <code><a href="#the-embed-element">embed</a></code> element's <code title="attr-embed-type"><a href="#attr-embed-type">src</a></code> attribute is set, changed, or
-  removed, and whenever a <a href="#concept-embed-active" title="concept-embed-active">potentially active</a>
-  <code><a href="#the-embed-element">embed</a></code> element's <code title="attr-embed-type"><a href="#attr-embed-type">type</a></code> attribute is set, changed, or
-  removed, the appropriate set of steps from the following is then
-  applied:</p>
+  <code><a href="#the-embed-element">embed</a></code> element that is remaining <a href="#concept-embed-active" title="concept-embed-active">potentially active</a> and has its
+  <code title="attr-embed-type"><a href="#attr-embed-type">src</a></code> attribute set, changed, or
+  removed or its <code title="attr-embed-type"><a href="#attr-embed-type">type</a></code> attribute
+  set, changed, or removed, the appropriate set of steps from the
+  following list applies:</p>
 
   <dl class="switch"><dt>If the element has a <code title="attr-embed-src"><a href="#attr-embed-src">src</a></code>
    attribute set</dt>
@@ -476,18 +479,19 @@
     <p>The user agent must <a href="urls.html#resolve-a-url" title="resolve a url">resolve</a>
     the value of the element's <code title="attr-embed-src"><a href="#attr-embed-src">src</a></code>
     attribute, relative to the element. If that is successful, the
-    user agent should <a href="urls.html#fetch">fetch</a> the resulting <a href="urls.html#absolute-url">absolute
-    URL</a>, from the element's <a href="browsers.html#browsing-context-scope-origin">browsing context scope
-    origin</a> if it has one<!-- potentially http-origin privacy
-    sensitive -->. The <a href="webappapis.html#concept-task" title="concept-task">task</a> that is
-    <a href="webappapis.html#queue-a-task" title="queue a task">queued</a> by the <a href="webappapis.html#networking-task-source">networking
-    task source</a> once the resource has been <a href="urls.html#fetch" title="fetch">fetched</a> must find and instantiate an
-    appropriate <a href="infrastructure.html#plugin">plugin</a> based on the <a href="#concept-embed-type" title="concept-embed-type">content's type</a>, and hand that
-    <a href="infrastructure.html#plugin">plugin</a> the content of the resource, replacing any
-    previously instantiated plugin for the element.</p> <!-- Note that
-    this doesn't happen when the base URL changes. -->
+    user agent should <a href="urls.html#fetch">fetch</a><!--FETCH--> the resulting
+    <a href="urls.html#absolute-url">absolute URL</a>, from the element's <a href="textFieldSelection.html#browsing-context-scope-origin">browsing
+    context scope origin</a> if it has one<!-- potentially
+    http-origin privacy sensitive -->. The <a href="textFieldSelection.html#concept-task" title="concept-task">task</a> that is <a href="textFieldSelection.html#queue-a-task" title="queue a
+    task">queued</a> by the <a href="textFieldSelection.html#networking-task-source">networking task source</a>
+    once the resource has been <a href="urls.html#fetch" title="fetch">fetched</a> must
+    find and instantiate an appropriate <a href="infrastructure.html#plugin">plugin</a> based on
+    the <a href="#concept-embed-type" title="concept-embed-type">content's type</a>, and
+    hand that <a href="infrastructure.html#plugin">plugin</a> the content of the resource,
+    replacing any previously instantiated plugin for the element.</p>
+    <!-- Note that this doesn't happen when the base URL changes. -->
 
-    <p>Fetching the resource must <a href="the-end.html#delay-the-load-event">delay the load event</a> of
+    <p>Fetching the resource must <a href="textFieldSelection.html#delay-the-load-event">delay the load event</a> of
     the element's document.</p>
     <!-- if we add load/error events, then replace the previous
     paragraph with the text one: -->
@@ -513,9 +517,9 @@
   be unloaded.</p>
 
   <p id="sandboxPluginEmbed">When a <a href="infrastructure.html#plugin">plugin</a> is to be
-  instantiated but it cannot be <a href="infrastructure.html#concept-plugin-secure" title="concept-plugin-secure">secured</a> and the <a href="browsers.html#sandboxed-plugins-browsing-context-flag">sandboxed
+  instantiated but it cannot be <a href="infrastructure.html#concept-plugin-secure" title="concept-plugin-secure">secured</a> and the <a href="textFieldSelection.html#sandboxed-plugins-browsing-context-flag">sandboxed
   plugins browsing context flag</a> is set on the
-  <code><a href="#the-embed-element">embed</a></code> element's <code><a href="dom.html#document">Document</a></code>'s <a href="browsers.html#active-sandboxing-flag-set">active
+  <code><a href="#the-embed-element">embed</a></code> element's <code><a href="dom.html#document">Document</a></code>'s <a href="textFieldSelection.html#active-sandboxing-flag-set">active
   sandboxing flag set</a>, then the user agent must not
   instantiate the <a href="infrastructure.html#plugin">plugin</a>, and must instead render the
   <code><a href="#the-embed-element">embed</a></code> element in a manner that conveys that the
@@ -586,7 +590,7 @@
 
   </div>
 
-  <p>Any namespace-less attribute other than <code title="attr-embed-name"><a href="obsolete.html#attr-embed-name">name</a></code>, <code title="attr-embed-align"><a href="obsolete.html#attr-embed-align">align</a></code>, <code title="attr-embed-hspace"><a href="obsolete.html#attr-embed-hspace">hspace</a></code>, and <code title="attr-embed-vspace"><a href="obsolete.html#attr-embed-vspace">vspace</a></code> <!-- when editing, see also
+  <p>Any namespace-less attribute other than <code title="attr-embed-name"><a href="textFieldSelection.html#attr-embed-name">name</a></code>, <code title="attr-embed-align"><a href="textFieldSelection.html#attr-embed-align">align</a></code>, <code title="attr-embed-hspace"><a href="textFieldSelection.html#attr-embed-hspace">hspace</a></code>, and <code title="attr-embed-vspace"><a href="textFieldSelection.html#attr-embed-vspace">vspace</a></code> <!-- when editing, see also
   note below --> may be specified on the <code><a href="#the-embed-element">embed</a></code> element,
   so long as its name is <a href="infrastructure.html#xml-compatible">XML-compatible</a> and contains no
   characters in the range U+0041 to U+005A (LATIN CAPITAL LETTER A to

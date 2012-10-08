@@ -1,5 +1,110 @@
 <!DOCTYPE html>
-<html lang="en-US-x-Hixie"><head><title>4.10.9 The select element &#8212; HTML5</title><style type="text/css">
+<html lang="en-US-x-Hixie"><head><meta charset="utf-8"><title>4.10.9 The select element &#8212; HTML5</title><style type="text/css">
+
+   .applies thead th > * { display: block; }
+   .applies thead code { display: block; }
+   .applies tbody th { white-space: nowrap; }
+   .applies td { text-align: center; }
+   .applies .yes { background: yellow; }
+
+   .matrix, .matrix td { border: hidden; text-align: right; }
+   .matrix { margin-left: 2em; }
+
+   .dice-example { border-collapse: collapse; border-style: hidden solid solid hidden; border-width: thin; margin-left: 3em; }
+   .dice-example caption { width: 30em; font-size: smaller; font-style: italic; padding: 0.75em 0; text-align: left; }
+   .dice-example td, .dice-example th { border: solid thin; width: 1.35em; height: 1.05em; text-align: center; padding: 0; }
+
+   td.eg { border-width: thin; text-align: center; }
+
+   #table-example-1 { border: solid thin; border-collapse: collapse; margin-left: 3em; }
+   #table-example-1 * { font-family: "Essays1743", serif; line-height: 1.01em; }
+   #table-example-1 caption { padding-bottom: 0.5em; }
+   #table-example-1 thead, #table-example-1 tbody { border: none; }
+   #table-example-1 th, #table-example-1 td { border: solid thin; }
+   #table-example-1 th { font-weight: normal; }
+   #table-example-1 td { border-style: none solid; vertical-align: top; }
+   #table-example-1 th { padding: 0.5em; vertical-align: middle; text-align: center; }
+   #table-example-1 tbody tr:first-child td { padding-top: 0.5em; }
+   #table-example-1 tbody tr:last-child td { padding-bottom: 1.5em; }
+   #table-example-1 tbody td:first-child { padding-left: 2.5em; padding-right: 0; width: 9em; }
+   #table-example-1 tbody td:first-child::after { content: leader(". "); }
+   #table-example-1 tbody td { padding-left: 2em; padding-right: 2em; }
+   #table-example-1 tbody td:first-child + td { width: 10em; }
+   #table-example-1 tbody td:first-child + td ~ td { width: 2.5em; }
+   #table-example-1 tbody td:first-child + td + td + td ~ td { width: 1.25em; }
+
+   .apple-table-examples { border: none; border-collapse: separate; border-spacing: 1.5em 0em; width: 40em; margin-left: 3em; }
+   .apple-table-examples * { font-family: "Times", serif; }
+   .apple-table-examples td, .apple-table-examples th { border: none; white-space: nowrap; padding-top: 0; padding-bottom: 0; }
+   .apple-table-examples tbody th:first-child { border-left: none; width: 100%; }
+   .apple-table-examples thead th:first-child ~ th { font-size: smaller; font-weight: bolder; border-bottom: solid 2px; text-align: center; }
+   .apple-table-examples tbody th::after, .apple-table-examples tfoot th::after { content: leader(". ") }
+   .apple-table-examples tbody th, .apple-table-examples tfoot th { font: inherit; text-align: left; }
+   .apple-table-examples td { text-align: right; vertical-align: top; }
+   .apple-table-examples.e1 tbody tr:last-child td { border-bottom: solid 1px; }
+   .apple-table-examples.e1 tbody + tbody tr:last-child td { border-bottom: double 3px; }
+   .apple-table-examples.e2 th[scope=row] { padding-left: 1em; }
+   .apple-table-examples sup { line-height: 0; }
+
+   .details-example img { vertical-align: top; }
+
+   #base64-table {
+     white-space: nowrap;
+     font-size: 0.6em;
+     column-width: 6em;
+     column-count: 5;
+     column-gap: 1em;
+     -moz-column-width: 6em;
+     -moz-column-count: 5;
+     -moz-column-gap: 1em;
+     -webkit-column-width: 6em;
+     -webkit-column-count: 5;
+     -webkit-column-gap: 1em;
+   }
+   #base64-table thead { display: none; }
+   #base64-table * { border: none; }
+   #base64-table tbody td:first-child:after { content: ':'; }
+   #base64-table tbody td:last-child { text-align: right; }
+
+   #named-character-references-table {
+     white-space: nowrap;
+     font-size: 0.6em;
+     column-width: 30em;
+     column-gap: 1em;
+     -moz-column-width: 30em;
+     -moz-column-gap: 1em;
+     -webkit-column-width: 30em;
+     -webkit-column-gap: 1em;
+   }
+   #named-character-references-table > table > tbody > tr > td:first-child + td,
+   #named-character-references-table > table > tbody > tr > td:last-child { text-align: center; }
+   #named-character-references-table > table > tbody > tr > td:last-child:hover > span { position: absolute; top: auto; left: auto; margin-left: 0.5em; line-height: 1.2; font-size: 5em; border: outset; padding: 0.25em 0.5em; background: white; width: 1.25em; height: auto; text-align: center; }
+   #named-character-references-table > table > tbody > tr#entity-CounterClockwiseContourIntegral > td:first-child { font-size: 0.5em; }
+
+   .glyph.control { color: red; }
+
+   @font-face {
+     font-family: 'Essays1743';
+     src: url('fonts/Essays1743.ttf');
+   }
+   @font-face {
+     font-family: 'Essays1743';
+     font-weight: bold;
+     src: url('fonts/Essays1743-Bold.ttf');
+   }
+   @font-face {
+     font-family: 'Essays1743';
+     font-style: italic;
+     src: url('fonts/Essays1743-Italic.ttf');
+   }
+   @font-face {
+     font-family: 'Essays1743';
+     font-style: italic;
+     font-weight: bold;
+     src: url('fonts/Essays1743-BoldItalic.ttf');
+   }
+
+  </style><link href="data:text/css," id="complete" rel="stylesheet" title="Complete specification"><link href="data:text/css,.impl%20%7B%20display:%20none;%20%7D%0Ahtml%20%7B%20border:%20solid%20yellow;%20%7D%20.domintro:before%20%7B%20display:%20none;%20%7D" id="author" rel="alternate stylesheet" title="Author documentation only"><link href="data:text/css,.impl%20%7B%20background:%20%23FFEEEE;%20%7D%20.domintro:before%20%7B%20background:%20%23FFEEEE;%20%7D" id="highlight" rel="alternate stylesheet" title="Highlight implementation requirements"><style type="text/css">
    pre { margin-left: 2em; white-space: pre-wrap; }
    h2 { margin: 3em 0 1em 0; }
    h3 { margin: 2.5em 0 1em 0; }
@@ -71,7 +176,7 @@
    h1 + h2, hr + h2.no-toc { page-break-before: auto; }
 
    p  > span:not([title=""]):not([class="XXX"]):not([class="impl"]):not([class="note"]),
-   li > span:not([title=""]):not([class="XXX"]):not([class="impl"]):not([class="note"]), { border-bottom: solid #9999CC; }
+   li > span:not([title=""]):not([class="XXX"]):not([class="impl"]):not([class="note"]) { border-bottom: solid #9999CC; }
 
    div.head { margin: 0 0 1em; padding: 1em 0 0 0; }
    div.head p { margin: 0; }
@@ -216,7 +321,8 @@
      display: block;
    }
    .stability input {
-     appearance: none; margin: 0; border: 0; padding: 0.25em 0.5em; background: transparent; color: black;
+     -moz-appearance: none; -webkit-appearance: none; margin: 0; 
+     border: 0; padding: 0.25em 0.5em; background: transparent; color: black;
      position: absolute; top: -0.5em; right: 0; font: 1.25em sans-serif; text-align: center;
    }
    .stability input:hover {
@@ -232,112 +338,7 @@
      color: white;
    }
 
-  </style><link href="http://www.w3.org/StyleSheets/TR/W3C-WD" rel="stylesheet" type="text/css"><meta content="noindex" name="robots"><style type="text/css">
-
-   .applies thead th > * { display: block; }
-   .applies thead code { display: block; }
-   .applies tbody th { whitespace: nowrap; }
-   .applies td { text-align: center; }
-   .applies .yes { background: yellow; }
-
-   .matrix, .matrix td { border: hidden; text-align: right; }
-   .matrix { margin-left: 2em; }
-
-   .dice-example { border-collapse: collapse; border-style: hidden solid solid hidden; border-width: thin; margin-left: 3em; }
-   .dice-example caption { width: 30em; font-size: smaller; font-style: italic; padding: 0.75em 0; text-align: left; }
-   .dice-example td, .dice-example th { border: solid thin; width: 1.35em; height: 1.05em; text-align: center; padding: 0; }
-
-   td.eg { border-width: thin; text-align: center; }
-
-   #table-example-1 { border: solid thin; border-collapse: collapse; margin-left: 3em; }
-   #table-example-1 * { font-family: "Essays1743", serif; line-height: 1.01em; }
-   #table-example-1 caption { padding-bottom: 0.5em; }
-   #table-example-1 thead, #table-example-1 tbody { border: none; }
-   #table-example-1 th, #table-example-1 td { border: solid thin; }
-   #table-example-1 th { font-weight: normal; }
-   #table-example-1 td { border-style: none solid; vertical-align: top; }
-   #table-example-1 th { padding: 0.5em; vertical-align: middle; text-align: center; }
-   #table-example-1 tbody tr:first-child td { padding-top: 0.5em; }
-   #table-example-1 tbody tr:last-child td { padding-bottom: 1.5em; }
-   #table-example-1 tbody td:first-child { padding-left: 2.5em; padding-right: 0; width: 9em; }
-   #table-example-1 tbody td:first-child::after { content: leader(". "); }
-   #table-example-1 tbody td { padding-left: 2em; padding-right: 2em; }
-   #table-example-1 tbody td:first-child + td { width: 10em; }
-   #table-example-1 tbody td:first-child + td ~ td { width: 2.5em; }
-   #table-example-1 tbody td:first-child + td + td + td ~ td { width: 1.25em; }
-
-   .apple-table-examples { border: none; border-collapse: separate; border-spacing: 1.5em 0em; width: 40em; margin-left: 3em; }
-   .apple-table-examples * { font-family: "Times", serif; }
-   .apple-table-examples td, .apple-table-examples th { border: none; white-space: nowrap; padding-top: 0; padding-bottom: 0; }
-   .apple-table-examples tbody th:first-child { border-left: none; width: 100%; }
-   .apple-table-examples thead th:first-child ~ th { font-size: smaller; font-weight: bolder; border-bottom: solid 2px; text-align: center; }
-   .apple-table-examples tbody th::after, .apple-table-examples tfoot th::after { content: leader(". ") }
-   .apple-table-examples tbody th, .apple-table-examples tfoot th { font: inherit; text-align: left; }
-   .apple-table-examples td { text-align: right; vertical-align: top; }
-   .apple-table-examples.e1 tbody tr:last-child td { border-bottom: solid 1px; }
-   .apple-table-examples.e1 tbody + tbody tr:last-child td { border-bottom: double 3px; }
-   .apple-table-examples.e2 th[scope=row] { padding-left: 1em; }
-   .apple-table-examples sup { line-height: 0; }
-
-   .details-example img { vertical-align: top; }
-
-   #base64-table {
-     white-space: nowrap;
-     font-size: 0.6em;
-     column-width: 6em;
-     column-count: 5;
-     column-gap: 1em;
-     -moz-column-width: 6em;
-     -moz-column-count: 5;
-     -moz-column-gap: 1em;
-     -webkit-column-width: 6em;
-     -webkit-column-count: 5;
-     -webkit-column-gap: 1em;
-   }
-   #base64-table thead { display: none; }
-   #base64-table * { border: none; }
-   #base64-table tbody td:first-child:after { content: ':'; }
-   #base64-table tbody td:last-child { text-align: right; }
-
-   #named-character-references-table {
-     white-space: nowrap;
-     font-size: 0.6em;
-     column-width: 30em;
-     column-gap: 1em;
-     -moz-column-width: 30em;
-     -moz-column-gap: 1em;
-     -webkit-column-width: 30em;
-     -webkit-column-gap: 1em;
-   }
-   #named-character-references-table > table > tbody > tr > td:first-child + td,
-   #named-character-references-table > table > tbody > tr > td:last-child { text-align: center; }
-   #named-character-references-table > table > tbody > tr > td:last-child:hover > span { position: absolute; top: auto; left: auto; margin-left: 0.5em; line-height: 1.2; font-size: 5em; border: outset; padding: 0.25em 0.5em; background: white; width: 1.25em; height: auto; text-align: center; }
-   #named-character-references-table > table > tbody > tr#entity-CounterClockwiseContourIntegral > td:first-child { font-size: 0.5em; }
-
-   .glyph.control { color: red; }
-
-   @font-face {
-     font-family: 'Essays1743';
-     src: url('fonts/Essays1743.ttf');
-   }
-   @font-face {
-     font-family: 'Essays1743';
-     font-weight: bold;
-     src: url('fonts/Essays1743-Bold.ttf');
-   }
-   @font-face {
-     font-family: 'Essays1743';
-     font-style: italic;
-     src: url('fonts/Essays1743-Italic.ttf');
-   }
-   @font-face {
-     font-family: 'Essays1743';
-     font-style: italic;
-     font-weight: bold;
-     src: url('fonts/Essays1743-BoldItalic.ttf');
-   }
-
-  </style><link href="data:text/css," id="complete" rel="stylesheet" title="Complete specification"><link href="data:text/css,.impl%20%7B%20display:%20none;%20%7D%0Ahtml%20%7B%20border:%20solid%20yellow;%20%7D%20.domintro:before%20%7B%20display:%20none;%20%7D" id="author" rel="alternate stylesheet" title="Author documentation only"><link href="data:text/css,.impl%20%7B%20background:%20%23FFEEEE;%20%7D%20.domintro:before%20%7B%20background:%20%23FFEEEE;%20%7D" id="highlight" rel="alternate stylesheet" title="Highlight implementation requirements"><script>
+  </style><link href="http://www.w3.org/StyleSheets/TR/W3C-WD" rel="stylesheet" type="text/css"><meta content="noindex" name="robots"><script>
    function getCookie(name) {
      var params = location.search.substr(1).split("&");
      for (var index = 0; index < params.length; index++) {
@@ -365,7 +366,9 @@
    <h2 class="no-num no-toc" id="a-vocabulary-and-associated-apis-for-html-and-xhtml">A vocabulary and associated APIs for HTML and XHTML</h2>
    <h2 class="no-num no-toc" id="w3c-working-draft-11-october-2012">W3C Working Draft 11 October 2012</h2>
    </div>
-   <div class="prev_next">
+  
+
+  <div class="prev_next">
    <a href="the-button-element.html">&#8592; 4.10.8 The button element</a> &#8211;
    <a href="index.html#contents">Table of contents</a> &#8211;
    <a href="the-datalist-element.html">4.10.10 The datalist element &#8594;</a>
@@ -417,11 +420,11 @@
            attribute long <a href="#dom-select-selectedindex" title="dom-select-selectedIndex">selectedIndex</a>;
            attribute DOMString <a href="#dom-select-value" title="dom-select-value">value</a>;
 
-  readonly attribute boolean <a href="constraints.html#dom-cva-willvalidate" title="dom-cva-willValidate">willValidate</a>;
-  readonly attribute <a href="constraints.html#validitystate">ValidityState</a> <a href="constraints.html#dom-cva-validity" title="dom-cva-validity">validity</a>;
-  readonly attribute DOMString <a href="constraints.html#dom-cva-validationmessage" title="dom-cva-validationMessage">validationMessage</a>;
-  boolean <a href="constraints.html#dom-cva-checkvalidity" title="dom-cva-checkValidity">checkValidity</a>();
-  void <a href="constraints.html#dom-cva-setcustomvalidity" title="dom-cva-setCustomValidity">setCustomValidity</a>(DOMString error);
+  readonly attribute boolean <a href="textFieldSelection.html#dom-cva-willvalidate" title="dom-cva-willValidate">willValidate</a>;
+  readonly attribute <a href="textFieldSelection.html#validitystate">ValidityState</a> <a href="textFieldSelection.html#dom-cva-validity" title="dom-cva-validity">validity</a>;
+  readonly attribute DOMString <a href="textFieldSelection.html#dom-cva-validationmessage" title="dom-cva-validationMessage">validationMessage</a>;
+  boolean <a href="textFieldSelection.html#dom-cva-checkvalidity" title="dom-cva-checkValidity">checkValidity</a>();
+  void <a href="textFieldSelection.html#dom-cva-setcustomvalidity" title="dom-cva-setCustomValidity">setCustomValidity</a>(DOMString error);
 
   readonly attribute <a href="infrastructure.html#nodelist">NodeList</a> <a href="the-label-element.html#dom-lfe-labels" title="dom-lfe-labels">labels</a>;
 };</pre>
@@ -437,10 +440,10 @@
   <p>The <dfn id="attr-select-multiple" title="attr-select-multiple"><code>multiple</code></dfn>
   attribute is a <a href="common-microsyntaxes.html#boolean-attribute">boolean attribute</a>. If the attribute is
   present, then the <code><a href="#the-select-element">select</a></code> element
-  <a href="rendering.html#represents">represents</a> a control for selecting zero or more options
+  <a href="textFieldSelection.html#represents">represents</a> a control for selecting zero or more options
   from the <a href="#concept-select-option-list" title="concept-select-option-list">list of
   options</a>. If the attribute is absent, then the
-  <code><a href="#the-select-element">select</a></code> element <a href="rendering.html#represents">represents</a> a control for
+  <code><a href="#the-select-element">select</a></code> element <a href="textFieldSelection.html#represents">represents</a> a control for
   selecting a single option from the <a href="#concept-select-option-list" title="concept-select-option-list">list of options</a>.</p>
 
   <p>The <dfn id="attr-select-size" title="attr-select-size"><code>size</code></dfn>
@@ -503,7 +506,7 @@
   <code><a href="#the-select-element">select</a></code> element's <a href="#concept-select-option-list" title="concept-select-option-list">list of options</a> with its
   <a href="the-option-element.html#concept-option-selectedness" title="concept-option-selectedness">selectedness</a> set to
   true is the <a href="#placeholder-label-option">placeholder label option</a>, then the element
-  is <a href="constraints.html#suffering-from-being-missing">suffering from being missing</a>.</p>
+  is <a href="textFieldSelection.html#suffering-from-being-missing">suffering from being missing</a>.</p>
 
   </div>
 
@@ -516,15 +519,15 @@
   is itself not <a href="the-option-element.html#concept-option-disabled" title="concept-option-disabled">disabled</a>.
   Upon this <code><a href="the-option-element.html#the-option-element">option</a></code> element being <dfn id="concept-select-pick" title="concept-select-pick">picked</dfn> (either through a click, or
   through unfocusing the element after changing its value, or through
-  a <a href="commands.html#using-the-option-element-to-define-a-command" title="option-command">menu command</a>, or through any
+  a <a href="textFieldSelection.html#using-the-option-element-to-define-a-command" title="option-command">menu command</a>, or through any
   other mechanism), and before the relevant user interaction event
   <!-- interaction event spec point --> is queued (e.g. before the
   <code title="event-click"><a href="infrastructure.html#event-click">click</a></code> event), the user agent must
   set the <a href="the-option-element.html#concept-option-selectedness" title="concept-option-selectedness">selectedness</a> of the
-  picked <code><a href="the-option-element.html#the-option-element">option</a></code> element to true and then <a href="webappapis.html#queue-a-task">queue a
-  task</a> to <a href="webappapis.html#fire-a-simple-event">fire a simple event</a> that bubbles named
+  picked <code><a href="the-option-element.html#the-option-element">option</a></code> element to true and then <a href="textFieldSelection.html#queue-a-task">queue a
+  task</a> to <a href="textFieldSelection.html#fire-a-simple-event">fire a simple event</a> that bubbles named
   <code title="event-change">change</code> at the <code><a href="#the-select-element">select</a></code>
-  element, using the <a href="webappapis.html#user-interaction-task-source">user interaction task source</a> as the
+  element, using the <a href="textFieldSelection.html#user-interaction-task-source">user interaction task source</a> as the
   task source.</p>
 
   <p>If the <code title="attr-select-multiple"><a href="#attr-select-multiple">multiple</a></code>
@@ -545,10 +548,10 @@
   agent, and before the relevant user interaction event <!--
   interaction event spec point --> is queued (e.g. before the <code title="event-click"><a href="infrastructure.html#event-click">click</a></code> event), the user agent must set the
   <a href="the-option-element.html#concept-option-selectedness" title="concept-option-selectedness">selectedness</a> of
-  that <code><a href="the-option-element.html#the-option-element">option</a></code> element to false and then <a href="webappapis.html#queue-a-task">queue a
-  task</a> to <a href="webappapis.html#fire-a-simple-event">fire a simple event</a> that bubbles named
+  that <code><a href="the-option-element.html#the-option-element">option</a></code> element to false and then <a href="textFieldSelection.html#queue-a-task">queue a
+  task</a> to <a href="textFieldSelection.html#fire-a-simple-event">fire a simple event</a> that bubbles named
   <code title="event-change">change</code> at the <code><a href="#the-select-element">select</a></code>
-  element, using the <a href="webappapis.html#user-interaction-task-source">user interaction task source</a> as the
+  element, using the <a href="textFieldSelection.html#user-interaction-task-source">user interaction task source</a> as the
   task source.</p>
 
   <p>If the <code title="attr-select-multiple"><a href="#attr-select-multiple">multiple</a></code>
@@ -566,17 +569,17 @@
   should allow the user to <dfn id="concept-select-toggle" title="concept-select-toggle">toggle</dfn> the <a href="the-option-element.html#concept-option-selectedness" title="concept-option-selectedness">selectedness</a> of the
   <code><a href="the-option-element.html#the-option-element">option</a></code> elements in its <a href="#concept-select-option-list" title="concept-select-option-list">list of options</a> that are
   themselves not <a href="the-option-element.html#concept-option-disabled" title="concept-option-disabled">disabled</a>
-  (either through a click, or through a <a href="commands.html#using-the-option-element-to-define-a-command" title="option-command">menu command</a>, or any other mechanism).
+  (either through a click, or through a <a href="textFieldSelection.html#using-the-option-element-to-define-a-command" title="option-command">menu command</a>, or any other mechanism).
   Upon the <a href="the-option-element.html#concept-option-selectedness" title="concept-option-selectedness">selectedness</a> of one or
   more <code><a href="the-option-element.html#the-option-element">option</a></code> elements being changed by the user, and
   before the relevant user interaction event <!-- interaction event
   spec point --> is queued (e.g. before a related <code title="event-click"><a href="infrastructure.html#event-click">click</a></code> event), the user agent must
-  <a href="webappapis.html#queue-a-task">queue a task</a> to <a href="webappapis.html#fire-a-simple-event">fire a simple event</a> that
+  <a href="textFieldSelection.html#queue-a-task">queue a task</a> to <a href="textFieldSelection.html#fire-a-simple-event">fire a simple event</a> that
   bubbles named <code title="event-change">change</code> at the
-  <code><a href="#the-select-element">select</a></code> element, using the <a href="webappapis.html#user-interaction-task-source">user interaction task
+  <code><a href="#the-select-element">select</a></code> element, using the <a href="textFieldSelection.html#user-interaction-task-source">user interaction task
   source</a> as the task source.</p>
 
-  <p>The <a href="constraints.html#concept-form-reset-control" title="concept-form-reset-control">reset
+  <p>The <a href="textFieldSelection.html#concept-form-reset-control" title="concept-form-reset-control">reset
   algorithm</a> for <code><a href="#the-select-element">select</a></code> elements is to go through
   all the <code><a href="the-option-element.html#the-option-element">option</a></code> elements in the element's <a href="#concept-select-option-list" title="concept-select-option-list">list of options</a>, and set
   their <a href="the-option-element.html#concept-option-selectedness" title="concept-option-selectedness">selectedness</a>
@@ -628,7 +631,7 @@
 
    <dt><var title="">element</var> = <var title="">select</var> . <code title="dom-select-item"><a href="#dom-select-item">namedItem</a></code>(<var title="">name</var>)</dt>
    <dd>
-    <p>Returns the item with <a href="infrastructure.html#concept-id" title="concept-id">ID</a> or <code title="attr-option-name"><a href="obsolete.html#attr-option-name">name</a></code> <var title="">name</var> from the <a href="#concept-select-option-list" title="concept-select-option-list">list of options</a>.</p>
+    <p>Returns the item with <a href="infrastructure.html#concept-id" title="concept-id">ID</a> or <code title="attr-option-name"><a href="textFieldSelection.html#attr-option-name">name</a></code> <var title="">name</var> from the <a href="#concept-select-option-list" title="concept-select-option-list">list of options</a>.</p>
     <p>If there are multiple matching items, then a <code><a href="infrastructure.html#nodelist">NodeList</a></code> object containing all those elements is returned.</p>
     <p>Returns null if no element with that <a href="infrastructure.html#concept-id" title="concept-id">ID</a> could be found.</p>
    </dd>
@@ -772,9 +775,9 @@
   return the actual size used, which, in the absence of the <code title="attr-select-size"><a href="#attr-select-size">size</a></code> content attribute, is either 1
   or 4 depending on the presence of the <code title="attr-select-multiple"><a href="#attr-select-multiple">multiple</a></code> attribute.</p>
 
-  <p>The <code title="dom-cva-willValidate"><a href="constraints.html#dom-cva-willvalidate">willValidate</a></code>, <code title="dom-cva-validity"><a href="constraints.html#dom-cva-validity">validity</a></code>, and <code title="dom-cva-validationMessage"><a href="constraints.html#dom-cva-validationmessage">validationMessage</a></code> IDL
-  attributes, and the <code title="dom-cva-checkValidity"><a href="constraints.html#dom-cva-checkvalidity">checkValidity()</a></code> and <code title="dom-cva-setCustomValidity"><a href="constraints.html#dom-cva-setcustomvalidity">setCustomValidity()</a></code>
-  methods, are part of the <a href="constraints.html#the-constraint-validation-api">constraint validation API</a>. The
+  <p>The <code title="dom-cva-willValidate"><a href="textFieldSelection.html#dom-cva-willvalidate">willValidate</a></code>, <code title="dom-cva-validity"><a href="textFieldSelection.html#dom-cva-validity">validity</a></code>, and <code title="dom-cva-validationMessage"><a href="textFieldSelection.html#dom-cva-validationmessage">validationMessage</a></code> IDL
+  attributes, and the <code title="dom-cva-checkValidity"><a href="textFieldSelection.html#dom-cva-checkvalidity">checkValidity()</a></code> and <code title="dom-cva-setCustomValidity"><a href="textFieldSelection.html#dom-cva-setcustomvalidity">setCustomValidity()</a></code>
+  methods, are part of the <a href="textFieldSelection.html#the-constraint-validation-api">constraint validation API</a>. The
   <code title="dom-lfe-labels"><a href="the-label-element.html#dom-lfe-labels">labels</a></code> IDL attribute provides a
   list of the element's <code><a href="the-label-element.html#the-label-element">label</a></code>s. The <code title="dom-fe-autofocus"><a href="attributes-common-to-form-controls.html#dom-fe-autofocus">autofocus</a></code>, <code title="dom-fe-disabled"><a href="attributes-common-to-form-controls.html#dom-fe-disabled">disabled</a></code>, <code title="dom-fae-form"><a href="association-of-controls-and-forms.html#dom-fae-form">form</a></code>, and <code title="dom-fe-name"><a href="attributes-common-to-form-controls.html#dom-fe-name">name</a></code> IDL attributes are part of the
   element's forms API.</p>

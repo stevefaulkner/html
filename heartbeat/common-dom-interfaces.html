@@ -1,5 +1,110 @@
 <!DOCTYPE html>
-<html lang="en-US-x-Hixie"><head><title>2.8 Common DOM interfaces &#8212; HTML5</title><style type="text/css">
+<html lang="en-US-x-Hixie"><head><meta charset="utf-8"><title>2.8 Common DOM interfaces &#8212; HTML5</title><style type="text/css">
+
+   .applies thead th > * { display: block; }
+   .applies thead code { display: block; }
+   .applies tbody th { white-space: nowrap; }
+   .applies td { text-align: center; }
+   .applies .yes { background: yellow; }
+
+   .matrix, .matrix td { border: hidden; text-align: right; }
+   .matrix { margin-left: 2em; }
+
+   .dice-example { border-collapse: collapse; border-style: hidden solid solid hidden; border-width: thin; margin-left: 3em; }
+   .dice-example caption { width: 30em; font-size: smaller; font-style: italic; padding: 0.75em 0; text-align: left; }
+   .dice-example td, .dice-example th { border: solid thin; width: 1.35em; height: 1.05em; text-align: center; padding: 0; }
+
+   td.eg { border-width: thin; text-align: center; }
+
+   #table-example-1 { border: solid thin; border-collapse: collapse; margin-left: 3em; }
+   #table-example-1 * { font-family: "Essays1743", serif; line-height: 1.01em; }
+   #table-example-1 caption { padding-bottom: 0.5em; }
+   #table-example-1 thead, #table-example-1 tbody { border: none; }
+   #table-example-1 th, #table-example-1 td { border: solid thin; }
+   #table-example-1 th { font-weight: normal; }
+   #table-example-1 td { border-style: none solid; vertical-align: top; }
+   #table-example-1 th { padding: 0.5em; vertical-align: middle; text-align: center; }
+   #table-example-1 tbody tr:first-child td { padding-top: 0.5em; }
+   #table-example-1 tbody tr:last-child td { padding-bottom: 1.5em; }
+   #table-example-1 tbody td:first-child { padding-left: 2.5em; padding-right: 0; width: 9em; }
+   #table-example-1 tbody td:first-child::after { content: leader(". "); }
+   #table-example-1 tbody td { padding-left: 2em; padding-right: 2em; }
+   #table-example-1 tbody td:first-child + td { width: 10em; }
+   #table-example-1 tbody td:first-child + td ~ td { width: 2.5em; }
+   #table-example-1 tbody td:first-child + td + td + td ~ td { width: 1.25em; }
+
+   .apple-table-examples { border: none; border-collapse: separate; border-spacing: 1.5em 0em; width: 40em; margin-left: 3em; }
+   .apple-table-examples * { font-family: "Times", serif; }
+   .apple-table-examples td, .apple-table-examples th { border: none; white-space: nowrap; padding-top: 0; padding-bottom: 0; }
+   .apple-table-examples tbody th:first-child { border-left: none; width: 100%; }
+   .apple-table-examples thead th:first-child ~ th { font-size: smaller; font-weight: bolder; border-bottom: solid 2px; text-align: center; }
+   .apple-table-examples tbody th::after, .apple-table-examples tfoot th::after { content: leader(". ") }
+   .apple-table-examples tbody th, .apple-table-examples tfoot th { font: inherit; text-align: left; }
+   .apple-table-examples td { text-align: right; vertical-align: top; }
+   .apple-table-examples.e1 tbody tr:last-child td { border-bottom: solid 1px; }
+   .apple-table-examples.e1 tbody + tbody tr:last-child td { border-bottom: double 3px; }
+   .apple-table-examples.e2 th[scope=row] { padding-left: 1em; }
+   .apple-table-examples sup { line-height: 0; }
+
+   .details-example img { vertical-align: top; }
+
+   #base64-table {
+     white-space: nowrap;
+     font-size: 0.6em;
+     column-width: 6em;
+     column-count: 5;
+     column-gap: 1em;
+     -moz-column-width: 6em;
+     -moz-column-count: 5;
+     -moz-column-gap: 1em;
+     -webkit-column-width: 6em;
+     -webkit-column-count: 5;
+     -webkit-column-gap: 1em;
+   }
+   #base64-table thead { display: none; }
+   #base64-table * { border: none; }
+   #base64-table tbody td:first-child:after { content: ':'; }
+   #base64-table tbody td:last-child { text-align: right; }
+
+   #named-character-references-table {
+     white-space: nowrap;
+     font-size: 0.6em;
+     column-width: 30em;
+     column-gap: 1em;
+     -moz-column-width: 30em;
+     -moz-column-gap: 1em;
+     -webkit-column-width: 30em;
+     -webkit-column-gap: 1em;
+   }
+   #named-character-references-table > table > tbody > tr > td:first-child + td,
+   #named-character-references-table > table > tbody > tr > td:last-child { text-align: center; }
+   #named-character-references-table > table > tbody > tr > td:last-child:hover > span { position: absolute; top: auto; left: auto; margin-left: 0.5em; line-height: 1.2; font-size: 5em; border: outset; padding: 0.25em 0.5em; background: white; width: 1.25em; height: auto; text-align: center; }
+   #named-character-references-table > table > tbody > tr#entity-CounterClockwiseContourIntegral > td:first-child { font-size: 0.5em; }
+
+   .glyph.control { color: red; }
+
+   @font-face {
+     font-family: 'Essays1743';
+     src: url('fonts/Essays1743.ttf');
+   }
+   @font-face {
+     font-family: 'Essays1743';
+     font-weight: bold;
+     src: url('fonts/Essays1743-Bold.ttf');
+   }
+   @font-face {
+     font-family: 'Essays1743';
+     font-style: italic;
+     src: url('fonts/Essays1743-Italic.ttf');
+   }
+   @font-face {
+     font-family: 'Essays1743';
+     font-style: italic;
+     font-weight: bold;
+     src: url('fonts/Essays1743-BoldItalic.ttf');
+   }
+
+  </style><link href="data:text/css," id="complete" rel="stylesheet" title="Complete specification"><link href="data:text/css,.impl%20%7B%20display:%20none;%20%7D%0Ahtml%20%7B%20border:%20solid%20yellow;%20%7D%20.domintro:before%20%7B%20display:%20none;%20%7D" id="author" rel="alternate stylesheet" title="Author documentation only"><link href="data:text/css,.impl%20%7B%20background:%20%23FFEEEE;%20%7D%20.domintro:before%20%7B%20background:%20%23FFEEEE;%20%7D" id="highlight" rel="alternate stylesheet" title="Highlight implementation requirements"><style type="text/css">
    pre { margin-left: 2em; white-space: pre-wrap; }
    h2 { margin: 3em 0 1em 0; }
    h3 { margin: 2.5em 0 1em 0; }
@@ -71,7 +176,7 @@
    h1 + h2, hr + h2.no-toc { page-break-before: auto; }
 
    p  > span:not([title=""]):not([class="XXX"]):not([class="impl"]):not([class="note"]),
-   li > span:not([title=""]):not([class="XXX"]):not([class="impl"]):not([class="note"]), { border-bottom: solid #9999CC; }
+   li > span:not([title=""]):not([class="XXX"]):not([class="impl"]):not([class="note"]) { border-bottom: solid #9999CC; }
 
    div.head { margin: 0 0 1em; padding: 1em 0 0 0; }
    div.head p { margin: 0; }
@@ -216,7 +321,8 @@
      display: block;
    }
    .stability input {
-     appearance: none; margin: 0; border: 0; padding: 0.25em 0.5em; background: transparent; color: black;
+     -moz-appearance: none; -webkit-appearance: none; margin: 0; 
+     border: 0; padding: 0.25em 0.5em; background: transparent; color: black;
      position: absolute; top: -0.5em; right: 0; font: 1.25em sans-serif; text-align: center;
    }
    .stability input:hover {
@@ -232,112 +338,7 @@
      color: white;
    }
 
-  </style><link href="http://www.w3.org/StyleSheets/TR/W3C-WD" rel="stylesheet" type="text/css"><meta content="noindex" name="robots"><style type="text/css">
-
-   .applies thead th > * { display: block; }
-   .applies thead code { display: block; }
-   .applies tbody th { whitespace: nowrap; }
-   .applies td { text-align: center; }
-   .applies .yes { background: yellow; }
-
-   .matrix, .matrix td { border: hidden; text-align: right; }
-   .matrix { margin-left: 2em; }
-
-   .dice-example { border-collapse: collapse; border-style: hidden solid solid hidden; border-width: thin; margin-left: 3em; }
-   .dice-example caption { width: 30em; font-size: smaller; font-style: italic; padding: 0.75em 0; text-align: left; }
-   .dice-example td, .dice-example th { border: solid thin; width: 1.35em; height: 1.05em; text-align: center; padding: 0; }
-
-   td.eg { border-width: thin; text-align: center; }
-
-   #table-example-1 { border: solid thin; border-collapse: collapse; margin-left: 3em; }
-   #table-example-1 * { font-family: "Essays1743", serif; line-height: 1.01em; }
-   #table-example-1 caption { padding-bottom: 0.5em; }
-   #table-example-1 thead, #table-example-1 tbody { border: none; }
-   #table-example-1 th, #table-example-1 td { border: solid thin; }
-   #table-example-1 th { font-weight: normal; }
-   #table-example-1 td { border-style: none solid; vertical-align: top; }
-   #table-example-1 th { padding: 0.5em; vertical-align: middle; text-align: center; }
-   #table-example-1 tbody tr:first-child td { padding-top: 0.5em; }
-   #table-example-1 tbody tr:last-child td { padding-bottom: 1.5em; }
-   #table-example-1 tbody td:first-child { padding-left: 2.5em; padding-right: 0; width: 9em; }
-   #table-example-1 tbody td:first-child::after { content: leader(". "); }
-   #table-example-1 tbody td { padding-left: 2em; padding-right: 2em; }
-   #table-example-1 tbody td:first-child + td { width: 10em; }
-   #table-example-1 tbody td:first-child + td ~ td { width: 2.5em; }
-   #table-example-1 tbody td:first-child + td + td + td ~ td { width: 1.25em; }
-
-   .apple-table-examples { border: none; border-collapse: separate; border-spacing: 1.5em 0em; width: 40em; margin-left: 3em; }
-   .apple-table-examples * { font-family: "Times", serif; }
-   .apple-table-examples td, .apple-table-examples th { border: none; white-space: nowrap; padding-top: 0; padding-bottom: 0; }
-   .apple-table-examples tbody th:first-child { border-left: none; width: 100%; }
-   .apple-table-examples thead th:first-child ~ th { font-size: smaller; font-weight: bolder; border-bottom: solid 2px; text-align: center; }
-   .apple-table-examples tbody th::after, .apple-table-examples tfoot th::after { content: leader(". ") }
-   .apple-table-examples tbody th, .apple-table-examples tfoot th { font: inherit; text-align: left; }
-   .apple-table-examples td { text-align: right; vertical-align: top; }
-   .apple-table-examples.e1 tbody tr:last-child td { border-bottom: solid 1px; }
-   .apple-table-examples.e1 tbody + tbody tr:last-child td { border-bottom: double 3px; }
-   .apple-table-examples.e2 th[scope=row] { padding-left: 1em; }
-   .apple-table-examples sup { line-height: 0; }
-
-   .details-example img { vertical-align: top; }
-
-   #base64-table {
-     white-space: nowrap;
-     font-size: 0.6em;
-     column-width: 6em;
-     column-count: 5;
-     column-gap: 1em;
-     -moz-column-width: 6em;
-     -moz-column-count: 5;
-     -moz-column-gap: 1em;
-     -webkit-column-width: 6em;
-     -webkit-column-count: 5;
-     -webkit-column-gap: 1em;
-   }
-   #base64-table thead { display: none; }
-   #base64-table * { border: none; }
-   #base64-table tbody td:first-child:after { content: ':'; }
-   #base64-table tbody td:last-child { text-align: right; }
-
-   #named-character-references-table {
-     white-space: nowrap;
-     font-size: 0.6em;
-     column-width: 30em;
-     column-gap: 1em;
-     -moz-column-width: 30em;
-     -moz-column-gap: 1em;
-     -webkit-column-width: 30em;
-     -webkit-column-gap: 1em;
-   }
-   #named-character-references-table > table > tbody > tr > td:first-child + td,
-   #named-character-references-table > table > tbody > tr > td:last-child { text-align: center; }
-   #named-character-references-table > table > tbody > tr > td:last-child:hover > span { position: absolute; top: auto; left: auto; margin-left: 0.5em; line-height: 1.2; font-size: 5em; border: outset; padding: 0.25em 0.5em; background: white; width: 1.25em; height: auto; text-align: center; }
-   #named-character-references-table > table > tbody > tr#entity-CounterClockwiseContourIntegral > td:first-child { font-size: 0.5em; }
-
-   .glyph.control { color: red; }
-
-   @font-face {
-     font-family: 'Essays1743';
-     src: url('fonts/Essays1743.ttf');
-   }
-   @font-face {
-     font-family: 'Essays1743';
-     font-weight: bold;
-     src: url('fonts/Essays1743-Bold.ttf');
-   }
-   @font-face {
-     font-family: 'Essays1743';
-     font-style: italic;
-     src: url('fonts/Essays1743-Italic.ttf');
-   }
-   @font-face {
-     font-family: 'Essays1743';
-     font-style: italic;
-     font-weight: bold;
-     src: url('fonts/Essays1743-BoldItalic.ttf');
-   }
-
-  </style><link href="data:text/css," id="complete" rel="stylesheet" title="Complete specification"><link href="data:text/css,.impl%20%7B%20display:%20none;%20%7D%0Ahtml%20%7B%20border:%20solid%20yellow;%20%7D%20.domintro:before%20%7B%20display:%20none;%20%7D" id="author" rel="alternate stylesheet" title="Author documentation only"><link href="data:text/css,.impl%20%7B%20background:%20%23FFEEEE;%20%7D%20.domintro:before%20%7B%20background:%20%23FFEEEE;%20%7D" id="highlight" rel="alternate stylesheet" title="Highlight implementation requirements"><script>
+  </style><link href="http://www.w3.org/StyleSheets/TR/W3C-WD" rel="stylesheet" type="text/css"><meta content="noindex" name="robots"><script>
    function getCookie(name) {
      var params = location.search.substr(1).split("&");
      for (var index = 0; index < params.length; index++) {
@@ -365,7 +366,9 @@
    <h2 class="no-num no-toc" id="a-vocabulary-and-associated-apis-for-html-and-xhtml">A vocabulary and associated APIs for HTML and XHTML</h2>
    <h2 class="no-num no-toc" id="w3c-working-draft-11-october-2012">W3C Working Draft 11 October 2012</h2>
    </div>
-   <div class="prev_next">
+  
+
+  <div class="prev_next">
    <a href="urls.html">&#8592; 2.6 URLs</a> &#8211;
    <a href="index.html#contents">Table of contents</a> &#8211;
    <a href="namespaces.html">2.9 Namespaces &#8594;</a>
@@ -540,7 +543,7 @@
 
   <p class="note">The values Infinity and Not-a-Number (NaN) values
   throw an exception on setting, as defined in the Web IDL
-  specification. <a href="references.html#refsWEBIDL">[WEBIDL]</a></p>
+  specification. <a href="textFieldSelection.html#refsWEBIDL">[WEBIDL]</a></p>
 
   <p>If a reflecting IDL attribute has the type
   <code><a href="infrastructure.html#domtokenlist">DOMTokenList</a></code> or <code><a href="infrastructure.html#domsettabletokenlist">DOMSettableTokenList</a></code>, then
@@ -618,7 +621,7 @@
   returns an <code><a href="#htmlallcollection-0">HTMLAllCollection</a></code> object when there are
   multiple matching elements, and that its <code title="dom-HTMLAllCollection-item">item()</code> method can be used
   as a synonym for its <code title="dom-HTMLAllCollection-namedItem"><a href="#dom-htmlallcollection-nameditem">namedItem()</a></code> method.
-  It is intended only for the legacy <code title="dom-document-all"><a href="obsolete.html#dom-document-all">document.all</a></code> attribute.</p>
+  It is intended only for the legacy <code title="dom-document-all"><a href="textFieldSelection.html#dom-document-all">document.all</a></code> attribute.</p>
 
   <pre class="idl">interface <dfn id="htmlallcollection-0">HTMLAllCollection</dfn> : <a href="infrastructure.html#htmlcollection">HTMLCollection</a> {
   // inherits <span title="dom-HTMLCollection-length">length</span> and <span title="dom-HTMLCollection-item">item</span>()
@@ -647,9 +650,9 @@
    <dd>
     <p>Returns the item with <a href="infrastructure.html#concept-id" title="concept-id">ID</a> or name <var title="">name</var> from the collection.</p>
     <p>If there are multiple matching items, then an <code><a href="#htmlallcollection-0">HTMLAllCollection</a></code> object containing all those elements is returned.</p>
-    <p>Only <code><a href="the-a-element.html#the-a-element">a</a></code>, <code><a href="obsolete.html#the-applet-element">applet</a></code>, <code><a href="the-area-element.html#the-area-element">area</a></code>,
-    <code><a href="the-embed-element.html#the-embed-element">embed</a></code>, <code><a href="the-form-element.html#the-form-element">form</a></code>, <code><a href="obsolete.html#frame">frame</a></code>,
-    <code><a href="obsolete.html#frameset">frameset</a></code>, <code><a href="the-iframe-element.html#the-iframe-element">iframe</a></code>, <code><a href="the-img-element.html#the-img-element">img</a></code>, and
+    <p>Only <code><a href="the-a-element.html#the-a-element">a</a></code>, <code><a href="textFieldSelection.html#the-applet-element">applet</a></code>, <code><a href="the-area-element.html#the-area-element">area</a></code>,
+    <code><a href="the-embed-element.html#the-embed-element">embed</a></code>, <code><a href="the-form-element.html#the-form-element">form</a></code>, <code><a href="textFieldSelection.html#frame">frame</a></code>,
+    <code><a href="textFieldSelection.html#frameset">frameset</a></code>, <code><a href="the-iframe-element.html#the-iframe-element">iframe</a></code>, <code><a href="the-img-element.html#the-img-element">img</a></code>, and
     <code><a href="the-object-element.html#the-object-element">object</a></code> elements can have a name for the purpose of
     this method; their name is given by the value of their <code title="">name</code> attribute.</p>
    </dd>
@@ -677,9 +680,9 @@
     match the filter of the <code><a href="#htmlallcollection-0">HTMLAllCollection</a></code> object on
     which the method was invoked and that are either:</p>
 
-    <ul><li><code><a href="the-a-element.html#the-a-element">a</a></code>, <code><a href="obsolete.html#the-applet-element">applet</a></code>, <code><a href="the-area-element.html#the-area-element">area</a></code>,
-     <code><a href="the-embed-element.html#the-embed-element">embed</a></code>, <code><a href="the-form-element.html#the-form-element">form</a></code>, <code><a href="obsolete.html#frame">frame</a></code>,
-     <code><a href="obsolete.html#frameset">frameset</a></code>, <code><a href="the-iframe-element.html#the-iframe-element">iframe</a></code>, <code><a href="the-img-element.html#the-img-element">img</a></code>, or
+    <ul><li><code><a href="the-a-element.html#the-a-element">a</a></code>, <code><a href="textFieldSelection.html#the-applet-element">applet</a></code>, <code><a href="the-area-element.html#the-area-element">area</a></code>,
+     <code><a href="the-embed-element.html#the-embed-element">embed</a></code>, <code><a href="the-form-element.html#the-form-element">form</a></code>, <code><a href="textFieldSelection.html#frame">frame</a></code>,
+     <code><a href="textFieldSelection.html#frameset">frameset</a></code>, <code><a href="the-iframe-element.html#the-iframe-element">iframe</a></code>, <code><a href="the-img-element.html#the-img-element">img</a></code>, or
      <code><a href="the-object-element.html#the-object-element">object</a></code> elements with a <code title="">name</code>
      attribute equal to <var title="">name</var>, or,</li>
 
@@ -868,7 +871,7 @@ http://software.hixie.ch/utilities/js/live-dom-viewer/?%3C%21DOCTYPE%20html%3E..
    <dt><var title="">collection</var>[<var title="">name</var>]</dt>
    <dt><var title="">collection</var>(<var title="">name</var>)</dt>
    <dd>
-    <p>Returns the item with <a href="infrastructure.html#concept-id" title="concept-id">ID</a> or <code title="attr-option-name"><a href="obsolete.html#attr-option-name">name</a></code> <var title="">name</var> from the collection.</p>
+    <p>Returns the item with <a href="infrastructure.html#concept-id" title="concept-id">ID</a> or <code title="attr-option-name"><a href="textFieldSelection.html#attr-option-name">name</a></code> <var title="">name</var> from the collection.</p>
     <p>If there are multiple matching items, then a <code><a href="infrastructure.html#nodelist">NodeList</a></code> object containing all those elements is returned.</p>
    </dd>
 
@@ -928,25 +931,25 @@ http://software.hixie.ch/utilities/js/live-dom-viewer/?%3C%21DOCTYPE%20html%3E..
   remove children from them).</p>
 
   <p>The <a href="infrastructure.html#supported-property-names">supported property names</a> consist of the values
-  of all the <code title="attr-id"><a href="global-attributes.html#the-id-attribute">id</a></code> and <code title="attr-option-name"><a href="obsolete.html#attr-option-name">name</a></code> attributes of all the elements
+  of all the <code title="attr-id"><a href="global-attributes.html#the-id-attribute">id</a></code> and <code title="attr-option-name"><a href="textFieldSelection.html#attr-option-name">name</a></code> attributes of all the elements
   <a href="infrastructure.html#represented-by-the-collection">represented by the collection</a>.</p>
 
   <p>The <dfn id="dom-htmloptionscollection-nameditem" title="dom-HTMLOptionsCollection-namedItem"><code>namedItem(<var title="">name</var>)</code></dfn> method must act according to the
   following algorithm:</p>
 
   <ol><li>If, at the time the method is called, there is exactly one node
-   in the collection that has either an <code title="attr-id"><a href="global-attributes.html#the-id-attribute">id</a></code> attribute or a <code title="attr-option-name"><a href="obsolete.html#attr-option-name">name</a></code> attribute equal to <var title="">name</var>, then return that node and stop the
+   in the collection that has either an <code title="attr-id"><a href="global-attributes.html#the-id-attribute">id</a></code> attribute or a <code title="attr-option-name"><a href="textFieldSelection.html#attr-option-name">name</a></code> attribute equal to <var title="">name</var>, then return that node and stop the
    algorithm.</li>
 
    <li>Otherwise, if there are no nodes in the collection that have
-   either an <code title="attr-id"><a href="global-attributes.html#the-id-attribute">id</a></code> attribute or a <code title="attr-option-name"><a href="obsolete.html#attr-option-name">name</a></code> attribute equal to <var title="">name</var>, then return null and stop the algorithm.</li>
+   either an <code title="attr-id"><a href="global-attributes.html#the-id-attribute">id</a></code> attribute or a <code title="attr-option-name"><a href="textFieldSelection.html#attr-option-name">name</a></code> attribute equal to <var title="">name</var>, then return null and stop the algorithm.</li>
 
    <!-- IE returns an HTMLCollection instead; we may need to change to that for compat -->
    <li>Otherwise, create a new <code><a href="infrastructure.html#nodelist">NodeList</a></code> object
    representing a <a href="infrastructure.html#live">live</a> view of the
    <code><a href="#htmloptionscollection-0">HTMLOptionsCollection</a></code> object, further filtered so that
    the only nodes in the <code><a href="infrastructure.html#nodelist">NodeList</a></code> object are those that
-   have either an <code title="attr-id"><a href="global-attributes.html#the-id-attribute">id</a></code> attribute or a <code title="attr-option-name"><a href="obsolete.html#attr-option-name">name</a></code> attribute equal to <var title="">name</var>. The nodes in the <code><a href="infrastructure.html#nodelist">NodeList</a></code> object
+   have either an <code title="attr-id"><a href="global-attributes.html#the-id-attribute">id</a></code> attribute or a <code title="attr-option-name"><a href="textFieldSelection.html#attr-option-name">name</a></code> attribute equal to <var title="">name</var>. The nodes in the <code><a href="infrastructure.html#nodelist">NodeList</a></code> object
    must be sorted in <a href="infrastructure.html#tree-order">tree order</a>.</li>
 
    <li>Return that <code><a href="infrastructure.html#nodelist">NodeList</a></code> object.</li>
@@ -1144,7 +1147,7 @@ interface <dfn id="transferable">Transferable</dfn> { };</pre>
   <p>The following <code><a href="#transferable">Transferable</a></code> types exist:</p>
 
   <ul class="brief"><li><code>MessagePort</code>
-   </li><li><code><a href="infrastructure.html#arraybuffer">ArrayBuffer</a></code> <a href="references.html#refsTYPEDARRAY">[TYPEDARRAY]</a>
+   </li><li><code><a href="infrastructure.html#arraybuffer">ArrayBuffer</a></code> <a href="textFieldSelection.html#refsTYPEDARRAY">[TYPEDARRAY]</a>
   </li></ul><div class="impl">
 
   <h4 id="safe-passing-of-structured-data"><span class="secno">2.8.5 </span>Safe passing of structured data</h4>
@@ -1327,7 +1330,7 @@ interface <dfn id="transferable">Transferable</dfn> { };</pre>
 
   <p>DOM3 Core defines mechanisms for checking for interface support,
   and for obtaining implementations of interfaces, using <a href="http://www.w3.org/TR/DOM-Level-3-Core/core.html#DOMFeatures">feature
-  strings</a>. <a href="references.html#refsDOMCORE">[DOMCORE]</a></p>
+  strings</a>. <a href="textFieldSelection.html#refsDOMCORE">[DOMCORE]</a></p>
 
   <p>Authors are strongly discouraged from using these, as they are
   notoriously unreliable and imprecise. Authors are encouraged to rely
@@ -1356,7 +1359,7 @@ interface <dfn id="transferable">Transferable</dfn> { };</pre>
 
    <p>For example, the <code>document.location</code> attribute means
    that there is a strong reference from a <code><a href="dom.html#document">Document</a></code>
-   object to its <code><a href="history.html#location">Location</a></code> object. Similarly, there is
+   object to its <code><a href="textFieldSelection.html#location">Location</a></code> object. Similarly, there is
    always a strong reference from a <code><a href="dom.html#document">Document</a></code> to any
    descendant nodes, and from any node to its owner
    <code><a href="dom.html#document">Document</a></code>.</p>

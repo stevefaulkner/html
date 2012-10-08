@@ -1,5 +1,110 @@
 <!DOCTYPE html>
-<html lang="en-US-x-Hixie"><head><title>4.10.7.3 Common input element attributes &#8212; HTML5</title><style type="text/css">
+<html lang="en-US-x-Hixie"><head><meta charset="utf-8"><title>4.10.7.3 Common input element attributes &#8212; HTML5</title><style type="text/css">
+
+   .applies thead th > * { display: block; }
+   .applies thead code { display: block; }
+   .applies tbody th { white-space: nowrap; }
+   .applies td { text-align: center; }
+   .applies .yes { background: yellow; }
+
+   .matrix, .matrix td { border: hidden; text-align: right; }
+   .matrix { margin-left: 2em; }
+
+   .dice-example { border-collapse: collapse; border-style: hidden solid solid hidden; border-width: thin; margin-left: 3em; }
+   .dice-example caption { width: 30em; font-size: smaller; font-style: italic; padding: 0.75em 0; text-align: left; }
+   .dice-example td, .dice-example th { border: solid thin; width: 1.35em; height: 1.05em; text-align: center; padding: 0; }
+
+   td.eg { border-width: thin; text-align: center; }
+
+   #table-example-1 { border: solid thin; border-collapse: collapse; margin-left: 3em; }
+   #table-example-1 * { font-family: "Essays1743", serif; line-height: 1.01em; }
+   #table-example-1 caption { padding-bottom: 0.5em; }
+   #table-example-1 thead, #table-example-1 tbody { border: none; }
+   #table-example-1 th, #table-example-1 td { border: solid thin; }
+   #table-example-1 th { font-weight: normal; }
+   #table-example-1 td { border-style: none solid; vertical-align: top; }
+   #table-example-1 th { padding: 0.5em; vertical-align: middle; text-align: center; }
+   #table-example-1 tbody tr:first-child td { padding-top: 0.5em; }
+   #table-example-1 tbody tr:last-child td { padding-bottom: 1.5em; }
+   #table-example-1 tbody td:first-child { padding-left: 2.5em; padding-right: 0; width: 9em; }
+   #table-example-1 tbody td:first-child::after { content: leader(". "); }
+   #table-example-1 tbody td { padding-left: 2em; padding-right: 2em; }
+   #table-example-1 tbody td:first-child + td { width: 10em; }
+   #table-example-1 tbody td:first-child + td ~ td { width: 2.5em; }
+   #table-example-1 tbody td:first-child + td + td + td ~ td { width: 1.25em; }
+
+   .apple-table-examples { border: none; border-collapse: separate; border-spacing: 1.5em 0em; width: 40em; margin-left: 3em; }
+   .apple-table-examples * { font-family: "Times", serif; }
+   .apple-table-examples td, .apple-table-examples th { border: none; white-space: nowrap; padding-top: 0; padding-bottom: 0; }
+   .apple-table-examples tbody th:first-child { border-left: none; width: 100%; }
+   .apple-table-examples thead th:first-child ~ th { font-size: smaller; font-weight: bolder; border-bottom: solid 2px; text-align: center; }
+   .apple-table-examples tbody th::after, .apple-table-examples tfoot th::after { content: leader(". ") }
+   .apple-table-examples tbody th, .apple-table-examples tfoot th { font: inherit; text-align: left; }
+   .apple-table-examples td { text-align: right; vertical-align: top; }
+   .apple-table-examples.e1 tbody tr:last-child td { border-bottom: solid 1px; }
+   .apple-table-examples.e1 tbody + tbody tr:last-child td { border-bottom: double 3px; }
+   .apple-table-examples.e2 th[scope=row] { padding-left: 1em; }
+   .apple-table-examples sup { line-height: 0; }
+
+   .details-example img { vertical-align: top; }
+
+   #base64-table {
+     white-space: nowrap;
+     font-size: 0.6em;
+     column-width: 6em;
+     column-count: 5;
+     column-gap: 1em;
+     -moz-column-width: 6em;
+     -moz-column-count: 5;
+     -moz-column-gap: 1em;
+     -webkit-column-width: 6em;
+     -webkit-column-count: 5;
+     -webkit-column-gap: 1em;
+   }
+   #base64-table thead { display: none; }
+   #base64-table * { border: none; }
+   #base64-table tbody td:first-child:after { content: ':'; }
+   #base64-table tbody td:last-child { text-align: right; }
+
+   #named-character-references-table {
+     white-space: nowrap;
+     font-size: 0.6em;
+     column-width: 30em;
+     column-gap: 1em;
+     -moz-column-width: 30em;
+     -moz-column-gap: 1em;
+     -webkit-column-width: 30em;
+     -webkit-column-gap: 1em;
+   }
+   #named-character-references-table > table > tbody > tr > td:first-child + td,
+   #named-character-references-table > table > tbody > tr > td:last-child { text-align: center; }
+   #named-character-references-table > table > tbody > tr > td:last-child:hover > span { position: absolute; top: auto; left: auto; margin-left: 0.5em; line-height: 1.2; font-size: 5em; border: outset; padding: 0.25em 0.5em; background: white; width: 1.25em; height: auto; text-align: center; }
+   #named-character-references-table > table > tbody > tr#entity-CounterClockwiseContourIntegral > td:first-child { font-size: 0.5em; }
+
+   .glyph.control { color: red; }
+
+   @font-face {
+     font-family: 'Essays1743';
+     src: url('fonts/Essays1743.ttf');
+   }
+   @font-face {
+     font-family: 'Essays1743';
+     font-weight: bold;
+     src: url('fonts/Essays1743-Bold.ttf');
+   }
+   @font-face {
+     font-family: 'Essays1743';
+     font-style: italic;
+     src: url('fonts/Essays1743-Italic.ttf');
+   }
+   @font-face {
+     font-family: 'Essays1743';
+     font-style: italic;
+     font-weight: bold;
+     src: url('fonts/Essays1743-BoldItalic.ttf');
+   }
+
+  </style><link href="data:text/css," id="complete" rel="stylesheet" title="Complete specification"><link href="data:text/css,.impl%20%7B%20display:%20none;%20%7D%0Ahtml%20%7B%20border:%20solid%20yellow;%20%7D%20.domintro:before%20%7B%20display:%20none;%20%7D" id="author" rel="alternate stylesheet" title="Author documentation only"><link href="data:text/css,.impl%20%7B%20background:%20%23FFEEEE;%20%7D%20.domintro:before%20%7B%20background:%20%23FFEEEE;%20%7D" id="highlight" rel="alternate stylesheet" title="Highlight implementation requirements"><style type="text/css">
    pre { margin-left: 2em; white-space: pre-wrap; }
    h2 { margin: 3em 0 1em 0; }
    h3 { margin: 2.5em 0 1em 0; }
@@ -71,7 +176,7 @@
    h1 + h2, hr + h2.no-toc { page-break-before: auto; }
 
    p  > span:not([title=""]):not([class="XXX"]):not([class="impl"]):not([class="note"]),
-   li > span:not([title=""]):not([class="XXX"]):not([class="impl"]):not([class="note"]), { border-bottom: solid #9999CC; }
+   li > span:not([title=""]):not([class="XXX"]):not([class="impl"]):not([class="note"]) { border-bottom: solid #9999CC; }
 
    div.head { margin: 0 0 1em; padding: 1em 0 0 0; }
    div.head p { margin: 0; }
@@ -216,7 +321,8 @@
      display: block;
    }
    .stability input {
-     appearance: none; margin: 0; border: 0; padding: 0.25em 0.5em; background: transparent; color: black;
+     -moz-appearance: none; -webkit-appearance: none; margin: 0; 
+     border: 0; padding: 0.25em 0.5em; background: transparent; color: black;
      position: absolute; top: -0.5em; right: 0; font: 1.25em sans-serif; text-align: center;
    }
    .stability input:hover {
@@ -232,112 +338,7 @@
      color: white;
    }
 
-  </style><link href="http://www.w3.org/StyleSheets/TR/W3C-WD" rel="stylesheet" type="text/css"><meta content="noindex" name="robots"><style type="text/css">
-
-   .applies thead th > * { display: block; }
-   .applies thead code { display: block; }
-   .applies tbody th { whitespace: nowrap; }
-   .applies td { text-align: center; }
-   .applies .yes { background: yellow; }
-
-   .matrix, .matrix td { border: hidden; text-align: right; }
-   .matrix { margin-left: 2em; }
-
-   .dice-example { border-collapse: collapse; border-style: hidden solid solid hidden; border-width: thin; margin-left: 3em; }
-   .dice-example caption { width: 30em; font-size: smaller; font-style: italic; padding: 0.75em 0; text-align: left; }
-   .dice-example td, .dice-example th { border: solid thin; width: 1.35em; height: 1.05em; text-align: center; padding: 0; }
-
-   td.eg { border-width: thin; text-align: center; }
-
-   #table-example-1 { border: solid thin; border-collapse: collapse; margin-left: 3em; }
-   #table-example-1 * { font-family: "Essays1743", serif; line-height: 1.01em; }
-   #table-example-1 caption { padding-bottom: 0.5em; }
-   #table-example-1 thead, #table-example-1 tbody { border: none; }
-   #table-example-1 th, #table-example-1 td { border: solid thin; }
-   #table-example-1 th { font-weight: normal; }
-   #table-example-1 td { border-style: none solid; vertical-align: top; }
-   #table-example-1 th { padding: 0.5em; vertical-align: middle; text-align: center; }
-   #table-example-1 tbody tr:first-child td { padding-top: 0.5em; }
-   #table-example-1 tbody tr:last-child td { padding-bottom: 1.5em; }
-   #table-example-1 tbody td:first-child { padding-left: 2.5em; padding-right: 0; width: 9em; }
-   #table-example-1 tbody td:first-child::after { content: leader(". "); }
-   #table-example-1 tbody td { padding-left: 2em; padding-right: 2em; }
-   #table-example-1 tbody td:first-child + td { width: 10em; }
-   #table-example-1 tbody td:first-child + td ~ td { width: 2.5em; }
-   #table-example-1 tbody td:first-child + td + td + td ~ td { width: 1.25em; }
-
-   .apple-table-examples { border: none; border-collapse: separate; border-spacing: 1.5em 0em; width: 40em; margin-left: 3em; }
-   .apple-table-examples * { font-family: "Times", serif; }
-   .apple-table-examples td, .apple-table-examples th { border: none; white-space: nowrap; padding-top: 0; padding-bottom: 0; }
-   .apple-table-examples tbody th:first-child { border-left: none; width: 100%; }
-   .apple-table-examples thead th:first-child ~ th { font-size: smaller; font-weight: bolder; border-bottom: solid 2px; text-align: center; }
-   .apple-table-examples tbody th::after, .apple-table-examples tfoot th::after { content: leader(". ") }
-   .apple-table-examples tbody th, .apple-table-examples tfoot th { font: inherit; text-align: left; }
-   .apple-table-examples td { text-align: right; vertical-align: top; }
-   .apple-table-examples.e1 tbody tr:last-child td { border-bottom: solid 1px; }
-   .apple-table-examples.e1 tbody + tbody tr:last-child td { border-bottom: double 3px; }
-   .apple-table-examples.e2 th[scope=row] { padding-left: 1em; }
-   .apple-table-examples sup { line-height: 0; }
-
-   .details-example img { vertical-align: top; }
-
-   #base64-table {
-     white-space: nowrap;
-     font-size: 0.6em;
-     column-width: 6em;
-     column-count: 5;
-     column-gap: 1em;
-     -moz-column-width: 6em;
-     -moz-column-count: 5;
-     -moz-column-gap: 1em;
-     -webkit-column-width: 6em;
-     -webkit-column-count: 5;
-     -webkit-column-gap: 1em;
-   }
-   #base64-table thead { display: none; }
-   #base64-table * { border: none; }
-   #base64-table tbody td:first-child:after { content: ':'; }
-   #base64-table tbody td:last-child { text-align: right; }
-
-   #named-character-references-table {
-     white-space: nowrap;
-     font-size: 0.6em;
-     column-width: 30em;
-     column-gap: 1em;
-     -moz-column-width: 30em;
-     -moz-column-gap: 1em;
-     -webkit-column-width: 30em;
-     -webkit-column-gap: 1em;
-   }
-   #named-character-references-table > table > tbody > tr > td:first-child + td,
-   #named-character-references-table > table > tbody > tr > td:last-child { text-align: center; }
-   #named-character-references-table > table > tbody > tr > td:last-child:hover > span { position: absolute; top: auto; left: auto; margin-left: 0.5em; line-height: 1.2; font-size: 5em; border: outset; padding: 0.25em 0.5em; background: white; width: 1.25em; height: auto; text-align: center; }
-   #named-character-references-table > table > tbody > tr#entity-CounterClockwiseContourIntegral > td:first-child { font-size: 0.5em; }
-
-   .glyph.control { color: red; }
-
-   @font-face {
-     font-family: 'Essays1743';
-     src: url('fonts/Essays1743.ttf');
-   }
-   @font-face {
-     font-family: 'Essays1743';
-     font-weight: bold;
-     src: url('fonts/Essays1743-Bold.ttf');
-   }
-   @font-face {
-     font-family: 'Essays1743';
-     font-style: italic;
-     src: url('fonts/Essays1743-Italic.ttf');
-   }
-   @font-face {
-     font-family: 'Essays1743';
-     font-style: italic;
-     font-weight: bold;
-     src: url('fonts/Essays1743-BoldItalic.ttf');
-   }
-
-  </style><link href="data:text/css," id="complete" rel="stylesheet" title="Complete specification"><link href="data:text/css,.impl%20%7B%20display:%20none;%20%7D%0Ahtml%20%7B%20border:%20solid%20yellow;%20%7D%20.domintro:before%20%7B%20display:%20none;%20%7D" id="author" rel="alternate stylesheet" title="Author documentation only"><link href="data:text/css,.impl%20%7B%20background:%20%23FFEEEE;%20%7D%20.domintro:before%20%7B%20background:%20%23FFEEEE;%20%7D" id="highlight" rel="alternate stylesheet" title="Highlight implementation requirements"><script>
+  </style><link href="http://www.w3.org/StyleSheets/TR/W3C-WD" rel="stylesheet" type="text/css"><meta content="noindex" name="robots"><script>
    function getCookie(name) {
      var params = location.search.substr(1).split("&");
      for (var index = 0; index < params.length; index++) {
@@ -365,7 +366,9 @@
    <h2 class="no-num no-toc" id="a-vocabulary-and-associated-apis-for-html-and-xhtml">A vocabulary and associated APIs for HTML and XHTML</h2>
    <h2 class="no-num no-toc" id="w3c-working-draft-11-october-2012">W3C Working Draft 11 October 2012</h2>
    </div>
-   <div class="prev_next">
+  
+
+  <div class="prev_next">
    <a href="states-of-the-type-attribute.html">&#8592; 4.10.7.1 States of the type attribute</a> &#8211;
    <a href="index.html#contents">Table of contents</a> &#8211;
    <a href="common-input-element-apis.html">4.10.7.4 Common input element APIs &#8594;</a>
@@ -455,15 +458,15 @@
   values to the user.</p>
 
   <p>In addition, if the <a href="#resulting-autocompletion-state">resulting autocompletion state</a>
-  is <i title="">off</i>, <a href="history.html#history-autocomplete">values are
-  reset</a> when <a href="history.html#traverse-the-history" title="traverse the history">traversing the
+  is <i title="">off</i>, <a href="textFieldSelection.html#history-autocomplete">values are
+  reset</a> when <a href="textFieldSelection.html#traverse-the-history" title="traverse the history">traversing the
   history</a>.</p>
 
   <p>The autocompletion mechanism must be implemented by the user
   agent acting as if the user had modified the element's <a href="attributes-common-to-form-controls.html#concept-fe-value" title="concept-fe-value">value</a>, and must be done at a time
   where the element is <i title="concept-input-mutable"><a href="the-input-element.html#concept-input-mutable">mutable</a></i>
   (e.g. just after the element has been inserted into the document, or
-  when the user agent <a href="the-end.html#stop-parsing" title="stop parsing">stops
+  when the user agent <a href="textFieldSelection.html#stop-parsing" title="stop parsing">stops
   parsing</a>).</p>
 
   </div>
@@ -680,10 +683,17 @@
   <div class="impl">
 
   <p><strong>Constraint validation</strong>: If the <code title="attr-input-readonly"><a href="#attr-input-readonly">readonly</a></code> attribute is specified
-  on an <code><a href="the-input-element.html#the-input-element">input</a></code> element, the element is <a href="constraints.html#barred-from-constraint-validation">barred from
+  on an <code><a href="the-input-element.html#the-input-element">input</a></code> element, the element is <a href="textFieldSelection.html#barred-from-constraint-validation">barred from
   constraint validation</a>.</p>
 
   </div>
+
+  <p class="note">The difference between <code title="attr-fe-disabled"><a href="attributes-common-to-form-controls.html#attr-fe-disabled">disabled</a></code> and <code title="attr-input-readonly"><a href="#attr-input-readonly">readonly</a></code> is that read-only
+  controls are still focusable, so the user can still select the text
+  and interact with it, whereas disabled controls are entirely
+  non-interactive. (For this reason, only text controls can be made
+  read-only: it wouldn't make sense for checkboxes or buttons, for
+  instances.)</p>
 
   <div class="example">
 
@@ -692,26 +702,26 @@
    form, for consistency with the row representing a new product
    (where the identifier is not yet filled in).</p>
 
-   <pre>&lt;form action="products.cgi" method=post enctype="multipart/form-data"&gt;
+   <pre>&lt;form action="products.cgi" method="post" enctype="multipart/form-data"&gt;
  &lt;table&gt;
   &lt;tr&gt; &lt;th&gt; Product ID &lt;th&gt; Product name &lt;th&gt; Price &lt;th&gt; Action
   &lt;tr&gt;
-   &lt;td&gt; &lt;input readonly name="1.pid" value="H412"&gt;
-   &lt;td&gt; &lt;input required name="1.pname" value="Floor lamp Ulke"&gt;
-   &lt;td&gt; $&lt;input required type=number min=0 step=0.01 name="1.pprice" value="49.99"&gt;
-   &lt;td&gt; &lt;button formnovalidate name="action" value="delete:1"&gt;Delete&lt;/button&gt;
+   &lt;td&gt; &lt;input readonly="readonly" name="1.pid" value="H412"&gt;
+   &lt;td&gt; &lt;input required="required" name="1.pname" value="Floor lamp Ulke"&gt;
+   &lt;td&gt; $&lt;input required="required" type="number" min="0" step="0.01" name="1.pprice" value="49.99"&gt;
+   &lt;td&gt; &lt;button formnovalidate="formnovalidate" name="action" value="delete:1"&gt;Delete&lt;/button&gt;
   &lt;tr&gt;
-   &lt;td&gt; &lt;input readonly name="2.pid" value="FG28"&gt;
-   &lt;td&gt; &lt;input required name="2.pname" value="Table lamp Ulke"&gt;
-   &lt;td&gt; $&lt;input required type=number min=0 step=0.01 name="2.pprice" value="24.99"&gt;
-   &lt;td&gt; &lt;button formnovalidate name="action" value="delete:2"&gt;Delete&lt;/button&gt;
+   &lt;td&gt; &lt;input readonly="readonly" name="2.pid" value="FG28"&gt;
+   &lt;td&gt; &lt;input required="required" name="2.pname" value="Table lamp Ulke"&gt;
+   &lt;td&gt; $&lt;input required="required" type="number" min="0" step="0.01" name="2.pprice" value="24.99"&gt;
+   &lt;td&gt; &lt;button formnovalidate="formnovalidate" name="action" value="delete:2"&gt;Delete&lt;/button&gt;
   &lt;tr&gt;
-   &lt;td&gt; &lt;input required name="3.pid" value="" pattern="[A-Z0-9]+"&gt;
-   &lt;td&gt; &lt;input required name="3.pname" value=""&gt;
-   &lt;td&gt; $&lt;input required type=number min=0 step=0.01 name="3.pprice" value=""&gt;
-   &lt;td&gt; &lt;button formnovalidate name="action" value="delete:3"&gt;Delete&lt;/button&gt;
+   &lt;td&gt; &lt;input required="required" name="3.pid" value="" pattern="[A-Z0-9]+"&gt;
+   &lt;td&gt; &lt;input required="required" name="3.pname" value=""&gt;
+   &lt;td&gt; $&lt;input required="required" type="number" min="0" step="0.01" name="3.pprice" value=""&gt;
+   &lt;td&gt; &lt;button formnovalidate="formnovalidate" name="action" value="delete:3"&gt;Delete&lt;/button&gt;
  &lt;/table&gt;
- &lt;p&gt; &lt;button formnovalidate name="action" value="add"&gt;Add&lt;/button&gt; &lt;/p&gt;
+ &lt;p&gt; &lt;button formnovalidate="formnovalidate" name="action" value="add"&gt;Add&lt;/button&gt; &lt;/p&gt;
  &lt;p&gt; &lt;button name="action" value="update"&gt;Save&lt;/button&gt; &lt;/p&gt;
 &lt;/form&gt;</pre>
 
@@ -757,7 +767,7 @@
   the mode <a href="common-input-element-apis.html#dom-input-value-value" title="dom-input-value-value">value</a>, and the
   element is <i title="concept-input-mutable"><a href="the-input-element.html#concept-input-mutable">mutable</a></i>, and the
   element's <a href="attributes-common-to-form-controls.html#concept-fe-value" title="concept-fe-value">value</a> is the empty
-  string, then the element is <a href="constraints.html#suffering-from-being-missing">suffering from being
+  string, then the element is <a href="textFieldSelection.html#suffering-from-being-missing">suffering from being
   missing</a>.</p>
 
   </div>
@@ -875,7 +885,7 @@
   set, the control's <a href="attributes-common-to-form-controls.html#concept-fe-values" title="concept-fe-values">value<em>s</em></a>, are to be
   checked.</p>
 
-  <p>If specified, the attribute's value must match the JavaScript <i title="">Pattern</i> production. <a href="references.html#refsECMA262">[ECMA262]</a></p>
+  <p>If specified, the attribute's value must match the JavaScript <i title="">Pattern</i> production. <a href="textFieldSelection.html#refsECMA262">[ECMA262]</a></p>
 
   <div class="impl">
 
@@ -887,7 +897,7 @@
   regular expression is the element's <dfn id="compiled-pattern-regular-expression">compiled pattern regular
   expression</dfn>. If the element has no such attribute, or if the
   value doesn't compile successfully, then the element has no
-  <a href="#compiled-pattern-regular-expression">compiled pattern regular expression</a>. <a href="references.html#refsECMA262">[ECMA262]</a></p>
+  <a href="#compiled-pattern-regular-expression">compiled pattern regular expression</a>. <a href="textFieldSelection.html#refsECMA262">[ECMA262]</a></p>
 
   <p><strong>Constraint validation</strong>: If the element's <a href="attributes-common-to-form-controls.html#concept-fe-value" title="concept-fe-value">value</a> is not the empty string, and
   either the element's <code title="attr-input-multiple"><a href="#attr-input-multiple">multiple</a></code> attribute is not
@@ -896,7 +906,7 @@
   current state, and the element has a <a href="#compiled-pattern-regular-expression">compiled pattern regular
   expression</a> but that regular expression does not match the
   entirety of the element's <a href="attributes-common-to-form-controls.html#concept-fe-value" title="concept-fe-value">value</a>, then the element is
-  <a href="constraints.html#suffering-from-a-pattern-mismatch">suffering from a pattern mismatch</a>.</p>
+  <a href="textFieldSelection.html#suffering-from-a-pattern-mismatch">suffering from a pattern mismatch</a>.</p>
 
   <p><strong>Constraint validation</strong>: If the element's <a href="attributes-common-to-form-controls.html#concept-fe-value" title="concept-fe-value">value</a> is not the empty string, and
   the element's <code title="attr-input-multiple"><a href="#attr-input-multiple">multiple</a></code>
@@ -904,7 +914,7 @@
   element, and the element has a <a href="#compiled-pattern-regular-expression">compiled pattern regular
   expression</a> but that regular expression does not match the
   entirety of each of the element's <a href="attributes-common-to-form-controls.html#concept-fe-values" title="concept-fe-values">value<em>s</em></a>, then the element
-  is <a href="constraints.html#suffering-from-a-pattern-mismatch">suffering from a pattern mismatch</a>.</p>
+  is <a href="textFieldSelection.html#suffering-from-a-pattern-mismatch">suffering from a pattern mismatch</a>.</p>
 
   <p>The <a href="#compiled-pattern-regular-expression">compiled pattern regular expression</a>, when
   matched against a string, must have its start anchored to the start
@@ -977,7 +987,7 @@ You cannot submit this form when the field is incorrect.</samp></pre>
   applying the <a href="the-input-element.html#concept-input-value-string-number" title="concept-input-value-string-number">algorithm to convert a
   string to a number</a> to the string given by the element's <a href="attributes-common-to-form-controls.html#concept-fe-value" title="concept-fe-value">value</a> is a number, and the number
   obtained from that algorithm is less than the <a href="#attr-input-min" title="attr-input-min">minimum</a>, the element is
-  <a href="constraints.html#suffering-from-an-underflow">suffering from an underflow</a>.</p>
+  <a href="textFieldSelection.html#suffering-from-an-underflow">suffering from an underflow</a>.</p>
 
   <p>The <code title="attr-input-min"><a href="#attr-input-min">min</a></code> attribute also
   defines the <a href="#concept-input-min-zero" title="concept-input-min-zero">step
@@ -996,7 +1006,7 @@ You cannot submit this form when the field is incorrect.</samp></pre>
   applying the <a href="the-input-element.html#concept-input-value-string-number" title="concept-input-value-string-number">algorithm to convert a
   string to a number</a> to the string given by the element's <a href="attributes-common-to-form-controls.html#concept-fe-value" title="concept-fe-value">value</a> is a number, and the number
   obtained from that algorithm is more than the <a href="#attr-input-max" title="attr-input-max">maximum</a>, the element is
-  <a href="constraints.html#suffering-from-an-overflow">suffering from an overflow</a>.</p>
+  <a href="textFieldSelection.html#suffering-from-an-overflow">suffering from an overflow</a>.</p>
 
   </div>
 
@@ -1009,7 +1019,7 @@ You cannot submit this form when the field is incorrect.</samp></pre>
 
   <p class="note">If an element has a <a href="#attr-input-max" title="attr-input-max">maximum</a> that is less than its <a href="#attr-input-min" title="attr-input-min">minimum</a>, then so long as the element
   has a <a href="attributes-common-to-form-controls.html#concept-fe-value" title="concept-fe-value">value</a>, it will either be
-  <a href="constraints.html#suffering-from-an-underflow">suffering from an underflow</a> or <a href="constraints.html#suffering-from-an-overflow">suffering from an
+  <a href="textFieldSelection.html#suffering-from-an-underflow">suffering from an underflow</a> or <a href="textFieldSelection.html#suffering-from-an-overflow">suffering from an
   overflow</a>.</p>
 
   </div>
@@ -1031,7 +1041,7 @@ You cannot submit this form when the field is incorrect.</samp></pre>
    <p>The following number control limits input to whole numbers
    greater than zero:</p>
 
-   <pre>&lt;input name=quantity required type=number min=1 value=1&gt;</pre>
+   <pre>&lt;input name=quantity required="" type="number" min="1" value="1"&gt;</pre>
 
   </div>
 
@@ -1094,7 +1104,7 @@ You cannot submit this form when the field is incorrect.</samp></pre>
   string to a number</a> to the string given by the element's <a href="attributes-common-to-form-controls.html#concept-fe-value" title="concept-fe-value">value</a> is a number, and that
   number subtracted from the <a href="#concept-input-min-zero" title="concept-input-min-zero">step
   base</a> is not an integral multiple of the <a href="#concept-input-step" title="concept-input-step">allowed value step</a>, the element is
-  <a href="constraints.html#suffering-from-a-step-mismatch">suffering from a step mismatch</a>.</p>
+  <a href="textFieldSelection.html#suffering-from-a-step-mismatch">suffering from a step mismatch</a>.</p>
 
   </div>
 
@@ -1125,19 +1135,27 @@ You cannot submit this form when the field is incorrect.</samp></pre>
 
   <h6 id="the-placeholder-attribute"><span class="secno">4.10.7.3.12 </span>The <code title="attr-input-placeholder"><a href="#attr-input-placeholder">placeholder</a></code> attribute</h6>
 
-  <!-- similar text in the <textarea> section -->
+  <!-- substantially similar text in the <textarea> section -->
 
   <p>The <dfn id="attr-input-placeholder" title="attr-input-placeholder"><code>placeholder</code></dfn>
   attribute represents a <em>short</em> hint (a word or short phrase)
-  intended to aid the user with data entry. A hint could be a sample
-  value or a brief description of the expected format. The attribute,
-  if specified, must have a value that contains no "LF" (U+000A) or "CR" (U+000D) characters.</p>
-
-  <p class="note">For a longer hint or other advisory text, the <code title="attr-title"><a href="global-attributes.html#attr-title">title</a></code> attribute is more appropriate.</p>
+  intended to aid the user with data entry when the control has no
+  value. A hint could be a sample value or a brief description of the
+  expected format. The attribute, if specified, must have a value that
+  contains no "LF" (U+000A) or "CR" (U+000D)
+  characters.</p>
 
   <p>The <code title="attr-input-placeholder"><a href="#attr-input-placeholder">placeholder</a></code>
   attribute should not be used as an alternative to a
-  <code><a href="the-label-element.html#the-label-element">label</a></code>.</p>
+  <code><a href="the-label-element.html#the-label-element">label</a></code>. For a longer hint or other advisory text, the
+  <code title="attr-title"><a href="global-attributes.html#attr-title">title</a></code> attribute is more
+  appropriate.</p>
+
+  <p class="note">These mechanisms are very similar but subtly
+  different: the hint given by the control's <code><a href="the-label-element.html#the-label-element">label</a></code> is
+  shown at all times; the short hint given in the <code title="attr-input-placeholder"><a href="#attr-input-placeholder">placeholder</a></code> attribute is shown
+  before the user enters a value; and the hint in the <code title="attr-title"><a href="global-attributes.html#attr-title">title</a></code> attribute is shown when the user
+  requests further help.</p>
 
   <div class="impl">
 
