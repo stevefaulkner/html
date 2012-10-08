@@ -21,7 +21,7 @@ function pubrules () {
     
     jsdom.env(
         pth.join(hbDir, file)
-    ,   [pth.join(hbDir, "scripts/jquery.min.js")]
+    ,   [pth.join(rootDir, "scripts/jquery.min.js")]
     ,   function (err, window) {
             if (err) return console.log(err);
             var $ = window.$;
@@ -51,3 +51,7 @@ function pubrules () {
     );
 }
 
+files = fs.readdirSync(hbDir);
+total = files.length;
+console.log("Checking " + total + " files");
+pubrules();
