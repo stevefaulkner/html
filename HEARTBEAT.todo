@@ -1,5 +1,8 @@
 
 Target date: 20121011
+    http://www.w3.org/TR/2012/WD-2dcontext-20121011/
+    http://www.w3.org/TR/2012/WD-html-alt-techniques-20121005/
+    http://www.w3.org/TR/2012/WD-html-aapi-20121005/
 
 MASTER PLAN:
     - HTML core
@@ -7,19 +10,13 @@ MASTER PLAN:
         - linkcheck
         - pubrules
         - TR install (check date)
-    - Canvas (make 2dcontext)
+    ✓ Canvas (make dcontext)
         ✓ generate using own tools
         ✓ linkcheck
-        - pubrules
-        - TR install (check date)
+        ✓ pubrules
+        ✓ TR install
     - Author
         - Mike's got that one covered for generation
-        - linkcheck
-        - pubrules
-        - TR install (check date)
-    - +RDFa
-        - draft in CVS/rdfa
-        - ReSpec, has a draft
         - linkcheck
         - pubrules
         - TR install (check date)
@@ -29,29 +26,27 @@ MASTER PLAN:
         - linkcheck
         - pubrules
         - TR install (check date)
-    - Polyglot
-        - draft in CVS/html-xhtml-authoring-guide
-        - not sure what to do in this, ask Eliot
-        - linkcheck
-        - pubrules
-        - TR install (check date)
-    - Alt Techniques
-        - draft in CVS/alt-techniques
-        - ReSpec, has a draft
-        - linkcheck
-        - pubrules
-        - TR install (check date)
-    - api-map
-        - in hg, http://dvcs.w3.org/hg/html-api-map/
-        - draft at http://dvcs.w3.org/hg/html-api-map/raw-file/tip/WD/index.html
-        - linkcheck
-        - pubrules
-        - TR install (check date)
-    - Diff
-        - draft in CVS/html4-differences
-        - linkcheck
-        - pubrules
-        - TR install (check date)
+    ✓ Polyglot
+        ✓ draft in CVS/html-xhtml-authoring-guide
+        ✓ not sure what to do in this, ask Eliot
+        ✓ linkcheck
+        ✓ pubrules
+        ✓ TR install (check date)
+    ✓ Alt Techniques
+        ✓ ReSpec, has a draft in CVS/alt-techniques
+        ✓ linkcheck
+        ✓ pubrules
+        ✓ TR install
+    ✓ aapi-map
+        ✓ draft at http://dvcs.w3.org/hg/html-api-map/raw-file/tip/WD/index.html
+        ✓ linkcheck
+        ✓ pubrules
+        ✓ TR install (check date)
+    ✓ Diff
+        ✓ draft in CVS/html4-differences
+        ✓ linkcheck
+        ✓ pubrules
+        ✓ TR install (check date)
     - Markup
         - linkcheck
         - pubrules
@@ -102,6 +97,8 @@ PUBLISHING:
     - do author spec (this seems to be problematic)
         - support it for all tools!
     - stage for publication
+    - send authors diffs of their snapshots when changes were made
+    - cherry pick required changes back to master
     
 ERRORS:
 
