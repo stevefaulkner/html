@@ -50,10 +50,14 @@ exec("make " + conf.make, { cwd: rootDir }, function (err, stdout, stderr) {
         // in every single file in there, replace spec.html with index.html
         var files = fs.readdirSync(hbDir)
         ,   entContent = fs.readFileSync(pth.join(rootDir, "boilerplate/entities-dtd.url"))
-        ,   notFoundDir = pth.join(hbDir, "404")
+        ,   notFoundDir = pth.join(rootDir, "404/")
+        ,   files404 = fs.readdirSync(notFoundDir)
         ;
-        fs.mkdirSync(notFoundDir);
-        wrench.copyDirSyncRecursive(pth.join(rootDir, "404/"), notFoundDir);
+        for (var i = 0, n = files404.length; i < n; i++) {
+            var f4 = files404[i];
+            fs.copy(pth.join(notFoundDir, f4), pth.join(hbDir, f4));
+        }
+
         for (var i = 0, n = files.length; i < n; i++) {
             var file = pth.join(hbDir, files[i]);
             if (!file.match(/\.html$/)) continue;
