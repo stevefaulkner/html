@@ -6,9 +6,9 @@ Target date: 20121011
 
 MASTER PLAN:
     - HTML core
-        - generate using own tools
-        - linkcheck
-        - pubrules
+        ✓ generate using own tools
+        ✓ linkcheck
+        ✓ pubrules
         - TR install (check date)
     ✓ Canvas (make dcontext)
         ✓ generate using own tools
@@ -21,9 +21,8 @@ MASTER PLAN:
         - pubrules
         - TR install (check date)
     - Microdata
-        - generate using own tools
-        - not sure how that works
-        - linkcheck
+        ✓ generate using own tools
+        ✓ linkcheck
         - pubrules
         - TR install (check date)
     ✓ Polyglot
