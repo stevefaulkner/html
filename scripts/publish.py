@@ -6,13 +6,12 @@ from anolislib import generator, utils
 if len(sys.argv)>1 and sys.argv[1] == 'html':
   select = 'w3c-html'
   spec = 'html'
-elif len(sys.argv)>1 and sys.argv[1] == 'author':
-  select = 'dev-html'
-  spec = 'author'
+elif len(sys.argv)>1 and sys.argv[1] == 'microdata':
+  select = spec = 'microdata'
 elif len(sys.argv)>1 and sys.argv[1] == '2dcontext':
   spec = select = '2dcontext'
 else:
-  sys.stderr.write("Usage: python %s [html|2dcontext|author]\n" % sys.argv[0])
+  sys.stderr.write("Usage: python %s [html|2dcontext|microdata]\n" % sys.argv[0])
   exit()
 
 print 'parsing'
@@ -69,7 +68,7 @@ try:
 except:
   pass
 
-if spec == 'html' or spec == 'author':
+if spec == 'html':
   from glob import glob
   for name in glob('output/%s/*.html' % spec):
     os.remove(name)

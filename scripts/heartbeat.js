@@ -19,6 +19,11 @@ var target = process.argv[2] || "html"
         ,   make:       "2dcontext"
         ,   makeDir:    "output/2dcontext/"
         }
+    ,   microdata:    {
+            outDir:     "heartbeat-md"
+        ,   make:       "microdata"
+        ,   makeDir:    "output/microdata/"
+        }
     }
 ,   conf = fullConf[target]
 ,   rootDir = pth.join(__dirname, "..")
@@ -78,7 +83,7 @@ exec("make " + conf.make, { cwd: rootDir }, function (err, stdout, stderr) {
             fs.writeFileSync(file, content, "utf-8");
         }
     }
-    else if (target === "2d") {
+    else if (target === "2d" || target === "microdata") {
         var file = pth.join(hbDir, "Overview.html")
         ,   content = fs.readFileSync(file, "utf-8");
         content = content

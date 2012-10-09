@@ -7,6 +7,8 @@ def main(stdin, stdout, select='w3c-html'):
   # select document
   if select == '2dcontext':
     header = open("boilerplate/header-w3c-html-2dcontext").read()
+  elif select == 'microdata':
+    header = open("boilerplate/header-w3c-html-microdata").read()
   else:
     header = open("boilerplate/header-w3c-html-core").read()
 
@@ -59,8 +61,8 @@ def main(stdin, stdout, select='w3c-html'):
 if __name__ == '__main__':
   if len(sys.argv)>1 and sys.argv[1] == '2dcontext':
     select = '2dcontext'
-  elif len(sys.argv)>1 and sys.argv[1] == 'author':
-    select = 'dev-html'
+  elif len(sys.argv)>1 and sys.argv[1] == 'microdata':
+    select = 'microdata'
   else:
     select = 'w3c-html'
 
