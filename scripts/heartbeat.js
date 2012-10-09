@@ -94,9 +94,9 @@ exec("make " + conf.make, { cwd: rootDir }, function (err, stdout, stderr) {
     var imgDir = pth.join(hbDir, "images")
     ,   fontDir = pth.join(hbDir, "fonts")
     ;
-    fs.mkdirSync(imgDir);
+    if (target !== "microdata") fs.mkdirSync(imgDir);
     fs.mkdirSync(fontDir);
-    wrench.copyDirSyncRecursive(pth.join(rootDir, "images/"), imgDir);
+    if (target !== "microdata") wrench.copyDirSyncRecursive(pth.join(rootDir, "images/"), imgDir);
     wrench.copyDirSyncRecursive(pth.join(rootDir, "fonts/"), fontDir);
     // copy entities stuff
     if (target === "html") {

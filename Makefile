@@ -10,7 +10,7 @@ output/html/single-page.html: source
 	python scripts/publish.py html
 
 output/2dcontext/single-page.html: source
-    python scripts/publish.py 2dcontext
+	python scripts/publish.py 2dcontext
 
 output/microdata/single-page.html: source
-    python scripts/publish.py microdata
+	python scripts/publish.py microdata
