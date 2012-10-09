@@ -424,7 +424,7 @@
     interfaces.</p>
     </div>
    </dd>
-  </dl><!--TOPIC:HTML--><p>The <code><a href="#the-embed-element">embed</a></code> element <a href="textFieldSelection.html#represents">represents</a> an
+  </dl><!--TOPIC:HTML--><p>The <code><a href="#the-embed-element">embed</a></code> element <a href="rendering.html#represents">represents</a> an
   integration point for an external (typically non-HTML) application
   or interactive content.</p>
 
@@ -456,13 +456,13 @@
   <p>An <code><a href="#the-embed-element">embed</a></code> element is said to be <dfn id="concept-embed-active" title="concept-embed-active">potentially active</dfn> when the
   following conditions are all met simultaneously:</p>
 
-  <ul class="brief"><li>The element is <a href="infrastructure.html#in-a-document" title="in a document">in a <code>Document</code></a> or was <a href="infrastructure.html#in-a-document" title="in a document">in a <code>Document</code></a> the last time the <a href="textFieldSelection.html#event-loop">event loop</a> reached step 1.</li>
-   <li>The element's <code><a href="dom.html#document">Document</a></code> is <a href="textFieldSelection.html#fully-active">fully active</a>.</li>
+  <ul class="brief"><li>The element is <a href="infrastructure.html#in-a-document" title="in a document">in a <code>Document</code></a> or was <a href="infrastructure.html#in-a-document" title="in a document">in a <code>Document</code></a> the last time the <a href="webappapis.html#event-loop">event loop</a> reached step 1.</li>
+   <li>The element's <code><a href="dom.html#document">Document</a></code> is <a href="browsers.html#fully-active">fully active</a>.</li>
    <li>The element has either a <code title="attr-embed-src"><a href="#attr-embed-src">src</a></code> attribute set or a <code title="attr-embed-type"><a href="#attr-embed-type">type</a></code> attribute set (or both).</li>
    <li>The element's <code title="attr-embed-src"><a href="#attr-embed-src">src</a></code> attribute is either absent or its value is not the empty string.</li>
    <li>The element is not a descendant of a <a href="media-elements.html#media-element">media element</a>.</li>
    <li>The element is not a descendant of an <code><a href="the-object-element.html#the-object-element">object</a></code> element that is not showing its <a href="content-models.html#fallback-content">fallback content</a>.</li>
-   <li>The element is <a href="textFieldSelection.html#being-rendered">being rendered</a>, or was <a href="textFieldSelection.html#being-rendered">being rendered</a> the last time the <a href="textFieldSelection.html#event-loop">event loop</a> reached step 1.</li>
+   <li>The element is <a href="rendering.html#being-rendered">being rendered</a>, or was <a href="rendering.html#being-rendered">being rendered</a> the last time the <a href="webappapis.html#event-loop">event loop</a> reached step 1.</li>
   </ul><p>Whenever an <code><a href="#the-embed-element">embed</a></code> element that was not <a href="#concept-embed-active" title="concept-embed-active">potentially active</a> becomes <a href="#concept-embed-active" title="concept-embed-active">potentially active</a>, and whenever
   a <a href="#concept-embed-active" title="concept-embed-active">potentially active</a>
   <code><a href="#the-embed-element">embed</a></code> element that is remaining <a href="#concept-embed-active" title="concept-embed-active">potentially active</a> and has its
@@ -480,10 +480,10 @@
     the value of the element's <code title="attr-embed-src"><a href="#attr-embed-src">src</a></code>
     attribute, relative to the element. If that is successful, the
     user agent should <a href="urls.html#fetch">fetch</a><!--FETCH--> the resulting
-    <a href="urls.html#absolute-url">absolute URL</a>, from the element's <a href="textFieldSelection.html#browsing-context-scope-origin">browsing
+    <a href="urls.html#absolute-url">absolute URL</a>, from the element's <a href="browsers.html#browsing-context-scope-origin">browsing
     context scope origin</a> if it has one<!-- potentially
-    http-origin privacy sensitive -->. The <a href="textFieldSelection.html#concept-task" title="concept-task">task</a> that is <a href="textFieldSelection.html#queue-a-task" title="queue a
-    task">queued</a> by the <a href="textFieldSelection.html#networking-task-source">networking task source</a>
+    http-origin privacy sensitive -->. The <a href="webappapis.html#concept-task" title="concept-task">task</a> that is <a href="webappapis.html#queue-a-task" title="queue a
+    task">queued</a> by the <a href="webappapis.html#networking-task-source">networking task source</a>
     once the resource has been <a href="urls.html#fetch" title="fetch">fetched</a> must
     find and instantiate an appropriate <a href="infrastructure.html#plugin">plugin</a> based on
     the <a href="#concept-embed-type" title="concept-embed-type">content's type</a>, and
@@ -491,7 +491,7 @@
     replacing any previously instantiated plugin for the element.</p>
     <!-- Note that this doesn't happen when the base URL changes. -->
 
-    <p>Fetching the resource must <a href="textFieldSelection.html#delay-the-load-event">delay the load event</a> of
+    <p>Fetching the resource must <a href="the-end.html#delay-the-load-event">delay the load event</a> of
     the element's document.</p>
     <!-- if we add load/error events, then replace the previous
     paragraph with the text one: -->
@@ -517,9 +517,9 @@
   be unloaded.</p>
 
   <p id="sandboxPluginEmbed">When a <a href="infrastructure.html#plugin">plugin</a> is to be
-  instantiated but it cannot be <a href="infrastructure.html#concept-plugin-secure" title="concept-plugin-secure">secured</a> and the <a href="textFieldSelection.html#sandboxed-plugins-browsing-context-flag">sandboxed
+  instantiated but it cannot be <a href="infrastructure.html#concept-plugin-secure" title="concept-plugin-secure">secured</a> and the <a href="browsers.html#sandboxed-plugins-browsing-context-flag">sandboxed
   plugins browsing context flag</a> is set on the
-  <code><a href="#the-embed-element">embed</a></code> element's <code><a href="dom.html#document">Document</a></code>'s <a href="textFieldSelection.html#active-sandboxing-flag-set">active
+  <code><a href="#the-embed-element">embed</a></code> element's <code><a href="dom.html#document">Document</a></code>'s <a href="browsers.html#active-sandboxing-flag-set">active
   sandboxing flag set</a>, then the user agent must not
   instantiate the <a href="infrastructure.html#plugin">plugin</a>, and must instead render the
   <code><a href="#the-embed-element">embed</a></code> element in a manner that conveys that the
@@ -590,7 +590,7 @@
 
   </div>
 
-  <p>Any namespace-less attribute other than <code title="attr-embed-name"><a href="textFieldSelection.html#attr-embed-name">name</a></code>, <code title="attr-embed-align"><a href="textFieldSelection.html#attr-embed-align">align</a></code>, <code title="attr-embed-hspace"><a href="textFieldSelection.html#attr-embed-hspace">hspace</a></code>, and <code title="attr-embed-vspace"><a href="textFieldSelection.html#attr-embed-vspace">vspace</a></code> <!-- when editing, see also
+  <p>Any namespace-less attribute other than <code title="attr-embed-name"><a href="obsolete.html#attr-embed-name">name</a></code>, <code title="attr-embed-align"><a href="obsolete.html#attr-embed-align">align</a></code>, <code title="attr-embed-hspace"><a href="obsolete.html#attr-embed-hspace">hspace</a></code>, and <code title="attr-embed-vspace"><a href="obsolete.html#attr-embed-vspace">vspace</a></code> <!-- when editing, see also
   note below --> may be specified on the <code><a href="#the-embed-element">embed</a></code> element,
   so long as its name is <a href="infrastructure.html#xml-compatible">XML-compatible</a> and contains no
   characters in the range U+0041 to U+005A (LATIN CAPITAL LETTER A to

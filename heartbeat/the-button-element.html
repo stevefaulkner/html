@@ -414,16 +414,16 @@
            attribute DOMString <a href="#dom-button-type" title="dom-button-type">type</a>;
            attribute DOMString <a href="#dom-button-value" title="dom-button-value">value</a>;
 
-  readonly attribute boolean <a href="textFieldSelection.html#dom-cva-willvalidate" title="dom-cva-willValidate">willValidate</a>;
-  readonly attribute <a href="textFieldSelection.html#validitystate">ValidityState</a> <a href="textFieldSelection.html#dom-cva-validity" title="dom-cva-validity">validity</a>;
-  readonly attribute DOMString <a href="textFieldSelection.html#dom-cva-validationmessage" title="dom-cva-validationMessage">validationMessage</a>;
-  boolean <a href="textFieldSelection.html#dom-cva-checkvalidity" title="dom-cva-checkValidity">checkValidity</a>();
-  void <a href="textFieldSelection.html#dom-cva-setcustomvalidity" title="dom-cva-setCustomValidity">setCustomValidity</a>(DOMString error);
+  readonly attribute boolean <a href="constraints.html#dom-cva-willvalidate" title="dom-cva-willValidate">willValidate</a>;
+  readonly attribute <a href="constraints.html#validitystate">ValidityState</a> <a href="constraints.html#dom-cva-validity" title="dom-cva-validity">validity</a>;
+  readonly attribute DOMString <a href="constraints.html#dom-cva-validationmessage" title="dom-cva-validationMessage">validationMessage</a>;
+  boolean <a href="constraints.html#dom-cva-checkvalidity" title="dom-cva-checkValidity">checkValidity</a>();
+  void <a href="constraints.html#dom-cva-setcustomvalidity" title="dom-cva-setCustomValidity">setCustomValidity</a>(DOMString error);
 
   readonly attribute <a href="infrastructure.html#nodelist">NodeList</a> <a href="the-label-element.html#dom-lfe-labels" title="dom-lfe-labels">labels</a>;
 };</pre>
    </dd>
-  </dl><!--TOPIC:HTML--><p>The <code><a href="#the-button-element">button</a></code> element <a href="textFieldSelection.html#represents">represents</a> a button.</p>
+  </dl><!--TOPIC:HTML--><p>The <code><a href="#the-button-element">button</a></code> element <a href="rendering.html#represents">represents</a> a button.</p>
 
   <p>The element is a <a href="forms.html#concept-button" title="concept-button">button</a>.</p>
 
@@ -457,7 +457,7 @@
 
   <p><strong>Constraint validation</strong>: If the <code title="attr-button-type"><a href="#attr-button-type">type</a></code> attribute is in the <a href="#attr-button-type-reset-state" title="attr-button-type-reset-state">Reset Button</a> state or
   the <a href="#attr-button-type-button-state" title="attr-button-type-button-state">Button</a> state,
-  the element is <a href="textFieldSelection.html#barred-from-constraint-validation">barred from constraint validation</a>.</p>
+  the element is <a href="constraints.html#barred-from-constraint-validation">barred from constraint validation</a>.</p>
 
   <p>When a <code><a href="#the-button-element">button</a></code> element is not <a href="attributes-common-to-form-controls.html#concept-fe-disabled" title="concept-fe-disabled">disabled</a>, its <a href="content-models.html#activation-behavior">activation
   behavior</a> element is to run the steps defined in the following
@@ -466,13 +466,13 @@
   <dl><dt> <dfn id="attr-button-type-submit-state" title="attr-button-type-submit-state">Submit Button</dfn> </dt>
 
    <dd><p>If the element has a <a href="association-of-controls-and-forms.html#form-owner">form owner</a>, the element
-   must <a href="textFieldSelection.html#concept-form-submit" title="concept-form-submit">submit</a> the <a href="association-of-controls-and-forms.html#form-owner">form
+   must <a href="constraints.html#concept-form-submit" title="concept-form-submit">submit</a> the <a href="association-of-controls-and-forms.html#form-owner">form
    owner</a> from the <code><a href="#the-button-element">button</a></code> element.</p></dd>
 
    <dt> <dfn id="attr-button-type-reset-state" title="attr-button-type-reset-state">Reset Button</dfn> </dt>
 
    <dd><p>If the element has a <a href="association-of-controls-and-forms.html#form-owner">form owner</a>, the element
-   must <a href="textFieldSelection.html#concept-form-reset" title="concept-form-reset">reset</a> the <a href="association-of-controls-and-forms.html#form-owner">form
+   must <a href="constraints.html#concept-form-reset" title="concept-form-reset">reset</a> the <a href="association-of-controls-and-forms.html#form-owner">form
    owner</a>.</p></dd>
 
    <dt> <dfn id="attr-button-type-button-state" title="attr-button-type-button-state">Button</dfn>
@@ -519,9 +519,9 @@
   attribute must <a href="common-dom-interfaces.html#reflect">reflect</a> the content attribute of the
   same name, <a href="common-dom-interfaces.html#limited-to-only-known-values">limited to only known values</a>.</p>
 
-  <p>The <code title="dom-cva-willValidate"><a href="textFieldSelection.html#dom-cva-willvalidate">willValidate</a></code>, <code title="dom-cva-validity"><a href="textFieldSelection.html#dom-cva-validity">validity</a></code>, and <code title="dom-cva-validationMessage"><a href="textFieldSelection.html#dom-cva-validationmessage">validationMessage</a></code> IDL
-  attributes, and the <code title="dom-cva-checkValidity"><a href="textFieldSelection.html#dom-cva-checkvalidity">checkValidity()</a></code> and <code title="dom-cva-setCustomValidity"><a href="textFieldSelection.html#dom-cva-setcustomvalidity">setCustomValidity()</a></code>
-  methods, are part of the <a href="textFieldSelection.html#the-constraint-validation-api">constraint validation API</a>. The
+  <p>The <code title="dom-cva-willValidate"><a href="constraints.html#dom-cva-willvalidate">willValidate</a></code>, <code title="dom-cva-validity"><a href="constraints.html#dom-cva-validity">validity</a></code>, and <code title="dom-cva-validationMessage"><a href="constraints.html#dom-cva-validationmessage">validationMessage</a></code> IDL
+  attributes, and the <code title="dom-cva-checkValidity"><a href="constraints.html#dom-cva-checkvalidity">checkValidity()</a></code> and <code title="dom-cva-setCustomValidity"><a href="constraints.html#dom-cva-setcustomvalidity">setCustomValidity()</a></code>
+  methods, are part of the <a href="constraints.html#the-constraint-validation-api">constraint validation API</a>. The
   <code title="dom-lfe-labels"><a href="the-label-element.html#dom-lfe-labels">labels</a></code> IDL attribute provides a
   list of the element's <code><a href="the-label-element.html#the-label-element">label</a></code>s. The <code title="dom-fe-autofocus"><a href="attributes-common-to-form-controls.html#dom-fe-autofocus">autofocus</a></code>, <code title="dom-fe-disabled"><a href="attributes-common-to-form-controls.html#dom-fe-disabled">disabled</a></code>, <code title="dom-fae-form"><a href="association-of-controls-and-forms.html#dom-fae-form">form</a></code>, and <code title="dom-fe-name"><a href="attributes-common-to-form-controls.html#dom-fe-name">name</a></code> IDL attributes are part of the
   element's forms API.</p>

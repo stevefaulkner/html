@@ -417,7 +417,7 @@
   document">inserted into a <code>Document</code></a>, then the
   user agent must <a href="#reset-the-form-owner">reset the form owner</a> of that
   <a href="forms.html#form-associated-element">form-associated element</a>. <span class="note">The
-  <a href="textFieldSelection.html#html-parser">HTML parser</a> overrides this requirement when inserting
+  <a href="parsing.html#html-parser">HTML parser</a> overrides this requirement when inserting
   form controls.</span></p>
 
   <p>When an element is <a href="infrastructure.html#remove-an-element-from-a-document" title="remove an element from a
@@ -501,7 +501,7 @@
    outer form "a".</p>
 
    <p>This happens as follows: First, the "e" node gets associated
-   with "c" in the <a href="textFieldSelection.html#html-parser">HTML parser</a>. Then, the <code title="dom-innerHTML"><a href="infrastructure.html#dom-innerhtml">innerHTML</a></code> algorithm moves the nodes
+   with "c" in the <a href="parsing.html#html-parser">HTML parser</a>. Then, the <code title="dom-innerHTML"><a href="infrastructure.html#dom-innerhtml">innerHTML</a></code> algorithm moves the nodes
    from the temporary document to the "b" element. At this point, the
    nodes see their ancestor chain change, and thus all the "magic"
    associations done by the parser are reset to normal ancestor

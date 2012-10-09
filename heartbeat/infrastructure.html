@@ -391,7 +391,7 @@
   properties</dfn> respectively.</p>
 
   <p>Generally, when the specification states that a feature applies
-  to <a href="textFieldSelection.html#syntax">the HTML syntax</a> or <a href="textFieldSelection.html#the-xhtml-syntax">the XHTML syntax</a>, it
+  to <a href="syntax.html#syntax">the HTML syntax</a> or <a href="the-xhtml-syntax.html#the-xhtml-syntax">the XHTML syntax</a>, it
   also includes the other. When a feature specifically only applies to
   one of the two languages, it is called out by explicitly stating
   that it does not apply to the other format, as in "for HTML,
@@ -402,19 +402,19 @@
   long essays or reports with rich multimedia, as well as to
   fully-fledged interactive applications. The term is used to refer
   both to <code><a href="dom.html#document">Document</a></code> objects and their descendant DOM
-  trees, and to serialized byte streams using the <a href="textFieldSelection.html#syntax" title="the
-  HTML syntax">HTML syntax</a> or <a href="textFieldSelection.html#the-xhtml-syntax" title="the XHTML
+  trees, and to serialized byte streams using the <a href="syntax.html#syntax" title="the
+  HTML syntax">HTML syntax</a> or <a href="the-xhtml-syntax.html#the-xhtml-syntax" title="the XHTML
   syntax">XHTML syntax</a>, depending on context.</p>
 
   <p>In the context of the DOM structures, the terms <a href="#html-documents" title="HTML
   documents">HTML document</a> and <a href="#xml-documents" title="XML documents">XML
   document</a> are used as defined in the DOM Core specification,
   and refer specifically to two different modes that
-  <code><a href="dom.html#document">Document</a></code> objects can find themselves in. <a href="textFieldSelection.html#refsDOMCORE">[DOMCORE]</a> (Such uses are always hyperlinked
+  <code><a href="dom.html#document">Document</a></code> objects can find themselves in. <a href="references.html#refsDOMCORE">[DOMCORE]</a> (Such uses are always hyperlinked
   to their definition.)</p>
 
   <p>In the context of byte streams, the term HTML document refers to
-  resources labeled as <code><a href="textFieldSelection.html#text/html">text/html</a></code>, and the term XML
+  resources labeled as <code><a href="iana.html#text/html">text/html</a></code>, and the term XML
   document refers to resources labeled with an <a href="#xml-mime-type">XML MIME
   type</a>.</p>
 
@@ -467,25 +467,25 @@
 
   <p>What some specifications, in particular the HTTP and URI
   specifications, refer to as a <i>representation</i> is referred to
-  in this specification as a <dfn title="">resource</dfn>. <a href="textFieldSelection.html#refsHTTP">[HTTP]</a> <a href="textFieldSelection.html#refsRFC3986">[RFC3986]</a></p>
+  in this specification as a <dfn title="">resource</dfn>. <a href="references.html#refsHTTP">[HTTP]</a> <a href="references.html#refsRFC3986">[RFC3986]</a></p>
 
   <p>The term <dfn id="mime-type">MIME type</dfn> is used to refer to what is
   sometimes called an <i>Internet media type</i> in protocol
   literature. The term <i>media type</i> in this specification is used
   to refer to the type of media intended for presentation, as used by
-  the CSS specifications. <a href="textFieldSelection.html#refsRFC2046">[RFC2046]</a> <a href="textFieldSelection.html#refsMQ">[MQ]</a></p>
+  the CSS specifications. <a href="references.html#refsRFC2046">[RFC2046]</a> <a href="references.html#refsMQ">[MQ]</a></p>
 
   <p>A string is a <dfn id="valid-mime-type">valid MIME type</dfn> if it matches the <code title="">media-type</code> rule defined in section 3.7 "Media Types"
   of RFC 2616. In particular, a <a href="#valid-mime-type">valid MIME type</a> may
-  include MIME type parameters. <a href="textFieldSelection.html#refsHTTP">[HTTP]</a></p>
+  include MIME type parameters. <a href="references.html#refsHTTP">[HTTP]</a></p>
 
   <p>A string is a <dfn id="valid-mime-type-with-no-parameters">valid MIME type with no parameters</dfn> if it
   matches the <code title="">media-type</code> rule defined in section
   3.7 "Media Types" of RFC 2616, but does not contain any ";" (U+003B) characters. In other words, if it consists only of a
-  type and subtype, with no MIME Type parameters. <a href="textFieldSelection.html#refsHTTP">[HTTP]</a></p>
+  type and subtype, with no MIME Type parameters. <a href="references.html#refsHTTP">[HTTP]</a></p>
 
   <p>The term <dfn id="html-mime-type">HTML MIME type</dfn> is used to refer to the
-  <a href="#mime-type">MIME type</a> <code><a href="textFieldSelection.html#text/html">text/html</a></code>.</p>
+  <a href="#mime-type">MIME type</a> <code><a href="iana.html#text/html">text/html</a></code>.</p>
 
   <p>A resource's <dfn id="critical-subresources">critical subresources</dfn> are those that the
   resource needs to have available to be correctly processed. Which
@@ -493,7 +493,7 @@
   specification that defines the resource's format.</p>
 
   <p>The term <dfn id="data-protocol" title="data protocol"><code title="">data:</code>
-  URL</dfn> refers to <a href="urls.html#url" title="URL">URLs</a> that use the <code title="">data:</code> scheme. <a href="textFieldSelection.html#refsRFC2397">[RFC2397]</a></p>
+  URL</dfn> refers to <a href="urls.html#url" title="URL">URLs</a> that use the <code title="">data:</code> scheme. <a href="references.html#refsRFC2397">[RFC2397]</a></p>
 
 
   <h4 id="xml"><span class="secno">2.1.2 </span>XML</h4>
@@ -521,11 +521,11 @@
   match the <a href="http://www.w3.org/TR/REC-xml/#NT-Name"><code title="">Name</code></a> production defined in XML, they contain no
   ":" (U+003A) characters, and their first three characters are
   not an <a href="#ascii-case-insensitive">ASCII case-insensitive</a> match for the string
-  "<code title="">xml</code>". <a href="textFieldSelection.html#refsXML">[XML]</a></p>
+  "<code title="">xml</code>". <a href="references.html#refsXML">[XML]</a></p>
 
   <p>The term <dfn id="xml-mime-type">XML MIME type</dfn> is used to refer to the <a href="#mime-type" title="MIME type">MIME types</a> <code title="">text/xml</code>,
   <code title="">application/xml</code>, and any <a href="#mime-type">MIME
-  type</a> whose subtype ends with the four characters "<code title="">+xml</code>". <a href="textFieldSelection.html#refsRFC3023">[RFC3023]</a></p>
+  type</a> whose subtype ends with the four characters "<code title="">+xml</code>". <a href="references.html#refsRFC3023">[RFC3023]</a></p>
 
 
   <h4 id="dom-trees"><span class="secno">2.1.3 </span>DOM trees</h4>
@@ -611,7 +611,7 @@
   create and dispatch it, and dispatching an event means to follow the
   steps that propagate the event through the tree. The term <dfn id="concept-events-trusted" title="concept-events-trusted">trusted event</dfn> is used to refer
   to events whose <code title="dom-event-isTrusted"><a href="#dom-event-istrusted">isTrusted</a></code>
-  attribute is initialized to true. <a href="textFieldSelection.html#refsDOMCORE">[DOMCORE]</a></p>
+  attribute is initialized to true. <a href="references.html#refsDOMCORE">[DOMCORE]</a></p>
 
 
   <h4 id="plugins"><span class="secno">2.1.5 </span>Plugins</h4>
@@ -619,7 +619,7 @@
   <p>The term <dfn id="plugin">plugin</dfn> refers to a user-agent defined set of
   content handlers used by the user agent that can take part in the
   user agent's rendering of a <code><a href="dom.html#document">Document</a></code> object, but that
-  neither act as <a href="textFieldSelection.html#child-browsing-context" title="child browsing context">child browsing
+  neither act as <a href="browsers.html#child-browsing-context" title="child browsing context">child browsing
   contexts</a> of the <code><a href="dom.html#document">Document</a></code> nor introduce any
   <code><a href="#node">Node</a></code> objects to the <code><a href="dom.html#document">Document</a></code>'s DOM.</p>
 
@@ -638,7 +638,7 @@
   </div>
 
   <p class="example">One example of a plugin would be a PDF viewer
-  that is instantiated in a <a href="textFieldSelection.html#browsing-context">browsing context</a> when the
+  that is instantiated in a <a href="browsers.html#browsing-context">browsing context</a> when the
   user navigates to a PDF file. This would count as a plugin
   regardless of whether the party that implemented the PDF viewer
   component was the same as that which implemented the user agent
@@ -652,7 +652,7 @@
   such as the Netscape Plugin API; others might use remote content
   converters or have built-in support for certain types. Indeed, this
   specification doesn't require user agents to support plugins at all.
-  <a href="textFieldSelection.html#refsNPAPI">[NPAPI]</a></p>
+  <a href="references.html#refsNPAPI">[NPAPI]</a></p>
 
   <p>A plugin can be <dfn id="concept-plugin-secure" title="concept-plugin-secure">secured</dfn>
   if it honors the semantics of the <code title="attr-iframe-sandbox"><a href="the-iframe-element.html#attr-iframe-sandbox">sandbox</a></code> attribute.</p>
@@ -677,7 +677,7 @@
   <p>The <dfn id="preferred-mime-name">preferred MIME name</dfn> of a character encoding is the
   name or alias labeled as "preferred MIME name" in the IANA
   <cite>Character Sets</cite> registry, if there is one, or the
-  encoding's name, if none of the aliases are so labeled. <a href="textFieldSelection.html#refsIANACHARSET">[IANACHARSET]</a></p>
+  encoding's name, if none of the aliases are so labeled. <a href="references.html#refsIANACHARSET">[IANACHARSET]</a></p>
 
   <p>An <dfn id="ascii-compatible-character-encoding">ASCII-compatible character encoding</dfn> is a
   single-byte or variable-length encoding in which the bytes 0x09,
@@ -686,7 +686,7 @@
   to support do things outside that range?  -->, ignoring bytes that
   are the second and later bytes of multibyte sequences, all
   correspond to single-byte sequences that map to the same Unicode
-  characters as those bytes in ANSI_X3.4-1968 (US-ASCII). <a href="textFieldSelection.html#refsRFC1345">[RFC1345]</a></p>
+  characters as those bytes in ANSI_X3.4-1968 (US-ASCII). <a href="references.html#refsRFC1345">[RFC1345]</a></p>
 
   <p class="note">This includes such encodings as Shift_JIS,
   HZ-GB-2312, and variants of ISO-2022, even though it is possible in
@@ -702,12 +702,12 @@
 
   <p>The term <dfn id="a-utf-16-encoding">a UTF-16 encoding</dfn> refers to any variant of
   UTF-16: self-describing UTF-16 with a BOM, ambiguous UTF-16 without
-  a BOM, raw UTF-16LE, and raw UTF-16BE. <a href="textFieldSelection.html#refsRFC2781">[RFC2781]</a></p>
+  a BOM, raw UTF-16LE, and raw UTF-16BE. <a href="references.html#refsRFC2781">[RFC2781]</a></p>
 
   <p>The term <dfn id="code-unit">code unit</dfn> is used as defined in the Web IDL
   specification: a 16 bit unsigned integer, the smallest atomic
   component of a <code>DOMString</code>. (This is a narrower
-  definition than the one used in Unicode.) <a href="textFieldSelection.html#refsWEBIDL">[WEBIDL]</a></p>
+  definition than the one used in Unicode.) <a href="references.html#refsWEBIDL">[WEBIDL]</a></p>
 
   <p>The term <dfn id="unicode-code-point">Unicode code point</dfn> means a <i title="">Unicode scalar value</i> where possible, and an isolated
   surrogate code point when not. When a conformance requirement is
@@ -716,14 +716,14 @@
   surrogate followed by a low surrogate must be treated as the single
   code point represented by the surrogate pair, but isolated
   surrogates must each be treated as the single code point with the
-  value of the surrogate. <a href="textFieldSelection.html#refsUNICODE">[UNICODE]</a></p>
+  value of the surrogate. <a href="references.html#refsUNICODE">[UNICODE]</a></p>
 
   <p>In this specification, the term <dfn id="character">character</dfn>, when not
   qualified as <em>Unicode</em> character, is synonymous with the term
   <a href="#unicode-code-point">Unicode code point</a>.</p>
 
   <p>The term <dfn id="unicode-character">Unicode character</dfn> is used to mean a <i title="">Unicode scalar value</i> (i.e. any Unicode code point that
-  is not a surrogate code point). <a href="textFieldSelection.html#refsUNICODE">[UNICODE]</a></p>
+  is not a surrogate code point). <a href="references.html#refsUNICODE">[UNICODE]</a></p>
 
   <p>The <dfn id="code-unit-length">code-unit length</dfn> of a string is the number of
   <a href="#code-unit" title="code unit">code units</a> in that string.</p>
@@ -752,7 +752,7 @@
   the normative parts of this document is to be interpreted with the
   same normative meaning as "MAY" and "OPTIONAL". For readability,
   these words do not appear in all uppercase letters in this
-  specification. <a href="textFieldSelection.html#refsRFC2119">[RFC2119]</a></p>
+  specification. <a href="references.html#refsRFC2119">[RFC2119]</a></p>
 
   <div class="impl">
 
@@ -830,7 +830,7 @@
 
    <dd>
 
-    <p>Web browsers that support <a href="textFieldSelection.html#the-xhtml-syntax">the XHTML syntax</a> must
+    <p>Web browsers that support <a href="the-xhtml-syntax.html#the-xhtml-syntax">the XHTML syntax</a> must
     process elements and attributes from the <a href="namespaces.html#html-namespace-0">HTML
     namespace</a> found in XML documents as described in this
     specification, so that users can interact with them, unless the
@@ -845,14 +845,14 @@
     would instead treat the <code><a href="the-script-element.html#the-script-element">script</a></code> element as an opaque
     element that forms part of the transform.</p>
 
-    <p>Web browsers that support <a href="textFieldSelection.html#syntax">the HTML syntax</a> must
+    <p>Web browsers that support <a href="syntax.html#syntax">the HTML syntax</a> must
     process documents labeled with an <a href="#html-mime-type">HTML MIME type</a> as
     described in this specification, so that users can interact with
     them.</p>
 
     <p>User agents that support scripting must also be conforming
     implementations of the IDL fragments in this specification, as
-    described in the Web IDL specification. <a href="textFieldSelection.html#refsWEBIDL">[WEBIDL]</a></p>
+    described in the Web IDL specification. <a href="references.html#refsWEBIDL">[WEBIDL]</a></p>
 
     <p class="note">Unless explicitly stated, specifications that
     override the semantics of HTML elements do not override the
@@ -902,7 +902,7 @@
 
     <p>User agents that are designated as supporting the suggested
     default rendering must, while so designated, implement the rules
-    in <a href="textFieldSelection.html#rendering">the rendering section</a> that that
+    in <a href="rendering.html#rendering">the rendering section</a> that that
     section defines as the behavior that user agents are
     <em>expected</em> to implement.</p>
 
@@ -943,14 +943,14 @@
     contain quoted material).</p>
 
     <p>Conformance checkers must check that the input document
-    conforms when parsed without a <a href="textFieldSelection.html#browsing-context">browsing context</a>
+    conforms when parsed without a <a href="browsers.html#browsing-context">browsing context</a>
     (meaning that no scripts are run, and that the parser's
-    <a href="textFieldSelection.html#scripting-flag">scripting flag</a> is disabled), and should also check
-    that the input document conforms when parsed with a <a href="textFieldSelection.html#browsing-context">browsing
+    <a href="parsing.html#scripting-flag">scripting flag</a> is disabled), and should also check
+    that the input document conforms when parsed with a <a href="browsers.html#browsing-context">browsing
     context</a> in which scripts execute, and that the scripts
     never cause non-conforming states to occur other than transiently
     during script execution itself. (This is only a "SHOULD" and not a
-    "MUST" requirement because it has been proven to be impossible. <a href="textFieldSelection.html#refsCOMPUTABLE">[COMPUTABLE]</a>)</p>
+    "MUST" requirement because it has been proven to be impossible. <a href="references.html#refsCOMPUTABLE">[COMPUTABLE]</a>)</p>
 
     <!--VERSION-->
     <p>The term "HTML5 validator" can be used to refer to a
@@ -1074,8 +1074,8 @@
 
   <p>For compatibility with existing content and prior specifications,
   this specification describes two authoring formats: one based on XML
-  (referred to as <a href="textFieldSelection.html#the-xhtml-syntax">the XHTML syntax</a>), and one using a <a href="textFieldSelection.html#writing">custom format</a> inspired by SGML (referred to as
-  <a href="textFieldSelection.html#syntax">the HTML syntax</a>). Implementations must support at least
+  (referred to as <a href="the-xhtml-syntax.html#the-xhtml-syntax">the XHTML syntax</a>), and one using a <a href="syntax.html#writing">custom format</a> inspired by SGML (referred to as
+  <a href="syntax.html#syntax">the HTML syntax</a>). Implementations must support at least
   one of these two formats, although supporting both is
   encouraged.</p>
 
@@ -1105,10 +1105,10 @@
 
    <dd>
 
-    <p>Implementations that support <a href="textFieldSelection.html#the-xhtml-syntax">the XHTML syntax</a> must
+    <p>Implementations that support <a href="the-xhtml-syntax.html#the-xhtml-syntax">the XHTML syntax</a> must
     support some version of XML, as well as its corresponding
     namespaces specification, because that syntax uses an XML
-    serialization with namespaces. <a href="textFieldSelection.html#refsXML">[XML]</a> <a href="textFieldSelection.html#refsXMLNS">[XMLNS]</a></p>
+    serialization with namespaces. <a href="references.html#refsXML">[XML]</a> <a href="references.html#refsXMLNS">[XMLNS]</a></p>
 
    </dd>
 
@@ -1121,15 +1121,15 @@
     model &#8212; of a document and its content. The DOM is not just
     an API; the conformance criteria of HTML implementations are
     defined, in this specification, in terms of operations on the DOM.
-    <a href="textFieldSelection.html#refsDOMCORE">[DOMCORE]</a></p>
+    <a href="references.html#refsDOMCORE">[DOMCORE]</a></p>
 
     <p>Implementations must support DOM Core and the events defined in
     DOM Events, because this specification is defined in terms of the
     DOM, and some of the features are defined as extensions to the DOM
-    Core interfaces. <a href="textFieldSelection.html#refsDOMCORE">[DOMCORE]</a> <a href="textFieldSelection.html#refsDOMEVENTS">[DOMEVENTS]</a></p>
+    Core interfaces. <a href="references.html#refsDOMCORE">[DOMCORE]</a> <a href="references.html#refsDOMEVENTS">[DOMEVENTS]</a></p>
 
     <p>In particular, the following features are defined in the DOM
-    Core specification: <a href="textFieldSelection.html#refsDOMCORE">[DOMCORE]</a></p>
+    Core specification: <a href="references.html#refsDOMCORE">[DOMCORE]</a></p>
 
     <ul class="brief"><li><dfn id="attr"><code>Attr</code></dfn> interface</li>
      <li><dfn id="comment-0"><code>Comment</code></dfn> interface</li>
@@ -1191,7 +1191,7 @@
     </ul><p>The term <dfn id="throw">throw</dfn> in this specification is used as
     defined in the DOM Core specification. The following
     <code><a href="#domexception">DOMException</a></code> types are defined in the DOM Core
-    specification: <a href="textFieldSelection.html#refsDOMCORE">[DOMCORE]</a></p>
+    specification: <a href="references.html#refsDOMCORE">[DOMCORE]</a></p>
 
     <ol class="brief"><li value="1"><dfn id="indexsizeerror"><code>IndexSizeError</code></dfn></li>
      <li value="3"><dfn id="hierarchyrequesterror"><code>HierarchyRequestError</code></dfn></li>
@@ -1227,7 +1227,7 @@
     document's address</a>.</p>
 
     <p>The following features are defined in the DOM Events
-    specification: <a href="textFieldSelection.html#refsDOMEVENTS">[DOMEVENTS]</a></p>
+    specification: <a href="references.html#refsDOMEVENTS">[DOMEVENTS]</a></p>
 
     <ul class="brief"><li><dfn id="mouseevent"><code>MouseEvent</code></dfn> interface</li>
 
@@ -1253,7 +1253,7 @@
     are synonymous.</p>
 
     <p>The following features are defined in the DOM Parsing and
-    Serialization specification: <a href="textFieldSelection.html#refsDOMPARSING">[DOMPARSING]</a></p>
+    Serialization specification: <a href="references.html#refsDOMPARSING">[DOMPARSING]</a></p>
 
     <ul class="brief"><li><dfn id="dom-innerhtml" title="dom-innerHTML"><code>innerHTML</code></dfn></li>
      <li><dfn id="dom-outerhtml" title="dom-outerHTML"><code>outerHTML</code></dfn></li>
@@ -1262,8 +1262,8 @@
     features described in the <cite>HTML Editing APIs</cite> and
     <cite><code>UndoManager</code> and DOM Transaction</cite>
     specifications.
-    <a href="textFieldSelection.html#refsEDITING">[EDITING]</a>
-    <a href="textFieldSelection.html#refsUNDO">[UNDO]</a>
+    <a href="references.html#refsEDITING">[EDITING]</a>
+    <a href="references.html#refsUNDO">[UNDO]</a>
     </p>
 
    </dd>
@@ -1273,14 +1273,14 @@
    <dd>
 
     <p>This specification uses the following interfaces defined in the
-    File API specification: <a href="textFieldSelection.html#refsFILEAPI">[FILEAPI]</a></p>
+    File API specification: <a href="references.html#refsFILEAPI">[FILEAPI]</a></p>
 
     <ul class="brief"><li><dfn id="blob"><code>Blob</code></dfn></li>
      <li><dfn id="file"><code>File</code></dfn></li>
      <li><dfn id="filelist"><code>FileList</code></dfn></li>
 
     </ul><p>It also uses the following interface defined in the File System
-    API specification: <a href="textFieldSelection.html#refsFILESYSTEMAPI">[FILESYSTEMAPI]</a></p>
+    API specification: <a href="references.html#refsFILESYSTEMAPI">[FILESYSTEMAPI]</a></p>
 
     <ul class="brief"><li><dfn id="filecallback"><code>FileCallback</code></dfn></li>
 
@@ -1296,13 +1296,13 @@
     <dfn id="xmlhttprequest-base-url"><code>XMLHttpRequest</code> base URL</dfn>,
     <dfn id="xmlhttprequest-origin"><code>XMLHttpRequest</code> origin</dfn>, and
     <dfn id="xmlhttprequest-referrer-source"><code>XMLHttpRequest</code> referrer source</dfn> are defined
-    in that specification. <a href="textFieldSelection.html#refsXHR">[XHR]</a></p>
+    in that specification. <a href="references.html#refsXHR">[XHR]</a></p>
 
    </dd>
 
 
 <!--TOPIC:HTML-->
-
+    <dd>
     <p>The terms <dfn id="expose">expose</dfn>, <dfn id="supported-property-indices">supported property
     indices</dfn>, <dfn id="determine-the-value-of-an-indexed-property">determine the value of an indexed
     property</dfn>, <dfn id="support-named-properties">support named properties</dfn>,
@@ -1330,7 +1330,7 @@
     (indicating that the object does not represent a specific instant
     of time).</p>
 
-   
+   </dd>
 
    <dt>Typed Arrays</dt>
 
@@ -1340,7 +1340,7 @@
     from the Typed Array Specification are used for several features
     in this specification. The <dfn id="uint8clampedarray">Uint8ClampedArray</dfn> interface
     type is specifically used in the definition of the
-    <code><a href="the-canvas-element.html#the-canvas-element">canvas</a></code> element's 2D API. <a href="textFieldSelection.html#refsTYPEDARRAY">[TYPEDARRAY]</a></p>
+    <code><a href="the-canvas-element.html#the-canvas-element">canvas</a></code> element's 2D API. <a href="references.html#refsTYPEDARRAY">[TYPEDARRAY]</a></p>
 
    </dd>
 
@@ -1349,7 +1349,7 @@
    <dd>
 
     <p>Some parts of the language described by this specification only
-    support JavaScript as the underlying scripting language. <a href="textFieldSelection.html#refsECMA262">[ECMA262]</a></p>
+    support JavaScript as the underlying scripting language. <a href="references.html#refsECMA262">[ECMA262]</a></p>
 
     <p class="note">The term "JavaScript" is used to refer to ECMA262,
     rather than the official term ECMAScript, since the term
@@ -1358,7 +1358,7 @@
     <code title="">text/javascript</code>, since that is the most
     commonly used type, <a href="introduction.html#willful-violation" title="willful violation">despite it
     being an officially obsoleted type</a> according to RFC
-    4329. <a href="textFieldSelection.html#refsRFC4329">[RFC4329]</a></p>
+    4329. <a href="references.html#refsRFC4329">[RFC4329]</a></p>
 
     <p>The term <dfn id="javascript-global-environment">JavaScript global environment</dfn> refers to the
     <i title="">global environment</i> concept defined in the
@@ -1372,7 +1372,7 @@
 
    <dd>
 
-    <p>Implementations must support the Media Queries language. <a href="textFieldSelection.html#refsMQ">[MQ]</a></p>
+    <p>Implementations must support the Media Queries language. <a href="references.html#refsMQ">[MQ]</a></p>
 
    </dd>
 
@@ -1384,7 +1384,7 @@
 
     <p>Implementations may support <dfn id="webvtt">WebVTT</dfn> as a text track
     format for subtitles, captions, chapter titles, metadata, etc, for
-    media resources. <a href="textFieldSelection.html#refsWEBVTT">[WEBVTT]</a></p>
+    media resources. <a href="references.html#refsWEBVTT">[WEBVTT]</a></p>
 
     <p>The following terms, used in this specification, are defined in
     the WebVTT specification:</p>
@@ -1410,8 +1410,8 @@
     <p>Implementations must support the semantics of <a href="urls.html#url" title="URL">URLs</a> defined in the URI and IRI specifications,
     as well as the semantics of IDNA domain names defined in the
     <cite>Internationalizing Domain Names in Applications
-    (IDNA)</cite> specification. <a href="textFieldSelection.html#refsRFC3986">[RFC3986]</a>
-    <a href="textFieldSelection.html#refsRFC3987">[RFC3987]</a> <a href="textFieldSelection.html#refsRFC3490">[RFC3490]</a>
+    (IDNA)</cite> specification. <a href="references.html#refsRFC3986">[RFC3986]</a>
+    <a href="references.html#refsRFC3987">[RFC3987]</a> <a href="references.html#refsRFC3490">[RFC3490]</a>
 
    </p></dd>
 
@@ -1419,7 +1419,7 @@
 
    <dd>
 
-    <p>The following terms are defined in the Cookie specification: <a href="textFieldSelection.html#refsCOOKIES">[COOKIES]</a></p>
+    <p>The following terms are defined in the Cookie specification: <a href="references.html#refsCOOKIES">[COOKIES]</a></p>
 
     <ul class="brief"><li><dfn id="cookie-string">cookie-string</dfn>
      </li><li><dfn id="receives-a-set-cookie-string">receives a set-cookie-string</dfn>
@@ -1429,7 +1429,7 @@
 
    <dd>
 
-    <p>The following terms are defined in the CORS specification: <a href="textFieldSelection.html#refsCORS">[CORS]</a></p>
+    <p>The following terms are defined in the CORS specification: <a href="references.html#refsCORS">[CORS]</a></p>
 
     <ul class="brief"><li><dfn id="cross-origin-request">cross-origin request</dfn>
      </li><li><dfn id="cross-origin-request-status">cross-origin request status</dfn>
@@ -1453,7 +1453,7 @@
     <dfn id="parsed-as-a-css-color-value">parsed as a CSS &lt;color&gt; value</dfn>. When parsing a CSS
     value, user agents are required by the CSS specifications to apply
     some error handling rules. These apply to this specification also.
-    <a href="textFieldSelection.html#refsCSSCOLOR">[CSSCOLOR]</a> <a href="textFieldSelection.html#refsCSS">[CSS]</a></p>
+    <a href="references.html#refsCSSCOLOR">[CSSCOLOR]</a> <a href="references.html#refsCSS">[CSS]</a></p>
 
     <p class="example">For example, user agents are required to close
     all open constructs upon finding the end of a style sheet
@@ -1468,11 +1468,11 @@
     <p>The term <dfn id="provides-a-paint-source">provides a paint source</dfn> is used
     as defined in the <cite>CSS Image Values and Replaced
     Content</cite> specification to define the interaction of certain
-    HTML elements with the CSS 'element()' function. <a href="textFieldSelection.html#refsCSSIMAGES">[CSSIMAGES]</a></p>
+    HTML elements with the CSS 'element()' function. <a href="references.html#refsCSSIMAGES">[CSSIMAGES]</a></p>
 
     <p>Support for the CSS Object Model is required for
     implementations that support scripting. The following features and
-    terms are defined in the CSSOM specifications: <a href="textFieldSelection.html#refsCSSOM">[CSSOM]</a> <a href="textFieldSelection.html#refsCSSOMVIEW">[CSSOMVIEW]</a>
+    terms are defined in the CSSOM specifications: <a href="references.html#refsCSSOM">[CSSOM]</a> <a href="references.html#refsCSSOMVIEW">[CSSOMVIEW]</a>
 
     </p><ul class="brief"><li><dfn id="linkstyle"><code>LinkStyle</code></dfn></li>
      <li><dfn id="cssstyledeclaration"><code>CSSStyleDeclaration</code></dfn></li>
@@ -1484,7 +1484,7 @@
      <li><dfn id="scroll-an-element-into-view">Scroll an element into view</dfn></li>
     </ul><p>Parts of the Fullscreen specification, in particular the
     <dfn id="top-layer">top layer</dfn> concept, are used to define the rendering of
-    the <code><a href="textFieldSelection.html#the-dialog-element">dialog</a></code> element. <a href="textFieldSelection.html#refsFULLSCREEN">[FULLSCREEN]</a>
+    the <code><a href="commands.html#the-dialog-element">dialog</a></code> element. <a href="references.html#refsFULLSCREEN">[FULLSCREEN]</a>
 
    </p></dd>
 
@@ -1494,7 +1494,7 @@
 
    <dd>
 
-    <p>The following interface is defined in the SVG specification: <a href="textFieldSelection.html#refsSVG">[SVG]</a></p>
+    <p>The following interface is defined in the SVG specification: <a href="references.html#refsSVG">[SVG]</a></p>
 
     <ul class="brief"><li><dfn id="svgmatrix"><code>SVGMatrix</code></dfn>
     </li></ul></dd>
@@ -1541,8 +1541,8 @@
    registering <a href="the-meta-element.html#concept-meta-extensions" title="concept-meta-extensions">extensions to the
    predefined set of metadata names</a>.</li>
 
-   <li>Authors can use the <code title="attr-hyperlink-rel"><a href="textFieldSelection.html#attr-hyperlink-rel">rel=""</a></code> mechanism to annotate
-   links with specific meanings by registering <a href="textFieldSelection.html#concept-rel-extensions" title="concept-rel-extensions">extensions to the predefined set of
+   <li>Authors can use the <code title="attr-hyperlink-rel"><a href="links.html#attr-hyperlink-rel">rel=""</a></code> mechanism to annotate
+   links with specific meanings by registering <a href="links.html#concept-rel-extensions" title="concept-rel-extensions">extensions to the predefined set of
    link types</a>. This is also used by microformats. Additionally, 
    absolute URLs that do not contain any non-ASCII characters, nor 
    characters in the range U+0041 (LATIN CAPITAL LETTER A) through 
@@ -1581,7 +1581,7 @@
   supported.</p>
 
   <p>For markup-level features that are intended for use with
-  <a href="textFieldSelection.html#syntax">the HTML syntax</a>, extensions should be limited to new
+  <a href="syntax.html#syntax">the HTML syntax</a>, extensions should be limited to new
   attributes of the form "<code title="">x-<var title="">vendor</var>-<var title="">feature</var></code>", where
   <var title="">vendor</var> is a short string that identifies the
   vendor responsible for the extension, and <var title="">feature</var> is the name of the feature. New element names
@@ -1737,7 +1737,7 @@
 
   <p>Comparing two strings in a <dfn id="compatibility-caseless">compatibility caseless</dfn>
   manner means using the Unicode <i>compatibility caseless match</i>
-  operation to compare the two strings. <a href="textFieldSelection.html#refsUNICODE">[UNICODE]</a></p>
+  operation to compare the two strings. <a href="references.html#refsUNICODE">[UNICODE]</a></p>
 
   <p>Except where otherwise stated, string comparisons must be
   performed in a <a href="#case-sensitive">case-sensitive</a> manner.</p>
@@ -1775,7 +1775,7 @@
   handling</dfn>, it means that the byte stream must be converted to a
   Unicode string by interpreting it as UTF-8, except that any errors
   must be handled as described in the following list. Bytes in the
-  following list are represented in hexadecimal. <a href="textFieldSelection.html#refsRFC3629">[RFC3629]</a>
+  following list are represented in hexadecimal. <a href="references.html#refsRFC3629">[RFC3629]</a>
 
   </p><dl class="switch"><dt>One byte in the range FE to FF</dt>
 

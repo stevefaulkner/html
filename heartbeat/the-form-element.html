@@ -417,7 +417,7 @@ interface <dfn id="htmlformelement">HTMLFormElement</dfn> : <a href="elements.ht
   boolean <a href="#dom-form-checkvalidity" title="dom-form-checkValidity">checkValidity</a>();
 };</pre>
    </dd>
-  </dl><!--TOPIC:HTML--><p>The <code><a href="#the-form-element">form</a></code> element <a href="textFieldSelection.html#represents">represents</a> a
+  </dl><!--TOPIC:HTML--><p>The <code><a href="#the-form-element">form</a></code> element <a href="rendering.html#represents">represents</a> a
   collection of <a href="forms.html#form-associated-element" title="form-associated element">form-associated
   elements</a>, some of which can represent editable values that
   can be submitted to a server for processing.</p>
@@ -429,7 +429,7 @@ interface <dfn id="htmlformelement">HTMLFormElement</dfn> : <a href="elements.ht
   case-insensitive</a>, and each token must be an <a href="infrastructure.html#ascii-case-insensitive">ASCII
   case-insensitive</a> match for the <a href="infrastructure.html#preferred-mime-name">preferred MIME
   name</a> of an <a href="infrastructure.html#ascii-compatible-character-encoding">ASCII-compatible character encoding</a>.
-  <a href="textFieldSelection.html#refsIANACHARSET">[IANACHARSET]</a></p>
+  <a href="references.html#refsIANACHARSET">[IANACHARSET]</a></p>
 
   <p>The <dfn id="attr-form-name" title="attr-form-name"><code>name</code></dfn> attribute
   represents the <code><a href="#the-form-element">form</a></code>'s name within the <code title="dom-document-forms"><a href="dom.html#dom-document-forms">forms</a></code> collection. The value must
@@ -586,7 +586,7 @@ interface <dfn id="htmlformelement">HTMLFormElement</dfn> : <a href="elements.ht
    <li><p>If <var title="">candidates</var> is empty, let <var title="">candidates</var> be a <a href="infrastructure.html#live">live</a>
    <code><a href="common-dom-interfaces.html#radionodelist">RadioNodeList</a></code> object containing all the
    <code><a href="the-img-element.html#the-img-element">img</a></code> elements that are descendants of the
-   <code><a href="#the-form-element">form</a></code> element and that have either an <code title="attr-id"><a href="global-attributes.html#the-id-attribute">id</a></code> attribute or a <code title="attr-img-name"><a href="textFieldSelection.html#attr-img-name">name</a></code> attribute equal to <var title="">name</var>, in <a href="infrastructure.html#tree-order">tree order</a>.</p></li>
+   <code><a href="#the-form-element">form</a></code> element and that have either an <code title="attr-id"><a href="global-attributes.html#the-id-attribute">id</a></code> attribute or a <code title="attr-img-name"><a href="obsolete.html#attr-img-name">name</a></code> attribute equal to <var title="">name</var>, in <a href="infrastructure.html#tree-order">tree order</a>.</p></li>
 
    <li><p>If <var title="">candidates</var> is empty, <var title="">name</var> is the name of one of the entries in the
    <code><a href="#the-form-element">form</a></code> element's <a href="#past-names-map">past names map</a>: return the
@@ -641,7 +641,7 @@ interface <dfn id="htmlformelement">HTMLFormElement</dfn> : <a href="elements.ht
   <!-- Now leaving crazy town. -->
 
   <hr><p>The <dfn id="dom-form-submit" title="dom-form-submit"><code>submit()</code></dfn>
-  method, when invoked, must <a href="textFieldSelection.html#concept-form-submit" title="concept-form-submit">submit</a> the <code><a href="#the-form-element">form</a></code>
+  method, when invoked, must <a href="constraints.html#concept-form-submit" title="concept-form-submit">submit</a> the <code><a href="#the-form-element">form</a></code>
   element from the <code><a href="#the-form-element">form</a></code> element itself, with the <var title="">submitted from <code title="dom-form-submit"><a href="#dom-form-submit">submit()</a></code> method</var> flag set.</p>
 
   <p>The <dfn id="dom-form-reset" title="dom-form-reset"><code>reset()</code></dfn>
@@ -653,14 +653,14 @@ interface <dfn id="htmlformelement">HTMLFormElement</dfn> : <a href="elements.ht
    <li><p>Mark the <code><a href="#the-form-element">form</a></code> element as <dfn id="locked-for-reset">locked for
    reset</dfn>.</p></li>
 
-   <li><p><a href="textFieldSelection.html#concept-form-reset" title="concept-form-reset">Reset</a> the
+   <li><p><a href="constraints.html#concept-form-reset" title="concept-form-reset">Reset</a> the
    <code><a href="#the-form-element">form</a></code> element.</p></li>
 
    <li><p>Unmark the <code><a href="#the-form-element">form</a></code> element as <i><a href="#locked-for-reset">locked for
    reset</a></i>.</p></li>
 
   </ol><p>If the <dfn id="dom-form-checkvalidity" title="dom-form-checkValidity"><code>checkValidity()</code></dfn>
-  method is invoked, the user agent must <a href="textFieldSelection.html#statically-validate-the-constraints">statically validate the
+  method is invoked, the user agent must <a href="constraints.html#statically-validate-the-constraints">statically validate the
   constraints</a> of the <code><a href="#the-form-element">form</a></code> element, and return true
   if the constraint validation return a <i>positive</i> result, and
   false if it returned a <i>negative</i> result.</p>

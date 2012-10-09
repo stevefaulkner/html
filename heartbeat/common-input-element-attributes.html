@@ -458,15 +458,15 @@
   values to the user.</p>
 
   <p>In addition, if the <a href="#resulting-autocompletion-state">resulting autocompletion state</a>
-  is <i title="">off</i>, <a href="textFieldSelection.html#history-autocomplete">values are
-  reset</a> when <a href="textFieldSelection.html#traverse-the-history" title="traverse the history">traversing the
+  is <i title="">off</i>, <a href="history.html#history-autocomplete">values are
+  reset</a> when <a href="history.html#traverse-the-history" title="traverse the history">traversing the
   history</a>.</p>
 
   <p>The autocompletion mechanism must be implemented by the user
   agent acting as if the user had modified the element's <a href="attributes-common-to-form-controls.html#concept-fe-value" title="concept-fe-value">value</a>, and must be done at a time
   where the element is <i title="concept-input-mutable"><a href="the-input-element.html#concept-input-mutable">mutable</a></i>
   (e.g. just after the element has been inserted into the document, or
-  when the user agent <a href="textFieldSelection.html#stop-parsing" title="stop parsing">stops
+  when the user agent <a href="the-end.html#stop-parsing" title="stop parsing">stops
   parsing</a>).</p>
 
   </div>
@@ -683,7 +683,7 @@
   <div class="impl">
 
   <p><strong>Constraint validation</strong>: If the <code title="attr-input-readonly"><a href="#attr-input-readonly">readonly</a></code> attribute is specified
-  on an <code><a href="the-input-element.html#the-input-element">input</a></code> element, the element is <a href="textFieldSelection.html#barred-from-constraint-validation">barred from
+  on an <code><a href="the-input-element.html#the-input-element">input</a></code> element, the element is <a href="constraints.html#barred-from-constraint-validation">barred from
   constraint validation</a>.</p>
 
   </div>
@@ -767,7 +767,7 @@
   the mode <a href="common-input-element-apis.html#dom-input-value-value" title="dom-input-value-value">value</a>, and the
   element is <i title="concept-input-mutable"><a href="the-input-element.html#concept-input-mutable">mutable</a></i>, and the
   element's <a href="attributes-common-to-form-controls.html#concept-fe-value" title="concept-fe-value">value</a> is the empty
-  string, then the element is <a href="textFieldSelection.html#suffering-from-being-missing">suffering from being
+  string, then the element is <a href="constraints.html#suffering-from-being-missing">suffering from being
   missing</a>.</p>
 
   </div>
@@ -885,7 +885,7 @@
   set, the control's <a href="attributes-common-to-form-controls.html#concept-fe-values" title="concept-fe-values">value<em>s</em></a>, are to be
   checked.</p>
 
-  <p>If specified, the attribute's value must match the JavaScript <i title="">Pattern</i> production. <a href="textFieldSelection.html#refsECMA262">[ECMA262]</a></p>
+  <p>If specified, the attribute's value must match the JavaScript <i title="">Pattern</i> production. <a href="references.html#refsECMA262">[ECMA262]</a></p>
 
   <div class="impl">
 
@@ -897,7 +897,7 @@
   regular expression is the element's <dfn id="compiled-pattern-regular-expression">compiled pattern regular
   expression</dfn>. If the element has no such attribute, or if the
   value doesn't compile successfully, then the element has no
-  <a href="#compiled-pattern-regular-expression">compiled pattern regular expression</a>. <a href="textFieldSelection.html#refsECMA262">[ECMA262]</a></p>
+  <a href="#compiled-pattern-regular-expression">compiled pattern regular expression</a>. <a href="references.html#refsECMA262">[ECMA262]</a></p>
 
   <p><strong>Constraint validation</strong>: If the element's <a href="attributes-common-to-form-controls.html#concept-fe-value" title="concept-fe-value">value</a> is not the empty string, and
   either the element's <code title="attr-input-multiple"><a href="#attr-input-multiple">multiple</a></code> attribute is not
@@ -906,7 +906,7 @@
   current state, and the element has a <a href="#compiled-pattern-regular-expression">compiled pattern regular
   expression</a> but that regular expression does not match the
   entirety of the element's <a href="attributes-common-to-form-controls.html#concept-fe-value" title="concept-fe-value">value</a>, then the element is
-  <a href="textFieldSelection.html#suffering-from-a-pattern-mismatch">suffering from a pattern mismatch</a>.</p>
+  <a href="constraints.html#suffering-from-a-pattern-mismatch">suffering from a pattern mismatch</a>.</p>
 
   <p><strong>Constraint validation</strong>: If the element's <a href="attributes-common-to-form-controls.html#concept-fe-value" title="concept-fe-value">value</a> is not the empty string, and
   the element's <code title="attr-input-multiple"><a href="#attr-input-multiple">multiple</a></code>
@@ -914,7 +914,7 @@
   element, and the element has a <a href="#compiled-pattern-regular-expression">compiled pattern regular
   expression</a> but that regular expression does not match the
   entirety of each of the element's <a href="attributes-common-to-form-controls.html#concept-fe-values" title="concept-fe-values">value<em>s</em></a>, then the element
-  is <a href="textFieldSelection.html#suffering-from-a-pattern-mismatch">suffering from a pattern mismatch</a>.</p>
+  is <a href="constraints.html#suffering-from-a-pattern-mismatch">suffering from a pattern mismatch</a>.</p>
 
   <p>The <a href="#compiled-pattern-regular-expression">compiled pattern regular expression</a>, when
   matched against a string, must have its start anchored to the start
@@ -987,7 +987,7 @@ You cannot submit this form when the field is incorrect.</samp></pre>
   applying the <a href="the-input-element.html#concept-input-value-string-number" title="concept-input-value-string-number">algorithm to convert a
   string to a number</a> to the string given by the element's <a href="attributes-common-to-form-controls.html#concept-fe-value" title="concept-fe-value">value</a> is a number, and the number
   obtained from that algorithm is less than the <a href="#attr-input-min" title="attr-input-min">minimum</a>, the element is
-  <a href="textFieldSelection.html#suffering-from-an-underflow">suffering from an underflow</a>.</p>
+  <a href="constraints.html#suffering-from-an-underflow">suffering from an underflow</a>.</p>
 
   <p>The <code title="attr-input-min"><a href="#attr-input-min">min</a></code> attribute also
   defines the <a href="#concept-input-min-zero" title="concept-input-min-zero">step
@@ -1006,7 +1006,7 @@ You cannot submit this form when the field is incorrect.</samp></pre>
   applying the <a href="the-input-element.html#concept-input-value-string-number" title="concept-input-value-string-number">algorithm to convert a
   string to a number</a> to the string given by the element's <a href="attributes-common-to-form-controls.html#concept-fe-value" title="concept-fe-value">value</a> is a number, and the number
   obtained from that algorithm is more than the <a href="#attr-input-max" title="attr-input-max">maximum</a>, the element is
-  <a href="textFieldSelection.html#suffering-from-an-overflow">suffering from an overflow</a>.</p>
+  <a href="constraints.html#suffering-from-an-overflow">suffering from an overflow</a>.</p>
 
   </div>
 
@@ -1019,7 +1019,7 @@ You cannot submit this form when the field is incorrect.</samp></pre>
 
   <p class="note">If an element has a <a href="#attr-input-max" title="attr-input-max">maximum</a> that is less than its <a href="#attr-input-min" title="attr-input-min">minimum</a>, then so long as the element
   has a <a href="attributes-common-to-form-controls.html#concept-fe-value" title="concept-fe-value">value</a>, it will either be
-  <a href="textFieldSelection.html#suffering-from-an-underflow">suffering from an underflow</a> or <a href="textFieldSelection.html#suffering-from-an-overflow">suffering from an
+  <a href="constraints.html#suffering-from-an-underflow">suffering from an underflow</a> or <a href="constraints.html#suffering-from-an-overflow">suffering from an
   overflow</a>.</p>
 
   </div>
@@ -1104,7 +1104,7 @@ You cannot submit this form when the field is incorrect.</samp></pre>
   string to a number</a> to the string given by the element's <a href="attributes-common-to-form-controls.html#concept-fe-value" title="concept-fe-value">value</a> is a number, and that
   number subtracted from the <a href="#concept-input-min-zero" title="concept-input-min-zero">step
   base</a> is not an integral multiple of the <a href="#concept-input-step" title="concept-input-step">allowed value step</a>, the element is
-  <a href="textFieldSelection.html#suffering-from-a-step-mismatch">suffering from a step mismatch</a>.</p>
+  <a href="constraints.html#suffering-from-a-step-mismatch">suffering from a step mismatch</a>.</p>
 
   </div>
 

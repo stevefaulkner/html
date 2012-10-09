@@ -385,7 +385,7 @@
 <!--FORK--><!--bug 11557-->
   described below. These exceptions are intended to prevent authors
   from making assistive technology products report nonsensical states
-  that do not represent the actual state of the document. <a href="textFieldSelection.html#refsARIA">[ARIA]</a></p>
+  that do not represent the actual state of the document. <a href="references.html#refsARIA">[ARIA]</a></p>
 
 <!--FORK--><!--bug 11557-->
 
@@ -395,7 +395,7 @@
   <a href="infrastructure.html#html-elements">HTML elements</a>, as defined in the ARIA specifications.
   The <span>implicit ARIA semantics</span> defined below must be
   recognized by implementations for the purposes of ARIA processing.
-  <a href="textFieldSelection.html#refsARIAIMPL">[ARIAIMPL]</a></p>
+  <a href="references.html#refsARIAIMPL">[ARIAIMPL]</a></p>
 
   <p class="note">The ARIA attributes defined in the ARIA
   specifications, and the <span>strong native semantics</span> and
@@ -413,7 +413,7 @@
   <h5 id="aria-role-attribute"><span class="secno">3.2.7.1 </span>ARIA Role Attribute</h5>
 
   <p>Every HTML element may have an ARIA <code title="attr-aria-role">role</code> attribute specified. This is an
-  ARIA Role attribute as defined by <a href="textFieldSelection.html#refsARIA">[ARIA]</a> <a href="http://www.w3.org/TR/wai-aria/roles#role_definitions">Section
+  ARIA Role attribute as defined by <a href="references.html#refsARIA">[ARIA]</a> <a href="http://www.w3.org/TR/wai-aria/roles#role_definitions">Section
   5.4 Definition of Roles</a>.</p>
 
   <p>The attribute, if specified, must have a value that is a set of
@@ -432,13 +432,13 @@
   <h5 id="state-and-property-attributes"><span class="secno">3.2.7.2 </span>State and Property Attributes</h5>
 
   <p>Every HTML element may have ARIA state and property attributes
-  specified. These attributes are defined by <a href="textFieldSelection.html#refsARIA">[ARIA]</a> in <a href="http://www.w3.org/TR/wai-aria/states_and_properties#state_prop_def">Section
+  specified. These attributes are defined by <a href="references.html#refsARIA">[ARIA]</a> in <a href="http://www.w3.org/TR/wai-aria/states_and_properties#state_prop_def">Section
   6.6, Definitions of States and Properties (all aria-*
   attributes)</a>.</p>
 
   <p>These attributes, if specified, must have a value that is the ARIA
   value type in the "Value" field of the definition for the state or
-  property, mapped to the appropriate HTML value type according to <a href="textFieldSelection.html#refsARIA">[ARIA]</a> <a href="http://www.w3.org/TR/wai-aria/appendices#typemapping">Section
+  property, mapped to the appropriate HTML value type according to <a href="references.html#refsARIA">[ARIA]</a> <a href="http://www.w3.org/TR/wai-aria/appendices#typemapping">Section
   10.2 Mapping WAI-ARIA Value types to languages</a> using the HTML 5
   mapping.</p>
 
@@ -447,7 +447,7 @@
   might not perform any processing aside from including them in the DOM.
   State and property attributes are processed according to the
   requirements of the sections <a href="#sec-strong-native-semantics">Strong Native Semantics</a> and <a href="#sec-implicit-aria-semantics">Implicit ARIA semantics</a>, as
-  well as <a href="textFieldSelection.html#refsARIA">[ARIA]</a> and <a href="textFieldSelection.html#refsARIAIMPL">[ARIAIMPL]</a>.</p>
+  well as <a href="references.html#refsARIA">[ARIA]</a> and <a href="references.html#refsARIAIMPL">[ARIAIMPL]</a>.</p>
 
   <h5 id="sec-strong-native-semantics"><span class="secno">3.2.7.3 </span>Strong Native Semantics</h5>
 
@@ -463,7 +463,7 @@
   <table id="table-aria-strong"><thead><tr><th>Language feature
      </th><th><span>Strong native semantics</span> and <span>default implied ARIA semantics</span>
 
-   </th></tr></thead><tbody><tr><td><code><a href="the-area-element.html#the-area-element">area</a></code> element that creates a <a href="textFieldSelection.html#hyperlink">hyperlink</a>
+   </th></tr></thead><tbody><tr><td><code><a href="the-area-element.html#the-area-element">area</a></code> element that creates a <a href="links.html#hyperlink">hyperlink</a>
      </td><td><code title="attr-aria-role-link">link</code> role
 
     </td></tr><tr><td><code><a href="the-base-element.html#the-base-element">base</a></code> element
@@ -472,10 +472,10 @@
     </td></tr><tr><td><code><a href="the-datalist-element.html#the-datalist-element">datalist</a></code> element
      </td><td><code title="attr-aria-role-listbox">listbox</code> role, with the <code title="attr-aria-multiselectable">aria-multiselectable</code> property set to "false"
 
-    </td></tr><tr><td><code><a href="textFieldSelection.html#the-details-element">details</a></code> element
-     </td><td><code title="attr-aria-expanded">aria-expanded</code> state set to "true" if the element's <code title="attr-details-open"><a href="textFieldSelection.html#attr-details-open">open</a></code> attribute is present, and set to "false" otherwise
+    </td></tr><tr><td><code><a href="the-details-element.html#the-details-element">details</a></code> element
+     </td><td><code title="attr-aria-expanded">aria-expanded</code> state set to "true" if the element's <code title="attr-details-open"><a href="the-details-element.html#attr-details-open">open</a></code> attribute is present, and set to "false" otherwise
 
-    </td></tr><tr><td><code><a href="textFieldSelection.html#the-dialog-element">dialog</a></code> element without an <code title="attr-dialog-open"><a href="textFieldSelection.html#attr-dialog-open">open</a></code> attribute
+    </td></tr><tr><td><code><a href="commands.html#the-dialog-element">dialog</a></code> element without an <code title="attr-dialog-open"><a href="commands.html#attr-dialog-open">open</a></code> attribute
      </td><td>The <code title="attr-aria-hidden">aria-hidden</code> state set to "true"
 
     </td></tr><tr><td><code><a href="the-head-element.html#the-head-element">head</a></code> element
@@ -568,16 +568,16 @@
     </td></tr><tr><td><code><a href="the-label-element.html#the-label-element">label</a></code> element
      </td><td><a href="#concept-role-none" title="concept-role-none">No role</a>
 
-    </td></tr><tr><td><code><a href="the-link-element.html#the-link-element">link</a></code> element that creates a <a href="textFieldSelection.html#hyperlink">hyperlink</a>
+    </td></tr><tr><td><code><a href="the-link-element.html#the-link-element">link</a></code> element that creates a <a href="links.html#hyperlink">hyperlink</a>
      </td><td><code title="attr-aria-role-link">link</code> role
 
-    </td></tr><tr><td><code><a href="textFieldSelection.html#the-menu-element">menu</a></code> element with a <code title="attr-menu-type"><a href="textFieldSelection.html#attr-menu-type">type</a></code> attribute in the <a href="textFieldSelection.html#context-menu-state" title="context menu state">context menu</a> state
+    </td></tr><tr><td><code><a href="the-menu-element.html#the-menu-element">menu</a></code> element with a <code title="attr-menu-type"><a href="the-menu-element.html#attr-menu-type">type</a></code> attribute in the <a href="the-menu-element.html#context-menu-state" title="context menu state">context menu</a> state
      </td><td><a href="#concept-role-none" title="concept-role-none">No role</a>
 
-    </td></tr><tr><td><code><a href="textFieldSelection.html#the-menu-element">menu</a></code> element with a <code title="attr-menu-type"><a href="textFieldSelection.html#attr-menu-type">type</a></code> attribute in the <a href="textFieldSelection.html#list-state" title="list state">list</a> state
+    </td></tr><tr><td><code><a href="the-menu-element.html#the-menu-element">menu</a></code> element with a <code title="attr-menu-type"><a href="the-menu-element.html#attr-menu-type">type</a></code> attribute in the <a href="the-menu-element.html#list-state" title="list state">list</a> state
      </td><td><code title="attr-aria-role-menu">menu</code> role
 
-    </td></tr><tr><td><code><a href="textFieldSelection.html#the-menu-element">menu</a></code> element with a <code title="attr-menu-type"><a href="textFieldSelection.html#attr-menu-type">type</a></code> attribute in the <a href="textFieldSelection.html#toolbar-state" title="toolbar state">toolbar</a> state
+    </td></tr><tr><td><code><a href="the-menu-element.html#the-menu-element">menu</a></code> element with a <code title="attr-menu-type"><a href="the-menu-element.html#attr-menu-type">type</a></code> attribute in the <a href="the-menu-element.html#toolbar-state" title="toolbar state">toolbar</a> state
      </td><td><code title="attr-aria-role-toolbar">toolbar</code> role
 
     </td></tr><tr><td><code><a href="the-meta-element.html#the-meta-element">meta</a></code> element
@@ -622,7 +622,7 @@
     </td></tr><tr><td><code><a href="the-style-element.html#the-style-element">style</a></code> element
      </td><td><a href="#concept-role-none" title="concept-role-none">No role</a>
 
-    </td></tr><tr><td><code><a href="textFieldSelection.html#the-summary-element">summary</a></code> element
+    </td></tr><tr><td><code><a href="the-summary-element.html#the-summary-element">summary</a></code> element
      </td><td><a href="#concept-role-none" title="concept-role-none">No role</a>
 
     </td></tr><tr><td><code><a href="the-textarea-element.html#the-textarea-element">textarea</a></code> element
@@ -634,25 +634,25 @@
     </td></tr><tr><td><code><a href="the-title-element.html#the-title-element">title</a></code> element
      </td><td><a href="#concept-role-none" title="concept-role-none">No role</a>
 
-    </td></tr><tr><td>An element that <a href="textFieldSelection.html#concept-command" title="concept-command">defines a command</a>, whose <a href="textFieldSelection.html#command-facet-type" title="command-facet-type">Type</a> facet is "checkbox", and that is a descendant of a <code><a href="textFieldSelection.html#the-menu-element">menu</a></code> element whose <code title="attr-menu-type"><a href="textFieldSelection.html#attr-menu-type">type</a></code> attribute in the <a href="textFieldSelection.html#list-state" title="list state">list</a> state
-     </td><td><code title="attr-aria-role-menuitemcheckbox">menuitemcheckbox</code> role, with the <code title="attr-aria-checked">aria-checked</code> state set to "true" if the command's <a href="textFieldSelection.html#command-facet-checkedstate" title="command-facet-checkedstate">Checked State</a> facet is true, and "false" otherwise
+    </td></tr><tr><td>An element that <a href="commands.html#concept-command" title="concept-command">defines a command</a>, whose <a href="commands.html#command-facet-type" title="command-facet-type">Type</a> facet is "checkbox", and that is a descendant of a <code><a href="the-menu-element.html#the-menu-element">menu</a></code> element whose <code title="attr-menu-type"><a href="the-menu-element.html#attr-menu-type">type</a></code> attribute in the <a href="the-menu-element.html#list-state" title="list state">list</a> state
+     </td><td><code title="attr-aria-role-menuitemcheckbox">menuitemcheckbox</code> role, with the <code title="attr-aria-checked">aria-checked</code> state set to "true" if the command's <a href="commands.html#command-facet-checkedstate" title="command-facet-checkedstate">Checked State</a> facet is true, and "false" otherwise
 
-    </td></tr><tr><td>An element that <a href="textFieldSelection.html#concept-command" title="concept-command">defines a command</a>, whose <a href="textFieldSelection.html#command-facet-type" title="command-facet-type">Type</a> facet is "command", and that is a descendant of a <code><a href="textFieldSelection.html#the-menu-element">menu</a></code> element whose <code title="attr-menu-type"><a href="textFieldSelection.html#attr-menu-type">type</a></code> attribute in the <a href="textFieldSelection.html#list-state" title="list state">list</a> state
+    </td></tr><tr><td>An element that <a href="commands.html#concept-command" title="concept-command">defines a command</a>, whose <a href="commands.html#command-facet-type" title="command-facet-type">Type</a> facet is "command", and that is a descendant of a <code><a href="the-menu-element.html#the-menu-element">menu</a></code> element whose <code title="attr-menu-type"><a href="the-menu-element.html#attr-menu-type">type</a></code> attribute in the <a href="the-menu-element.html#list-state" title="list state">list</a> state
      </td><td><code title="attr-aria-role-menuitem">menuitem</code> role
 
-    </td></tr><tr><td>An element that <a href="textFieldSelection.html#concept-command" title="concept-command">defines a command</a>, whose <a href="textFieldSelection.html#command-facet-type" title="command-facet-type">Type</a> facet is "radio", and that is a descendant of a <code><a href="textFieldSelection.html#the-menu-element">menu</a></code> element whose <code title="attr-menu-type"><a href="textFieldSelection.html#attr-menu-type">type</a></code> attribute in the <a href="textFieldSelection.html#list-state" title="list state">list</a> state
-     </td><td><code title="attr-aria-role-menuitemradio">menuitemradio</code> role, with the <code title="attr-aria-checked">aria-checked</code> state set to "true" if the command's <a href="textFieldSelection.html#command-facet-checkedstate" title="command-facet-checkedstate">Checked State</a> facet is true, and "false" otherwise
+    </td></tr><tr><td>An element that <a href="commands.html#concept-command" title="concept-command">defines a command</a>, whose <a href="commands.html#command-facet-type" title="command-facet-type">Type</a> facet is "radio", and that is a descendant of a <code><a href="the-menu-element.html#the-menu-element">menu</a></code> element whose <code title="attr-menu-type"><a href="the-menu-element.html#attr-menu-type">type</a></code> attribute in the <a href="the-menu-element.html#list-state" title="list state">list</a> state
+     </td><td><code title="attr-aria-role-menuitemradio">menuitemradio</code> role, with the <code title="attr-aria-checked">aria-checked</code> state set to "true" if the command's <a href="commands.html#command-facet-checkedstate" title="command-facet-checkedstate">Checked State</a> facet is true, and "false" otherwise
 
     </td></tr><tr><td>Element that is <a href="attributes-common-to-form-controls.html#concept-fe-disabled" title="concept-fe-disabled">disabled</a>
      </td><td>The <code title="attr-aria-disabled">aria-disabled</code> state set to "true"
 
-    </td></tr><tr><td>Element that is <a href="textFieldSelection.html#inert">inert</a>
+    </td></tr><tr><td>Element that is <a href="editing.html#inert">inert</a>
      </td><td>The <code title="attr-aria-disabled">aria-disabled</code> state set to "true"
 
-    </td></tr><tr><td>Element with a <code title="attr-hidden"><a href="textFieldSelection.html#the-hidden-attribute">hidden</a></code> attribute
+    </td></tr><tr><td>Element with a <code title="attr-hidden"><a href="editing.html#the-hidden-attribute">hidden</a></code> attribute
      </td><td>The <code title="attr-aria-hidden">aria-hidden</code> state set to "true"
 
-    </td></tr><tr><td>Element that is a <a href="textFieldSelection.html#candidate-for-constraint-validation">candidate for constraint validation</a> but that does not <a href="textFieldSelection.html#concept-fv-valid" title="concept-fv-valid">satisfy its constraints</a>
+    </td></tr><tr><td>Element that is a <a href="constraints.html#candidate-for-constraint-validation">candidate for constraint validation</a> but that does not <a href="constraints.html#concept-fv-valid" title="concept-fv-valid">satisfy its constraints</a>
      </td><td>The <code title="attr-aria-invalid">aria-invalid</code> state set to "true"
 
   </td></tr></tbody></table><h5 id="sec-implicit-aria-semantics"><span class="secno">3.2.7.4 </span>Implicit ARIA Semantics</h5>
@@ -673,7 +673,7 @@
      </th><th>Default implied ARIA semantic
      </th><th>Restrictions
 
-   </th></tr></thead><tbody><tr><td><code><a href="the-a-element.html#the-a-element">a</a></code> element that creates a <a href="textFieldSelection.html#hyperlink">hyperlink</a>
+   </th></tr></thead><tbody><tr><td><code><a href="the-a-element.html#the-a-element">a</a></code> element that creates a <a href="links.html#hyperlink">hyperlink</a>
      </td><td><code title="attr-aria-role-link">link</code> role
      </td><td>Role must be either <code title="attr-aria-role-link">link</code>, <code title="attr-aria-role-button">button</code><!--!-->, <code title="attr-aria-role-checkbox">checkbox</code><!--!-->, <code title="attr-aria-role-menuitem">menuitem</code>, <code title="attr-aria-role-menuitemcheckbox">menuitemcheckbox</code><!--!-->, <code title="attr-aria-role-menuitemradio">menuitemradio</code><!--!-->, <code title="attr-aria-role-tab">tab</code>, or <code title="attr-aria-role-treeitem">treeitem</code><!--!-->
 
@@ -697,11 +697,11 @@
      </td><td><code title="attr-aria-role-button">button</code> role
      </td><td>Role must be either <code title="attr-aria-role-button">button</code>, <code title="attr-aria-role-link">link</code><!--!-->, <code title="attr-aria-role-menuitem">menuitem</code>, <code title="attr-aria-role-menuitemcheckbox">menuitemcheckbox</code><!--!-->, <code title="attr-aria-role-menuitemradio">menuitemradio</code><!--!-->, <code title="attr-aria-role-radio">radio</code><!--!-->
 
-    </td></tr><tr><td><code><a href="textFieldSelection.html#the-details-element">details</a></code> element
+    </td></tr><tr><td><code><a href="the-details-element.html#the-details-element">details</a></code> element
      </td><td><code title="attr-aria-role-group">group</code> role
      </td><td>Role must be a role that supports <code title="attr-aria-expanded">aria-expanded</code>
 
-    </td></tr><tr><td><code><a href="textFieldSelection.html#the-dialog-element">dialog</a></code> element
+    </td></tr><tr><td><code><a href="commands.html#the-dialog-element">dialog</a></code> element
      </td><td><code title="attr-aria-role-dialog">dialog</code> role
      </td><td>Role must be either
       <code title="attr-aria-role-alert">alert</code>,

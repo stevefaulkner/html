@@ -391,29 +391,29 @@
    <dd>
     <pre class="idl">interface <dfn id="htmlhtmlelement">HTMLHtmlElement</dfn> : <a href="elements.html#htmlelement">HTMLElement</a> {};</pre>
    </dd>
-  </dl><!--TOPIC:HTML--><p>The <code><a href="#the-html-element">html</a></code> element <a href="textFieldSelection.html#represents">represents</a> the root of
+  </dl><!--TOPIC:HTML--><p>The <code><a href="#the-html-element">html</a></code> element <a href="rendering.html#represents">represents</a> the root of
   an HTML document.</p>
 
 <!--TOPIC:Offline Web Applications-->
   <p>The <dfn id="attr-html-manifest" title="attr-html-manifest"><code>manifest</code></dfn>
-  attribute gives the address of the document's <a href="textFieldSelection.html#application-cache">application
-  cache</a> <a href="textFieldSelection.html#concept-appcache-manifest" title="concept-appcache-manifest">manifest</a>, if there is
+  attribute gives the address of the document's <a href="offline.html#application-cache">application
+  cache</a> <a href="offline.html#concept-appcache-manifest" title="concept-appcache-manifest">manifest</a>, if there is
   one. If the attribute is present, the attribute's value must be a
   <a href="urls.html#valid-non-empty-url-potentially-surrounded-by-spaces">valid non-empty URL potentially surrounded by
   spaces</a>.</p>
 
   <p>The <code title="attr-html-manifest"><a href="#attr-html-manifest">manifest</a></code> attribute
-  only <a href="textFieldSelection.html#concept-appcache-init" title="concept-appcache-init">has an effect</a> during
+  only <a href="offline.html#concept-appcache-init" title="concept-appcache-init">has an effect</a> during
   the early stages of document load. Changing the attribute
   dynamically thus has no effect (and thus, no DOM API is provided for
   this attribute).</p>
 
-  <p class="note">For the purposes of <a href="textFieldSelection.html#concept-appcache-init" title="concept-appcache-init">application cache selection</a>,
+  <p class="note">For the purposes of <a href="offline.html#concept-appcache-init" title="concept-appcache-init">application cache selection</a>,
   later <code><a href="the-base-element.html#the-base-element">base</a></code> elements cannot affect the <a href="urls.html#resolve-a-url" title="resolve a url">resolving of relative URLs</a> in <code title="attr-html-manifest"><a href="#attr-html-manifest">manifest</a></code> attributes, as the
   attributes are processed before those elements are seen.</p>
 
-  <p class="note">The <code title="dom-applicationCache"><a href="textFieldSelection.html#dom-applicationcache">window.applicationCache</a></code> IDL
-  attribute provides scripted access to the offline <a href="textFieldSelection.html#application-cache">application
+  <p class="note">The <code title="dom-applicationCache"><a href="offline.html#dom-applicationcache">window.applicationCache</a></code> IDL
+  attribute provides scripted access to the offline <a href="offline.html#application-cache">application
   cache</a> mechanism.</p>
 <!--TOPIC:HTML-->
 

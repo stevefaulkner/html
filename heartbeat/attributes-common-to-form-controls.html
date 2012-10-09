@@ -380,7 +380,7 @@
   <h5 id="naming-form-controls"><span class="secno">4.10.19.1 </span>Naming form controls</h5>
 
   <p>The <dfn id="attr-fe-name" title="attr-fe-name"><code>name</code></dfn> content
-  attribute gives the name of the form control, as used in <a href="textFieldSelection.html#form-submission-0">form
+  attribute gives the name of the form control, as used in <a href="constraints.html#form-submission-0">form
   submission</a> and in the <code><a href="the-form-element.html#the-form-element">form</a></code> element's <code title="dom-form-elements"><a href="the-form-element.html#dom-form-elements">elements</a></code> object. If the attribute
   is specified, its value must not be the empty string.</p>
 
@@ -425,11 +425,11 @@
 
   <div class="impl">
 
-  <p>A form control that is <a href="#concept-fe-disabled" title="concept-fe-disabled">disabled</a> must prevent any <code title="event-click"><a href="infrastructure.html#event-click">click</a></code> events that are <a href="textFieldSelection.html#queue-a-task" title="queue
-  a task">queued</a> on the <a href="textFieldSelection.html#user-interaction-task-source">user interaction task
+  <p>A form control that is <a href="#concept-fe-disabled" title="concept-fe-disabled">disabled</a> must prevent any <code title="event-click"><a href="infrastructure.html#event-click">click</a></code> events that are <a href="webappapis.html#queue-a-task" title="queue
+  a task">queued</a> on the <a href="webappapis.html#user-interaction-task-source">user interaction task
   source</a> from being dispatched on the element.</p>
 
-  <p><strong>Constraint validation</strong>: If an element is <a href="#concept-fe-disabled" title="concept-fe-disabled">disabled</a>, it is <a href="textFieldSelection.html#barred-from-constraint-validation">barred from
+  <p><strong>Constraint validation</strong>: If an element is <a href="#concept-fe-disabled" title="concept-fe-disabled">disabled</a>, it is <a href="constraints.html#barred-from-constraint-validation">barred from
   constraint validation</a>.</p>
 
   <p>The <dfn id="dom-fe-disabled" title="dom-fe-disabled"><code>disabled</code></dfn> IDL
@@ -461,7 +461,7 @@
   <p>The <dfn id="attr-fe-autofocus" title="attr-fe-autofocus"><code>autofocus</code></dfn>
   content attribute allows the author to indicate that a control is to
   be focused as soon as the page is loaded or as soon as the
-  <code><a href="textFieldSelection.html#the-dialog-element">dialog</a></code> within which it finds itself is shown, allowing
+  <code><a href="commands.html#the-dialog-element">dialog</a></code> within which it finds itself is shown, allowing
   the user to just start typing without having to manually focus the
   main control.</p>
 
@@ -470,8 +470,8 @@
 
   <p>An element's <dfn id="nearest-ancestor-autofocus-scoping-root-element">nearest ancestor autofocus scoping root
   element</dfn> is the element itself if the element is a
-  <code><a href="textFieldSelection.html#the-dialog-element">dialog</a></code> element, or else is the element's nearest
-  ancestor <code><a href="textFieldSelection.html#the-dialog-element">dialog</a></code> element, if any, or else is the
+  <code><a href="commands.html#the-dialog-element">dialog</a></code> element, or else is the element's nearest
+  ancestor <code><a href="commands.html#the-dialog-element">dialog</a></code> element, if any, or else is the
   element's <a href="infrastructure.html#root-element">root element</a>.</p>
 
   <p>There must not be two elements with the same <a href="#nearest-ancestor-autofocus-scoping-root-element">nearest
@@ -488,46 +488,46 @@
   <ol><li><p>Let <var title="">target</var> be the element's
    <code><a href="dom.html#document">Document</a></code>.</p></li>
 
-   <li><p>If <var title="">target</var> has no <a href="textFieldSelection.html#browsing-context">browsing
+   <li><p>If <var title="">target</var> has no <a href="browsers.html#browsing-context">browsing
    context</a>, abort these steps.</p></li>
 
-   <li><p>If <var title="">target</var>'s <a href="textFieldSelection.html#browsing-context">browsing
-   context</a> has no <a href="textFieldSelection.html#top-level-browsing-context">top-level browsing context</a> (e.g.
-   it is a <a href="textFieldSelection.html#nested-browsing-context">nested browsing context</a> with no <a href="textFieldSelection.html#parent-browsing-context">parent
+   <li><p>If <var title="">target</var>'s <a href="browsers.html#browsing-context">browsing
+   context</a> has no <a href="browsers.html#top-level-browsing-context">top-level browsing context</a> (e.g.
+   it is a <a href="browsers.html#nested-browsing-context">nested browsing context</a> with no <a href="browsers.html#parent-browsing-context">parent
    browsing context</a>), abort these steps.</p></li>
 
-   <li><p>If <var title="">target</var>'s <a href="textFieldSelection.html#active-sandboxing-flag-set">active sandboxing
-   flag set</a> has the <a href="textFieldSelection.html#sandboxed-automatic-features-browsing-context-flag">sandboxed automatic features
+   <li><p>If <var title="">target</var>'s <a href="browsers.html#active-sandboxing-flag-set">active sandboxing
+   flag set</a> has the <a href="browsers.html#sandboxed-automatic-features-browsing-context-flag">sandboxed automatic features
    browsing context flag</a>, abort these steps.</p></li>
 
-   <li><p>If <var title="">target</var>'s <a href="textFieldSelection.html#origin-0">origin</a> is not
-   the <a href="textFieldSelection.html#same-origin" title="same origin">same</a> as the
-   <a href="textFieldSelection.html#origin-0">origin</a> of the <code><a href="dom.html#document">Document</a></code> of the currently
-   focused element in <var title="">target</var>'s <a href="textFieldSelection.html#top-level-browsing-context">top-level
+   <li><p>If <var title="">target</var>'s <a href="browsers.html#origin-0">origin</a> is not
+   the <a href="browsers.html#same-origin" title="same origin">same</a> as the
+   <a href="browsers.html#origin-0">origin</a> of the <code><a href="dom.html#document">Document</a></code> of the currently
+   focused element in <var title="">target</var>'s <a href="browsers.html#top-level-browsing-context">top-level
    browsing context</a>, abort these steps.</p></li>
 
-   <li><p>If <var title="">target</var>'s <a href="textFieldSelection.html#origin-0">origin</a> is not
-   the <a href="textFieldSelection.html#same-origin" title="same origin">same</a> as the
-   <a href="textFieldSelection.html#origin-0">origin</a> of the <a href="textFieldSelection.html#active-document">active document</a> of <var title="">target</var>'s <a href="textFieldSelection.html#top-level-browsing-context">top-level browsing context</a>,
+   <li><p>If <var title="">target</var>'s <a href="browsers.html#origin-0">origin</a> is not
+   the <a href="browsers.html#same-origin" title="same origin">same</a> as the
+   <a href="browsers.html#origin-0">origin</a> of the <a href="browsers.html#active-document">active document</a> of <var title="">target</var>'s <a href="browsers.html#top-level-browsing-context">top-level browsing context</a>,
    abort these steps.</p></li>
 
    <li><p>If the user agent has already reached the last step of this
    list of steps in response to an element being <a href="infrastructure.html#insert-an-element-into-a-document" title="insert
    an element into a document">inserted</a> into a
-   <code><a href="dom.html#document">Document</a></code> whose <a href="textFieldSelection.html#top-level-browsing-context">top-level browsing
-   context</a>'s <a href="textFieldSelection.html#active-document">active document</a> is the same as <var title="">target</var>'s <a href="textFieldSelection.html#top-level-browsing-context">top-level browsing context</a>'s
-   <a href="textFieldSelection.html#active-document">active document</a>, abort these steps.</p></li>
+   <code><a href="dom.html#document">Document</a></code> whose <a href="browsers.html#top-level-browsing-context">top-level browsing
+   context</a>'s <a href="browsers.html#active-document">active document</a> is the same as <var title="">target</var>'s <a href="browsers.html#top-level-browsing-context">top-level browsing context</a>'s
+   <a href="browsers.html#active-document">active document</a>, abort these steps.</p></li>
 
    <li><p>If the user has indicated (for example, by starting to type
    in a form control) that he does not wish focus to be changed, then
    optionally abort these steps.</p></li>
 
-   <li><p><a href="textFieldSelection.html#queue-a-task">Queue a task</a> that checks to see if the element
-   is <a href="textFieldSelection.html#focusable">focusable</a>, and if so, runs the <a href="textFieldSelection.html#focusing-steps">focusing
+   <li><p><a href="webappapis.html#queue-a-task">Queue a task</a> that checks to see if the element
+   is <a href="editing.html#focusable">focusable</a>, and if so, runs the <a href="editing.html#focusing-steps">focusing
    steps</a> for that element. User agents may also change the
    scrolling position of the document, or perform some other action
-   that brings the element to the user's attention. The <a href="textFieldSelection.html#task-source">task
-   source</a> for this task is the <a href="textFieldSelection.html#dom-manipulation-task-source">DOM manipulation task
+   that brings the element to the user's attention. The <a href="webappapis.html#task-source">task
+   source</a> for this task is the <a href="webappapis.html#dom-manipulation-task-source">DOM manipulation task
    source</a>.</p></li>
 
   </ol><p class="note">Focusing the control does not imply that the user
@@ -570,7 +570,7 @@
   edit (as opposed to a change made by a script), and the
   <a href="infrastructure.html#code-unit-length">code-unit length</a> of the element's <a href="#concept-fe-value" title="concept-fe-value">value</a> is greater than the element's
   <a href="#maximum-allowed-value-length">maximum allowed value length</a>, then the element is
-  <a href="textFieldSelection.html#suffering-from-being-too-long">suffering from being too long</a>.</p>
+  <a href="constraints.html#suffering-from-being-too-long">suffering from being too long</a>.</p>
 
   <p>User agents may prevent the user from causing the element's <a href="#concept-fe-value" title="concept-fe-value">value</a> to be set to a value whose
   <a href="infrastructure.html#code-unit-length">code-unit length</a> is greater than the element's

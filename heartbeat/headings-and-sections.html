@@ -381,11 +381,11 @@
   <code><a href="the-hgroup-element.html#the-hgroup-element">hgroup</a></code> element are headings.</p>
 
   <p>The first element of <a href="content-models.html#heading-content-0">heading content</a> in an element
-  of <a href="content-models.html#sectioning-content-0">sectioning content</a> <a href="textFieldSelection.html#represents">represents</a> the
+  of <a href="content-models.html#sectioning-content-0">sectioning content</a> <a href="rendering.html#represents">represents</a> the
   heading for that section. Subsequent headings of equal or higher
   <a href="the-aside-element.html#rank">rank</a> start new (implied) sections, headings of lower
   <a href="the-aside-element.html#rank">rank</a> start implied subsections that are part of the
-  previous one. In both cases, the element <a href="textFieldSelection.html#represents">represents</a> the
+  previous one. In both cases, the element <a href="rendering.html#represents">represents</a> the
   heading of the implied section.</p>
 
   <p>Certain elements are said to be <dfn id="sectioning-root" title="sectioning
@@ -397,8 +397,8 @@
   <!-- when updating this also update the category index -->
   <ul class="brief category-list"><li><code><a href="the-blockquote-element.html#the-blockquote-element">blockquote</a></code></li>
    <li><code><a href="the-body-element.html#the-body-element">body</a></code></li>
-   <li><code><a href="textFieldSelection.html#the-details-element">details</a></code></li>
-   <li><code><a href="textFieldSelection.html#the-dialog-element">dialog</a></code></li>
+   <li><code><a href="the-details-element.html#the-details-element">details</a></code></li>
+   <li><code><a href="commands.html#the-dialog-element">dialog</a></code></li>
    <li><code><a href="the-fieldset-element.html#the-fieldset-element">fieldset</a></code></li>
    <li><code><a href="the-figure-element.html#the-figure-element">figure</a></code></li>
    <li><code><a href="the-td-element.html#the-td-element">td</a></code></li>
@@ -615,7 +615,7 @@
      <dd>
 
       <p class="note">The element being exited is a <a href="content-models.html#heading-content-0">heading
-      content</a> element or an element with a <code title="attr-hidden"><a href="textFieldSelection.html#the-hidden-attribute">hidden</a></code> attribute.</p>
+      content</a> element or an element with a <code title="attr-hidden"><a href="editing.html#the-hidden-attribute">hidden</a></code> attribute.</p>
 
       <p>Pop that element from the stack.</p>
 
@@ -623,12 +623,12 @@
 
 
      <dt>If the top of the stack is a <a href="content-models.html#heading-content-0">heading content</a>
-     element or an element with a <code title="attr-hidden"><a href="textFieldSelection.html#the-hidden-attribute">hidden</a></code> attribute</dt>
+     element or an element with a <code title="attr-hidden"><a href="editing.html#the-hidden-attribute">hidden</a></code> attribute</dt>
 
      <dd><p>Do nothing.</p></dd>
 
 
-     <dt>When entering an element with a <code title="attr-hidden"><a href="textFieldSelection.html#the-hidden-attribute">hidden</a></code> attribute</dt>
+     <dt>When entering an element with a <code title="attr-hidden"><a href="editing.html#the-hidden-attribute">hidden</a></code> attribute</dt>
 
      <dd>
 
@@ -872,7 +872,7 @@
    of the tree to walk (either a <a href="content-models.html#sectioning-content-0">sectioning content</a>
    element or a <a href="#sectioning-root">sectioning root</a> element), and the <var title="">enter</var> and <var title="">exit</var> arguments are
    callbacks that are called with the nodes as they are entered and
-   exited. <a href="textFieldSelection.html#refsECMA262">[ECMA262]</a></p>
+   exited. <a href="references.html#refsECMA262">[ECMA262]</a></p>
 
    <pre>function (root, enter, exit) {
   var node = root;

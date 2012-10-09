@@ -21,13 +21,23 @@ function pubrules () {
     
     // validate HTML
     var url = "http://berjon.com/TR/html5/" + file
-    ,   valid = "http://validator.w3.org/check?uri=" + encodeURIComponent(url)
+    // ,   valid = "http://validator.w3.org/check?uri=" + encodeURIComponent(url)
+    ,   valid = "http://html5.validator.nu/?out=json&doc=" + url
     ;
     
     // html validation
-    request({ url: valid, method: "HEAD"}, function (err, resp, body) {
+    request({ url: valid, method: "GET"}, function (err, resp, body) {
         if (err) return console.log(err);
-        if (resp.headers["x-w3c-validator-errors"] !== "0") console.log("Error, check " + valid);
+        // if (resp.headers["x-w3c-validator-errors"] !== "0") console.log("Error, check " + valid);
+        // else console.log("\tHTML OK!");
+        var res = JSON.parse(body)
+        ,   msg = []
+        ;
+        for (var i = 0, n = res.messages.length; i < n; i++) {
+            var m = res.messages[i];
+            if (m.type === "error") msg.push(m);
+        }
+        if (msg.length !== 0) console.log("Error, check " + valid, msg);
         else console.log("\tHTML OK!");
         pubrules();
     });

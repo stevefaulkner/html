@@ -545,7 +545,7 @@
   <code><a href="infrastructure.html#filelist">FileList</a></code> object that represents the current <a href="states-of-the-type-attribute.html#concept-input-type-file-selected" title="concept-input-type-file-selected">selected files</a>. The
   same object must be returned until the list of <a href="states-of-the-type-attribute.html#concept-input-type-file-selected" title="concept-input-type-file-selected">selected files</a>
   changes. If the IDL attribute does not apply, then it must instead
-  return null. <a href="textFieldSelection.html#refsFILEAPI">[FILEAPI]</a></p>
+  return null. <a href="references.html#refsFILEAPI">[FILEAPI]</a></p>
 
   <hr><p>The <dfn id="dom-input-valueasdate" title="dom-input-valueAsDate"><code>valueAsDate</code></dfn> IDL
   attribute represents the <a href="attributes-common-to-form-controls.html#concept-fe-value" title="concept-fe-value">value</a> of the element, interpreted
@@ -657,7 +657,7 @@
 
   <p>When the <dfn id="event-input-input" title="event-input-input"><code>input</code></dfn>
   event applies, any time the user causes the element's <a href="attributes-common-to-form-controls.html#concept-fe-value" title="concept-fe-value">value</a> to change, the user agent must
-  <a href="textFieldSelection.html#queue-a-task">queue a task</a> to <a href="textFieldSelection.html#fire-a-simple-event">fire a simple event</a> that
+  <a href="webappapis.html#queue-a-task">queue a task</a> to <a href="webappapis.html#fire-a-simple-event">fire a simple event</a> that
   bubbles named <code title="event-input">input</code> at the
   <code><a href="the-input-element.html#the-input-element">input</a></code> element. User agents may wait for a suitable
   break in the user's interaction before queuing the task; for
@@ -678,7 +678,7 @@
   defined but uses a user interface that involves an explicit commit
   action, then any time the user commits a change to the element's
   <a href="attributes-common-to-form-controls.html#concept-fe-value" title="concept-fe-value">value</a> or list of <a href="states-of-the-type-attribute.html#concept-input-type-file-selected" title="concept-input-type-file-selected">selected files</a>, the
-  user agent must <a href="textFieldSelection.html#queue-a-task">queue a task</a> to <a href="textFieldSelection.html#fire-a-simple-event">fire a simple
+  user agent must <a href="webappapis.html#queue-a-task">queue a task</a> to <a href="webappapis.html#fire-a-simple-event">fire a simple
   event</a> that bubbles named <code title="event-change">change</code> at the <code><a href="the-input-element.html#the-input-element">input</a></code>
   element.</p>
 
@@ -701,20 +701,20 @@
   steps:</p>
 
   <ol><li>If the <code title="event-input-input"><a href="#event-input-input">input</a></code> event
-   applies, <a href="textFieldSelection.html#queue-a-task">queue a task</a> to <a href="textFieldSelection.html#fire-a-simple-event">fire a simple
+   applies, <a href="webappapis.html#queue-a-task">queue a task</a> to <a href="webappapis.html#fire-a-simple-event">fire a simple
    event</a> that bubbles named <code title="event-input">input</code> at the <code><a href="the-input-element.html#the-input-element">input</a></code>
    element.</li>
 
    <li>If the <code title="event-input-change"><a href="#event-input-change">change</a></code> event
-   applies, <a href="textFieldSelection.html#queue-a-task">queue a task</a> to <a href="textFieldSelection.html#fire-a-simple-event">fire a simple
+   applies, <a href="webappapis.html#queue-a-task">queue a task</a> to <a href="webappapis.html#fire-a-simple-event">fire a simple
    event</a> that bubbles named <code title="event-change">change</code> at the <code><a href="the-input-element.html#the-input-element">input</a></code>
    element.</li>
 
   </ol><p class="note">In addition, when the <code title="event-input-change"><a href="#event-input-change">change</a></code> event applies, <code title="event-change">change</code> events can also be fired as part
   of the element's <a href="content-models.html#activation-behavior">activation behavior</a> and as part of the
-  <a href="textFieldSelection.html#unfocusing-steps">unfocusing steps</a>.</p>
+  <a href="editing.html#unfocusing-steps">unfocusing steps</a>.</p>
 
-  <p>The <a href="textFieldSelection.html#task-source">task source</a> for these <a href="textFieldSelection.html#concept-task" title="concept-task">tasks</a> is the <a href="textFieldSelection.html#user-interaction-task-source">user interaction task
+  <p>The <a href="webappapis.html#task-source">task source</a> for these <a href="webappapis.html#concept-task" title="concept-task">tasks</a> is the <a href="webappapis.html#user-interaction-task-source">user interaction task
   source</a>.</p>
 
   </div>

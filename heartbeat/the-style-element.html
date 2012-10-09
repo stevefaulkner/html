@@ -404,14 +404,14 @@
   </dl><!--TOPIC:HTML--><p>The <code><a href="#the-style-element">style</a></code> element allows authors to embed style
   information in their documents. The <code><a href="#the-style-element">style</a></code> element is
   one of several inputs to the <a href="styling.html#styling">styling processing
-  model</a>. The element does not <a href="textFieldSelection.html#represents" title="represents">represent</a> content for the user.</p>
+  model</a>. The element does not <a href="rendering.html#represents" title="represents">represent</a> content for the user.</p>
 
   <p>The <dfn id="attr-style-type" title="attr-style-type"><code>type</code></dfn>
   attribute gives the styling language. If the attribute is present,
   its value must be a <a href="infrastructure.html#valid-mime-type">valid MIME type</a> that designates a
   styling language. The <code title="">charset</code> parameter must
   not be specified. The default value for the <code title="attr-style-type"><a href="#attr-style-type">type</a></code> attribute, which is used if the
-  attribute is absent, is "<code title="">text/css</code>". <a href="textFieldSelection.html#refsRFC2318">[RFC2318]</a></p>
+  attribute is absent, is "<code title="">text/css</code>". <a href="references.html#refsRFC2318">[RFC2318]</a></p>
 
   <div class="impl">
 
@@ -522,7 +522,7 @@
   <code><a href="#the-style-element">style</a></code> elements defines <a href="infrastructure.html#alternative-style-sheet-sets">alternative style sheet
   sets</a>. If the <code><a href="#the-style-element">style</a></code> element has no <code title="attr-style-title"><a href="#attr-style-title">title</a></code> attribute, then it has no
   title; the <code title="attr-title"><a href="global-attributes.html#attr-title">title</a></code> attribute of
-  ancestors does not apply to the <code><a href="#the-style-element">style</a></code> element. <a href="textFieldSelection.html#refsCSSOM">[CSSOM]</a></p>
+  ancestors does not apply to the <code><a href="#the-style-element">style</a></code> element. <a href="references.html#refsCSSOM">[CSSOM]</a></p>
 
   <p class="note">The <code title="attr-style-title"><a href="#attr-style-title">title</a></code>
   attribute on <code><a href="#the-style-element">style</a></code> elements, like the <code title="attr-link-title"><a href="the-link-element.html#attr-link-title">title</a></code> attribute on <code><a href="the-link-element.html#the-link-element">link</a></code>
@@ -532,7 +532,7 @@
 
   <p>The <code><a href="infrastructure.html#textcontent">textContent</a></code> of a <code><a href="#the-style-element">style</a></code> element must
   match the <code title="">style</code> production in the following
-  ABNF, the character set for which is Unicode. <a href="textFieldSelection.html#refsABNF">[ABNF]</a></p>
+  ABNF, the character set for which is Unicode. <a href="references.html#refsABNF">[ABNF]</a></p>
 
   <pre>style         = no-c-start *( c-start no-c-end c-end no-c-start )
 no-c-start    = &lt;any string that doesn't contain a substring that matches c-start &gt;
@@ -573,21 +573,21 @@ c-end         = "--&gt;"</pre>
   subresources</a>, if any, are complete, or, if the style sheet
   has no <a href="infrastructure.html#critical-subresources">critical subresources</a>, once the style sheet has
   been parsed and processed, the user agent must, if the loads were
-  successful or there were none, <a href="textFieldSelection.html#queue-a-task">queue a task</a> to
-  <a href="textFieldSelection.html#fire-a-simple-event">fire a simple event</a> named <code title="event-load">load</code> at the <code><a href="#the-style-element">style</a></code> element,
+  successful or there were none, <a href="webappapis.html#queue-a-task">queue a task</a> to
+  <a href="webappapis.html#fire-a-simple-event">fire a simple event</a> named <code title="event-load">load</code> at the <code><a href="#the-style-element">style</a></code> element,
   or, if one of the style sheet's <a href="infrastructure.html#critical-subresources">critical subresources</a>
   failed to completely load for any reason (e.g. DNS error, HTTP 404
   response, a connection being prematurely closed, unsupported
-  Content-Type), <a href="textFieldSelection.html#queue-a-task">queue a task</a> to <a href="textFieldSelection.html#fire-a-simple-event">fire a simple
+  Content-Type), <a href="webappapis.html#queue-a-task">queue a task</a> to <a href="webappapis.html#fire-a-simple-event">fire a simple
   event</a> named <code title="event-error">error</code> at the
   <code><a href="#the-style-element">style</a></code> element. Non-network errors in processing the
   style sheet or its subresources (e.g. CSS parse errors, PNG decoding
   errors) are not failures for the purposes of this paragraph.</p>
 
-  <p>The <a href="textFieldSelection.html#task-source">task source</a> for these <a href="textFieldSelection.html#concept-task" title="concept-task">tasks</a> is the <a href="textFieldSelection.html#dom-manipulation-task-source">DOM manipulation task
+  <p>The <a href="webappapis.html#task-source">task source</a> for these <a href="webappapis.html#concept-task" title="concept-task">tasks</a> is the <a href="webappapis.html#dom-manipulation-task-source">DOM manipulation task
   source</a>.</p>
 
-  <p>The element must <a href="textFieldSelection.html#delay-the-load-event">delay the load event</a> of the
+  <p>The element must <a href="the-end.html#delay-the-load-event">delay the load event</a> of the
   element's document until all the attempts to obtain the style
   sheet's <a href="infrastructure.html#critical-subresources">critical subresources</a>, if any, are
   complete.</p>
@@ -595,7 +595,7 @@ c-end         = "--&gt;"</pre>
   </div>
 
   <p class="note">This specification does not specify a style system,
-  but CSS is expected to be supported by most Web browsers. <a href="textFieldSelection.html#refsCSS">[CSS]</a></p>
+  but CSS is expected to be supported by most Web browsers. <a href="references.html#refsCSS">[CSS]</a></p>
 
   <div class="impl">
 
@@ -611,7 +611,7 @@ c-end         = "--&gt;"</pre>
 
   <p>The <code><a href="infrastructure.html#linkstyle">LinkStyle</a></code> interface is also implemented by
   this element; the <a href="styling.html#styling">styling processing model</a> defines
-  how. <a href="textFieldSelection.html#refsCSSOM">[CSSOM]</a></p>
+  how. <a href="references.html#refsCSSOM">[CSSOM]</a></p>
 
   <div class="example">
 

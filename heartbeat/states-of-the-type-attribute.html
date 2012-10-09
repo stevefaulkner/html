@@ -387,7 +387,7 @@
 
   </div>
 
-  <p>The <code><a href="the-input-element.html#the-input-element">input</a></code> element <a href="textFieldSelection.html#represents">represents</a> a value
+  <p>The <code><a href="the-input-element.html#the-input-element">input</a></code> element <a href="rendering.html#represents">represents</a> a value
   that is not intended to be examined or manipulated by the user.</p>
 
   <div class="impl">
@@ -395,7 +395,7 @@
   <p><strong>Constraint validation</strong>: If an <code><a href="the-input-element.html#the-input-element">input</a></code>
   element's <code title="attr-input-type"><a href="the-input-element.html#attr-input-type">type</a></code> attribute is in
   the <a href="#hidden-state-(type=hidden)" title="attr-input-type-hidden">Hidden</a> state, it is
-  <a href="textFieldSelection.html#barred-from-constraint-validation">barred from constraint validation</a>.</p>
+  <a href="constraints.html#barred-from-constraint-validation">barred from constraint validation</a>.</p>
 
   </div>
 
@@ -473,7 +473,7 @@
 
   </div>
 
-  <p>The <code><a href="the-input-element.html#the-input-element">input</a></code> element <a href="textFieldSelection.html#represents">represents</a> a one line
+  <p>The <code><a href="the-input-element.html#the-input-element">input</a></code> element <a href="rendering.html#represents">represents</a> a one line
   plain text edit control for the element's <a href="attributes-common-to-form-controls.html#concept-fe-value" title="concept-fe-value">value</a>.</p>
 
   <p class="note">The difference between the <a href="#text-(type=text)-state-and-search-state-(type=search)" title="attr-input-type-text">Text</a> state and the <a href="#text-(type=text)-state-and-search-state-(type=search)" title="attr-input-type-search">Search</a> state is primarily
@@ -502,7 +502,7 @@
    selected a left-to-right writing direction, and "<code title="attr-dir-rtl"><a href="global-attributes.html#attr-dir-rtl">rtl</a></code>" if the user selected a
    right-to-left writing direction.</p></li>
 
-   <li><p><a href="textFieldSelection.html#queue-a-task">Queue a task</a> to <a href="textFieldSelection.html#fire-a-simple-event">fire a simple
+   <li><p><a href="webappapis.html#queue-a-task">Queue a task</a> to <a href="webappapis.html#fire-a-simple-event">fire a simple
    event</a> that bubbles named <code title="event-input">input</code> at the <code><a href="the-input-element.html#the-input-element">input</a></code>
    element.</p></li>
 
@@ -586,7 +586,7 @@
 
   </div>
 
-  <p>The <code><a href="the-input-element.html#the-input-element">input</a></code> element <a href="textFieldSelection.html#represents">represents</a> a control
+  <p>The <code><a href="the-input-element.html#the-input-element">input</a></code> element <a href="rendering.html#represents">represents</a> a control
   for editing a telephone number given in the element's <a href="attributes-common-to-form-controls.html#concept-fe-value" title="concept-fe-value">value</a>.</p>
 
   <div class="impl">
@@ -615,7 +615,7 @@
   particular syntax. This is intentional; in practice, telephone
   number fields tend to be free-form fields, because there are a wide
   variety of valid phone numbers. Systems that need to enforce a
-  particular format are encouraged to use the <code title="attr-input-pattern"><a href="common-input-element-attributes.html#attr-input-pattern">pattern</a></code> attribute or the <code title="dom-cva-setCustomValidity"><a href="textFieldSelection.html#dom-cva-setcustomvalidity">setCustomValidity()</a></code> method
+  particular format are encouraged to use the <code title="attr-input-pattern"><a href="common-input-element-attributes.html#attr-input-pattern">pattern</a></code> attribute or the <code title="dom-cva-setCustomValidity"><a href="constraints.html#dom-cva-setcustomvalidity">setCustomValidity()</a></code> method
   to hook into the client-side validation mechanism.</p>
 
 
@@ -686,7 +686,7 @@
 
   </div>
 
-  <p>The <code><a href="the-input-element.html#the-input-element">input</a></code> element <a href="textFieldSelection.html#represents">represents</a> a control
+  <p>The <code><a href="the-input-element.html#the-input-element">input</a></code> element <a href="rendering.html#represents">represents</a> a control
   for editing a single <a href="urls.html#absolute-url">absolute URL</a> given in the
   element's <a href="attributes-common-to-form-controls.html#concept-fe-value" title="concept-fe-value">value</a>.</p>
 
@@ -720,7 +720,7 @@
 
   <p><strong>Constraint validation</strong>: While the <a href="attributes-common-to-form-controls.html#concept-fe-value" title="concept-fe-value">value</a> of the element is neither the
   empty string nor a <a href="urls.html#valid-url" title="valid URL">valid</a>
-  <a href="urls.html#absolute-url">absolute URL</a>, the element is <a href="textFieldSelection.html#suffering-from-a-type-mismatch">suffering from a
+  <a href="urls.html#absolute-url">absolute URL</a>, the element is <a href="constraints.html#suffering-from-a-type-mismatch">suffering from a
   type mismatch</a>.</p>
 
   </div>
@@ -839,7 +839,7 @@
 
    <dd>
 
-    <p>The <code><a href="the-input-element.html#the-input-element">input</a></code> element <a href="textFieldSelection.html#represents">represents</a> a
+    <p>The <code><a href="the-input-element.html#the-input-element">input</a></code> element <a href="rendering.html#represents">represents</a> a
     control for editing an e-mail address given in the element's <a href="attributes-common-to-form-controls.html#concept-fe-value" title="concept-fe-value">value</a>.</p>
 
     <div class="impl">
@@ -876,7 +876,7 @@
 
     <p><strong>Constraint validation</strong>: While the <a href="attributes-common-to-form-controls.html#concept-fe-value" title="concept-fe-value">value</a> of the element is neither
     the empty string nor a single <a href="#valid-e-mail-address">valid e-mail address</a>,
-    the element is <a href="textFieldSelection.html#suffering-from-a-type-mismatch">suffering from a type mismatch</a>.</p>
+    the element is <a href="constraints.html#suffering-from-a-type-mismatch">suffering from a type mismatch</a>.</p>
 
     </div>
 
@@ -895,7 +895,7 @@
 
     </div>
 
-    <p>The <code><a href="the-input-element.html#the-input-element">input</a></code> element <a href="textFieldSelection.html#represents">represents</a> a
+    <p>The <code><a href="the-input-element.html#the-input-element">input</a></code> element <a href="rendering.html#represents">represents</a> a
     control for adding, removing, and editing the e-mail addresses
     given in the element's <a href="attributes-common-to-form-controls.html#concept-fe-values" title="concept-fe-values">value<em>s</em></a>.</p>
 
@@ -962,7 +962,7 @@
 
     <p><strong>Constraint validation</strong>: While the <a href="attributes-common-to-form-controls.html#concept-fe-value" title="concept-fe-value">value</a> of the element is not a
     <a href="#valid-e-mail-address-list">valid e-mail address list</a>, the element is
-    <a href="textFieldSelection.html#suffering-from-a-type-mismatch">suffering from a type mismatch</a>.</p>
+    <a href="constraints.html#suffering-from-a-type-mismatch">suffering from a type mismatch</a>.</p>
 
     </div>
 
@@ -973,7 +973,7 @@
   where <code title="">atext</code> is defined in <a href="http://tools.ietf.org/html/rfc5322#section-3.2.3">RFC 5322
   section 3.2.3</a>, and <code title="">ldh-str</code> is defined in
   <a href="http://tools.ietf.org/html/rfc1034#section-3.5">RFC 1034
-  section 3.5</a>. <a href="textFieldSelection.html#refsABNF">[ABNF]</a> <a href="textFieldSelection.html#refsRFC5322">[RFC5322]</a> <a href="textFieldSelection.html#refsRFC1034">[RFC1034]</a></p> <!-- Domain syntax based on
+  section 3.5</a>. <a href="references.html#refsABNF">[ABNF]</a> <a href="references.html#refsRFC5322">[RFC5322]</a> <a href="references.html#refsRFC1034">[RFC1034]</a></p> <!-- Domain syntax based on
   section 3.5 of [RFC1034] and section 2.1 of [RFC1123] -->
 
   <p class="note">This requirement is a <a href="introduction.html#willful-violation">willful violation</a>
@@ -1079,7 +1079,7 @@
 
   </div>
 
-  <p>The <code><a href="the-input-element.html#the-input-element">input</a></code> element <a href="textFieldSelection.html#represents">represents</a> a one line
+  <p>The <code><a href="the-input-element.html#the-input-element">input</a></code> element <a href="rendering.html#represents">represents</a> a one line
   plain text edit control for the element's <a href="attributes-common-to-form-controls.html#concept-fe-value" title="concept-fe-value">value</a>. The user agent should obscure
   the value so that people other than the user cannot see it.</p>
 
@@ -1168,7 +1168,7 @@
 
   </div>
 
-  <p>The <code><a href="the-input-element.html#the-input-element">input</a></code> element <a href="textFieldSelection.html#represents">represents</a> a control
+  <p>The <code><a href="the-input-element.html#the-input-element">input</a></code> element <a href="rendering.html#represents">represents</a> a control
   for setting the element's <a href="attributes-common-to-form-controls.html#concept-fe-value" title="concept-fe-value">value</a> to a string representing a
   specific <a href="common-microsyntaxes.html#concept-datetime" title="concept-datetime">global date and
   time</a>. <span class="impl">User agents may display the date and
@@ -1231,9 +1231,9 @@
 
   <div class="impl">
 
-  <p>When the element is <a href="textFieldSelection.html#suffering-from-a-step-mismatch">suffering from a step mismatch</a>,
+  <p>When the element is <a href="constraints.html#suffering-from-a-step-mismatch">suffering from a step mismatch</a>,
   the user agent may round the element's <a href="attributes-common-to-form-controls.html#concept-fe-value" title="concept-fe-value">value</a> to the nearest <a href="common-microsyntaxes.html#concept-datetime" title="concept-datetime">global date and time</a> for which the
-  element would not <a href="textFieldSelection.html#suffering-from-a-step-mismatch" title="suffering from a step
+  element would not <a href="constraints.html#suffering-from-a-step-mismatch" title="suffering from a step
   mismatch">suffer from a step mismatch</a>.</p>
 
   <p><strong>The <a href="the-input-element.html#concept-input-value-string-number" title="concept-input-value-string-number">algorithm to convert a
@@ -1381,7 +1381,7 @@
 
   </div>
 
-  <p>The <code><a href="the-input-element.html#the-input-element">input</a></code> element <a href="textFieldSelection.html#represents">represents</a> a control
+  <p>The <code><a href="the-input-element.html#the-input-element">input</a></code> element <a href="rendering.html#represents">represents</a> a control
   for setting the element's <a href="attributes-common-to-form-controls.html#concept-fe-value" title="concept-fe-value">value</a> to a string representing a
   specific <a href="common-microsyntaxes.html#concept-date" title="concept-date">date</a>.</p>
 
@@ -1430,9 +1430,9 @@
 
   <div class="impl">
 
-  <p>When the element is <a href="textFieldSelection.html#suffering-from-a-step-mismatch">suffering from a step mismatch</a>,
+  <p>When the element is <a href="constraints.html#suffering-from-a-step-mismatch">suffering from a step mismatch</a>,
   the user agent may round the element's <a href="attributes-common-to-form-controls.html#concept-fe-value" title="concept-fe-value">value</a> to the nearest <a href="common-microsyntaxes.html#concept-date" title="concept-date">date</a> for which the element would not
-  <a href="textFieldSelection.html#suffering-from-a-step-mismatch" title="suffering from a step mismatch">suffer from a step
+  <a href="constraints.html#suffering-from-a-step-mismatch" title="suffering from a step mismatch">suffer from a step
   mismatch</a>.</p>
 
   <p><strong>The <a href="the-input-element.html#concept-input-value-string-number" title="concept-input-value-string-number">algorithm to convert a
@@ -1538,7 +1538,7 @@
 
   </div>
 
-  <p>The <code><a href="the-input-element.html#the-input-element">input</a></code> element <a href="textFieldSelection.html#represents">represents</a> a control
+  <p>The <code><a href="the-input-element.html#the-input-element">input</a></code> element <a href="rendering.html#represents">represents</a> a control
   for setting the element's <a href="attributes-common-to-form-controls.html#concept-fe-value" title="concept-fe-value">value</a> to a string representing a
   specific <a href="common-microsyntaxes.html#concept-month" title="concept-month">month</a>.</p>
 
@@ -1588,9 +1588,9 @@
 
   <div class="impl">
 
-  <p>When the element is <a href="textFieldSelection.html#suffering-from-a-step-mismatch">suffering from a step mismatch</a>,
+  <p>When the element is <a href="constraints.html#suffering-from-a-step-mismatch">suffering from a step mismatch</a>,
   the user agent may round the element's <a href="attributes-common-to-form-controls.html#concept-fe-value" title="concept-fe-value">value</a> to the nearest <a href="common-microsyntaxes.html#concept-month" title="concept-month">month</a> for which the element would not
-  <a href="textFieldSelection.html#suffering-from-a-step-mismatch" title="suffering from a step mismatch">suffer from a step
+  <a href="constraints.html#suffering-from-a-step-mismatch" title="suffering from a step mismatch">suffer from a step
   mismatch</a>.</p>
 
   <p><strong>The <a href="the-input-element.html#concept-input-value-string-number" title="concept-input-value-string-number">algorithm to convert a
@@ -1694,7 +1694,7 @@
 
   </div>
 
-  <p>The <code><a href="the-input-element.html#the-input-element">input</a></code> element <a href="textFieldSelection.html#represents">represents</a> a control
+  <p>The <code><a href="the-input-element.html#the-input-element">input</a></code> element <a href="rendering.html#represents">represents</a> a control
   for setting the element's <a href="attributes-common-to-form-controls.html#concept-fe-value" title="concept-fe-value">value</a> to a string representing a
   specific <a href="common-microsyntaxes.html#concept-week" title="concept-week">week</a>.</p>
 
@@ -1745,9 +1745,9 @@
 
   <div class="impl">
 
-  <p>When the element is <a href="textFieldSelection.html#suffering-from-a-step-mismatch">suffering from a step mismatch</a>,
+  <p>When the element is <a href="constraints.html#suffering-from-a-step-mismatch">suffering from a step mismatch</a>,
   the user agent may round the element's <a href="attributes-common-to-form-controls.html#concept-fe-value" title="concept-fe-value">value</a> to the nearest <a href="common-microsyntaxes.html#concept-week" title="concept-week">week</a> for which the element would not
-  <a href="textFieldSelection.html#suffering-from-a-step-mismatch" title="suffering from a step mismatch">suffer from a step
+  <a href="constraints.html#suffering-from-a-step-mismatch" title="suffering from a step mismatch">suffer from a step
   mismatch</a>.</p>
 
   <p><strong>The <a href="the-input-element.html#concept-input-value-string-number" title="concept-input-value-string-number">algorithm to convert a
@@ -1854,7 +1854,7 @@
 
   </div>
 
-  <p>The <code><a href="the-input-element.html#the-input-element">input</a></code> element <a href="textFieldSelection.html#represents">represents</a> a control
+  <p>The <code><a href="the-input-element.html#the-input-element">input</a></code> element <a href="rendering.html#represents">represents</a> a control
   for setting the element's <a href="attributes-common-to-form-controls.html#concept-fe-value" title="concept-fe-value">value</a> to a string representing a
   specific <a href="common-microsyntaxes.html#concept-time" title="concept-time">time</a>.</p>
 
@@ -1904,9 +1904,9 @@
 
   <div class="impl">
 
-  <p>When the element is <a href="textFieldSelection.html#suffering-from-a-step-mismatch">suffering from a step mismatch</a>,
+  <p>When the element is <a href="constraints.html#suffering-from-a-step-mismatch">suffering from a step mismatch</a>,
   the user agent may round the element's <a href="attributes-common-to-form-controls.html#concept-fe-value" title="concept-fe-value">value</a> to the nearest <a href="common-microsyntaxes.html#concept-time" title="concept-time">time</a> for which the element would not
-  <a href="textFieldSelection.html#suffering-from-a-step-mismatch" title="suffering from a step mismatch">suffer from a step
+  <a href="constraints.html#suffering-from-a-step-mismatch" title="suffering from a step mismatch">suffer from a step
   mismatch</a>.</p>
 
   <p><strong>The <a href="the-input-element.html#concept-input-value-string-number" title="concept-input-value-string-number">algorithm to convert a
@@ -2004,7 +2004,7 @@
 
   </div>
 
-  <p>The <code><a href="the-input-element.html#the-input-element">input</a></code> element <a href="textFieldSelection.html#represents">represents</a> a control
+  <p>The <code><a href="the-input-element.html#the-input-element">input</a></code> element <a href="rendering.html#represents">represents</a> a control
   for setting the element's <a href="attributes-common-to-form-controls.html#concept-fe-value" title="concept-fe-value">value</a> to a string representing a
   <a href="common-microsyntaxes.html#concept-datetime-local" title="concept-datetime-local">local date and time</a>,
   with no time-zone offset information.</p>
@@ -2063,9 +2063,9 @@
 
   <div class="impl">
 
-  <p>When the element is <a href="textFieldSelection.html#suffering-from-a-step-mismatch">suffering from a step mismatch</a>,
+  <p>When the element is <a href="constraints.html#suffering-from-a-step-mismatch">suffering from a step mismatch</a>,
   the user agent may round the element's <a href="attributes-common-to-form-controls.html#concept-fe-value" title="concept-fe-value">value</a> to the nearest <a href="common-microsyntaxes.html#concept-datetime-local" title="concept-datetime-local">local date and time</a> for which
-  the element would not <a href="textFieldSelection.html#suffering-from-a-step-mismatch" title="suffering from a step
+  the element would not <a href="constraints.html#suffering-from-a-step-mismatch" title="suffering from a step
   mismatch">suffer from a step mismatch</a>.</p>
 
   <p><strong>The <a href="the-input-element.html#concept-input-value-string-number" title="concept-input-value-string-number">algorithm to convert a
@@ -2184,7 +2184,7 @@
 
   </div>
 
-  <p>The <code><a href="the-input-element.html#the-input-element">input</a></code> element <a href="textFieldSelection.html#represents">represents</a> a control
+  <p>The <code><a href="the-input-element.html#the-input-element">input</a></code> element <a href="rendering.html#represents">represents</a> a control
   for setting the element's <a href="attributes-common-to-form-controls.html#concept-fe-value" title="concept-fe-value">value</a> to a string representing a
   number.</p>
 
@@ -2242,9 +2242,9 @@
 
   <div class="impl">
 
-  <p>When the element is <a href="textFieldSelection.html#suffering-from-a-step-mismatch">suffering from a step mismatch</a>,
+  <p>When the element is <a href="constraints.html#suffering-from-a-step-mismatch">suffering from a step mismatch</a>,
   the user agent may round the element's <a href="attributes-common-to-form-controls.html#concept-fe-value" title="concept-fe-value">value</a> to the nearest number for
-  which the element would not <a href="textFieldSelection.html#suffering-from-a-step-mismatch" title="suffering from a step
+  which the element would not <a href="constraints.html#suffering-from-a-step-mismatch" title="suffering from a step
   mismatch">suffer from a step mismatch</a>. If there are two such
   numbers, user agents are encouraged to pick the one nearest positive
   infinity.</p>
@@ -2352,7 +2352,7 @@
 
   </div>
 
-  <p>The <code><a href="the-input-element.html#the-input-element">input</a></code> element <a href="textFieldSelection.html#represents">represents</a> a control
+  <p>The <code><a href="the-input-element.html#the-input-element">input</a></code> element <a href="rendering.html#represents">represents</a> a control
   for setting the element's <a href="attributes-common-to-form-controls.html#concept-fe-value" title="concept-fe-value">value</a> to a string representing a
   number, but with the caveat that the exact value is not important,
   letting UAs provide a simpler interface than they do for the <a href="#number-state-(type=number)" title="attr-input-type-number">Number</a> state.</p>
@@ -2408,11 +2408,11 @@
 
   <div class="impl">
 
-  <p>When the element is <a href="textFieldSelection.html#suffering-from-an-underflow">suffering from an
+  <p>When the element is <a href="constraints.html#suffering-from-an-underflow">suffering from an
   underflow</a>, the user agent must set the element's <a href="attributes-common-to-form-controls.html#concept-fe-value" title="concept-fe-value">value</a> to a <a href="common-microsyntaxes.html#valid-floating-point-number">valid floating-point
   number</a> that represents the <a href="common-input-element-attributes.html#concept-input-min" title="concept-input-min">minimum</a>.</p>
 
-  <p>When the element is <a href="textFieldSelection.html#suffering-from-an-overflow">suffering from an overflow</a>,
+  <p>When the element is <a href="constraints.html#suffering-from-an-overflow">suffering from an overflow</a>,
   if the <a href="common-input-element-attributes.html#concept-input-max" title="concept-input-max">maximum</a> is not less
   than the <a href="common-input-element-attributes.html#concept-input-min" title="concept-input-min">minimum</a>, the user
   agent must set the element's <a href="attributes-common-to-form-controls.html#concept-fe-value" title="concept-fe-value">value</a> to a <a href="common-microsyntaxes.html#valid-floating-point-number">valid floating-point
@@ -2427,9 +2427,9 @@
 
   <div class="impl">
 
-  <p>When the element is <a href="textFieldSelection.html#suffering-from-a-step-mismatch">suffering from a step mismatch</a>,
+  <p>When the element is <a href="constraints.html#suffering-from-a-step-mismatch">suffering from a step mismatch</a>,
   the user agent must round the element's <a href="attributes-common-to-form-controls.html#concept-fe-value" title="concept-fe-value">value</a> to the nearest number for
-  which the element would not <a href="textFieldSelection.html#suffering-from-a-step-mismatch" title="suffering from a step
+  which the element would not <a href="constraints.html#suffering-from-a-step-mismatch" title="suffering from a step
   mismatch">suffer from a step mismatch</a>, and which is greater
   than or equal to the <a href="common-input-element-attributes.html#concept-input-min" title="concept-input-min">minimum</a>,
   and, if the <a href="common-input-element-attributes.html#concept-input-max" title="concept-input-max">maximum</a> is not
@@ -2582,7 +2582,7 @@
 
   </div>
 
-  <p>The <code><a href="the-input-element.html#the-input-element">input</a></code> element <a href="textFieldSelection.html#represents">represents</a> a color
+  <p>The <code><a href="the-input-element.html#the-input-element">input</a></code> element <a href="rendering.html#represents">represents</a> a color
   well control, for setting the element's <a href="attributes-common-to-form-controls.html#concept-fe-value" title="concept-fe-value">value</a> to a string representing a
   <a href="common-microsyntaxes.html#simple-color">simple color</a>.</p>
 
@@ -2685,7 +2685,7 @@
 
   </div>
 
-  <p>The <code><a href="the-input-element.html#the-input-element">input</a></code> element <a href="textFieldSelection.html#represents">represents</a> a
+  <p>The <code><a href="the-input-element.html#the-input-element">input</a></code> element <a href="rendering.html#represents">represents</a> a
   two-state control that represents the element's <a href="attributes-common-to-form-controls.html#concept-fe-checked" title="concept-fe-checked">checkedness</a> state. If the
   element's <a href="attributes-common-to-form-controls.html#concept-fe-checked" title="concept-fe-checked">checkedness</a> state
   is true, the control represents a positive selection, and if it is
@@ -2710,7 +2710,7 @@
   the element's <code title="dom-input-indeterminate"><a href="the-input-element.html#dom-input-indeterminate">indeterminate</a></code> IDL attribute
   back to the values they had before the <a href="content-models.html#pre-click-activation-steps">pre-click activation
   steps</a> were run. The <a href="content-models.html#activation-behavior">activation behavior</a> is to
-  <a href="textFieldSelection.html#fire-a-simple-event">fire a simple event</a> that bubbles named <code title="event-change">change</code> at the element. <!-- It's not
+  <a href="webappapis.html#fire-a-simple-event">fire a simple event</a> that bubbles named <code title="event-change">change</code> at the element. <!-- It's not
   cancelable. Once this fires, the control is checked, end of story.
   --></p>
 
@@ -2718,7 +2718,7 @@
   <a href="content-models.html#activation-behavior">activation behavior</a>.</p>
 
   <p><strong>Constraint validation</strong>: If the element is <i title="concept-input-required"><a href="common-input-element-attributes.html#concept-input-required">required</a></i> and its <a href="attributes-common-to-form-controls.html#concept-fe-checked" title="concept-fe-checked">checkedness</a> is false, then the
-  element is <a href="textFieldSelection.html#suffering-from-being-missing">suffering from being missing</a>.</p>
+  element is <a href="constraints.html#suffering-from-being-missing">suffering from being missing</a>.</p>
 
   </div>
 
@@ -2801,7 +2801,7 @@
 
   </div>
 
-  <p>The <code><a href="the-input-element.html#the-input-element">input</a></code> element <a href="textFieldSelection.html#represents">represents</a> a control
+  <p>The <code><a href="the-input-element.html#the-input-element">input</a></code> element <a href="rendering.html#represents">represents</a> a control
   that, when used in conjunction with other <code><a href="the-input-element.html#the-input-element">input</a></code>
   elements, forms a <i><a href="#radio-button-group">radio button group</a></i> in which only one
   control can have its <a href="attributes-common-to-form-controls.html#concept-fe-checked" title="concept-fe-checked">checkedness</a> state set to true. If
@@ -2850,7 +2850,7 @@
   the element's <a href="attributes-common-to-form-controls.html#concept-fe-checked" title="concept-fe-checked">checkedness</a> to
   true. The <a href="content-models.html#canceled-activation-steps">canceled activation steps</a> consist of setting
   the element's <a href="attributes-common-to-form-controls.html#concept-fe-checked" title="concept-fe-checked">checkedness</a> to
-  false. The <a href="content-models.html#activation-behavior">activation behavior</a> is to <a href="textFieldSelection.html#fire-a-simple-event">fire a
+  false. The <a href="content-models.html#activation-behavior">activation behavior</a> is to <a href="webappapis.html#fire-a-simple-event">fire a
   simple event</a> that bubbles named <code title="event-change">change</code> at the element. <!-- It's not
   cancelable. Once this fires, the control is checked, end of story.
   -->.</p>
@@ -2862,7 +2862,7 @@
   <i><a href="#radio-button-group">radio button group</a></i> is <i title="concept-input-required"><a href="common-input-element-attributes.html#concept-input-required">required</a></i>, and all of the
   <code><a href="the-input-element.html#the-input-element">input</a></code> elements in the <i><a href="#radio-button-group">radio button group</a></i> have a
   <a href="attributes-common-to-form-controls.html#concept-fe-checked" title="concept-fe-checked">checkedness</a> that is false,
-  then the element is <a href="textFieldSelection.html#suffering-from-being-missing">suffering from being missing</a>.</p>
+  then the element is <a href="constraints.html#suffering-from-being-missing">suffering from being missing</a>.</p>
 
   </div>
 
@@ -2946,7 +2946,7 @@
 
   </div>
 
-  <p>The <code><a href="the-input-element.html#the-input-element">input</a></code> element <a href="textFieldSelection.html#represents">represents</a> a list of
+  <p>The <code><a href="the-input-element.html#the-input-element">input</a></code> element <a href="rendering.html#represents">represents</a> a list of
   <dfn id="concept-input-type-file-selected" title="concept-input-type-file-selected">selected files</dfn>,
   each file consisting of a file name, a file type, and a file body
   (the contents of the file).</p>
@@ -2964,7 +2964,7 @@
   connected to the user's device.</p>
 
   <p><strong>Constraint validation</strong>: If the element is <i title="concept-input-required"><a href="common-input-element-attributes.html#concept-input-required">required</a></i> and the list of <a href="#concept-input-type-file-selected" title="concept-input-type-file-selected">selected files</a> is
-  empty, then the element is <a href="textFieldSelection.html#suffering-from-being-missing">suffering from being
+  empty, then the element is <a href="constraints.html#suffering-from-being-missing">suffering from being
   missing</a>.</p>
 
   <p>Unless the <code title="attr-input-multiple"><a href="common-input-element-attributes.html#attr-input-multiple">multiple</a></code>
@@ -3174,7 +3174,7 @@
 
   </div>
 
-  <p>The <code><a href="the-input-element.html#the-input-element">input</a></code> element <a href="textFieldSelection.html#represents">represents</a> a button
+  <p>The <code><a href="the-input-element.html#the-input-element">input</a></code> element <a href="rendering.html#represents">represents</a> a button
   that, when activated, submits the form. <span class="impl">If the
   element has a <code title="attr-input-value"><a href="the-input-element.html#attr-input-value">value</a></code> attribute,
   the button's label must be the value of that attribute; otherwise,
@@ -3187,7 +3187,7 @@
 
   <p>If the element is <i title="concept-input-mutable"><a href="the-input-element.html#concept-input-mutable">mutable</a></i>,
   then the element's <a href="content-models.html#activation-behavior">activation behavior</a> is as follows:
-  if the element has a <a href="association-of-controls-and-forms.html#form-owner">form owner</a>, <a href="textFieldSelection.html#concept-form-submit" title="concept-form-submit">submit</a> the <a href="association-of-controls-and-forms.html#form-owner">form
+  if the element has a <a href="association-of-controls-and-forms.html#form-owner">form owner</a>, <a href="constraints.html#concept-form-submit" title="concept-form-submit">submit</a> the <a href="association-of-controls-and-forms.html#form-owner">form
   owner</a> from the <code><a href="the-input-element.html#the-input-element">input</a></code> element; otherwise, do
   nothing.</p>
 
@@ -3269,14 +3269,14 @@
 
   </div>
 
-  <p>The <code><a href="the-input-element.html#the-input-element">input</a></code> element <a href="textFieldSelection.html#represents">represents</a> either an
+  <p>The <code><a href="the-input-element.html#the-input-element">input</a></code> element <a href="rendering.html#represents">represents</a> either an
   image from which a user can select a coordinate and submit the form,
   or alternatively a button from which the user can submit the
   form. The element is a <a href="forms.html#concept-button" title="concept-button">button</a>,
   specifically a <a href="forms.html#concept-submit-button" title="concept-submit-button">submit
   button</a>.</p>
 
-  <p class="note">The coordinate is sent to the server <a href="textFieldSelection.html#constructing-the-form-data-set" title="constructing the form data set">during form submission</a>
+  <p class="note">The coordinate is sent to the server <a href="constraints.html#constructing-the-form-data-set" title="constructing the form data set">during form submission</a>
   by sending two entries for the element, derived from the name of the
   control but with "<code title="">.x</code>" and "<code title="">.y</code>" appended to the name with the <var title="">x</var> and <var title="">y</var> components of the
   coordinate respectively.</p>
@@ -3311,16 +3311,16 @@
    <code title="attr-input-src"><a href="#attr-input-src">src</a></code> attribute is set or
    changed.</li>
 
-  </ul><!-- same text in <img> section and similar text elsewhere --><p>Fetching the image must <a href="textFieldSelection.html#delay-the-load-event">delay the load event</a> of the
-  element's document until the <a href="textFieldSelection.html#concept-task" title="concept-task">task</a>
-  that is <a href="textFieldSelection.html#queue-a-task" title="queue a task">queued</a> by the
-  <a href="textFieldSelection.html#networking-task-source">networking task source</a> once the resource has been <a href="urls.html#fetch" title="fetch">fetched</a> (defined below) has been run.</p>
+  </ul><!-- same text in <img> section and similar text elsewhere --><p>Fetching the image must <a href="the-end.html#delay-the-load-event">delay the load event</a> of the
+  element's document until the <a href="webappapis.html#concept-task" title="concept-task">task</a>
+  that is <a href="webappapis.html#queue-a-task" title="queue a task">queued</a> by the
+  <a href="webappapis.html#networking-task-source">networking task source</a> once the resource has been <a href="urls.html#fetch" title="fetch">fetched</a> (defined below) has been run.</p>
 
   <p>If the image was successfully obtained, with no network errors,
   and the image's type is a supported image type, and the image is a
   valid image of that type, then the image is said to be <dfn id="input-img-available" title="input-img-available"><i>available</i></dfn>. If this is true
-  before the image is completely downloaded, each <a href="textFieldSelection.html#concept-task" title="concept-task">task</a> that is <a href="textFieldSelection.html#queue-a-task" title="queue a
-  task">queued</a> by the <a href="textFieldSelection.html#networking-task-source">networking task source</a> while
+  before the image is completely downloaded, each <a href="webappapis.html#concept-task" title="concept-task">task</a> that is <a href="webappapis.html#queue-a-task" title="queue a
+  task">queued</a> by the <a href="webappapis.html#networking-task-source">networking task source</a> while
   the image is being <a href="urls.html#fetch" title="fetch">fetched</a> must update
   the presentation of the image appropriately.</p>
 
@@ -3338,14 +3338,14 @@
   resource to act in an interactive fashion, but should honor any
   animation in the resource.</p>
 
-  <p>The <a href="textFieldSelection.html#concept-task" title="concept-task">task</a> that is <a href="textFieldSelection.html#queue-a-task" title="queue a task">queued</a> by the <a href="textFieldSelection.html#networking-task-source">networking task
+  <p>The <a href="webappapis.html#concept-task" title="concept-task">task</a> that is <a href="webappapis.html#queue-a-task" title="queue a task">queued</a> by the <a href="webappapis.html#networking-task-source">networking task
   source</a> once the resource has been <a href="urls.html#fetch" title="fetch">fetched</a>, must, if the download was successful
   and the image is <i title="input-img-available"><a href="#input-img-available">available</a></i>,
-  <a href="textFieldSelection.html#queue-a-task">queue a task</a> to <a href="textFieldSelection.html#fire-a-simple-event">fire a simple event</a> named
+  <a href="webappapis.html#queue-a-task">queue a task</a> to <a href="webappapis.html#fire-a-simple-event">fire a simple event</a> named
   <code title="event-load">load</code> at the <code><a href="the-input-element.html#the-input-element">input</a></code>
   element; and otherwise, if the fetching process fails without a
   response from the remote server, or completes but the image is not a
-  valid or supported image, <a href="textFieldSelection.html#queue-a-task">queue a task</a> to <a href="textFieldSelection.html#fire-a-simple-event">fire a
+  valid or supported image, <a href="webappapis.html#queue-a-task">queue a task</a> to <a href="webappapis.html#fire-a-simple-event">fire a
   simple event</a> named <code title="event-error">error</code> on
   the <code><a href="the-input-element.html#the-input-element">input</a></code> element.</p>
 
@@ -3364,24 +3364,24 @@
   <hr><p>If the <code title="attr-input-src"><a href="#attr-input-src">src</a></code> attribute is set,
   and the image is <i title="input-img-available"><a href="#input-img-available">available</a></i> and
   the user agent is configured to display that image, then: The
-  element <a href="textFieldSelection.html#represents">represents</a> a control for selecting a <a href="#concept-input-type-image-coordinate" title="concept-input-type-image-coordinate">coordinate</a> from
+  element <a href="rendering.html#represents">represents</a> a control for selecting a <a href="#concept-input-type-image-coordinate" title="concept-input-type-image-coordinate">coordinate</a> from
   the image specified by the <code title="attr-input-src"><a href="#attr-input-src">src</a></code>
   attribute; if the element is <i title="concept-input-mutable"><a href="the-input-element.html#concept-input-mutable">mutable</a></i>, the user agent should
   allow the user to select this <a href="#concept-input-type-image-coordinate" title="concept-input-type-image-coordinate">coordinate</a>, and
   the element's <a href="content-models.html#activation-behavior">activation behavior</a> is as follows: if the
   element has a <a href="association-of-controls-and-forms.html#form-owner">form owner</a>, take the user's selected
   <a href="#concept-input-type-image-coordinate" title="concept-input-type-image-coordinate">coordinate</a>,
-  and <a href="textFieldSelection.html#concept-form-submit" title="concept-form-submit">submit</a> the
+  and <a href="constraints.html#concept-form-submit" title="concept-form-submit">submit</a> the
   <code><a href="the-input-element.html#the-input-element">input</a></code> element's <a href="association-of-controls-and-forms.html#form-owner">form owner</a> from the
   <code><a href="the-input-element.html#the-input-element">input</a></code> element. If the user activates the control
   without explicitly selecting a coordinate, then the coordinate (0,0)
   must be assumed.</p>
 
-  <p>Otherwise, the element <a href="textFieldSelection.html#represents">represents</a> a submit button
+  <p>Otherwise, the element <a href="rendering.html#represents">represents</a> a submit button
   whose label is given by the value of the <code title="attr-input-alt"><a href="#attr-input-alt">alt</a></code> attribute; if the element is <i title="concept-input-mutable"><a href="the-input-element.html#concept-input-mutable">mutable</a></i>, then the element's
   <a href="content-models.html#activation-behavior">activation behavior</a> is as follows: if the element has a
   <a href="association-of-controls-and-forms.html#form-owner">form owner</a>, set the <a href="#concept-input-type-image-coordinate" title="concept-input-type-image-coordinate">selected
-  coordinate</a> to (0,0), and <a href="textFieldSelection.html#concept-form-submit" title="concept-form-submit">submit</a> the <code><a href="the-input-element.html#the-input-element">input</a></code>
+  coordinate</a> to (0,0), and <a href="constraints.html#concept-form-submit" title="concept-form-submit">submit</a> the <code><a href="the-input-element.html#the-input-element">input</a></code>
   element's <a href="association-of-controls-and-forms.html#form-owner">form owner</a> from the <code><a href="the-input-element.html#the-input-element">input</a></code>
   element.</p>
 
@@ -3527,7 +3527,7 @@
 
   </div>
 
-  <p>The <code><a href="the-input-element.html#the-input-element">input</a></code> element <a href="textFieldSelection.html#represents">represents</a> a button
+  <p>The <code><a href="the-input-element.html#the-input-element">input</a></code> element <a href="rendering.html#represents">represents</a> a button
   that, when activated, resets the form. <span class="impl">If the
   element has a <code title="attr-input-value"><a href="the-input-element.html#attr-input-value">value</a></code> attribute,
   the button's label must be the value of that attribute; otherwise,
@@ -3540,14 +3540,14 @@
 
   <p>If the element is <i title="concept-input-mutable"><a href="the-input-element.html#concept-input-mutable">mutable</a></i>,
   then the element's <a href="content-models.html#activation-behavior">activation behavior</a>, if the element
-  has a <a href="association-of-controls-and-forms.html#form-owner">form owner</a>, is to <a href="textFieldSelection.html#concept-form-reset" title="concept-form-reset">reset</a> the <a href="association-of-controls-and-forms.html#form-owner">form owner</a>;
+  has a <a href="association-of-controls-and-forms.html#form-owner">form owner</a>, is to <a href="constraints.html#concept-form-reset" title="concept-form-reset">reset</a> the <a href="association-of-controls-and-forms.html#form-owner">form owner</a>;
   otherwise, it is to do nothing.</p>
 
   <p>If the element is <i title="concept-input-immutable"><a href="the-input-element.html#concept-input-immutable">immutable</a></i>, it has no
   <a href="content-models.html#activation-behavior">activation behavior</a>.</p>
 
   <p><strong>Constraint validation</strong>: The element is
-  <a href="textFieldSelection.html#barred-from-constraint-validation">barred from constraint validation</a>.</p>
+  <a href="constraints.html#barred-from-constraint-validation">barred from constraint validation</a>.</p>
 
   </div>
 
@@ -3613,7 +3613,7 @@
 
   </div>
 
-  <p>The <code><a href="the-input-element.html#the-input-element">input</a></code> element <a href="textFieldSelection.html#represents">represents</a> a button
+  <p>The <code><a href="the-input-element.html#the-input-element">input</a></code> element <a href="rendering.html#represents">represents</a> a button
   with no default behavior. A label for the button must be provided in
   the <code title="attr-input-value"><a href="the-input-element.html#attr-input-value">value</a></code> attribute, though it
   may be the empty string. <span class="impl">If the element has a
@@ -3630,7 +3630,7 @@
   <a href="content-models.html#activation-behavior">activation behavior</a>.</p>
 
   <p><strong>Constraint validation</strong>: The element is
-  <a href="textFieldSelection.html#barred-from-constraint-validation">barred from constraint validation</a>.</p>
+  <a href="constraints.html#barred-from-constraint-validation">barred from constraint validation</a>.</p>
 
   </div>
 

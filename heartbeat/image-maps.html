@@ -391,7 +391,7 @@
   </div>
 
   <p>An <dfn id="image-map">image map</dfn> allows geometric areas on an image to be
-  associated with <a href="textFieldSelection.html#hyperlink" title="hyperlink">hyperlinks</a>.</p>
+  associated with <a href="links.html#hyperlink" title="hyperlink">hyperlinks</a>.</p>
 
   <p>An image, in the form of an <code><a href="the-img-element.html#the-img-element">img</a></code> element or an
   <code><a href="the-object-element.html#the-object-element">object</a></code> element representing an image, may be associated
@@ -458,14 +458,14 @@
   content</a> is shown instead). The following steps therefore only
   apply to <code><a href="the-img-element.html#the-img-element">img</a></code> elements.</p>
 
-  <ol><li><p>Remove all the <code><a href="the-area-element.html#the-area-element">area</a></code> elements in <var title="">areas</var> that have no <code title="attr-hyperlink-href"><a href="textFieldSelection.html#attr-hyperlink-href">href</a></code> attribute.</p></li>
+  <ol><li><p>Remove all the <code><a href="the-area-element.html#the-area-element">area</a></code> elements in <var title="">areas</var> that have no <code title="attr-hyperlink-href"><a href="links.html#attr-hyperlink-href">href</a></code> attribute.</p></li>
 
    <li><p>Remove all the <code><a href="the-area-element.html#the-area-element">area</a></code> elements in <var title="">areas</var> that have no <code title="attr-area-alt"><a href="the-area-element.html#attr-area-alt">alt</a></code> attribute, or whose <code title="attr-area-alt"><a href="the-area-element.html#attr-area-alt">alt</a></code> attribute's value is the empty
    string, <em>if</em> there is another <code><a href="the-area-element.html#the-area-element">area</a></code> element in
-   <var title="">areas</var> with the same value in the <code title="attr-hyperlink-href"><a href="textFieldSelection.html#attr-hyperlink-href">href</a></code> attribute and with a
+   <var title="">areas</var> with the same value in the <code title="attr-hyperlink-href"><a href="links.html#attr-hyperlink-href">href</a></code> attribute and with a
    non-empty <code title="attr-area-alt"><a href="the-area-element.html#attr-area-alt">alt</a></code> attribute.</p></li>
 
-   <li><p>Each remaining <code><a href="the-area-element.html#the-area-element">area</a></code> element in <var title="">areas</var> represents a <a href="textFieldSelection.html#hyperlink">hyperlink</a>. Those
+   <li><p>Each remaining <code><a href="the-area-element.html#the-area-element">area</a></code> element in <var title="">areas</var> represents a <a href="links.html#hyperlink">hyperlink</a>. Those
    hyperlinks should all be made available to the user in a manner
    associated with the text of the <code><a href="the-img-element.html#the-img-element">img</a></code>.</p>
 
@@ -575,7 +575,7 @@
       <span title="">(<var title="">N</var>/2)-1</span>, where <var title="">N</var> is the number of items in <var title="">coords</var>.</p>
 
       <p>The shape is a polygon whose vertices are given by <var title="">the coordinates</var>, and whose interior is
-      established using the even-odd rule. <a href="textFieldSelection.html#refsGRAPHICS">[GRAPHICS]</a></p>
+      established using the even-odd rule. <a href="references.html#refsGRAPHICS">[GRAPHICS]</a></p>
 
       <!--
         browsers implement the even-odd rule / even winding rule:
@@ -616,7 +616,7 @@
   shape covering the point that the pointing device indicated, if any,
   or to the image element itself, if there is no shape covering that
   point. User agents may also allow individual <code><a href="the-area-element.html#the-area-element">area</a></code>
-  elements representing <a href="textFieldSelection.html#hyperlink" title="hyperlink">hyperlinks</a> to
+  elements representing <a href="links.html#hyperlink" title="hyperlink">hyperlinks</a> to
   be selected and activated (e.g. using a keyboard).</p>
 
   <p class="note">Because a <code><a href="the-map-element.html#the-map-element">map</a></code> element (and its

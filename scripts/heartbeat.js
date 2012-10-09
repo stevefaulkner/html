@@ -64,7 +64,10 @@ exec("make " + conf.make, { cwd: rootDir }, function (err, stdout, stderr) {
                         .replace(/\bsection-index\.html/g, "REPLACE-ME-SECTION-INDEX")
                         .replace(/\"index\.html\b/g, "\"section-index.html")
                         .replace(/REPLACE-ME-SECTION-INDEX/g, "section-index.html")
-                        .replace(/\bspec\.html\b/g, "index.html");
+                        .replace(/\bspec\.html\b/g, "index.html")
+                        .replace(/(?:<\/dt>){2,}/g, "")
+                        .replace(/(?:<\/dd>){2,}/g, "")
+                        ;
             fs.writeFileSync(file, content, "utf-8");
         }
     }

@@ -401,14 +401,14 @@
 
   readonly attribute <a href="common-dom-interfaces.html#htmlformcontrolscollection-0">HTMLFormControlsCollection</a> <a href="#dom-fieldset-elements" title="dom-fieldset-elements">elements</a>;
 
-  readonly attribute boolean <a href="textFieldSelection.html#dom-cva-willvalidate" title="dom-cva-willValidate">willValidate</a>;
-  readonly attribute <a href="textFieldSelection.html#validitystate">ValidityState</a> <a href="textFieldSelection.html#dom-cva-validity" title="dom-cva-validity">validity</a>;
-  readonly attribute DOMString <a href="textFieldSelection.html#dom-cva-validationmessage" title="dom-cva-validationMessage">validationMessage</a>;
-  boolean <a href="textFieldSelection.html#dom-cva-checkvalidity" title="dom-cva-checkValidity">checkValidity</a>();
-  void <a href="textFieldSelection.html#dom-cva-setcustomvalidity" title="dom-cva-setCustomValidity">setCustomValidity</a>(DOMString error);
+  readonly attribute boolean <a href="constraints.html#dom-cva-willvalidate" title="dom-cva-willValidate">willValidate</a>;
+  readonly attribute <a href="constraints.html#validitystate">ValidityState</a> <a href="constraints.html#dom-cva-validity" title="dom-cva-validity">validity</a>;
+  readonly attribute DOMString <a href="constraints.html#dom-cva-validationmessage" title="dom-cva-validationMessage">validationMessage</a>;
+  boolean <a href="constraints.html#dom-cva-checkvalidity" title="dom-cva-checkValidity">checkValidity</a>();
+  void <a href="constraints.html#dom-cva-setcustomvalidity" title="dom-cva-setCustomValidity">setCustomValidity</a>(DOMString error);
 };</pre>
    </dd>
-  </dl><!--TOPIC:HTML--><p>The <code><a href="#the-fieldset-element">fieldset</a></code> element <a href="textFieldSelection.html#represents">represents</a> a set
+  </dl><!--TOPIC:HTML--><p>The <code><a href="#the-fieldset-element">fieldset</a></code> element <a href="rendering.html#represents">represents</a> a set
   of form controls optionally grouped under a common name.</p>
 
   <p>The name of the group is given by the first <code><a href="the-legend-element.html#the-legend-element">legend</a></code>
@@ -458,9 +458,9 @@
   rooted at the <code><a href="#the-fieldset-element">fieldset</a></code> element, whose filter matches
   <a href="forms.html#category-listed" title="category-listed">listed elements</a>.</p>
 
-  <p>The <code title="dom-cva-willValidate"><a href="textFieldSelection.html#dom-cva-willvalidate">willValidate</a></code>, <code title="dom-cva-validity"><a href="textFieldSelection.html#dom-cva-validity">validity</a></code>, and <code title="dom-cva-validationMessage"><a href="textFieldSelection.html#dom-cva-validationmessage">validationMessage</a></code>
-  attributes, and the <code title="dom-cva-checkValidity"><a href="textFieldSelection.html#dom-cva-checkvalidity">checkValidity()</a></code> and <code title="dom-cva-setCustomValidity"><a href="textFieldSelection.html#dom-cva-setcustomvalidity">setCustomValidity()</a></code>
-  methods, are part of the <a href="textFieldSelection.html#the-constraint-validation-api">constraint validation API</a>. The
+  <p>The <code title="dom-cva-willValidate"><a href="constraints.html#dom-cva-willvalidate">willValidate</a></code>, <code title="dom-cva-validity"><a href="constraints.html#dom-cva-validity">validity</a></code>, and <code title="dom-cva-validationMessage"><a href="constraints.html#dom-cva-validationmessage">validationMessage</a></code>
+  attributes, and the <code title="dom-cva-checkValidity"><a href="constraints.html#dom-cva-checkvalidity">checkValidity()</a></code> and <code title="dom-cva-setCustomValidity"><a href="constraints.html#dom-cva-setcustomvalidity">setCustomValidity()</a></code>
+  methods, are part of the <a href="constraints.html#the-constraint-validation-api">constraint validation API</a>. The
   <code title="dom-fae-form"><a href="association-of-controls-and-forms.html#dom-fae-form">form</a></code> and <code title="dom-fe-name"><a href="attributes-common-to-form-controls.html#dom-fe-name">name</a></code> IDL attributes are part of the
   element's forms API.</p>
 

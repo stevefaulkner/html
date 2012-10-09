@@ -409,7 +409,7 @@ interface <dfn id="htmloptionelement">HTMLOptionElement</dfn> : <a href="element
   readonly attribute long <a href="#dom-option-index" title="dom-option-index">index</a>;
 };</pre>
    </dd>
-  </dl><!--TOPIC:HTML--><p>The <code><a href="#the-option-element">option</a></code> element <a href="textFieldSelection.html#represents">represents</a> an option
+  </dl><!--TOPIC:HTML--><p>The <code><a href="#the-option-element">option</a></code> element <a href="rendering.html#represents">represents</a> an option
   in a <code><a href="the-select-element.html#the-select-element">select</a></code> element or as part of a list of suggestions
   in a <code><a href="the-datalist-element.html#the-datalist-element">datalist</a></code> element.</p>
 
@@ -428,8 +428,8 @@ interface <dfn id="htmloptionelement">HTMLOptionElement</dfn> : <a href="element
 
   <div class="impl">
 
-  <p>An <code><a href="#the-option-element">option</a></code> element that is <a href="#attr-option-disabled" title="attr-option-disabled">disabled</a> must prevent any <code title="event-click"><a href="infrastructure.html#event-click">click</a></code> events that are <a href="textFieldSelection.html#queue-a-task" title="queue
-  a task">queued</a> on the <a href="textFieldSelection.html#user-interaction-task-source">user interaction task
+  <p>An <code><a href="#the-option-element">option</a></code> element that is <a href="#attr-option-disabled" title="attr-option-disabled">disabled</a> must prevent any <code title="event-click"><a href="infrastructure.html#event-click">click</a></code> events that are <a href="webappapis.html#queue-a-task" title="queue
+  a task">queued</a> on the <a href="webappapis.html#user-interaction-task-source">user interaction task
   source</a> from being dispatched on the element.</p>
 
   </div>
@@ -598,9 +598,9 @@ interface <dfn id="htmloptionelement">HTMLOptionElement</dfn> : <a href="element
   true, the new object must have its <a href="#concept-option-selectedness" title="concept-option-selectedness">selectedness</a> set to true;
   otherwise the fourth argument is absent or false, and the <a href="#concept-option-selectedness" title="concept-option-selectedness">selectedness</a> must be set
   to false, even if the <var title="">defaultSelected</var> argument
-  is present and true. The element's document must be the <a href="textFieldSelection.html#active-document">active
-  document</a> of the <a href="textFieldSelection.html#browsing-context">browsing context</a> of the
-  <code><a href="textFieldSelection.html#window">Window</a></code> object on which the interface object of the
+  is present and true. The element's document must be the <a href="browsers.html#active-document">active
+  document</a> of the <a href="browsers.html#browsing-context">browsing context</a> of the
+  <code><a href="browsers.html#window">Window</a></code> object on which the interface object of the
   invoked constructor is found.</p>
 
   </div>

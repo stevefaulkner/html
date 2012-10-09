@@ -420,11 +420,11 @@
            attribute long <a href="#dom-select-selectedindex" title="dom-select-selectedIndex">selectedIndex</a>;
            attribute DOMString <a href="#dom-select-value" title="dom-select-value">value</a>;
 
-  readonly attribute boolean <a href="textFieldSelection.html#dom-cva-willvalidate" title="dom-cva-willValidate">willValidate</a>;
-  readonly attribute <a href="textFieldSelection.html#validitystate">ValidityState</a> <a href="textFieldSelection.html#dom-cva-validity" title="dom-cva-validity">validity</a>;
-  readonly attribute DOMString <a href="textFieldSelection.html#dom-cva-validationmessage" title="dom-cva-validationMessage">validationMessage</a>;
-  boolean <a href="textFieldSelection.html#dom-cva-checkvalidity" title="dom-cva-checkValidity">checkValidity</a>();
-  void <a href="textFieldSelection.html#dom-cva-setcustomvalidity" title="dom-cva-setCustomValidity">setCustomValidity</a>(DOMString error);
+  readonly attribute boolean <a href="constraints.html#dom-cva-willvalidate" title="dom-cva-willValidate">willValidate</a>;
+  readonly attribute <a href="constraints.html#validitystate">ValidityState</a> <a href="constraints.html#dom-cva-validity" title="dom-cva-validity">validity</a>;
+  readonly attribute DOMString <a href="constraints.html#dom-cva-validationmessage" title="dom-cva-validationMessage">validationMessage</a>;
+  boolean <a href="constraints.html#dom-cva-checkvalidity" title="dom-cva-checkValidity">checkValidity</a>();
+  void <a href="constraints.html#dom-cva-setcustomvalidity" title="dom-cva-setCustomValidity">setCustomValidity</a>(DOMString error);
 
   readonly attribute <a href="infrastructure.html#nodelist">NodeList</a> <a href="the-label-element.html#dom-lfe-labels" title="dom-lfe-labels">labels</a>;
 };</pre>
@@ -440,10 +440,10 @@
   <p>The <dfn id="attr-select-multiple" title="attr-select-multiple"><code>multiple</code></dfn>
   attribute is a <a href="common-microsyntaxes.html#boolean-attribute">boolean attribute</a>. If the attribute is
   present, then the <code><a href="#the-select-element">select</a></code> element
-  <a href="textFieldSelection.html#represents">represents</a> a control for selecting zero or more options
+  <a href="rendering.html#represents">represents</a> a control for selecting zero or more options
   from the <a href="#concept-select-option-list" title="concept-select-option-list">list of
   options</a>. If the attribute is absent, then the
-  <code><a href="#the-select-element">select</a></code> element <a href="textFieldSelection.html#represents">represents</a> a control for
+  <code><a href="#the-select-element">select</a></code> element <a href="rendering.html#represents">represents</a> a control for
   selecting a single option from the <a href="#concept-select-option-list" title="concept-select-option-list">list of options</a>.</p>
 
   <p>The <dfn id="attr-select-size" title="attr-select-size"><code>size</code></dfn>
@@ -506,7 +506,7 @@
   <code><a href="#the-select-element">select</a></code> element's <a href="#concept-select-option-list" title="concept-select-option-list">list of options</a> with its
   <a href="the-option-element.html#concept-option-selectedness" title="concept-option-selectedness">selectedness</a> set to
   true is the <a href="#placeholder-label-option">placeholder label option</a>, then the element
-  is <a href="textFieldSelection.html#suffering-from-being-missing">suffering from being missing</a>.</p>
+  is <a href="constraints.html#suffering-from-being-missing">suffering from being missing</a>.</p>
 
   </div>
 
@@ -519,15 +519,15 @@
   is itself not <a href="the-option-element.html#concept-option-disabled" title="concept-option-disabled">disabled</a>.
   Upon this <code><a href="the-option-element.html#the-option-element">option</a></code> element being <dfn id="concept-select-pick" title="concept-select-pick">picked</dfn> (either through a click, or
   through unfocusing the element after changing its value, or through
-  a <a href="textFieldSelection.html#using-the-option-element-to-define-a-command" title="option-command">menu command</a>, or through any
+  a <a href="commands.html#using-the-option-element-to-define-a-command" title="option-command">menu command</a>, or through any
   other mechanism), and before the relevant user interaction event
   <!-- interaction event spec point --> is queued (e.g. before the
   <code title="event-click"><a href="infrastructure.html#event-click">click</a></code> event), the user agent must
   set the <a href="the-option-element.html#concept-option-selectedness" title="concept-option-selectedness">selectedness</a> of the
-  picked <code><a href="the-option-element.html#the-option-element">option</a></code> element to true and then <a href="textFieldSelection.html#queue-a-task">queue a
-  task</a> to <a href="textFieldSelection.html#fire-a-simple-event">fire a simple event</a> that bubbles named
+  picked <code><a href="the-option-element.html#the-option-element">option</a></code> element to true and then <a href="webappapis.html#queue-a-task">queue a
+  task</a> to <a href="webappapis.html#fire-a-simple-event">fire a simple event</a> that bubbles named
   <code title="event-change">change</code> at the <code><a href="#the-select-element">select</a></code>
-  element, using the <a href="textFieldSelection.html#user-interaction-task-source">user interaction task source</a> as the
+  element, using the <a href="webappapis.html#user-interaction-task-source">user interaction task source</a> as the
   task source.</p>
 
   <p>If the <code title="attr-select-multiple"><a href="#attr-select-multiple">multiple</a></code>
@@ -548,10 +548,10 @@
   agent, and before the relevant user interaction event <!--
   interaction event spec point --> is queued (e.g. before the <code title="event-click"><a href="infrastructure.html#event-click">click</a></code> event), the user agent must set the
   <a href="the-option-element.html#concept-option-selectedness" title="concept-option-selectedness">selectedness</a> of
-  that <code><a href="the-option-element.html#the-option-element">option</a></code> element to false and then <a href="textFieldSelection.html#queue-a-task">queue a
-  task</a> to <a href="textFieldSelection.html#fire-a-simple-event">fire a simple event</a> that bubbles named
+  that <code><a href="the-option-element.html#the-option-element">option</a></code> element to false and then <a href="webappapis.html#queue-a-task">queue a
+  task</a> to <a href="webappapis.html#fire-a-simple-event">fire a simple event</a> that bubbles named
   <code title="event-change">change</code> at the <code><a href="#the-select-element">select</a></code>
-  element, using the <a href="textFieldSelection.html#user-interaction-task-source">user interaction task source</a> as the
+  element, using the <a href="webappapis.html#user-interaction-task-source">user interaction task source</a> as the
   task source.</p>
 
   <p>If the <code title="attr-select-multiple"><a href="#attr-select-multiple">multiple</a></code>
@@ -569,17 +569,17 @@
   should allow the user to <dfn id="concept-select-toggle" title="concept-select-toggle">toggle</dfn> the <a href="the-option-element.html#concept-option-selectedness" title="concept-option-selectedness">selectedness</a> of the
   <code><a href="the-option-element.html#the-option-element">option</a></code> elements in its <a href="#concept-select-option-list" title="concept-select-option-list">list of options</a> that are
   themselves not <a href="the-option-element.html#concept-option-disabled" title="concept-option-disabled">disabled</a>
-  (either through a click, or through a <a href="textFieldSelection.html#using-the-option-element-to-define-a-command" title="option-command">menu command</a>, or any other mechanism).
+  (either through a click, or through a <a href="commands.html#using-the-option-element-to-define-a-command" title="option-command">menu command</a>, or any other mechanism).
   Upon the <a href="the-option-element.html#concept-option-selectedness" title="concept-option-selectedness">selectedness</a> of one or
   more <code><a href="the-option-element.html#the-option-element">option</a></code> elements being changed by the user, and
   before the relevant user interaction event <!-- interaction event
   spec point --> is queued (e.g. before a related <code title="event-click"><a href="infrastructure.html#event-click">click</a></code> event), the user agent must
-  <a href="textFieldSelection.html#queue-a-task">queue a task</a> to <a href="textFieldSelection.html#fire-a-simple-event">fire a simple event</a> that
+  <a href="webappapis.html#queue-a-task">queue a task</a> to <a href="webappapis.html#fire-a-simple-event">fire a simple event</a> that
   bubbles named <code title="event-change">change</code> at the
-  <code><a href="#the-select-element">select</a></code> element, using the <a href="textFieldSelection.html#user-interaction-task-source">user interaction task
+  <code><a href="#the-select-element">select</a></code> element, using the <a href="webappapis.html#user-interaction-task-source">user interaction task
   source</a> as the task source.</p>
 
-  <p>The <a href="textFieldSelection.html#concept-form-reset-control" title="concept-form-reset-control">reset
+  <p>The <a href="constraints.html#concept-form-reset-control" title="concept-form-reset-control">reset
   algorithm</a> for <code><a href="#the-select-element">select</a></code> elements is to go through
   all the <code><a href="the-option-element.html#the-option-element">option</a></code> elements in the element's <a href="#concept-select-option-list" title="concept-select-option-list">list of options</a>, and set
   their <a href="the-option-element.html#concept-option-selectedness" title="concept-option-selectedness">selectedness</a>
@@ -631,7 +631,7 @@
 
    <dt><var title="">element</var> = <var title="">select</var> . <code title="dom-select-item"><a href="#dom-select-item">namedItem</a></code>(<var title="">name</var>)</dt>
    <dd>
-    <p>Returns the item with <a href="infrastructure.html#concept-id" title="concept-id">ID</a> or <code title="attr-option-name"><a href="textFieldSelection.html#attr-option-name">name</a></code> <var title="">name</var> from the <a href="#concept-select-option-list" title="concept-select-option-list">list of options</a>.</p>
+    <p>Returns the item with <a href="infrastructure.html#concept-id" title="concept-id">ID</a> or <code title="attr-option-name"><a href="obsolete.html#attr-option-name">name</a></code> <var title="">name</var> from the <a href="#concept-select-option-list" title="concept-select-option-list">list of options</a>.</p>
     <p>If there are multiple matching items, then a <code><a href="infrastructure.html#nodelist">NodeList</a></code> object containing all those elements is returned.</p>
     <p>Returns null if no element with that <a href="infrastructure.html#concept-id" title="concept-id">ID</a> could be found.</p>
    </dd>
@@ -775,9 +775,9 @@
   return the actual size used, which, in the absence of the <code title="attr-select-size"><a href="#attr-select-size">size</a></code> content attribute, is either 1
   or 4 depending on the presence of the <code title="attr-select-multiple"><a href="#attr-select-multiple">multiple</a></code> attribute.</p>
 
-  <p>The <code title="dom-cva-willValidate"><a href="textFieldSelection.html#dom-cva-willvalidate">willValidate</a></code>, <code title="dom-cva-validity"><a href="textFieldSelection.html#dom-cva-validity">validity</a></code>, and <code title="dom-cva-validationMessage"><a href="textFieldSelection.html#dom-cva-validationmessage">validationMessage</a></code> IDL
-  attributes, and the <code title="dom-cva-checkValidity"><a href="textFieldSelection.html#dom-cva-checkvalidity">checkValidity()</a></code> and <code title="dom-cva-setCustomValidity"><a href="textFieldSelection.html#dom-cva-setcustomvalidity">setCustomValidity()</a></code>
-  methods, are part of the <a href="textFieldSelection.html#the-constraint-validation-api">constraint validation API</a>. The
+  <p>The <code title="dom-cva-willValidate"><a href="constraints.html#dom-cva-willvalidate">willValidate</a></code>, <code title="dom-cva-validity"><a href="constraints.html#dom-cva-validity">validity</a></code>, and <code title="dom-cva-validationMessage"><a href="constraints.html#dom-cva-validationmessage">validationMessage</a></code> IDL
+  attributes, and the <code title="dom-cva-checkValidity"><a href="constraints.html#dom-cva-checkvalidity">checkValidity()</a></code> and <code title="dom-cva-setCustomValidity"><a href="constraints.html#dom-cva-setcustomvalidity">setCustomValidity()</a></code>
+  methods, are part of the <a href="constraints.html#the-constraint-validation-api">constraint validation API</a>. The
   <code title="dom-lfe-labels"><a href="the-label-element.html#dom-lfe-labels">labels</a></code> IDL attribute provides a
   list of the element's <code><a href="the-label-element.html#the-label-element">label</a></code>s. The <code title="dom-fe-autofocus"><a href="attributes-common-to-form-controls.html#dom-fe-autofocus">autofocus</a></code>, <code title="dom-fe-disabled"><a href="attributes-common-to-form-controls.html#dom-fe-disabled">disabled</a></code>, <code title="dom-fae-form"><a href="association-of-controls-and-forms.html#dom-fae-form">form</a></code>, and <code title="dom-fe-name"><a href="attributes-common-to-form-controls.html#dom-fe-name">name</a></code> IDL attributes are part of the
   element's forms API.</p>

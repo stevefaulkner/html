@@ -421,11 +421,11 @@
            attribute DOMString <a href="#dom-textarea-value" title="dom-textarea-value">value</a>;
   readonly attribute unsigned long <a href="#dom-textarea-textlength" title="dom-textarea-textLength">textLength</a>;
 
-  readonly attribute boolean <a href="textFieldSelection.html#dom-cva-willvalidate" title="dom-cva-willValidate">willValidate</a>;
-  readonly attribute <a href="textFieldSelection.html#validitystate">ValidityState</a> <a href="textFieldSelection.html#dom-cva-validity" title="dom-cva-validity">validity</a>;
-  readonly attribute DOMString <a href="textFieldSelection.html#dom-cva-validationmessage" title="dom-cva-validationMessage">validationMessage</a>;
-  boolean <a href="textFieldSelection.html#dom-cva-checkvalidity" title="dom-cva-checkValidity">checkValidity</a>();
-  void <a href="textFieldSelection.html#dom-cva-setcustomvalidity" title="dom-cva-setCustomValidity">setCustomValidity</a>(DOMString error);
+  readonly attribute boolean <a href="constraints.html#dom-cva-willvalidate" title="dom-cva-willValidate">willValidate</a>;
+  readonly attribute <a href="constraints.html#validitystate">ValidityState</a> <a href="constraints.html#dom-cva-validity" title="dom-cva-validity">validity</a>;
+  readonly attribute DOMString <a href="constraints.html#dom-cva-validationmessage" title="dom-cva-validationMessage">validationMessage</a>;
+  boolean <a href="constraints.html#dom-cva-checkvalidity" title="dom-cva-checkValidity">checkValidity</a>();
+  void <a href="constraints.html#dom-cva-setcustomvalidity" title="dom-cva-setCustomValidity">setCustomValidity</a>(DOMString error);
 
   readonly attribute <a href="infrastructure.html#nodelist">NodeList</a> <a href="the-label-element.html#dom-lfe-labels" title="dom-lfe-labels">labels</a>;
 
@@ -437,7 +437,7 @@
   void <span title="dom-textarea/input-setSelectionRange">setSelectionRange</span>(unsigned long start, unsigned long end, optional DOMString direction);
 };</pre>
    </dd>
-  </dl><!--TOPIC:HTML--><p>The <code><a href="#the-textarea-element">textarea</a></code> element <a href="textFieldSelection.html#represents">represents</a> a
+  </dl><!--TOPIC:HTML--><p>The <code><a href="#the-textarea-element">textarea</a></code> element <a href="rendering.html#represents">represents</a> a
   multiline plain text edit control<span class="impl"> for the
   element's <dfn id="concept-textarea-raw-value" title="concept-textarea-raw-value">raw
   value</dfn></span>. The contents of the control represent the
@@ -453,7 +453,7 @@
   paragraphs for the purposes of the Unicode bidirectional algorithm.
   This requirement may be implemented indirectly through the style
   layer. For example, an HTML+CSS user agent could implement these
-  requirements by implementing the CSS 'unicode-bidi' property. <a href="textFieldSelection.html#refsBIDI">[BIDI]</a> <a href="textFieldSelection.html#refsCSS">[CSS]</a></p>
+  requirements by implementing the CSS 'unicode-bidi' property. <a href="references.html#refsBIDI">[BIDI]</a> <a href="references.html#refsCSS">[CSS]</a></p>
 
   </div>
 
@@ -484,7 +484,7 @@
 
   <p><strong>Constraint validation</strong>: If the <code title="attr-textarea-readonly"><a href="#attr-textarea-readonly">readonly</a></code> attribute is
   specified on a <code><a href="#the-textarea-element">textarea</a></code> element, the element is
-  <a href="textFieldSelection.html#barred-from-constraint-validation">barred from constraint validation</a>.</p>
+  <a href="constraints.html#barred-from-constraint-validation">barred from constraint validation</a>.</p>
 
   <p>A <code><a href="#the-textarea-element">textarea</a></code> element is <dfn id="concept-textarea-mutable" title="concept-textarea-mutable">mutable</dfn> if it is neither
   <a href="attributes-common-to-form-controls.html#concept-fe-disabled" title="concept-fe-disabled">disabled</a> nor has a <code title="attr-textarea-readonly"><a href="#attr-textarea-readonly">readonly</a></code> attribute
@@ -495,8 +495,8 @@
   insert, and remove text, and to insert and remove line breaks in the
   form of "LF" (U+000A) characters. Any time the user causes
   the element's <a href="#concept-textarea-raw-value" title="concept-textarea-raw-value">raw
-  value</a> to change, the user agent must <a href="textFieldSelection.html#queue-a-task">queue a
-  task</a> to <a href="textFieldSelection.html#fire-a-simple-event">fire a simple event</a> that bubbles named
+  value</a> to change, the user agent must <a href="webappapis.html#queue-a-task">queue a
+  task</a> to <a href="webappapis.html#fire-a-simple-event">fire a simple event</a> that bubbles named
   <code title="event-input">input</code> at the <code><a href="#the-textarea-element">textarea</a></code>
   element. User agents may wait for a suitable break in the user's
   interaction before queuing the task; for example, a user agent could
@@ -515,7 +515,7 @@
   value</a> must be set to the value of the element's
   <code><a href="infrastructure.html#textcontent">textContent</a></code> IDL attribute.</p>
 
-  <p>The <a href="textFieldSelection.html#concept-form-reset-control" title="concept-form-reset-control">reset
+  <p>The <a href="constraints.html#concept-form-reset-control" title="concept-form-reset-control">reset
   algorithm</a> for <code><a href="#the-textarea-element">textarea</a></code> elements is to set the
   element's <a href="#concept-textarea-raw-value" title="concept-textarea-raw-value">value</a> to
   the value of the element's <code><a href="infrastructure.html#textcontent">textContent</a></code> IDL
@@ -534,7 +534,7 @@
    selected a left-to-right writing direction, and "<code title="attr-dir-rtl"><a href="global-attributes.html#attr-dir-rtl">rtl</a></code>" if the user selected a
    right-to-left writing direction.</p></li>
 
-   <li><p><a href="textFieldSelection.html#queue-a-task">Queue a task</a> to <a href="textFieldSelection.html#fire-a-simple-event">fire a simple
+   <li><p><a href="webappapis.html#queue-a-task">Queue a task</a> to <a href="webappapis.html#fire-a-simple-event">fire a simple
    event</a> that bubbles named <code title="event-input">input</code> at the <code><a href="#the-textarea-element">textarea</a></code>
    element.</p></li>
 
@@ -667,7 +667,7 @@
   <code title="attr-textarea-required"><a href="#attr-textarea-required">required</a></code> attribute
   specified, and the element is <a href="#concept-textarea-mutable" title="concept-textarea-mutable">mutable</a>, and the element's
   <a href="attributes-common-to-form-controls.html#concept-fe-value" title="concept-fe-value">value</a> is the empty string,
-  then the element is <a href="textFieldSelection.html#suffering-from-being-missing">suffering from being missing</a>.</p>
+  then the element is <a href="constraints.html#suffering-from-being-missing">suffering from being missing</a>.</p>
 
   </div>
 
@@ -771,9 +771,9 @@
   element's <a href="#concept-textarea-api-value" title="concept-textarea-api-value">API
   value</a>.</p>
 
-  <p>The <code title="dom-cva-willValidate"><a href="textFieldSelection.html#dom-cva-willvalidate">willValidate</a></code>, <code title="dom-cva-validity"><a href="textFieldSelection.html#dom-cva-validity">validity</a></code>, and <code title="dom-cva-validationMessage"><a href="textFieldSelection.html#dom-cva-validationmessage">validationMessage</a></code> IDL
-  attributes, and the <code title="dom-cva-checkValidity"><a href="textFieldSelection.html#dom-cva-checkvalidity">checkValidity()</a></code> and <code title="dom-cva-setCustomValidity"><a href="textFieldSelection.html#dom-cva-setcustomvalidity">setCustomValidity()</a></code>
-  methods, are part of the <a href="textFieldSelection.html#the-constraint-validation-api">constraint validation API</a>. The
+  <p>The <code title="dom-cva-willValidate"><a href="constraints.html#dom-cva-willvalidate">willValidate</a></code>, <code title="dom-cva-validity"><a href="constraints.html#dom-cva-validity">validity</a></code>, and <code title="dom-cva-validationMessage"><a href="constraints.html#dom-cva-validationmessage">validationMessage</a></code> IDL
+  attributes, and the <code title="dom-cva-checkValidity"><a href="constraints.html#dom-cva-checkvalidity">checkValidity()</a></code> and <code title="dom-cva-setCustomValidity"><a href="constraints.html#dom-cva-setcustomvalidity">setCustomValidity()</a></code>
+  methods, are part of the <a href="constraints.html#the-constraint-validation-api">constraint validation API</a>. The
   <code title="dom-lfe-labels"><a href="the-label-element.html#dom-lfe-labels">labels</a></code> IDL attribute provides a
   list of the element's <code><a href="the-label-element.html#the-label-element">label</a></code>s. The <code title="dom-textarea/input-select">select()</code>, <code title="dom-textarea/input-selectionStart">selectionStart</code>,
   <code title="dom-textarea/input-selectionEnd">selectionEnd</code>,

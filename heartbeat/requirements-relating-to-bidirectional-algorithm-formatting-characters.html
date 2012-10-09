@@ -387,7 +387,7 @@
   embeddings and overrides are explicitly terminated by a U+202C POP
   DIRECTIONAL FORMATTING character. This helps reduce incidences of
   text being reused in a manner that has unforeseen effects on the
-  bidirectional algorithm. <a href="textFieldSelection.html#refsBIDI">[BIDI]</a></p>
+  bidirectional algorithm. <a href="references.html#refsBIDI">[BIDI]</a></p>
 
   <p>The aforementioned restrictions are defined by specifying that
   certain parts of documents form <a href="#bidirectional-algorithm-formatting-character-ranges">bidirectional-algorithm
@@ -460,7 +460,7 @@
   <p>Any strings that, as described above, are
   <dfn id="bidirectional-algorithm-formatting-character-ranges">bidirectional-algorithm formatting character ranges</dfn> must
   match the <code title="">string</code> production in the following
-  ABNF, the character set for which is Unicode. <a href="textFieldSelection.html#refsABNF">[ABNF]</a></p>
+  ABNF, the character set for which is Unicode. <a href="references.html#refsABNF">[ABNF]</a></p>
 
   <pre>string        = *( plaintext ( embedding / override ) ) plaintext
 embedding     = ( lre / rle ) string pdf

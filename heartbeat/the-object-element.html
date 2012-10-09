@@ -409,13 +409,13 @@
            attribute DOMString <a href="dimension-attributes.html#dom-dim-width" title="dom-dim-width">width</a>;
            attribute DOMString <a href="dimension-attributes.html#dom-dim-height" title="dom-dim-height">height</a>;
   readonly attribute Document? <a href="#dom-object-contentdocument" title="dom-object-contentDocument">contentDocument</a>;
-  readonly attribute <a href="textFieldSelection.html#windowproxy">WindowProxy</a>? <a href="#dom-object-contentwindow" title="dom-object-contentWindow">contentWindow</a>;
+  readonly attribute <a href="browsers.html#windowproxy">WindowProxy</a>? <a href="#dom-object-contentwindow" title="dom-object-contentWindow">contentWindow</a>;
 
-  readonly attribute boolean <a href="textFieldSelection.html#dom-cva-willvalidate" title="dom-cva-willValidate">willValidate</a>;
-  readonly attribute <a href="textFieldSelection.html#validitystate">ValidityState</a> <a href="textFieldSelection.html#dom-cva-validity" title="dom-cva-validity">validity</a>;
-  readonly attribute DOMString <a href="textFieldSelection.html#dom-cva-validationmessage" title="dom-cva-validationMessage">validationMessage</a>;
-  boolean <a href="textFieldSelection.html#dom-cva-checkvalidity" title="dom-cva-checkValidity">checkValidity</a>();
-  void <a href="textFieldSelection.html#dom-cva-setcustomvalidity" title="dom-cva-setCustomValidity">setCustomValidity</a>(DOMString error);
+  readonly attribute boolean <a href="constraints.html#dom-cva-willvalidate" title="dom-cva-willValidate">willValidate</a>;
+  readonly attribute <a href="constraints.html#validitystate">ValidityState</a> <a href="constraints.html#dom-cva-validity" title="dom-cva-validity">validity</a>;
+  readonly attribute DOMString <a href="constraints.html#dom-cva-validationmessage" title="dom-cva-validationMessage">validationMessage</a>;
+  boolean <a href="constraints.html#dom-cva-checkvalidity" title="dom-cva-checkValidity">checkValidity</a>();
+  void <a href="constraints.html#dom-cva-setcustomvalidity" title="dom-cva-setCustomValidity">setCustomValidity</a>(DOMString error);
 
   <a href="#dom-object-caller" title="dom-object-caller">legacycaller</a> any (any... arguments);
 };</pre>
@@ -427,7 +427,7 @@
    </dd>
   </dl><!--TOPIC:HTML--><p>The <code><a href="#the-object-element">object</a></code> element can represent an external
   resource, which, depending on the type of the resource, will either
-  be treated as an image, as a <a href="textFieldSelection.html#nested-browsing-context">nested browsing context</a>,
+  be treated as an image, as a <a href="browsers.html#nested-browsing-context">nested browsing context</a>,
   or as an external resource to be processed by a
   <a href="infrastructure.html#plugin">plugin</a>.</p>
 
@@ -436,7 +436,7 @@
   present, the attribute must be a <a href="urls.html#valid-non-empty-url-potentially-surrounded-by-spaces">valid non-empty
   URL potentially surrounded by spaces</a>.</p>
 
-  <p class="warning">Authors who reference resources from other <a href="textFieldSelection.html#origin-0" title="origin">origins</a> that they do not trust are urged to
+  <p class="warning">Authors who reference resources from other <a href="browsers.html#origin-0" title="origin">origins</a> that they do not trust are urged to
   use the <code title="attr-object-typemustmatch"><a href="#attr-object-typemustmatch">typemustmatch</a></code>
   attribute defined below. Without that attribute, it is possible in
   certain cases for an attacker on the remote host to use the plugin
@@ -466,8 +466,8 @@
   attribute must not be specified unless both the <code title="attr-object-data"><a href="#attr-object-data">data</a></code> attribute and the <code title="attr-object-type"><a href="#attr-object-type">type</a></code> attribute are present.</p>
 
   <p>The <dfn id="attr-object-name" title="attr-object-name"><code>name</code></dfn>
-  attribute, if present, must be a <a href="textFieldSelection.html#valid-browsing-context-name">valid browsing context
-  name</a>. The given value is used to name the <a href="textFieldSelection.html#nested-browsing-context">nested
+  attribute, if present, must be a <a href="browsers.html#valid-browsing-context-name">valid browsing context
+  name</a>. The given value is used to name the <a href="browsers.html#nested-browsing-context">nested
   browsing context</a>, if applicable.</p>
 
   <div class="impl">
@@ -476,28 +476,28 @@
 
   <ul><li>the element is created,
 
-   </li><li>the element is popped off the <a href="textFieldSelection.html#stack-of-open-elements">stack of open elements</a> of an <a href="textFieldSelection.html#html-parser">HTML parser</a> or <a href="textFieldSelection.html#xml-parser">XML parser</a>,
+   </li><li>the element is popped off the <a href="parsing.html#stack-of-open-elements">stack of open elements</a> of an <a href="parsing.html#html-parser">HTML parser</a> or <a href="the-xhtml-syntax.html#xml-parser">XML parser</a>,
 
-   </li><li>the element is not on the <a href="textFieldSelection.html#stack-of-open-elements">stack of open elements</a> of an <a href="textFieldSelection.html#html-parser">HTML parser</a> or <a href="textFieldSelection.html#xml-parser">XML parser</a>, and it is either <a href="infrastructure.html#insert-an-element-into-a-document" title="insert an element into a document">inserted into a document</a> or <a href="infrastructure.html#remove-an-element-from-a-document" title="remove an element from a document">removed from a document</a>,
+   </li><li>the element is not on the <a href="parsing.html#stack-of-open-elements">stack of open elements</a> of an <a href="parsing.html#html-parser">HTML parser</a> or <a href="the-xhtml-syntax.html#xml-parser">XML parser</a>, and it is either <a href="infrastructure.html#insert-an-element-into-a-document" title="insert an element into a document">inserted into a document</a> or <a href="infrastructure.html#remove-an-element-from-a-document" title="remove an element from a document">removed from a document</a>,
 
-   </li><li>the element's <code><a href="dom.html#document">Document</a></code> changes whether it is <a href="textFieldSelection.html#fully-active">fully active</a>,
+   </li><li>the element's <code><a href="dom.html#document">Document</a></code> changes whether it is <a href="browsers.html#fully-active">fully active</a>,
 
    </li><li>one of the element's ancestor <code><a href="#the-object-element">object</a></code> elements changes to or from showing its <a href="content-models.html#fallback-content">fallback content</a>,
 
-   </li><li>the element's <code title="attr-object-classid"><a href="textFieldSelection.html#attr-object-classid">classid</a></code> attribute is set, changed, or removed,
+   </li><li>the element's <code title="attr-object-classid"><a href="obsolete.html#attr-object-classid">classid</a></code> attribute is set, changed, or removed,
 
-   </li><li>the element's <code title="attr-object-classid"><a href="textFieldSelection.html#attr-object-classid">classid</a></code> attribute is not present, and its <code title="attr-object-data"><a href="#attr-object-data">data</a></code> attribute is set, changed, or removed,
+   </li><li>the element's <code title="attr-object-classid"><a href="obsolete.html#attr-object-classid">classid</a></code> attribute is not present, and its <code title="attr-object-data"><a href="#attr-object-data">data</a></code> attribute is set, changed, or removed,
 
-   </li><li>neither the element's <code title="attr-object-classid"><a href="textFieldSelection.html#attr-object-classid">classid</a></code> attribute nor its <code title="attr-object-data"><a href="#attr-object-data">data</a></code> attribute are present, and its <code title="attr-object-type"><a href="#attr-object-type">type</a></code> attribute is set, changed, or removed,
+   </li><li>neither the element's <code title="attr-object-classid"><a href="obsolete.html#attr-object-classid">classid</a></code> attribute nor its <code title="attr-object-data"><a href="#attr-object-data">data</a></code> attribute are present, and its <code title="attr-object-type"><a href="#attr-object-type">type</a></code> attribute is set, changed, or removed,
 
-   </li><li>the element changes from <a href="textFieldSelection.html#being-rendered">being rendered</a> to not being rendered, or vice versa,
+   </li><li>the element changes from <a href="rendering.html#being-rendered">being rendered</a> to not being rendered, or vice versa,
 
-  </li></ul><!-- Changing the base URL doesn't trigger this. --><p>...the user agent must <a href="textFieldSelection.html#queue-a-task">queue a task</a> to run the
+  </li></ul><!-- Changing the base URL doesn't trigger this. --><p>...the user agent must <a href="webappapis.html#queue-a-task">queue a task</a> to run the
   following steps to (re)determine what the <code><a href="#the-object-element">object</a></code>
-  element represents. The <a href="textFieldSelection.html#task-source">task source</a> for this <a href="textFieldSelection.html#concept-task" title="concept-task">task</a> is the <a href="textFieldSelection.html#dom-manipulation-task-source">DOM manipulation task
-  source</a>. This <a href="textFieldSelection.html#concept-task" title="concept-task">task</a> being
-  <a href="textFieldSelection.html#queue-a-task" title="queue a task">queued</a> or actively running must
-  <a href="textFieldSelection.html#delay-the-load-event">delay the load event</a> of the element's document. <!--As
+  element represents. The <a href="webappapis.html#task-source">task source</a> for this <a href="webappapis.html#concept-task" title="concept-task">task</a> is the <a href="webappapis.html#dom-manipulation-task-source">DOM manipulation task
+  source</a>. This <a href="webappapis.html#concept-task" title="concept-task">task</a> being
+  <a href="webappapis.html#queue-a-task" title="queue a task">queued</a> or actively running must
+  <a href="the-end.html#delay-the-load-event">delay the load event</a> of the element's document. <!--As
   described in the algorithm, once the algorithm starts fetching a
   resource, the fetch is what starts delaying the load event. But to
   tide us over from when the parser finds the <object> element and the
@@ -523,11 +523,11 @@
     has an ancestor <code><a href="#the-object-element">object</a></code> element that is <em>not</em>
     showing its <a href="content-models.html#fallback-content">fallback content</a>, or if the element is
     not <a href="infrastructure.html#in-a-document" title="in a document">in a <code>Document</code></a>
-    with a <a href="textFieldSelection.html#browsing-context">browsing context</a>, or if the element's
-    <code><a href="dom.html#document">Document</a></code> is not <a href="textFieldSelection.html#fully-active">fully active</a>, or if the
-    element is still in the <a href="textFieldSelection.html#stack-of-open-elements">stack of open elements</a> of an
-    <a href="textFieldSelection.html#html-parser">HTML parser</a> or <a href="textFieldSelection.html#xml-parser">XML parser</a>, or if the
-    element is not <a href="textFieldSelection.html#being-rendered">being rendered</a>, then jump to the last
+    with a <a href="browsers.html#browsing-context">browsing context</a>, or if the element's
+    <code><a href="dom.html#document">Document</a></code> is not <a href="browsers.html#fully-active">fully active</a>, or if the
+    element is still in the <a href="parsing.html#stack-of-open-elements">stack of open elements</a> of an
+    <a href="parsing.html#html-parser">HTML parser</a> or <a href="the-xhtml-syntax.html#xml-parser">XML parser</a>, or if the
+    element is not <a href="rendering.html#being-rendered">being rendered</a>, then jump to the last
     step in the overall set of steps (fallback).</p>
 
    </li>
@@ -537,10 +537,10 @@
     <!-- what if it's not in the document? if that should prevent
     plugin instantiation, then here just skip to the last step -->
 
-    <p>If the <code title="attr-object-classid"><a href="textFieldSelection.html#attr-object-classid">classid</a></code>
+    <p>If the <code title="attr-object-classid"><a href="obsolete.html#attr-object-classid">classid</a></code>
     attribute is present, and has a value that isn't the empty string,
     then: if the user agent can find a <a href="infrastructure.html#plugin">plugin</a> suitable
-    according to the value of the <code title="attr-object-classid"><a href="textFieldSelection.html#attr-object-classid">classid</a></code> attribute, and either
+    according to the value of the <code title="attr-object-classid"><a href="obsolete.html#attr-object-classid">classid</a></code> attribute, and either
     <a href="#sandboxPluginObject">plugins aren't being sandboxed</a>
     or that <a href="infrastructure.html#plugin">plugin</a> can be <a href="infrastructure.html#concept-plugin-secure" title="concept-plugin-secure">secured</a>, then that
     <a href="infrastructure.html#plugin">plugin</a> <a href="#object-plugin">should be used</a>,
@@ -592,27 +592,27 @@
      <a href="urls.html#url">URL</a> specified by the <code title="attr-object-data"><a href="#attr-object-data">data</a></code> attribute, relative to the
      element.</p></li>
 
-     <li><p>If that failed, <a href="textFieldSelection.html#fire-a-simple-event">fire a simple event</a> named
+     <li><p>If that failed, <a href="webappapis.html#fire-a-simple-event">fire a simple event</a> named
      <code title="event-error">error</code> at the element, then jump
      to the last step in the overall set of steps (fallback).</p></li>
 
      <li>
 
       <p><a href="urls.html#fetch">Fetch</a><!--FETCH--> the resulting <a href="urls.html#absolute-url">absolute
-      URL</a>, from the element's <a href="textFieldSelection.html#browsing-context-scope-origin">browsing context scope
+      URL</a>, from the element's <a href="browsers.html#browsing-context-scope-origin">browsing context scope
       origin</a> if it has one<!-- potentially http-origin privacy
       sensitive -->.</p>
 
       <!-- similar text in various places -->
-      <p>Fetching the resource must <a href="textFieldSelection.html#delay-the-load-event">delay the load event</a>
-      of the element's document until the <a href="textFieldSelection.html#concept-task" title="concept-task">task</a> that is <a href="textFieldSelection.html#queue-a-task" title="queue a
-      task">queued</a> by the <a href="textFieldSelection.html#networking-task-source">networking task source</a>
+      <p>Fetching the resource must <a href="the-end.html#delay-the-load-event">delay the load event</a>
+      of the element's document until the <a href="webappapis.html#concept-task" title="concept-task">task</a> that is <a href="webappapis.html#queue-a-task" title="queue a
+      task">queued</a> by the <a href="webappapis.html#networking-task-source">networking task source</a>
       once the resource has been <a href="urls.html#fetch" title="fetch">fetched</a>
       (defined next) has been run.</p>
 
-      <p>For the purposes of the <a href="textFieldSelection.html#application-cache">application cache</a>
+      <p>For the purposes of the <a href="offline.html#application-cache">application cache</a>
       networking model, this <a href="urls.html#fetch">fetch</a> operation is not for a
-      <a href="textFieldSelection.html#child-browsing-context">child browsing context</a> (though it might end up
+      <a href="browsers.html#child-browsing-context">child browsing context</a> (though it might end up
       being used for one after all, as defined below).</p>
 
      </li>
@@ -621,15 +621,15 @@
      resource was not available in the cache, so that loading the
      resource required making a request over the network), then jump
      to the last step in the overall set of steps (fallback). The
-     <a href="textFieldSelection.html#concept-task" title="concept-task">task</a> that is <a href="textFieldSelection.html#queue-a-task" title="queue
-     a task">queued</a> by the <a href="textFieldSelection.html#networking-task-source">networking task source</a>
+     <a href="webappapis.html#concept-task" title="concept-task">task</a> that is <a href="webappapis.html#queue-a-task" title="queue
+     a task">queued</a> by the <a href="webappapis.html#networking-task-source">networking task source</a>
      once the resource is available must restart this algorithm from
      this step. Resources can load incrementally; user agents may opt
      to consider a resource "available" whenever enough data has been
      obtained to begin processing the resource.</p></li>
 
      <li><p>If the load failed (e.g. there was an HTTP 404 error,
-     there was a DNS error), <a href="textFieldSelection.html#fire-a-simple-event">fire a simple event</a> named
+     there was a DNS error), <a href="webappapis.html#fire-a-simple-event">fire a simple event</a> named
      <code title="event-error">error</code> at the element, then jump
      to the last step in the overall set of steps (fallback).</p></li>
 
@@ -914,15 +914,15 @@
        <dd>
 
         <p>The <code><a href="#the-object-element">object</a></code> element must be associated with a
-        newly created <a href="textFieldSelection.html#nested-browsing-context">nested browsing context</a>, if it does
+        newly created <a href="browsers.html#nested-browsing-context">nested browsing context</a>, if it does
         not already have one.</p>
 
         <p>If the <a href="urls.html#url">URL</a> of the given resource is not
-        <code><a href="urls.html#about:blank">about:blank</a></code>, the element's <a href="textFieldSelection.html#nested-browsing-context">nested browsing
-        context</a> must then be <a href="textFieldSelection.html#navigate" title="navigate">navigated</a><!--DONAV object--> to that
-        resource, with <a href="textFieldSelection.html#replacement-enabled">replacement enabled</a>, and with the
-        <code><a href="#the-object-element">object</a></code> element's document's <a href="textFieldSelection.html#browsing-context">browsing
-        context</a> as the <a href="textFieldSelection.html#source-browsing-context">source browsing context</a>.
+        <code><a href="urls.html#about:blank">about:blank</a></code>, the element's <a href="browsers.html#nested-browsing-context">nested browsing
+        context</a> must then be <a href="history.html#navigate" title="navigate">navigated</a><!--DONAV object--> to that
+        resource, with <a href="history.html#replacement-enabled">replacement enabled</a>, and with the
+        <code><a href="#the-object-element">object</a></code> element's document's <a href="browsers.html#browsing-context">browsing
+        context</a> as the <a href="history.html#source-browsing-context">source browsing context</a>.
         (The <code title="attr-object-data"><a href="#attr-object-data">data</a></code> attribute of
         the <code><a href="#the-object-element">object</a></code> element doesn't get updated if the
         browsing context gets further navigated to other
@@ -930,31 +930,31 @@
 
         <p>If the <a href="urls.html#url">URL</a> of the given resource <em>is</em>
         <code><a href="urls.html#about:blank">about:blank</a></code>, then, instead, the user agent must
-        <a href="textFieldSelection.html#queue-a-task">queue a task</a> to <a href="textFieldSelection.html#fire-a-simple-event">fire a simple event</a>
+        <a href="webappapis.html#queue-a-task">queue a task</a> to <a href="webappapis.html#fire-a-simple-event">fire a simple event</a>
         named <code title="event-load">load</code> at the
         <code><a href="#the-object-element">object</a></code> element. <span class="note">No <code title="event-load">load</code> event is fired at the
         <code><a href="urls.html#about:blank">about:blank</a></code> document itself.</span></p>
 
-        <p>The <code><a href="#the-object-element">object</a></code> element <a href="textFieldSelection.html#represents">represents</a> the
-        <a href="textFieldSelection.html#nested-browsing-context">nested browsing context</a>.</p>
+        <p>The <code><a href="#the-object-element">object</a></code> element <a href="rendering.html#represents">represents</a> the
+        <a href="browsers.html#nested-browsing-context">nested browsing context</a>.</p>
 
         <p>If the <code title="attr-object-name"><a href="#attr-object-name">name</a></code> attribute
-        is present, the <a href="textFieldSelection.html#browsing-context-name">browsing context name</a> must be set
-        to the value of this attribute; otherwise, the <a href="textFieldSelection.html#browsing-context-name">browsing
+        is present, the <a href="browsers.html#browsing-context-name">browsing context name</a> must be set
+        to the value of this attribute; otherwise, the <a href="browsers.html#browsing-context-name">browsing
         context name</a> must be set to the empty string.</p>
 
         <p class="note">In certain situations, e.g. if the resource
         was <a href="urls.html#fetch" title="fetch">fetched</a> from an
-        <a href="textFieldSelection.html#application-cache">application cache</a> but it is an HTML file with a
+        <a href="offline.html#application-cache">application cache</a> but it is an HTML file with a
         <code title="attr-html-manifest"><a href="the-html-element.html#attr-html-manifest">manifest</a></code> attribute
-        that points to a different <a href="textFieldSelection.html#concept-appcache-manifest" title="concept-appcache-manifest">application cache
-        manifest</a>, the <a href="textFieldSelection.html#navigate" title="navigate">navigation</a>
-        of the <a href="textFieldSelection.html#browsing-context">browsing context</a> will be restarted so as
+        that points to a different <a href="offline.html#concept-appcache-manifest" title="concept-appcache-manifest">application cache
+        manifest</a>, the <a href="history.html#navigate" title="navigate">navigation</a>
+        of the <a href="browsers.html#browsing-context">browsing context</a> will be restarted so as
         to load the resource afresh from the network or a different
-        <a href="textFieldSelection.html#application-cache">application cache</a>. Even if the resource is then
+        <a href="offline.html#application-cache">application cache</a>. Even if the resource is then
         found to have a different type, it is still used as part of a
-        <a href="textFieldSelection.html#nested-browsing-context">nested browsing context</a>: only the
-        <a href="textFieldSelection.html#navigate">navigate</a> algorithm is restarted, not this
+        <a href="browsers.html#nested-browsing-context">nested browsing context</a>: only the
+        <a href="history.html#navigate">navigate</a> algorithm is restarted, not this
         <code><a href="#the-object-element">object</a></code> algorithm.</p>
 
         <!-- note that malformed XML files don't cause fallback -->
@@ -971,8 +971,8 @@
         <p>Apply the <a href="urls.html#content-type-sniffing:-image" title="content-type sniffing: image">image
         sniffing</a> rules to determine the type of the image.</p>
 
-        <p>The <code><a href="#the-object-element">object</a></code> element <a href="textFieldSelection.html#represents">represents</a> the
-        specified image. The image is not a <a href="textFieldSelection.html#nested-browsing-context">nested browsing
+        <p>The <code><a href="#the-object-element">object</a></code> element <a href="rendering.html#represents">represents</a> the
+        specified image. The image is not a <a href="browsers.html#nested-browsing-context">nested browsing
         context</a>.</p>
 
         <p>If the image cannot be rendered, e.g. because it is
@@ -1002,11 +1002,11 @@
 
      </li><li>
 
-      <p>Once the resource is completely loaded, <a href="textFieldSelection.html#queue-a-task">queue a
-      task</a> to <a href="textFieldSelection.html#fire-a-simple-event">fire a simple event</a> named <code title="event-load">load</code> at the element.</p>
+      <p>Once the resource is completely loaded, <a href="webappapis.html#queue-a-task">queue a
+      task</a> to <a href="webappapis.html#fire-a-simple-event">fire a simple event</a> named <code title="event-load">load</code> at the element.</p>
 
-      <p>The <a href="textFieldSelection.html#task-source">task source</a> for this task<!--tasks mentioned
-      in this section--> is the <a href="textFieldSelection.html#dom-manipulation-task-source">DOM manipulation task
+      <p>The <a href="webappapis.html#task-source">task source</a> for this task<!--tasks mentioned
+      in this section--> is the <a href="webappapis.html#dom-manipulation-task-source">DOM manipulation task
       source</a>.</p>
 
      </li>
@@ -1023,7 +1023,7 @@
    reports an error, jump to the next step (fallback).</p></li>
 
    <li><p>(Fallback.) The <code><a href="#the-object-element">object</a></code> element
-   <a href="textFieldSelection.html#represents">represents</a> the element's children, ignoring any
+   <a href="rendering.html#represents">represents</a> the element's children, ignoring any
    leading <code><a href="the-param-element.html#the-param-element">param</a></code> element children. This is the element's
    <a href="content-models.html#fallback-content">fallback content</a>. If the element has an instantiated
    <a href="infrastructure.html#plugin">plugin</a>, then unload it.</p></li>
@@ -1040,14 +1040,14 @@
   <a href="infrastructure.html#plugin">plugin</a> supports a scriptable interface, the
   <code><a href="#htmlobjectelement">HTMLObjectElement</a></code> object representing the element
   should expose that interface. The <code><a href="#the-object-element">object</a></code> element
-  <a href="textFieldSelection.html#represents">represents</a> the <a href="infrastructure.html#plugin">plugin</a>. The
-  <a href="infrastructure.html#plugin">plugin</a> is not a nested <a href="textFieldSelection.html#browsing-context">browsing
+  <a href="rendering.html#represents">represents</a> the <a href="infrastructure.html#plugin">plugin</a>. The
+  <a href="infrastructure.html#plugin">plugin</a> is not a nested <a href="browsers.html#browsing-context">browsing
   context</a>.</p>
 
   <p id="sandboxPluginObject">Plugins are considered sandboxed for the
-  purpose of an <code><a href="#the-object-element">object</a></code> element if the <a href="textFieldSelection.html#sandboxed-plugins-browsing-context-flag">sandboxed
+  purpose of an <code><a href="#the-object-element">object</a></code> element if the <a href="browsers.html#sandboxed-plugins-browsing-context-flag">sandboxed
   plugins browsing context flag</a> is set on the
-  <code><a href="#the-object-element">object</a></code> element's <code><a href="dom.html#document">Document</a></code>'s <a href="textFieldSelection.html#active-sandboxing-flag-set">active
+  <code><a href="#the-object-element">object</a></code> element's <code><a href="dom.html#document">Document</a></code>'s <a href="browsers.html#active-sandboxing-flag-set">active
   sandboxing flag set</a>.</p>
 
   <p>Due to the algorithm above, the contents of <code><a href="#the-object-element">object</a></code>
@@ -1060,10 +1060,10 @@
 
   <p>Whenever the <code title="attr-object-name"><a href="#attr-object-name">name</a></code> attribute
   is set, if the <code><a href="#the-object-element">object</a></code> element has a nested
-  <a href="textFieldSelection.html#browsing-context">browsing context</a>, its <a href="textFieldSelection.html#browsing-context-name" title="browsing context
+  <a href="browsers.html#browsing-context">browsing context</a>, its <a href="browsers.html#browsing-context-name" title="browsing context
   name">name</a> must be changed to the new value. If the attribute
-  is removed, if the <code><a href="#the-object-element">object</a></code> element has a <a href="textFieldSelection.html#browsing-context">browsing
-  context</a>, the <a href="textFieldSelection.html#browsing-context-name">browsing context name</a> must be set
+  is removed, if the <code><a href="#the-object-element">object</a></code> element has a <a href="browsers.html#browsing-context">browsing
+  context</a>, the <a href="browsers.html#browsing-context-name">browsing context name</a> must be set
   to the empty string.</p>
 
   </div>
@@ -1081,7 +1081,7 @@
   <div class="impl">
 
   <p><strong>Constraint validation</strong>: <code><a href="#the-object-element">object</a></code>
-  elements are always <a href="textFieldSelection.html#barred-from-constraint-validation">barred from constraint
+  elements are always <a href="constraints.html#barred-from-constraint-validation">barred from constraint
   validation</a>.</p>
 
   </div>
@@ -1100,18 +1100,18 @@
 
   <p>The <dfn id="dom-object-contentdocument" title="dom-object-contentDocument"><code>contentDocument</code></dfn>
   IDL attribute must return the <code><a href="dom.html#document">Document</a></code> object of the
-  <a href="textFieldSelection.html#active-document">active document</a> of the <code><a href="#the-object-element">object</a></code> element's
-  <a href="textFieldSelection.html#nested-browsing-context">nested browsing context</a>, if it has one; otherwise, it
+  <a href="browsers.html#active-document">active document</a> of the <code><a href="#the-object-element">object</a></code> element's
+  <a href="browsers.html#nested-browsing-context">nested browsing context</a>, if it has one; otherwise, it
   must return null.</p>
 
   <p>The <dfn id="dom-object-contentwindow" title="dom-object-contentWindow"><code>contentWindow</code></dfn>
-  IDL attribute must return the <code><a href="textFieldSelection.html#windowproxy">WindowProxy</a></code> object of the
-  <code><a href="#the-object-element">object</a></code> element's <a href="textFieldSelection.html#nested-browsing-context">nested browsing context</a>,
+  IDL attribute must return the <code><a href="browsers.html#windowproxy">WindowProxy</a></code> object of the
+  <code><a href="#the-object-element">object</a></code> element's <a href="browsers.html#nested-browsing-context">nested browsing context</a>,
   if it has one; otherwise, it must return null.</p>
 
-  <p>The <code title="dom-cva-willValidate"><a href="textFieldSelection.html#dom-cva-willvalidate">willValidate</a></code>, <code title="dom-cva-validity"><a href="textFieldSelection.html#dom-cva-validity">validity</a></code>, and <code title="dom-cva-validationMessage"><a href="textFieldSelection.html#dom-cva-validationmessage">validationMessage</a></code>
-  attributes, and the <code title="dom-cva-checkValidity"><a href="textFieldSelection.html#dom-cva-checkvalidity">checkValidity()</a></code> and <code title="dom-cva-setCustomValidity"><a href="textFieldSelection.html#dom-cva-setcustomvalidity">setCustomValidity()</a></code>
-  methods, are part of the <a href="textFieldSelection.html#the-constraint-validation-api">constraint validation API</a>. The
+  <p>The <code title="dom-cva-willValidate"><a href="constraints.html#dom-cva-willvalidate">willValidate</a></code>, <code title="dom-cva-validity"><a href="constraints.html#dom-cva-validity">validity</a></code>, and <code title="dom-cva-validationMessage"><a href="constraints.html#dom-cva-validationmessage">validationMessage</a></code>
+  attributes, and the <code title="dom-cva-checkValidity"><a href="constraints.html#dom-cva-checkvalidity">checkValidity()</a></code> and <code title="dom-cva-setCustomValidity"><a href="constraints.html#dom-cva-setcustomvalidity">setCustomValidity()</a></code>
+  methods, are part of the <a href="constraints.html#the-constraint-validation-api">constraint validation API</a>. The
   <code title="dom-fae-form"><a href="association-of-controls-and-forms.html#dom-fae-form">form</a></code> IDL attribute is part of the
   element's forms API.</p>
 

@@ -412,7 +412,7 @@
    </dd>
   </dl><!--TOPIC:HTML--><p>The <code><a href="#the-script-element">script</a></code> element allows authors to include dynamic
   script and data blocks in their documents. The element does not
-  <a href="textFieldSelection.html#represents" title="represents">represent</a> content for the user.</p>
+  <a href="rendering.html#represents" title="represents">represent</a> content for the user.</p>
 
   <p>When used to include dynamic scripts, the scripts may either be
   embedded inline or may be imported from an external file using the
@@ -455,7 +455,7 @@
   <a href="infrastructure.html#preferred-mime-name">preferred MIME name</a> for that encoding, and must match
   the encoding given in the <code title="">charset</code> parameter of
   the <a href="urls.html#content-type" title="Content-Type">Content-Type metadata</a> of the
-  external file, if any. <a href="textFieldSelection.html#refsIANACHARSET">[IANACHARSET]</a></p>
+  external file, if any. <a href="references.html#refsIANACHARSET">[IANACHARSET]</a></p>
 
   <p>The <dfn id="attr-script-async" title="attr-script-async"><code>async</code></dfn> and
   <dfn id="attr-script-defer" title="attr-script-defer"><code>defer</code></dfn> attributes
@@ -480,9 +480,9 @@
   therefore by necessity scattered throughout the specification. The
   algorithms below (in this section) describe the core of this
   processing, but these algorithms reference and are referenced by the
-  parsing rules for <code><a href="#the-script-element">script</a></code> <a href="textFieldSelection.html#scriptTag">start</a>
-  and <a href="textFieldSelection.html#scriptEndTag">end</a> tags in HTML, <a href="textFieldSelection.html#scriptForeignEndTag">in foreign content</a>, and <a href="textFieldSelection.html#scriptTagXML">in XML</a>, the rules for the <code title="dom-document-write"><a href="dynamic-markup-insertion.html#dom-document-write">document.write()</a></code> method, the
-  handling of <a href="textFieldSelection.html#scripting">scripting</a>, etc.</p>
+  parsing rules for <code><a href="#the-script-element">script</a></code> <a href="tokenization.html#scriptTag">start</a>
+  and <a href="tokenization.html#scriptEndTag">end</a> tags in HTML, <a href="tokenization.html#scriptForeignEndTag">in foreign content</a>, and <a href="the-xhtml-syntax.html#scriptTagXML">in XML</a>, the rules for the <code title="dom-document-write"><a href="dynamic-markup-insertion.html#dom-document-write">document.write()</a></code> method, the
+  handling of <a href="webappapis.html#scripting">scripting</a>, etc.</p>
 
   <p>The <code title="attr-script-defer"><a href="#attr-script-defer">defer</a></code> attribute may be
   specified even if the <code title="attr-script-async"><a href="#attr-script-async">async</a></code>
@@ -509,15 +509,15 @@
 
   <p>The second is a flag indicating whether the element was
   <dfn id="parser-inserted">"parser-inserted"</dfn>. Initially, <code><a href="#the-script-element">script</a></code>
-  elements must have this flag unset. It is set by the <a href="textFieldSelection.html#html-parser">HTML
-  parser</a> and the <a href="textFieldSelection.html#xml-parser">XML parser</a> on <code><a href="#the-script-element">script</a></code>
+  elements must have this flag unset. It is set by the <a href="parsing.html#html-parser">HTML
+  parser</a> and the <a href="the-xhtml-syntax.html#xml-parser">XML parser</a> on <code><a href="#the-script-element">script</a></code>
   elements they insert and affects the processing of those
   elements.</p>
 
   <p>The third is a flag indicating whether the element will
   <dfn id="force-async">"force-async"</dfn>. Initially, <code><a href="#the-script-element">script</a></code> elements
-  must have this flag set. It is unset by the <a href="textFieldSelection.html#html-parser">HTML parser</a>
-  and the <a href="textFieldSelection.html#xml-parser">XML parser</a> on <code><a href="#the-script-element">script</a></code> elements they
+  must have this flag set. It is unset by the <a href="parsing.html#html-parser">HTML parser</a>
+  and the <a href="the-xhtml-syntax.html#xml-parser">XML parser</a> on <code><a href="#the-script-element">script</a></code> elements they
   insert. In addition, whenever a <code><a href="#the-script-element">script</a></code> element whose
   <a href="#force-async">"force-async"</a> flag is set has a <code title="attr-script-async"><a href="#attr-script-async">async</a></code> content attribute added, the
   element's <a href="#force-async">"force-async"</a> flag must be unset.</p> <!--
@@ -624,10 +624,10 @@
     <ul class="brief"><li>the <code><a href="#the-script-element">script</a></code> element has a <code title="attr-script-type"><a href="#attr-script-type">type</a></code> attribute and its value is
      the empty string, or</li>
 
-     <li>the <code><a href="#the-script-element">script</a></code> element has no <code title="attr-script-type"><a href="#attr-script-type">type</a></code> attribute but it has a <code title="attr-script-language"><a href="textFieldSelection.html#attr-script-language">language</a></code> attribute and
+     <li>the <code><a href="#the-script-element">script</a></code> element has no <code title="attr-script-type"><a href="#attr-script-type">type</a></code> attribute but it has a <code title="attr-script-language"><a href="obsolete.html#attr-script-language">language</a></code> attribute and
      <em>that</em> attribute's value is the empty string, or</li>
 
-     <li>the <code><a href="#the-script-element">script</a></code> element has neither a <code title="attr-script-type"><a href="#attr-script-type">type</a></code> attribute nor a <code title="attr-script-language"><a href="textFieldSelection.html#attr-script-language">language</a></code> attribute, then</li>
+     <li>the <code><a href="#the-script-element">script</a></code> element has neither a <code title="attr-script-type"><a href="#attr-script-type">type</a></code> attribute nor a <code title="attr-script-language"><a href="obsolete.html#attr-script-language">language</a></code> attribute, then</li>
 
     </ul><p>...let <var><a href="#the-script-block's-type">the script block's type</a></var> for this
     <code><a href="#the-script-element">script</a></code> element be "<code title="">text/javascript</code>".</p>
@@ -639,13 +639,13 @@
     removed.</p> <!-- <span>Strip leading and trailing
     whitespace</span> from... -->
 
-    <p>Otherwise, the element has a non-empty <code title="attr-script-language"><a href="textFieldSelection.html#attr-script-language">language</a></code> attribute; let
+    <p>Otherwise, the element has a non-empty <code title="attr-script-language"><a href="obsolete.html#attr-script-language">language</a></code> attribute; let
     <var><a href="#the-script-block's-type">the script block's type</a></var> for this <code><a href="#the-script-element">script</a></code>
-    element be the concatenation of the string "<code title="">text/</code>" followed by the value of the <code title="attr-script-language"><a href="textFieldSelection.html#attr-script-language">language</a></code> attribute.</p> <!--
+    element be the concatenation of the string "<code title="">text/</code>" followed by the value of the <code title="attr-script-language"><a href="obsolete.html#attr-script-language">language</a></code> attribute.</p> <!--
     user agents already support, e.g., type="text/javascript1.3", so
     we don't have to support that separately. -->
 
-    <p class="note">The <code title="attr-script-language"><a href="textFieldSelection.html#attr-script-language">language</a></code> attribute is never
+    <p class="note">The <code title="attr-script-language"><a href="obsolete.html#attr-script-language">language</a></code> attribute is never
     conforming, and is always ignored if there is a <code title="attr-script-type"><a href="#attr-script-type">type</a></code> attribute present.</p>
 
    </li>
@@ -688,32 +688,32 @@
 
    <li id="script-processing-noscript">
 
-    <p>If <a href="textFieldSelection.html#concept-n-noscript" title="concept-n-noscript">scripting is
+    <p>If <a href="webappapis.html#concept-n-noscript" title="concept-n-noscript">scripting is
     disabled</a> for the <code><a href="#the-script-element">script</a></code> element, then the user
     agent must abort these steps at this point. The script is not
     executed.</p>
 
-    <p class="note">The definition of <a href="textFieldSelection.html#concept-n-noscript" title="concept-n-noscript">scripting is disabled</a> means
+    <p class="note">The definition of <a href="webappapis.html#concept-n-noscript" title="concept-n-noscript">scripting is disabled</a> means
     that, amongst others, the following scripts will not execute:
     scripts in <code>XMLHttpRequest</code>'s <code title="dom-XMLHttpRequest-responseXML">responseXML</code>
     documents, scripts in <code>DOMParser</code>-created documents,
     scripts in documents created by <code>XSLTProcessor</code>'s <code title="dom-XSLTProcessor-transformToDocument">transformToDocument</code>
     feature, and scripts that are first inserted by a script into a
     <code><a href="dom.html#document">Document</a></code> that was created using the <code title="dom-DOMImplementation-createDocument"><a href="infrastructure.html#dom-domimplementation-createdocument">createDocument()</a></code>
-    API. <a href="textFieldSelection.html#refsXHR">[XHR]</a> <a href="textFieldSelection.html#refsDOMPARSING">[DOMPARSING]</a> <!--<a
-    href="#refsXSLTP">[XSLTP]</a>--> <a href="textFieldSelection.html#refsDOMCORE">[DOMCORE]</a></p>
+    API. <a href="references.html#refsXHR">[XHR]</a> <a href="references.html#refsDOMPARSING">[DOMPARSING]</a> <!--<a
+    href="#refsXSLTP">[XSLTP]</a>--> <a href="references.html#refsDOMCORE">[DOMCORE]</a></p>
 
 
    </li>
 
    <li id="script-processing-for">
 
-    <p>If the <code><a href="#the-script-element">script</a></code> element has an <code title="attr-script-event"><a href="textFieldSelection.html#attr-script-event">event</a></code> attribute and a <code title="attr-script-for"><a href="textFieldSelection.html#attr-script-for">for</a></code> attribute, then run these
+    <p>If the <code><a href="#the-script-element">script</a></code> element has an <code title="attr-script-event"><a href="obsolete.html#attr-script-event">event</a></code> attribute and a <code title="attr-script-for"><a href="obsolete.html#attr-script-for">for</a></code> attribute, then run these
     substeps:</p>
 
-    <ol><li><p>Let <var title="">for</var> be the value of the <code title="attr-script-for"><a href="textFieldSelection.html#attr-script-for">for</a></code> attribute.</p></li>
+    <ol><li><p>Let <var title="">for</var> be the value of the <code title="attr-script-for"><a href="obsolete.html#attr-script-for">for</a></code> attribute.</p></li>
 
-     <li><p>Let <var title="">event</var> be the value of the <code title="attr-script-event"><a href="textFieldSelection.html#attr-script-event">event</a></code> attribute.</p></li>
+     <li><p>Let <var title="">event</var> be the value of the <code title="attr-script-event"><a href="obsolete.html#attr-script-event">event</a></code> attribute.</p></li>
 
      <li><p><a href="common-microsyntaxes.html#strip-leading-and-trailing-whitespace">Strip leading and trailing whitespace</a> from
      <var title="">event</var> and <var title="">for</var>.</p></li>
@@ -750,16 +750,16 @@
     that attribute must be <a href="urls.html#resolve-a-url" title="resolve a url">resolved</a>
     relative to the element, and if that is successful, the specified
     resource must then be <a href="urls.html#fetch" title="fetch">fetched</a><!--FETCH-->, from the
-    <a href="textFieldSelection.html#origin-0">origin</a> of the element's <code><a href="dom.html#document">Document</a></code>.</p>
+    <a href="browsers.html#origin-0">origin</a> of the element's <code><a href="dom.html#document">Document</a></code>.</p>
     <!-- not http-origin privacy sensitive -->
 
     <p>If the <code title="attr-script-src"><a href="#attr-script-src">src</a></code> attribute's
     value is the empty string or if it could not be resolved, then the
-    user agent must <a href="textFieldSelection.html#queue-a-task">queue a task</a> to <a href="textFieldSelection.html#fire-a-simple-event">fire a simple
+    user agent must <a href="webappapis.html#queue-a-task">queue a task</a> to <a href="webappapis.html#fire-a-simple-event">fire a simple
     event</a> named <code title="event-error">error</code> at the
     element, and abort these steps.</p>
 
-    <p>For historical reasons, if the <a href="urls.html#url">URL</a> is a <a href="textFieldSelection.html#javascript-protocol" title="javascript protocol"><code title="">javascript:</code>
+    <p>For historical reasons, if the <a href="urls.html#url">URL</a> is a <a href="webappapis.html#javascript-protocol" title="javascript protocol"><code title="">javascript:</code>
     URL</a>, then the user agent must not, despite the requirements
     in the definition of the <a href="urls.html#fetch" title="fetch">fetching</a>
     algorithm, actually execute the script in the URL; instead the
@@ -799,8 +799,8 @@
       parsing</dfn> associated with the <code><a href="dom.html#document">Document</a></code> of the
       parser that created the element.</p>
 
-      <p>The <a href="textFieldSelection.html#concept-task" title="concept-task">task</a> that the
-      <a href="textFieldSelection.html#networking-task-source">networking task source</a> places on the <a href="textFieldSelection.html#task-queue">task
+      <p>The <a href="webappapis.html#concept-task" title="concept-task">task</a> that the
+      <a href="webappapis.html#networking-task-source">networking task source</a> places on the <a href="webappapis.html#task-queue">task
       queue</a> once the <a href="urls.html#fetch" title="fetch">fetching
       algorithm</a> has completed must set the element's
       <a href="#ready-to-be-parser-executed">"ready to be parser-executed"</a> flag. The parser will
@@ -821,8 +821,8 @@
       created the element. (There can only be one such script per
       <code><a href="dom.html#document">Document</a></code> at a time.)</p>
 
-      <p>The <a href="textFieldSelection.html#concept-task" title="concept-task">task</a> that the
-      <a href="textFieldSelection.html#networking-task-source">networking task source</a> places on the <a href="textFieldSelection.html#task-queue">task
+      <p>The <a href="webappapis.html#concept-task" title="concept-task">task</a> that the
+      <a href="webappapis.html#networking-task-source">networking task source</a> places on the <a href="webappapis.html#task-queue">task
       queue</a> once the <a href="urls.html#fetch" title="fetch">fetching
       algorithm</a> has completed must set the element's
       <a href="#ready-to-be-parser-executed">"ready to be parser-executed"</a> flag. The parser will
@@ -835,10 +835,10 @@
      have a <code title="attr-script-src"><a href="#attr-script-src">src</a></code> attribute, and
      the element has been flagged as <a href="#parser-inserted">"parser-inserted"</a>,
      and either the parser that created the <code><a href="#the-script-element">script</a></code> is an
-     <a href="textFieldSelection.html#xml-parser">XML parser</a> or it's an <a href="textFieldSelection.html#html-parser">HTML parser</a> whose
-     <a href="textFieldSelection.html#script-nesting-level">script nesting level</a> is zero, and the
-     <code><a href="dom.html#document">Document</a></code> of the <a href="textFieldSelection.html#html-parser">HTML parser</a> or
-     <a href="textFieldSelection.html#xml-parser">XML parser</a> that created the <code><a href="#the-script-element">script</a></code>
+     <a href="the-xhtml-syntax.html#xml-parser">XML parser</a> or it's an <a href="parsing.html#html-parser">HTML parser</a> whose
+     <a href="parsing.html#script-nesting-level">script nesting level</a> is zero, and the
+     <code><a href="dom.html#document">Document</a></code> of the <a href="parsing.html#html-parser">HTML parser</a> or
+     <a href="the-xhtml-syntax.html#xml-parser">XML parser</a> that created the <code><a href="#the-script-element">script</a></code>
      element <a href="styling.html#has-a-style-sheet-that-is-blocking-scripts">has a style sheet that is blocking
      scripts</a></dt>
 
@@ -867,8 +867,8 @@
       <code><a href="#the-script-element">script</a></code> element at the time the <a href="#prepare-a-script">prepare a
       script</a> algorithm started.</p>
 
-      <p>The <a href="textFieldSelection.html#concept-task" title="concept-task">task</a> that the
-      <a href="textFieldSelection.html#networking-task-source">networking task source</a> places on the <a href="textFieldSelection.html#task-queue">task
+      <p>The <a href="webappapis.html#concept-task" title="concept-task">task</a> that the
+      <a href="webappapis.html#networking-task-source">networking task source</a> places on the <a href="webappapis.html#task-queue">task
       queue</a> once the <a href="urls.html#fetch" title="fetch">fetching
       algorithm</a> has completed must run the following steps:</p>
 
@@ -903,8 +903,8 @@
       <code><a href="dom.html#document">Document</a></code> of the <code><a href="#the-script-element">script</a></code> element at the
       time the <a href="#prepare-a-script">prepare a script</a> algorithm started.</p>
 
-      <p>The <a href="textFieldSelection.html#concept-task" title="concept-task">task</a> that the
-      <a href="textFieldSelection.html#networking-task-source">networking task source</a> places on the <a href="textFieldSelection.html#task-queue">task
+      <p>The <a href="webappapis.html#concept-task" title="concept-task">task</a> that the
+      <a href="webappapis.html#networking-task-source">networking task source</a> places on the <a href="webappapis.html#task-queue">task
       queue</a> once the <a href="urls.html#fetch" title="fetch">fetching
       algorithm</a> has completed must <a href="#execute-the-script-block">execute the script
       block</a> and then remove the element from the <a href="#set-of-scripts-that-will-execute-as-soon-as-possible">set of
@@ -920,9 +920,9 @@
 
     </dl></li>
 
-  </ol><!-- similar text in various places --><p>Fetching an external script must <a href="textFieldSelection.html#delay-the-load-event">delay the load
-  event</a> of the element's document until the <a href="textFieldSelection.html#concept-task" title="concept-task">task</a> that is <a href="textFieldSelection.html#queue-a-task" title="queue a
-  task">queued</a> by the <a href="textFieldSelection.html#networking-task-source">networking task source</a> once
+  </ol><!-- similar text in various places --><p>Fetching an external script must <a href="the-end.html#delay-the-load-event">delay the load
+  event</a> of the element's document until the <a href="webappapis.html#concept-task" title="concept-task">task</a> that is <a href="webappapis.html#queue-a-task" title="queue a
+  task">queued</a> by the <a href="webappapis.html#networking-task-source">networking task source</a> once
   the resource has been <a href="urls.html#fetch" title="fetch">fetched</a> (defined
   above) has been run.</p>
 
@@ -970,7 +970,7 @@
     <dl class="switch"><dt>If the load resulted in an error (for example a DNS error, or
      an HTTP 404 error)</dt>
 
-     <dd><p>Executing the script block must just consist of <a href="textFieldSelection.html#fire-a-simple-event" title="fire a simple event">firing a simple event</a> named
+     <dd><p>Executing the script block must just consist of <a href="webappapis.html#fire-a-simple-event" title="fire a simple event">firing a simple event</a> named
      <code title="event-error">error</code> at the element.</p></dd>
 
      <dt>If the load was successful</dt>
@@ -1095,7 +1095,7 @@
 
        <li>
 
-        <p><a href="textFieldSelection.html#fire-a-simple-event">Fire a simple event</a> named <code title="event-beforescriptexecute">beforescriptexecute</code>
+        <p><a href="webappapis.html#fire-a-simple-event">Fire a simple event</a> named <code title="event-beforescriptexecute">beforescriptexecute</code>
         that bubbles and is cancelable at the <code><a href="#the-script-element">script</a></code>
         element.</p>
 
@@ -1114,7 +1114,7 @@
 
        <li>
 
-        <p><a href="textFieldSelection.html#create-a-script-from-a-node" title="create a script from a node">Create a
+        <p><a href="webappapis.html#create-a-script-from-a-node" title="create a script from a node">Create a
         script</a> from the <code><a href="#the-script-element">script</a></code> element node, using
         <var><a href="#the-script-block's-source">the script block's source</a></var>, the <a href="urls.html#url">URL</a>
         from which the script was obtained, and <var><a href="#the-script-block's-type">the script
@@ -1135,7 +1135,7 @@
 
        <li>
 
-        <p><a href="textFieldSelection.html#fire-a-simple-event">Fire a simple event</a> named <code title="event-afterscriptexecute">afterscriptexecute</code>
+        <p><a href="webappapis.html#fire-a-simple-event">Fire a simple event</a> named <code title="event-afterscriptexecute">afterscriptexecute</code>
         that bubbles (but is not cancelable) at the
         <code><a href="#the-script-element">script</a></code> element.</p>
 
@@ -1143,12 +1143,12 @@
 
        <li>
 
-        <p>If the script is from an external file, <a href="textFieldSelection.html#fire-a-simple-event">fire a simple
+        <p>If the script is from an external file, <a href="webappapis.html#fire-a-simple-event">fire a simple
         event</a> named <code title="event-load">load</code> at the
         <code><a href="#the-script-element">script</a></code> element.</p>
 
-        <p>Otherwise, the script is internal; <a href="textFieldSelection.html#queue-a-task">queue a
-        task</a> to <a href="textFieldSelection.html#fire-a-simple-event">fire a simple event</a> named <code title="event-load">load</code> at the <code><a href="#the-script-element">script</a></code>
+        <p>Otherwise, the script is internal; <a href="webappapis.html#queue-a-task">queue a
+        task</a> to <a href="webappapis.html#fire-a-simple-event">fire a simple event</a> named <code title="event-load">load</code> at the <code><a href="#the-script-element">script</a></code>
         element.</p>
 
        </li>
@@ -1301,10 +1301,10 @@ o............A....e
    <dt>"<code>text/livescript</code>"</dt>
    <dt>"<code>text/x-ecmascript</code>"</dt>
    <dt>"<code>text/x-javascript</code>"</dt>
-   <dd>JavaScript. <a href="textFieldSelection.html#refsECMA262">[ECMA262]</a></dd>
+   <dd>JavaScript. <a href="references.html#refsECMA262">[ECMA262]</a></dd>
 
    <dt>"<code>text/javascript;e4x=1</code>"</dt>
-   <dd>JavaScript with ECMAScript for XML. <a href="textFieldSelection.html#refsECMA357">[ECMA357]</a></dd>
+   <dd>JavaScript with ECMAScript for XML. <a href="references.html#refsECMA357">[ECMA357]</a></dd>
 
   </dl><div class="impl">
 
@@ -1346,7 +1346,7 @@ o............A....e
 
   <p>The <code><a href="infrastructure.html#textcontent">textContent</a></code> of a <code><a href="#the-script-element">script</a></code> element
   must match the <code title="">script</code> production in the
-  following ABNF, the character set for which is Unicode. <a href="textFieldSelection.html#refsABNF">[ABNF]</a></p>
+  following ABNF, the character set for which is Unicode. <a href="references.html#refsABNF">[ABNF]</a></p>
 
   <pre>script        = data1 *( escape [ script-start data3 ] "--&gt;" data1 ) [ escape ]
 escape        = "&lt;!--" data2 *( script-start data3 script-end data2 )
@@ -1398,7 +1398,7 @@ tag-end       =/ %x003E ; U+003E GREATER-THAN SIGN (&gt;)</pre>
   that the value of the <code title="dom-script-text"><a href="#dom-script-text">text</a></code> IDL
   attribute, which is derived from the element's contents, matches the
   <code title="">documentation</code> production in the following
-  ABNF, the character set for which is Unicode. <a href="textFieldSelection.html#refsABNF">[ABNF]</a></p>
+  ABNF, the character set for which is Unicode. <a href="references.html#refsABNF">[ABNF]</a></p>
 
   <pre>documentation = *( *( space / tab / comment ) [ line-comment ] newline )
 comment       = slash star *( not-star / star not-slash ) 1*star slash
@@ -1463,10 +1463,10 @@ not-slash     = %x0000-002E / %x0030-10FFFF
 
    <li><p>The <code title="dom-XSLTProcessor-transformToDocument">XSLTProcessor.transformToDocument()</code>
    method adds elements to a <code><a href="dom.html#document">Document</a></code> that is not in a
-   <a href="textFieldSelection.html#browsing-context">browsing context</a>, and, accordingly, any
+   <a href="browsers.html#browsing-context">browsing context</a>, and, accordingly, any
    <code><a href="#the-script-element">script</a></code> elements they create need to have their
    <a href="#already-started">"already started"</a> flag set in the <a href="#prepare-a-script">prepare a
-   script</a> algorithm and never get executed (<a href="textFieldSelection.html#concept-bc-noscript" title="concept-bc-noscript">scripting is disabled</a>). Such
+   script</a> algorithm and never get executed (<a href="webappapis.html#concept-bc-noscript" title="concept-bc-noscript">scripting is disabled</a>). Such
    <code><a href="#the-script-element">script</a></code> elements still need to be marked
    <a href="#parser-inserted">"parser-inserted"</a>, though, such that their <code title="dom-script-async"><a href="#dom-script-async">async</a></code> IDL attribute will return
    false in the absence of an <code title="attr-script-async"><a href="#attr-script-async">async</a></code> content attribute.</p></li>

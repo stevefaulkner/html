@@ -380,23 +380,23 @@
   styling information for the user agent to use when rendering the
   document. The CSS and CSSOM specifications specify what styling
   information is to be used by the user agent and how it is to be
-  used. <a href="textFieldSelection.html#refsCSS">[CSS]</a> <a href="textFieldSelection.html#refsCSSOM">[CSSOM]</a></p>
+  used. <a href="references.html#refsCSS">[CSS]</a> <a href="references.html#refsCSSOM">[CSSOM]</a></p>
 
   <p>The <code><a href="the-style-element.html#the-style-element">style</a></code> and <code><a href="the-link-element.html#the-link-element">link</a></code> elements implement
-  the <code><a href="infrastructure.html#linkstyle">LinkStyle</a></code> interface. <a href="textFieldSelection.html#refsCSSOM">[CSSOM]</a></p>
+  the <code><a href="infrastructure.html#linkstyle">LinkStyle</a></code> interface. <a href="references.html#refsCSSOM">[CSSOM]</a></p>
 
   <div class="impl">
 
   <p>For <code><a href="the-style-element.html#the-style-element">style</a></code> elements, if the user agent does not
   support the specified styling language, then the <code title="dom-LinkStyle-sheet"><a href="infrastructure.html#dom-linkstyle-sheet">sheet</a></code> attribute of the element's
   <code><a href="infrastructure.html#linkstyle">LinkStyle</a></code> interface must return null. Similarly,
-  <code><a href="the-link-element.html#the-link-element">link</a></code> elements that do not represent <a href="textFieldSelection.html#link-type-stylesheet" title="rel-stylesheet">external resource links that contribute to
-  the styling processing model</a> (i.e. that do not have a <code title="rel-stylesheet"><a href="textFieldSelection.html#link-type-stylesheet">stylesheet</a></code> keyword in their <code title="attr-link-rel"><a href="the-link-element.html#attr-link-rel">rel</a></code> attribute), or for which <a href="textFieldSelection.html#the-link-is-an-alternative-stylesheet">the
+  <code><a href="the-link-element.html#the-link-element">link</a></code> elements that do not represent <a href="links.html#link-type-stylesheet" title="rel-stylesheet">external resource links that contribute to
+  the styling processing model</a> (i.e. that do not have a <code title="rel-stylesheet"><a href="links.html#link-type-stylesheet">stylesheet</a></code> keyword in their <code title="attr-link-rel"><a href="the-link-element.html#attr-link-rel">rel</a></code> attribute), or for which <a href="links.html#the-link-is-an-alternative-stylesheet">the
   link is an alternative stylesheet</a> but whose <code title="dom-title"><a href="global-attributes.html#dom-title">title</a></code> content attribute is absent or empty,
   must have their <code><a href="infrastructure.html#linkstyle">LinkStyle</a></code> interface's <code title="dom-LinkStyle-sheet"><a href="infrastructure.html#dom-linkstyle-sheet">sheet</a></code> attribute return null.</p>
 
   <p>Otherwise, the <code><a href="infrastructure.html#linkstyle">LinkStyle</a></code> interface's <code title="dom-LinkStyle-sheet"><a href="infrastructure.html#dom-linkstyle-sheet">sheet</a></code> attribute must return a
-  <code><a href="infrastructure.html#stylesheet">StyleSheet</a></code> object with the following properties: <a href="textFieldSelection.html#refsCSSOM">[CSSOM]</a></p>
+  <code><a href="infrastructure.html#stylesheet">StyleSheet</a></code> object with the following properties: <a href="references.html#refsCSSOM">[CSSOM]</a></p>
 
   <dl><dt>The style sheet type</dt>
 
@@ -434,7 +434,7 @@
 
    <dt>The style sheet alternate flag</dt>
 
-   <dd><p>For <code><a href="the-link-element.html#the-link-element">link</a></code> elements, true if <a href="textFieldSelection.html#the-link-is-an-alternative-stylesheet">the link is an
+   <dd><p>For <code><a href="the-link-element.html#the-link-element">link</a></code> elements, true if <a href="links.html#the-link-is-an-alternative-stylesheet">the link is an
    alternative stylesheet</a>. In all other cases, false.</p></dd>
 
 <!--
@@ -462,7 +462,7 @@
   API -->
 
   <p id="alternate-style-sheets">The rules for handling alternative
-  style sheets are defined in the CSS object model specification. <a href="textFieldSelection.html#refsCSSOM">[CSSOM]</a></p>
+  style sheets are defined in the CSS object model specification. <a href="references.html#refsCSSOM">[CSSOM]</a></p>
 
   <hr><p>Style sheets, whether added by a <code><a href="the-link-element.html#the-link-element">link</a></code> element, a
   <code><a href="the-style-element.html#the-style-element">style</a></code> element, an <code>&lt;?xml-stylesheet&gt;</code> PI,
@@ -476,20 +476,20 @@
   <code><a href="the-style-element.html#the-style-element">style</a></code> element with no <code title="">@import</code>
   rules), then the style rules must be synchronously made available to
   script; otherwise, the style rules must only be made available to
-  script once the <a href="textFieldSelection.html#event-loop">event loop</a> reaches its "update the
+  script once the <a href="webappapis.html#event-loop">event loop</a> reaches its "update the
   rendering" step.</p>
 
   <p>A style sheet in the context of the <code><a href="dom.html#document">Document</a></code> of an
-  <a href="textFieldSelection.html#html-parser">HTML parser</a> or <a href="textFieldSelection.html#xml-parser">XML parser</a> is said to be
+  <a href="parsing.html#html-parser">HTML parser</a> or <a href="the-xhtml-syntax.html#xml-parser">XML parser</a> is said to be
   <dfn id="a-style-sheet-that-is-blocking-scripts">a style sheet that is blocking scripts</dfn> if the element was
   created by that <code><a href="dom.html#document">Document</a></code>'s parser, and the element is
   either a <code><a href="the-style-element.html#the-style-element">style</a></code> element or a <code><a href="the-link-element.html#the-link-element">link</a></code> element
-  that was an <a href="textFieldSelection.html#link-type-stylesheet" title="rel-stylesheet">external resource link that
+  that was an <a href="links.html#link-type-stylesheet" title="rel-stylesheet">external resource link that
   contributes to the styling processing model</a> when the element
   was created by the parser, and the element's style sheet was enabled
   when the element was created by the parser, and the element's
   <a href="#style-sheet-ready">style sheet ready</a> flag is not yet set, and, the last
-  time the <a href="textFieldSelection.html#event-loop">event loop</a> reached step 1, the element was
+  time the <a href="webappapis.html#event-loop">event loop</a> reached step 1, the element was
   <a href="infrastructure.html#in-a-document" title="in a document">in that <code>Document</code></a>,
   and the user agent hasn't given up on that particular style sheet
   yet. A user agent may give up on a style sheet at any time.</p>
@@ -511,9 +511,9 @@
   scripts</dfn> if there is either <a href="#a-style-sheet-that-is-blocking-scripts">a style sheet that is
   blocking scripts</a> in the context of that
   <code><a href="dom.html#document">Document</a></code>, or if that <code><a href="dom.html#document">Document</a></code> is in a
-  <a href="textFieldSelection.html#browsing-context">browsing context</a> that has a <a href="textFieldSelection.html#parent-browsing-context">parent browsing
-  context</a>, and the <a href="textFieldSelection.html#active-document">active document</a> of that
-  <a href="textFieldSelection.html#parent-browsing-context">parent browsing context</a> itself <a href="#has-a-style-sheet-that-is-blocking-scripts">has a style sheet
+  <a href="browsers.html#browsing-context">browsing context</a> that has a <a href="browsers.html#parent-browsing-context">parent browsing
+  context</a>, and the <a href="browsers.html#active-document">active document</a> of that
+  <a href="browsers.html#parent-browsing-context">parent browsing context</a> itself <a href="#has-a-style-sheet-that-is-blocking-scripts">has a style sheet
   that is blocking scripts</a>.</p>
 
   <p>A <code><a href="dom.html#document">Document</a></code> <dfn id="has-no-style-sheet-that-is-blocking-scripts">has no style sheet that is blocking

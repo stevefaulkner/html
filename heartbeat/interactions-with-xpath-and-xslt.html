@@ -442,7 +442,7 @@
   the XPath 1.0 specification, motivated by desire to have
   implementations be compatible with legacy content while still
   supporting the changes that this specification introduces to HTML
-  regarding which namespace is used for HTML elements. <a href="textFieldSelection.html#refsXPATH10">[XPATH10]</a></p> <!-- note: version matters for
+  regarding which namespace is used for HTML elements. <a href="references.html#refsXPATH10">[XPATH10]</a></p> <!-- note: version matters for
   this ref -->
 
   <hr><p id="dom-based-xslt-1.0-processors">XSLT 1.0 processors outputting
@@ -462,22 +462,22 @@
   changes the namespaces and case-sensitivity rules of HTML in a
   manner that would otherwise be incompatible with DOM-based XSLT
   transformations. (Processors that serialize the output are
-  unaffected.) <a href="textFieldSelection.html#refsXSLT10">[XSLT10]</a></p> <!-- note:
+  unaffected.) <a href="references.html#refsXSLT10">[XSLT10]</a></p> <!-- note:
   version matters for this ref -->
 
   <hr><p>This specification does not specify precisely how XSLT processing
-  interacts with the <a href="textFieldSelection.html#html-parser">HTML parser</a> infrastructure (for
+  interacts with the <a href="parsing.html#html-parser">HTML parser</a> infrastructure (for
   example, whether an XSLT processor acts as if it puts any elements
-  into a <a href="textFieldSelection.html#stack-of-open-elements">stack of open elements</a>). However, XSLT
-  processors must <a href="textFieldSelection.html#stop-parsing">stop parsing</a> if they successfully
+  into a <a href="parsing.html#stack-of-open-elements">stack of open elements</a>). However, XSLT
+  processors must <a href="the-end.html#stop-parsing">stop parsing</a> if they successfully
   complete, and must set the <a href="dom.html#current-document-readiness">current document readiness</a>
   first to "<code title="">interactive</code>"<!-- this synchronously
   fires an event --> and then to "<code title="">complete</code>"<!--
   this also synchronously fires an event --> if they are aborted.</p>
 
   <hr><p>This specification does not specify how XSLT interacts with the
-  <a href="textFieldSelection.html#navigate" title="navigate">navigation</a> algorithm, how it fits in
-  with the <a href="textFieldSelection.html#event-loop">event loop</a>, nor how error pages are to be
+  <a href="history.html#navigate" title="navigate">navigation</a> algorithm, how it fits in
+  with the <a href="webappapis.html#event-loop">event loop</a>, nor how error pages are to be
   handled (e.g. whether XSLT errors are to replace an incremental XSLT
   output, or are rendered inline, etc).</p>
 

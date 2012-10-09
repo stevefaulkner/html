@@ -488,7 +488,7 @@
 
    <li><p><a href="urls.html#fetch">Fetch</a><!--FETCH--> the resulting <a href="urls.html#absolute-url">absolute
    URL</a>, from the element's <code><a href="dom.html#document">Document</a></code>'s
-   <a href="textFieldSelection.html#origin-0">origin</a>. This must <a href="textFieldSelection.html#delay-the-load-event">delay the load event</a> of
+   <a href="browsers.html#origin-0">origin</a>. This must <a href="the-end.html#delay-the-load-event">delay the load event</a> of
    the element's document.</p></li>
 
    <!-- could define how to sniff for an image here -->
@@ -511,19 +511,19 @@
   data has yet been obtained at all, or the element's <code title="dom-media-readyState"><a href="media-elements.html#dom-media-readystate">readyState</a></code> attribute is any
   subsequent value but the <a href="media-elements.html#media-resource">media resource</a> does not have a
   video channel), the <code><a href="#the-video-element">video</a></code> element
-  <a href="textFieldSelection.html#represents">represents</a> the <a href="#poster-frame">poster frame</a>.</p>
+  <a href="rendering.html#represents">represents</a> the <a href="#poster-frame">poster frame</a>.</p>
 
   <p>When a <code><a href="#the-video-element">video</a></code> element is <a href="media-elements.html#dom-media-paused" title="dom-media-paused">paused</a> and the <a href="media-elements.html#current-playback-position" title="current
   playback position">current playback position</a> is the first
-  frame of video, the element <a href="textFieldSelection.html#represents">represents</a> the <a href="#poster-frame">poster
+  frame of video, the element <a href="rendering.html#represents">represents</a> the <a href="#poster-frame">poster
   frame</a>, unless a frame of video has already been shown, in
-  which case the element <a href="textFieldSelection.html#represents">represents</a> the frame of video
+  which case the element <a href="rendering.html#represents">represents</a> the frame of video
   corresponding to the <a href="media-elements.html#current-playback-position" title="current playback position">current
   playback position</a>.</p>
 
   <p>When a <code><a href="#the-video-element">video</a></code> element is <a href="media-elements.html#dom-media-paused" title="dom-media-paused">paused</a> at any other position, and
   the <a href="media-elements.html#media-resource">media resource</a> has a video channel, the element
-  <a href="textFieldSelection.html#represents">represents</a> the frame of video corresponding to the
+  <a href="rendering.html#represents">represents</a> the frame of video corresponding to the
   <a href="media-elements.html#current-playback-position" title="current playback position">current playback
   position</a>, or, if that is not yet available (e.g. because the
   video is seeking or buffering), the last frame of the video to have
@@ -531,7 +531,7 @@
 
   <p>When a <code><a href="#the-video-element">video</a></code> element whose <a href="media-elements.html#media-resource">media
   resource</a> has a video channel is <a href="media-elements.html#potentially-playing">potentially
-  playing</a>, it <a href="textFieldSelection.html#represents">represents</a> the frame of video at the
+  playing</a>, it <a href="rendering.html#represents">represents</a> the frame of video at the
   continuously increasing <a href="media-elements.html#current-playback-position" title="current playback
   position">"current" position</a>. When the <a href="media-elements.html#current-playback-position">current playback
   position</a> changes such that the last frame rendered is no
@@ -546,14 +546,14 @@
   <p>When a <code><a href="#the-video-element">video</a></code> element whose <a href="media-elements.html#media-resource">media
   resource</a> has a video channel is neither <a href="media-elements.html#potentially-playing">potentially
   playing</a> nor <a href="media-elements.html#dom-media-paused" title="dom-media-paused">paused</a>
-  (e.g. when seeking or stalled), the element <a href="textFieldSelection.html#represents">represents</a>
+  (e.g. when seeking or stalled), the element <a href="rendering.html#represents">represents</a>
   the last frame of the video to have been rendered.</p>
 
   <p class="note">Which frame in a video stream corresponds to a
   particular playback position is defined by the video stream's
   format.</p>
 
-  <p>The <code><a href="#the-video-element">video</a></code> element also <a href="textFieldSelection.html#represents">represents</a> any
+  <p>The <code><a href="#the-video-element">video</a></code> element also <a href="rendering.html#represents">represents</a> any
   <a href="media-elements.html#text-track-cue" title="text track cue">text track cues</a> whose <a href="media-elements.html#text-track-cue-active-flag">text
   track cue active flag</a> is set and whose <a href="media-elements.html#text-track">text
   track</a> is in the <a href="media-elements.html#text-track-showing" title="text track
@@ -566,7 +566,7 @@
   appropriate manner.</p>
 
   <p>User agents that cannot render the video may instead make the
-  element <a href="textFieldSelection.html#represents" title="represents">represent</a> a link to an
+  element <a href="rendering.html#represents" title="represents">represent</a> a link to an
   external video playback utility or to the video data itself.</p>
 
   <p>When a <code><a href="#the-video-element">video</a></code> element's <a href="media-elements.html#media-resource">media resource</a>
@@ -628,7 +628,7 @@
   nothing.</p>
 
   <p class="note">In user agents that implement CSS, the above
-  requirement can be implemented by using the <a href="textFieldSelection.html#video-object-fit">style rule suggested in the rendering
+  requirement can be implemented by using the <a href="rendering.html#video-object-fit">style rule suggested in the rendering
   section</a>.</p>
 
   <p>The intrinsic width of a <code><a href="#the-video-element">video</a></code> element's playback

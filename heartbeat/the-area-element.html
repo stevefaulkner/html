@@ -388,13 +388,13 @@
    <dd><code title="attr-area-alt"><a href="#attr-area-alt">alt</a></code></dd>
    <dd><code title="attr-area-coords"><a href="#attr-area-coords">coords</a></code></dd>
    <dd><code title="attr-area-shape"><a href="#attr-area-shape">shape</a></code></dd>
-   <dd><code title="attr-hyperlink-href"><a href="textFieldSelection.html#attr-hyperlink-href">href</a></code></dd>
-   <dd><code title="attr-hyperlink-target"><a href="textFieldSelection.html#attr-hyperlink-target">target</a></code></dd>
+   <dd><code title="attr-hyperlink-href"><a href="links.html#attr-hyperlink-href">href</a></code></dd>
+   <dd><code title="attr-hyperlink-target"><a href="links.html#attr-hyperlink-target">target</a></code></dd>
 <!--DOWNLOAD--><!--PING-->
-   <dd><code title="attr-hyperlink-rel"><a href="textFieldSelection.html#attr-hyperlink-rel">rel</a></code></dd>
-   <dd><code title="attr-hyperlink-media"><a href="textFieldSelection.html#attr-hyperlink-media">media</a></code></dd>
-   <dd><code title="attr-hyperlink-hreflang"><a href="textFieldSelection.html#attr-hyperlink-hreflang">hreflang</a></code></dd>
-   <dd><code title="attr-hyperlink-type"><a href="textFieldSelection.html#attr-hyperlink-type">type</a></code></dd>
+   <dd><code title="attr-hyperlink-rel"><a href="links.html#attr-hyperlink-rel">rel</a></code></dd>
+   <dd><code title="attr-hyperlink-media"><a href="links.html#attr-hyperlink-media">media</a></code></dd>
+   <dd><code title="attr-hyperlink-hreflang"><a href="links.html#attr-hyperlink-hreflang">hreflang</a></code></dd>
+   <dd><code title="attr-hyperlink-type"><a href="links.html#attr-hyperlink-type">type</a></code></dd>
    <dt><a href="element-definitions.html#element-dfn-dom" title="element-dfn-dom">DOM interface</a>:</dt><!--TOPIC:DOM APIs-->
    <dd>
 <pre class="idl">interface <dfn id="htmlareaelement">HTMLAreaElement</dfn> : <a href="elements.html#htmlelement">HTMLElement</a> {
@@ -420,12 +420,12 @@
            attribute DOMString <a href="#dom-area-hash" title="dom-area-hash">hash</a>;
 };</pre>
    </dd>
-  </dl><!--TOPIC:HTML--><p>The <code><a href="#the-area-element">area</a></code> element <a href="textFieldSelection.html#represents">represents</a> either a
+  </dl><!--TOPIC:HTML--><p>The <code><a href="#the-area-element">area</a></code> element <a href="rendering.html#represents">represents</a> either a
   hyperlink with some text and a corresponding area on an <a href="image-maps.html#image-map">image
   map</a>, or a dead area on an image map.</p>
 
-  <p>If the <code><a href="#the-area-element">area</a></code> element has an <code title="attr-hyperlink-href"><a href="textFieldSelection.html#attr-hyperlink-href">href</a></code> attribute, then the
-  <code><a href="#the-area-element">area</a></code> element represents a <a href="textFieldSelection.html#hyperlink">hyperlink</a>. In
+  <p>If the <code><a href="#the-area-element">area</a></code> element has an <code title="attr-hyperlink-href"><a href="links.html#attr-hyperlink-href">href</a></code> attribute, then the
+  <code><a href="#the-area-element">area</a></code> element represents a <a href="links.html#hyperlink">hyperlink</a>. In
   this case, the <dfn id="attr-area-alt" title="attr-area-alt"><code>alt</code></dfn>
   attribute must be present. It specifies the text of the
   hyperlink. Its value must be text that, when presented with the
@@ -439,7 +439,7 @@
   resource and has a non-blank <code title="attr-area-alt"><a href="#attr-area-alt">alt</a></code>
   attribute.</p>
 
-  <p>If the <code><a href="#the-area-element">area</a></code> element has no <code title="attr-hyperlink-href"><a href="textFieldSelection.html#attr-hyperlink-href">href</a></code> attribute, then the area
+  <p>If the <code><a href="#the-area-element">area</a></code> element has no <code title="attr-hyperlink-href"><a href="links.html#attr-hyperlink-href">href</a></code> attribute, then the area
   represented by the element cannot be selected, and the <code title="attr-area-alt"><a href="#attr-area-alt">alt</a></code> attribute must be omitted.</p>
 
   <p>In both cases, the <code title="attr-area-shape"><a href="#attr-area-shape">shape</a></code> and
@@ -522,26 +522,26 @@
 
   <div class="impl">
 
-  <p>When user agents allow users to <a href="textFieldSelection.html#following-hyperlinks-0" title="following
+  <p>When user agents allow users to <a href="links.html#following-hyperlinks-0" title="following
   hyperlinks">follow hyperlinks</a>
 <!--DOWNLOAD-->
   created using the <code><a href="#the-area-element">area</a></code> element, as described in the
   next section, the
-  <code title="attr-hyperlink-href"><a href="textFieldSelection.html#attr-hyperlink-href">href</a></code>,
-  <code title="attr-hyperlink-target"><a href="textFieldSelection.html#attr-hyperlink-target">target</a></code>,
+  <code title="attr-hyperlink-href"><a href="links.html#attr-hyperlink-href">href</a></code>,
+  <code title="attr-hyperlink-target"><a href="links.html#attr-hyperlink-target">target</a></code>,
 <!--DOWNLOAD--><!--PING-->
   attributes decide how the link is followed.
-  The <code title="attr-hyperlink-rel"><a href="textFieldSelection.html#attr-hyperlink-rel">rel</a></code>,
-  <code title="attr-hyperlink-media"><a href="textFieldSelection.html#attr-hyperlink-media">media</a></code>, <code title="attr-hyperlink-hreflang"><a href="textFieldSelection.html#attr-hyperlink-hreflang">hreflang</a></code>, and <code title="attr-hyperlink-type"><a href="textFieldSelection.html#attr-hyperlink-type">type</a></code> attributes may be used to
+  The <code title="attr-hyperlink-rel"><a href="links.html#attr-hyperlink-rel">rel</a></code>,
+  <code title="attr-hyperlink-media"><a href="links.html#attr-hyperlink-media">media</a></code>, <code title="attr-hyperlink-hreflang"><a href="links.html#attr-hyperlink-hreflang">hreflang</a></code>, and <code title="attr-hyperlink-type"><a href="links.html#attr-hyperlink-type">type</a></code> attributes may be used to
   indicate to the user the likely nature of the target resource before
   the user follows the link.</p>
 
   </div>
 
-  <p>The <code title="attr-hyperlink-target"><a href="textFieldSelection.html#attr-hyperlink-target">target</a></code>,
+  <p>The <code title="attr-hyperlink-target"><a href="links.html#attr-hyperlink-target">target</a></code>,
 <!--DOWNLOAD--><!--PING-->
-  <code title="attr-hyperlink-rel"><a href="textFieldSelection.html#attr-hyperlink-rel">rel</a></code>, <code title="attr-hyperlink-media"><a href="textFieldSelection.html#attr-hyperlink-media">media</a></code>, <code title="attr-hyperlink-hreflang"><a href="textFieldSelection.html#attr-hyperlink-hreflang">hreflang</a></code>, and <code title="attr-hyperlink-type"><a href="textFieldSelection.html#attr-hyperlink-type">type</a></code> attributes must be omitted
-  if the <code title="attr-hyperlink-href"><a href="textFieldSelection.html#attr-hyperlink-href">href</a></code> attribute is
+  <code title="attr-hyperlink-rel"><a href="links.html#attr-hyperlink-rel">rel</a></code>, <code title="attr-hyperlink-media"><a href="links.html#attr-hyperlink-media">media</a></code>, <code title="attr-hyperlink-hreflang"><a href="links.html#attr-hyperlink-hreflang">hreflang</a></code>, and <code title="attr-hyperlink-type"><a href="links.html#attr-hyperlink-type">type</a></code> attributes must be omitted
+  if the <code title="attr-hyperlink-href"><a href="links.html#attr-hyperlink-href">href</a></code> attribute is
   not present.</p>
 
 <!--MD-->
@@ -553,19 +553,19 @@
 
   <ol><li><p>If the <code title="event-click"><a href="infrastructure.html#event-click">click</a></code> event in
    question is not <a href="infrastructure.html#concept-events-trusted" title="concept-events-trusted">trusted</a>
-   (i.e. a <code title="dom-click"><a href="textFieldSelection.html#dom-click">click()</a></code> method call was the
+   (i.e. a <code title="dom-click"><a href="editing.html#dom-click">click()</a></code> method call was the
    reason for the event being dispatched), and the <code><a href="#the-area-element">area</a></code>
 <!--DOWNLOAD-->
-   element's <code title="attr-hyperlink-target"><a href="textFieldSelection.html#attr-hyperlink-target">target</a></code>
-   attribute is present and applying <a href="textFieldSelection.html#the-rules-for-choosing-a-browsing-context-given-a-browsing-context-name">the rules for choosing a
+   element's <code title="attr-hyperlink-target"><a href="links.html#attr-hyperlink-target">target</a></code>
+   attribute is present and applying <a href="browsers.html#the-rules-for-choosing-a-browsing-context-given-a-browsing-context-name">the rules for choosing a
    browsing context given a browsing context name</a>, using the
-   value of the <code title="attr-hyperlink-target"><a href="textFieldSelection.html#attr-hyperlink-target">target</a></code>
+   value of the <code title="attr-hyperlink-target"><a href="links.html#attr-hyperlink-target">target</a></code>
    attribute as the browsing context name, would result in there not
    being a chosen browsing context, then throw an
    <code><a href="infrastructure.html#invalidaccesserror">InvalidAccessError</a></code> exception and abort these
    steps.</p></li>
 
-   <li><p>Otherwise, the user agent must <a href="textFieldSelection.html#following-hyperlinks-0" title="following
+   <li><p>Otherwise, the user agent must <a href="links.html#following-hyperlinks-0" title="following
    hyperlinks">follow the hyperlink</a>
 <!--DOWNLOAD-->
    created by the <code><a href="#the-area-element">area</a></code> element, if any, and as determined by
@@ -583,17 +583,17 @@
   content attribute.</p>
 
   <p>The IDL attribute <dfn id="dom-area-rellist" title="dom-area-rellist"><code>relList</code></dfn> must
-  <a href="common-dom-interfaces.html#reflect">reflect</a> the <code title="attr-hyperlink-rel"><a href="textFieldSelection.html#attr-hyperlink-rel">rel</a></code>
+  <a href="common-dom-interfaces.html#reflect">reflect</a> the <code title="attr-hyperlink-rel"><a href="links.html#attr-hyperlink-rel">rel</a></code>
   content attribute.</p>
 
   <p>The <code><a href="#the-area-element">area</a></code> element also supports the complement of
   <a href="urls.html#url-decomposition-idl-attributes">URL decomposition IDL attributes</a>, <dfn id="dom-area-protocol" title="dom-area-protocol"><code>protocol</code></dfn>, <dfn id="dom-area-host" title="dom-area-host"><code>host</code></dfn>, <dfn id="dom-area-port" title="dom-area-port"><code>port</code></dfn>, <dfn id="dom-area-hostname" title="dom-area-hostname"><code>hostname</code></dfn>, <dfn id="dom-area-pathname" title="dom-area-pathname"><code>pathname</code></dfn>, <dfn id="dom-area-search" title="dom-area-search"><code>search</code></dfn>, and <dfn id="dom-area-hash" title="dom-area-hash"><code>hash</code></dfn>. These must follow the
   rules given for <a href="urls.html#url-decomposition-idl-attributes">URL decomposition IDL attributes</a>, with
   the <a href="urls.html#concept-uda-input" title="concept-uda-input">input</a> being the result of
-  <a href="urls.html#resolve-a-url" title="resolve a url">resolving</a> the element's <code title="attr-hyperlink-href"><a href="textFieldSelection.html#attr-hyperlink-href">href</a></code> attribute relative to the
+  <a href="urls.html#resolve-a-url" title="resolve a url">resolving</a> the element's <code title="attr-hyperlink-href"><a href="links.html#attr-hyperlink-href">href</a></code> attribute relative to the
   element, if there is such an attribute and resolving it is
   successful, or the empty string otherwise; and the <a href="urls.html#concept-uda-setter" title="concept-uda-setter">common setter action</a> being the
-  same as setting the element's <code title="attr-hyperlink-href"><a href="textFieldSelection.html#attr-hyperlink-href">href</a></code> attribute to the new output
+  same as setting the element's <code title="attr-hyperlink-href"><a href="links.html#attr-hyperlink-href">href</a></code> attribute to the new output
   value.</p>
 
   </div>

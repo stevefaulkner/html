@@ -425,10 +425,10 @@
   element. The contents of the <code><a href="#the-canvas-element">canvas</a></code> element, if any,
   are the element's <a href="content-models.html#fallback-content">fallback content</a>.</p>
 
-  <p>In interactive visual media, if <a href="textFieldSelection.html#concept-n-script" title="concept-n-script">scripting is enabled</a> for the
+  <p>In interactive visual media, if <a href="webappapis.html#concept-n-script" title="concept-n-script">scripting is enabled</a> for the
   <code><a href="#the-canvas-element">canvas</a></code> element, and if support for <code><a href="#the-canvas-element">canvas</a></code>
   elements has been enabled, the <code><a href="#the-canvas-element">canvas</a></code> element
-  <a href="textFieldSelection.html#represents">represents</a> <a href="content-models.html#embedded-content-2">embedded content</a> consisting of
+  <a href="rendering.html#represents">represents</a> <a href="content-models.html#embedded-content-2">embedded content</a> consisting of
   a dynamically created image.</p>
 
   <p>In non-interactive, static, visual media, if the
@@ -436,18 +436,18 @@
   the page was viewed in an interactive visual medium and is now being
   printed, or if some script that ran during the page layout process
   painted on the element), then the <code><a href="#the-canvas-element">canvas</a></code> element
-  <a href="textFieldSelection.html#represents">represents</a> <a href="content-models.html#embedded-content-2">embedded content</a> with the
+  <a href="rendering.html#represents">represents</a> <a href="content-models.html#embedded-content-2">embedded content</a> with the
   current image and size. Otherwise, the element represents its
   <a href="content-models.html#fallback-content">fallback content</a> instead.</p>
 
-  <p>In non-visual media, and in visual media if <a href="textFieldSelection.html#concept-n-noscript" title="concept-n-noscript">scripting is disabled</a> for the
+  <p>In non-visual media, and in visual media if <a href="webappapis.html#concept-n-noscript" title="concept-n-noscript">scripting is disabled</a> for the
   <code><a href="#the-canvas-element">canvas</a></code> element or if support for <code><a href="#the-canvas-element">canvas</a></code>
   elements has been disabled, the <code><a href="#the-canvas-element">canvas</a></code> element
-  <a href="textFieldSelection.html#represents">represents</a> its <a href="content-models.html#fallback-content">fallback content</a>
+  <a href="rendering.html#represents">represents</a> its <a href="content-models.html#fallback-content">fallback content</a>
   instead.</p>
 
   <!-- CANVAS-FOCUS-FALLBACK -->
-  <p>When a <code><a href="#the-canvas-element">canvas</a></code> element <a href="textFieldSelection.html#represents">represents</a>
+  <p>When a <code><a href="#the-canvas-element">canvas</a></code> element <a href="rendering.html#represents">represents</a>
   <a href="content-models.html#embedded-content-2">embedded content</a>, the user can still focus descendants
   of the <code><a href="#the-canvas-element">canvas</a></code> element (in the <a href="content-models.html#fallback-content">fallback
   content</a>). When an element is focused, it is the target of
@@ -456,7 +456,7 @@
   keyboard-accessible: authors should have a one-to-one mapping of
   interactive regions to focusable elements in the <a href="content-models.html#fallback-content">fallback
   content</a>. (Focus has no effect on mouse interaction
-  events.) <a href="textFieldSelection.html#refsDOMEVENTS">[DOMEVENTS]</a></p>
+  events.) <a href="references.html#refsDOMEVENTS">[DOMEVENTS]</a></p>
 
   <p>The <code><a href="#the-canvas-element">canvas</a></code> element has two attributes to control the
   size of the coordinate space: <dfn id="attr-canvas-width" title="attr-canvas-width"><code>width</code></dfn> and <dfn id="attr-canvas-height" title="attr-canvas-height"><code>height</code></dfn>. These
@@ -529,7 +529,7 @@
 <!--2DCONTEXT-->
 
     <p>The list of defined contexts is given on the <a href="http://wiki.whatwg.org/wiki/CanvasContexts">WHATWG Wiki
-    CanvasContexts page</a>. <a href="textFieldSelection.html#refsWHATWGWIKI">[WHATWGWIKI]</a>
+    CanvasContexts page</a>. <a href="references.html#refsWHATWGWIKI">[WHATWGWIKI]</a>
 
     </p><p>Returns null if the given context ID is not supported or if the
     canvas has already been initialized with some other (incompatible)
@@ -576,7 +576,7 @@
    context's entry in the <a href="http://wiki.whatwg.org/wiki/CanvasContexts">WHATWG Wiki
    CanvasContexts page</a> does not list <var title="">contextId</var>
    as a context with which it is compatible, return null and abort
-   these steps. <a href="textFieldSelection.html#refsWHATWGWIKI">[WHATWGWIKI]</a></p></li>
+   these steps. <a href="references.html#refsWHATWGWIKI">[WHATWGWIKI]</a></p></li>
 
    <li><p>If the element does not have a <a href="#primary-context">primary context</a>,
    let the element's <a href="#primary-context">primary context</a> be <var title="">contextId</var>.</p></li>
@@ -588,10 +588,10 @@
 
    <li><p><dfn id="getcontext-return" title="getContext-return">Return a new object for <var title="">contextId</var></dfn>, as defined by the specification
    given for <var title="">contextId</var>'s entry in the <a href="http://wiki.whatwg.org/wiki/CanvasContexts">WHATWG Wiki
-   CanvasContexts page</a>. <a href="textFieldSelection.html#refsWHATWGWIKI">[WHATWGWIKI]</a></p></li>
+   CanvasContexts page</a>. <a href="references.html#refsWHATWGWIKI">[WHATWGWIKI]</a></p></li>
 
   </ol><p>New context types may be registered in the <a href="http://wiki.whatwg.org/wiki/CanvasContexts">WHATWG Wiki
-  CanvasContexts page</a>. <a href="textFieldSelection.html#refsWHATWGWIKI">[WHATWGWIKI]</a></p>
+  CanvasContexts page</a>. <a href="references.html#refsWHATWGWIKI">[WHATWGWIKI]</a></p>
 
   <p>Anyone is free to edit the WHATWG Wiki CanvasContexts page at any
   time to add a new context type. These new context types must be
@@ -685,7 +685,7 @@
    image as a file</a>, using the method's arguments (if any) as
    the <var title="">arguments</var>.</p></li>
 
-   <li><p>Return a <a href="infrastructure.html#data-protocol" title="data protocol"><code title="">data:</code> URL</a> representing <var title="">file</var>. <a href="textFieldSelection.html#refsRFC2397">[RFC2397]</a></p>
+   <li><p>Return a <a href="infrastructure.html#data-protocol" title="data protocol"><code title="">data:</code> URL</a> representing <var title="">file</var>. <a href="references.html#refsRFC2397">[RFC2397]</a></p>
 
    <!-- should we explicitly require the URL to be base64-encoded and
    not have any parameters, to ensure the same exact URL is generated
@@ -712,7 +712,7 @@
 
     <p>Otherwise, let <var title="">result</var> be a
     <code><a href="infrastructure.html#blob">Blob</a></code> object representing <a href="#a-serialization-of-the-image-as-a-file">a serialization of the
-    image as a file</a>, using <var title="">arguments</var>. <a href="textFieldSelection.html#refsFILEAPI">[FILEAPI]</a> </p>
+    image as a file</a>, using <var title="">arguments</var>. <a href="references.html#refsFILEAPI">[FILEAPI]</a> </p>
 
    </li>
 
@@ -722,15 +722,15 @@
    <li><p>If <var title="">callback</var> is null, abort these
    steps.</p></li>
 
-   <li><p><a href="textFieldSelection.html#queue-a-task">Queue a task</a> to invoke the
-   <code><a href="infrastructure.html#filecallback">FileCallback</a></code> <var title="">callback</var> with <var title="">result</var> as its argument. The <a href="textFieldSelection.html#task-source">task source</a>
+   <li><p><a href="webappapis.html#queue-a-task">Queue a task</a> to invoke the
+   <code><a href="infrastructure.html#filecallback">FileCallback</a></code> <var title="">callback</var> with <var title="">result</var> as its argument. The <a href="webappapis.html#task-source">task source</a>
    for this task is the <dfn id="canvas-blob-serialization-task-source">canvas blob serialization task
-   source</dfn>. <a href="textFieldSelection.html#refsFILESYSTEMAPI">[FILESYSTEMAPI]</a></p></li>
+   source</dfn>. <a href="references.html#refsFILESYSTEMAPI">[FILESYSTEMAPI]</a></p></li>
 
   </ol><p>When a user agent is to create <dfn id="a-serialization-of-the-image-as-a-file">a serialization of the image
   as a file</dfn>, optionally with some given <var title="">arguments</var>, it must create an image file in the format
   given by the first value of <var title="">arguments</var>, or, if
-  there are no <var title="">arguments</var>, in the PNG format. <a href="textFieldSelection.html#refsPNG">[PNG]</a></p>
+  there are no <var title="">arguments</var>, in the PNG format. <a href="references.html#refsPNG">[PNG]</a></p>
 
   <p>If <var title="">arguments</var> is not empty, the first value
   must be interpreted as a <a href="infrastructure.html#mime-type" title="MIME type">MIME type</a>
@@ -746,7 +746,7 @@
 
   <p>User agents must support PNG ("<code>image/png</code>"). User
   agents may support other types. If the user agent does not support
-  the requested type, it must create the file using the PNG format. <a href="textFieldSelection.html#refsPNG">[PNG]</a></p>
+  the requested type, it must create the file using the PNG format. <a href="references.html#refsPNG">[PNG]</a></p>
 
   <p>User agents must <a href="infrastructure.html#converted-to-ascii-lowercase" title="converted to ASCII
   lowercase">convert the provided type to ASCII lowercase</a>
@@ -771,13 +771,13 @@
      be</span> treated as the desired quality level. <span class="impl">If it is not a number or is outside that range, the
      user agent must use its default value, as if the argument had
      been omitted.</span>
-     </td><td> <a href="textFieldSelection.html#refsJPEG">[JPEG]</a>
+     </td><td> <a href="references.html#refsJPEG">[JPEG]</a>
   </td></tr></tbody></table><div class="impl">
 
   <p>For the purposes of these rules, an argument is considered to be
   a number if it is converted to an IDL double value by the rules for
   handling arguments of type <code title="">any</code> in the Web IDL
-  specification. <a href="textFieldSelection.html#refsWEBIDL">[WEBIDL]</a></p>
+  specification. <a href="references.html#refsWEBIDL">[WEBIDL]</a></p>
 
   <p>Other arguments must be ignored and must not cause the user agent
   to throw an exception. A future version of this specification will
@@ -839,8 +839,8 @@
   <h5 id="security-with-canvas-elements"><span class="secno">4.8.11.2 </span>Security with <code><a href="#the-canvas-element">canvas</a></code> elements</h5>
 
   <p><strong>Information leakage</strong> can occur if scripts from
-  one <a href="textFieldSelection.html#origin-0">origin</a> can access information (e.g. read pixels)
-  from images from another origin (one that isn't the <a href="textFieldSelection.html#same-origin" title="same origin">same</a>).</p>
+  one <a href="browsers.html#origin-0">origin</a> can access information (e.g. read pixels)
+  from images from another origin (one that isn't the <a href="browsers.html#same-origin" title="same origin">same</a>).</p>
 
   <p>To mitigate this, <code><a href="#the-canvas-element">canvas</a></code> elements are defined to
   have a flag indicating whether they are <i>origin-clean</i>. All
@@ -850,8 +850,8 @@
 
   <ul><li><p>The element's 2D context's <code title="dom-context-2d-drawImage">drawImage()</code> method is
    called with an <code><a href="the-img-element.html#htmlimageelement">HTMLImageElement</a></code> or an
-   <code><a href="the-video-element.html#htmlvideoelement">HTMLVideoElement</a></code> whose <a href="textFieldSelection.html#origin-0">origin</a> is not the
-   <a href="textFieldSelection.html#same-origin" title="same origin">same</a> as that of the
+   <code><a href="the-video-element.html#htmlvideoelement">HTMLVideoElement</a></code> whose <a href="browsers.html#origin-0">origin</a> is not the
+   <a href="browsers.html#same-origin" title="same origin">same</a> as that of the
    <code><a href="dom.html#document">Document</a></code> object that owns the <code><a href="#the-canvas-element">canvas</a></code>
    element.</p></li>
 
@@ -862,7 +862,7 @@
    <li><p>The element's 2D context's <code title="dom-context-2d-fillStyle">fillStyle</code> attribute is set
    to a <code>CanvasPattern</code> object that was created from an
    <code><a href="the-img-element.html#htmlimageelement">HTMLImageElement</a></code> or an <code><a href="the-video-element.html#htmlvideoelement">HTMLVideoElement</a></code>
-   whose <a href="textFieldSelection.html#origin-0">origin</a> was not the <a href="textFieldSelection.html#same-origin" title="same
+   whose <a href="browsers.html#origin-0">origin</a> was not the <a href="browsers.html#same-origin" title="same
    origin">same</a> as that of the <code><a href="dom.html#document">Document</a></code> object
    that owns the <code><a href="#the-canvas-element">canvas</a></code> element when the pattern was
    created.</p></li>
@@ -875,7 +875,7 @@
    <li><p>The element's 2D context's <code title="dom-context-2d-strokeStyle">strokeStyle</code> attribute is
    set to a <code>CanvasPattern</code> object that was created from an
    <code><a href="the-img-element.html#htmlimageelement">HTMLImageElement</a></code> or an <code><a href="the-video-element.html#htmlvideoelement">HTMLVideoElement</a></code>
-   whose <a href="textFieldSelection.html#origin-0">origin</a> was not the <a href="textFieldSelection.html#same-origin" title="same
+   whose <a href="browsers.html#origin-0">origin</a> was not the <a href="browsers.html#same-origin" title="same
    origin">same</a> as that of the <code><a href="dom.html#document">Document</a></code> object
    that owns the <code><a href="#the-canvas-element">canvas</a></code> element when the pattern was
    created.</p></li>
@@ -886,8 +886,8 @@
    false when the pattern was created.</p></li>
 
    <li><p>The element's 2D context's <code title="dom-context-2d-fillText">fillText()</code> or <code title="dom-context-2d-fillText">strokeText()</code> methods are
-   invoked and consider using a font that has an <a href="textFieldSelection.html#origin-0">origin</a>
-   that is not the <a href="textFieldSelection.html#same-origin" title="same origin">same</a> as that of
+   invoked and consider using a font that has an <a href="browsers.html#origin-0">origin</a>
+   that is not the <a href="browsers.html#same-origin" title="same origin">same</a> as that of
    the <code><a href="dom.html#document">Document</a></code> object that owns the <code><a href="#the-canvas-element">canvas</a></code>
    element. (The font doesn't even have to be used; all that matters
    is whether the font was considered for any of the glyphs

@@ -392,7 +392,7 @@
    <dd><code title="attr-link-media"><a href="#attr-link-media">media</a></code></dd>
    <dd><code title="attr-link-hreflang"><a href="#attr-link-hreflang">hreflang</a></code></dd>
    <dd><code title="attr-link-type"><a href="#attr-link-type">type</a></code></dd>
-   <dd><code title="attr-link-sizes"><a href="textFieldSelection.html#attr-link-sizes">sizes</a></code></dd>
+   <dd><code title="attr-link-sizes"><a href="links.html#attr-link-sizes">sizes</a></code></dd>
    <dd>Also, the <code title="attr-link-title"><a href="#attr-link-title">title</a></code> attribute has special semantics on this element.</dd>
    <dt><a href="element-definitions.html#element-dfn-dom" title="element-dfn-dom">DOM interface</a>:</dt><!--TOPIC:DOM APIs-->
    <dd>
@@ -423,7 +423,7 @@
   <p>The types of link indicated (the relationships) are given by the
   value of the <dfn id="attr-link-rel" title="attr-link-rel"><code>rel</code></dfn>
   attribute, which, if present, must have a value that is a <a href="common-microsyntaxes.html#set-of-space-separated-tokens">set
-  of space-separated tokens</a>. The <a href="textFieldSelection.html#linkTypes">allowed
+  of space-separated tokens</a>. The <a href="links.html#linkTypes">allowed
   keywords and their meanings</a> are defined in a later
   section. <span class="impl">If the <code title="attr-link-rel"><a href="#attr-link-rel">rel</a></code> attribute is absent, has no
   keywords, or if none of the keywords used are allowed according to
@@ -431,8 +431,8 @@
   create any links.</span></p>
 
   <p>Two categories of links can be created using the
-  <code><a href="#the-link-element">link</a></code> element: <a href="textFieldSelection.html#external-resource-link" title="external resource
-  link">Links to external resources</a> and <a href="textFieldSelection.html#hyperlink" title="hyperlink">hyperlinks</a>. The <a href="textFieldSelection.html#linkTypes">link
+  <code><a href="#the-link-element">link</a></code> element: <a href="links.html#external-resource-link" title="external resource
+  link">Links to external resources</a> and <a href="links.html#hyperlink" title="hyperlink">hyperlinks</a>. The <a href="links.html#linkTypes">link
   types section</a> defines whether a particular link type is an
   external resource or a hyperlink. One <code><a href="#the-link-element">link</a></code> element can
   create multiple links (of which some might be external resource
@@ -446,8 +446,8 @@
   count as a separate external resource, and each is affected by its
   own attributes independently. Similarly, if a single
   <code><a href="#the-link-element">link</a></code> element has a <code title="attr-link-rel"><a href="#attr-link-rel">rel</a></code> attribute with the value <code title="">next stylesheet</code>, it creates both a
-  <a href="textFieldSelection.html#hyperlink">hyperlink</a> (for the <code title="rel-next"><a href="textFieldSelection.html#link-type-next">next</a></code>
-  keyword) and an <a href="textFieldSelection.html#external-resource-link">external resource link</a> (for the <code title="rel-stylesheet"><a href="textFieldSelection.html#link-type-stylesheet">stylesheet</a></code> keyword), and they are
+  <a href="links.html#hyperlink">hyperlink</a> (for the <code title="rel-next"><a href="links.html#link-type-next">next</a></code>
+  keyword) and an <a href="links.html#external-resource-link">external resource link</a> (for the <code title="rel-stylesheet"><a href="links.html#link-type-stylesheet">stylesheet</a></code> keyword), and they are
   affected by other attributes (such as <code title="attr-link-media"><a href="#attr-link-media">media</a></code> or <code title="attr-link-title"><a href="#attr-link-title">title</a></code>) differently.</p>
 
   <div class="example">
@@ -501,29 +501,29 @@
   <!-- the next few paragraph are similar to text in the <style> section -->
   <p>Once the attempts to obtain the resource and its <a href="infrastructure.html#critical-subresources">critical
   subresources</a> are complete, the user agent must, if the loads
-  were successful, <a href="textFieldSelection.html#queue-a-task">queue a task</a> to <a href="textFieldSelection.html#fire-a-simple-event">fire a simple
+  were successful, <a href="webappapis.html#queue-a-task">queue a task</a> to <a href="webappapis.html#fire-a-simple-event">fire a simple
   event</a> named <code title="event-load">load</code> at the
   <code><a href="#the-link-element">link</a></code> element, or, if the resource or one of its
   <a href="infrastructure.html#critical-subresources">critical subresources</a> failed to completely load for any
   reason (e.g. DNS error, HTTP 404 response, a connection being
-  prematurely closed, unsupported Content-Type), <a href="textFieldSelection.html#queue-a-task">queue a
-  task</a> to <a href="textFieldSelection.html#fire-a-simple-event">fire a simple event</a> named <code title="event-error">error</code> at the <code><a href="#the-link-element">link</a></code>
+  prematurely closed, unsupported Content-Type), <a href="webappapis.html#queue-a-task">queue a
+  task</a> to <a href="webappapis.html#fire-a-simple-event">fire a simple event</a> named <code title="event-error">error</code> at the <code><a href="#the-link-element">link</a></code>
   element. Non-network errors in processing the resource or its
   subresources (e.g. CSS parse errors, PNG decoding errors) are not
   failures for the purposes of this paragraph.</p>
 
-  <p>The <a href="textFieldSelection.html#task-source">task source</a> for these <a href="textFieldSelection.html#concept-task" title="concept-task">tasks</a> is the <a href="textFieldSelection.html#dom-manipulation-task-source">DOM manipulation task
+  <p>The <a href="webappapis.html#task-source">task source</a> for these <a href="webappapis.html#concept-task" title="concept-task">tasks</a> is the <a href="webappapis.html#dom-manipulation-task-source">DOM manipulation task
   source</a>.</p>
 
-  <p>The element must <a href="textFieldSelection.html#delay-the-load-event">delay the load event</a> of the
+  <p>The element must <a href="the-end.html#delay-the-load-event">delay the load event</a> of the
   element's document until all the attempts to obtain the resource and
   its <a href="infrastructure.html#critical-subresources">critical subresources</a> are complete. (Resources that
   the user agent has not yet attempted to obtain, e.g. because it is
-  waiting for the resource to be needed, do not <a href="textFieldSelection.html#delay-the-load-event">delay the load
+  waiting for the resource to be needed, do not <a href="the-end.html#delay-the-load-event">delay the load
   event</a>.)</p>
 
   <hr><p id="linkui">Interactive user agents may provide users with a
-  means to <a href="textFieldSelection.html#following-hyperlinks-0" title="following hyperlinks">follow the
+  means to <a href="links.html#following-hyperlinks-0" title="following hyperlinks">follow the
   hyperlinks</a> created using the <code><a href="#the-link-element">link</a></code> element,
   somewhere within their user interface. The exact interface is not
   defined by this specification, but it could include the following
@@ -550,7 +550,7 @@
 
   <p class="note">Hyperlinks created with the <code><a href="#the-link-element">link</a></code>
   element and its <code title="attr-link-rel"><a href="#attr-link-rel">rel</a></code> attribute
-  apply to the whole page. This contrasts with the <code title="attr-hyperlink-rel"><a href="textFieldSelection.html#attr-hyperlink-rel">rel</a></code> attribute of <code><a href="the-a-element.html#the-a-element">a</a></code>
+  apply to the whole page. This contrasts with the <code title="attr-hyperlink-rel"><a href="links.html#attr-hyperlink-rel">rel</a></code> attribute of <code><a href="the-a-element.html#the-a-element">a</a></code>
   and <code><a href="the-area-element.html#the-area-element">area</a></code> elements, which indicates the type of a link
   whose context is given by the link's location within the
   document.</p>
@@ -561,11 +561,11 @@
 
   <div class="impl">
 
-  <p>If the link is a <a href="textFieldSelection.html#hyperlink">hyperlink</a> then the <code title="attr-link-media"><a href="#attr-link-media">media</a></code> attribute is purely advisory,
+  <p>If the link is a <a href="links.html#hyperlink">hyperlink</a> then the <code title="attr-link-media"><a href="#attr-link-media">media</a></code> attribute is purely advisory,
   and describes for which media the document in question was
   designed.</p>
 
-  <p>However, if the link is an <a href="textFieldSelection.html#external-resource-link">external resource link</a>,
+  <p>However, if the link is an <a href="links.html#external-resource-link">external resource link</a>,
   then the <code title="attr-link-media"><a href="#attr-link-media">media</a></code> attribute is
   prescriptive. The user agent must apply the external resource when
   the <code title="attr-link-media"><a href="#attr-link-media">media</a></code> attribute's value
@@ -586,7 +586,7 @@
 
   <p>The <dfn id="attr-link-hreflang" title="attr-link-hreflang"><code>hreflang</code></dfn>
   attribute on the <code><a href="#the-link-element">link</a></code> element has the same semantics as
-  the <a href="textFieldSelection.html#attr-hyperlink-hreflang" title="attr-hyperlink-hreflang"><code>hreflang</code>
+  the <a href="links.html#attr-hyperlink-hreflang" title="attr-hyperlink-hreflang"><code>hreflang</code>
   attribute on <code>a</code> and <code>area</code>
   elements</a>.</p>
 
@@ -595,7 +595,7 @@
   purely advisory.  The value must be a <a href="infrastructure.html#valid-mime-type">valid MIME
   type</a>.</p>
 
-  <p>For <a href="textFieldSelection.html#external-resource-link" title="external resource link">external resource
+  <p>For <a href="links.html#external-resource-link" title="external resource link">external resource
   links</a>, the <code title="attr-link-type"><a href="#attr-link-type">type</a></code> attribute
   is used as a hint to user agents so that they can avoid fetching
   resources they do not support. <span class="impl">If the attribute
@@ -608,7 +608,7 @@
   relationship, then the UA should not <a href="#concept-link-obtain" title="concept-link-obtain">obtain</a> the resource; if the UA
   does support the given <a href="infrastructure.html#mime-type">MIME type</a> for the given link
   relationship, then the UA should <a href="#concept-link-obtain" title="concept-link-obtain">obtain</a> the resource at the
-  appropriate time as specified for the <a href="textFieldSelection.html#external-resource-link">external resource
+  appropriate time as specified for the <a href="links.html#external-resource-link">external resource
   link</a>'s particular type. If the attribute is omitted, and the
   external resource link type does not have a default type defined,
   but the user agent would <a href="#concept-link-obtain" title="concept-link-obtain">obtain</a> the resource if the type
@@ -637,7 +637,7 @@
   resource link type has a default type defined, then the user agent
   must assume that the resource is of that type.</p>
 
-  <p class="note">The <code title="rel-stylesheet"><a href="textFieldSelection.html#link-type-stylesheet">stylesheet</a></code>
+  <p class="note">The <code title="rel-stylesheet"><a href="links.html#link-type-stylesheet">stylesheet</a></code>
   link type defines rules for processing the resource's <a href="urls.html#content-type" title="Content-Type">Content-Type metadata</a>.</p>
 
   <p>Once the user agent has established the type of the resource, the
@@ -666,7 +666,7 @@
    <p>If one of the two files was returned without a
    <a href="urls.html#content-type">Content-Type</a> metadata, or with a syntactically
    incorrect type like <code title="">Content-Type:&#160;"null"</code>, then the default type
-   for <code title="rel-stylesheet"><a href="textFieldSelection.html#link-type-stylesheet">stylesheet</a></code> links would kick
+   for <code title="rel-stylesheet"><a href="links.html#link-type-stylesheet">stylesheet</a></code> links would kick
    in. Since that default type is <code title="">text/css</code>, the
    style sheet <em>would</em> nonetheless be applied.</p>
 
@@ -686,11 +686,11 @@
   elements in that a link without a title does not inherit the title
   of the parent element: it merely has no title.</p>
 
-  <p>The <code title="attr-link-sizes"><a href="textFieldSelection.html#attr-link-sizes">sizes</a></code> attribute is used
-  with the <code title="rel-icon"><a href="textFieldSelection.html#rel-icon">icon</a></code> link type. The attribute
+  <p>The <code title="attr-link-sizes"><a href="links.html#attr-link-sizes">sizes</a></code> attribute is used
+  with the <code title="rel-icon"><a href="links.html#rel-icon">icon</a></code> link type. The attribute
   must not be specified on <code><a href="#the-link-element">link</a></code> elements that do not have
   a <code title="attr-link-rel"><a href="#attr-link-rel">rel</a></code> attribute that specifies
-  the <code title="rel-icon"><a href="textFieldSelection.html#rel-icon">icon</a></code> keyword.</p>
+  the <code title="rel-icon"><a href="links.html#rel-icon">icon</a></code> keyword.</p>
 
   <div class="impl">
 
@@ -700,11 +700,11 @@
   supported, must be assumed to come before any links in the document,
   in the order that they were given in the HTTP message. These header
   fields are to be processed according to the rules given in the
-  relevant specifications. <a href="textFieldSelection.html#refsHTTP">[HTTP]</a> <a href="textFieldSelection.html#refsWEBLINK">[WEBLINK]</a></p> <!-- WEBLINK is ref for Link:
+  relevant specifications. <a href="references.html#refsHTTP">[HTTP]</a> <a href="references.html#refsWEBLINK">[WEBLINK]</a></p> <!-- WEBLINK is ref for Link:
   header -->
 
   <p class="note">Registration of relation types in HTTP Link: header
-  fields is distinct from <a href="textFieldSelection.html#linkTypes">HTML link types</a>,
+  fields is distinct from <a href="links.html#linkTypes">HTML link types</a>,
   and thus their semantics can be different from same-named HTML
   types.</p>
 
@@ -726,7 +726,7 @@
 
   <p>The <code><a href="infrastructure.html#linkstyle">LinkStyle</a></code> interface is also implemented by
   this element; the <a href="styling.html#styling">styling processing model</a> defines
-  how. <a href="textFieldSelection.html#refsCSSOM">[CSSOM]</a></p>
+  how. <a href="references.html#refsCSSOM">[CSSOM]</a></p>
 
   <div class="example">
 

@@ -543,7 +543,7 @@
 
   <p class="note">The values Infinity and Not-a-Number (NaN) values
   throw an exception on setting, as defined in the Web IDL
-  specification. <a href="textFieldSelection.html#refsWEBIDL">[WEBIDL]</a></p>
+  specification. <a href="references.html#refsWEBIDL">[WEBIDL]</a></p>
 
   <p>If a reflecting IDL attribute has the type
   <code><a href="infrastructure.html#domtokenlist">DOMTokenList</a></code> or <code><a href="infrastructure.html#domsettabletokenlist">DOMSettableTokenList</a></code>, then
@@ -621,7 +621,7 @@
   returns an <code><a href="#htmlallcollection-0">HTMLAllCollection</a></code> object when there are
   multiple matching elements, and that its <code title="dom-HTMLAllCollection-item">item()</code> method can be used
   as a synonym for its <code title="dom-HTMLAllCollection-namedItem"><a href="#dom-htmlallcollection-nameditem">namedItem()</a></code> method.
-  It is intended only for the legacy <code title="dom-document-all"><a href="textFieldSelection.html#dom-document-all">document.all</a></code> attribute.</p>
+  It is intended only for the legacy <code title="dom-document-all"><a href="obsolete.html#dom-document-all">document.all</a></code> attribute.</p>
 
   <pre class="idl">interface <dfn id="htmlallcollection-0">HTMLAllCollection</dfn> : <a href="infrastructure.html#htmlcollection">HTMLCollection</a> {
   // inherits <span title="dom-HTMLCollection-length">length</span> and <span title="dom-HTMLCollection-item">item</span>()
@@ -650,9 +650,9 @@
    <dd>
     <p>Returns the item with <a href="infrastructure.html#concept-id" title="concept-id">ID</a> or name <var title="">name</var> from the collection.</p>
     <p>If there are multiple matching items, then an <code><a href="#htmlallcollection-0">HTMLAllCollection</a></code> object containing all those elements is returned.</p>
-    <p>Only <code><a href="the-a-element.html#the-a-element">a</a></code>, <code><a href="textFieldSelection.html#the-applet-element">applet</a></code>, <code><a href="the-area-element.html#the-area-element">area</a></code>,
-    <code><a href="the-embed-element.html#the-embed-element">embed</a></code>, <code><a href="the-form-element.html#the-form-element">form</a></code>, <code><a href="textFieldSelection.html#frame">frame</a></code>,
-    <code><a href="textFieldSelection.html#frameset">frameset</a></code>, <code><a href="the-iframe-element.html#the-iframe-element">iframe</a></code>, <code><a href="the-img-element.html#the-img-element">img</a></code>, and
+    <p>Only <code><a href="the-a-element.html#the-a-element">a</a></code>, <code><a href="obsolete.html#the-applet-element">applet</a></code>, <code><a href="the-area-element.html#the-area-element">area</a></code>,
+    <code><a href="the-embed-element.html#the-embed-element">embed</a></code>, <code><a href="the-form-element.html#the-form-element">form</a></code>, <code><a href="obsolete.html#frame">frame</a></code>,
+    <code><a href="obsolete.html#frameset">frameset</a></code>, <code><a href="the-iframe-element.html#the-iframe-element">iframe</a></code>, <code><a href="the-img-element.html#the-img-element">img</a></code>, and
     <code><a href="the-object-element.html#the-object-element">object</a></code> elements can have a name for the purpose of
     this method; their name is given by the value of their <code title="">name</code> attribute.</p>
    </dd>
@@ -680,9 +680,9 @@
     match the filter of the <code><a href="#htmlallcollection-0">HTMLAllCollection</a></code> object on
     which the method was invoked and that are either:</p>
 
-    <ul><li><code><a href="the-a-element.html#the-a-element">a</a></code>, <code><a href="textFieldSelection.html#the-applet-element">applet</a></code>, <code><a href="the-area-element.html#the-area-element">area</a></code>,
-     <code><a href="the-embed-element.html#the-embed-element">embed</a></code>, <code><a href="the-form-element.html#the-form-element">form</a></code>, <code><a href="textFieldSelection.html#frame">frame</a></code>,
-     <code><a href="textFieldSelection.html#frameset">frameset</a></code>, <code><a href="the-iframe-element.html#the-iframe-element">iframe</a></code>, <code><a href="the-img-element.html#the-img-element">img</a></code>, or
+    <ul><li><code><a href="the-a-element.html#the-a-element">a</a></code>, <code><a href="obsolete.html#the-applet-element">applet</a></code>, <code><a href="the-area-element.html#the-area-element">area</a></code>,
+     <code><a href="the-embed-element.html#the-embed-element">embed</a></code>, <code><a href="the-form-element.html#the-form-element">form</a></code>, <code><a href="obsolete.html#frame">frame</a></code>,
+     <code><a href="obsolete.html#frameset">frameset</a></code>, <code><a href="the-iframe-element.html#the-iframe-element">iframe</a></code>, <code><a href="the-img-element.html#the-img-element">img</a></code>, or
      <code><a href="the-object-element.html#the-object-element">object</a></code> elements with a <code title="">name</code>
      attribute equal to <var title="">name</var>, or,</li>
 
@@ -871,7 +871,7 @@ http://software.hixie.ch/utilities/js/live-dom-viewer/?%3C%21DOCTYPE%20html%3E..
    <dt><var title="">collection</var>[<var title="">name</var>]</dt>
    <dt><var title="">collection</var>(<var title="">name</var>)</dt>
    <dd>
-    <p>Returns the item with <a href="infrastructure.html#concept-id" title="concept-id">ID</a> or <code title="attr-option-name"><a href="textFieldSelection.html#attr-option-name">name</a></code> <var title="">name</var> from the collection.</p>
+    <p>Returns the item with <a href="infrastructure.html#concept-id" title="concept-id">ID</a> or <code title="attr-option-name"><a href="obsolete.html#attr-option-name">name</a></code> <var title="">name</var> from the collection.</p>
     <p>If there are multiple matching items, then a <code><a href="infrastructure.html#nodelist">NodeList</a></code> object containing all those elements is returned.</p>
    </dd>
 
@@ -931,25 +931,25 @@ http://software.hixie.ch/utilities/js/live-dom-viewer/?%3C%21DOCTYPE%20html%3E..
   remove children from them).</p>
 
   <p>The <a href="infrastructure.html#supported-property-names">supported property names</a> consist of the values
-  of all the <code title="attr-id"><a href="global-attributes.html#the-id-attribute">id</a></code> and <code title="attr-option-name"><a href="textFieldSelection.html#attr-option-name">name</a></code> attributes of all the elements
+  of all the <code title="attr-id"><a href="global-attributes.html#the-id-attribute">id</a></code> and <code title="attr-option-name"><a href="obsolete.html#attr-option-name">name</a></code> attributes of all the elements
   <a href="infrastructure.html#represented-by-the-collection">represented by the collection</a>.</p>
 
   <p>The <dfn id="dom-htmloptionscollection-nameditem" title="dom-HTMLOptionsCollection-namedItem"><code>namedItem(<var title="">name</var>)</code></dfn> method must act according to the
   following algorithm:</p>
 
   <ol><li>If, at the time the method is called, there is exactly one node
-   in the collection that has either an <code title="attr-id"><a href="global-attributes.html#the-id-attribute">id</a></code> attribute or a <code title="attr-option-name"><a href="textFieldSelection.html#attr-option-name">name</a></code> attribute equal to <var title="">name</var>, then return that node and stop the
+   in the collection that has either an <code title="attr-id"><a href="global-attributes.html#the-id-attribute">id</a></code> attribute or a <code title="attr-option-name"><a href="obsolete.html#attr-option-name">name</a></code> attribute equal to <var title="">name</var>, then return that node and stop the
    algorithm.</li>
 
    <li>Otherwise, if there are no nodes in the collection that have
-   either an <code title="attr-id"><a href="global-attributes.html#the-id-attribute">id</a></code> attribute or a <code title="attr-option-name"><a href="textFieldSelection.html#attr-option-name">name</a></code> attribute equal to <var title="">name</var>, then return null and stop the algorithm.</li>
+   either an <code title="attr-id"><a href="global-attributes.html#the-id-attribute">id</a></code> attribute or a <code title="attr-option-name"><a href="obsolete.html#attr-option-name">name</a></code> attribute equal to <var title="">name</var>, then return null and stop the algorithm.</li>
 
    <!-- IE returns an HTMLCollection instead; we may need to change to that for compat -->
    <li>Otherwise, create a new <code><a href="infrastructure.html#nodelist">NodeList</a></code> object
    representing a <a href="infrastructure.html#live">live</a> view of the
    <code><a href="#htmloptionscollection-0">HTMLOptionsCollection</a></code> object, further filtered so that
    the only nodes in the <code><a href="infrastructure.html#nodelist">NodeList</a></code> object are those that
-   have either an <code title="attr-id"><a href="global-attributes.html#the-id-attribute">id</a></code> attribute or a <code title="attr-option-name"><a href="textFieldSelection.html#attr-option-name">name</a></code> attribute equal to <var title="">name</var>. The nodes in the <code><a href="infrastructure.html#nodelist">NodeList</a></code> object
+   have either an <code title="attr-id"><a href="global-attributes.html#the-id-attribute">id</a></code> attribute or a <code title="attr-option-name"><a href="obsolete.html#attr-option-name">name</a></code> attribute equal to <var title="">name</var>. The nodes in the <code><a href="infrastructure.html#nodelist">NodeList</a></code> object
    must be sorted in <a href="infrastructure.html#tree-order">tree order</a>.</li>
 
    <li>Return that <code><a href="infrastructure.html#nodelist">NodeList</a></code> object.</li>
@@ -1147,7 +1147,7 @@ interface <dfn id="transferable">Transferable</dfn> { };</pre>
   <p>The following <code><a href="#transferable">Transferable</a></code> types exist:</p>
 
   <ul class="brief"><li><code>MessagePort</code>
-   </li><li><code><a href="infrastructure.html#arraybuffer">ArrayBuffer</a></code> <a href="textFieldSelection.html#refsTYPEDARRAY">[TYPEDARRAY]</a>
+   </li><li><code><a href="infrastructure.html#arraybuffer">ArrayBuffer</a></code> <a href="references.html#refsTYPEDARRAY">[TYPEDARRAY]</a>
   </li></ul><div class="impl">
 
   <h4 id="safe-passing-of-structured-data"><span class="secno">2.8.5 </span>Safe passing of structured data</h4>
@@ -1330,7 +1330,7 @@ interface <dfn id="transferable">Transferable</dfn> { };</pre>
 
   <p>DOM3 Core defines mechanisms for checking for interface support,
   and for obtaining implementations of interfaces, using <a href="http://www.w3.org/TR/DOM-Level-3-Core/core.html#DOMFeatures">feature
-  strings</a>. <a href="textFieldSelection.html#refsDOMCORE">[DOMCORE]</a></p>
+  strings</a>. <a href="references.html#refsDOMCORE">[DOMCORE]</a></p>
 
   <p>Authors are strongly discouraged from using these, as they are
   notoriously unreliable and imprecise. Authors are encouraged to rely
@@ -1359,7 +1359,7 @@ interface <dfn id="transferable">Transferable</dfn> { };</pre>
 
    <p>For example, the <code>document.location</code> attribute means
    that there is a strong reference from a <code><a href="dom.html#document">Document</a></code>
-   object to its <code><a href="textFieldSelection.html#location">Location</a></code> object. Similarly, there is
+   object to its <code><a href="history.html#location">Location</a></code> object. Similarly, there is
    always a strong reference from a <code><a href="dom.html#document">Document</a></code> to any
    descendant nodes, and from any node to its owner
    <code><a href="dom.html#document">Document</a></code>.</p>

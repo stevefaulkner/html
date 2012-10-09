@@ -384,16 +384,16 @@
    <dd>In a <code><a href="the-head-element.html#the-head-element">head</a></code> element of an <a href="infrastructure.html#html-documents" title="HTML documents">HTML document</a>, if there are no ancestor <code><a href="#the-noscript-element">noscript</a></code> elements.</dd>
    <dd>Where <a href="content-models.html#phrasing-content-1">phrasing content</a> is expected in <a href="infrastructure.html#html-documents">HTML documents</a>, if there are no ancestor <code><a href="#the-noscript-element">noscript</a></code> elements.</dd>
    <dt><a href="element-definitions.html#element-dfn-content-model" title="element-dfn-content-model">Content model</a>:</dt>
-   <dd>When <a href="textFieldSelection.html#concept-n-noscript" title="concept-n-noscript">scripting is disabled</a>, in a <code><a href="the-head-element.html#the-head-element">head</a></code> element: in any order, zero or more <code><a href="the-link-element.html#the-link-element">link</a></code> elements, zero or more <code><a href="the-style-element.html#the-style-element">style</a></code> elements, and zero or more <code><a href="the-meta-element.html#the-meta-element">meta</a></code> elements.</dd>
-   <dd>When <a href="textFieldSelection.html#concept-n-noscript" title="concept-n-noscript">scripting is disabled</a>, not in a <code><a href="the-head-element.html#the-head-element">head</a></code> element: <a href="content-models.html#transparent">transparent</a>, but there must be no <code><a href="#the-noscript-element">noscript</a></code> element descendants.</dd>
+   <dd>When <a href="webappapis.html#concept-n-noscript" title="concept-n-noscript">scripting is disabled</a>, in a <code><a href="the-head-element.html#the-head-element">head</a></code> element: in any order, zero or more <code><a href="the-link-element.html#the-link-element">link</a></code> elements, zero or more <code><a href="the-style-element.html#the-style-element">style</a></code> elements, and zero or more <code><a href="the-meta-element.html#the-meta-element">meta</a></code> elements.</dd>
+   <dd>When <a href="webappapis.html#concept-n-noscript" title="concept-n-noscript">scripting is disabled</a>, not in a <code><a href="the-head-element.html#the-head-element">head</a></code> element: <a href="content-models.html#transparent">transparent</a>, but there must be no <code><a href="#the-noscript-element">noscript</a></code> element descendants.</dd>
    <dd>Otherwise: text that conforms to the requirements given in the prose.</dd>
    <dt><a href="element-definitions.html#element-dfn-attributes" title="element-dfn-attributes">Content attributes</a>:</dt>
    <dd><a href="global-attributes.html#global-attributes">Global attributes</a></dd>
    <dt><a href="element-definitions.html#element-dfn-dom" title="element-dfn-dom">DOM interface</a>:</dt><!--TOPIC:DOM APIs-->
    <dd>Uses <code><a href="elements.html#htmlelement">HTMLElement</a></code>.</dd>
-  </dl><!--TOPIC:HTML--><p>The <code><a href="#the-noscript-element">noscript</a></code> element <a href="textFieldSelection.html#represents">represents</a> nothing
-  if <a href="textFieldSelection.html#concept-n-script" title="concept-n-script">scripting is enabled</a>, and
-  <a href="textFieldSelection.html#represents">represents</a> its children if <a href="textFieldSelection.html#concept-n-noscript" title="concept-n-noscript">scripting is disabled</a>. It is used
+  </dl><!--TOPIC:HTML--><p>The <code><a href="#the-noscript-element">noscript</a></code> element <a href="rendering.html#represents">represents</a> nothing
+  if <a href="webappapis.html#concept-n-script" title="concept-n-script">scripting is enabled</a>, and
+  <a href="rendering.html#represents">represents</a> its children if <a href="webappapis.html#concept-n-noscript" title="concept-n-noscript">scripting is disabled</a>. It is used
   to present different markup to user agents that support scripting
   and those that don't support scripting, by affecting how the
   document is parsed.</p>
@@ -401,28 +401,28 @@
   <p>When used in <a href="infrastructure.html#html-documents">HTML documents</a>, the allowed content
   model is as follows:</p>
 
-  <dl><dt>In a <code><a href="the-head-element.html#the-head-element">head</a></code> element, if <a href="textFieldSelection.html#concept-n-noscript" title="concept-n-noscript">scripting is disabled</a> for the
+  <dl><dt>In a <code><a href="the-head-element.html#the-head-element">head</a></code> element, if <a href="webappapis.html#concept-n-noscript" title="concept-n-noscript">scripting is disabled</a> for the
    <code><a href="#the-noscript-element">noscript</a></code> element</dt>
 
    <dd><p>The <code><a href="#the-noscript-element">noscript</a></code> element must contain only
    <code><a href="the-link-element.html#the-link-element">link</a></code>, <code><a href="the-style-element.html#the-style-element">style</a></code>, and <code><a href="the-meta-element.html#the-meta-element">meta</a></code>
    elements.</p></dd>
 
-   <dt>In a <code><a href="the-head-element.html#the-head-element">head</a></code> element, if <a href="textFieldSelection.html#concept-n-script" title="concept-n-script">scripting is enabled</a> for the
+   <dt>In a <code><a href="the-head-element.html#the-head-element">head</a></code> element, if <a href="webappapis.html#concept-n-script" title="concept-n-script">scripting is enabled</a> for the
    <code><a href="#the-noscript-element">noscript</a></code> element</dt>
 
    <dd><p>The <code><a href="#the-noscript-element">noscript</a></code> element must contain only text,
-   except that invoking the <a href="textFieldSelection.html#html-fragment-parsing-algorithm">HTML fragment parsing
+   except that invoking the <a href="the-end.html#html-fragment-parsing-algorithm">HTML fragment parsing
    algorithm</a> <!-- (which disables <script> execution) --> with
-   the <code><a href="#the-noscript-element">noscript</a></code> element as the <var title="concept-frag-parse-context"><a href="textFieldSelection.html#concept-frag-parse-context">context</a></var> element and the
+   the <code><a href="#the-noscript-element">noscript</a></code> element as the <var title="concept-frag-parse-context"><a href="the-end.html#concept-frag-parse-context">context</a></var> element and the
    text contents as the <var title="">input</var> must result in a
    list of nodes that consists only of <code><a href="the-link-element.html#the-link-element">link</a></code>,
    <code><a href="the-style-element.html#the-style-element">style</a></code>, and <code><a href="the-meta-element.html#the-meta-element">meta</a></code> elements that would be
    conforming if they were children of the <code><a href="#the-noscript-element">noscript</a></code>
-   element, and no <a href="textFieldSelection.html#parse-error" title="parse error">parse
+   element, and no <a href="parsing.html#parse-error" title="parse error">parse
    errors</a>.</p></dd>
 
-   <dt>Outside of <code><a href="the-head-element.html#the-head-element">head</a></code> elements, if <a href="textFieldSelection.html#concept-n-noscript" title="concept-n-noscript">scripting is disabled</a> for the
+   <dt>Outside of <code><a href="the-head-element.html#the-head-element">head</a></code> elements, if <a href="webappapis.html#concept-n-noscript" title="concept-n-noscript">scripting is disabled</a> for the
    <code><a href="#the-noscript-element">noscript</a></code> element</dt>
 
    <dd><p>The <code><a href="#the-noscript-element">noscript</a></code> element's content model is
@@ -431,7 +431,7 @@
    element as an ancestor (that is, <code><a href="#the-noscript-element">noscript</a></code> can't be
    nested).</p></dd>
 
-   <dt>Outside of <code><a href="the-head-element.html#the-head-element">head</a></code> elements, if <a href="textFieldSelection.html#concept-n-script" title="concept-n-script">scripting is enabled</a> for the
+   <dt>Outside of <code><a href="the-head-element.html#the-head-element">head</a></code> elements, if <a href="webappapis.html#concept-n-script" title="concept-n-script">scripting is enabled</a> for the
    <code><a href="#the-noscript-element">noscript</a></code> element</dt>
 
    <dd>
@@ -441,7 +441,7 @@
     algorithm results in a conforming document with no
     <code><a href="#the-noscript-element">noscript</a></code> elements and no <code><a href="the-script-element.html#the-script-element">script</a></code>
     elements, and such that no step in the algorithm causes an
-    <a href="textFieldSelection.html#html-parser">HTML parser</a> to flag a <a href="textFieldSelection.html#parse-error">parse error</a>:</p>
+    <a href="parsing.html#html-parser">HTML parser</a> to flag a <a href="parsing.html#parse-error">parse error</a>:</p>
 
     <ol><li>Remove every <code><a href="the-script-element.html#the-script-element">script</a></code> element from the
      document.</li>
@@ -485,14 +485,14 @@
 
   </dl><p class="note">All these contortions are required because, for
   historical reasons, the <code><a href="#the-noscript-element">noscript</a></code> element is handled
-  differently by the <a href="textFieldSelection.html#html-parser">HTML parser</a> based on whether <a href="textFieldSelection.html#scripting-flag" title="scripting flag">scripting was enabled or not</a> when the
+  differently by the <a href="parsing.html#html-parser">HTML parser</a> based on whether <a href="parsing.html#scripting-flag" title="scripting flag">scripting was enabled or not</a> when the
   parser was invoked.</p>
 
   <p>The <code><a href="#the-noscript-element">noscript</a></code> element must not be used in <a href="infrastructure.html#xml-documents">XML
   documents</a>.</p>
 
   <p class="note">The <code><a href="#the-noscript-element">noscript</a></code> element is only effective
-  in <a href="textFieldSelection.html#syntax">the HTML syntax</a>, it has no effect in <a href="textFieldSelection.html#the-xhtml-syntax">the XHTML
+  in <a href="syntax.html#syntax">the HTML syntax</a>, it has no effect in <a href="the-xhtml-syntax.html#the-xhtml-syntax">the XHTML
   syntax</a>. This is because the way it works is by essentially
   "turning off" the parser when scripts are enabled, so that the
   contents of the element are treated as pure text and not as real
@@ -502,8 +502,8 @@
 
   <p>The <code><a href="#the-noscript-element">noscript</a></code> element has no other requirements. In
   particular, children of the <code><a href="#the-noscript-element">noscript</a></code> element are not
-  exempt from <a href="textFieldSelection.html#form-submission-0">form submission</a>, scripting, and so forth,
-  even when <a href="textFieldSelection.html#concept-n-script" title="concept-n-script">scripting is enabled</a>
+  exempt from <a href="constraints.html#form-submission-0">form submission</a>, scripting, and so forth,
+  even when <a href="webappapis.html#concept-n-script" title="concept-n-script">scripting is enabled</a>
   for the element.</p>
 
   </div>
@@ -568,7 +568,7 @@
 &lt;/form&gt;</pre>
 
    <p>The above technique is also useful in XHTML, since
-   <code><a href="#the-noscript-element">noscript</a></code> is not supported in <a href="textFieldSelection.html#the-xhtml-syntax">the XHTML
+   <code><a href="#the-noscript-element">noscript</a></code> is not supported in <a href="the-xhtml-syntax.html#the-xhtml-syntax">the XHTML
    syntax</a>.</p>
 
   </div>
