@@ -61,6 +61,18 @@ filtered.seek(0)
 tree = generator.fromFile(filtered, **opts)
 filtered.close()
 
+# fixup nested dd's and dt's produced by lxml
+for dd in tree.findall('//dd/dd'):
+  if list(dd) or (dd.text and dd.text.strip != ''):
+    dd.getparent().addnext(dd)
+  else:
+    dd.getparent().remove(dd)
+for dt in tree.findall('//dt/dt'):
+  if list(dt) or (dt.text and dt.text.strip != ''):
+    dt.getparent().addnext(dt)
+  else:
+    dt.getparent().remove(dt)
+
 try:
   os.makedirs('output/%s' % spec)
 except:
