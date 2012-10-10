@@ -8,9 +8,14 @@ var fs  = require("fs")
 
 // where are we?
 var target = process.argv[2] || "html"
-,   rootDir = pth.join(__dirname, "..")
-,   hbDir = pth.join(rootDir, target === "html" ? "heartbeat" : "heartbeat-2d")
+,   hbDir
 ;
+if (/^(html|2d|microdata)$/.test(target)) {
+    hbDir = pth.join(pth.join(__dirname, ".."), target === "html" ? "heartbeat" : "heartbeat-2d");
+}
+else {
+    hbDir = target;
+}
 
 // excludes
 //  (?:http:\\/\\/www\\.w3\\.org\\/\\$)|(?:Icons\\/w3c_home)|(?:\\/StyleSheets\\/)
