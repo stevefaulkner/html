@@ -136,7 +136,9 @@ exec("make " + conf.make, { cwd: rootDir }, function (err, stdout, stderr) {
         ,   [pth.join(rootDir, "scripts/jquery.min.js")]
         ,   function (err, window) {
                 if (err) return console.log(err);
-                var $ = window.$;
+                var $ = window.$
+                ,   doc = window.document
+                ;
                 // move HTMLProp to inside Microdata APIs
                 var $toc = $("ol.toc").first()
                 ,   $mdOL = $toc.find("a[href=#htmlpropertiescollection]").parent().parent()
@@ -144,11 +146,10 @@ exec("make " + conf.make, { cwd: rootDir }, function (err, stdout, stderr) {
                 ;
                 $apiLI.append($mdOL);
                 //  - also move the actual section
-                var sectionContent = []
-                ,   $hpTit = $("#htmlpropertiescollection")
+                var $hpTit = $("#htmlpropertiescollection")
+                ,   sectionContent = [$hpTit]
+                ,   $nxt = $hpTit.next()
                 ;
-                sectionContent.push($hpTit);
-                var $nxt = $hpTit.next();
                 while (true) {
                     if ($nxt.is("h1,h2,h3,h4,h5,h6")) break;
                     sectionContent.push($nxt);
@@ -167,12 +168,11 @@ exec("make " + conf.make, { cwd: rootDir }, function (err, stdout, stderr) {
                     var $secs = $parent.children("li");
                     if ($secs.length === 0) return null;
                     for (var i = 0; i < $secs.length; i++) {
-                        var $sec = $($secs[i], doc);
                         current[current.length - 1]++;
-                        var secnos = current.slice();
-                        var secno = secnos.join(".")
-                        ,   isTopLevel = secnos.length == 1;
-                        if (isTopLevel) secno = secno + ".";
+                        var $sec = $($secs[i], doc)
+                        ,   secnos = current.slice()
+                        ,   secno = secnos.join(".");
+                        if (secnos.length === 1) secno = secno + ".";
                         $sec.find("span.secno").first().text(secno + " ");
                         if ($sec.find("ol").length) {
                             current.push(0);
@@ -183,12 +183,32 @@ exec("make " + conf.make, { cwd: rootDir }, function (err, stdout, stderr) {
                 }
                 numberToc($toc, [0], 1);
                 
-                
                 //  - for each toc item, go to link
                 //      - update html of title to match
                 //      - upgrade hN to the correct level if required
+                $toc.find("a[href^=#]").each(function () {
+                    var $a = $(this)
+                    //  some of the weirder IDs don't "just work" with jQ
+                    ,   $target = $(doc.getElementById($a.attr("href").replace("#", "")))
+                    ,   depth = $a.parents("ol").length + 1
+                    ;
+                    if ($target.is("h" + depth)) {
+                        $target.html($a.html());
+                    }
+                    else {
+                        var $h = $(doc.createElement("h" + depth));
+                        for (var i = 0, n = $target[0].attributes.length; i < n; i++) {
+                            var at = $target[0].attributes[i];
+                            $h.attr(at.name, at.value);
+                        }
+                        $h.html($a.html());
+                        $target.replaceWith($h);
+                    }
+                });
+
+
                 // serialise back to disk...
-                var doc = window.document;
+                $(".jsdom").remove();
                 fs.writeFileSync(file, doc.doctype.toString() + doc.innerHTML, "utf8");
                 
                 finalise();

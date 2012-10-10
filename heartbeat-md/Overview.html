@@ -608,13 +608,13 @@
 
   <p>The <span>host language</span> also defines the elements used in
   this specification.</p>
---><!--YYY--><h3 id="dependencies"><span class="secno">0.1 </span>Dependencies</h3>
+--><!--YYY--><h2 id="dependencies"><span class="secno">1. </span>Dependencies</h2>
 
   <p>This specification depends on the Web IDL and HTML5
   specifications. <a href="#refsWEBIDL">[WEBIDL]</a> <a href="#refsHTML5">[HTML5]</a></p>
 
 
-  <h3 id="terminology"><span class="secno">0.2 </span>Terminology</h3>
+  <h2 id="terminology"><span class="secno">2. </span>Terminology</h2>
 
   <p>This specification relies heavily on the HTML5 specification to
   define underlying terms.</p>
@@ -664,7 +664,7 @@
 
 <!--FIXUP microdata +1-->
 <!--FIXUP 2dcontext +1-->
-  <h3 id="conformance-requirements"><span class="secno">0.3 </span>Conformance requirements</h3>
+  <h2 id="conformance-requirements"><span class="secno">3. </span>Conformance requirements</h2>
 <!--FIXUP microdata -1-->
 <!--FIXUP 2dcontext -1-->
 
@@ -730,9 +730,9 @@
   
 
 
-  <h3 id="introduction"><span class="secno">0.4 </span>Introduction</h3>
+  <h2 id="introduction"><span class="secno">4. </span>Introduction</h2>
 
-  <h4 id="overview"><span class="secno">0.4.1 </span>Overview</h4>
+  <h3 id="overview"><span class="secno">4.1 </span>Overview</h3>
 
   <p><i>This section is non-normative.</i></p>
   <p>Sometimes, it is desirable to annotate content with specific
@@ -748,7 +748,7 @@
 
 
 
-  <h4 id="the-basic-syntax"><span class="secno">0.4.2 </span>The basic syntax</h4>
+  <h3 id="the-basic-syntax"><span class="secno">4.2 </span>The basic syntax</h3>
 
   <p><i>This section is non-normative.</i></p>
   <p>At a high level, microdata consists of a group of name-value
@@ -961,7 +961,7 @@
   </div>
 
 
-  <h4 id="typed-items"><span class="secno">0.4.3 </span>Typed items</h4>
+  <h3 id="typed-items"><span class="secno">4.3 </span>Typed items</h3>
 
   <p><i>This section is non-normative.</i></p>
   <p>The examples in the previous section show how information could
@@ -1011,7 +1011,7 @@
   they do not use the same vocabulary, however.</p>
 
 
-  <h4 id="global-identifiers-for-items"><span class="secno">0.4.4 </span>Global identifiers for items</h4>
+  <h3 id="global-identifiers-for-items"><span class="secno">4.4 </span>Global identifiers for items</h3>
 
   <p><i>This section is non-normative.</i></p>
   <p>Sometimes, an <a href="#concept-item" title="concept-item">item</a> gives
@@ -1065,7 +1065,7 @@
 
 
 
-  <h4 id="selecting-names-when-defining-vocabularies"><span class="secno">0.4.5 </span>Selecting names when defining vocabularies</h4>
+  <h3 id="selecting-names-when-defining-vocabularies"><span class="secno">4.5 </span>Selecting names when defining vocabularies</h3>
 
   <p><i>This section is non-normative.</i></p>
   <p>Using microdata means using a vocabulary. For some purposes, an
@@ -1135,7 +1135,7 @@
 
 
 
-  <h4 id="using-the-microdata-dom-api"><span class="secno">0.4.6 </span>Using the microdata DOM API</h4>
+  <h3 id="using-the-microdata-dom-api"><span class="secno">4.6 </span>Using the microdata DOM API</h3>
 
   <p><i>This section is non-normative.</i></p>
   <p>The microdata becomes even more useful when scripts can use it to
@@ -1268,7 +1268,7 @@ document.body.appendChild(outer);</pre>
   </div>
 
 
-  <h3 id="encoding-microdata"><span class="secno">0.5 </span>Encoding microdata</h3>
+  <h2 id="encoding-microdata"><span class="secno">5. </span>Encoding microdata</h2>
 
 <!--MD-->
 
@@ -1280,7 +1280,7 @@ document.body.appendChild(outer);</pre>
    <li><code title="attr-itemref"><a href="#attr-itemref">itemref</a></code></li>
    <li><code title="attr-itemscope"><a href="#attr-itemscope">itemscope</a></code></li>
    <li><code title="attr-itemtype"><a href="#attr-itemtype">itemtype</a></code></li>
-  </ul><!--MD--><h4 id="the-microdata-model"><span class="secno">0.5.1 </span>The microdata model</h4>
+  </ul><!--MD--><h3 id="the-microdata-model"><span class="secno">5.1 </span>The microdata model</h3>
 
   <p>The microdata model consists of groups of name-value pairs known
   as <a href="#concept-item" title="concept-item">items</a>.</p>
@@ -1308,7 +1308,7 @@ document.body.appendChild(outer);</pre>
 
 
 
-  <h4 id="items"><span class="secno">0.5.2 </span>Items</h4>
+  <h3 id="items"><span class="secno">5.2 </span>Items</h3>
 
   <p>Every <a href="#html-elements" title="HTML elements">HTML element</a> may have an
   <dfn id="attr-itemscope" title="attr-itemscope"><code>itemscope</code></dfn> attribute
@@ -1494,7 +1494,7 @@ document.body.appendChild(outer);</pre>
   </div>
 
 
-  <h4 id="names:-the-itemprop-attribute"><span class="secno">0.5.3 </span>Names: the <dfn title="attr-itemprop"><code>itemprop</code></dfn> attribute</h4>
+  <h3 id="names:-the-itemprop-attribute"><span class="secno">5.3 </span>Names: the <code>itemprop</code> attribute</h3>
 
   <p>Every <a href="#html-elements" title="HTML elements">HTML element</a> may have an
   <code title="attr-itemprop"><a href="#names:-the-itemprop-attribute">itemprop</a></code> attribute specified, if
@@ -1598,7 +1598,7 @@ document.body.appendChild(outer);</pre>
 
 
 
-  <h4 id="values"><span class="secno">0.5.4 </span>Values</h4>
+  <h3 id="values"><span class="secno">5.4 </span>Values</h3>
 
   <p>The <dfn id="concept-property-value" title="concept-property-value">property value</dfn> of a
   name-value pair added by an element with an <code title="attr-itemprop"><a href="#names:-the-itemprop-attribute">itemprop</a></code> attribute is as given for the
@@ -1727,7 +1727,7 @@ document.body.appendChild(outer);</pre>
   <div class="impl"> <!-- this is unfortunate, as it is hiding authoring conformance criteria (so we leave it in for the w3c copy) -->
 
 
-  <h4 id="associating-names-with-items"><span class="secno">0.5.5 </span>Associating names with items</h4>
+  <h3 id="associating-names-with-items"><span class="secno">5.5 </span>Associating names with items</h3>
 
   <p>To find <dfn id="the-properties-of-an-item">the properties of an item</dfn> defined by the
   element <var title="">root</var>, the user agent must run the
@@ -1858,7 +1858,7 @@ document.body.appendChild(outer);</pre>
   </div> <!-- see comment above -->
 
 
-  <h4 id="microdata-and-other-namespaces"><span class="secno">0.5.6 </span>Microdata and other namespaces</h4>
+  <h3 id="microdata-and-other-namespaces"><span class="secno">5.6 </span>Microdata and other namespaces</h3>
 
   <p>Currently, the <code title="attr-itemscope"><a href="#attr-itemscope">itemscope</a></code>,
   <code title="attr-itemprop"><a href="#names:-the-itemprop-attribute">itemprop</a></code>, and other microdata
@@ -1878,7 +1878,7 @@ document.body.appendChild(outer);</pre>
   </div>
 
 
-  <h3 id="microdata-dom-api"><span class="secno">0.6 </span>Microdata DOM API</h3>
+  <h2 id="microdata-dom-api"><span class="secno">6. </span>Microdata DOM API</h2>
 
   <dl class="domintro"><dt><var title="">document</var> . <code title="dom-document-getItems"><a href="#dom-document-getitems">getItems</a></code>( [ <var title="">types</var> ] )</dt>
 
@@ -2048,7 +2048,7 @@ document.body.appendChild(outer);</pre>
 
 <!--MD-->
 <!--YYY-->
-  <h5 id="htmlpropertiescollection"><span class="secno">0.3.1 </span>HTMLPropertiesCollection</h5><p>The <code><a href="#htmlpropertiescollection-0">HTMLPropertiesCollection</a></code> interface is used for
+  <h3 id="htmlpropertiescollection"><span class="secno">6.1 </span>HTMLPropertiesCollection</h3><p>The <code><a href="#htmlpropertiescollection-0">HTMLPropertiesCollection</a></code> interface is used for
   <a href="#collections">collections</a> of elements that add <a href="#the-properties-of-an-item" title="the
   properties of an item">name-value pairs</a> to a particular <a href="#concept-item" title="concept-item">item</a> in the <span>microdata</span>
   model.</p><pre class="idl">interface <dfn id="htmlpropertiescollection-0">HTMLPropertiesCollection</dfn> : <a href="#htmlcollection">HTMLCollection</a> {
@@ -2128,9 +2128,9 @@ interface <dfn id="propertynodelist">PropertyNodeList</dfn> : <span>NodeList</sp
   the elements represented by the object, in <a href="#tree-order">tree
   order</a>.</p>
 
-  </div><h3 id="other-changes-to-html5"><span class="secno">0.7 </span>Other changes to HTML5</h3>
+  </div><h2 id="other-changes-to-html5"><span class="secno">7. </span>Other changes to HTML5</h2>
 
-  <h4 id="content-models"><span class="secno">0.7.1 </span>Content models</h4>
+  <h3 id="content-models"><span class="secno">7.1 </span>Content models</h3>
 
   <p>If the <code title="attr-itemprop"><a href="#names:-the-itemprop-attribute">itemprop</a></code> attribute is
   present on <code>link</code> or <code>meta</code>, they are
@@ -2167,7 +2167,7 @@ interface <dfn id="propertynodelist">PropertyNodeList</dfn> : <span>NodeList</sp
 
   <div class="impl">
 
-  <h4 id="drag-and-drop"><span class="secno">0.7.2 </span>Drag-and-drop</h4>
+  <h3 id="drag-and-drop"><span class="secno">7.2 </span>Drag-and-drop</h3>
 
   <p>The <a href="#drag-and-drop-initialization-steps">drag-and-drop initialization steps</a> are:
 
@@ -2184,9 +2184,9 @@ interface <dfn id="propertynodelist">PropertyNodeList</dfn> : <span>NodeList</sp
 
   <div class="impl">
 
-  <h3 id="converting-html-to-other-formats"><span class="secno">0.8 </span>Converting HTML to other formats</h3>
+  <h2 id="converting-html-to-other-formats"><span class="secno">8. </span>Converting HTML to other formats</h2>
 
-  <h4 id="json"><span class="secno">0.8.1 </span>JSON</h4>
+  <h3 id="json"><span class="secno">8.1 </span>JSON</h3>
 
   <p>Given a list of nodes <var title="">nodes</var> in a
   <code>Document</code>, a user agent must run the following algorithm
@@ -2273,13 +2273,13 @@ interface <dfn id="propertynodelist">PropertyNodeList</dfn> : <span>NodeList</sp
   </ol></div>
 
 
-  <h2 id="iana"><span class="secno">1 </span>IANA considerations</h2>
+  <h2 id="iana"><span class="secno">9. </span>IANA considerations</h2>
 
   <!-- http://www.w3.org/2002/06/registering-mediatype.html -->
 
 <!--TOPIC:Microdata-->
 <!--FIXUP microdata +1-->
-  <h3 id="application/microdata+json"><span class="secno">1.1 </span><dfn><code>application/microdata+json</code></dfn></h3>
+  <h3 id="application/microdata+json"><span class="secno">9.1 </span><code>application/microdata+json</code></h3>
 <!--FIXUP microdata -1-->
 
   <p>This registration is for community review and will be submitted
@@ -3186,4 +3186,4 @@ interface <dfn id="propertynodelist">PropertyNodeList</dfn> : <span>NodeList</sp
 
 
 <!--REFERENCES OFF-->
-  </dl></body><script class="jsdom" src="/Projects/html/html/scripts/jquery.min.js"></script></html>
+  </dl></body></html>
