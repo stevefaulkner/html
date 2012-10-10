@@ -10,11 +10,11 @@ MASTER PLAN:
         ✓ linkcheck
         ✓ pubrules
         - TR install (check date)
-    ✓ Canvas (make dcontext)
+    - Canvas (make dcontext)
         ✓ generate using own tools
         ✓ linkcheck
-        ✓ pubrules
-        ✓ TR install
+        - pubrules
+        - TR install
     - Author
         - Mike's got that one covered for generation
         - linkcheck
