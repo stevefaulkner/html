@@ -604,13 +604,11 @@
 
 -->
   // transformations (default transform is the identity matrix)
-           attribute <span>SVGMatrix</span> <a href=#dom-context-2d-currenttransform title=dom-context-2d-currentTransform>currentTransform</a>;
   void <a href=#dom-context-2d-scale title=dom-context-2d-scale>scale</a>(unrestricted double x, unrestricted double y);
   void <a href=#dom-context-2d-rotate title=dom-context-2d-rotate>rotate</a>(unrestricted double angle);
   void <a href=#dom-context-2d-translate title=dom-context-2d-translate>translate</a>(unrestricted double x, unrestricted double y);
   void <a href=#dom-context-2d-transform title=dom-context-2d-transform>transform</a>(unrestricted double a, unrestricted double b, unrestricted double c, unrestricted double d, unrestricted double e, unrestricted double f);
   void <a href=#dom-context-2d-settransform title=dom-context-2d-setTransform>setTransform</a>(unrestricted double a, unrestricted double b, unrestricted double c, unrestricted double d, unrestricted double e, unrestricted double f);
-  void <a href=#dom-context-2d-resettransform title=dom-context-2d-resetTransform>resetTransform</a>();
 <!--
   // v7 we've also received requests (though not many so far) for:
   void skew(...);                             // is this common enough that one can't just use setTransform()?
@@ -634,12 +632,16 @@
 
 -->
   // colors and styles (see also the <a href=#canvasdrawingstyles>CanvasDrawingStyles</a> interface)
-           attribute any <a href=#dom-context-2d-strokestyle title=dom-context-2d-strokeStyle>strokeStyle</a>; // (default black)
-           attribute any <a href=#dom-context-2d-fillstyle title=dom-context-2d-fillStyle>fillStyle</a>; // (default black)
+           attribute (DOMString or CanvasGradient or CanvasPattern) <a href=#dom-context-2d-strokestyle title=dom-context-2d-strokeStyle>strokeStyle</a>; // (default black)
+           attribute (DOMString or CanvasGradient or CanvasPattern) <a href=#dom-context-2d-fillstyle title=dom-context-2d-fillStyle>fillStyle</a>; // (default black)
   <a href=#canvasgradient>CanvasGradient</a> <a href=#dom-context-2d-createlineargradient title=dom-context-2d-createLinearGradient>createLinearGradient</a>(double x0, double y0, double x1, double y1);
   <a href=#canvasgradient>CanvasGradient</a> <a href=#dom-context-2d-createradialgradient title=dom-context-2d-createRadialGradient>createRadialGradient</a>(double x0, double y0, double r0, double x1, double y1, double r1);
   <a href=#canvaspattern>CanvasPattern</a> <a href=#dom-context-2d-createpattern title=dom-context-2d-createPattern>createPattern</a>((<span>HTMLImageElement</span> or <span>HTMLCanvasElement</span> or <span>HTMLVideoElement</span>) image, [TreatNullAs=Emptytring]DOMString repetition);
 
+<!--
+  // v8 we received one request from Ralf Richard G&oml;bel for a new kind of pattern: a hatch.
+  // basically it would be a series of dash styles, angles, line widths, and offsets
+-->
   // shadows
            attribute unrestricted double <a href=#dom-context-2d-shadowoffsetx title=dom-context-2d-shadowOffsetX>shadowOffsetX</a>; // (default 0)
            attribute unrestricted double <a href=#dom-context-2d-shadowoffsety title=dom-context-2d-shadowOffsetY>shadowOffsetY</a>; // (default 0)
@@ -665,7 +667,6 @@
   void <a href=#dom-context-2d-scrollpathintoview title=dom-context-2d-scrollPathIntoView>scrollPathIntoView</a>(<a href=#path>Path</a> path);
   void <a href=#dom-context-2d-clip title=dom-context-2d-clip>clip</a>();
   void <a href=#dom-context-2d-clip title=dom-context-2d-clip>clip</a>(<a href=#path>Path</a> path);
-  void <a href=#dom-context-2d-resetclip title=dom-context-2d-resetClip>resetClip</a>();
   boolean <a href=#dom-context-2d-ispointinpath title=dom-context-2d-isPointInPath>isPointInPath</a>(unrestricted double x, unrestricted double y);
   boolean <a href=#dom-context-2d-ispointinpath title=dom-context-2d-isPointInPath>isPointInPath</a>(<a href=#path>Path</a> path, unrestricted double x, unrestricted double y);
 
@@ -682,15 +683,15 @@
   void <a href=#dom-context-2d-drawimage title=dom-context-2d-drawImage>drawImage</a>((<span>HTMLImageElement</span> or <span>HTMLCanvasElement</span> or <span>HTMLVideoElement</span>) image, unrestricted double sx, unrestricted double sy, unrestricted double sw, unrestricted double sh, unrestricted double dx, unrestricted double dy, unrestricted double dw, unrestricted double dh);
 
   // hit regions
-  void <a href=#dom-context-2d-addhitregion title=dom-context-2d-addHitRegion>addHitRegion</a>(<a href=#hitregionoptions>HitRegionOptions</a> options);
-  void <a href=#dom-context-2d-removehitregion title=dom-context-2d-removeHitRegion>removeHitRegion</a>(<a href=#hitregionoptions>HitRegionOptions</a> options);
+  void <a href=#dom-context-2d-addhitregion title=dom-context-2d-addHitRegion>addHitRegion</a>(<a href=#hitregionoptions-0>HitRegionOptions</a> options);
+  void <a href=#dom-context-2d-removehitregion title=dom-context-2d-removeHitRegion>removeHitRegion</a>(<a href=#hitregionoptions-0>HitRegionOptions</a> options);
 
   // pixel manipulation
   <a href=#imagedata>ImageData</a> <a href=#dom-context-2d-createimagedata title=dom-context-2d-createImageData>createImageData</a>(unrestricted double sw, unrestricted double sh);
   <a href=#imagedata>ImageData</a> <a href=#dom-context-2d-createimagedata title=dom-context-2d-createImageData>createImageData</a>(<a href=#imagedata>ImageData</a> imagedata);
   <a href=#imagedata>ImageData</a> <a href=#dom-context-2d-getimagedata title=dom-context-2d-getImageData>getImageData</a>(double sx, double sy, double sw, double sh);
-  void <a href=#dom-context-2d-putimagedata title=dom-context-2d-putImageData>putImageData</a>(<a href=#imagedata>ImageData</a> imagedata, double dx, double dy);
   void <a href=#dom-context-2d-putimagedata title=dom-context-2d-putImageData>putImageData</a>(<a href=#imagedata>ImageData</a> imagedata, double dx, double dy, double dirtyX, double dirtyY, double dirtyWidth, double dirtyHeight);
+  void <a href=#dom-context-2d-putimagedata title=dom-context-2d-putImageData>putImageData</a>(<a href=#imagedata>ImageData</a> imagedata, double dx, double dy);
 };
 <a href=#canvasrenderingcontext2d>CanvasRenderingContext2D</a> implements <a href=#canvasdrawingstyles>CanvasDrawingStyles</a>;
 <a href=#canvasrenderingcontext2d>CanvasRenderingContext2D</a> implements <a href=#canvaspathmethods>CanvasPathMethods</a>;
@@ -702,11 +703,12 @@ interface <dfn id=canvasdrawingstyles>CanvasDrawingStyles</dfn> {
            attribute DOMString <a href=#dom-context-2d-linecap title=dom-context-2d-lineCap>lineCap</a>; // "butt", "round", "square" (default "butt")
            attribute DOMString <a href=#dom-context-2d-linejoin title=dom-context-2d-lineJoin>lineJoin</a>; // "round", "bevel", "miter" (default "miter")
            attribute unrestricted double <a href=#dom-context-2d-miterlimit title=dom-context-2d-miterLimit>miterLimit</a>; // (default 10)
-
+<!-- per Frank Oliver, issue 201 --> <!--
   // dashed lines
-  void <a href=#dom-context-2d-setlinedash title=dom-context-2d-setLineDash>setLineDash</a>(sequence&lt;unrestricted double&gt; segments); // default empty
-  sequence&lt;unrestricted double&gt; <a href=#dom-context-2d-getlinedash title=dom-context-2d-getLineDash>getLineDash</a>();
-           attribute unrestricted double <a href=#dom-context-2d-linedashoffset title=dom-context-2d-lineDashOffset>lineDashOffset</a>;
+  void <span title="dom-context-2d-setLineDash">setLineDash</span>(sequence&lt;unrestricted double> segments); // default empty
+  sequence&lt;unrestricted double> <span title="dom-context-2d-getLineDash">getLineDash</span>();
+           attribute unrestricted double <span title="dom-context-2d-lineDashOffset">lineDashOffset</span>; 
+-->
 
   // text
            attribute DOMString <a href=#dom-context-2d-font title=dom-context-2d-font>font</a>; // (default 10px sans-serif)
@@ -723,10 +725,8 @@ interface <dfn id=canvaspathmethods>CanvasPathMethods</dfn> {
   void <a href=#dom-context-2d-quadraticcurveto title=dom-context-2d-quadraticCurveTo>quadraticCurveTo</a>(unrestricted double cpx, unrestricted double cpy, unrestricted double x, unrestricted double y);
   void <a href=#dom-context-2d-beziercurveto title=dom-context-2d-bezierCurveTo>bezierCurveTo</a>(unrestricted double cp1x, unrestricted double cp1y, unrestricted double cp2x, unrestricted double cp2y, unrestricted double x, unrestricted double y);
   void <a href=#dom-context-2d-arcto title=dom-context-2d-arcTo>arcTo</a>(unrestricted double x1, unrestricted double y1, unrestricted double x2, unrestricted double y2, unrestricted double radius); <!-- see ARC-ORDER note below -->
-  void <a href=#dom-context-2d-arcto title=dom-context-2d-arcTo>arcTo</a>(unrestricted double x1, unrestricted double y1, unrestricted double x2, unrestricted double y2, unrestricted double radiusX, unrestricted double radiusY, unrestricted double rotation); <!-- see ARC-ORDER note below -->
   void <a href=#dom-context-2d-rect title=dom-context-2d-rect>rect</a>(unrestricted double x, unrestricted double y, unrestricted double w, unrestricted double h);
   void <a href=#dom-context-2d-arc title=dom-context-2d-arc>arc</a>(unrestricted double x, unrestricted double y, unrestricted double radius, unrestricted double startAngle, unrestricted double endAngle, optional boolean anticlockwise = false); <!-- see ARC-ORDER note below -->
-  void <a href=#dom-context-2d-ellipse title=dom-context-2d-ellipse>ellipse</a>(unrestricted double x, unrestricted double y, unrestricted double radiusX, unrestricted double radiusY, unrestricted double rotation, unrestricted double startAngle, unrestricted double endAngle, boolean anticlockwise); <!-- see ARC-ORDER note below -->
 };
 
 interface <dfn id=canvasgradient>CanvasGradient</dfn> {
@@ -770,6 +770,19 @@ dictionary <dfn id=hitregionoptions>HitRegionOptions</dfn> {
   <span>DOMString</span>? <span title=dom-HitRegionOptions-role>role</span> = null;
 };
 
+dictionary <dfn id=hitregionoptions-0>HitRegionOptions</dfn> {
+  <a href=#path>Path</a>? <span title=dom-HitRegionOptions-path>path</span> = null;
+<!--  <span>SVGMatrix</span>? <span title="dom-HitRegionOptions-transform">transform</span> = null;
+-->  <span>DOMString</span> <span title=dom-HitRegionOptions-id>id</span> = "";
+  <span>DOMString</span>? <span title=dom-HitRegionOptions-parentID>parentID</span> = null;
+<!-- per Frank Oliver, issue 201 --> <!-- <span>DOMString</span> <span title="dom-HitRegionOptions-cursor">cursor</span> = "inherit"; 
+-->  // for control-backed regions:
+  <span>Element</span>? <span title=dom-HitRegionOptions-control>control</span> = null;
+  // for unbacked regions:
+  <span>DOMString</span>? <span title=dom-HitRegionOptions-label>label</span> = null;
+  <span>DOMString</span>? <span title=dom-HitRegionOptions-role>role</span> = null;
+};
+
 interface <dfn id=imagedata>ImageData</dfn> {
   readonly attribute unsigned long <a href=#dom-imagedata-width title=dom-imagedata-width>width</a>;
   readonly attribute unsigned long <a href=#dom-imagedata-height title=dom-imagedata-height>height</a>;
@@ -780,16 +793,15 @@ interface <dfn id=imagedata>ImageData</dfn> {
 interface <dfn id=drawingstyle>DrawingStyle</dfn> { };
 <a href=#drawingstyle>DrawingStyle</a> implements <a href=#canvasdrawingstyles>CanvasDrawingStyles</a>;
 
-[<a href=#dom-path title=dom-Path>Constructor</a>,
- <a href=#dom-path-copy title=dom-Path-copy>Constructor</a>(<a href=#path>Path</a> path),
- <a href=#dom-path-withdata title=dom-Path-withdata>Constructor</a>(DOMString d)]
+[<a href=#dom-path title=dom-Path>Constructor</a>]
 interface <dfn id=path>Path</dfn> {
   void <a href=#dom-path-addpath title=dom-path-addPath>addPath</a>(<a href=#path>Path</a> path, <span>SVGMatrix</span>? transformation);
-  void <a href=#dom-path-addpathbystrokingpath title=dom-path-addPathByStrokingPath>addPathByStrokingPath</a>(<a href=#path>Path</a> path, <a href=#canvasdrawingstyles>CanvasDrawingStyles</a> styles, <span>SVGMatrix</span>? transformation);
-  void <a href=#dom-path-addtext title=dom-path-addText>addText</a>(DOMString text, <a href=#canvasdrawingstyles>CanvasDrawingStyles</a> styles, <span>SVGMatrix</span>? transformation, unrestricted double x, unrestricted double y, optional unrestricted double maxWidth);
-  void <a href=#dom-path-addpathbystrokingtext title=dom-path-addPathByStrokingText>addPathByStrokingText</a>(DOMString text, <a href=#canvasdrawingstyles>CanvasDrawingStyles</a> styles, <span>SVGMatrix</span>? transformation, unrestricted double x, unrestricted double y, optional unrestricted double maxWidth);
-  void <a href=#dom-path-addtext title=dom-path-addText>addText</a>(DOMString text, <a href=#canvasdrawingstyles>CanvasDrawingStyles</a> styles, <span>SVGMatrix</span>? transformation, <a href=#path>Path</a> path, optional unrestricted double maxWidth);
-  void <a href=#dom-path-addpathbystrokingtext title=dom-path-addPathByStrokingText>addPathByStrokingText</a>(DOMString text, <a href=#canvasdrawingstyles>CanvasDrawingStyles</a> styles, <span>SVGMatrix</span>? transformation, <a href=#path>Path</a> path, optional unrestricted double maxWidth);
+<!-- per Frank Oliver, issue 201 --> <!--  void <span title="dom-path-addPathByStrokingPath">addPathByStrokingPath</span>(<span>Path</span> path, <span>CanvasDrawingStyles</span> styles, <span>SVGMatrix</span>? transformation);
+  void <span title="dom-path-addText">addText</span>(DOMString text, <span>CanvasDrawingStyles</span> styles, <span>SVGMatrix</span>? transformation, unrestricted double x, unrestricted double y, optional unrestricted double maxWidth);
+  void <span title="dom-path-addPathByStrokingText">addPathByStrokingText</span>(DOMString text, <span>CanvasDrawingStyles</span> styles, <span>SVGMatrix</span>? transformation, unrestricted double x, unrestricted double y, optional unrestricted double maxWidth);
+  void <span title="dom-path-addText">addText</span>(DOMString text, <span>CanvasDrawingStyles</span> styles, <span>SVGMatrix</span>? transformation, <span>Path</span> path, optional unrestricted double maxWidth);
+  void <span title="dom-path-addPathByStrokingText">addPathByStrokingText</span>(DOMString text, <span>CanvasDrawingStyles</span> styles, <span>SVGMatrix</span>? transformation, <span>Path</span> path, optional unrestricted double maxWidth);
+-->
 };
 <a href=#path>Path</a> implements <a href=#canvaspathmethods>CanvasPathMethods</a>;</pre>
 
@@ -868,8 +880,8 @@ interface <dfn id=path>Path</dfn> {
 
   <ul class=brief><li>The current <a href=#transformations title=dom-context-2d-transformation>transformation matrix</a>.</li>
    <li>The current <a href=#clipping-region>clipping region</a>.</li>
-   <li>The current values of the following attributes: <code title=dom-context-2d-strokeStyle><a href=#dom-context-2d-strokestyle>strokeStyle</a></code>, <code title=dom-context-2d-fillStyle><a href=#dom-context-2d-fillstyle>fillStyle</a></code>, <code title=dom-context-2d-globalAlpha><a href=#dom-context-2d-globalalpha>globalAlpha</a></code>, <code title=dom-context-2d-lineWidth><a href=#dom-context-2d-linewidth>lineWidth</a></code>, <code title=dom-context-2d-lineCap><a href=#dom-context-2d-linecap>lineCap</a></code>, <code title=dom-context-2d-lineJoin><a href=#dom-context-2d-linejoin>lineJoin</a></code>, <code title=dom-context-2d-miterLimit><a href=#dom-context-2d-miterlimit>miterLimit</a></code>, <code title=dom-context-2d-lineDashOffset><a href=#dom-context-2d-linedashoffset>lineDashOffset</a></code>, <code title=dom-context-2d-shadowOffsetX><a href=#dom-context-2d-shadowoffsetx>shadowOffsetX</a></code>, <code title=dom-context-2d-shadowOffsetY><a href=#dom-context-2d-shadowoffsety>shadowOffsetY</a></code>, <code title=dom-context-2d-shadowBlur><a href=#dom-context-2d-shadowblur>shadowBlur</a></code>, <code title=dom-context-2d-shadowColor><a href=#dom-context-2d-shadowcolor>shadowColor</a></code>, <code title=dom-context-2d-globalCompositeOperation><a href=#dom-context-2d-globalcompositeoperation>globalCompositeOperation</a></code>, <code title=dom-context-2d-font><a href=#dom-context-2d-font>font</a></code>, <code title=dom-context-2d-textAlign><a href=#dom-context-2d-textalign>textAlign</a></code>, <code title=dom-context-2d-textBaseline><a href=#dom-context-2d-textbaseline>textBaseline</a></code>, <code title=dom-context-2d-imageSmoothingEnabled><a href=#dom-context-2d-imagesmoothingenabled>imageSmoothingEnabled</a></code>.</li>
-   <li>The current <a href=#dash-list>dash list</a>.</li>
+   <li>The current values of the following attributes: <code title=dom-context-2d-strokeStyle><a href=#dom-context-2d-strokestyle>strokeStyle</a></code>, <code title=dom-context-2d-fillStyle><a href=#dom-context-2d-fillstyle>fillStyle</a></code>, <code title=dom-context-2d-globalAlpha><a href=#dom-context-2d-globalalpha>globalAlpha</a></code>, <code title=dom-context-2d-lineWidth><a href=#dom-context-2d-linewidth>lineWidth</a></code>, <code title=dom-context-2d-lineCap><a href=#dom-context-2d-linecap>lineCap</a></code>, <code title=dom-context-2d-lineJoin><a href=#dom-context-2d-linejoin>lineJoin</a></code>, <code title=dom-context-2d-miterLimit><a href=#dom-context-2d-miterlimit>miterLimit</a></code>, <code title=dom-context-2d-lineDashOffset>lineDashOffset</code>, <code title=dom-context-2d-shadowOffsetX><a href=#dom-context-2d-shadowoffsetx>shadowOffsetX</a></code>, <code title=dom-context-2d-shadowOffsetY><a href=#dom-context-2d-shadowoffsety>shadowOffsetY</a></code>, <code title=dom-context-2d-shadowBlur><a href=#dom-context-2d-shadowblur>shadowBlur</a></code>, <code title=dom-context-2d-shadowColor><a href=#dom-context-2d-shadowcolor>shadowColor</a></code>, <code title=dom-context-2d-globalCompositeOperation><a href=#dom-context-2d-globalcompositeoperation>globalCompositeOperation</a></code>, <code title=dom-context-2d-font><a href=#dom-context-2d-font>font</a></code>, <code title=dom-context-2d-textAlign><a href=#dom-context-2d-textalign>textAlign</a></code>, <code title=dom-context-2d-textBaseline><a href=#dom-context-2d-textbaseline>textBaseline</a></code>, <code title=dom-context-2d-imageSmoothingEnabled><a href=#dom-context-2d-imagesmoothingenabled>imageSmoothingEnabled</a></code>.</li>
+   <li>The current <span>dash list</span>.</li>
   </ul><p class=note>The <a href=#current-default-path>current default path</a> and the
   current bitmap are not part of the drawing state. The <a href=#current-default-path>current
   default path</a> is persistent, and can only be reset using the
@@ -1018,10 +1030,10 @@ idea from Mihai:
 
    </dd>
 
-
-   <dt><var title="">context</var> . <code title=dom-context-2d-setLineDash><a href=#dom-context-2d-setlinedash>setLineDash</a></code>(<var title="">segments</var>)</dt>
-   <dt><var title="">styles</var> . <code title=dom-context-2d-setLineDash><a href=#dom-context-2d-setlinedash>setLineDash</a></code>(<var title="">segments</var>)</dt>
-
+<!-- per Frank Oliver, issue 201 --><!--
+   <dt><var title="">context</var> . <code title="dom-context-2d-setLineDash">setLineDash</code>(<var title="">segments</var>)</dt>
+   <dt><var title="">styles</var> . <code title="dom-context-2d-setLineDash">setLineDash</code>(<var title="">segments</var>)</dt>
+   
    <dd>
 
     <p>Sets the current line dash pattern (as used when stroking). The
@@ -1031,8 +1043,8 @@ idea from Mihai:
    </dd>
 
 
-   <dt><var title="">segments</var> = <var title="">context</var> . <code title=dom-context-2d-getLineDash><a href=#dom-context-2d-getlinedash>getLineDash</a></code>()</dt>
-   <dt><var title="">segments</var> = <var title="">styles</var> . <code title=dom-context-2d-getLineDash><a href=#dom-context-2d-getlinedash>getLineDash</a></code>()</dt>
+   <dt><var title="">segments</var> = <var title="">context</var> . <code title="dom-context-2d-getLineDash">getLineDash</code>()</dt>
+   <dt><var title="">segments</var> = <var title="">styles</var> . <code title="dom-context-2d-getLineDash">getLineDash</code>()</dt>
 
    <dd>
 
@@ -1043,8 +1055,8 @@ idea from Mihai:
    </dd>
 
 
-   <dt><var title="">context</var> . <code title=dom-context-2d-lineDashOffset><a href=#dom-context-2d-linedashoffset>lineDashOffset</a></code></dt>
-   <dt><var title="">styles</var> . <code title=dom-context-2d-lineDashOffset><a href=#dom-context-2d-linedashoffset>lineDashOffset</a></code></dt>
+   <dt><var title="">context</var> . <code title="dom-context-2d-lineDashOffset">lineDashOffset</code></dt>
+   <dt><var title="">styles</var> . <code title="dom-context-2d-lineDashOffset">lineDashOffset</code></dt>
 
    <dd>
 
@@ -1054,7 +1066,7 @@ idea from Mihai:
     finite values are ignored.</p>
 
    </dd>
-
+-->
   </dl><div class=impl>
 
   <p>Objects that implement the <code><a href=#canvasdrawingstyles>CanvasDrawingStyles</a></code>
@@ -1110,62 +1122,81 @@ idea from Mihai:
   zero, negative, infinite, and NaN values must be ignored, leaving
   the value unchanged; other values must change the current value to
   the new value.</p>
+  <!-- values less than 1.0 are equivalent to 1.0, since it's compared
+       against a ratio that can't be less than 1.0 -->
 
   <p>When the object implementing the <code><a href=#canvasdrawingstyles>CanvasDrawingStyles</a></code>
   interface is created, the <code title=dom-context-2d-miterLimit><a href=#dom-context-2d-miterlimit>miterLimit</a></code> attribute must
   initially have the value <code>10.0</code>.</p>
 
+  <hr><!-- per Frank Oliver, issue 201 --><!-- 
   <hr><p>Each <code><a href=#canvasdrawingstyles>CanvasDrawingStyles</a></code> object has a <dfn id=dash-list>dash
   list</dfn>, which is either empty or consists of an even number of
-  non-negative numbers. Initially, the <a href=#dash-list>dash list</a> must be
-  empty.</p>
+  positive non-zero numbers. Initially, the <a href=#dash-list>dash list</a>
+  must be empty.</p>
 
-  <p>When the <dfn id=dom-context-2d-setlinedash title=dom-context-2d-setLineDash><code>setLineDash()</code></dfn>
+  <p>When the <dfn
+  title="dom-context-2d-setLineDash"><code>setLineDash()</code></dfn>
   method is invoked, it must run the following steps:</p>
 
-  <ol><li><p>Let <var title="">a</var> be a copy of the array provided as
+  <ol>
+
+   <li><p>Let <var title="">a</var> be a copy of the array provided as
    the argument.</p></li>
 
    <li><p>If any value in the array is not finite (e.g. an Infinity or
    a NaN value), or if any value is negative (less than zero), then
-   abort these steps.</p></li>
+   abort these steps (without throwing an exception; user agents could
+   show a message on a developer console, though, as that would be
+   helpful for debugging).</p></li>
 
    <li><p>If the number of elements in <var title="">a</var> is odd,
    then let <var title="">a</var> be the concatentation of two copies
    of <var title="">a</var>.</p></li>
 
-   <li><p>Let the object's <a href=#dash-list>dash list</a> be <var title="">a</var>.</p></li>
+   <li><p>Let the object's <span>dash list</span> be <var
+   title="">a</var>.</p></li>
 
-  </ol><p>When the <dfn id=dom-context-2d-getlinedash title=dom-context-2d-getLineDash><code>getLineDash()</code></dfn>
+  </ol>
+
+  <p>When the <dfn
+  title="dom-context-2d-getLineDash"><code>getLineDash()</code></dfn>
   method is invoked, it must return a newly created array whose values
-  are the values of the object's <a href=#dash-list>dash list</a>, in the same
+  are the values of the object's <span>dash list</span>, in the same
   order.</p>
 
   <p>It is sometimes useful to change the "phase" of the dash pattern,
   e.g. to achieve a "marching ants" effect. The phase can be set using
-  the <dfn id=dom-context-2d-linedashoffset title=dom-context-2d-lineDashOffset><code>lineDashOffset</code></dfn>
+  the <dfn
+  title="dom-context-2d-lineDashOffset"><code>lineDashOffset</code></dfn>
   attribute. On getting, it must return the current value. On setting,
   infinite and NaN values must be ignored, leaving the value
   unchanged; other values must change the current value to the new
   value.</p>
 
-  <p>When the object implementing the <code><a href=#canvasdrawingstyles>CanvasDrawingStyles</a></code>
-  interface is created, the <code title=dom-context-2d-lineDashOffset><a href=#dom-context-2d-linedashoffset>lineDashOffset</a></code>
+  <p>When the object implementing the <code>CanvasDrawingStyles</code>
+  interface is created, the <code
+  title="dom-context-2d-lineDashOffset">lineDashOffset</code>
   attribute must initially have the value <code>0.0</code>.</p>
 
-  <hr><p>When a user agent is to <dfn id=trace-a-path>trace a <span>path</span></dfn>,
-  given an object <var title="">style</var> that implements the
-  <code><a href=#canvasdrawingstyles>CanvasDrawingStyles</a></code> interface, it must run the following
-  algorithm. This algorithm returns a new <a href=#path>path</a>.</p>
+  <hr>
 
-  <ol><li><p>Let <var title="">path</var> be a copy of the path being
+  <p>When a user agent is to <dfn>trace a <span>path</span></dfn>,
+  given an object <var title="">style</var> that implements the
+  <code>CanvasDrawingStyles</code> interface, it must run the following
+  algorithm. This algorithm returns a new <span>path</span>.</p>
+
+  <ol>
+
+   <li><p>Let <var title="">path</var> be a copy of the path being
    traced.</p></li>
 
    <li><p>Remove from <var title="">path</var> any subpaths containing
    no lines (i.e. empty subpaths with zero points, and subpaths with
    just one point).</p></li>
 
-   <li><p>Replace each point in each subpath of <var title="">path</var> other than the first point and the last point
+   <li><p>Replace each point in each subpath of <var
+   title="">path</var> other than the first point and the last point
    of each subpath by a <i>join</i> that joins the line leading to
    that point to the line leading out of that point, such that the
    subpaths all consist of two points (a starting point with a line
@@ -1175,40 +1206,50 @@ idea from Mihai:
    together such that each subpath is a series of one or more lines
    with a join between each one and a point on each end.</p></li>
 
-   <li><p>Add a straight closing line to each closed subpath in <var title="">path</var> connecting the last point and the first point
+   <li><p>Add a straight closing line to each closed subpath in <var
+   title="">path</var> connecting the last point and the first point
    of that subpath; change the last point to a join (from the
    previously last line to the newly added closing line), and change
    the first point to a join (from the newly added closing line to the
    first line).</p>
-
-   </li><li><p>If the <var title="">styles</var> <a href=#dash-list>dash list</a> is
+<!-- per Frank Oliver, issue 201 --><!-- 
+   <li><p>If the <var title="">styles</var> <span>dash list</span> is
    empty, jump to the step labeled <i>joins</i>.</p></li>
 
    <li><p>Let <var title="">width</var> be the aggregate length of all
    the lines of all the subpaths in <var title="">path</var>, in
    coordinate space units.</p></li>
 
-   <li><p>Let <var title="">offset</var> be the value of the <var title="">styles</var> <code title=dom-context-2d-lineDashOffset><a href=#dom-context-2d-linedashoffset>lineDashOffset</a></code>, in
+   <li><p>Let <var title="">offset</var> be the value of the <var
+   title="">styles</var> <code
+   title="dom-context-2d-lineDashOffset">lineDashOffset</code>, in
    coordinate space units.</p></li>
 
    <li>
 
-    <p>While <var title="">offset</var> is greater than <var title="">width</var>, decrement it by <var title="">width</var>.</p>
+    <p>While <var title="">offset</var> is greater than <var
+    title="">width</var>, decrement it by <var
+    title="">width</var>.</p>
 
-    <p>While <var title="">offset</var> is less than <var title="">width</var>, increment it by <var title="">width</var>.</p>
+    <p>While <var title="">offset</var> is less than <var
+    title="">width</var>, increment it by <var
+    title="">width</var>.</p>
 
    </li>
 
    <li><p><i>Offset subpath</i>: If <var title="">offset</var> is
-   non-zero, add a new subpath at the start of <var title="">path</var> consisting of two points connected by a line
+   non-zero, add a new subpath at the start of <var
+   title="">path</var> consisting of two points connected by a line
    whose length is <var title="">offset</var> coordinate space units.
    (This path is temporary and will be removed in the <i>joins</i>
    step below. Its purpose is to offset the dash pattern.)</p>
 
-   </li><li><p>Define <var title="">L</var> to be a linear coordinate line
-   defined along all lines in all the subpaths in <var title="">path</var>, such that the start of the first line in the
+   <li><p>Define <var title="">L</var> to be a linear coordinate line
+   defined along all lines in all the subpaths in <var
+   title="">path</var>, such that the start of the first line in the
    first subpath is defined as coordinate 0, and the end of the last
-   line in the last subpath is defined as coordinate <var title="">width</var>.</p></li>
+   line in the last subpath is defined as coordinate <var
+   title="">width</var>.</p></li>
 
    <li><p>Let <var title="">position</var> be 0.</p></li>
 
@@ -1218,35 +1259,44 @@ idea from Mihai:
    other states being <i>on</i> and <i>zero-on</i>).</p></li>
 
    <li><p><i>Dash On</i>: Let <var title="">segment length</var> be
-   the value of the <var title="">styles</var> <a href=#dash-list>dash
-   list</a>'s <var title="">index</var>th entry.</p></li>
+   the value of the <var title="">styles</var> <span>dash
+   list</span>'s <var title="">index</var>th entry.</p></li>
 
-   <li><p>Increment <var title="">position</var> by <var title="">segment length</var>.</p></li>
+   <li><p>Increment <var title="">position</var> by <var
+   title="">segment length</var>.</p></li>
 
-   <li><p>If <var title="">position</var> is greater than <var title="">width</var>, then jump to the step labeled
+   <li><p>If <var title="">position</var> is greater than <var
+   title="">width</var>, then jump to the step labeled
    <i>joins</i>.</p></li>
 
-   <li><p>If <var title="">segment length</var> is non-zero, let <var title="">current state</var> be <i>on</i>.</p></li>
+   <li><p>If <var title="">segment length</var> is non-zero, let <var
+   title="">current state</var> be <i>on</i>.</p></li>
 
    <li><p>Increment <var title="">index</var> by one.</p></li>
 
    <li><p><i>Dash Off</i>: Let <var title="">segment length</var> be
-   the value of the <var title="">styles</var> <a href=#dash-list>dash
-   list</a>'s <var title="">index</var>th entry.</p></li>
+   the value of the <var title="">styles</var> <span>dash
+   list</span>'s <var title="">index</var>th entry.</p></li>
 
-   <li><p>Let <var title="">start</var> be the offset <var title="">position</var> on <var title="">L</var>.</p></li>
+   <li><p>Let <var title="">start</var> be the offset <var
+   title="">position</var> on <var title="">L</var>.</p></li>
 
-   <li><p>Increment <var title="">position</var> by <var title="">segment length</var>.</p></li>
+   <li><p>Increment <var title="">position</var> by <var
+   title="">segment length</var>.</p></li>
 
-   <li><p>If <var title="">position</var> is greater than <var title="">width</var>, then let <var title="">end</var> be the
+   <li><p>If <var title="">position</var> is greater than <var
+   title="">width</var>, then let <var title="">end</var> be the
    offset <var title="">width</var> on <var title="">L</var>.
-   Otherwise, let <var title="">end</var> be the offset <var title="">position</var> on <var title="">L</var>.</p></li>
+   Otherwise, let <var title="">end</var> be the offset <var
+   title="">position</var> on <var title="">L</var>.</p></li>
 
    <li>
 
     <p>Jump to the first appropriate step:</p>
 
-    <dl class=switch><dt>If <var title="">segment length</var> is zero and <var title="">current state</var> is <i>off</i></dt>
+    <dl class="switch">
+
+     <dt>If <var title="">segment length</var> is zero and <var title="">current state</var> is <i>off</i></dt>
 
      <dd>
 
@@ -1262,7 +1312,8 @@ idea from Mihai:
       <p>Cut the line on which <var title="">end</var> finds itself
       short at <var title="">end</var> and place a point there,
       cutting the subpath that it was in in two; remove all line
-      segments, joins, points, and subpaths that are between <var title="">start</var> and <var title="">end</var>; and finally
+      segments, joins, points, and subpaths that are between <var
+      title="">start</var> and <var title="">end</var>; and finally
       place a single point at <var title="">start</var> with no lines
       connecting to it.</p>
 
@@ -1281,9 +1332,11 @@ idea from Mihai:
       <p>Cut the line on which <var title="">start</var> finds itself
       into two at <var title="">start</var> and place a point there,
       cutting the subpath that it was in in two, and similarly cut the
-      line on which <var title="">end</var> finds itself short at <var title="">end</var> and place a point there, cutting the subpath
+      line on which <var title="">end</var> finds itself short at <var
+      title="">end</var> and place a point there, cutting the subpath
       that <em>it</em> was in in two, and then remove all line segments,
-      joins, points, and subpaths that are between <var title="">start</var> and <var title="">end</var>.</p>
+      joins, points, and subpaths that are between <var
+      title="">start</var> and <var title="">end</var>.</p>
 
       <p>If <var title="">start</var> and <var title="">end</var> are
       the same point, then this results in just the line being cut in
@@ -1293,9 +1346,12 @@ idea from Mihai:
 
      </dd>
 
-    </dl></li>
+    </dl>
 
-   <li><p>If <var title="">position</var> is greater than <var title="">width</var>, then jump to the step labeled
+   </li>
+
+   <li><p>If <var title="">position</var> is greater than <var
+   title="">width</var>, then jump to the step labeled
    <i>joins</i>.</p></li>
 
    <li><p>If <var title="">segment length</var> is greater than zero,
@@ -1303,12 +1359,11 @@ idea from Mihai:
 
    <li><p>Increment <var title="">index</var> by one. If it is equal
    to the number of entries in the <var title="">styles</var>
-   <a href=#dash-list>dash list</a>, then let <var title="">index</var> be
+   <span>dash list</span>, then let <var title="">index</var> be
    0.</p></li>
 
    <li><p>Return to the step labeled <i>dash on</i>.</p></li>
-
-   <li><p><i>Joins</i>: Remove from <var title="">path</var> any
+--><!-- per Frank Oliver, issue 201 --><li><p><i>Joins</i>: Remove from <var title="">path</var> any
    subpath that originally formed part of the subpath added in the
    <i>offset subpath</i> step above.</p></li>
 
@@ -1378,6 +1433,30 @@ idea from Mihai:
     miter length to half the line width. If the miter length would
     cause the miter limit ratio (as set by the <var title="">style</var> <code title=dom-context-2d-miterLimit><a href=#dom-context-2d-miterlimit>miterLimit</a></code> attribute) to
     be exceeded, this second triangle must not be added.</p>
+    <!-- the actual ratio can't possibly be less than 1.0 -->
+
+<!-- here's a nice demo of the miter:
+  c.clearRect(0, 0, 640, 480);
+  c.beginPath();
+
+  c.moveTo((new Date()/100) % 600, 100);
+  c.lineTo(300, 300);
+  c.lineTo(500, 300);
+
+  c.lineWidth = 50;
+  c.miterLimit = 10000;
+  c.strokeStyle = 'silver'
+  c.stroke();
+
+  c.miterLimit = 0.0001;
+  c.strokeStyle = 'black'
+  c.stroke();
+
+  c.lineWidth = 1;
+  c.strokeStyle = 'red'
+  c.stroke();
+-->
+
 
     <p>Subpaths in the newly created path must wind clockwise,
     regardless of the direction of paths in <var title="">path</var>.</p>
@@ -1415,8 +1494,12 @@ idea from Mihai:
 
    <li><p>Return the newly created path.</p></li>
 
-  </ol><!--v6: Another request has been for hairline width lines, that remain
-hairline width with transform. ack Shaun Morris.  --></div>
+  
+
+<!--v6: Another request has been for hairline width lines, that remain
+hairline width with transform. ack Shaun Morris.  -->
+
+  </div>
 
 
   <h6 id=text-styles><span class=secno>1.4 </span>Text styles</h6>
@@ -1818,8 +1901,8 @@ hairline width with transform. ack Shaun Morris.  --></div>
 
    </dd>
 
-   <dt><var title="">context</var> . <code title=dom-context-2d-arcTo><a href=#dom-context-2d-arcto>arcTo</a></code>(<var title="">x1</var>, <var title="">y1</var>, <var title="">x2</var>, <var title="">y2</var>, <var title="">radiusX</var> [, <var title="">radiusY</var>, <var title="">rotation</var> ])</dt>
-   <dt><var title="">path</var> . <code title=dom-context-2d-arcTo><a href=#dom-context-2d-arcto>arcTo</a></code>(<var title="">x1</var>, <var title="">y1</var>, <var title="">x2</var>, <var title="">y2</var>, <var title="">radius</var> [, <var title="">radiusY</var>, <var title="">rotation</var> ])</dt>
+   <dt><var title="">context</var> . <code title=dom-context-2d-arcTo><a href=#dom-context-2d-arcto>arcTo</a></code>(<var title="">x1</var>, <var title="">y1</var>, <var title="">x2</var>, <var title="">y2</var>, <var title="">radius</var>)</dt>
+   <dt><var title="">path</var> . <code title=dom-context-2d-arcTo><a href=#dom-context-2d-arcto>arcTo</a></code>(<var title="">x1</var>, <var title="">y1</var>, <var title="">x2</var>, <var title="">y2</var>, <var title="">radius</var>)</dt>
 
    <dd>
 
@@ -1827,153 +1910,10 @@ hairline width with transform. ack Shaun Morris.  --></div>
     current subpath, connected to the previous point by a straight
     line.</p>
 
-    <p>If two radii are provided, the first controls the width of the
-    arc's ellipse, and the second controls the height. If only one is
-    provided, or if they are the same, the arc is from a circle. In
-    the case of an ellipse, the rotation argument controls the
-    clockwise inclination of the ellipse relative to the x-axis.</p>
-
     <p>Throws an <code>IndexSizeError</code> exception if the given
     radius is negative.</p>
 
-    <figure class=diagrams><!-- if anyone wants to try writing alternative text for these,
-     be my guest. I can't work out how to describe them. --><img alt="" src=images/arcTo1.png><img alt="" src=images/arcTo2.png><img alt="" src=images/arcTo3.png></figure><!--
-
-c.clearRect(0, 0, 640, 480);
-c.save();
-try {
-  var x0 = 150;
-  var y0 = 100;
-  var x1 = 375;
-  var y1 = 100;
-  var x2 = x1;
-  var y2 = 250;
-  var r = 50;
-
-  var bottom = 210;
-  var center = 100;
-
-  var fontSize = 16;
-  var margin = 50;
-  var dotHalfSize = 5;
-
-  // (also update the label positions at the bottom)
-
-
-  // ========
-
-  function extendLine(xa,ya,xb,yb) {
-    var dx = xb-xa;
-    var dy = yb-ya;
-    var theta = Math.atan2(dx,dy);
-    var extX = margin * Math.sin(theta);
-    var extY = margin * Math.cos(theta);
-    c.beginPath();
-    c.moveTo(xa-extX,ya-extY);
-    c.lineTo(xb+extX,yb+extY);
-    c.stroke();
-  }
-
-  function dot(x,y,s) {
-    c.beginPath();
-    c.arc(x,y,dotHalfSize,0,Math.PI*2);
-    c.fill();
-    c.textAlign = 'left';
-    c.textBaseline = 'top';
-    c.fillText(s,x+dotHalfSize,y);
-  }
-
-  c.font = fontSize + 'px Gill Sans';
-  c.fillStyle = 'black';
-  c.lineWidth = 1;
-  c.strokeStyle = 'red';
-  extendLine(x0,y0,x1,y1);
-  extendLine(x1,y1,x2,y2);
-
-  c.lineWidth = 1;
-  c.strokeStyle = 'silver';
-  c.beginPath();
-  c.moveTo(x0,y0);
-
-  // based on http://lists.freedesktop.org/archives/cairo/2005-August/004801.html
-  var angle0, angle1, angle2, angled;
-  var xc, yc, dc;
-  angle0 = Math.atan2(y0 - y1, x0 - x1);
-  angle2 = Math.atan2(y2 - y1, x2 - x1);
-  angle1 = (angle0 + angle2) / 2;
-  angled = angle2 - angle0;
-  if (angled > Math.PI || (angled < 0 && angled > -Math.PI)) {
-    angle1 += Math.PI;
-    angled = 2 * Math.PI - angled;
-    angle0 += Math.PI*2;
-    angle2 -= Math.PI*2;
-  } else {
-    angle0 -= Math.PI*2;
-    angle2 += Math.PI*2;
-  }
-  dc = r / Math.sin (angled / 2);
-  yc = Math.sin(angle1);
-  xc = Math.cos(angle1);
-  xc = x1 + xc * dc;
-  yc = y1 + yc * dc;
-
-  c.lineWidth = 1;
-  c.strokeStyle = 'blue';
-  c.beginPath();
-  c.moveTo(xc,yc);
-  c.arc(xc,yc,r, Math.PI*3/4, Math.PI*(3/4));
-  c.stroke();
-  c.beginPath();
-  c.strokeStyle = 'silver';
-  c.arc(xc,yc,r, Math.PI*3/4,Math.PI*(2+3/4));
-  c.stroke();
-  c.save();
-  try {
-    c.translate(xc, yc);
-    c.rotate(-Math.PI/4);
-    c.textAlign = 'center';
-    c.textBaseline = 'top';
-    c.fillText("radius", -r/2, 0);
-  } finally {
-    c.restore();
-  }
-
-  c.lineWidth = 15;
-  c.lineCap = 'round';
-  c.strokeStyle = 'rgba(20,200,40,0.8)';
-  c.beginPath();
-  c.moveTo(x0,y0);
-  c.arcTo(x1,y1,x2,y2,r);
-  c.stroke();
-
-  dot(x0,y0, "x\u2080,y\u2080");
-  dot(x1,y1, "x\u2081,y\u2081");
-  dot(x2,y2, "x\u2082,y\u2082");
-  dot(xc,yc, '');
-
-  c.textAlign = 'left';
-  c.textBaseline = 'alphabetic';
-  var L = 0;
-
-  function print(s) {
-    c.fillText(s, center, bottom+L*fontSize*1.3);
-    L += 1;
-  }
-  print('// the thick line corresponds to:');
-  print('context.moveTo(x\u2080, y\u2080)');
-  print('context.arcTo(x\u2081, y\u2081, x\u2082, y\u2082, radius)');
-  print('context.stroke()');
-
-  c.fillStyle = 'green';
-  c.fillText("\u25be initial line", 160, 70);
-  c.textAlign = 'right';
-  c.fillText("arc \u25b8", x1-25, 115);
-
-} finally {
-  c.restore();
-}
-
---></dd>
+    <figure class=diagrams><!-- if anyone wants to try writing alternative text for this, be my guest. I can't work out how to describe it. --><img alt="" src=images/arc1.png></figure></dd>
 
    <dt><var title="">context</var> . <code title=dom-context-2d-arc><a href=#dom-context-2d-arc>arc</a></code>(<var title="">x</var>, <var title="">y</var>, <var title="">radius</var>, <var title="">startAngle</var>, <var title="">endAngle</var> [, <var title="">anticlockwise</var> ] )</dt>
    <dt><var title="">path</var> . <code title=dom-context-2d-arc><a href=#dom-context-2d-arc>arc</a></code>(<var title="">x</var>, <var title="">y</var>, <var title="">radius</var>, <var title="">startAngle</var>, <var title="">endAngle</var> [, <var title="">anticlockwise</var> ] )</dt>
@@ -1989,8 +1929,7 @@ try {
     <p>Throws an <code>IndexSizeError</code> exception if the given
     radius is negative.</p>
 
-    <figure class=diagrams><!-- if anyone wants to try writing alternative text for this, be my guest. I can't work out how to describe it. --><img alt="" src=images/arc1.png></figure><!--
-
+<!--
 c.clearRect(0, 0, 640, 480);
 c.save();
 try {
@@ -1999,12 +1938,12 @@ try {
   var x = 255;
   var y = 150;
   var radius = 100;
-  var startAngle = 2.0;
-  var endAngle = 5.7;
+  var startAngle = 2.4
+  var endAngle = 0.7;
   var direction = false;
 
-  var bottom = 110;
-  var center = 380;
+  var bottom = 280;
+  var center = 50;
 
   var fontSize = 16;
   var margin = 50;
@@ -2035,10 +1974,11 @@ try {
     c.translate(x, y);
     c.rotate(eA);
     c.beginPath();
-    c.moveTo(r-arrowHead, d?arrowHead:-arrowHead);
+    c.moveTo(r-arrowHead, arrowHead);
     c.lineTo(r, 0);
-    c.lineTo(r+arrowHead, d?arrowHead:-arrowHead);
+    c.lineTo(r+arrowHead, arrowHead);
     c.stroke();
+
     c.strokeStyle = 'silver';
     c.beginPath();
     c.moveTo(0, 0);
@@ -2046,26 +1986,10 @@ try {
     c.stroke();
     c.restore();
 
+    c.textAlign = 'right';
+    c.textBaseline = 'middle';
     c.fillStyle = 'black';
-    if (eA<Math.PI) {
-      c.save();
-      c.translate(x, y);
-      c.rotate(sA+(eA-sA)/2-Math.PI/2);
-      c.translate(0, r);
-      c.rotate(-(sA+(eA-sA)/2-Math.PI/2));
-      c.beginPath();
-      c.textAlign = 'center';
-      c.textBaseline = 'bottom';
-      c.fillText(s + '  ',0,0);
-      c.restore();
-    } else {
-      c.save();
-      c.beginPath();
-      c.textAlign = 'left';
-      c.textBaseline = 'middle';
-      c.fillText(' ' + s,x-r,y);
-      c.restore();
-    }
+    c.fillText(s + ' ',x-r,y);
   }
 
   function radial(x, y, length, rotation, s) {
@@ -2079,7 +2003,7 @@ try {
     c.lineTo(length, 0);
     c.stroke();
     c.textAlign = 'center';
-    c.textBaseline = 'bottom';
+    c.textBaseline = 'top';
     c.fillStyle = 'black';
     c.fillText(s,length/2,0);
     c.restore();
@@ -2095,8 +2019,8 @@ try {
   c.arc(x, y, radius, 0, 2*Math.PI);
   c.stroke();
   // angles
-  arc(x, y, radius/10+2*radius/3, 0, startAngle, false, radius, '\u03B1');
-  arc(x, y, radius/10+radius/3, 0, endAngle, false, radius, '\u03B2');
+  arc(x, y, 2*radius/3, 0, startAngle, true, radius, '\u03B1');
+  arc(x, y, radius/3, 0, endAngle, true, radius, '\u03B2');
   // radii
   radial(x, y, radius, 0, 'radius');
 
@@ -2126,32 +2050,14 @@ try {
   print('context.stroke()');
 
   c.fillStyle = 'green';
-
-  c.textBaseline = 'top';
-  c.fillText("initial line \u25b4", x0+20, y0+fontSize*2);
-
-  c.textAlign = 'right';
-  c.textBaseline = 'middle';
-  c.fillText("arc \u25b8", x-radius-15, y);
+  c.fillText("\u25be initial line", x0, y0-fontSize);
+  c.textAlign = 'center';
+  c.fillText("\u25be arc", x, y-radius-fontSize);
 
 } finally {
   c.restore();
 }
---></dd>
-
-   <dt><var title="">context</var> . <code title=dom-context-2d-ellipse><a href=#dom-context-2d-ellipse>ellipse</a></code>(<var title="">x</var>, <var title="">y</var>, <var title="">radiusX</var>, <var title="">radiusY</var>, <var title="">rotation</var>, <var title="">startAngle</var>, <var title="">endAngle</var>, <var title="">anticlockwise</var>)</dt>
-   <dt><var title="">path</var> . <code title=dom-context-2d-ellipse><a href=#dom-context-2d-ellipse>ellipse</a></code>(<var title="">x</var>, <var title="">y</var>, <var title="">radiusX</var>, <var title="">radiusY</var>, <var title="">rotation</var>, <var title="">startAngle</var>, <var title="">endAngle</var>, <var title="">anticlockwise</var>)</dt>
-
-   <dd>
-
-    <p>Adds points to the subpath such that the arc described by the
-    circumference of the ellipse described by the arguments, starting
-    at the given start angle and ending at the given end angle, going
-    in the given direction (defaulting to clockwise), is added to the
-    path, connected to the previous point by a straight line.</p>
-
-    <p>Throws an <code>IndexSizeError</code> exception if the given
-    radius is negative.</p>
+-->
 
    </dd>
 
@@ -2229,26 +2135,24 @@ try {
   curve with control points (<var title="">cp1x</var>, <var title="">cp1y</var>) and (<var title="">cp2x</var>, <var title="">cp2y</var>). Then, it must add the point (<var title="">x</var>, <var title="">y</var>) to the subpath. <a href=#refsBEZIER>[BEZIER]</a></p>
 
   <hr><p>The <dfn id=dom-context-2d-arcto title=dom-context-2d-arcTo><code>arcTo(<var title="">x1</var>, <var title="">y1</var>, <var title="">x2</var>,
-  <var title="">y2</var>, <var title="">radiusX</var>, <var title="">radiusY</var>, <var title="">rotation</var>)</code></dfn>
+  <var title="">y2</var>, <var title="">radius</var>)</code></dfn>
   method must first <a href=#ensure-there-is-a-subpath>ensure there is a subpath</a> for <span title="">(<var title="">x1</var>, <var title="">y1</var>)</span>.
   Then, the behavior depends on the arguments and the last point in
   the subpath, as described below.</p>
 
-  <p>Negative values for <var title="">radiusX</var> or <var title="">radiusY</var> must cause the implementation to throw an
-  <code>IndexSizeError</code> exception. If <var title="">radiusY</var> is omitted, user agents must act as if it had
-  the same value as <var title="">radiusX</var>.</p>
+  <p>Negative values for <var title="">radius</var> must cause the 
+  implementation to throw an <code>IndexSizeError</code> exception.
 
-  <p>Let the point (<var title="">x0</var>, <var title="">y0</var>) be
+  </p><p>Let the point (<var title="">x0</var>, <var title="">y0</var>) be
   the last point in the subpath.</p>
 
   <p>If the point (<var title="">x0</var>, <var title="">y0</var>) is
   equal to the point (<var title="">x1</var>, <var title="">y1</var>),
   or if the point (<var title="">x1</var>, <var title="">y1</var>) is
   equal to the point (<var title="">x2</var>, <var title="">y2</var>),
-  or if both <var title="">radiusX</var> and <var title="">radiusY</var> are zero, then the method must add the point
-  (<var title="">x1</var>, <var title="">y1</var>) to the subpath, and
-  connect that point to the previous point (<var title="">x0</var>,
-  <var title="">y0</var>) by a straight line.</p>
+  or if the radius <var title="">radius</var> is zero, then the method
+  must add the point (<var title="">x1</var>, <var title="">y1</var>)
+  to the subpath, and connect that point to the previous point (<var title="">x0</var>, <var title="">y0</var>) by a straight line.</p>
 
   <p>Otherwise, if the points (<var title="">x0</var>, <var title="">y0</var>), (<var title="">x1</var>, <var title="">y1</var>), and (<var title="">x2</var>, <var title="">y2</var>) all lie on a single straight line, then the
   method must add the point (<var title="">x1</var>, <var title="">y1</var>) to the subpath, and connect that point to the
@@ -2256,14 +2160,12 @@ try {
   straight line.</p>
 
   <p>Otherwise, let <var title="">The Arc</var> be the shortest arc
-  given by circumference of the ellipse that has radius <var title="">radiusX</var> on the major axis and radius <var title="">radiusY</var> on the minor axis, and whose semi-major axis
-  is rotated <var title="">rotation</var> radians clockwise from the
-  positive x-axis, and that has one point tangent to the half-infinite
-  line that crosses the point (<var title="">x0</var>, <var title="">y0</var>) and ends at the point (<var title="">x1</var>,
-  <var title="">y1</var>), and that has a different point tangent to
-  the half-infinite line that ends at the point (<var title="">x1</var>, <var title="">y1</var>) and crosses the point
+  given by circumference of the circle that has radius <var title="">radius</var> and that has one point tangent to the
+  half-infinite line that crosses the point (<var title="">x0</var>,
+  <var title="">y0</var>) and ends at the point (<var title="">x1</var>, <var title="">y1</var>), and that has a different
+  point tangent to the half-infinite line that ends at the point (<var title="">x1</var>, <var title="">y1</var>) and crosses the point
   (<var title="">x2</var>, <var title="">y2</var>). The points at
-  which this ellipse touches these two lines are called the start and
+  which this circle touches these two lines are called the start and
   end tangent points respectively. The method must connect the point
   (<var title="">x0</var>, <var title="">y0</var>) to the start
   tangent point by a straight line, adding the start tangent point to
@@ -2272,49 +2174,39 @@ try {
   tangent point to the subpath.</p>
 
   <hr><p>The <dfn id=dom-context-2d-arc title=dom-context-2d-arc><code>arc(<var title="">x</var>, <var title="">y</var>, <var title="">radius</var>,
-  <var title="">startAngle</var>, <var title="">endAngle</var>, <var title="">anticlockwise</var>)</code></dfn> and <dfn id=dom-context-2d-ellipse title=dom-context-2d-ellipse><code>ellipse(<var title="">x</var>,
-  <var title="">y</var>, <var title="">radiusX</var>, <var title="">radiusY</var>, <var title="">rotation</var>, <var title="">startAngle</var>, <var title="">endAngle</var>, <var title="">anticlockwise</var>)</code></dfn> methods draw arcs.</p>
-
-  <p>The <code title=dom-context-2d-arc><a href=#dom-context-2d-arc>arc()</a></code> method is
-  equivalent to the <code title=dom-context-2d-ellipse><a href=#dom-context-2d-ellipse>ellipse()</a></code> method in the case
-  where the two radii are equal. When the <code title=dom-context-2d-arc><a href=#dom-context-2d-arc>arc()</a></code> method is invoked, it must
-  act as if the <code title=dom-context-2d-ellipse><a href=#dom-context-2d-ellipse>ellipse()</a></code>
-  method had been invoked with the <var title="">radiusX</var> and
-  <var title="">radiusY</var> arguments set to the value of the <var title="">radius</var> argument, the <var title="">rotation</var>
-  argument set to zero, and the other arguments set to the same values
-  as their identically named arguments on the <code title=dom-context-2d-arc><a href=#dom-context-2d-arc>arc()</a></code> method.</p>
-
-  <p>When the <code title=dom-context-2d-ellipse><a href=#dom-context-2d-ellipse>ellipse()</a></code>
-  method is invoked, it must proceed as follows. First, if the
-  object's path has any subpaths, then the method must add a straight
-  line from the last point in the subpath to the start point of the
-  arc. Then, it must add the start and end points of the arc to the
-  subpath, and connect them with an arc. The arc and its start and end
+  <var title="">startAngle</var>, <var title="">endAngle</var>, <var title="">anticlockwise</var>)</code></dfn> method draws an arc. If
+  the object's path has any subpaths, then the method must add a
+  straight line from the last point in the subpath to the start point
+  of the arc. In any case, it must draw the arc between the start
+  point of the arc and the end point of the arc, and add the start and
+  end points of the arc to the subpath. The arc and its start and end
   points are defined as follows:</p>
 
-  <p>Consider an ellipse that has its origin at (<var title="">x</var>, <var title="">y</var>), that has a major-axis
-  radius <var title="">radiusX</var> and a minor-axis radius <var title="">radiusY</var>, and that is rotated about its origin such
-  that its semi-major axis is inclined <var title="">rotation</var>
-  radians clockwise from the x-axis. The points at <var title="">startAngle</var> and <var title="">endAngle</var> along
-  this circle's circumference, measured in radians clockwise from the
-  ellipse's semi-major axis, are the start and end points
-  respectively.</p>
+  <p>Consider a circle that has its origin at (<var title="">x</var>,
+  <var title="">y</var>) and that has radius <var title="">radius</var>. The points at <var title="">startAngle</var>
+  and <var title="">endAngle</var> along this circle's circumference,
+  measured in radians clockwise from the positive x-axis, are the
+  start and end points respectively.</p>
 
-  <p>If the <var title="">anticlockwise</var> argument false and <span title=""><var title="">endAngle</var>-<var title="">startAngle</var></span> is equal to or greater than <span title="">2π</span>, or, if the <var title="">anticlockwise</var>
+  <p>If the <var title="">anticlockwise</var> argument is omitted or
+  false and <span title=""><var title="">endAngle</var>-<var title="">startAngle</var></span> is equal to or greater than <span title="">2π</span>, or, if the <var title="">anticlockwise</var>
   argument is <em>true</em> and <span title=""><var title="">startAngle</var>-<var title="">endAngle</var></span> is
   equal to or greater than <span title="">2π</span>, then the arc
-  is the whole circumference of this ellipse.</p>
+  is the whole circumference of this circle.</p>
 
   <p>Otherwise, the arc is the path along the circumference of this
-  ellipse from the start point to the end point, going anti-clockwise
+  circle from the start point to the end point, going anti-clockwise
   if the <var title="">anticlockwise</var> argument is true, and
-  clockwise otherwise. Since the points are on the ellipse, as opposed
+  clockwise otherwise. Since the points are on the circle, as opposed
   to being simply angles from zero, the arc can never cover an angle
-  greater than <span title="">2π</span> radians.</p>
+  greater than <span title="">2π</span> radians. If the two points
+  are the same, or if the radius is zero, then the arc is defined as
+  being of zero length in both directions.</p>
 
-  <p>Negative values for <var title="">radiusX</var> or <var title="">radiusY</var> must cause the implementation to throw an
-  <code>IndexSizeError</code> exception.</p>
-
+  <p>Negative values for <var title="">radius</var> must cause the
+  implementation to throw an <code>IndexSizeError</code>
+  exception.</p>
+  
   <hr><p>The <dfn id=dom-context-2d-rect title=dom-context-2d-rect><code>rect(<var title="">x</var>, <var title="">y</var>, <var title="">w</var>, <var title="">h</var>)</code></dfn> method must create a new subpath
   containing just the four points (<var title="">x</var>, <var title="">y</var>), (<var title="">x</var>+<var title="">w</var>,
   <var title="">y</var>), (<var title="">x</var>+<var title="">w</var>, <var title="">y</var>+<var title="">h</var>),
@@ -2348,25 +2240,9 @@ try {
 
    </dd>
 
-   <dt><var title="">path</var> = new <code title=dom-Path-copy><a href=#dom-path-copy>Path</a></code>(<var title="">path</var>)</dt>
-
-   <dd>
-
-    <p>Creates a new <code><a href=#path>Path</a></code> object that is a copy of the argument.</p>
-
-   </dd>
-
-   <dt><var title="">path</var> = new <code title=dom-Path-withdata><a href=#dom-path-withdata>Path</a></code>(<var title="">d</var>)</dt>
-
-   <dd>
-
-    <p>Creates a new path with the path described by the argument, interpreted as SVG path data. <a href=#refsSVG>[SVG]</a></p>
-
-   </dd>
-
    <dt><var title="">path</var> . <code title=dom-path-addPath><a href=#dom-path-addpath>addPath</a></code>(<var title="">path</var>, <var title="">transform</var>)</dt>
-   <dt><var title="">path</var> . <code title=dom-path-addPathByStrokingPath><a href=#dom-path-addpathbystrokingpath>addPathByStrokingPath</a></code>(<var title="">path</var>, <var title="">styles</var>, <var title="">transform</var>)</dt>
-
+<!-- per Frank Oliver, issue 201 --> <!--   <dt><var title="">path</var> . <code title="dom-path-addPathByStrokingPath">addPathByStrokingPath</code>(<var title="">path</var>, <var title="">styles</var>, <var title="">transform</var>)</dt>
+-->
    <dd>
 
     <p>Adds to the path the path given by the argument.</p>
@@ -2374,12 +2250,12 @@ try {
     <p>In the case of the stroking variants, the line styles are taken from the <var title="">styles</var> argument, which can be either a <code><a href=#drawingstyle>DrawingStyle</a></code> object or a <code><a href=#canvasrenderingcontext2d>CanvasRenderingContext2D</a></code> object.</p>
 
    </dd>
-
-   <dt><var title="">path</var> . <code title=dom-path-addText><a href=#dom-path-addtext>addText</a></code>(<var title="">text</var>, <var title="">styles</var>, <var title="">transform</var>, <var title="">x</var>, <var title="">y</var> [, <var title="">maxWidth</var> ])</dt>
-   <dt><var title="">path</var> . <code title=dom-path-addText><a href=#dom-path-addtext>addText</a></code>(<var title="">text</var>, <var title="">styles</var>, <var title="">transform</var>, <var title="">path</var> [, <var title="">maxWidth</var> ])</dt>
-   <dt><var title="">path</var> . <code title=dom-path-addPathByStrokingText><a href=#dom-path-addpathbystrokingtext>addPathByStrokingText</a></code>(<var title="">text</var>, <var title="">styles</var>, <var title="">transform</var>, <var title="">x</var>, <var title="">y</var> [, <var title="">maxWidth</var> ])</dt>
-   <dt><var title="">path</var> . <code title=dom-path-addPathByStrokingText><a href=#dom-path-addpathbystrokingtext>addPathByStrokingText</a></code>(<var title="">text</var>, <var title="">styles</var>, <var title="">transform</var>, <var title="">path</var> [, <var title="">maxWidth</var> ])</dt>
-
+<!-- per Frank Oliver, issue 201 --><!--
+   <dt><var title="">path</var> . <code title="dom-path-addText">addText</code>(<var title="">text</var>, <var title="">styles</var>, <var title="">transform</var>, <var title="">x</var>, <var title="">y</var> [, <var title="">maxWidth</var> ])</dt>
+   <dt><var title="">path</var> . <code title="dom-path-addText">addText</code>(<var title="">text</var>, <var title="">styles</var>, <var title="">transform</var>, <var title="">path</var> [, <var title="">maxWidth</var> ])</dt>
+   <dt><var title="">path</var> . <code title="dom-path-addPathByStrokingText">addPathByStrokingText</code>(<var title="">text</var>, <var title="">styles</var>, <var title="">transform</var>, <var title="">x</var>, <var title="">y</var> [, <var title="">maxWidth</var> ])</dt>
+   <dt><var title="">path</var> . <code title="dom-path-addPathByStrokingText">addPathByStrokingText</code>(<var title="">text</var>, <var title="">styles</var>, <var title="">transform</var>, <var title="">path</var> [, <var title="">maxWidth</var> ])</dt>
+-->
    <dd>
 
     <p>Adds to the path a series of subpaths corresponding to the given text. If the arguments give a coordinate, the text is drawn horizontally at the given coordinates. If the arguments give a path, the text is drawn along the path. If a maximum width is provided, the text will be scaled to fit that width if necessary.</p>
@@ -2394,40 +2270,7 @@ try {
   when invoked, must return a newly created <code><a href=#path>Path</a></code>
   object.</p>
 
-  <hr><p>The <dfn id=dom-path-copy title=dom-Path-copy><code>Path()</code></dfn>
-  constructor, when invoked, must return a newly created
-  <code><a href=#path>Path</a></code> object, to which the subpaths of the argument are
-  added. (In other words, it returns a copy of the argument.)</p>
-
-  <hr><p>The <dfn id=dom-path-withdata title=dom-Path-withdata><code>Path(<var title="">d</var>)</code></dfn> constructor must run the following
-  steps:</p>
-
-  <ol><li>
-
-    <p>Parse and interpret the <var title="">d</var> argument
-    according to the SVG specification's rules for path data, thus
-    obtaining an SVG path. <a href=#refsSVG>[SVG]</a></p>
-
-    <p class=note>The resulting path could be empty. SVG defines
-    error handling rules for parsing and applying path data.</p>
-
-   </li>
-
-   <li><p>Let (<var title="">x</var>, <var title="">y</var>) be the
-   last point in the SVG path.</p></li>
-
-   <li><p>Create a new <code><a href=#path>Path</a></code> object and add all the
-   subpaths in the SVG path, if any, to that <code><a href=#path>Path</a></code> object.
-   </p>
-
-   </li><li><p>Create a new subpath in the <code><a href=#path>Path</a></code> object with
-   (<var title="">x</var>, <var title="">y</var>) as the only point in
-   the subpath.</p></li>
-
-   <li><p>Return the <code><a href=#path>Path</a></code> object as the constructed
-   object.</p></li>
-
-  </ol><hr><p>The <dfn id=dom-path-addpath title=dom-path-addPath><code>addPath(<var title="">b</var>, <var title="">transform</var>)</code></dfn>
+  <hr><p>The <dfn id=dom-path-addpath title=dom-path-addPath><code>addPath(<var title="">b</var>, <var title="">transform</var>)</code></dfn>
   method, when invoked on a <code><a href=#path>Path</a></code> object <var title="">a</var>, must run the following steps:</p>
 
   <ol><li><p>If the <code><a href=#path>Path</a></code> object <var title="">b</var> has
@@ -2446,94 +2289,130 @@ try {
    <li><p>Create a new subpath in <var title="">a</var> with (<var title="">x</var>, <var title="">y</var>) as the only point in the
    subpath.</p></li>
 
-  </ol><hr><p>The <dfn id=dom-path-addpathbystrokingpath title=dom-path-addPathByStrokingPath><code>addPathByStrokingPath(<var title="">b</var>, <var title="">styles</var>, <var title="">transform</var>)</code></dfn> method, when invoked on a
-  <code><a href=#path>Path</a></code> object <var title="">a</var>, must run the
+  </ol><hr><!-- per Frank Oliver, issue 201 --><!--
+  <p>The <dfn
+  title="dom-path-addPathByStrokingPath"><code>addPathByStrokingPath(<var
+  title="">b</var>, <var title="">styles</var>, <var
+  title="">transform</var>)</code></dfn> method, when invoked on a
+  <code>Path</code> object <var title="">a</var>, must run the
   following steps:</p>
 
-  <ol><li><p>If the <code><a href=#path>Path</a></code> object <var title="">b</var> has
+  <ol>
+
+   <li><p>If the <code>Path</code> object <var title="">b</var> has
    no subpaths, abort these steps.</p></li>
 
    <li><p>Create a copy of all the subpaths in <var title="">b</var>.
    Let this copy be known as <var title="">c</var>.</p></li>
 
-   <li><p>Transform all the coordinates and lines in <var title="">c</var> by transformation matrix <var title="">transform</var>, if it is not null.</p></li>
+   <li><p>Transform all the coordinates and lines in <var
+   title="">c</var> by transformation matrix <var
+   title="">transform</var>, if it is not null.</p></li>
 
    <li><p>Let a new list of subpaths <var title="">d</var> be the
-   result of <a href=#trace-a-path title="trace a path">tracing</a> <var title="">c</var>, using the <var title="">styles</var> argument for
+   result of <span title="trace a path">tracing</span> <var
+   title="">c</var>, using the <var title="">styles</var> argument for
    the line styles.</p>
 
-   </li><li><p>Let (<var title="">x</var>, <var title="">y</var>) be the
+   <li><p>Let (<var title="">x</var>, <var title="">y</var>) be the
    last point in the last subpath of <var title="">d</var>.</p></li>
 
-   <li><p>Add all the subpaths in <var title="">d</var> to <var title="">a</var>.</p></li>
+   <li><p>Add all the subpaths in <var title="">d</var> to <var
+   title="">a</var>.</p></li>
 
-   <li><p>Create a new subpath in <var title="">a</var> with (<var title="">x</var>, <var title="">y</var>) as the only point in the
+   <li><p>Create a new subpath in <var title="">a</var> with (<var
+   title="">x</var>, <var title="">y</var>) as the only point in the
    subpath.</p></li>
 
-  </ol><hr><p>The <dfn id=dom-path-addtext title=dom-path-addText><code>addText()</code></dfn>
-  and <dfn id=dom-path-addpathbystrokingtext title=dom-path-addPathByStrokingText><code>addPathByStrokingText()</code></dfn>
+  </ol>
+
+  <hr>
+
+  <p>The <dfn title="dom-path-addText"><code>addText()</code></dfn>
+  and <dfn
+  title="dom-path-addPathByStrokingText"><code>addPathByStrokingText()</code></dfn>
   methods each come in two variants: one rendering text at a given
   coordinate, and one rendering text along a given path. In both
-  cases, the methods take a <code><a href=#canvasdrawingstyles>CanvasDrawingStyles</a></code> object
+  cases, the methods take a <code>CanvasDrawingStyles</code> object
   argument for the text and (if appropriate) line styles to use, an
   <code>SVGMatrix</code> object <var title="">transform</var> (which
   can be null), and a maximum width can optionally be provided.</p>
 
-  <p>When one of the <code title=dom-path-addText><a href=#dom-path-addtext>addText()</a></code> and <code title=dom-path-addPathByStrokingText><a href=#dom-path-addpathbystrokingtext>addPathByStrokingText()</a></code> variants
-  that take as argument an (<var title="">x</var>, <var title="">y</var>) coordinate is invoked, the method must run the
+  <p>When one of the <code
+  title="dom-path-addText">addText()</code> and <code
+  title="dom-path-addPathByStrokingText">addPathByStrokingText()</code> variants
+  that take as argument an (<var title="">x</var>, <var
+  title="">y</var>) coordinate is invoked, the method must run the
   following algorithm:</p>
 
-  <ol><li><p>Run the <a href=#text-preparation-algorithm>text preparation algorithm</a>, passing it
-   <var title="">text</var>, the <code><a href=#canvasdrawingstyles>CanvasDrawingStyles</a></code>
+  <ol>
+
+   <li><p>Run the <span>text preparation algorithm</span>, passing it
+   <var title="">text</var>, the <code>CanvasDrawingStyles</code>
    object argument, and, if the <var title="">maxWidth</var> argument
    was provided, that argument. Let <var title="">glyphs</var> be the
    result.</p>
 
-   </li><li><p>Move all the shapes in <var title="">glyphs</var> to the
-   right by <var title="">x</var> CSS pixels and down by <var title="">y</var> CSS pixels.</p></li>
+   <li><p>Move all the shapes in <var title="">glyphs</var> to the
+   right by <var title="">x</var> CSS pixels and down by <var
+   title="">y</var> CSS pixels.</p></li>
 
    <li><p>Let <var title="">glyph subpaths</var> be a
-   <a href=#path>path</a> describing the shapes given in <var title="">glyphs</var>, with each CSS pixel in the coordinate space
+   <span>path</span> describing the shapes given in <var
+   title="">glyphs</var>, with each CSS pixel in the coordinate space
    of <var title="">glyphs</var> mapped to one coordinate space unit
-   in <var title="">glyph subpaths</var>. Subpaths in <var title="">glyph subpaths</var> must wind clockwise, regardless of
+   in <var title="">glyph subpaths</var>. Subpaths in <var
+   title="">glyph subpaths</var> must wind clockwise, regardless of
    how the user agent's font subsystem renders fonts and regardless of
    how the fonts themselves are defined.</p>
 
-   </li><li><p>If the method is <code title=dom-path-addPathByStrokingText><a href=#dom-path-addpathbystrokingtext>addPathByStrokingText()</a></code>,
-   replace <var title="">glyph subpaths</var> by the result of <a href=#trace-a-path title="trace a path">tracing</a> <var title="">glyph
-   subpaths</var>, using the <code><a href=#canvasdrawingstyles>CanvasDrawingStyles</a></code> object
+   <li><p>If the method is <code
+   title="dom-path-addPathByStrokingText">addPathByStrokingText()</code>,
+   replace <var title="">glyph subpaths</var> by the result of <span
+   title="trace a path">tracing</span> <var title="">glyph
+   subpaths</var>, using the <code>CanvasDrawingStyles</code> object
    argument for the line styles.</p>
 
-   </li><li><p>Transform all the coordinates and lines in <var title="">glyph subpaths</var> by the transformation matrix <var title="">transform</var>, if it is not null.</p></li>
+   <li><p>Transform all the coordinates and lines in <var
+   title="">glyph subpaths</var> by the transformation matrix <var
+   title="">transform</var>, if it is not null.</p></li>
 
-   <li><p>Let (<var title="">x<sub title="">final</sub></var>, <var title="">y<sub title="">final</sub></var>) be the last point in the
+   <li><p>Let (<var title="">x<sub title="">final</sub></var>, <var
+   title="">y<sub title="">final</sub></var>) be the last point in the
    last subpath of <var title="">glyph subpaths</var>.</p></li>
 
    <li><p>Add all the subpaths in <var title="">glyph
-   subpaths</var> to the <code><a href=#path>Path</a></code> object.</p></li>
+   subpaths</var> to the <code>Path</code> object.</p></li>
 
-   <li><p>Create a new subpath in the <code><a href=#path>Path</a></code> object with
-   (<var title="">x<sub title="">final</sub></var>, <var title="">y<sub title="">final</sub></var>) as the only point in the
+   <li><p>Create a new subpath in the <code>Path</code> object with
+   (<var title="">x<sub title="">final</sub></var>, <var
+   title="">y<sub title="">final</sub></var>) as the only point in the
    subpath.</p></li>
 
-  </ol><p>When one of the <code title=dom-path-addText><a href=#dom-path-addtext>addText()</a></code> and <code title=dom-path-addPathByStrokingText><a href=#dom-path-addpathbystrokingtext>addPathByStrokingText()</a></code>
-  variants that take as argument a <code><a href=#path>Path</a></code> object is
+  </ol>
+
+  <p>When one of the <code
+  title="dom-path-addText">addText()</code> and <code
+  title="dom-path-addPathByStrokingText">addPathByStrokingText()</code>
+  variants that take as argument a <code>Path</code> object is
   invoked, the method must run the following algorithm:</p>
 
-  <ol><li><p>Let <var title="">target</var> be the <code><a href=#path>Path</a></code>
+  <ol>
+
+   <li><p>Let <var title="">target</var> be the <code>Path</code>
    object on which the method was invoked.</p></li>
 
-   <li><p>Let <var title="">path</var> be the <code><a href=#path>Path</a></code> object
+   <li><p>Let <var title="">path</var> be the <code>Path</code> object
    that was provided in the method's arguments.</p></li>
 
-   <li><p>Run the <a href=#text-preparation-algorithm>text preparation algorithm</a>, passing it
-   <var title="">text</var>, the <code><a href=#canvasdrawingstyles>CanvasDrawingStyles</a></code>
+   <li><p>Run the <span>text preparation algorithm</span>, passing it
+   <var title="">text</var>, the <code>CanvasDrawingStyles</code>
    object argument, and, if the <var title="">maxWidth</var> argument
    was provided, that argument. Let <var title="">glyphs</var> be the
    resulting array, and <var title="">physical alignment</var> be the
    resulting alignment value.</p>
 
-   </li><li><p>Let <var title="">width</var> be the aggregate length of all
+   <li><p>Let <var title="">width</var> be the aggregate length of all
    the subpaths in <var title="">path</var>, including the distances
    from the last point of each closed subpath to the first point of
    that subpath.</p></li>
@@ -2552,7 +2431,9 @@ try {
     <p>Let <var title="">offset</var> be determined according to the
     appropriate step below:</p>
 
-    <dl class=switch><dt>If <var title="">physical alignment</var> is <i>left</i></dt>
+    <dl class="switch">
+
+     <dt>If <var title="">physical alignment</var> is <i>left</i></dt>
      <dd>Let <var title="">offset</var> be zero.</dd>
 
      <dt>If <var title="">physical alignment</var> is <i>right</i></dt>
@@ -2561,28 +2442,34 @@ try {
      <dt>If <var title="">physical alignment</var> is <i title="">center</i></dt>
      <dd>Let <var title="">offset</var> be half of <var title="">width</var>.</dd>
 
-    </dl></li>
+    </dl>
+
+   </li>
 
    <li><p>Move all the shapes in <var title="">glyphs</var> to the
    right by <var title="">offset</var> CSS pixels.</p></li>
 
    <li>
 
-    <p>For each glyph <var title="">glyph</var> in the <var title="">glyphs</var> array, run these substeps:</p>
+    <p>For each glyph <var title="">glyph</var> in the <var
+    title="">glyphs</var> array, run these substeps:</p>
 
-    <ol><li><p>Let <var title="">dx</var> be the <var title="">x</var>-coordinate of the horizontal center of the
-     bounding box of the shape described by <var title="">glyph</var>, in CSS pixels.</p></li>
+    <ol>
 
-     <li><p>If <var title="">dx</var> is negative or greater than <var title="">width</var>, skip the remainder of these substeps for
+     <li><p>Let <var title="">dx</var> be the <var
+     title="">x</var>-coordinate of the horizontal center of the
+     bounding box of the shape described by <var
+     title="">glyph</var>, in CSS pixels.</p></li>
+
+     <li><p>If <var title="">dx</var> is negative or greater than <var
+     title="">width</var>, skip the remainder of these substeps for
      this glyph.</p></li>
 
      <li><p>Recast <var title="">dx</var> to coordinate spaces units
      in <var title="">path</var>. (This just changes the
      dimensionality of <var title="">dx</var>, not its numeric
      value.)</p> <!-- hide this step if people get confused by the
-     pedancy -->
-
-     </li><li><p>Find the point <var title="">p</var> on <var title="">path</var> (or implied closing lines in <var title="">path</var>) that corresponds to the position <var title="">dx</var> on the coordinate line <var title="">L</var>.</p>
+     pedancy --><li><p>Find the point <var title="">p</var> on <var title="">path</var> (or implied closing lines in <var title="">path</var>) that corresponds to the position <var title="">dx</var> on the coordinate line <var title="">L</var>.</p>
 
      </li><li><p>Let <var title="">θ</var> be the clockwise angle
      from the positive x-axis to the side of the line that is
@@ -2607,8 +2494,8 @@ try {
      agent's font subsystem renders fonts and regardless of how the
      fonts themselves are defined.</p>
 
-     </li><li><p>If the method is <code title=dom-path-addPathByStrokingText><a href=#dom-path-addpathbystrokingtext>addPathByStrokingText()</a></code>,
-     replace <var title="">glyph subpaths</var> by the result of <a href=#trace-a-path title="trace a path">tracing</a> <var title="">glyph
+     </li><li><p>If the method is <code title=dom-path-addPathByStrokingText>addPathByStrokingText()</code>,
+     replace <var title="">glyph subpaths</var> by the result of <span title="trace a path">tracing</span> <var title="">glyph
      subpaths</var>, using the <code><a href=#canvasdrawingstyles>CanvasDrawingStyles</a></code> object
      argument for the line styles.</p>
 
@@ -2622,13 +2509,17 @@ try {
      <li><p>Add all the subpaths in <var title="">glyph subpaths</var>
      to <var title="">target</var>.</p></li>
 
-    </ol></li>
+    
+
+   
 
    <li><p>Create a new subpath in the <code><a href=#path>Path</a></code> object with
    (<var title="">x<sub title="">final</sub></var>, <var title="">y<sub title="">final</sub></var>) as the only point in the
    subpath.</p></li>
 
-  </ol></div>
+  
+--&gt;<!-- per Frank Oliver, issue 201 -->
+  </div>
 
 
 
@@ -2950,9 +2841,6 @@ try {
     linear gradient that paints along the line given by the
     coordinates represented by the arguments.</p>
 
-    <p>If any of the arguments are not finite numbers, throws a
-    <code>NotSupportedError</code> exception.</p>
-
    </dd>
 
    <dt><var title="">gradient</var> = <var title="">context</var> . <code title=dom-context-2d-createRadialGradient><a href=#dom-context-2d-createradialgradient>createRadialGradient</a></code>(<var title="">x0</var>, <var title="">y0</var>, <var title="">r0</var>, <var title="">x1</var>, <var title="">y1</var>, <var title="">r1</var>)</dt>
@@ -2963,9 +2851,8 @@ try {
     radial gradient that paints along the cone given by the circles
     represented by the arguments.</p>
 
-    <p>If any of the arguments are not finite numbers, throws a
-    <code>NotSupportedError</code> exception. If either of the radii
-    are negative, throws an <code>IndexSizeError</code> exception.</p>
+    <p>If either of the radii are negative, throws an
+    <code>IndexSizeError</code> exception.</p>
 
    </dd>
 
@@ -2982,27 +2869,23 @@ try {
 
   <p>The <dfn id=dom-canvasgradient-addcolorstop title=dom-canvasgradient-addColorStop><code>addColorStop(<var title="">offset</var>, <var title="">color</var>)</code></dfn>
   method on the <code><a href=#canvasgradient>CanvasGradient</a></code> interface adds a new stop
-  to a gradient. If the <var title="">offset</var> is less than 0,
-  greater than 1, infinite, or NaN, then an
-  <code>IndexSizeError</code> exception must be thrown. If the <var title="">color</var> cannot be <span>parsed as a CSS &lt;color&gt;
-  value</span>, then a <code>SyntaxError</code> exception must be
-  thrown. Otherwise, the gradient must have a new stop placed, at
-  offset <var title="">offset</var> relative to the whole gradient,
-  and with the color obtained by parsing <var title="">color</var> as
-  a CSS &lt;color&gt; value. If multiple stops are added at the same
-  offset on a gradient, they must be placed in the order added, with
-  the first one closest to the start of the gradient, and each
-  subsequent one infinitesimally further along towards the end point
-  (in effect causing all but the first and last stop added at each
-  point to be ignored).</p>
+  to a gradient. If the <var title="">offset</var> is less than 0 or
+  greater than 1 then an <code>IndexSizeError</code> exception must be
+  thrown. If the <var title="">color</var> cannot be <span>parsed as a
+  CSS &lt;color&gt; value</span>, then a <code>SyntaxError</code>
+  exception must be thrown. Otherwise, the gradient must have a new
+  stop placed, at offset <var title="">offset</var> relative to the
+  whole gradient, and with the color obtained by parsing <var title="">color</var> as a CSS &lt;color&gt; value. If multiple stops
+  are added at the same offset on a gradient, they must be placed in
+  the order added, with the first one closest to the start of the
+  gradient, and each subsequent one infinitesimally further along
+  towards the end point (in effect causing all but the first and last
+  stop added at each point to be ignored).</p>
 
   <p>The <dfn id=dom-context-2d-createlineargradient title=dom-context-2d-createLinearGradient><code>createLinearGradient(<var title="">x0</var>, <var title="">y0</var>, <var title="">x1</var>,
   <var title="">y1</var>)</code></dfn> method takes four arguments
-  that represent the start point (<var title="">x0</var>, <var title="">y0</var>) and end point (<var title="">x1</var>, <var title="">y1</var>) of the gradient. If any of the arguments to <code title=dom-context-2d-createLinearGradient><a href=#dom-context-2d-createlineargradient>createLinearGradient()</a></code>
-  are infinite or NaN, the method must throw a
-  <code>NotSupportedError</code> exception. Otherwise, the method must
-  return a linear <code><a href=#canvasgradient>CanvasGradient</a></code> initialized with the
-  specified line.</p>
+  that represent the start point (<var title="">x0</var>, <var title="">y0</var>) and end point (<var title="">x1</var>, <var title="">y1</var>) of the gradient. The method must return a linear
+  <code><a href=#canvasgradient>CanvasGradient</a></code> initialized with the specified line.</p>
 
   <p>Linear gradients must be rendered such that all points on a line
   perpendicular to the line that crosses the start and end points have
@@ -3020,12 +2903,11 @@ try {
   first three representing the start circle with origin (<var title="">x0</var>, <var title="">y0</var>) and radius <var title="">r0</var>, and the last three representing the end circle
   with origin (<var title="">x1</var>, <var title="">y1</var>) and
   radius <var title="">r1</var>. The values are in coordinate space
-  units. If any of the arguments are infinite or NaN, a
-  <code>NotSupportedError</code> exception must be thrown. If either
-  of <var title="">r0</var> or <var title="">r1</var> are negative, an
-  <code>IndexSizeError</code> exception must be thrown. Otherwise,
-  the method must return a radial <code><a href=#canvasgradient>CanvasGradient</a></code>
-  initialized with the two specified circles.</p>
+  units. If either of <var title="">r0</var> or <var title="">r1</var>
+  are negative, an <code>IndexSizeError</code> exception must be
+  thrown. Otherwise, the method must return a radial
+  <code><a href=#canvasgradient>CanvasGradient</a></code> initialized with the two specified
+  circles.</p>
 
   <p>Radial gradients must be rendered by following these steps:</p>
 
@@ -3126,9 +3008,22 @@ try {
   exception.</p>
   <!-- drawImage() has an equivalent paragraph -->
 
-  <p>Patterns have a transformation matrix, which controls how the
-  pattern is used when it is painted. Initially, a pattern's
-  transformation matrix must be the identity transform.</p>
+  <p>Patterns must be painted so that the top left of the first image
+  is anchored at the origin of the coordinate space, and images are
+  then repeated horizontally to the left and right, if the
+  <code>repeat-x</code> string was specified, or vertically up and
+  down, if the <code>repeat-y</code> string was specified, or in all
+  four directions all over the canvas, if the <code>repeat</code>
+  string was specified, to create the repeated pattern that is used
+  for rendering. The images are not scaled by this process; one CSS
+  pixel of the image must be painted on one coordinate space unit in
+  generating the repeated pattern. When rendered, however, patterns
+  must actually be painted only where the stroking or filling effect
+  requires that they be drawn, and the repeated pattern must be
+  affected by the <a href=#transformations title=dom-context-2d-transformation>current
+  transformation matrix</a>. Pixels not covered by the repeating
+  pattern (if the <code>repeat</code> string was not specified) must
+  be transparent black.</p>
 
   <p>When the <dfn id=dom-canvaspattern-settransform title=dom-canvaspattern-setTransform><code>setTransform()</code></dfn>
   method is invoked on the pattern, the user agent must replace the
@@ -3265,9 +3160,9 @@ try {
 
   <p>The <dfn id=dom-context-2d-clearrect title=dom-context-2d-clearRect><code>clearRect(<var title="">x</var>, <var title="">y</var>, <var title="">w</var>, <var title="">h</var>)</code></dfn> method must run the following steps:</p>
 
-  <ol><li><p>Let <var title="">pixels</var> be the set of pixels in the
-   specified rectangle that also intersect the current <a href=#clipping-region>clipping
-   region</a>.</p></li>
+  <ol><li><p>Let <var title="">pixels</var> be the set of pixels in
+   the specified rectangle that also intersect the current clipping
+   region.</p></li>
 
    <li><p>Clear the pixels in <var title="">pixels</var> to a fully
    transparent black, erasing any previous image.</p></li>
@@ -3281,13 +3176,13 @@ try {
   rectangular area using the <code title=dom-context-2d-fillStyle><a href=#dom-context-2d-fillstyle>fillStyle</a></code>. If either height
   or width are zero, this method has no effect.</p>
 
-  <p>The <dfn id=dom-context-2d-strokerect title=dom-context-2d-strokeRect><code>strokeRect(<var title="">x</var>, <var title="">y</var>, <var title="">w</var>, <var title="">h</var>)</code></dfn> method must take the result of <a href=#trace-a-path title="trace a path">tracing the path</a> described below, using
+  <p>The <dfn id=dom-context-2d-strokerect title=dom-context-2d-strokeRect><code>strokeRect(<var title="">x</var>, <var title="">y</var>, <var title="">w</var>, <var title="">h</var>)</code></dfn> method must take the result of <span title="trace a path">tracing the path</span> described below, using
   the <code><a href=#canvasrenderingcontext2d>CanvasRenderingContext2D</a></code> object's line styles, and
   fill it with the <code title=dom-context-2d-strokeStyle><a href=#dom-context-2d-strokestyle>strokeStyle</a></code>.</p>
 
   <p>If both <var title="">w</var> and <var title="">h</var> are zero,
   the path has a single subpath with just one point (<var title="">x</var>, <var title="">y</var>), and no lines, and this
-  method thus has no effect (the <a href=#trace-a-path>trace a path</a> algorithm
+  method thus has no effect (the <span>trace a path</span> algorithm
   returns an empty path in that case).</p>
 
   <p>If just one of either <var title="">w</var> or <var title="">h</var> is zero, then the path has a single subpath
@@ -3375,8 +3270,8 @@ try {
     applied to the shapes and <code title=dom-context-2d-strokeStyle><a href=#dom-context-2d-strokestyle>strokeStyle</a></code> must be
     ignored. For <code title=dom-context-2d-strokeText><a href=#dom-context-2d-stroketext>strokeText()</a></code>, the reverse
     holds: <code title=dom-context-2d-strokeStyle><a href=#dom-context-2d-strokestyle>strokeStyle</a></code>
-    must be applied to the result of <a href=#trace-a-path title="trace a
-    path">tracing</a> the shapes using the
+    must be applied to the result of <span title="trace a
+    path">tracing</span> the shapes using the
     <code><a href=#canvasrenderingcontext2d>CanvasRenderingContext2D</a></code> object for the line styles,
     and <code title=dom-context-2d-fillStyle><a href=#dom-context-2d-fillstyle>fillStyle</a></code> must
     be ignored.</p>
@@ -3785,12 +3680,12 @@ v6DVT (also check for '- -' bits in the part above) --><p>The <dfn id=dom-contex
   once.</p>
 
   <p>The <dfn id=dom-context-2d-stroke title=dom-context-2d-stroke><code>stroke()</code></dfn> method
-  must <a href=#trace-a-path title="trace a path">trace</a> the intended path,
+  must <span title="trace a path">trace</span> the intended path,
   using the <code><a href=#canvasrenderingcontext2d>CanvasRenderingContext2D</a></code> object for the line
   styles, and then fill the combined stroke area using the <code title=dom-context-2d-strokeStyle><a href=#dom-context-2d-strokestyle>strokeStyle</a></code> attribute.</p>
 
-  <p class=note>As a result of how the algorithm to <a href=#trace-a-path>trace a
-  path</a> is defined, overlapping parts of the paths in one stroke
+  <p class=note>As a result of how the algorithm to <span>trace a
+  path</span> is defined, overlapping parts of the paths in one stroke
   operation are treated as if their union was what was painted.</p>
 
   <p class=note>The stroke <em>style</em> is affected by the
@@ -3951,8 +3846,7 @@ v6DVT (also check for '- -' bits in the part above) --><p>The <dfn id=dom-contex
   to be inside the path. If either of the arguments is infinite or
   NaN, then the method must return false.</p>
 
-  </div>
-
+  <hr></div>
 
   <div class=example id=drawCustomFocusRingExample>
 
@@ -4218,14 +4112,14 @@ v6DVT (also check for '- -' bits in the part above) --><p>The <dfn id=dom-contex
 
    <li><p>A count of regions that have this one as their <a href="#hit-region's-parent" title="hit region's parent">parent</a>, known as the <dfn id="hit-region's-child-count">hit
    region's child count</dfn>.</p></li>
-
-   <li><p>A <dfn id="hit-region's-cursor-specification" title="hit region's cursor specification">cursor
+<!-- per Frank Oliver, issue 201 --> <!-- 
+   <li><p>A <dfn title="hit region's cursor specification">cursor
    specification</dfn>, in the form of either a CSS cursor value, or
    the string "<code title="">inherit</code>" meaning that the cursor
-   of the <a href="#hit-region's-parent">hit region's parent</a>, if any, or of the
+   of the <span>hit region's parent</span>, if any, or of the
    <code>canvas</code> element, if not, is to be used
    instead.</p></li>
-
+-->
    <li>
 
     <p>Optionally, either a <a href="#hit-region's-control" title="hit region's
@@ -4282,15 +4176,16 @@ v6DVT (also check for '- -' bits in the part above) --><p>The <dfn id=dom-contex
 
      </dt><dd>The ID of the parent region, for purposes of navigation by
      accessibility tools and for cursor fallback.</dd>
+<!-- per Frank Oliver, issue 201 --> <!--
+     <dt><code title="dom-HitRegionOptions-cursor">cursor</code> (default "<code title="">inherit</code>")
 
-     <dt><code title=dom-HitRegionOptions-cursor>cursor</code> (default "<code title="">inherit</code>")
-
-     </dt><dd>The cursor to use when the mouse is over this region. The
+     <dd>The cursor to use when the mouse is over this region. The
      value "<code title="">inherit</code>" means to use the cursor for
-     the parent region (as specified by the <code title=dom-HitRegionOptions-parentID>parentID</code> member), if
+     the parent region (as specified by the <code
+     title="dom-HitRegionOptions-parentID">parentID</code> member), if
      any, or to use the <code>canvas</code> element's cursor if the
      region has no parent.</dd>
-
+-->
      <dt><code title=dom-HitRegionOptions-control>control</code> (default null)
 
      </dt><dd>An element (that is a descendant of the <code>canvas</code>)
@@ -4321,10 +4216,11 @@ v6DVT (also check for '- -' bits in the part above) --><p>The <dfn id=dom-contex
      <li>With a label, they can make it easier for users to explore a
      canvas without seeing it, e.g. by touch on a mobile device.</li>
 
+<!-- per Frank Oliver, issue 201 -->  <!--
      <li>With a cursor, they can make it easier for different regions
      of the canvas to have different cursors, with the user agent
      automatically switching between them.</li>
-
+-->
     </ul></dd>
 
    <dt><var title="">context</var> . <code title=dom-context-2d-removeHitRegion><a href=#dom-context-2d-removehitregion>removeHitRegion</a></code>(<var title="">options</var>)</dt>
@@ -4402,22 +4298,31 @@ v6DVT (also check for '- -' bits in the part above) --><p>The <dfn id=dom-contex
 
    <li><p>Otherwise, return <var title="">control</var>.</p></li>
 
-  </ol><p><dfn id=the-cursor-for-a-hit-region>The cursor for a hit region</dfn> <var title="">region</var> of a <code>canvas</code> element <var title="">ancestor</var> is the value returned by the following
+  </ol><!-- per Frank Oliver, issue 201 --><!--
+  <p><dfn>The cursor for a hit region</dfn> <var
+  title="">region</var> of a <code>canvas</code> element <var
+  title="">ancestor</var> is the value returned by the following
   algorithm:</p>
 
-  <ol><li><p><i>Loop</i>: If <var title="">region</var> has a <a href="#hit-region's-cursor-specification" title="hit region's cursor specification">cursor
-   specification</a> other than "<code title="">inherit</code>",
-   then return that <a href="#hit-region's-cursor-specification">hit region's cursor specification</a>
+  <ol>
+
+   <li><p><i>Loop</i>: If <var title="">region</var> has a <span
+   title="hit region's cursor specification">cursor
+   specification</span> other than "<code title="">inherit</code>",
+   then return that <span>hit region's cursor specification</span>
    and abort these steps.</p></li>
 
-   <li><p>If <var title="">region</var> has a <a href="#hit-region's-parent" title="hit
-   region's parent">parent</a>, then let <var title="">region</var> be that <a href="#hit-region's-parent">hit region's parent</a>,
+   <li><p>If <var title="">region</var> has a <span title="hit
+   region's parent">parent</span>, then let <var
+   title="">region</var> be that <span>hit region's parent</span>,
    and return to the step labeled <i>loop</i>.</p></li>
 
    <li><p>Otherwise, return the used value of the 'cursor' property
-   for the <code>canvas</code> element. <a href=#refsCSSUI>[CSSUI]</a></p></li>
+   for the <code>canvas</code> element. <a
+   href="#refsCSSUI">[CSSUI]</a></p></li>
 
-  </ol><p><dfn id=the-region-for-a-pixel>The region for a pixel</dfn> <var title="">pixel</var> on a
+  </ol>
+--><p><dfn id=the-region-for-a-pixel>The region for a pixel</dfn> <var title="">pixel</var> on a
   <code>canvas</code> element <var title="">ancestor</var> is the
   value returned by the following algorithm (which can return a
   <a href=#hit-region>hit region</a> or nothing):</p>
@@ -4576,12 +4481,13 @@ v6DVT (also check for '- -' bits in the part above) --><p>The <dfn id=dom-contex
     <code>SyntaxError</code> exception and abort these
     steps.</p>
 
-    <ul class=brief><li>The <var title="">arguments</var> object's <code title=dom-HitRegionOptions-cursor>cursor</code> member is not
+    <ul class=brief><!-- per Frank Oliver, issue 201 --><!--
+     <li>The <var title="">arguments</var> object's <code
+     title="dom-HitRegionOptions-cursor">cursor</code> member is not
      null but is neither an <span>ASCII case-insensitive</span> match
      for the string "<code title="">inherit</code>", nor a valid CSS
-     'cursor' property value. <a href=#refsCSSUI>[CSSUI]</a></li>
-
-     <li>The <var title="">arguments</var> object's <code title=dom-HitRegionOptions-role>role</code> member is not null
+     'cursor' property value. <a href="#refsCSSUI">[CSSUI]</a></li>
+--><li>The <var title="">arguments</var> object's <code title=dom-HitRegionOptions-role>role</code> member is not null
      but its value is not an <span>ordered set of unique
      space-separated tokens</span> whose tokens are all
      <span>case-sensitive</span> matches for names of non-abstract
@@ -4625,7 +4531,7 @@ v6DVT (also check for '- -' bits in the part above) --><p>The <dfn id=dom-contex
      </dt><dd><p>Initially zero.
 
 
-     </p></dd><dt><a href="#hit-region's-cursor-specification">Hit region's cursor specification</a>
+     </p></dd><dt><span>Hit region's cursor specification</span>
 
      </dt><dd><p>If <var title="">parent region</var> is not null: <var title="">parent region</var>. Otherwise, <var title="">region</var> has no <a href="#hit-region's-parent" title="hit region's
      parent">parent</a>.
@@ -4657,21 +4563,23 @@ v6DVT (also check for '- -' bits in the part above) --><p>The <dfn id=dom-contex
 
 
     </p></dd></dl></li>
-
+<!-- per Frank Oliver, issue 201 --> <!--
    <li>
 
-    <p>If the <var title="">arguments</var> object's <code title=dom-HitRegionOptions-cursor>cursor</code> member is not
+    <p>If the <var title="">arguments</var> object's <code
+    title="dom-HitRegionOptions-cursor">cursor</code> member is not
     null, then act as if a CSS rule for the <code>canvas</code>
     element setting its 'cursor' property had been seen, whose value
-    was the <a href="#hit-region's-cursor-specification">hit region's cursor specification</a>.</p>
+    was the <span>hit region's cursor specification</span>.</p>
 
-    <p class=note>For example, if the user agent prefetches cursor
+    <p class="note">For example, if the user agent prefetches cursor
     values, this would cause that to happen in response to an
-    appropriately-formed <code title=dom-context-2d-addHitRegion><a href=#dom-context-2d-addhitregion>addHitRegion()</a></code>
+    appropriately-formed <code
+    title="dom-context-2d-addHitRegion">addHitRegion()</code>
     call.</p>
 
    </li>
-
+-->
    <li><p>If the <var title="">arguments</var> object's <code title=dom-HitRegionOptions-control>control</code> member is not
    null, then let <var title="">previous region for the control</var>
    be <a href=#the-region-representing-the-control>the region representing the control</a> given by the
@@ -4767,10 +4675,6 @@ v6DVT (also check for '- -' bits in the part above) --><p>The <dfn id=dom-contex
 partial dictionary <span>MouseEventInit</span> {
   DOMString? region;
 };</pre>
-  <!-- Editor's Note: Bug 14895 removed the dependency on MouseEventInit from DOM 
-       L3 Events (since that spec does not normatively define MouseEventInit).
-       This section is not built for the W3C HTML5 edition of the spec, and thus
-       has not been updated. -->
 
   <dl class=domintro><dt><var title="">event</var> . <code title=dom-MouseEvent-region><a href=#dom-mouseevent-region>region</a></code></dt>
 
@@ -4829,14 +4733,16 @@ partial dictionary <span>MouseEventInit</span> {
    <li><p>Continue dispatching the event, but with the updated event
    object and target as given in the above steps.</p></li>
 
-  </ol><hr><p>When a user's pointing device cursor is positioned over a
+  </ol><hr><!-- per Frank Oliver, issue 201 --><!--
+  <p>When a user's pointing device cursor is positioned over a
   <code>canvas</code> element, user agents should render the pointing
   device cursor according to the cursor specification described by
-  <a href=#the-cursor-for-a-hit-region title="the cursor for a hit region">the cursor for the hit
-  region</a> that is <a href=#the-region-for-a-pixel title="the region for a pixel">the
-  region for the pixel</a> that the pointing device designates.</p>
+  <span title="the cursor for a hit region">the cursor for the hit
+  region</span> that is <span title="the region for a pixel">the
+  region for the pixel</span> that the pointing device designates.</p>
 
-  <hr><p>User agents are encouraged to make use of the information present
+  <hr>
+--><p>User agents are encouraged to make use of the information present
   in a <code>canvas</code> element's <a href=#hit-region-list>hit region list</a> to
   improve the accessibility of <code>canvas</code> elements.</p>
 
@@ -4918,10 +4824,11 @@ partial dictionary <span>MouseEventInit</span> {
     <p>Returns an <code><a href=#imagedata>ImageData</a></code> object containing the image
     data for the given rectangle of the canvas.</p>
 
-    <p>Throws a <code>NotSupportedError</code> exception if any of the
-    arguments are not finite. Throws an <code>IndexSizeError</code>
-    exception if the either of the width or height arguments are
-    zero.</p>
+    <p>Throws an <code>IndexSizeError</code> exception if the either
+    of the width or height arguments are zero.</p>
+
+    <p>The data will be returned with one pixel of image data for each
+    coordinate space unit on the canvas (ignoring transforms).</p>
 
    </dd>
 
@@ -5865,7 +5772,15 @@ function AddCloud(data, x, y) { ... }</pre>
    <dd><cite><a href=http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html>Web DOM Core</a></cite>, A. van Kesteren. W3C.</dd>
 
    <dt id=refsDOMEVENTS>[DOMEVENTS]</dt>
-   <dd><cite><a href=http://dev.w3.org/2006/webapi/DOM-Level-3-Events/html/DOM3-Events.html>Document Object Model (DOM) Level 3 Events Specification</a></cite>, T. Leithead, J. Rossi, D. Schepers, B. Höhrmann, P. Le Hégaret, T. Pixley. W3C.</dd>
+   <!--
+   <dd><cite><a
+   href="http://www.w3.org/TR/DOM-Level-3-Events/">Document Object
+   Model (DOM) Level 3 Events Specification</a></cite>,
+   B. H&ouml;hrmann, P. Le Hegaret, T. Pixley. W3C.</dd>
+   -->
+   <dd><cite><a href=http://dev.w3.org/2006/webapi/DOM-Level-3-Events/html/DOM3-Events.html>Document
+   Object Model (DOM) Level 3 Events Specification</a></cite>,
+   T. Leithead. W3C.</dd>
 
    <dt id=refsDOMPARSING>[DOMPARSING]</dt>
    <dd><cite><a href=http://dvcs.w3.org/hg/innerhtml/raw-file/tip/index.html>DOM Parsing and Serialization</a></cite>, T. Leithead. Work in Progress. W3C.</dd>
