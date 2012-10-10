@@ -63,6 +63,18 @@ filtered.seek(0)
 tree = generator.fromFile(filtered, **opts)
 filtered.close()
 
+# fixup nested dd's and dt's produced by lxml
+for dd in tree.findall('//dd/dd'):
+  if list(dd) or dd.text.strip():
+    dd.getparent().addnext(dd)
+  else:
+    dd.getparent().remove(dd)
+for dt in tree.findall('//dt/dt'):
+  if list(dt) or dt.text.strip():
+    dt.getparent().addnext(dt)
+  else:
+    dt.getparent().remove(dt)
+
 try:
   os.makedirs('output/%s' % spec)
 except:
@@ -73,15 +85,36 @@ if spec == 'html':
   for name in glob('output/html/*.html'):
     os.remove(name)
 
-  output = open('output/html/single-page.html', 'wb')
+  output = StringIO()
 else:
   output = open('output/%s/Overview.html' % spec, 'wb')
 
 generator.toFile(tree, output, **opts)
-output.close()
 
-if spec == 'html':
+if spec != 'html':
+  output.close()
+else:
+  value = output.getvalue()
+  if "<!--INTERFACES-->\n" in value:
+    from interface_index import interface_index
+    output.seek(0)
+    index = StringIO()
+    interface_index(output, index)
+    value = value.replace("<!--INTERFACES-->\n", index.getvalue(), 1)
+    index.close()
+  output = open('output/html/single-page.html', 'wb')
+  output.write(value)
+  output.close()
+  value = ''
+
   print 'splitting'
   import spec_splitter
   spec_splitter.w3c = True
   spec_splitter.main('output/html/single-page.html', 'output/html')
+
+  entities = open('boilerplate/entities.inc')
+  json = open('output/html/entities.json', 'w')
+  from entity_processor_json import entity_processor_json
+  entity_processor_json(entities, json)
+  entities.close()
+  json.close()
