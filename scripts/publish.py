@@ -43,7 +43,7 @@ opts = {
   'parser': 'lxml.html',
   'processes': set(['toc', 'xref', 'sub']),
   'profile': False,
-  'quote_attr_values': False,
+  'quote_attr_values': True,
   'serializer': 'html5lib',
   'space_before_trailing_solidus': False,
   'strip_whitespace': None,

@@ -66,4 +66,4 @@ if __name__ == '__main__':
   else:
     select = 'w3c-html'
 
-  main(select)
+  main(sys.stdin, sys.stdout, select)

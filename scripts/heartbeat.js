@@ -3,6 +3,7 @@
 var fs  = require("fs.extra")
 ,   pth = require("path")
 ,   exec = require("child_process").exec
+,   jsdom = require("jsdom")
 ,   wrench = require("wrench")
 ;
 
@@ -41,6 +42,43 @@ function rename (src, to) {
 
 if (fs.existsSync(hbDir)) wrench.rmdirSyncRecursive(hbDir);
 fs.mkdirSync(hbDir);
+
+function finalise () {
+    // copy the images
+    var imgDir = pth.join(hbDir, "images")
+    ,   fontDir = pth.join(hbDir, "fonts")
+    ;
+    if (target !== "microdata") fs.mkdirSync(imgDir);
+    fs.mkdirSync(fontDir);
+    if (target !== "microdata") wrench.copyDirSyncRecursive(pth.join(rootDir, "images/"), imgDir);
+    wrench.copyDirSyncRecursive(pth.join(rootDir, "fonts/"), fontDir);
+    // copy entities stuff
+    if (target === "html") {
+        fs.copy(pth.join(rootDir, "entities.json"), pth.join(hbDir, "entities.json"));
+        // link to author doc
+        var index = fs.readFileSync(pth.join(hbDir, "index.html"), "utf-8")
+        ,   findDate = /<dt>This Version:<\/dt>\s*<dd><a href="http:\/\/www.w3.org\/TR\/(\d{4})\/(\w+)-html5-(\d+)/
+        ,   res = findDate.exec(index)
+        ,   year = res[1]
+        ,   status = res[2]
+        ,   date = res[3]
+        ,   fixAuthorLinks = ["index", "single-page"]
+        ;
+        for (var i = 0, n = fixAuthorLinks.length; i < n; i++) {
+            var page = fixAuthorLinks[i]
+            ,   file = pth.join(hbDir, page + ".html")
+            ,   content = fs.readFileSync(file, "utf-8")
+            ;
+            content = content.replace(/href=(?:")?author\/(?:")?>/, "href='http://www.w3.org/TR/" + year + "/" + status + "-html5-author-" + date + "/'>");
+            fs.writeFileSync(file, content, "utf-8");
+        }
+    }
+    
+    console.log([   "The specification has been generated. You may now wish to:"
+                ,   "\t\u2022 Run the link checker on everything (link-checker.js)"
+                ,   "\t\u2022 Run pubrules on everything (pubrules.js)"
+                 ].join("\n"));
+}
 
 // build the spec
 exec("make " + conf.make, { cwd: rootDir }, function (err, stdout, stderr) {
@@ -90,38 +128,75 @@ exec("make " + conf.make, { cwd: rootDir }, function (err, stdout, stderr) {
                     .replace(/src: url\('..\/fonts\/Essays1743/g, "src: url('fonts/Essays1743");
         fs.writeFileSync(file, content, "utf-8");
     }
-    // copy the images
-    var imgDir = pth.join(hbDir, "images")
-    ,   fontDir = pth.join(hbDir, "fonts")
-    ;
-    if (target !== "microdata") fs.mkdirSync(imgDir);
-    fs.mkdirSync(fontDir);
-    if (target !== "microdata") wrench.copyDirSyncRecursive(pth.join(rootDir, "images/"), imgDir);
-    wrench.copyDirSyncRecursive(pth.join(rootDir, "fonts/"), fontDir);
-    // copy entities stuff
-    if (target === "html") {
-        fs.copy(pth.join(rootDir, "entities.json"), pth.join(hbDir, "entities.json"));
-        // link to author doc
-        var index = fs.readFileSync(pth.join(hbDir, "index.html"), "utf-8")
-        ,   findDate = /<dt>This Version:<\/dt>\s*<dd><a href="http:\/\/www.w3.org\/TR\/(\d{4})\/(\w+)-html5-(\d+)/
-        ,   res = findDate.exec(index)
-        ,   year = res[1]
-        ,   status = res[2]
-        ,   date = res[3]
-        ,   fixAuthorLinks = ["index", "single-page"]
-        ;
-        for (var i = 0, n = fixAuthorLinks.length; i < n; i++) {
-            var page = fixAuthorLinks[i]
-            ,   file = pth.join(hbDir, page + ".html")
-            ,   content = fs.readFileSync(file, "utf-8")
-            ;
-            content = content.replace(/href=(?:")?author\/(?:")?>/, "href='http://www.w3.org/TR/" + year + "/" + status + "-html5-author-" + date + "/'>");
-            fs.writeFileSync(file, content, "utf-8");
-        }
+    if (target === "microdata") {
+        // bunch of brute-force fixes to make this look like a real document
+        var file = pth.join(hbDir, "Overview.html");
+        jsdom.env(
+            file
+        ,   [pth.join(rootDir, "scripts/jquery.min.js")]
+        ,   function (err, window) {
+                if (err) return console.log(err);
+                var $ = window.$;
+                // move HTMLProp to inside Microdata APIs
+                var $toc = $("ol.toc").first()
+                ,   $mdOL = $toc.find("a[href=#htmlpropertiescollection]").parent().parent()
+                ,   $apiLI = $toc.find("a[href=#microdata-dom-api]").parent()
+                ;
+                $apiLI.append($mdOL);
+                //  - also move the actual section
+                var sectionContent = []
+                ,   $hpTit = $("#htmlpropertiescollection")
+                ;
+                sectionContent.push($hpTit);
+                var $nxt = $hpTit.next();
+                while (true) {
+                    if ($nxt.is("h1,h2,h3,h4,h5,h6")) break;
+                    sectionContent.push($nxt);
+                    $nxt = $nxt.next();
+                }
+                var $other = $("#other-changes-to-html5");
+                for (var i = 0, n = sectionContent.length; i < n; i++) $other.before(sectionContent[i]);
+                
+                //  - move all other 0.x to top-level
+                var $li1 = $toc.find("li").first();
+                $toc.prepend($li1.find("ol").first().contents());
+                $li1.remove();
+                
+                //  - update all toc to have the right numbers
+                function numberToc ($parent, current, level) {
+                    var $secs = $parent.children("li");
+                    if ($secs.length === 0) return null;
+                    for (var i = 0; i < $secs.length; i++) {
+                        var $sec = $($secs[i], doc);
+                        current[current.length - 1]++;
+                        var secnos = current.slice();
+                        var secno = secnos.join(".")
+                        ,   isTopLevel = secnos.length == 1;
+                        if (isTopLevel) secno = secno + ".";
+                        $sec.find("span.secno").first().text(secno + " ");
+                        if ($sec.find("ol").length) {
+                            current.push(0);
+                            numberToc($sec.find("ol").first(), current, level + 1);
+                            current.pop();
+                        }
+                    }
+                }
+                numberToc($toc, [0], 1);
+                
+                
+                //  - for each toc item, go to link
+                //      - update html of title to match
+                //      - upgrade hN to the correct level if required
+                // serialise back to disk...
+                var doc = window.document;
+                fs.writeFileSync(file, doc.doctype.toString() + doc.innerHTML, "utf8");
+                
+                finalise();
+            }
+        );
+
     }
-    
-    console.log([   "The specification has been generated. You may now wish to:"
-                ,   "\t\u2022 Run the link checker on everything (link-checker.js)"
-                ,   "\t\u2022 Run pubrules on everything (pubrules.js)"
-                 ].join("\n"));
+    else {
+        finalise();
+    }
 });
