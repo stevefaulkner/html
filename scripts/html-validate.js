@@ -8,7 +8,7 @@ var fs  = require("fs")
 
 // where are we?
 var rootDir = pth.join(__dirname, "..")
-,   hbDir = pth.join(rootDir, "heartbeat")
+,   hbDir = process.argv[2] ? process.argv[2] : pth.join(rootDir, "heartbeat")
 ,   files
 ,   total = 0
 ;
@@ -20,7 +20,7 @@ function pubrules () {
     if (!/\.html$/.test(file)) return pubrules();
     
     // validate HTML
-    var url = "http://berjon.com/TR/html5/" + file
+    var url = (process.argv[3] ? process.argv[3] : "http://berjon.com/TR/html5/") + file
     // ,   valid = "http://validator.w3.org/check?uri=" + encodeURIComponent(url)
     ,   valid = "http://html5.validator.nu/?out=json&doc=" + url
     ;
@@ -43,17 +43,17 @@ function pubrules () {
     });
 }
 
-// rsync to http://berjon.com/TR/html5/
-exec(   "rsync -avze ssh /Projects/html/html/heartbeat/ darobin@$POING:/var/www/sites/berjon.com/htdocs/TR/html5/"
-    ,   { cwd: hbDir }
-    ,   function (err, stdout, stderr) {
-            console.log(stdout);
-            console.log(stderr);
-            if (err) throw err;
-            // pubrules
-            // check, check, check
+// // rsync to http://berjon.com/TR/html5/
+// exec(   "rsync -avze ssh /Projects/html/html/heartbeat/ darobin@$POING:/var/www/sites/berjon.com/htdocs/TR/html5/"
+//     ,   { cwd: hbDir }
+//     ,   function (err, stdout, stderr) {
+//             console.log(stdout);
+//             console.log(stderr);
+//             if (err) throw err;
+//             // pubrules
+//             // check, check, check
             files = fs.readdirSync(hbDir);
             total = files.length;
             console.log("Checking " + total + " files");
             pubrules();
-});
+// });

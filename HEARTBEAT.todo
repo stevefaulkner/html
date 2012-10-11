@@ -23,7 +23,7 @@ MASTER PLAN:
     - Microdata
         ✓ generate using own tools
         ✓ linkcheck
-        - pubrules
+        ✓ pubrules
         - TR install (check date)
     ✓ Polyglot
         ✓ draft in CVS/html-xhtml-authoring-guide
@@ -102,17 +102,2676 @@ PUBLISHING:
     
 ERRORS:
 
+Checking file 5 of 177 (acknowledgments.html)
 
-    Processing infrastructure.html, 30/145
-    Error, check http://validator.w3.org/check?uri=http%3A%2F%2Fberjon.com%2FTR%2Fhtml5%2Finfrastructure.html
-    
-    Processing media-elements.html, 34/145
-    Error, check http://validator.w3.org/check?uri=http%3A%2F%2Fberjon.com%2FTR%2Fhtml5%2Fmedia-elements.html
-    
-    Processing single-page.html, 40/145
-    Error, check http://validator.w3.org/check?uri=http%3A%2F%2Fberjon.com%2FTR%2Fhtml5%2Fsingle-page.html
-    
-    Processing textFieldSelection.html, 45/145
-    Error, check http://validator.w3.org/check?uri=http%3A%2F%2Fberjon.com%2FTR%2Fhtml5%2FtextFieldSelection.html
-    
-    
+Processing	file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/acknowledgments.html
+
+List of duplicate and empty anchors
+	acknowledgments	Lines: 2, 19
+
+=====================================================
+Checking file 32 of 177 (common-models.html)
+
+Processing	file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/common-models.html
+
+List of duplicate and empty anchors
+	common-models	Lines: 2, 21
+
+=====================================================
+Checking file 34 of 177 (datatypes.html)
+
+Processing	file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/datatypes.html
+
+List of duplicate and empty anchors
+	datatypes	Lines: 2, 21
+
+=====================================================
+Checking file 36 of 177 (del.html)
+
+Processing	file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/del.html
+
+List of broken links and other issues
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/del.html	
+  Line: 53
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed
+	time.attrs.datetime           	Line: 53
+
+=====================================================
+Checking file 38 of 177 (dfn-links.html)
+
+Processing	file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/dfn-links.html
+
+List of broken links and other issues
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/meta.http-equiv.content-language.html	
+ Lines: 73, 834, 1834, 1835
+  Code: 404 File `/Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/meta.http-equiv.content-language.html' does not exist
+ To do: The link is broken. Double-check that you have not made any typo,
+	or mistake in copy-pasting. If the link points to a resource that
+	no longer exists, you may want to remove or fix the link.
+Fragments
+	id337052                      	Line: 1834
+	id337291                      	Line: 73
+	id337258                      	Line: 834
+	id337360                      	Line: 1835
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/input.time.html	
+ Lines: 499, 500, 501, 502, 766, 767, 1222, 1317, 1318, 1319, 1503, 1652, 1653, 1654, 1806, 1807
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed
+	id310658                      	Line: 1222
+	id310798                      	Line: 502
+	id310079                      	Line: 499
+	id311089                      	Line: 1807
+	id310015                      	Line: 1503
+	id309608                      	Line: 1806
+	id310449                      	Line: 1652
+	id310379                      	Line: 767
+	id310601                      	Line: 1318
+	id310853                      	Line: 1654
+	id310550                      	Line: 1653
+	id310322                      	Line: 500
+	id310500                      	Line: 1317
+	id310732                      	Line: 501
+	id310127                      	Line: 766
+	id310890                      	Line: 1319
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/input.email.html	
+ Lines: 10, 410, 419, 513, 514, 515, 516, 517, 774, 775, 854, 986, 1135, 1240, 1241, 1289, 1336, 1354, 1507, 1508, 1814, 1815
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed
+	id319187                      	Line: 514
+	id319362                      	Line: 1135
+	id319857                      	Line: 10
+	id319402                      	Line: 986
+	id319244                      	Line: 775
+	id319708                      	Line: 517
+	id319532                      	Line: 516
+	id319797                      	Line: 410
+	id319878                      	Line: 1336
+	id318877                      	Line: 1507
+	id320084                      	Line: 1815
+	id319831                      	Line: 410
+	id319314                      	Line: 1240
+	id319790                      	Line: 1354
+	id319890                      	Line: 1289
+	id318374                      	Line: 1814
+	id319764                      	Line: 854
+	id319466                      	Line: 515
+	id318989                      	Line: 774
+	id319415                      	Line: 419
+	id318941                      	Line: 513
+	id319588                      	Line: 1241
+	id319635                      	Line: 1508
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/aside.html	
+  Line: 611
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed
+	id95004                       	Line: 611
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/embed.html	
+ Lines: 932, 1058, 1059, 1298, 1734, 1772, 1773
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed
+	id113418                      	Line: 1059
+	id113370                      	Line: 1058
+	id113047                      	Line: 1772
+	id113336                      	Line: 1298
+	id113256                      	Line: 1734
+	id113304                      	Line: 932
+	id113608                      	Line: 1773
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/samp.html	
+  Line: 1192
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed
+	id348604                      	Line: 1192
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/head.html	
+  Line: 1412
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed
+	id119420                      	Line: 1412
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/wbr.html	
+ Lines: 1844, 1845
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed
+	id364740                      	Line: 1844
+	id364829                      	Line: 1845
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/mark.html	
+  Line: 1180
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed
+	id334157                      	Line: 1180
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/input.date.html	
+ Lines: 279, 280, 281, 491, 492, 493, 494, 762, 763, 1237, 1314, 1315, 1316, 1501, 1802, 1803
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed
+	id305647                      	Line: 491
+	id306221                      	Line: 1237
+	id306116                      	Line: 280
+	id305695                      	Line: 762
+	id306649                      	Line: 1803
+	id306067                      	Line: 1314
+	id306296                      	Line: 493
+	id305947                      	Line: 763
+	id305890                      	Line: 492
+	id306417                      	Line: 281
+	id305583                      	Line: 1501
+	id306167                      	Line: 1315
+	id306453                      	Line: 1316
+	id306361                      	Line: 494
+	id306016                      	Line: 279
+	id305176                      	Line: 1802
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/param.html	
+ Lines: 1529, 1530, 1840, 1841
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed
+	id345942                      	Line: 1841
+	id345636                      	Line: 1840
+	id345778                      	Line: 1529
+	id345823                      	Line: 1530
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/command.checkbox.html	
+ Lines: 444, 445, 1471, 1732, 1770, 1771
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed
+	id108765                      	Line: 1770
+	id109152                      	Line: 1732
+	id109261                      	Line: 1771
+	id109216                      	Line: 445
+	id109060                      	Line: 444
+	id109106                      	Line: 1471
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/th.html	
+ Lines: 799, 862, 1071, 1199, 1253, 1694
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed
+	id360224                      	Line: 862
+	id360110                      	Line: 1253
+	id360264                      	Line: 1694
+	id360167                      	Line: 1071
+	id360272                      	Line: 799
+	id359841                      	Line: 1199
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/input.checkbox.html	
+ Lines: 460, 461, 462, 463, 750, 1482, 1483, 1782, 1783
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed
+	id287948                      	Line: 1783
+	id287670                      	Line: 462
+	id287744                      	Line: 463
+	id287306                      	Line: 1482
+	id287599                      	Line: 1483
+	id287018                      	Line: 1782
+	id287553                      	Line: 461
+	id287370                      	Line: 460
+	id287418                      	Line: 750
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/meta.charset.html	
+ Lines: 142, 175, 184, 210, 565, 712, 1836, 1837, 1897
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed
+	id337709                      	Line: 184
+	id337783                      	Line: 142
+	id337797                      	Line: 1897
+	id337803                      	Line: 142
+	id337742                      	Line: 712
+	id337878                      	Line: 565
+	id337586                      	Line: 1836
+	id337552                      	Line: 175
+	id337749                      	Line: 142
+	id337930                      	Line: 1837
+	id337772                      	Line: 210
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/summary.html	
+  Line: 1197
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed
+	id354426                      	Line: 1197
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/ol.html	
+ Lines: 534, 810
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed
+	id342659                      	Line: 534
+	id342561                      	Line: 810
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/global-attributes.html	
+ Lines: 74, 75, 255, 256, 257, 263, 264, 270, 368, 369, 385, 386, 552, 553, 554, 683, 736, 791, 811, 835, 836, 868, 994, 995, 996, 997, 1100, 1121, 1365, 1417, 1536, 1537, 1538, 1539, 1540, 1541, 1542, 1543, 1544, 1545, 1546, 1547, 1548, 1549, 1550, 1551, 1552, 1553, 1554, 1555, 1556, 1557, 1558, 1559, 1560, 1561, 1562, 1563, 1564, 1565, 1566, 1567, 1568, 1569, 1570, 1571, 1572, 1573, 1574, 1575, 1576, 1577, 1578, 1579, 1580, 1581, 1582, 1583, 1584, 1585, 1586, 1587, 1588, 1589, 1590, 1591, 1750, 1871, 1872, 1909
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed
+	id370626                      	Line: 1569
+	id369387                      	Line: 263
+	id369892                      	Line: 1554
+	id366666                      	Line: 994
+	id371426                      	Line: 1585
+	id372087                      	Line: 997
+	id371451                      	Line: 264
+	id367579                      	Line: 554
+	id370477                      	Line: 1566
+	id370202                      	Line: 1560
+	id370748                      	Line: 1572
+	id370051                      	Line: 1557
+	id367399                      	Line: 1536
+	id370247                      	Line: 1561
+	id370300                      	Line: 1562
+	id369270                      	Line: 1542
+	id371948                      	Line: 75
+	id367409                      	Line: 995
+	id371590                      	Line: 1588
+	id367692                      	Line: 811
+	id369782                      	Line: 1552
+	id369835                      	Line: 1553
+	id370520                      	Line: 1567
+	id372080                      	Line: 386
+	id369998                      	Line: 1556
+	id372046                      	Line: 1750
+	id367522                      	Line: 74
+	id370344                      	Line: 1563
+	id369945                      	Line: 1555
+	id372094                      	Line: 369
+	id367069                      	Line: 255
+	id367439                      	Line: 736
+	id366211                      	Line: 683
+	id371998                      	Line: 385
+	id370433                      	Line: 1565
+	id370884                      	Line: 1575
+	id369730                      	Line: 1551
+	id372012                      	Line: 368
+	id369625                      	Line: 1549
+	id369214                      	Line: 1541
+	id370671                      	Line: 1570
+	id367418                      	Line: 995
+	id367481                      	Line: 835
+	id372005                      	Line: 996
+	id369060                      	Line: 1538
+	id367500                      	Line: 256
+	id367377                      	Line: 995
+	id371760                      	Line: 1591
+	id367748                      	Line: 1100
+	id369157                      	Line: 1540
+	id371984                      	Line: 1872
+	id369678                      	Line: 1550
+	id371210                      	Line: 1581
+	id370149                      	Line: 1559
+	id367301                      	Line: 553
+	id366658                      	Line: 1121
+	id370794                      	Line: 1573
+	id370095                      	Line: 1558
+	id366701                      	Line: 1365
+	id370573                      	Line: 1568
+	id371910                      	Line: 836
+	id370389                      	Line: 1564
+	id367043                      	Line: 552
+	id371157                      	Line: 1580
+	id370936                      	Line: 1576
+	id371699                      	Line: 1590
+	id367606                      	Line: 257
+	id371042                      	Line: 1578
+	id370838                      	Line: 1574
+	id367640                      	Line: 1537
+	id369315                      	Line: 1543
+	id369466                      	Line: 1546
+	id371316                      	Line: 1583
+	id369113                      	Line: 1539
+	id370704                      	Line: 1571
+	id366621                      	Line: 868
+	id371381                      	Line: 1584
+	id371644                      	Line: 1589
+	id371255                      	Line: 1582
+	id367104                      	Line: 791
+	id371484                      	Line: 1586
+	id371538                      	Line: 1587
+	id369519                      	Line: 1547
+	id371929                      	Line: 1871
+	id369362                      	Line: 1544
+	id367356                      	Line: 736
+	id372066                      	Line: 1909
+	id371095                      	Line: 1579
+	id367446                      	Line: 736
+	id367658                      	Line: 270
+	id370989                      	Line: 1577
+	id367424                      	Line: 1417
+	id369571                      	Line: 1548
+	id369420                      	Line: 1545
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/q.html	
+ Lines: 1188, 1745
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed
+	id347182                      	Line: 1188
+	id347316                      	Line: 1745
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/intro.html	
+ Lines: 666, 672, 680, 699, 720, 729
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed
+	id81668                       	Line: 666
+	id81601                       	Line: 672
+	id81593                       	Line: 680
+	id81657                       	Line: 666
+	id81628                       	Line: 720
+	id81621                       	Line: 729
+	id81645                       	Line: 666
+	id81572                       	Line: 699
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/figcaption.html	
+  Line: 622
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed
+	id114620                      	Line: 622
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/figure.html	
+  Line: 623
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed
+	id114892                      	Line: 623
+	id114878                      	Line: 623
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/input.button.html	
+ Lines: 468, 469, 752, 1486, 1487, 1786, 1787
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed
+	id290535                      	Line: 1486
+	id291038                      	Line: 1787
+	id290298                      	Line: 1786
+	id290834                      	Line: 469
+	id290599                      	Line: 468
+	id290763                      	Line: 1487
+	id290647                      	Line: 752
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/command.radio.html	
+ Lines: 442, 443, 1469, 1470, 1731, 1768, 1769
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed
+	id108224                      	Line: 1469
+	id108445                      	Line: 443
+	id108334                      	Line: 1470
+	id108288                      	Line: 442
+	id108380                      	Line: 1731
+	id107930                      	Line: 1768
+	id108489                      	Line: 1769
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/h4.html	
+  Line: 1171
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed
+	id118010                      	Line: 1171
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/map.html	
+ Lines: 629, 992, 1014, 1179, 1414, 1520, 1682
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed
+	id333796                      	Line: 1520
+	id333806                      	Line: 992
+	id333766                      	Line: 1014
+	id333612                      	Line: 629
+	id333596                      	Line: 1682
+	id333814                      	Line: 992
+	id333640                      	Line: 1179
+	id333821                      	Line: 1414
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/sup.html	
+  Line: 1198
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id354659                      	Line: 1198
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/pre.html	
+  Line: 1186
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id346166                      	Line: 1186
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/table.html	
+  Line: 1533
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id355276                      	Line: 1533
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/h5.html	
+  Line: 1172
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id118398                      	Line: 1172
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/ruby.html	
+  Line: 1191
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id348239                      	Line: 1191
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/blockquote.html	
+ Lines: 613, 1728
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id97551                       	Line: 1728
+	id97415                       	Line: 613
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/a.html	
+ Lines: 70, 83, 84, 101, 116, 134, 251, 607, 608, 735, 831, 894, 914, 930, 977, 1151, 1152, 1208, 1296, 1362, 1409, 1440, 1441, 1676, 1677, 1724
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id90965                       	Line: 1362
+	id90335                       	Line: 607
+	id91988                       	Line: 84
+	id90892                       	Line: 1441
+	id91121                       	Line: 894
+	id90723                       	Line: 735
+	id91187                       	Line: 1296
+	id91505                       	Line: 1677
+	id91538                       	Line: 608
+	id90758                       	Line: 1724
+	id90604                       	Line: 735
+	id90821                       	Line: 116
+	id90702                       	Line: 1409
+	id91486                       	Line: 1152
+	id90676                       	Line: 1440
+	id91969                       	Line: 1208
+	id90688                       	Line: 977
+	id91080                       	Line: 914
+	id91154                       	Line: 930
+	id90695                       	Line: 977
+	id90306                       	Line: 1151
+	id90912                       	Line: 134
+	id91520                       	Line: 608
+	id90849                       	Line: 83
+	id90903                       	Line: 101
+	id90717                       	Line: 735
+	id91564                       	Line: 251
+	id90290                       	Line: 1676
+	id91046                       	Line: 70
+	id91014                       	Line: 831
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/sub.html	
+  Line: 1196
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id354113                      	Line: 1196
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/input.datetime-local.html	
+ Lines: 276, 277, 278, 487, 488, 489, 490, 760, 761, 880, 881, 882, 1221, 1500, 1649, 1650, 1651, 1800, 1801
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id304148                      	Line: 490
+	id303698                      	Line: 761
+	id303641                      	Line: 488
+	id303884                      	Line: 881
+	id304205                      	Line: 882
+	id303768                      	Line: 880
+	id302918                      	Line: 1800
+	id304007                      	Line: 1221
+	id303814                      	Line: 276
+	id303443                      	Line: 760
+	id304082                      	Line: 489
+	id304254                      	Line: 1651
+	id303948                      	Line: 1650
+	id304236                      	Line: 278
+	id303832                      	Line: 1649
+	id303395                      	Line: 487
+	id303330                      	Line: 1500
+	id304455                      	Line: 1801
+	id303930                      	Line: 277
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/dt.html	
+ Lines: 333, 1166, 1627
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id112370                      	Line: 1627
+	id112402                      	Line: 1166
+	id112601                      	Line: 333
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/html.html	
+  Line: 1736
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id121114                      	Line: 1736
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/input.number.html	
+ Lines: 507, 508, 509, 510, 588, 589, 590, 770, 771, 1223, 1505, 1810, 1811
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id315438                      	Line: 509
+	id315364                      	Line: 1223
+	id315504                      	Line: 510
+	id314864                      	Line: 507
+	id315233                      	Line: 588
+	id315296                      	Line: 589
+	id315164                      	Line: 771
+	id314800                      	Line: 1505
+	id314912                      	Line: 770
+	id315754                      	Line: 1811
+	id315107                      	Line: 508
+	id314121                      	Line: 1810
+	id315559                      	Line: 590
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/optgroup.html	
+ Lines: 535, 1525
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id343209                      	Line: 1525
+	id343280                      	Line: 535
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/br.html	
+ Lines: 1762, 1763
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id100252                      	Line: 1763
+	id100120                      	Line: 1762
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/source.html	
+ Lines: 897, 905, 906, 907, 908, 917, 937, 1302, 1747, 1842, 1843
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id352357                      	Line: 937
+	id352513                      	Line: 1843
+	id352131                      	Line: 1842
+	id352436                      	Line: 917
+	id352402                      	Line: 1302
+	id352304                      	Line: 1747
+	id352376                      	Line: 907
+	id352455                      	Line: 908
+	id352081                      	Line: 905
+	id352323                      	Line: 906
+	id352482                      	Line: 897
+	id352382                      	Line: 907
+	id352462                      	Line: 908
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/h1.html	
+  Line: 1168
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id116803                      	Line: 1168
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/output.html	
+ Lines: 788, 797, 860, 1184, 1528, 1692
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id344721                      	Line: 797
+	id344612                      	Line: 788
+	id344384                      	Line: 1184
+	id344714                      	Line: 1692
+	id344679                      	Line: 860
+	id344565                      	Line: 1528
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/rp.html	
+  Line: 1189
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id347628                      	Line: 1189
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/col.html	
+ Lines: 1231, 1764, 1765
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id106066                      	Line: 1231
+	id105932                      	Line: 1764
+	id106257                      	Line: 1765
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/meter.html	
+ Lines: 594, 595, 596, 597, 598, 599, 1181
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id339192                      	Line: 596
+	id338856                      	Line: 1181
+	id339290                      	Line: 598
+	id339146                      	Line: 595
+	id339242                      	Line: 597
+	id339099                      	Line: 594
+	id339338                      	Line: 599
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/td.html	
+ Lines: 635, 798, 861, 1070, 1249, 1693
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id356902                      	Line: 1070
+	id356959                      	Line: 861
+	id356845                      	Line: 1249
+	id357007                      	Line: 798
+	id356665                      	Line: 635
+	id357000                      	Line: 1693
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/area.html	
+ Lines: 71, 85, 102, 117, 135, 218, 581, 806, 807, 808, 832, 895, 915, 931, 1055, 1096, 1214, 1265, 1297, 1363, 1442, 1725, 1758, 1759
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id93384                       	Line: 1442
+	id93712                       	Line: 1297
+	id94090                       	Line: 808
+	id93605                       	Line: 832
+	id93404                       	Line: 135
+	id94048                       	Line: 1214
+	id93810                       	Line: 806
+	id93457                       	Line: 1363
+	id93287                       	Line: 1725
+	id93362                       	Line: 85
+	id93858                       	Line: 806
+	id93530                       	Line: 915
+	id93822                       	Line: 806
+	id93845                       	Line: 806
+	id93395                       	Line: 102
+	id93343                       	Line: 117
+	id93989                       	Line: 1055
+	id93918                       	Line: 218
+	id93645                       	Line: 71
+	id93253                       	Line: 581
+	id93977                       	Line: 807
+	id93679                       	Line: 931
+	id94236                       	Line: 1759
+	id93966                       	Line: 807
+	id93833                       	Line: 806
+	id93768                       	Line: 1265
+	id93571                       	Line: 895
+	id92796                       	Line: 1758
+	id93235                       	Line: 1096
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/legend.html	
+  Line: 1178
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id331436                      	Line: 1178
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/input.url.html	
+ Lines: 17, 420, 518, 519, 520, 521, 776, 777, 987, 1136, 1242, 1243, 1509, 1510, 1816, 1817
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id320805                      	Line: 1816
+	id321809                      	Line: 520
+	id321930                      	Line: 1243
+	id321757                      	Line: 420
+	id321222                      	Line: 1509
+	id321586                      	Line: 777
+	id321334                      	Line: 776
+	id321287                      	Line: 518
+	id321656                      	Line: 1242
+	id321744                      	Line: 987
+	id322039                      	Line: 17
+	id321704                      	Line: 1136
+	id322234                      	Line: 1817
+	id321531                      	Line: 519
+	id321874                      	Line: 521
+	id321977                      	Line: 1510
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/canvas.html	
+ Lines: 615, 1056, 1057, 1160, 1679
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id104234                      	Line: 1160
+	id104441                      	Line: 1057
+	id104190                      	Line: 1679
+	id104206                      	Line: 615
+	id104393                      	Line: 1056
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/input.file.html	
+ Lines: 475, 476, 477, 478, 755, 874, 933, 1353, 1493, 1792, 1793
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id295760                      	Line: 476
+	id295510                      	Line: 475
+	id296110                      	Line: 1793
+	id295156                      	Line: 1792
+	id295557                      	Line: 755
+	id295674                      	Line: 874
+	id295907                      	Line: 478
+	id295701                      	Line: 1353
+	id295834                      	Line: 477
+	id295445                      	Line: 1493
+	id295708                      	Line: 933
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/menu.html	
+ Lines: 630, 1521
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id334479                      	Line: 630
+	id334720                      	Line: 1521
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/input.week.html	
+ Lines: 503, 504, 505, 506, 768, 769, 1239, 1504, 1808, 1809, 1855, 1856, 1857
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id313400                      	Line: 1809
+	id313129                      	Line: 1857
+	id312216                      	Line: 1504
+	id311809                      	Line: 1808
+	id312281                      	Line: 503
+	id312933                      	Line: 1239
+	id313008                      	Line: 505
+	id312650                      	Line: 1855
+	id312581                      	Line: 769
+	id312789                      	Line: 1856
+	id312524                      	Line: 504
+	id312328                      	Line: 768
+	id313073                      	Line: 506
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/code.html	
+  Line: 1162
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id105641                      	Line: 1162
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/terminology.html	
+ Lines: 82, 128, 606, 721, 722, 723, 1042, 1091, 1092, 1150, 1397, 1669
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id81684                       	Line: 82
+	id82023                       	Line: 723
+	id81960                       	Line: 722
+	id82017                       	Line: 1669
+	id81976                       	Line: 1397
+	id81942                       	Line: 1092
+	id81928                       	Line: 1150
+	id81894                       	Line: 1042
+	id81814                       	Line: 1091
+	id81872                       	Line: 721
+	id81804                       	Line: 606
+	id81755                       	Line: 128
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/meta.http-equiv.content-type.html	
+ Lines: 176, 177, 185, 367, 383, 566, 567, 924, 1416, 1838, 1839
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id338597                      	Line: 1839
+	id338486                      	Line: 367
+	id338133                      	Line: 176
+	id338343                      	Line: 566
+	id338480                      	Line: 567
+	id338350                      	Line: 177
+	id338441                      	Line: 185
+	id338168                      	Line: 1838
+	id338493                      	Line: 383
+	id338425                      	Line: 1416
+	id338512                      	Line: 567
+	id338530                      	Line: 567
+	id338385                      	Line: 924
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/textarea.html	
+ Lines: 253, 543, 544, 545, 546, 790, 1250, 1251, 1252, 1278, 1534, 1535
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id357553                      	Line: 1278
+	id358256                      	Line: 1250
+	id358619                      	Line: 1252
+	id358011                      	Line: 1534
+	id358506                      	Line: 1251
+	id358450                      	Line: 1535
+	id358208                      	Line: 544
+	id358123                      	Line: 790
+	id358321                      	Line: 545
+	id358864                      	Line: 253
+	id358076                      	Line: 543
+	id358396                      	Line: 546
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/h3.html	
+  Line: 1170
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id117608                      	Line: 1170
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/meta.name.html	
+ Lines: 1522, 1523, 1828, 1829
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id335682                      	Line: 1829
+	id335639                      	Line: 1523
+	id335595                      	Line: 1522
+	id335458                      	Line: 1828
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/syntax.html	
+ Lines: 23, 24, 34, 43, 44, 45, 46, 47, 53, 54, 55, 56, 57, 64, 130, 131, 132, 133, 157, 167, 168, 194, 195, 196, 197, 198, 199, 209, 233, 234, 235, 241, 248, 249, 250, 313, 325, 361, 362, 363, 364, 365, 366, 378, 379, 380, 381, 382, 392, 404, 429, 564, 573, 574, 575, 660, 674, 682, 707, 708, 709, 710, 711, 842, 888, 945, 962, 963, 964, 965, 966, 967, 968, 969, 970, 971, 972, 973, 974, 975, 976, 1020, 1036, 1083, 1093, 1094, 1095, 1107, 1114, 1144, 1259, 1277, 1385, 1399, 1400, 1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1432, 1433, 1434, 1609, 1616, 1633, 1634, 1635, 1636, 1637, 1638, 1639, 1710, 1757, 1864, 1865, 1866, 1867, 1868, 1869, 1870, 1882, 1893, 1894, 1895, 1896
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id82765                       	Line: 1864
+	id82841                       	Line: 842
+	id85672                       	Line: 973
+	id85761                       	Line: 1869
+	id82834                       	Line: 325
+	id84730                       	Line: 1402
+	id83472                       	Line: 194
+	id86267                       	Line: 974
+	id83483                       	Line: 963
+	id84288                       	Line: 1433
+	id84135                       	Line: 1616
+	id84546                       	Line: 1867
+	id85060                       	Line: 1404
+	id84249                       	Line: 1114
+	id85665                       	Line: 198
+	id83987                       	Line: 1616
+	id86404                       	Line: 1434
+	id84258                       	Line: 1114
+	id83465                       	Line: 963
+	id84780                       	Line: 1402
+	id83926                       	Line: 1866
+	id85542                       	Line: 1895
+	id83960                       	Line: 573
+	id84605                       	Line: 709
+	id85659                       	Line: 973
+	id85644                       	Line: 24
+	id83724                       	Line: 167
+	id82816                       	Line: 962
+	id85122                       	Line: 969
+	id84749                       	Line: 1402
+	id85453                       	Line: 197
+	id84559                       	Line: 131
+	id83730                       	Line: 233
+	id84485                       	Line: 966
+	id82752                       	Line: 707
+	id86134                       	Line: 1408
+	id82878                       	Line: 1399
+	id83155                       	Line: 1399
+	id82953                       	Line: 130
+	id86563                       	Line: 976
+	id83543                       	Line: 564
+	id86460                       	Line: 168
+	id86465                       	Line: 235
+	id82771                       	Line: 1036
+	id84623                       	Line: 1710
+	id84066                       	Line: 1400
+	id84660                       	Line: 44
+	id85176                       	Line: 250
+	id85403                       	Line: 363
+	id82827                       	Line: 1107
+	id84327                       	Line: 1433
+	id85356                       	Line: 971
+	id83198                       	Line: 325
+	id83673                       	Line: 248
+	id86424                       	Line: 975
+	id86104                       	Line: 1637
+	id84958                       	Line: 55
+	id84821                       	Line: 967
+	id85078                       	Line: 1404
+	id86090                       	Line: 199
+	id85496                       	Line: 132
+	id86226                       	Line: 1638
+	id84314                       	Line: 574
+	id83781                       	Line: 248
+	id85295                       	Line: 1277
+	id84450                       	Line: 362
+	id84049                       	Line: 964
+	id84757                       	Line: 54
+	id85511                       	Line: 1406
+	id84360                       	Line: 945
+	id86491                       	Line: 1095
+	id85342                       	Line: 196
+	id85206                       	Line: 970
+	id83954                       	Line: 1757
+	id85701                       	Line: 1407
+	id82990                       	Line: 1399
+	id83447                       	Line: 963
+	id84787                       	Line: 967
+	id82863                       	Line: 130
+	id84146                       	Line: 1400
+	id85269                       	Line: 1633
+	id84457                       	Line: 379
+	id83275                       	Line: 1399
+	id85562                       	Line: 972
+	id84921                       	Line: 1403
+	id84301                       	Line: 965
+	id83429                       	Line: 963
+	id84082                       	Line: 1757
+	id84579                       	Line: 1093
+	id83000                       	Line: 130
+	id83628                       	Line: 378
+	id85621                       	Line: 1636
+	id83358                       	Line: 1399
+	id83240                       	Line: 130
+	id86411                       	Line: 575
+	id86554                       	Line: 1639
+	id83587                       	Line: 34
+	id85195                       	Line: 970
+	id84207                       	Line: 1757
+	id83253                       	Line: 1399
+	id83775                       	Line: 241
+	id82926                       	Line: 1107
+	id82901                       	Line: 1399
+	id84436                       	Line: 131
+	id83948                       	Line: 1432
+	id86472                       	Line: 157
+	id86520                       	Line: 366
+	id85734                       	Line: 1896
+	id85276                       	Line: 195
+	id84464                       	Line: 1867
+	id82976                       	Line: 130
+	id86334                       	Line: 365
+	id84227                       	Line: 1114
+	id83913                       	Line: 708
+	id84236                       	Line: 248
+	id86362                       	Line: 365
+	id85536                       	Line: 710
+	id85807                       	Line: 660
+	id85288                       	Line: 1094
+	id82745                       	Line: 707
+	id84175                       	Line: 964
+	id84294                       	Line: 574
+	id84983                       	Line: 968
+	id84353                       	Line: 574
+	id84367                       	Line: 249
+	id84056                       	Line: 1400
+	id84870                       	Line: 1402
+	id85215                       	Line: 970
+	id84429                       	Line: 966
+	id85335                       	Line: 1634
+	id84593                       	Line: 966
+	id86485                       	Line: 975
+	id83076                       	Line: 1144
+	id84043                       	Line: 64
+	id85727                       	Line: 711
+	id82887                       	Line: 130
+	id86447                       	Line: 888
+	id86348                       	Line: 382
+	id83285                       	Line: 130
+	id82810                       	Line: 361
+	id84307                       	Line: 249
+	id83383                       	Line: 842
+	id85096                       	Line: 56
+	id83298                       	Line: 1399
+	id84616                       	Line: 429
+	id85474                       	Line: 23
+	id84638                       	Line: 404
+	id85793                       	Line: 1020
+	id85570                       	Line: 1868
+	id84321                       	Line: 249
+	id86097                       	Line: 1637
+	id84630                       	Line: 1385
+	id84419                       	Line: 53
+	id86340                       	Line: 382
+	id86435                       	Line: 888
+	id86198                       	Line: 1638
+	id83574                       	Line: 564
+	id84213                       	Line: 964
+	id86398                       	Line: 975
+	id85224                       	Line: 970
+	id85555                       	Line: 972
+	id82967                       	Line: 1399
+	id85754                       	Line: 973
+	id86126                       	Line: 1637
+	id84492                       	Line: 1401
+	id83980                       	Line: 674
+	id86237                       	Line: 974
+	id83119                       	Line: 1609
+	id85182                       	Line: 234
+	id86479                       	Line: 168
+	id84940                       	Line: 1403
+	id85189                       	Line: 57
+	id86417                       	Line: 888
+	id83688                       	Line: 682
+	id85687                       	Line: 133
+	id83617                       	Line: 963
+	id84410                       	Line: 43
+	id85740                       	Line: 381
+	id84242                       	Line: 964
+	id85430                       	Line: 1635
+	id84913                       	Line: 46
+	id84864                       	Line: 967
+	id83642                       	Line: 1865
+	id85051                       	Line: 47
+	id84773                       	Line: 967
+	id85468                       	Line: 972
+	id83440                       	Line: 963
+	id83919                       	Line: 1894
+	id85481                       	Line: 972
+	id86252                       	Line: 974
+	id83502                       	Line: 963
+	id85844                       	Line: 1882
+	id83581                       	Line: 963
+	id83090                       	Line: 1399
+	id84169                       	Line: 1757
+	id83693                       	Line: 964
+	id85302                       	Line: 1083
+	id85800                       	Line: 313
+	id83516                       	Line: 963
+	id85231                       	Line: 1405
+	id83757                       	Line: 392
+	id83508                       	Line: 34
+	id82758                       	Line: 1893
+	id84722                       	Line: 45
+	id86281                       	Line: 974
+	id85746                       	Line: 973
+	id83013                       	Line: 1399
+	id83043                       	Line: 1259
+	id83454                       	Line: 209
+	id85592                       	Line: 364
+	id83261                       	Line: 130
+	id85548                       	Line: 380
+	id86354                       	Line: 1870
+	id83700                       	Line: 248
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/nav.html	
+  Line: 631
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id340079                      	Line: 631
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/ins.html	
+ Lines: 294, 627, 990, 1175, 1320, 1681, 1742
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id328898                      	Line: 627
+	id329164                      	Line: 1320
+	id329183                      	Line: 990
+	id329132                      	Line: 294
+	id328927                      	Line: 1175
+	id329084                      	Line: 1742
+	id328882                      	Line: 1681
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/footer.html	
+  Line: 624
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id115159                      	Line: 624
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/colgroup.html	
+ Lines: 1232, 1411
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id106874                      	Line: 1411
+	id106652                      	Line: 1232
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/h2.html	
+  Line: 1169
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id117205                      	Line: 1169
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/b.html	
+  Line: 1155
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id96310                       	Line: 1155
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/input.submit.html	
+ Lines: 93, 107, 121, 139, 470, 471, 472, 753, 1488, 1489, 1490, 1739, 1788, 1789
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id292697                      	Line: 1490
+	id292114                      	Line: 1488
+	id291749                      	Line: 1788
+	id292396                      	Line: 1739
+	id292717                      	Line: 139
+	id292683                      	Line: 93
+	id292994                      	Line: 1789
+	id292226                      	Line: 753
+	id292789                      	Line: 472
+	id292342                      	Line: 1489
+	id292708                      	Line: 107
+	id292469                      	Line: 471
+	id292178                      	Line: 470
+	id292656                      	Line: 121
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/span.html	
+  Line: 1194
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id352742                      	Line: 1194
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/i.html	
+  Line: 1174
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id121479                      	Line: 1174
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/documents.html	
+ Lines: 42, 63, 129, 232, 247, 346, 352, 358, 359, 360, 375, 376, 377, 673, 681, 689, 705, 706, 959, 960, 961, 1034, 1035, 1113, 1398, 1615, 1709, 1863, 1892
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id82256                       	Line: 375
+	id82610                       	Line: 673
+	id82457                       	Line: 232
+	id82397                       	Line: 232
+	id82688                       	Line: 961
+	id82119                       	Line: 352
+	id82312                       	Line: 959
+	id82319                       	Line: 358
+	id82442                       	Line: 63
+	id82200                       	Line: 705
+	id82617                       	Line: 129
+	id82426                       	Line: 1398
+	id82174                       	Line: 681
+	id82633                       	Line: 42
+	id82502                       	Line: 960
+	id82704                       	Line: 42
+	id82558                       	Line: 960
+	id82594                       	Line: 360
+	id82211                       	Line: 1892
+	id82329                       	Line: 689
+	id82448                       	Line: 247
+	id82298                       	Line: 376
+	id82150                       	Line: 681
+	id82647                       	Line: 129
+	id82526                       	Line: 960
+	id82421                       	Line: 232
+	id82605                       	Line: 1615
+	id82545                       	Line: 960
+	id82484                       	Line: 706
+	id82286                       	Line: 689
+	id82676                       	Line: 1615
+	id82571                       	Line: 960
+	id82244                       	Line: 1863
+	id82552                       	Line: 706
+	id82716                       	Line: 961
+	id82380                       	Line: 960
+	id82403                       	Line: 1398
+	id82565                       	Line: 1709
+	id82292                       	Line: 358
+	id82666                       	Line: 377
+	id82345                       	Line: 959
+	id82412                       	Line: 346
+	id82462                       	Line: 1398
+	id82682                       	Line: 673
+	id82576                       	Line: 1113
+	id82477                       	Line: 960
+	id82710                       	Line: 673
+	id82514                       	Line: 1035
+	id82352                       	Line: 376
+	id82471                       	Line: 359
+	id82187                       	Line: 1892
+	id82640                       	Line: 673
+	id82181                       	Line: 705
+	id82249                       	Line: 1034
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/header.html	
+  Line: 626
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id119621                      	Line: 626
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/keygen.html	
+ Lines: 532, 533, 784, 1518, 1519, 1824, 1825
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id330050                      	Line: 1518
+	id329791                      	Line: 1824
+	id330323                      	Line: 784
+	id330211                      	Line: 1519
+	id330155                      	Line: 532
+	id330275                      	Line: 533
+	id330467                      	Line: 1825
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/rt.html	
+  Line: 1190
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id347900                      	Line: 1190
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/option.html	
+ Lines: 536, 537, 1099, 1526, 1527
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id343838                      	Line: 537
+	id343944                      	Line: 1527
+	id343892                      	Line: 1526
+	id343773                      	Line: 536
+	id343546                      	Line: 1099
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/input.datetime.html	
+ Lines: 291, 292, 293, 483, 484, 485, 486, 758, 759, 983, 984, 985, 1220, 1311, 1312, 1313, 1499, 1798, 1799
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id301142                      	Line: 758
+	id302194                      	Line: 1799
+	id301874                      	Line: 486
+	id301962                      	Line: 1313
+	id301644                      	Line: 1312
+	id301339                      	Line: 484
+	id301531                      	Line: 983
+	id301662                      	Line: 984
+	id301094                      	Line: 483
+	id301596                      	Line: 292
+	id301512                      	Line: 1311
+	id301734                      	Line: 1220
+	id301396                      	Line: 759
+	id301465                      	Line: 291
+	id300622                      	Line: 1798
+	id301809                      	Line: 485
+	id301030                      	Line: 1499
+	id301930                      	Line: 293
+	id301981                      	Line: 985
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/title.html	
+  Line: 1279
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id361975                      	Line: 1279
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/dfn-links.html	
+ Lines: 8, 15, 21, 28, 32, 40, 51, 61, 68, 80, 99, 114, 126, 151, 155, 161, 165, 173, 181, 192, 203, 207, 216, 222, 226, 230, 239, 245, 261, 268, 274, 288, 300, 307, 311, 317, 323, 329, 337, 344, 350, 356, 373, 390, 396, 402, 408, 415, 427, 558, 562, 571, 579, 586, 604, 640, 644, 651, 658, 664, 670, 678, 687, 693, 697, 703, 718, 727, 733, 741, 795, 804, 818, 822, 829, 840, 846, 852, 858, 866, 872, 878, 886, 892, 903, 912, 922, 928, 943, 949, 957, 1012, 1018, 1024, 1028, 1032, 1040, 1046, 1053, 1081, 1089, 1105, 1111, 1118, 1127, 1131, 1142, 1148, 1206, 1212, 1218, 1229, 1257, 1263, 1269, 1275, 1283, 1287, 1294, 1308, 1327, 1334, 1341, 1345, 1351, 1360, 1371, 1377, 1383, 1389, 1395, 1430, 1438, 1603, 1607, 1613, 1620, 1624, 1631, 1643, 1647, 1661, 1667, 1674, 1689, 1701, 1707, 1714, 1722, 1755, 1849, 1853, 1861, 1876, 1880, 1886, 1890, 1903, 1907, 1913
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	common.data.polygon           	Line: 1212
+	syntax-attr-single-quoted     	Line: 1383
+	syntax-ambiguous-ampersand    	Line: 21
+	html-producer                 	Line: 697
+	media-source                  	Line: 903
+	context-menu                  	Line: 261
+	form.data.time                	Line: 1647
+	common.data.sizes             	Line: 1389
+	common.data.mimetype          	Line: 928
+	xml-parser                    	Line: 1886
+	common.data.name              	Line: 1012
+	common.data.datetime          	Line: 288
+	data.iri                      	Line: 818
+	syntax-cdata-sections         	Line: 155
+	form.data.emailaddress        	Line: 408
+	omitted                       	Line: 1111
+	common.data.integer           	Line: 804
+	legacy-tool-compatible-doctype	Line: 840
+	flow-content                  	Line: 604
+	misnested-tag                 	Line: 943
+	refsBCP47                     	Line: 68
+	html-syntax                   	Line: 703
+	refsNamespacesInXML           	Line: 1032
+	form.data.month               	Line: 949
+	dec-charref                   	Line: 311
+	form.data.emailaddresslist    	Line: 852
+	syntax-document-xml           	Line: 373
+	common.data.idrefs            	Line: 858
+	refsCSS                       	Line: 268
+	refsMediaQueries              	Line: 892
+	cdata-start-delimiter         	Line: 161
+	encoding-declaration-state    	Line: 562
+	syntax-self-closing           	Line: 886
+	common.data.integer.non-negative	Line: 1053
+	dt-term                       	Line: 1624
+	manifest                      	Line: 28
+	named-charref                 	Line: 1018
+	refsRFC3987                   	Line: 1327
+	deprecated-doctype            	Line: 323
+	refsABNF                      	Line: 8
+	syntax-attr-empty             	Line: 427
+	xml-compatible                	Line: 1903
+	html-elements                 	Line: 670
+	form.data.pattern             	Line: 1131
+	syntax-attr-double-quoted     	Line: 402
+	tag-name                      	Line: 1613
+	dd-description                	Line: 337
+	common.data.mediaquery        	Line: 912
+	comment-start-delimiter       	Line: 226
+	common.data.id                	Line: 733
+	common.data.uri.absolute      	Line: 15
+	refsDOMCore                   	Line: 390
+	common.data.browsing-context-name	Line: 99
+	data-unordered-tokens         	Line: 1689
+	refsRFC5322                   	Line: 1334
+	refsHTML5ForWebAuthors        	Line: 727
+	named-hyperlink               	Line: 1024
+	attr-value-unquoted           	Line: 1701
+	common.data.default-style     	Line: 317
+	syntax-attr-unquoted          	Line: 1707
+	common.data.float.positive    	Line: 1218
+	syntax-start-tags             	Line: 1430
+	hash-name-reference           	Line: 651
+	date-time                     	Line: 307
+	form.data.date                	Line: 274
+	common.data.keylabellist      	Line: 866
+	context                       	Line: 80
+	must-requirement              	Line: 957
+	common.data.rectangle         	Line: 1263
+	syntax-end-tags               	Line: 571
+	common.data.date-or-time      	Line: 300
+	hex-charref                   	Line: 658
+	refsCharacterSets             	Line: 207
+	refsRFC3339                   	Line: 1308
+	html-parser                   	Line: 693
+	attribute-name                	Line: 40
+	root-element                  	Line: 1341
+	attr-value-double-quoted      	Line: 396
+	html-namespace                	Line: 687
+	common.data.integer.positive  	Line: 1229
+	id-reference                  	Line: 795
+	text-content                  	Line: 1643
+	top-level-context             	Line: 1667
+	contents                      	Line: 245
+	ascii-compatible              	Line: 32
+	form.data.week                	Line: 1853
+	refsRFC2046                   	Line: 1294
+	doctype                       	Line: 344
+	attribute                     	Line: 61
+	normal-character-data         	Line: 1089
+	character-data                	Line: 165
+	syntax-comments               	Line: 230
+	permitted-system-ID           	Line: 1607
+	permitted-public-ID-system-ID-combination	Line: 1142
+	fallback                      	Line: 579
+	data-comma-separated-strings  	Line: 1351
+	common.data.hash-name         	Line: 644
+	html-language                 	Line: 678
+	common.data.zero              	Line: 1913
+	common.data.meta-charset      	Line: 922
+	case-insensitive              	Line: 126
+	xml-syntax                    	Line: 1890
+	syntax-document-html          	Line: 356
+	phrasing-content              	Line: 1148
+	description-list              	Line: 329
+	refsXMLBase                   	Line: 1907
+	xml-declaration               	Line: 1876
+	refsRFC1034                   	Line: 1287
+	newlines                      	Line: 1040
+	common.data.circle            	Line: 216
+	void-element                  	Line: 1755
+	syntax-attribute-value        	Line: 51
+	tags                          	Line: 1620
+	full-date                     	Line: 640
+	placeholder-hyperlink         	Line: 1206
+	cdata-end-delimiter           	Line: 151
+	normal-doctype                	Line: 1105
+	refsHTML5                     	Line: 718
+	refsXMLEntities               	Line: 1880
+	common.data.charset           	Line: 181
+	document                      	Line: 350
+	permitted-public-ID           	Line: 1257
+	replaceable-character-data    	Line: 1275
+	common.data.refresh           	Line: 1269
+	common.data.float.non-negative	Line: 1046
+	common.data.idref             	Line: 741
+	data-token                    	Line: 1661
+	form.data.color               	Line: 1371
+	data-string                   	Line: 1438
+	common.data.langcode          	Line: 829
+	common.data.sandbox-allow-list	Line: 1345
+	non-replaceable-character-data	Line: 1081
+	data.iri-ref                  	Line: 822
+	void-elements                 	Line: 1849
+	namespace-well-formed-xml-document	Line: 1028
+	encoding-declaration          	Line: 173
+	common.data.browsing-context-name-or-keyword	Line: 114
+	syntax-text                   	Line: 1631
+	character-set-name            	Line: 203
+	empty-hyperlink               	Line: 558
+	common.data.uri               	Line: 1722
+	common.data.tokens            	Line: 1360
+	html-consumer                 	Line: 664
+	svg-mathml-elements           	Line: 1603
+	comment-end-delimiter         	Line: 222
+	form.data.datetime-local      	Line: 878
+	data-ordered-tokens           	Line: 1118
+	syntax-charref                	Line: 192
+	data-url-no-spaces            	Line: 1714
+	transparent                   	Line: 1674
+	form.data.charsetlist         	Line: 846
+	partial-time                  	Line: 1127
+	refsXML                       	Line: 1861
+	refsECMA262                   	Line: 415
+	resolve-a-url                 	Line: 1283
+	space                         	Line: 1395
+	content-model                 	Line: 239
+	common.data.float             	Line: 586
+	form.data.mimetypelist        	Line: 872
+	attr-value-single-quoted      	Line: 1377
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/meta.http-equiv.refresh.html	
+ Lines: 141, 1067, 1271, 1415, 1716, 1830, 1831
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id336218                      	Line: 1716
+	id335907                      	Line: 1830
+	id336114                      	Line: 1271
+	id336174                      	Line: 1067
+	id336204                      	Line: 141
+	id336194                      	Line: 1415
+	id336158                      	Line: 1067
+	id336253                      	Line: 1831
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/li.html	
+ Lines: 628, 809
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id332049                      	Line: 628
+	id332178                      	Line: 809
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/datatypes.html	
+ Lines: 11, 36, 76, 110, 144, 145, 146, 147, 187, 188, 212, 283, 284, 296, 398, 411, 423, 600, 714, 737, 800, 812, 813, 814, 824, 825, 899, 939, 998, 999, 1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1049, 1074, 1075, 1076, 1077, 1101, 1122, 1123, 1290, 1304, 1321, 1322, 1323, 1329, 1330, 1337, 1355, 1356, 1366, 1367, 1379, 1418, 1419, 1420, 1421, 1422, 1423, 1424, 1425, 1426, 1592, 1593, 1594, 1595, 1596, 1597, 1598, 1599, 1656, 1657, 1663, 1695, 1696, 1697, 1703, 1717, 1718, 1751, 1899
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id373570                      	Line: 145
+	id372448                      	Line: 999
+	id373457                      	Line: 1696
+	id374208                      	Line: 1697
+	id372226                      	Line: 1593
+	id373350                      	Line: 1423
+	id374264                      	Line: 939
+	id373784                      	Line: 1718
+	id372678                      	Line: 800
+	id372156                      	Line: 1101
+	id373672                      	Line: 1424
+	id372670                      	Line: 1695
+	id373241                      	Line: 296
+	id374030                      	Line: 812
+	id373164                      	Line: 1004
+	id374126                      	Line: 814
+	id374293                      	Line: 1123
+	id372335                      	Line: 1663
+	id374464                      	Line: 1322
+	id372596                      	Line: 737
+	id373740                      	Line: 1076
+	id374156                      	Line: 1697
+	id372725                      	Line: 1001
+	id374408                      	Line: 1657
+	id374081                      	Line: 813
+	id374749                      	Line: 1290
+	id374164                      	Line: 147
+	id373535                      	Line: 1304
+	id372149                      	Line: 1592
+	id374005                      	Line: 812
+	id372433                      	Line: 999
+	id372574                      	Line: 1421
+	id374300                      	Line: 1007
+	id374793                      	Line: 1356
+	id373341                      	Line: 825
+	id373292                      	Line: 824
+	id373564                      	Line: 714
+	id372182                      	Line: 1703
+	id374670                      	Line: 1323
+	id372492                      	Line: 110
+	id373618                      	Line: 1899
+	id373482                      	Line: 1075
+	id373228                      	Line: 283
+	id372423                      	Line: 1595
+	id372548                      	Line: 1597
+	id374390                      	Line: 284
+	id373050                      	Line: 1049
+	id372731                      	Line: 1422
+	id373464                      	Line: 1005
+	id374343                      	Line: 1008
+	id373364                      	Line: 825
+	id373605                      	Line: 145
+	id374716                      	Line: 11
+	id372938                      	Line: 212
+	id372501                      	Line: 144
+	id372590                      	Line: 737
+	id372392                      	Line: 1367
+	id373770                      	Line: 146
+	id373994                      	Line: 812
+	id372567                      	Line: 1000
+	id372247                      	Line: 998
+	id372861                      	Line: 1002
+	id374356                      	Line: 423
+	id373371                      	Line: 1751
+	id374257                      	Line: 1355
+	id373145                      	Line: 1321
+	id373278                      	Line: 1329
+	id373689                      	Line: 187
+	id373061                      	Line: 1003
+	id374737                      	Line: 1337
+	id374226                      	Line: 1426
+	id374313                      	Line: 36
+	id372233                      	Line: 1418
+	id374800                      	Line: 411
+	id372706                      	Line: 1598
+	id372558                      	Line: 1000
+	id373760                      	Line: 1425
+	id373888                      	Line: 76
+	id373817                      	Line: 1599
+	id374070                      	Line: 813
+	id372293                      	Line: 1594
+	id372850                      	Line: 1074
+	id372196                      	Line: 398
+	id373852                      	Line: 899
+	id372189                      	Line: 1379
+	id372253                      	Line: 1418
+	id373924                      	Line: 1006
+	id373624                      	Line: 145
+	id374093                      	Line: 1077
+	id372260                      	Line: 998
+	id372329                      	Line: 1420
+	id372716                      	Line: 1001
+	id373916                      	Line: 1122
+	id372300                      	Line: 1419
+	id373982                      	Line: 812
+	id372481                      	Line: 1596
+	id373093                      	Line: 600
+	id373234                      	Line: 1656
+	id373298                      	Line: 1717
+	id372363                      	Line: 1366
+	id373408                      	Line: 1330
+	id374017                      	Line: 812
+	id374307                      	Line: 188
+	id373725                      	Line: 1076
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/input.range.html	
+ Lines: 511, 512, 591, 592, 593, 772, 773, 1224, 1506, 1812, 1813
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id316900                      	Line: 511
+	id316835                      	Line: 1506
+	id316475                      	Line: 1812
+	id317144                      	Line: 512
+	id317270                      	Line: 591
+	id317456                      	Line: 593
+	id317201                      	Line: 773
+	id317399                      	Line: 1224
+	id316947                      	Line: 772
+	id317331                      	Line: 592
+	id317651                      	Line: 1813
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/hr.html	
+ Lines: 1774, 1775
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id120647                      	Line: 1775
+	id120424                      	Line: 1774
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/noscript.html	
+ Lines: 384, 632, 1182, 1683
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id340485                      	Line: 1182
+	id340514                      	Line: 632
+	id340606                      	Line: 384
+	id340389                      	Line: 1683
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/audio.html	
+ Lines: 430, 431, 432, 433, 612, 1154, 1678, 1726
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id95898                       	Line: 432
+	id95405                       	Line: 612
+	id95711                       	Line: 430
+	id95352                       	Line: 1678
+	id95962                       	Line: 433
+	id96009                       	Line: 1726
+	id95470                       	Line: 1154
+	id95788                       	Line: 431
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/input.month.html	
+ Lines: 495, 496, 497, 498, 764, 765, 951, 952, 953, 1238, 1502, 1804, 1805
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id308324                      	Line: 952
+	id307889                      	Line: 764
+	id307841                      	Line: 495
+	id308640                      	Line: 953
+	id308886                      	Line: 1805
+	id308141                      	Line: 765
+	id308518                      	Line: 497
+	id308211                      	Line: 951
+	id307777                      	Line: 1502
+	id307370                      	Line: 1804
+	id308584                      	Line: 498
+	id308085                      	Line: 496
+	id308444                      	Line: 1238
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/var.html	
+  Line: 1201
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id363258                      	Line: 1201
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/iframe.html	
+ Lines: 89, 90, 91, 92, 106, 449, 450, 980, 1060, 1061, 1097, 1347, 1413, 1475, 1670, 1737
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id280110                      	Line: 450
+	id279750                      	Line: 1060
+	id279803                      	Line: 1061
+	id279657                      	Line: 106
+	id280030                      	Line: 1670
+	id279675                      	Line: 90
+	id279688                      	Line: 1475
+	id279897                      	Line: 449
+	id279713                      	Line: 980
+	id279698                      	Line: 980
+	id121791                      	Line: 1097
+	id280144                      	Line: 92
+	id279994                      	Line: 1347
+	id279622                      	Line: 89
+	id122045                      	Line: 1737
+	id279904                      	Line: 1413
+	id279857                      	Line: 1347
+	id279951                      	Line: 91
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/script.html	
+ Lines: 143, 186, 211, 538, 539, 713, 936, 1084, 1301, 1531, 1746, 1898
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id349820                      	Line: 143
+	id349874                      	Line: 143
+	id349667                      	Line: 538
+	id349193                      	Line: 936
+	id348886                      	Line: 1084
+	id349814                      	Line: 713
+	id349603                      	Line: 1746
+	id349245                      	Line: 1301
+	id349788                      	Line: 186
+	id349868                      	Line: 1898
+	id349732                      	Line: 539
+	id349855                      	Line: 143
+	id349548                      	Line: 1531
+	id349844                      	Line: 211
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/style.html	
+ Lines: 542, 898, 918, 938, 1085, 1303
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id353669                      	Line: 898
+	id353327                      	Line: 1085
+	id353637                      	Line: 918
+	id353603                      	Line: 1303
+	id353570                      	Line: 938
+	id353721                      	Line: 542
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/small.html	
+  Line: 1193
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id351778                      	Line: 1193
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/button.reset.html	
+ Lines: 437, 438, 744, 1158, 1464, 1465
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id102374                      	Line: 1464
+	id102667                      	Line: 438
+	id102602                      	Line: 1465
+	id102486                      	Line: 744
+	id102438                      	Line: 437
+	id102123                      	Line: 1158
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/progress.html	
+ Lines: 1048, 1187, 1225
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id346545                      	Line: 1187
+	id346703                      	Line: 1048
+	id346752                      	Line: 1225
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/select.html	
+ Lines: 540, 541, 789, 1248, 1532
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id351158                      	Line: 541
+	id351093                      	Line: 1248
+	id351026                      	Line: 789
+	id350978                      	Line: 540
+	id350914                      	Line: 1532
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/bdo.html	
+  Line: 1156
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id97142                       	Line: 1156
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/em.html	
+  Line: 1167
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id112755                      	Line: 1167
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/details.html	
+ Lines: 446, 619
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id111015                      	Line: 446
+	id110863                      	Line: 619
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/strong.html	
+  Line: 1195
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id353044                      	Line: 1195
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/dl.html	
+ Lines: 332, 340, 1626
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id112218                      	Line: 340
+	id112204                      	Line: 1626
+	id111921                      	Line: 332
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/div.html	
+  Line: 620
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id111571                      	Line: 620
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/dfn.html	
+  Line: 1165
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id111279                      	Line: 1165
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/body.html	
+ Lines: 614, 1410, 1444, 1445, 1446, 1447, 1448, 1449, 1450, 1451, 1452, 1453, 1454, 1455, 1456, 1457, 1458, 1459, 1460
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id98863                       	Line: 1455
+	id98810                       	Line: 1454
+	id99020                       	Line: 1458
+	id98706                       	Line: 1452
+	id98607                       	Line: 1450
+	id98465                       	Line: 1447
+	id98758                       	Line: 1453
+	id99475                       	Line: 1410
+	id98512                       	Line: 1448
+	id98968                       	Line: 1457
+	id99072                       	Line: 1459
+	id99125                       	Line: 1460
+	id98915                       	Line: 1456
+	id98412                       	Line: 1446
+	id98564                       	Line: 1449
+	id98318                       	Line: 1444
+	id97819                       	Line: 614
+	id98359                       	Line: 1445
+	id98661                       	Line: 1451
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/input.color.html	
+ Lines: 530, 531, 782, 783, 1373, 1517, 1822, 1823
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id327894                      	Line: 783
+	id327592                      	Line: 530
+	id327837                      	Line: 531
+	id327528                      	Line: 1517
+	id327640                      	Line: 782
+	id327250                      	Line: 1822
+	id327962                      	Line: 1373
+	id328213                      	Line: 1823
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/address.html	
+  Line: 609
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id92404                       	Line: 609
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/del.html	
+ Lines: 290, 618, 978, 1164, 1310, 1680, 1733
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id110445                      	Line: 1733
+	id110244                      	Line: 1680
+	id110544                      	Line: 978
+	id110525                      	Line: 1310
+	id110260                      	Line: 618
+	id110493                      	Line: 290
+	id110288                      	Line: 1164
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/button.button.html	
+ Lines: 439, 440, 745, 1159, 1466, 1467
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id103534                      	Line: 745
+	id103715                      	Line: 440
+	id103650                      	Line: 1467
+	id103486                      	Line: 439
+	id103171                      	Line: 1159
+	id103422                      	Line: 1466
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/section.html	
+  Line: 634
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id350339                      	Line: 634
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/command.command.html	
+ Lines: 441, 1468, 1730, 1766, 1767
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id107608                      	Line: 441
+	id107497                      	Line: 1468
+	id107543                      	Line: 1730
+	id107652                      	Line: 1767
+	id107243                      	Line: 1766
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/link.html	
+ Lines: 72, 833, 896, 916, 934, 991, 1066, 1299, 1364, 1391, 1691, 1743, 1826, 1827
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id333373                      	Line: 1827
+	id332958                      	Line: 72
+	id333185                      	Line: 1691
+	id333147                      	Line: 1391
+	id333033                      	Line: 896
+	id333067                      	Line: 934
+	id332992                      	Line: 916
+	id332918                      	Line: 833
+	id333192                      	Line: 991
+	id333210                      	Line: 1066
+	id332799                      	Line: 1743
+	id332854                      	Line: 1364
+	id332565                      	Line: 1826
+	id333107                      	Line: 1299
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/input.password.html	
+ Lines: 418, 456, 457, 458, 459, 749, 982, 1134, 1235, 1236, 1479, 1480, 1481, 1780, 1781
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id285597                      	Line: 1235
+	id286048                      	Line: 459
+	id286308                      	Line: 1781
+	id285984                      	Line: 982
+	id285478                      	Line: 749
+	id285997                      	Line: 418
+	id285757                      	Line: 1480
+	id285430                      	Line: 456
+	id285944                      	Line: 1134
+	id284955                      	Line: 1780
+	id285887                      	Line: 458
+	id285366                      	Line: 1479
+	id285710                      	Line: 1236
+	id285662                      	Line: 457
+	id286104                      	Line: 1481
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/p.html	
+  Line: 1185
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id345058                      	Line: 1185
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/h6.html	
+  Line: 1173
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id118801                      	Line: 1173
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/input.tel.html	
+ Lines: 422, 526, 527, 528, 529, 780, 781, 989, 1138, 1246, 1247, 1514, 1515, 1516, 1820, 1821
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id326039                      	Line: 989
+	id325631                      	Line: 780
+	id325999                      	Line: 1138
+	id325881                      	Line: 781
+	id326225                      	Line: 1247
+	id326529                      	Line: 1821
+	id325825                      	Line: 527
+	id325951                      	Line: 1246
+	id326327                      	Line: 1516
+	id326052                      	Line: 422
+	id326273                      	Line: 1515
+	id325101                      	Line: 1820
+	id325519                      	Line: 1514
+	id325584                      	Line: 526
+	id326104                      	Line: 528
+	id326169                      	Line: 529
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/label.html	
+ Lines: 785, 786, 1177
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id330785                      	Line: 1177
+	id330948                      	Line: 785
+	id331007                      	Line: 786
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/input.radio.html	
+ Lines: 464, 465, 466, 467, 751, 1484, 1485, 1784, 1785
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id289240                      	Line: 1485
+	id289385                      	Line: 467
+	id288946                      	Line: 1484
+	id289588                      	Line: 1785
+	id289058                      	Line: 751
+	id289011                      	Line: 464
+	id288658                      	Line: 1784
+	id289310                      	Line: 466
+	id289193                      	Line: 465
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/datalist.html	
+ Lines: 252, 1163
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id109691                      	Line: 252
+	id109538                      	Line: 1163
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/button.submit.html	
+ Lines: 88, 104, 119, 137, 434, 435, 436, 743, 1157, 1461, 1462, 1463, 1729
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id101527                      	Line: 1463
+	id101538                      	Line: 104
+	id101014                      	Line: 434
+	id101226                      	Line: 1729
+	id101619                      	Line: 436
+	id100950                      	Line: 1461
+	id101547                      	Line: 137
+	id101062                      	Line: 743
+	id101513                      	Line: 88
+	id101486                      	Line: 119
+	id101178                      	Line: 1462
+	id101299                      	Line: 435
+	id100563                      	Line: 1157
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/caption.html	
+  Line: 616
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id104966                      	Line: 616
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/video.html	
+ Lines: 548, 549, 550, 551, 636, 1072, 1073, 1202, 1685, 1748, 1749
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id364366                      	Line: 1073
+	id363970                      	Line: 548
+	id364047                      	Line: 549
+	id363595                      	Line: 636
+	id363542                      	Line: 1685
+	id364270                      	Line: 1748
+	id364222                      	Line: 551
+	id364413                      	Line: 1749
+	id364318                      	Line: 1072
+	id364158                      	Line: 550
+	id363661                      	Line: 1202
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/abbr.html	
+  Line: 1153
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id92133                       	Line: 1153
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/dd.html	
+ Lines: 331, 339, 617
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id109891                      	Line: 617
+	id109858                      	Line: 339
+	id110087                      	Line: 331
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/time.html	
+ Lines: 169, 254, 282, 295, 302, 303, 547, 1200, 1655
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id361645                      	Line: 547
+	id361823                      	Line: 254
+	id361392                      	Line: 1200
+	id361829                      	Line: 303
+	id361593                      	Line: 295
+	id361810                      	Line: 254
+	id361550                      	Line: 302
+	id361586                      	Line: 1655
+	id361579                      	Line: 282
+	id361817                      	Line: 169
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/object.html	
+ Lines: 95, 109, 633, 647, 654, 787, 935, 993, 1068, 1069, 1183, 1300, 1524, 1684, 1744
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id341361                      	Line: 1069
+	id341524                      	Line: 95
+	id341428                      	Line: 654
+	id341505                      	Line: 109
+	id341200                      	Line: 1744
+	id341314                      	Line: 1068
+	id341248                      	Line: 935
+	id341546                      	Line: 993
+	id341561                      	Line: 993
+	id341536                      	Line: 1524
+	id340857                      	Line: 633
+	id341409                      	Line: 647
+	id340822                      	Line: 1684
+	id341598                      	Line: 787
+	id340906                      	Line: 1183
+	id341280                      	Line: 1300
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/input.search.html	
+ Lines: 421, 522, 523, 524, 525, 778, 779, 988, 1137, 1244, 1245, 1511, 1512, 1513, 1818, 1819
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id324078                      	Line: 1245
+	id324126                      	Line: 1512
+	id323957                      	Line: 524
+	id324181                      	Line: 1513
+	id324382                      	Line: 1819
+	id323484                      	Line: 778
+	id323678                      	Line: 523
+	id323805                      	Line: 1244
+	id323906                      	Line: 421
+	id323892                      	Line: 988
+	id324022                      	Line: 525
+	id322953                      	Line: 1818
+	id323853                      	Line: 1137
+	id323735                      	Line: 779
+	id323372                      	Line: 1511
+	id323436                      	Line: 522
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/fieldset.html	
+ Lines: 447, 621, 746, 1472
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id114157                      	Line: 746
+	id113859                      	Line: 621
+	id114109                      	Line: 447
+	id114045                      	Line: 1472
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/input.reset.html	
+ Lines: 473, 474, 754, 1491, 1492, 1790, 1791
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id293941                      	Line: 1491
+	id294005                      	Line: 473
+	id293704                      	Line: 1790
+	id294444                      	Line: 1791
+	id294053                      	Line: 754
+	id294169                      	Line: 1492
+	id294240                      	Line: 474
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/article.html	
+  Line: 610
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id94656                       	Line: 610
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/kbd.html	
+  Line: 1176
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id329470                      	Line: 1176
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/meta.http-equiv.default-style.html	
+ Lines: 319, 1832, 1833
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id336693                      	Line: 319
+	id336487                      	Line: 1832
+	id336794                      	Line: 1833
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/base.html	
+ Lines: 86, 87, 103, 118, 136, 1443, 1727, 1760, 1761
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id96628                       	Line: 1760
+	id96852                       	Line: 118
+	id96878                       	Line: 87
+	id96892                       	Line: 1443
+	id96912                       	Line: 136
+	id96804                       	Line: 1727
+	id96903                       	Line: 103
+	id96593                       	Line: 86
+	id96963                       	Line: 1761
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/input.image.html	
+ Lines: 94, 108, 122, 140, 480, 481, 482, 757, 1064, 1065, 1496, 1497, 1498, 1740, 1741, 1796, 1797
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id299507                      	Line: 1498
+	id299704                      	Line: 1065
+	id298938                      	Line: 480
+	id299466                      	Line: 122
+	id299279                      	Line: 481
+	id299656                      	Line: 1064
+	id298986                      	Line: 757
+	id299206                      	Line: 1741
+	id299899                      	Line: 1797
+	id299527                      	Line: 140
+	id299105                      	Line: 1497
+	id299493                      	Line: 94
+	id299518                      	Line: 108
+	id299599                      	Line: 482
+	id298444                      	Line: 1796
+	id299158                      	Line: 1740
+	id298874                      	Line: 1496
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/cite.html	
+  Line: 1161
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id105316                      	Line: 1161
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/input.text.html	
+ Lines: 417, 452, 453, 454, 455, 747, 748, 981, 1133, 1233, 1234, 1476, 1477, 1478, 1778, 1779
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id284244                      	Line: 1779
+	id283986                      	Line: 455
+	id283811                      	Line: 748
+	id284041                      	Line: 1478
+	id283221                      	Line: 1476
+	id283333                      	Line: 747
+	id283285                      	Line: 452
+	id283626                      	Line: 1477
+	id283465                      	Line: 1233
+	id282778                      	Line: 1778
+	id283530                      	Line: 453
+	id283881                      	Line: 1133
+	id283921                      	Line: 981
+	id283934                      	Line: 417
+	id283754                      	Line: 454
+	id283578                      	Line: 1234
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/img.html	
+ Lines: 451, 582, 646, 653, 1062, 1063, 1098, 1738, 1776, 1777, 1915
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id281326                      	Line: 1915
+	id281652                      	Line: 1777
+	id281063                      	Line: 1062
+	id280963                      	Line: 1738
+	id281158                      	Line: 646
+	id280701                      	Line: 1776
+	id281010                      	Line: 1098
+	id281176                      	Line: 653
+	id281029                      	Line: 582
+	id281273                      	Line: 451
+	id281110                      	Line: 1063
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/form.html	
+ Lines: 35, 105, 120, 138, 183, 448, 625, 848, 979, 1120, 1473, 1474, 1735
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id116095                      	Line: 979
+	id116108                      	Line: 35
+	id116015                      	Line: 1473
+	id116255                      	Line: 105
+	id115838                      	Line: 1735
+	id116161                      	Line: 448
+	id116244                      	Line: 1474
+	id116264                      	Line: 138
+	id116217                      	Line: 120
+	id116062                      	Line: 848
+	id116102                      	Line: 183
+	id116088                      	Line: 1120
+	id115531                      	Line: 625
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/input.hidden.html	
+ Lines: 479, 756, 1494, 1495, 1794, 1795
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	id297731                      	Line: 1795
+	id297300                      	Line: 1494
+	id296822                      	Line: 1794
+	id297364                      	Line: 479
+	id297529                      	Line: 1495
+	id297412                      	Line: 756
+
+=====================================================
+Checking file 42 of 177 (documents.html)
+
+Processing	file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/documents.html
+
+List of duplicate and empty anchors
+	documents	Lines: 2, 21
+
+=====================================================
+Checking file 44 of 177 (elements-by-function.html)
+
+Processing	file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/elements-by-function.html
+
+List of duplicate and empty anchors
+	elements-by-function	Lines: 2, 21
+
+=====================================================
+Checking file 45 of 177 (elements.html)
+
+Processing	file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/elements.html
+
+List of duplicate and empty anchors
+	elements	Lines: 2, 21
+
+=====================================================
+Checking file 57 of 177 (global-attributes.html)
+
+Processing	file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/global-attributes.html
+
+List of duplicate and empty anchors
+	global-attributes	Lines: 2, 21
+
+=====================================================
+Checking file 76 of 177 (index-of-terms.html)
+
+Processing	file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/index-of-terms.html
+
+List of broken links and other issues:
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/.html	
+  Line: 1939
+  Code: 404 File `/Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/.html' does not exist
+ To do: The link is broken. Double-check that you have not made any typo,
+	or mistake in copy-pasting. If the link points to a resource that
+	no longer exists, you may want to remove or fix the link.
+Fragments:
+	phrasing-content_xref3        	Line: 1939
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/intro.html	
+  Line: 1137
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	html-elements_xref1           	Line: 1137
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/documents.html	
+  Line: 1139
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	html-elements_xref4           	Line: 1139
+	html-elements_xref2           	Line: 1139
+	html-elements_xref5           	Line: 1139
+	html-elements_xref3           	Line: 1139
+
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/syntax.html	
+  Line: 1141
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	html-elements_xref6           	Line: 1141
+
+=====================================================
+Checking file 78 of 177 (index.html)
+
+Processing	file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/index.html
+
+
+List of broken links and other issues:
+http://www.w3.org/TR/2012/WD-html-markup-20121011/	
+  Line: 21
+  Code: 404 Not Found
+ To do: The link is broken. Double-check that you have not made any typo,
+	or mistake in copy-pasting. If the link points to a resource that
+	no longer exists, you may want to remove or fix the link.
+
+=====================================================
+Checking file 96 of 177 (input.search.html)
+
+Processing	file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/input.search.html
+
+List of broken links and other issues:
+http://dev.w3.org/html5/spec/the-input-element.html	
+ Lines: 311, 312, 313, 315, 317, 326, 327, 329, 330, 331, 332, 334, 335, 336, 337, 338, 339, 340, 341, 342, 346
+  Code: 200 OK
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	dom-input-readonly            	Line: 336
+	dom-input-src                 	Line: 339
+	dom-input-height              	Line: 326
+	dom-input-width               	Line: 346
+	dom-input-indeterminate       	Line: 327
+	dom-input-accept              	Line: 311
+	dom-input-autocomplete        	Line: 313
+	dom-input-max                 	Line: 329
+	dom-input-placeholder         	Line: 335
+	dom-input-pattern             	Line: 334
+	dom-input-defaultchecked      	Line: 315
+	dom-input-maxlength           	Line: 330
+	dom-input-multiple            	Line: 332
+	dom-input-size                	Line: 338
+	dom-input-type                	Line: 341
+	dom-input-step                	Line: 340
+	dom-input-defaultvalue        	Line: 342
+	dom-input-alt                 	Line: 312
+	dom-input-min                 	Line: 331
+	dom-input-required            	Line: 337
+	dom-input-dirname             	Line: 317
+
+=====================================================
+Checking file 103 of 177 (ins.html)
+
+Processing	file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/ins.html
+
+List of broken links and other issues:
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/ins.html	
+  Line: 51
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	time.attrs.datetime           	Line: 51
+
+=====================================================
+Checking file 104 of 177 (intro.html)
+
+Processing	file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/intro.html
+
+List of duplicate and empty anchors
+	intro	Lines: 2, 20
+
+=====================================================
+Checking file 130 of 177 (Overview.html)
+
+Processing	file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/Overview.html
+
+
+List of broken links and other issues:
+http://www.w3.org/TR/2012/WD-html-markup-20121011/	
+  Line: 21
+  Code: 404 Not Found
+ To do: The link is broken. Double-check that you have not made any typo,
+	or mistake in copy-pasting. If the link points to a resource that
+	no longer exists, you may want to remove or fix the link.
+
+=====================================================
+Checking file 139 of 177 (references.html)
+
+Processing	file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/references.html
+
+List of duplicate and empty anchors
+	references	Lines: 2, 21
+
+=====================================================
+Checking file 145 of 177 (schema.html)
+
+Processing	file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/schema.html
+
+
+List of broken links and other issues:
+file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/schema.html	
+ Lines: 217, 222, 272, 2216, 2579, 2875, 5153
+  Code: 200 (no message)
+ To do: Some of the links to this resource point to broken URI fragments
+	(such as index.html#fragment).
+The following fragments need to be fixed:
+	normal-character-data         	Lines: 217, 222, 272, 2216, 2579, 2875, 5153
+
+=====================================================
+Checking file 152 of 177 (spec.html)
+
+Processing	file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/spec.html
+
+
+List of broken links and other issues:
+http://www.w3.org/TR/2012/WD-html-markup-20121011/	
+  Line: 18
+  Code: 404 Not Found
+ To do: The link is broken. Double-check that you have not made any typo,
+	or mistake in copy-pasting. If the link points to a resource that
+	no longer exists, you may want to remove or fix the link.
+List of duplicate and empty anchors
+	xml-declaration_index_items	Lines: 30257, 30349
+	refsXMLEntities_index	Lines: 30259, 30351
+	xml-declaration_index	Lines: 30250, 30342
+	xml-parser_index	Lines: 30270, 30362
+	refsXMLEntities_index_items	Lines: 30266, 30358
+	common.data.zero_index_items	Lines: 30317, 30409
+	refsXMLBase_index_items	Lines: 30306, 30398
+	xml-syntax_index	Lines: 30279, 30371
+	common.data.zero_index	Lines: 30310, 30402
+	xml-compatible_index	Lines: 30241, 30333
+	xml-syntax_index_items	Lines: 30286, 30378
+	xml-parser_index_items	Lines: 30277, 30369
+	xml-compatible_index_items	Lines: 30248, 30340
+	refsXMLBase_index	Lines: 30299, 30391
+
+=====================================================
+Checking file 159 of 177 (syntax.html)
+
+Processing	file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/syntax.html
+
+List of duplicate and empty anchors
+	syntax	Lines: 2, 21
+
+=====================================================
+Checking file 163 of 177 (terminology.html)
+
+Processing	file:///Projects/htmlwg.org/public/heartbeat/WD-html-markup-20121011/terminology.html
+
+List of duplicate and empty anchors
+	terminology	Lines: 2, 21
+
