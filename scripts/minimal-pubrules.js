@@ -8,7 +8,7 @@ var fs  = require("fs")
 
 // where are we?
 var rootDir = pth.join(__dirname, "..")
-,   hbDir = pth.join(rootDir, "heartbeat")
+,   hbDir = process.argv[2] ? pth.join(rootDir, "heartbeat") : process.argv[2]
 ,   files
 ,   total = 0
 ;
