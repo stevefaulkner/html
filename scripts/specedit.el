@@ -5,7 +5,7 @@
 
 ;;; Commentary:
 
-;; There are basically three things of interest in this file:
+;; There are basically four things of interest in this file:
 
 ;; 1. The command `specedit-insert-boilerplate', which is useful when
 ;;    replying to Bugzilla bugs.
@@ -15,6 +15,9 @@
 ;; 3. The command `specedit-specs-at-point' will tell you what specs the
 ;;    character at point appears in. Helpful for when you're trying to
 ;;    figure out what START or END directives to add/remove.
+;; 4. The command `specedit-insert-inert-block-at-point' will insert the
+;;    appropriate amount of START and END directives so that the content
+;;    they surround will only appear in the given spec.
 
 ;;; Code:
 
@@ -210,10 +213,38 @@ Helpful for when there are lots of START and END directives nearby.")
                  (when applies-at-point
                    (push spec specs)))
                hitmap)
-      (message "Appears in %s."
-               (if specs
-                   (mapconcat 'identity specs ", ")
-                 "no specs")))))
+      (when (called-interactively-p)
+        (message "Appears in %s."
+                 (if specs
+                     (mapconcat 'identity specs ", ")
+                   "no specs")))
+      specs)))
+
+(defun specedit-insert-inert-block-at-point (p spec)
+  "Insert STARTs and ENDs for a block with just SPEC."
+  (interactive
+   (list (point)
+         (completing-read "Spec: "
+                          '("w3c-html" "2dcontext"))))
+  (let ((specs (specedit-specs-at-point p))
+        (frob-self t))
+    (mapc (lambda (s)
+            (if (string-equal s spec)
+                (setq frob-self nil)
+              (unless (string-equal s "validation")
+                (insert (format "<!--END %s-->" s)))))
+          specs)
+    (if frob-self
+        (insert (format "<!--START %s-->" spec))
+      (insert (format "<!--%s-->" spec)))
+    (insert "\n")
+    (mapc (lambda (s)
+            (unless (member s (list spec "validation"))
+              (insert (format "<!--START %s-->" s))))
+          specs)
+    (when frob-self
+      (insert (format "<!--END %s-->" spec)))
+    (insert "\n")))
 
 (provide 'specedit)
 ;;; specedit.el ends here
