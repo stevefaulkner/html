@@ -570,7 +570,15 @@
            attribute DOMString <a href="global-attributes.html#dom-dir" title="dom-dir">dir</a>;
   readonly attribute <a href="common-dom-interfaces.html#domstringmap-0">DOMStringMap</a> <a href="global-attributes.html#dom-dataset" title="dom-dataset">dataset</a>;
 
-<!--MD-->
+  // <span>microdata</span>
+           attribute boolean <span title="dom-itemScope">itemScope</span>;
+  [PutForwards=<span title="dom-DOMSettableTokenList-value">value</span>] readonly attribute <a href="infrastructure.html#domsettabletokenlist">DOMSettableTokenList</a> <span title="dom-itemType">itemType</span>;
+           attribute DOMString <span title="dom-itemId">itemId</span>;
+  [PutForwards=<span title="dom-DOMSettableTokenList-value">value</span>] readonly attribute <a href="infrastructure.html#domsettabletokenlist">DOMSettableTokenList</a> <span title="dom-itemRef">itemRef</span>;
+  [PutForwards=<span title="dom-DOMSettableTokenList-value">value</span>] readonly attribute <a href="infrastructure.html#domsettabletokenlist">DOMSettableTokenList</a> <span title="dom-itemProp">itemProp</span>;
+  readonly attribute <span>HTMLPropertiesCollection</span> <span title="dom-properties">properties</span>;
+           attribute any <span title="dom-itemValue">itemValue</span>; // acts as DOMString on setting
+
   // <a href="editing.html#editing">user interaction</a>
            attribute boolean <a href="editing.html#dom-hidden" title="dom-hidden">hidden</a>;
   void <a href="editing.html#dom-click" title="dom-click">click</a>();

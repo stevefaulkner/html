@@ -513,32 +513,32 @@
   content attribute value.</p>
   <!-- see previous paragraph for note about the weird range -->
  
-  <p>If a reflecting IDL attribute has a floating-point number type
+  <p>If a reflecting IDL attribute has a floating point number type
   (<code>double</code> or <code>unrestricted double</code>), then, on
   getting, the content attribute must be parsed according to the
-  <a href="common-microsyntaxes.html#rules-for-parsing-floating-point-number-values">rules for parsing floating-point number values</a>, and if
+  <span>rules for parsing floating point number values</span>, and if
   that is successful, the resulting value must be returned. If, on the
   other hand, it fails, or if the attribute is absent, the default
   value must be returned instead, or 0.0 if there is no default value.
-  On setting, the given value must be converted to the <a href="common-microsyntaxes.html#best-representation-of-the-number-as-a-floating-point-number">best
-  representation of the number as a floating-point number</a> and
+  On setting, the given value must be converted to the <span>best
+  representation of the number as a floating point number</span> and
   then that string must be used as the new content attribute
   value.</p>
 
-  <p>If a reflecting IDL attribute has a floating-point number type
+  <p>If a reflecting IDL attribute has a floating point number type
   (<code>double</code> or <code>unrestricted double</code>) that is
   <dfn id="limited-to-numbers-greater-than-zero">limited to numbers greater than zero</dfn>, then the behavior
   is similar to the previous case, but zero and negative values are
   not allowed. On getting, the content attribute must be parsed
-  according to the <a href="common-microsyntaxes.html#rules-for-parsing-floating-point-number-values">rules for parsing floating-point number
-  values</a>, and if that is successful and the value is greater
+  according to the <span>rules for parsing floating point number
+  values</span>, and if that is successful and the value is greater
   than 0.0, the resulting value must be returned. If, on the other
   hand, it fails or returns an out of range value, or if the attribute
   is absent, the default value must be returned instead, or 0.0 if
   there is no default value. On setting, if the value is less than or
   equal to zero, then the value must be ignored. Otherwise, the given
-  value must be converted to the <a href="common-microsyntaxes.html#best-representation-of-the-number-as-a-floating-point-number">best representation of the
-  number as a floating-point number</a> and then that string must
+  value must be converted to the <span>best representation of the
+  number as a floating point number</span> and then that string must
   be used as the new content attribute value.</p>
 
   <p class="note">The values Infinity and Not-a-Number (NaN) values
@@ -650,7 +650,7 @@
    <dd>
     <p>Returns the item with <a href="infrastructure.html#concept-id" title="concept-id">ID</a> or name <var title="">name</var> from the collection.</p>
     <p>If there are multiple matching items, then an <code><a href="#htmlallcollection-0">HTMLAllCollection</a></code> object containing all those elements is returned.</p>
-    <p>Only <code><a href="the-a-element.html#the-a-element">a</a></code>, <code><a href="obsolete.html#the-applet-element">applet</a></code>, <code><a href="the-area-element.html#the-area-element">area</a></code>,
+    <p>Only <code><a href="the-a-element.html#the-a-element">a</a></code>, <code><a href="obsolete.html#the-applet-element">applet</a></code>, <code>area</code>,
     <code><a href="the-embed-element.html#the-embed-element">embed</a></code>, <code><a href="the-form-element.html#the-form-element">form</a></code>, <code><a href="obsolete.html#frame">frame</a></code>,
     <code><a href="obsolete.html#frameset">frameset</a></code>, <code><a href="the-iframe-element.html#the-iframe-element">iframe</a></code>, <code><a href="the-img-element.html#the-img-element">img</a></code>, and
     <code><a href="the-object-element.html#the-object-element">object</a></code> elements can have a name for the purpose of
@@ -680,7 +680,7 @@
     match the filter of the <code><a href="#htmlallcollection-0">HTMLAllCollection</a></code> object on
     which the method was invoked and that are either:</p>
 
-    <ul><li><code><a href="the-a-element.html#the-a-element">a</a></code>, <code><a href="obsolete.html#the-applet-element">applet</a></code>, <code><a href="the-area-element.html#the-area-element">area</a></code>,
+    <ul><li><code><a href="the-a-element.html#the-a-element">a</a></code>, <code><a href="obsolete.html#the-applet-element">applet</a></code>, <code>area</code>,
      <code><a href="the-embed-element.html#the-embed-element">embed</a></code>, <code><a href="the-form-element.html#the-form-element">form</a></code>, <code><a href="obsolete.html#frame">frame</a></code>,
      <code><a href="obsolete.html#frameset">frameset</a></code>, <code><a href="the-iframe-element.html#the-iframe-element">iframe</a></code>, <code><a href="the-img-element.html#the-img-element">img</a></code>, or
      <code><a href="the-object-element.html#the-object-element">object</a></code> elements with a <code title="">name</code>

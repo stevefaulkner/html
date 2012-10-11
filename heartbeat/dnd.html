@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US-x-Hixie"><head><meta charset="utf-8"><title>7.7 Drag and drop &#8212; HTML5</title><style type="text/css">
+<html lang="en-US-x-Hixie"><head><meta charset="utf-8"><title>7.6 Drag and drop &#8212; HTML5</title><style type="text/css">
 
    .applies thead th > * { display: block; }
    .applies thead code { display: block; }
@@ -356,7 +356,7 @@
      }
      return null;
    }
-  </script><link href="editing-apis.html" title="7.6.4 Editing APIs" rel="prev">
+  </script><link href="editing-apis.html" title="7.5.4 Editing APIs" rel="prev">
   <link href="index.html#contents" title="Table of contents" rel="contents">
   <link href="syntax.html" title="8 The HTML syntax" rel="next">
   </head><body onload="fixBrokenLink();" class="split chapter"><div class="head" id="head">
@@ -369,14 +369,14 @@
   
 
   <div class="prev_next">
-   <a href="editing-apis.html">&#8592; 7.6.4 Editing APIs</a> &#8211;
+   <a href="editing-apis.html">&#8592; 7.5.4 Editing APIs</a> &#8211;
    <a href="index.html#contents">Table of contents</a> &#8211;
    <a href="syntax.html">8 The HTML syntax &#8594;</a>
-  <ol class="toc"><li><ol><li><a href="dnd.html#dnd"><span class="secno">7.7 </span>Drag and drop</a>
-    <ol><li><a href="dnd.html#introduction-7"><span class="secno">7.7.1 </span>Introduction</a></li><li><a href="dnd.html#the-drag-data-store"><span class="secno">7.7.2 </span>The drag data store</a></li><li><a href="dnd.html#the-datatransfer-interface"><span class="secno">7.7.3 </span>The <code>DataTransfer</code> interface</a>
-      <ol><li><a href="dnd.html#the-datatransferitemlist-interface"><span class="secno">7.7.3.1 </span>The <code>DataTransferItemList</code> interface</a></li><li><a href="dnd.html#the-datatransferitem-interface"><span class="secno">7.7.3.2 </span>The <code>DataTransferItem</code> interface</a></li></ol></li><li><a href="dnd.html#the-dragevent-interface"><span class="secno">7.7.4 </span>The <code>DragEvent</code> interface</a></li><li><a href="dnd.html#drag-and-drop-processing-model"><span class="secno">7.7.5 </span>Drag-and-drop processing model</a></li><li><a href="dnd.html#dndevents"><span class="secno">7.7.6 </span>Events summary</a></li><li><a href="dnd.html#the-draggable-attribute"><span class="secno">7.7.7 </span>The <code>draggable</code> attribute</a></li><li><a href="dnd.html#the-dropzone-attribute"><span class="secno">7.7.8 </span>The <code>dropzone</code> attribute</a></li><li><a href="dnd.html#security-risks-in-the-drag-and-drop-model"><span class="secno">7.7.9 </span>Security risks in the drag-and-drop model</a></li></ol></li></ol></li></ol></div>
+  <ol class="toc"><li><ol><li><a href="dnd.html#dnd"><span class="secno">7.6 </span>Drag and drop</a>
+    <ol><li><a href="dnd.html#introduction-7"><span class="secno">7.6.1 </span>Introduction</a></li><li><a href="dnd.html#the-drag-data-store"><span class="secno">7.6.2 </span>The drag data store</a></li><li><a href="dnd.html#the-datatransfer-interface"><span class="secno">7.6.3 </span>The <code>DataTransfer</code> interface</a>
+      <ol><li><a href="dnd.html#the-datatransferitemlist-interface"><span class="secno">7.6.3.1 </span>The <code>DataTransferItemList</code> interface</a></li><li><a href="dnd.html#the-datatransferitem-interface"><span class="secno">7.6.3.2 </span>The <code>DataTransferItem</code> interface</a></li></ol></li><li><a href="dnd.html#the-dragevent-interface"><span class="secno">7.6.4 </span>The <code>DragEvent</code> interface</a></li><li><a href="dnd.html#drag-and-drop-processing-model"><span class="secno">7.6.5 </span>Drag-and-drop processing model</a></li><li><a href="dnd.html#dndevents"><span class="secno">7.6.6 </span>Events summary</a></li><li><a href="dnd.html#the-draggable-attribute"><span class="secno">7.6.7 </span>The <code>draggable</code> attribute</a></li><li><a href="dnd.html#the-dropzone-attribute"><span class="secno">7.6.8 </span>The <code>dropzone</code> attribute</a></li><li><a href="dnd.html#security-risks-in-the-drag-and-drop-model"><span class="secno">7.6.9 </span>Security risks in the drag-and-drop model</a></li></ol></li></ol></li></ol></div>
 
-  <h3 id="dnd"><span class="secno">7.7 </span><dfn>Drag and drop</dfn></h3>
+  <h3 id="dnd"><span class="secno">7.6 </span><dfn>Drag and drop</dfn></h3>
 
 <!-- v2: ideas for drag and drop:
 
@@ -478,7 +478,7 @@
   </div>
 
 
-  <h4 id="introduction-7"><span class="secno">7.7.1 </span>Introduction</h4>
+  <h4 id="introduction-7"><span class="secno">7.6.1 </span>Introduction</h4>
 
   <p><i>This section is non-normative.</i></p>
   <p>To make an element draggable is simple: give the element a <code title="attr-draggable"><a href="#the-draggable-attribute">draggable</a></code> attribute, and set an event
@@ -580,7 +580,7 @@
 
 
 
-  <h4 id="the-drag-data-store"><span class="secno">7.7.2 </span>The drag data store</h4>
+  <h4 id="the-drag-data-store"><span class="secno">7.6.2 </span>The drag data store</h4>
 
   <p>The data that underlies a drag-and-drop operation, known as the
   <dfn id="drag-data-store">drag data store</dfn>, consists of the following information:</p>
@@ -721,7 +721,7 @@
   store allowed effects state</a> is the string "<code title="">uninitialized</code>".</p>
 
 
-  <h4 id="the-datatransfer-interface"><span class="secno">7.7.3 </span>The <code><a href="#datatransfer">DataTransfer</a></code> interface</h4>
+  <h4 id="the-datatransfer-interface"><span class="secno">7.6.3 </span>The <code><a href="#datatransfer">DataTransfer</a></code> interface</h4>
 
   <p><code><a href="#datatransfer">DataTransfer</a></code> objects are used to expose the
   <a href="#drag-data-store">drag data store</a> that underlies a drag-and-drop
@@ -1069,7 +1069,7 @@
   </div>
 
 
-  <h5 id="the-datatransferitemlist-interface"><span class="secno">7.7.3.1 </span>The <code><a href="#datatransferitemlist">DataTransferItemList</a></code> interface</h5>
+  <h5 id="the-datatransferitemlist-interface"><span class="secno">7.6.3.1 </span>The <code><a href="#datatransferitemlist">DataTransferItemList</a></code> interface</h5>
 
   <p>Each <code><a href="#datatransfer">DataTransfer</a></code> object is associated with a
   <code><a href="#datatransferitemlist">DataTransferItemList</a></code> object.</p>
@@ -1278,7 +1278,7 @@ DND-v5:  <span>DataTransferItem</span>? <span title="dom-DataTransferItemList-ad
   </ol></div>
 
 
-  <h5 id="the-datatransferitem-interface"><span class="secno">7.7.3.2 </span>The <code><a href="#datatransferitem">DataTransferItem</a></code> interface</h5>
+  <h5 id="the-datatransferitem-interface"><span class="secno">7.6.3.2 </span>The <code><a href="#datatransferitem">DataTransferItem</a></code> interface</h5>
 
   <p>Each <code><a href="#datatransferitem">DataTransferItem</a></code> object is associated with a
   <code><a href="#datatransfer">DataTransfer</a></code> object.</p>
@@ -1506,7 +1506,7 @@ interface <dfn>FunctionObjectCallback</dfn> {
 
 
 
-  <h4 id="the-dragevent-interface"><span class="secno">7.7.4 </span>The <code><a href="#dragevent">DragEvent</a></code> interface</h4>
+  <h4 id="the-dragevent-interface"><span class="secno">7.6.4 </span>The <code><a href="#dragevent">DragEvent</a></code> interface</h4>
 
   <p>The drag-and-drop processing model involves several events. They
   all use the <code><a href="#dragevent">DragEvent</a></code> interface.</p>
@@ -1670,7 +1670,7 @@ dictionary <dfn id="drageventinit">DragEventInit</dfn> : <a href="infrastructure
 
   <div class="impl">
 
-  <h4 id="drag-and-drop-processing-model"><span class="secno">7.7.5 </span>Drag-and-drop processing model</h4>
+  <h4 id="drag-and-drop-processing-model"><span class="secno">7.6.5 </span>Drag-and-drop processing model</h4>
 
   <p>When the user attempts to begin a drag operation, the user agent
   must run the following steps. User agents must act as if these steps
@@ -2321,7 +2321,7 @@ dictionary <dfn id="drageventinit">DragEventInit</dfn> : <a href="infrastructure
   </div>
 
 
-  <h4 id="dndevents"><span class="secno">7.7.6 </span>Events summary</h4>
+  <h4 id="dndevents"><span class="secno">7.6.6 </span>Events summary</h4>
 
   <p><i>This section is non-normative.</i></p>
   <p>The following events are involved in the drag-and-drop
@@ -2397,7 +2397,7 @@ dictionary <dfn id="drageventinit">DragEventInit</dfn> : <a href="infrastructure
 
 
 
-  <h4 id="the-draggable-attribute"><span class="secno">7.7.7 </span>The <dfn title="attr-draggable"><code>draggable</code></dfn> attribute</h4>
+  <h4 id="the-draggable-attribute"><span class="secno">7.6.7 </span>The <dfn title="attr-draggable"><code>draggable</code></dfn> attribute</h4>
 
   <p>All <a href="infrastructure.html#html-elements">HTML elements</a> may have the <code title="attr-draggable"><a href="#the-draggable-attribute">draggable</a></code> content attribute set. The
   <code title="attr-draggable"><a href="#the-draggable-attribute">draggable</a></code> attribute is an
@@ -2467,7 +2467,7 @@ dictionary <dfn id="drageventinit">DragEventInit</dfn> : <a href="infrastructure
   </div>
 
 
-  <h4 id="the-dropzone-attribute"><span class="secno">7.7.8 </span>The <dfn title="attr-dropzone"><code>dropzone</code></dfn> attribute</h4>
+  <h4 id="the-dropzone-attribute"><span class="secno">7.6.8 </span>The <dfn title="attr-dropzone"><code>dropzone</code></dfn> attribute</h4>
 
   <p>All <a href="infrastructure.html#html-elements">HTML elements</a> may have the <code title="attr-dropzone"><a href="#the-dropzone-attribute">dropzone</a></code> content attribute set. When
   specified, its value must be an <a href="common-microsyntaxes.html#unordered-set-of-unique-space-separated-tokens">unordered set of unique
@@ -2794,7 +2794,7 @@ dictionary <dfn id="drageventinit">DragEventInit</dfn> : <a href="infrastructure
 <!--ADD-TOPIC:Security-->
   <div class="impl">
 
-  <h4 id="security-risks-in-the-drag-and-drop-model"><span class="secno">7.7.9 </span>Security risks in the drag-and-drop model</h4>
+  <h4 id="security-risks-in-the-drag-and-drop-model"><span class="secno">7.6.9 </span>Security risks in the drag-and-drop model</h4>
 
   <p>User agents must not make the data added to the
   <code><a href="#datatransfer">DataTransfer</a></code> object during the <code title="event-dragstart"><a href="#event-dragstart">dragstart</a></code> event available to scripts

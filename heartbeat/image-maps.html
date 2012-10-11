@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US-x-Hixie"><head><meta charset="utf-8"><title>4.8.14 Image maps &#8212; HTML5</title><style type="text/css">
+<html lang="en-US-x-Hixie"><head><meta charset="utf-8"><title>4.8.12 Image maps &#8212; HTML5</title><style type="text/css">
 
    .applies thead th > * { display: block; }
    .applies thead code { display: block; }
@@ -356,9 +356,9 @@
      }
      return null;
    }
-  </script><link href="the-area-element.html" title="4.8.13 The area element" rel="prev">
+  </script><link href="the-canvas-element.html" title="4.8.11 The canvas element" rel="prev">
   <link href="index.html#contents" title="Table of contents" rel="contents">
-  <link href="mathml.html" title="4.8.15 MathML" rel="next">
+  <link href="mathml.html" title="4.8.13 MathML" rel="next">
   </head><body onload="fixBrokenLink();" class="split chapter"><div class="head" id="head">
    <p><a href="http://www.w3.org/"><img alt="W3C" height="48" src="http://www.w3.org/Icons/w3c_home" width="72"></a></p>
 
@@ -369,13 +369,13 @@
   
 
   <div class="prev_next">
-   <a href="the-area-element.html">&#8592; 4.8.13 The area element</a> &#8211;
+   <a href="the-canvas-element.html">&#8592; 4.8.11 The canvas element</a> &#8211;
    <a href="index.html#contents">Table of contents</a> &#8211;
-   <a href="mathml.html">4.8.15 MathML &#8594;</a>
-  <ol class="toc"><li><ol><li><ol><li><a href="image-maps.html#image-maps"><span class="secno">4.8.14 </span>Image maps</a>
-      <ol><li><a href="image-maps.html#authoring"><span class="secno">4.8.14.1 </span>Authoring</a></li><li><a href="image-maps.html#processing-model-0"><span class="secno">4.8.14.2 </span>Processing model</a></li></ol></li></ol></li></ol></li></ol></div>
+   <a href="mathml.html">4.8.13 MathML &#8594;</a>
+  <ol class="toc"><li><ol><li><ol><li><a href="image-maps.html#image-maps"><span class="secno">4.8.12 </span>Image maps</a>
+      <ol><li><a href="image-maps.html#authoring"><span class="secno">4.8.12.1 </span>Authoring</a></li><li><a href="image-maps.html#processing-model-0"><span class="secno">4.8.12.2 </span>Processing model</a></li></ol></li></ol></li></ol></li></ol></div>
 
-  <h4 id="image-maps"><span class="secno">4.8.14 </span>Image maps</h4>
+  <h4 id="image-maps"><span class="secno">4.8.12 </span>Image maps</h4>
 
   <!-- TESTS
   http://software.hixie.ch/utilities/js/live-dom-viewer/?%3C%21DOCTYPE%20html%3E%0A%3Cimg%20src%3D%22http%3A//hixie.ch/resources/images/smallcats%22%20usemap%3D%23a%20onclick%3Dw%28%27img%27%29%3E%0A%3Cmap%20name%3Da%3E%0A%20%3Carea%20onclick%3Dw%28%271%27%29%20coords%3D%270%25%200%25%20100%25%20100%25%27%20href%3Djavascript%3A%3E%0A%3C/map%3E
@@ -386,7 +386,7 @@
 
   <div class="impl">
 
-  <h5 id="authoring"><span class="secno">4.8.14.1 </span>Authoring</h5>
+  <h5 id="authoring"><span class="secno">4.8.12.1 </span>Authoring</h5>
 
   </div>
 
@@ -395,11 +395,11 @@
 
   <p>An image, in the form of an <code><a href="the-img-element.html#the-img-element">img</a></code> element or an
   <code><a href="the-object-element.html#the-object-element">object</a></code> element representing an image, may be associated
-  with an image map (in the form of a <code><a href="the-map-element.html#the-map-element">map</a></code> element) by
+  with an image map (in the form of a <code>map</code> element) by
   specifying a <dfn id="attr-hyperlink-usemap" title="attr-hyperlink-usemap"><code>usemap</code></dfn> attribute on
   the <code><a href="the-img-element.html#the-img-element">img</a></code> or <code><a href="the-object-element.html#the-object-element">object</a></code> element. The <code title="attr-hyperlink-usemap"><a href="#attr-hyperlink-usemap">usemap</a></code> attribute, if specified,
   must be a <a href="common-microsyntaxes.html#valid-hash-name-reference">valid hash-name reference</a> to a
-  <code><a href="the-map-element.html#the-map-element">map</a></code> element.</p>
+  <code>map</code> element.</p>
 
   <div class="example">
 
@@ -428,23 +428,23 @@
 
   <div class="impl">
 
-  <h5 id="processing-model-0"><span class="secno">4.8.14.2 </span>Processing model</h5>
+  <h5 id="processing-model-0"><span class="secno">4.8.12.2 </span>Processing model</h5>
 
   <p>If an <code><a href="the-img-element.html#the-img-element">img</a></code> element or an <code><a href="the-object-element.html#the-object-element">object</a></code> element
   representing an image has a <code title="attr-hyperlink-usemap"><a href="#attr-hyperlink-usemap">usemap</a></code> attribute specified,
   user agents must process it as follows:</p>
 
   <ol><li><p>First, <a href="common-microsyntaxes.html#rules-for-parsing-a-hash-name-reference">rules for parsing a hash-name reference</a>
-   to a <code><a href="the-map-element.html#the-map-element">map</a></code> element must be followed. This will return
+   to a <code>map</code> element must be followed. This will return
    either an element (the <var title="">map</var>) or null.</p></li>
 
    <li><p>If that returned null, then abort these steps. The image is
    not associated with an image map after all.</p></li>
 
    <li><p>Otherwise, the user agent must collect all the
-   <code><a href="the-area-element.html#the-area-element">area</a></code> elements that are descendants of the <var title="">map</var>. Let those be the <var title="">areas</var>.</p></li>
+   <code>area</code> elements that are descendants of the <var title="">map</var>. Let those be the <var title="">areas</var>.</p></li>
 
-  </ol><p>Having obtained the list of <code><a href="the-area-element.html#the-area-element">area</a></code> elements that form
+  </ol><p>Having obtained the list of <code>area</code> elements that form
   the image map (the <var title="">areas</var>), interactive user
   agents must process the list in one of two ways.</p>
 
@@ -458,18 +458,18 @@
   content</a> is shown instead). The following steps therefore only
   apply to <code><a href="the-img-element.html#the-img-element">img</a></code> elements.</p>
 
-  <ol><li><p>Remove all the <code><a href="the-area-element.html#the-area-element">area</a></code> elements in <var title="">areas</var> that have no <code title="attr-hyperlink-href"><a href="links.html#attr-hyperlink-href">href</a></code> attribute.</p></li>
+  <ol><li><p>Remove all the <code>area</code> elements in <var title="">areas</var> that have no <code title="attr-hyperlink-href"><a href="links.html#attr-hyperlink-href">href</a></code> attribute.</p></li>
 
-   <li><p>Remove all the <code><a href="the-area-element.html#the-area-element">area</a></code> elements in <var title="">areas</var> that have no <code title="attr-area-alt"><a href="the-area-element.html#attr-area-alt">alt</a></code> attribute, or whose <code title="attr-area-alt"><a href="the-area-element.html#attr-area-alt">alt</a></code> attribute's value is the empty
-   string, <em>if</em> there is another <code><a href="the-area-element.html#the-area-element">area</a></code> element in
+   <li><p>Remove all the <code>area</code> elements in <var title="">areas</var> that have no <code title="attr-area-alt"><a href="the-canvas-element.html#attr-area-alt">alt</a></code> attribute, or whose <code title="attr-area-alt"><a href="the-canvas-element.html#attr-area-alt">alt</a></code> attribute's value is the empty
+   string, <em>if</em> there is another <code>area</code> element in
    <var title="">areas</var> with the same value in the <code title="attr-hyperlink-href"><a href="links.html#attr-hyperlink-href">href</a></code> attribute and with a
-   non-empty <code title="attr-area-alt"><a href="the-area-element.html#attr-area-alt">alt</a></code> attribute.</p></li>
+   non-empty <code title="attr-area-alt"><a href="the-canvas-element.html#attr-area-alt">alt</a></code> attribute.</p></li>
 
-   <li><p>Each remaining <code><a href="the-area-element.html#the-area-element">area</a></code> element in <var title="">areas</var> represents a <a href="links.html#hyperlink">hyperlink</a>. Those
+   <li><p>Each remaining <code>area</code> element in <var title="">areas</var> represents a <a href="links.html#hyperlink">hyperlink</a>. Those
    hyperlinks should all be made available to the user in a manner
    associated with the text of the <code><a href="the-img-element.html#the-img-element">img</a></code>.</p>
 
-   <p>In this context, user agents may represent <code><a href="the-area-element.html#the-area-element">area</a></code> and
+   <p>In this context, user agents may represent <code>area</code> and
    <code><a href="the-img-element.html#the-img-element">img</a></code> elements with no specified <code title="">alt</code> attributes, or whose <code title="">alt</code>
    attributes are the empty string or some other non-visible text, in
    a user-agent-defined fashion intended to indicate the lack of
@@ -478,75 +478,75 @@
   </ol><p>If the user agent intends to show the image and allow interaction
   with the image to select hyperlinks, then the image must be
   associated with a set of layered shapes, taken from the
-  <code><a href="the-area-element.html#the-area-element">area</a></code> elements in <var title="">areas</var>, in reverse
-  tree order (so the last specified <code><a href="the-area-element.html#the-area-element">area</a></code> element in the
+  <code>area</code> elements in <var title="">areas</var>, in reverse
+  tree order (so the last specified <code>area</code> element in the
   <var title="">map</var> is the bottom-most shape, and the first
   element in the <var title="">map</var>, in tree order, is the
   top-most shape).</p>
 
-  <p>Each <code><a href="the-area-element.html#the-area-element">area</a></code> element in <var title="">areas</var> must
+  <p>Each <code>area</code> element in <var title="">areas</var> must
   be processed as follows to obtain a shape to layer onto the
   image:</p>
 
-  <ol><li><p>Find the state that the element's <code title="attr-area-shape"><a href="the-area-element.html#attr-area-shape">shape</a></code> attribute represents.</p></li>
+  <ol><li><p>Find the state that the element's <code title="attr-area-shape"><a href="the-canvas-element.html#attr-area-shape">shape</a></code> attribute represents.</p></li>
 
    <li><p>Use the <a href="common-microsyntaxes.html#rules-for-parsing-a-list-of-integers">rules for parsing a list of integers</a> to
-   parse the element's <code title="attr-area-coords"><a href="the-area-element.html#attr-area-coords">coords</a></code>
+   parse the element's <code title="attr-area-coords"><a href="the-canvas-element.html#attr-area-coords">coords</a></code>
    attribute, if it is present, and let the result be the <var title="">coords</var> list. If the attribute is absent, let the
    <var title="">coords</var> list be the empty list.</p></li>
 
    <li><p>If the number of items in the <var title="">coords</var>
    list is less than the minimum number given for the
-   <code><a href="the-area-element.html#the-area-element">area</a></code> element's current state, as per the following
+   <code>area</code> element's current state, as per the following
    table, then the shape is empty; abort these steps.</p>
     <table><thead><tr><th>State
        </th><th>Minimum number of items
-     </th></tr></thead><tbody><tr><td><a href="the-area-element.html#attr-area-shape-circle" title="attr-area-shape-circle">Circle state</a>
+     </th></tr></thead><tbody><tr><td><a href="the-canvas-element.html#attr-area-shape-circle" title="attr-area-shape-circle">Circle state</a>
        </td><td>3
-      </td></tr><tr><td><a href="the-area-element.html#attr-area-shape-default" title="attr-area-shape-default">Default state</a>
+      </td></tr><tr><td><a href="the-canvas-element.html#attr-area-shape-default" title="attr-area-shape-default">Default state</a>
        </td><td>0
-      </td></tr><tr><td><a href="the-area-element.html#attr-area-shape-poly" title="attr-area-shape-poly">Polygon state</a>
+      </td></tr><tr><td><a href="the-canvas-element.html#attr-area-shape-poly" title="attr-area-shape-poly">Polygon state</a>
        </td><td>6
-      </td></tr><tr><td><a href="the-area-element.html#attr-area-shape-rect" title="attr-area-shape-rect">Rectangle state</a>
+      </td></tr><tr><td><a href="the-canvas-element.html#attr-area-shape-rect" title="attr-area-shape-rect">Rectangle state</a>
        </td><td>4
     </td></tr></tbody></table></li>
 
    <li><p>Check for excess items in the <var title="">coords</var>
    list as per the entry in the following list corresponding to the
-   <code title="attr-area-shape"><a href="the-area-element.html#attr-area-shape">shape</a></code> attribute's state:</p>
-    <dl class="switch"><dt><a href="the-area-element.html#attr-area-shape-circle" title="attr-area-shape-circle">Circle state</a></dt>
+   <code title="attr-area-shape"><a href="the-canvas-element.html#attr-area-shape">shape</a></code> attribute's state:</p>
+    <dl class="switch"><dt><a href="the-canvas-element.html#attr-area-shape-circle" title="attr-area-shape-circle">Circle state</a></dt>
      <dd>Drop any items in the list beyond the third.</dd>
-     <dt><a href="the-area-element.html#attr-area-shape-default" title="attr-area-shape-default">Default state</a></dt>
+     <dt><a href="the-canvas-element.html#attr-area-shape-default" title="attr-area-shape-default">Default state</a></dt>
      <dd>Drop all items in the list.</dd>
-     <dt><a href="the-area-element.html#attr-area-shape-poly" title="attr-area-shape-poly">Polygon state</a></dt>
+     <dt><a href="the-canvas-element.html#attr-area-shape-poly" title="attr-area-shape-poly">Polygon state</a></dt>
      <dd>Drop the last item if there's an odd number of items.</dd>
-     <dt><a href="the-area-element.html#attr-area-shape-rect" title="attr-area-shape-rect">Rectangle state</a></dt>
+     <dt><a href="the-canvas-element.html#attr-area-shape-rect" title="attr-area-shape-rect">Rectangle state</a></dt>
      <dd>Drop any items in the list beyond the fourth.</dd>
     </dl></li>
 
-   <li><p>If the <code title="attr-area-shape"><a href="the-area-element.html#attr-area-shape">shape</a></code> attribute
-   represents the <a href="the-area-element.html#attr-area-shape-rect" title="attr-area-shape-rect">rectangle
+   <li><p>If the <code title="attr-area-shape"><a href="the-canvas-element.html#attr-area-shape">shape</a></code> attribute
+   represents the <a href="the-canvas-element.html#attr-area-shape-rect" title="attr-area-shape-rect">rectangle
    state</a>, and the first number in the list is numerically less
    than the third number in the list, then swap those two numbers
    around.</p></li>
 
-   <li><p>If the <code title="attr-area-shape"><a href="the-area-element.html#attr-area-shape">shape</a></code> attribute
-   represents the <a href="the-area-element.html#attr-area-shape-rect" title="attr-area-shape-rect">rectangle
+   <li><p>If the <code title="attr-area-shape"><a href="the-canvas-element.html#attr-area-shape">shape</a></code> attribute
+   represents the <a href="the-canvas-element.html#attr-area-shape-rect" title="attr-area-shape-rect">rectangle
    state</a>, and the second number in the list is numerically less
    than the fourth number in the list, then swap those two numbers
    around.</p></li>
 
-   <li><p>If the <code title="attr-area-shape"><a href="the-area-element.html#attr-area-shape">shape</a></code> attribute
-   represents the <a href="the-area-element.html#attr-area-shape-circle" title="attr-area-shape-circle">circle
+   <li><p>If the <code title="attr-area-shape"><a href="the-canvas-element.html#attr-area-shape">shape</a></code> attribute
+   represents the <a href="the-canvas-element.html#attr-area-shape-circle" title="attr-area-shape-circle">circle
    state</a>, and the third number in the list is less than or
    equal to zero, then the shape is empty; abort these steps.</p></li>
 
    <li><p>Now, the shape represented by the element is the one
    described for the entry in the list below corresponding to the
-   state of the <code title="attr-area-shape"><a href="the-area-element.html#attr-area-shape">shape</a></code>
+   state of the <code title="attr-area-shape"><a href="the-canvas-element.html#attr-area-shape">shape</a></code>
    attribute:</p>
 
-    <dl class="switch"><dt><a href="the-area-element.html#attr-area-shape-circle" title="attr-area-shape-circle">Circle state</a></dt>
+    <dl class="switch"><dt><a href="the-canvas-element.html#attr-area-shape-circle" title="attr-area-shape-circle">Circle state</a></dt>
      <dd>
       <p>Let <var title="">x</var> be the first number in <var title="">coords</var>, <var title="">y</var> be the second
       number, and <var title="">r</var> be the third number.</p>
@@ -555,13 +555,13 @@
       whose radius is <var title="">r</var> pixels.</p>
      </dd>
 
-     <dt><a href="the-area-element.html#attr-area-shape-default" title="attr-area-shape-default">Default state</a></dt>
+     <dt><a href="the-canvas-element.html#attr-area-shape-default" title="attr-area-shape-default">Default state</a></dt>
      <dd>
       <p>The shape is a rectangle that exactly covers the entire
       image.</p>
      </dd>
 
-     <dt><a href="the-area-element.html#attr-area-shape-poly" title="attr-area-shape-poly">Polygon state</a></dt>
+     <dt><a href="the-canvas-element.html#attr-area-shape-poly" title="attr-area-shape-poly">Polygon state</a></dt>
      <dd>
 
       <p>Let <var title="">x<sub title=""><var title="">i</var></sub></var> be the <span title="">(2<var title="">i</var>)</span>th entry in <var title="">coords</var>,
@@ -584,7 +584,7 @@
 
      </dd>
 
-     <dt><a href="the-area-element.html#attr-area-shape-rect" title="attr-area-shape-rect">Rectangle state</a></dt>
+     <dt><a href="the-canvas-element.html#attr-area-shape-rect" title="attr-area-shape-rect">Rectangle state</a></dt>
 
      <dd>
 
@@ -615,14 +615,14 @@
   relevant user interaction events being first fired to the top-most
   shape covering the point that the pointing device indicated, if any,
   or to the image element itself, if there is no shape covering that
-  point. User agents may also allow individual <code><a href="the-area-element.html#the-area-element">area</a></code>
+  point. User agents may also allow individual <code>area</code>
   elements representing <a href="links.html#hyperlink" title="hyperlink">hyperlinks</a> to
   be selected and activated (e.g. using a keyboard).</p>
 
-  <p class="note">Because a <code><a href="the-map-element.html#the-map-element">map</a></code> element (and its
-  <code><a href="the-area-element.html#the-area-element">area</a></code> elements) can be associated with multiple
+  <p class="note">Because a <code>map</code> element (and its
+  <code>area</code> elements) can be associated with multiple
   <code><a href="the-img-element.html#the-img-element">img</a></code> and <code><a href="the-object-element.html#the-object-element">object</a></code> elements, it is possible
-  for an <code><a href="the-area-element.html#the-area-element">area</a></code> element to correspond to multiple focusable
+  for an <code>area</code> element to correspond to multiple focusable
   areas of the document.</p>
 
   <p>Image maps are <a href="infrastructure.html#live">live</a>; if the DOM is mutated, then the

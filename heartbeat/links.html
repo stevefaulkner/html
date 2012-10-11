@@ -385,7 +385,7 @@
   <h4 id="introduction-3"><span class="secno">4.12.1 </span>Introduction</h4>
 
   <p>Links are a conceptual construct, created by <code><a href="the-a-element.html#the-a-element">a</a></code>,
-  <code><a href="the-area-element.html#the-area-element">area</a></code>, and <code><a href="the-link-element.html#the-link-element">link</a></code> elements, that <a href="rendering.html#represents" title="represents">represent</a> a connection between two
+  <code>area</code>, and <code><a href="the-link-element.html#the-link-element">link</a></code> elements, that <a href="rendering.html#represents" title="represents">represent</a> a connection between two
   resources, one of which is the current <code><a href="dom.html#document">Document</a></code>. There
   are two kinds of links in HTML:</p>
 
@@ -407,13 +407,13 @@
   for the keywords of the <code title="attr-link-rel"><a href="the-link-element.html#attr-link-rel">rel</a></code>
   attribute, as defined for those keywords in the <a href="#linkTypes">link types</a> section.</p>
 
-  <p>Similarly, for <code><a href="the-a-element.html#the-a-element">a</a></code> and <code><a href="the-area-element.html#the-area-element">area</a></code> elements with
+  <p>Similarly, for <code><a href="the-a-element.html#the-a-element">a</a></code> and <code>area</code> elements with
   an <code title="attr-hyperlink-href"><a href="#attr-hyperlink-href">href</a></code> attribute and a
   <code title="attr-hyperlink-rel"><a href="#attr-hyperlink-rel">rel</a></code> attribute, links must be
   created for the keywords of the <code title="attr-hyperlink-rel"><a href="#attr-hyperlink-rel">rel</a></code> attribute as defined for those
   keywords in the <a href="#linkTypes">link types</a> section. Unlike
   <code><a href="the-link-element.html#the-link-element">link</a></code> elements, however, <code><a href="the-a-element.html#the-a-element">a</a></code> and
-  <code><a href="the-area-element.html#the-area-element">area</a></code> element with an <code title="attr-hyperlink-href"><a href="#attr-hyperlink-href">href</a></code> attribute that either do not
+  <code>area</code> element with an <code title="attr-hyperlink-href"><a href="#attr-hyperlink-href">href</a></code> attribute that either do not
   have a <code title="attr-hyperlink-rel"><a href="#attr-hyperlink-rel">rel</a></code> attribute, or
   whose <code title="attr-hyperlink-rel"><a href="#attr-hyperlink-rel">rel</a></code> attribute has no
   keywords that are defined as specifying <a href="#hyperlink" title="hyperlink">hyperlinks</a>, must also create a
@@ -427,15 +427,15 @@
   the processing semantics of that hyperlink.</p>
 
 
-  <h4 id="links-created-by-a-and-area-elements"><span class="secno">4.12.2 </span>Links created by <code><a href="the-a-element.html#the-a-element">a</a></code> and <code><a href="the-area-element.html#the-area-element">area</a></code> elements</h4>
+  <h4 id="links-created-by-a-and-area-elements"><span class="secno">4.12.2 </span>Links created by <code><a href="the-a-element.html#the-a-element">a</a></code> and <code>area</code> elements</h4>
 
   <p>The <dfn id="attr-hyperlink-href" title="attr-hyperlink-href"><code>href</code></dfn>
-  attribute on <code><a href="the-a-element.html#the-a-element">a</a></code> and <code><a href="the-area-element.html#the-area-element">area</a></code> elements must have
+  attribute on <code><a href="the-a-element.html#the-a-element">a</a></code> and <code>area</code> elements must have
   a value that is a <a href="urls.html#valid-url-potentially-surrounded-by-spaces">valid URL potentially surrounded by
   spaces</a>.</p>
 
   <p class="note">The <code title="attr-hyperlink-href"><a href="#attr-hyperlink-href">href</a></code>
-  attribute on <code><a href="the-a-element.html#the-a-element">a</a></code> and <code><a href="the-area-element.html#the-area-element">area</a></code> elements is not
+  attribute on <code><a href="the-a-element.html#the-a-element">a</a></code> and <code>area</code> elements is not
   required; when those elements do not have <code title="attr-hyperlink-href"><a href="#attr-hyperlink-href">href</a></code> attributes they do not
   create hyperlinks.</p>
 
@@ -448,7 +448,7 @@
 <!--PING-->
 
   <p>The <dfn id="attr-hyperlink-rel" title="attr-hyperlink-rel"><code>rel</code></dfn>
-  attribute on <code><a href="the-a-element.html#the-a-element">a</a></code> and <code><a href="the-area-element.html#the-area-element">area</a></code> elements controls
+  attribute on <code><a href="the-a-element.html#the-a-element">a</a></code> and <code>area</code> elements controls
   what kinds of links the elements create. The attribue's value must
   be a <a href="common-microsyntaxes.html#set-of-space-separated-tokens">set of space-separated tokens</a>. The <a href="#linkTypes">allowed keywords and their meanings</a> are
   defined below.</p>
@@ -466,7 +466,7 @@
   "<code title="">all</code>".</p>
 
   <p>The <dfn id="attr-hyperlink-hreflang" title="attr-hyperlink-hreflang"><code>hreflang</code></dfn>
-  attribute on <code><a href="the-a-element.html#the-a-element">a</a></code> and <code><a href="the-area-element.html#the-area-element">area</a></code> elements that
+  attribute on <code><a href="the-a-element.html#the-a-element">a</a></code> and <code>area</code> elements that
   create <a href="#hyperlink" title="hyperlink">hyperlinks</a>, if present, gives
   the language of the linked resource. It is purely advisory. The
   value must be a valid BCP 47 language tag. <a href="references.html#refsBCP47">[BCP47]</a> <span class="impl">User agents must
@@ -514,7 +514,7 @@
   navigated.</p>
 
   <p>Otherwise, if the element is an <code><a href="the-a-element.html#the-a-element">a</a></code> or
-  <code><a href="the-area-element.html#the-area-element">area</a></code> element that has a <code title="attr-hyperlink-target"><a href="#attr-hyperlink-target">target</a></code> attribute, then the
+  <code>area</code> element that has a <code title="attr-hyperlink-target"><a href="#attr-hyperlink-target">target</a></code> attribute, then the
   <a href="browsers.html#browsing-context">browsing context</a> that is navigated must be chosen by
   applying <a href="browsers.html#the-rules-for-choosing-a-browsing-context-given-a-browsing-context-name">the rules for choosing a browsing context given a
   browsing context name</a>, using the value of the <code title="attr-hyperlink-target"><a href="#attr-hyperlink-target">target</a></code> attribute as the
@@ -525,7 +525,7 @@
 
 
   <p>Otherwise, if the element is an <code><a href="the-a-element.html#the-a-element">a</a></code> or
-  <code><a href="the-area-element.html#the-area-element">area</a></code> element with no <code title="attr-hyperlink-target"><a href="#attr-hyperlink-target">target</a></code> attribute, but the
+  <code>area</code> element with no <code title="attr-hyperlink-target"><a href="#attr-hyperlink-target">target</a></code> attribute, but the
   <code><a href="dom.html#document">Document</a></code> contains a <code><a href="the-base-element.html#the-base-element">base</a></code> element with a
   <code title="attr-base-target"><a href="the-base-element.html#attr-base-target">target</a></code> attribute, then the
   browsing context that is navigated must be chosen by applying
@@ -554,7 +554,7 @@
   <p>In some cases, resources are intended for later use rather than
   immediate viewing. To indicate that a resource is intended to be
   downloaded for use later, rather than immediately used, the <code title="attr-hyperlink-download">download</code> attribute can be
-  specified on the <code><a href="the-a-element.html#the-a-element">a</a></code> or <code><a href="the-area-element.html#the-area-element">area</a></code> element that
+  specified on the <code><a href="the-a-element.html#the-a-element">a</a></code> or <code>area</code> element that
   creates the <a href="#hyperlink">hyperlink</a> to that resource.</p>
 
   <p>The attribute can furthermore be given a value, to specify the
@@ -643,7 +643,7 @@
 
    <li><p>If the download was not initiated from a
    <a href="#hyperlink">hyperlink</a> created by an <code><a href="the-a-element.html#the-a-element">a</a></code> or
-   <code><a href="the-area-element.html#the-area-element">area</a></code> element, or if the element of the
+   <code>area</code> element, or if the element of the
    <a href="#hyperlink">hyperlink</a> from which it was initiated did not have a
    <code title="attr-hyperlink-download">download</code> attribute
    when the download was initiated, or if there was such an attribute
@@ -787,7 +787,7 @@
   <h5 id="hyperlink-auditing"><span class="secno">4.12.4.1 </span><dfn>Hyperlink auditing</dfn></h5>
 
   <p>If a <a href="#hyperlink">hyperlink</a> created by an <code><a href="the-a-element.html#the-a-element">a</a></code> or
-  <code><a href="the-area-element.html#the-area-element">area</a></code> element has a <code title="attr-hyperlink-ping">ping</code> attribute, and the user
+  <code>area</code> element has a <code title="attr-hyperlink-ping">ping</code> attribute, and the user
   follows the hyperlink, and the value of the element's <code title="attr-hyperlink-href"><a href="#attr-hyperlink-href">href</a></code> attribute can be <a href="urls.html#resolve-a-url" title="resolve a url">resolved</a>, relative to the element,
   without failure, then the user agent must take the <code title="attr-hyperlink-ping">ping</code> attribute's value, <a href="common-microsyntaxes.html#split-a-string-on-spaces" title="split a string on spaces">split that string on spaces</a>,
   <a href="urls.html#resolve-a-url" title="resolve a url">resolve</a> each resulting token
@@ -914,7 +914,7 @@
   <div class="impl">
 
   <p>To determine which link types apply to a <code><a href="the-link-element.html#the-link-element">link</a></code>,
-  <code><a href="the-a-element.html#the-a-element">a</a></code>, or <code><a href="the-area-element.html#the-area-element">area</a></code> element, the element's <code title="">rel</code> attribute must be <a href="common-microsyntaxes.html#split-a-string-on-spaces" title="split a string on
+  <code><a href="the-a-element.html#the-a-element">a</a></code>, or <code>area</code> element, the element's <code title="">rel</code> attribute must be <a href="common-microsyntaxes.html#split-a-string-on-spaces" title="split a string on
   spaces">split on spaces</a>. The resulting tokens are the link
   types that apply to that element.</p>
 
@@ -933,7 +933,7 @@
      <th colspan="2">Effect on...</th>
      <th rowspan="2">Brief description</th>
     </tr><tr><th><code><a href="the-link-element.html#the-link-element">link</a></code></th>
-     <th><code><a href="the-a-element.html#the-a-element">a</a></code> and <code><a href="the-area-element.html#the-area-element">area</a></code></th>
+     <th><code><a href="the-a-element.html#the-a-element">a</a></code> and <code>area</code></th>
     </tr></thead><tbody><tr><td><code title="rel-alternate"><a href="#rel-alternate">alternate</a></code></td> <!-- second most used <link rel> value -->
      <td><a href="#hyperlink">Hyperlink</a></td>
      <td><a href="#hyperlink">Hyperlink</a></td>
@@ -1036,7 +1036,7 @@
   <h5 id="rel-alternate"><span class="secno">4.12.5.1 </span>Link type "<dfn title="rel-alternate"><code>alternate</code></dfn>"</h5>
 
   <p>The <code title="rel-alternate"><a href="#rel-alternate">alternate</a></code> keyword may be
-  used with <code><a href="the-link-element.html#the-link-element">link</a></code>, <code><a href="the-a-element.html#the-a-element">a</a></code>, and <code><a href="the-area-element.html#the-area-element">area</a></code>
+  used with <code><a href="the-link-element.html#the-link-element">link</a></code>, <code><a href="the-a-element.html#the-a-element">a</a></code>, and <code>area</code>
   elements.</p>
 
   <p>The meaning of this keyword depends on the values of the other
@@ -1067,7 +1067,7 @@
 
     <div class="impl">
 
-    <p>The first <code><a href="the-link-element.html#the-link-element">link</a></code>, <code><a href="the-a-element.html#the-a-element">a</a></code>, or <code><a href="the-area-element.html#the-area-element">area</a></code>
+    <p>The first <code><a href="the-link-element.html#the-link-element">link</a></code>, <code><a href="the-a-element.html#the-a-element">a</a></code>, or <code>area</code>
     element in the document (in tree order) with the <code title="rel-alternate"><a href="#rel-alternate">alternate</a></code> keyword used with the <code title="attr-hyperlink-type"><a href="#attr-hyperlink-type">type</a></code> attribute set to the value
     <code title="">application/rss+xml</code> or the value <code title="">application/atom+xml</code> must be treated as the default
     syndication feed for the purposes of feed autodiscovery.</p>
@@ -1140,10 +1140,10 @@
   </dl><h5 id="link-type-author"><span class="secno">4.12.5.2 </span>Link type "<dfn title="rel-author"><code>author</code></dfn>"</h5>
 
   <p>The <code title="rel-author"><a href="#link-type-author">author</a></code> keyword may be
-  used with <code><a href="the-link-element.html#the-link-element">link</a></code>, <code><a href="the-a-element.html#the-a-element">a</a></code>, and <code><a href="the-area-element.html#the-area-element">area</a></code>
+  used with <code><a href="the-link-element.html#the-link-element">link</a></code>, <code><a href="the-a-element.html#the-a-element">a</a></code>, and <code>area</code>
   elements. This keyword creates a <a href="#hyperlink">hyperlink</a>.</p>
 
-  <p>For <code><a href="the-a-element.html#the-a-element">a</a></code> and <code><a href="the-area-element.html#the-area-element">area</a></code> elements, the <code title="rel-author"><a href="#link-type-author">author</a></code> keyword indicates that the
+  <p>For <code><a href="the-a-element.html#the-a-element">a</a></code> and <code>area</code> elements, the <code title="rel-author"><a href="#link-type-author">author</a></code> keyword indicates that the
   referenced document provides further information about the author of
   the nearest <code><a href="the-article-element.html#the-article-element">article</a></code> element ancestor of the element
   defining the hyperlink, if there is one, or of the page as a whole,
@@ -1161,7 +1161,7 @@
 
   <p><strong>Synonyms</strong>: For historical reasons, user agents
   must also treat <code><a href="the-link-element.html#the-link-element">link</a></code>, <code><a href="the-a-element.html#the-a-element">a</a></code>, and
-  <code><a href="the-area-element.html#the-area-element">area</a></code> elements that have a <code title="">rev</code>
+  <code>area</code> elements that have a <code title="">rev</code>
   attribute with the value "<code>made</code>" as having the <code title="rel-author"><a href="#link-type-author">author</a></code> keyword specified as a link
   relationship.</p>
 
@@ -1171,7 +1171,7 @@
   <h5 id="link-type-bookmark"><span class="secno">4.12.5.3 </span>Link type "<dfn title="rel-bookmark"><code>bookmark</code></dfn>"</h5>
 
   <p>The <code title="rel-bookmark"><a href="#link-type-bookmark">bookmark</a></code> keyword may be
-  used with <code><a href="the-a-element.html#the-a-element">a</a></code> and <code><a href="the-area-element.html#the-area-element">area</a></code> elements. This
+  used with <code><a href="the-a-element.html#the-a-element">a</a></code> and <code>area</code> elements. This
   keyword creates a <a href="#hyperlink">hyperlink</a>.</p>
 
   <p>The <code title="rel-bookmark"><a href="#link-type-bookmark">bookmark</a></code> keyword gives a
@@ -1250,10 +1250,10 @@
   <h5 id="link-type-help"><span class="secno">4.12.5.4 </span>Link type "<dfn title="rel-help"><code>help</code></dfn>"</h5>
 
   <p>The <code title="rel-help"><a href="#link-type-help">help</a></code> keyword may be used with
-  <code><a href="the-link-element.html#the-link-element">link</a></code>, <code><a href="the-a-element.html#the-a-element">a</a></code>, and <code><a href="the-area-element.html#the-area-element">area</a></code>
+  <code><a href="the-link-element.html#the-link-element">link</a></code>, <code><a href="the-a-element.html#the-a-element">a</a></code>, and <code>area</code>
   elements. This keyword creates a <a href="#hyperlink">hyperlink</a>.</p>
 
-  <p>For <code><a href="the-a-element.html#the-a-element">a</a></code> and <code><a href="the-area-element.html#the-area-element">area</a></code> elements, the <code title="rel-help"><a href="#link-type-help">help</a></code> keyword indicates that the referenced
+  <p>For <code><a href="the-a-element.html#the-a-element">a</a></code> and <code>area</code> elements, the <code title="rel-help"><a href="#link-type-help">help</a></code> keyword indicates that the referenced
   document provides further help information for the parent of the
   element defining the hyperlink, and its children.</p>
 
@@ -1271,7 +1271,7 @@
   <p>For <code><a href="the-link-element.html#the-link-element">link</a></code> elements, the <code title="rel-help"><a href="#link-type-help">help</a></code> keyword indicates that the referenced
   document provides help for the page as a whole.</p>
 
-  <p>For <code><a href="the-a-element.html#the-a-element">a</a></code> and <code><a href="the-area-element.html#the-area-element">area</a></code> elements, on some
+  <p>For <code><a href="the-a-element.html#the-a-element">a</a></code> and <code>area</code> elements, on some
   browsers, the <code title="rel-help"><a href="#link-type-help">help</a></code> keyword causes the
   link to use a different cursor.</p>
 
@@ -1422,7 +1422,7 @@
   <h5 id="link-type-license"><span class="secno">4.12.5.6 </span>Link type "<dfn title="rel-license"><code>license</code></dfn>"</h5>
 
   <p>The <code title="rel-license"><a href="#link-type-license">license</a></code> keyword may be used
-  with <code><a href="the-link-element.html#the-link-element">link</a></code>, <code><a href="the-a-element.html#the-a-element">a</a></code>, and <code><a href="the-area-element.html#the-area-element">area</a></code>
+  with <code><a href="the-link-element.html#the-link-element">link</a></code>, <code><a href="the-a-element.html#the-a-element">a</a></code>, and <code>area</code>
   elements. This keyword creates a <a href="#hyperlink">hyperlink</a>.</p>
 
   <p>The <code title="rel-license"><a href="#link-type-license">license</a></code> keyword indicates
@@ -1488,7 +1488,7 @@
   <h5 id="link-type-nofollow"><span class="secno">4.12.5.7 </span>Link type "<dfn title="rel-nofollow"><code>nofollow</code></dfn>"</h5>
 
   <p>The <code title="rel-nofollow"><a href="#link-type-nofollow">nofollow</a></code> keyword may be
-  used with <code><a href="the-a-element.html#the-a-element">a</a></code> and <code><a href="the-area-element.html#the-area-element">area</a></code> elements. This
+  used with <code><a href="the-a-element.html#the-a-element">a</a></code> and <code>area</code> elements. This
   keyword does not create a <a href="#hyperlink">hyperlink</a>, but <a href="#hyperlink-annotation" title="hyperlink annotation">annotates</a> any other hyperlinks
   created by the element (the implied hyperlink, if no other keywords
   create one).</p>
@@ -1503,7 +1503,7 @@
   <h5 id="link-type-noreferrer"><span class="secno">4.12.5.8 </span>Link type "<dfn title="rel-noreferrer"><code>noreferrer</code></dfn>"</h5>
 
   <p>The <code title="rel-noreferrer"><a href="#link-type-noreferrer">noreferrer</a></code> keyword may be
-  used with <code><a href="the-a-element.html#the-a-element">a</a></code> and <code><a href="the-area-element.html#the-area-element">area</a></code> elements. This
+  used with <code><a href="the-a-element.html#the-a-element">a</a></code> and <code>area</code> elements. This
   keyword does not create a <a href="#hyperlink">hyperlink</a>, but <a href="#hyperlink-annotation" title="hyperlink annotation">annotates</a> any other hyperlinks
   created by the element (the implied hyperlink, if no other keywords
   create one).</p>
@@ -1514,7 +1514,7 @@
   <div class="impl">
 
   <p>If a user agent follows a link defined by an <code><a href="the-a-element.html#the-a-element">a</a></code> or
-  <code><a href="the-area-element.html#the-area-element">area</a></code> element that has the <code title="rel-noreferrer"><a href="#link-type-noreferrer">noreferrer</a></code> keyword, the user agent
+  <code>area</code> element that has the <code title="rel-noreferrer"><a href="#link-type-noreferrer">noreferrer</a></code> keyword, the user agent
   must not include a <code title="http-referer">Referer</code> (sic)
   HTTP header (<a href="urls.html#concept-http-equivalent-headers" title="concept-http-equivalent-headers">or
   equivalent</a> for other protocols) in the request.</p>
@@ -1544,7 +1544,7 @@
   <h5 id="link-type-prefetch"><span class="secno">4.12.5.9 </span>Link type "<dfn title="rel-prefetch"><code>prefetch</code></dfn>"</h5>
 
   <p>The <code title="rel-prefetch"><a href="#link-type-prefetch">prefetch</a></code> keyword may be
-  used with <code><a href="the-link-element.html#the-link-element">link</a></code>, <code><a href="the-a-element.html#the-a-element">a</a></code>, and <code><a href="the-area-element.html#the-area-element">area</a></code>
+  used with <code><a href="the-link-element.html#the-link-element">link</a></code>, <code><a href="the-a-element.html#the-a-element">a</a></code>, and <code>area</code>
   elements. This keyword creates an <a href="#external-resource-link" title="external resource
   link">external resource link</a>.</p>
 
@@ -1559,7 +1559,7 @@
   <h5 id="link-type-search"><span class="secno">4.12.5.10 </span>Link type "<dfn title="rel-search"><code>search</code></dfn>"</h5>
 
   <p>The <code title="rel-search"><a href="#link-type-search">search</a></code> keyword may be used
-  with <code><a href="the-link-element.html#the-link-element">link</a></code>, <code><a href="the-a-element.html#the-a-element">a</a></code>, and <code><a href="the-area-element.html#the-area-element">area</a></code>
+  with <code><a href="the-link-element.html#the-link-element">link</a></code>, <code><a href="the-a-element.html#the-a-element">a</a></code>, and <code>area</code>
   elements. This keyword creates a <a href="#hyperlink">hyperlink</a>.</p>
 
   <p>The <code title="rel-search"><a href="#link-type-search">search</a></code> keyword indicates that
@@ -1631,7 +1631,7 @@
   <h5 id="link-type-tag"><span class="secno">4.12.5.12 </span>Link type "<dfn title="rel-tag"><code>tag</code></dfn>"</h5>
 
   <p>The <code title="rel-tag"><a href="#link-type-tag">tag</a></code> keyword may be used with
-  <code><a href="the-a-element.html#the-a-element">a</a></code> and <code><a href="the-area-element.html#the-area-element">area</a></code> elements. This keyword creates
+  <code><a href="the-a-element.html#the-a-element">a</a></code> and <code>area</code> elements. This keyword creates
   a <a href="#hyperlink">hyperlink</a>.</p>
 
   <p>The <code title="rel-tag"><a href="#link-type-tag">tag</a></code> keyword indicates that the
@@ -1719,7 +1719,7 @@
   <h6 id="link-type-next"><span class="secno">4.12.5.13.1 </span>Link type "<dfn title="rel-next"><code>next</code></dfn>"</h6>
 
   <p>The <code title="rel-next"><a href="#link-type-next">next</a></code> keyword may be used with
-  <code><a href="the-link-element.html#the-link-element">link</a></code>, <code><a href="the-a-element.html#the-a-element">a</a></code>, and <code><a href="the-area-element.html#the-area-element">area</a></code>
+  <code><a href="the-link-element.html#the-link-element">link</a></code>, <code><a href="the-a-element.html#the-a-element">a</a></code>, and <code>area</code>
   elements. This keyword creates a <a href="#hyperlink">hyperlink</a>.</p>
 
   <p>The <code title="rel-next"><a href="#link-type-next">next</a></code> keyword indicates that the
@@ -1730,7 +1730,7 @@
   <h6 id="link-type-prev"><span class="secno">4.12.5.13.2 </span>Link type "<dfn title="rel-prev"><code>prev</code></dfn>"</h6>
 
   <p>The <code title="rel-prev"><a href="#link-type-prev">prev</a></code> keyword may be used with
-  <code><a href="the-link-element.html#the-link-element">link</a></code>, <code><a href="the-a-element.html#the-a-element">a</a></code>, and <code><a href="the-area-element.html#the-area-element">area</a></code>
+  <code><a href="the-link-element.html#the-link-element">link</a></code>, <code><a href="the-a-element.html#the-a-element">a</a></code>, and <code>area</code>
   elements. This keyword creates a <a href="#hyperlink">hyperlink</a>.</p>
 
   <p>The <code title="rel-prev"><a href="#link-type-prev">prev</a></code> keyword indicates that the
@@ -1798,7 +1798,7 @@
     </dl></dd>
 
 
-   <dt>Effect on... <code><a href="the-a-element.html#the-a-element">a</a></code> and <code><a href="the-area-element.html#the-area-element">area</a></code></dt>
+   <dt>Effect on... <code><a href="the-a-element.html#the-a-element">a</a></code> and <code>area</code></dt>
 
    <dd>
 
@@ -1807,24 +1807,24 @@
     <dl><dt>Not allowed</dt>
 
      <dd>The keyword must not be specified on <code><a href="the-a-element.html#the-a-element">a</a></code> and
-     <code><a href="the-area-element.html#the-area-element">area</a></code> elements.</dd>
+     <code>area</code> elements.</dd>
 
      <dt>Hyperlink</dt>
 
      <dd>The keyword may be specified on <code><a href="the-a-element.html#the-a-element">a</a></code> and
-     <code><a href="the-area-element.html#the-area-element">area</a></code> elements; it creates a
+     <code>area</code> elements; it creates a
      <a href="#hyperlink">hyperlink</a>.</dd>
 
      <dt>External Resource</dt>
 
      <dd>The keyword may be specified on <code><a href="the-a-element.html#the-a-element">a</a></code> and
-     <code><a href="the-area-element.html#the-area-element">area</a></code> elements; it creates an <a href="#external-resource-link">external resource
+     <code>area</code> elements; it creates an <a href="#external-resource-link">external resource
      link</a>.</dd>
 
      <dt>Hyperlink Annotation</dt>
 
      <dd>The keyword may be specified on <code><a href="the-a-element.html#the-a-element">a</a></code> and
-     <code><a href="the-area-element.html#the-area-element">area</a></code> elements; it <a href="#hyperlink-annotation" title="hyperlink
+     <code>area</code> elements; it <a href="#hyperlink-annotation" title="hyperlink
      annotation">annotates</a> other <a href="#hyperlink" title="hyperlink">hyperlinks</a> created by the element.</dd>
 
     </dl></dd>
@@ -1931,7 +1931,7 @@
   <p>Types defined as extensions in the <a href="http://microformats.org/wiki/existing-rel-values#HTML5_link_type_extensions">microformats
   wiki existing-rel-values page</a> with the status "proposed" or
   "ratified" may be used with the <code title="">rel</code> attribute
-  on <code><a href="the-link-element.html#the-link-element">link</a></code>, <code><a href="the-a-element.html#the-a-element">a</a></code>, and <code><a href="the-area-element.html#the-area-element">area</a></code> elements
+  on <code><a href="the-link-element.html#the-link-element">link</a></code>, <code><a href="the-a-element.html#the-a-element">a</a></code>, and <code>area</code> elements
   in accordance to the "Effect on..." field. <a href="references.html#refsMFREL">[MFREL]</a></p>
 
 
@@ -2420,7 +2420,7 @@ contradict people?
    <dd>
 
     <p>All <code><a href="the-a-element.html#the-a-element">a</a></code> elements that have an <code title="attr-hyperlink-href"><a href="#attr-hyperlink-href">href</a></code> attribute, all
-    <code><a href="the-area-element.html#the-area-element">area</a></code> elements that have an <code title="attr-hyperlink-href"><a href="#attr-hyperlink-href">href</a></code> attribute, and all
+    <code>area</code> elements that have an <code title="attr-hyperlink-href"><a href="#attr-hyperlink-href">href</a></code> attribute, and all
     <code><a href="the-link-element.html#the-link-element">link</a></code> elements that have an <code title="attr-link-href"><a href="the-link-element.html#attr-link-href">href</a></code> attribute, must match one of
     <code title="selector-link"><a href="#selector-link">:link</a></code> and <code title="selector-visited"><a href="#selector-visited">:visited</a></code>.</p>
 
@@ -2455,7 +2455,7 @@ contradict people?
 
       <ul><li><code><a href="the-a-element.html#the-a-element">a</a></code> elements that have an <code title="attr-hyperlink-href"><a href="#attr-hyperlink-href">href</a></code> attribute</li>
 
-       <li><code><a href="the-area-element.html#the-area-element">area</a></code> elements that have an <code title="attr-hyperlink-href"><a href="#attr-hyperlink-href">href</a></code> attribute</li>
+       <li><code>area</code> elements that have an <code title="attr-hyperlink-href"><a href="#attr-hyperlink-href">href</a></code> attribute</li>
 
        <li><code><a href="the-link-element.html#the-link-element">link</a></code> elements that have an <code title="attr-link-href"><a href="the-link-element.html#attr-link-href">href</a></code> attribute</li>
 
@@ -2565,7 +2565,7 @@ Demos:
 
     <ul><li><code><a href="the-a-element.html#the-a-element">a</a></code> elements that have an <code title="attr-hyperlink-href"><a href="#attr-hyperlink-href">href</a></code> attribute</li>
 
-     <li><code><a href="the-area-element.html#the-area-element">area</a></code> elements that have an <code title="attr-hyperlink-href"><a href="#attr-hyperlink-href">href</a></code> attribute</li>
+     <li><code>area</code> elements that have an <code title="attr-hyperlink-href"><a href="#attr-hyperlink-href">href</a></code> attribute</li>
 
      <li><code><a href="the-link-element.html#the-link-element">link</a></code> elements that have an <code title="attr-link-href"><a href="the-link-element.html#attr-link-href">href</a></code> attribute</li>
 

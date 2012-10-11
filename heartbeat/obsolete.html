@@ -564,7 +564,7 @@
 
    <dt><dfn id="attr-a-coords" title="attr-a-coords"><code>coords</code></dfn> on <code><a href="the-a-element.html#the-a-element">a</a></code> elements</dt>
    <dt><dfn id="attr-a-shape" title="attr-a-shape"><code>shape</code></dfn> on <code><a href="the-a-element.html#the-a-element">a</a></code> elements</dt>
-   <dd><p>Use <code><a href="the-area-element.html#the-area-element">area</a></code> instead of <code><a href="the-a-element.html#the-a-element">a</a></code> for image maps.</p></dd>
+   <dd><p>Use <code>area</code> instead of <code><a href="the-a-element.html#the-a-element">a</a></code> for image maps.</p></dd>
 
    <dt><dfn id="attr-a-methods" title="attr-a-methods"><code>methods</code></dfn> on <code><a href="the-a-element.html#the-a-element">a</a></code> elements</dt>
    <dt><dfn id="attr-link-methods" title="attr-link-methods"><code>methods</code></dfn> on <code><a href="the-link-element.html#the-link-element">link</a></code> elements</dt>
@@ -589,7 +589,7 @@
    <dt><dfn id="attr-form-accept" title="attr-form-accept"><code>accept</code></dfn> on <code><a href="the-form-element.html#the-form-element">form</a></code> elements</dt>
    <dd><p>Use the <code title="attr-input-accept"><a href="states-of-the-type-attribute.html#attr-input-accept">accept</a></code> attribute directly on the <code><a href="the-input-element.html#the-input-element">input</a></code> elements instead.</p></dd>
 
-   <dt><dfn id="attr-area-nohref" title="attr-area-nohref"><code>nohref</code></dfn> on <code><a href="the-area-element.html#the-area-element">area</a></code> elements</dt>
+   <dt><dfn id="attr-area-nohref" title="attr-area-nohref"><code>nohref</code></dfn> on <code>area</code> elements</dt>
    <dd><p>Omitting the <code title="attr-hyperlink-href"><a href="links.html#attr-hyperlink-href">href</a></code>
    attribute is sufficient; the <code title="attr-area-nohref"><a href="#attr-area-nohref">nohref</a></code> attribute is
    unnecessary. Omit it altogether.</p></dd>
@@ -1293,12 +1293,12 @@
   <code><a href="the-a-element.html#the-a-element">a</a></code> element must <a href="common-dom-interfaces.html#reflect">reflect</a> the respective
   content attributes of the same name.</p>
 
-  <hr><pre class="idl">partial interface <a href="the-area-element.html#htmlareaelement">HTMLAreaElement</a> {
+  <hr><pre class="idl">partial interface <a href="the-canvas-element.html#htmlareaelement">HTMLAreaElement</a> {
            attribute boolean <a href="#dom-area-nohref" title="dom-area-noHref">noHref</a>;
 };</pre>
 
   <p>The <dfn id="dom-area-nohref" title="dom-area-noHref"><code>noHref</code></dfn> IDL
-  attribute of the <code><a href="the-area-element.html#the-area-element">area</a></code> element must <a href="common-dom-interfaces.html#reflect">reflect</a>
+  attribute of the <code>area</code> element must <a href="common-dom-interfaces.html#reflect">reflect</a>
   the element's <code title="attr-area-nohref"><a href="#attr-area-nohref">nohref</a></code> content
   attribute.</p>
 

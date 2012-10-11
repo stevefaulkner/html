@@ -664,7 +664,7 @@
 
   <p>The <a href="#command-facet-disabledstate" title="command-facet-DisabledState">Disabled
   State</a> facet of the command is true if the element or one of
-  its ancestors is <a href="editing.html#inert">inert</a>, and false otherwise.</p>
+  its ancestors is <span>inert</span>, and false otherwise.</p>
 
   <p>The <a href="#command-facet-checkedstate" title="command-facet-CheckedState">Checked State</a>
   of the command is always false. (The command is never checked.)</p>
@@ -687,7 +687,7 @@
 
   <p>The <a href="#command-facet-disabledstate" title="command-facet-DisabledState">Disabled
   State</a> of the command is true if the element or one of its
-  ancestors is <a href="editing.html#inert">inert</a>, or if the element's <a href="attributes-common-to-form-controls.html#concept-fe-disabled" title="concept-fe-disabled">disabled</a> state is set, and false
+  ancestors is <span>inert</span>, or if the element's <a href="attributes-common-to-form-controls.html#concept-fe-disabled" title="concept-fe-disabled">disabled</a> state is set, and false
   otherwise.</p>
 
 
@@ -747,7 +747,7 @@
 
   <p>The <a href="#command-facet-disabledstate" title="command-facet-DisabledState">Disabled
   State</a> of the command is true if the element or one of its
-  ancestors is <a href="editing.html#inert">inert</a>, or if the element's <a href="attributes-common-to-form-controls.html#concept-fe-disabled" title="concept-fe-disabled">disabled</a> state is set, and false
+  ancestors is <span>inert</span>, or if the element's <a href="attributes-common-to-form-controls.html#concept-fe-disabled" title="concept-fe-disabled">disabled</a> state is set, and false
   otherwise.</p>
 
   <p>The <a href="#command-facet-checkedstate" title="command-facet-CheckedState">Checked State</a>
@@ -806,7 +806,7 @@
   <p>The <a href="#command-facet-disabledstate" title="command-facet-DisabledState">Disabled
   State</a> of the command is true if the element is <a href="the-option-element.html#concept-option-disabled" title="concept-option-disabled">disabled</a>, or if its nearest
   ancestor <code><a href="the-select-element.html#the-select-element">select</a></code> element is <a href="attributes-common-to-form-controls.html#concept-fe-disabled" title="concept-fe-disabled">disabled</a>, or if it or one of its
-  ancestors is <a href="editing.html#inert">inert</a>, and false otherwise.</p>
+  ancestors is <span>inert</span>, and false otherwise.</p>
 
   <p>The <a href="#command-facet-checkedstate" title="command-facet-CheckedState">Checked State</a>
   of the command is true (checked) if the element's <a href="the-option-element.html#concept-option-selectedness" title="concept-option-selectedness">selectedness</a> is true, and
@@ -858,7 +858,7 @@
 
   <p>The <a href="#command-facet-disabledstate" title="command-facet-DisabledState">Disabled
   State</a> of the command is true if the element or one of its
-  ancestors is <a href="editing.html#inert">inert</a>, or if the element has a <code title="attr-command-disabled"><a href="the-command-element.html#attr-command-disabled">disabled</a></code> attribute, and false
+  ancestors is <span>inert</span>, or if the element has a <code title="attr-command-disabled"><a href="the-command-element.html#attr-command-disabled">disabled</a></code> attribute, and false
   otherwise.</p>
 
   <p>The <a href="#command-facet-checkedstate" title="command-facet-CheckedState">Checked State</a>
@@ -1050,7 +1050,7 @@
 
   <p>The <a href="#command-facet-disabledstate" title="command-facet-DisabledState">Disabled
   State</a> of the command is true if the element or one of its
-  ancestors is <a href="editing.html#inert">inert</a>, and false otherwise.</p>
+  ancestors is <span>inert</span>, and false otherwise.</p>
 
   <p>The <a href="#command-facet-checkedstate" title="command-facet-CheckedState">Checked State</a>
   of the command is always false. (The command is never checked.)</p>
@@ -1213,8 +1213,8 @@
    position</a> of the dialog element.</p></li>
 
    <li><p>Let <var title="">dialog</var>'s <code><a href="dom.html#document">Document</a></code> be
-   <a href="editing.html#blocked-by-a-modal-dialog" title="blocked by a modal dialog">blocked by the modal
-   dialog</a> <var title="">dialog</var>.</p></li>
+   <span title="blocked by a modal dialog">blocked by the modal
+   dialog</span> <var title="">dialog</var>.</p></li>
 
    <li><p>Push <var title="">dialog</var> onto <var title="">dialog</var>'s <code><a href="dom.html#document">Document</a></code>'s <a href="#pending-dialog-stack">pending
    dialog stack</a>.</p></li>
@@ -1242,10 +1242,10 @@
 
    <li><p>If <var title="">document</var>'s <a href="#pending-dialog-stack">pending dialog
    stack</a> is not empty, then let <var title="">document</var> be
-   <a href="editing.html#blocked-by-a-modal-dialog" title="blocked by a modal dialog">blocked by the modal
-   dialog</a> that is at the top of <var title="">document</var>'s
-   <a href="#pending-dialog-stack">pending dialog stack</a>. Otherwise, let <var title="">document</var> be no longer <a href="editing.html#blocked-by-a-modal-dialog">blocked by a modal
-   dialog</a> at all.</p></li>
+   <span title="blocked by a modal dialog">blocked by the modal
+   dialog</span> that is at the top of <var title="">document</var>'s
+   <a href="#pending-dialog-stack">pending dialog stack</a>. Otherwise, let <var title="">document</var> be no longer <span>blocked by a modal
+   dialog</span> at all.</p></li>
 
   </ol><p>When the <dfn id="dom-dialog-close" title="dom-dialog-close"><code>close()</code></dfn>
   method is invoked, the user agent must <a href="#close-the-dialog">close the dialog</a>
@@ -1280,10 +1280,10 @@
 
      <li><p>If that <a href="#pending-dialog-stack">pending dialog stack</a> is not empty,
      then let <var title="">dialog</var>'s <code><a href="dom.html#document">Document</a></code> be
-     <a href="editing.html#blocked-by-a-modal-dialog" title="blocked by a modal dialog">blocked by the modal
-     dialog</a> that is at the top of the <a href="#pending-dialog-stack">pending dialog
+     <span title="blocked by a modal dialog">blocked by the modal
+     dialog</span> that is at the top of the <a href="#pending-dialog-stack">pending dialog
      stack</a>. Otherwise, let <var title="">document</var> be no
-     longer <a href="editing.html#blocked-by-a-modal-dialog">blocked by a modal dialog</a> at all.</p></li>
+     longer <span>blocked by a modal dialog</span> at all.</p></li>
 
     </ol></li>
 

@@ -358,7 +358,7 @@
    }
   </script><link href="media-elements.html" title="4.8.10 Media elements" rel="prev">
   <link href="index.html#contents" title="Table of contents" rel="contents">
-  <link href="the-map-element.html" title="4.8.12 The map element" rel="next">
+  <link href="image-maps.html" title="4.8.12 Image maps" rel="next">
   </head><body onload="fixBrokenLink();" class="split chapter"><div class="head" id="head">
    <p><a href="http://www.w3.org/"><img alt="W3C" height="48" src="http://www.w3.org/Icons/w3c_home" width="72"></a></p>
 
@@ -371,9 +371,8 @@
   <div class="prev_next">
    <a href="media-elements.html">&#8592; 4.8.10 Media elements</a> &#8211;
    <a href="index.html#contents">Table of contents</a> &#8211;
-   <a href="the-map-element.html">4.8.12 The map element &#8594;</a>
-  <ol class="toc"><li><ol><li><ol><li><a href="the-canvas-element.html#the-canvas-element"><span class="secno">4.8.11 </span>The <code>canvas</code> element</a>
-      <ol><li><a href="the-canvas-element.html#color-spaces-and-color-correction"><span class="secno">4.8.11.1 </span>Color spaces and color correction</a></li><li><a href="the-canvas-element.html#security-with-canvas-elements"><span class="secno">4.8.11.2 </span>Security with <code>canvas</code> elements</a></li></ol></li></ol></li></ol></li></ol></div>
+   <a href="image-maps.html">4.8.12 Image maps &#8594;</a>
+  </div>
 
   <h4 id="the-canvas-element"><span class="secno">4.8.11 </span>The <dfn id="canvas"><code>canvas</code></dfn> element</h4>
 
@@ -399,9 +398,7 @@
            attribute unsigned long <a href="#dom-canvas-height" title="dom-canvas-height">height</a>;
 
   DOMString <a href="#dom-canvas-todataurl" title="dom-canvas-toDataURL">toDataURL</a>(optional DOMString type, any... arguments);
-  DOMString <span title="dom-canvas-toDataURLHD">toDataURLHD</span>(optional DOMString type, any... arguments);
   void <a href="#dom-canvas-toblob" title="dom-canvas-toBlob">toBlob</a>(<a href="infrastructure.html#filecallback">FileCallback</a>? _callback, optional DOMString type, any... arguments);
-  void <span title="dom-canvas-toBlobHD">toBlobHD</span>(<a href="infrastructure.html#filecallback">FileCallback</a>? _callback, optional DOMString type, any... arguments);
 
   object? <a href="#dom-canvas-getcontext" title="dom-canvas-getContext">getContext</a>(DOMString contextId, any... arguments);
 };</pre>
@@ -789,124 +786,216 @@
   <!--REMOVE-TOPIC:DOM APIs-->
 
 
-  <!--2DCONTEXT-->
+  <!--DOWNLOAD--><!--PING-->
+   <dd><code title="attr-hyperlink-rel"><a href="links.html#attr-hyperlink-rel">rel</a></code></dd>
+   <dd><code title="attr-hyperlink-media"><a href="links.html#attr-hyperlink-media">media</a></code></dd>
+   <dd><code title="attr-hyperlink-hreflang"><a href="links.html#attr-hyperlink-hreflang">hreflang</a></code></dd>
+   <dd><code title="attr-hyperlink-type"><a href="links.html#attr-hyperlink-type">type</a></code></dd>
+   <dt><a href="element-definitions.html#element-dfn-dom" title="element-dfn-dom">DOM interface</a>:</dt><!--TOPIC:DOM APIs-->
+   <dd>
+<pre class="idl">interface <dfn id="htmlareaelement">HTMLAreaElement</dfn> : <a href="elements.html#htmlelement">HTMLElement</a> {
+           attribute DOMString <a href="#dom-area-alt" title="dom-area-alt">alt</a>;
+           attribute DOMString <a href="#dom-area-coords" title="dom-area-coords">coords</a>;
+           attribute DOMString <a href="#dom-area-shape" title="dom-area-shape">shape</a>;
+  stringifier attribute DOMString <a href="#dom-area-href" title="dom-area-href">href</a>;
+           attribute DOMString <a href="#dom-area-target" title="dom-area-target">target</a>;
+<!--DOWNLOAD--><!--PING-->
+           attribute DOMString <a href="#dom-area-rel" title="dom-area-rel">rel</a>;
+  readonly attribute <a href="infrastructure.html#domtokenlist">DOMTokenList</a> <a href="#dom-area-rellist" title="dom-area-relList">relList</a>;
+           attribute DOMString <a href="#dom-area-media" title="dom-area-media">media</a>;
+           attribute DOMString <a href="#dom-area-hreflang" title="dom-area-hreflang">hreflang</a>;
+           attribute DOMString <a href="#dom-area-type" title="dom-area-type">type</a>;
+
+  // <a href="urls.html#url-decomposition-idl-attributes">URL decomposition IDL attributes</a>
+           attribute DOMString <a href="#dom-area-protocol" title="dom-area-protocol">protocol</a>;
+           attribute DOMString <a href="#dom-area-host" title="dom-area-host">host</a>;
+           attribute DOMString <a href="#dom-area-hostname" title="dom-area-hostname">hostname</a>;
+           attribute DOMString <a href="#dom-area-port" title="dom-area-port">port</a>;
+           attribute DOMString <a href="#dom-area-pathname" title="dom-area-pathname">pathname</a>;
+           attribute DOMString <a href="#dom-area-search" title="dom-area-search">search</a>;
+           attribute DOMString <a href="#dom-area-hash" title="dom-area-hash">hash</a>;
+};</pre>
+   </dd>
+  <!--TOPIC:HTML-->
+
+  <p>The <code>area</code> element <a href="rendering.html#represents">represents</a> either a
+  hyperlink with some text and a corresponding area on an <a href="image-maps.html#image-map">image
+  map</a>, or a dead area on an image map.</p>
+
+  <p>If the <code>area</code> element has an <code title="attr-hyperlink-href"><a href="links.html#attr-hyperlink-href">href</a></code> attribute, then the
+  <code>area</code> element represents a <a href="links.html#hyperlink">hyperlink</a>. In
+  this case, the <dfn id="attr-area-alt" title="attr-area-alt"><code>alt</code></dfn>
+  attribute must be present. It specifies the text of the
+  hyperlink. Its value must be text that, when presented with the
+  texts specified for the other hyperlinks of the <a href="image-maps.html#image-map">image
+  map</a>, and with the alternative text of the image, but without
+  the image itself, provides the user with the same kind of choice as
+  the hyperlink would when used without its text but with its shape
+  applied to the image. The <code title="attr-area-alt"><a href="#attr-area-alt">alt</a></code>
+  attribute may be left blank if there is another <code>area</code>
+  element in the same <a href="image-maps.html#image-map">image map</a> that points to the same
+  resource and has a non-blank <code title="attr-area-alt"><a href="#attr-area-alt">alt</a></code>
+  attribute.</p>
+
+  <p>If the <code>area</code> element has no <code title="attr-hyperlink-href"><a href="links.html#attr-hyperlink-href">href</a></code> attribute, then the area
+  represented by the element cannot be selected, and the <code title="attr-area-alt"><a href="#attr-area-alt">alt</a></code> attribute must be omitted.</p>
+
+  <p>In both cases, the <code title="attr-area-shape"><a href="#attr-area-shape">shape</a></code> and
+  <code title="attr-area-coords"><a href="#attr-area-coords">coords</a></code> attributes specify the
+  area.</p>
+
+  <p>The <dfn id="attr-area-shape" title="attr-area-shape"><code>shape</code></dfn>
+  attribute is an <a href="common-microsyntaxes.html#enumerated-attribute">enumerated attribute</a>. The following
+  table lists the keywords defined for this attribute. The states
+  given in the first cell of the rows with keywords give the states to
+  which those keywords map. <span class="impl">Some of the keywords
+  are non-conforming, as noted in the last column.</span></p>
+
+  <table><thead><tr><th>State
+     </th><th>Keywords
+     </th><th class="impl">Notes
+   </th></tr></thead><tbody><tr><td rowspan="2"><a href="#attr-area-shape-circle" title="attr-area-shape-circle">Circle state</a>
+     </td><td><dfn id="attr-area-shape-keyword-circle" title="attr-area-shape-keyword-circle"><code>circle</code></dfn>
+     </td><td class="impl">
+    </td></tr><tr><td class="impl"><dfn id="attr-area-shape-keyword-circ" title="attr-area-shape-keyword-circ"><code>circ</code></dfn>
+     </td><td class="impl">Non-conforming
+    </td></tr><tr><td><a href="#attr-area-shape-default" title="attr-area-shape-default">Default state</a>
+     </td><td><dfn id="attr-area-shape-keyword-default" title="attr-area-shape-keyword-default"><code>default</code></dfn>
+     </td><td class="impl">
+    </td></tr><tr><td rowspan="2"><a href="#attr-area-shape-poly" title="attr-area-shape-poly">Polygon state</a>
+     </td><td><dfn id="attr-area-shape-keyword-poly" title="attr-area-shape-keyword-poly"><code>poly</code></dfn>
+     </td><td class="impl">
+    </td></tr><tr><td class="impl"><dfn id="attr-area-shape-keyword-polygon" title="attr-area-shape-keyword-polygon"><code>polygon</code></dfn>
+     </td><td class="impl">Non-conforming
+    </td></tr><tr><td rowspan="2"><a href="#attr-area-shape-rect" title="attr-area-shape-rect">Rectangle state</a>
+     </td><td><dfn id="attr-area-shape-keyword-rect" title="attr-area-shape-keyword-rect"><code>rect</code></dfn>
+     </td><td class="impl">
+    </td></tr><tr><td class="impl"><dfn id="attr-area-shape-keyword-rectangle" title="attr-area-shape-keyword-rectangle"><code>rectangle</code></dfn>
+     </td><td class="impl">Non-conforming
+  </td></tr></tbody></table><p>The attribute may be omitted. The <i>missing value default</i> is
+  the <a href="#attr-area-shape-rect" title="attr-area-shape-rect">rectangle</a> state.</p>
+
+  <p>The <dfn id="attr-area-coords" title="attr-area-coords"><code>coords</code></dfn>
+  attribute must, if specified, contain a <a href="common-microsyntaxes.html#valid-list-of-integers">valid list of
+  integers</a>. This attribute gives the coordinates for the shape
+  described by the <code title="attr-area-shape"><a href="#attr-area-shape">shape</a></code>
+  attribute. <span class="impl">The processing for this attribute is
+  described as part of the <a href="image-maps.html#image-map">image map</a> processing
+  model.</span></p>
+
+  <!-- v2: It was suggested by John S. Urban that coords should
+  support percentages as well as pixels, so that one could use the
+  same image map for images of various sizes. -->
+
+  <p>In the <dfn id="attr-area-shape-circle" title="attr-area-shape-circle">circle state</dfn>,
+  <code>area</code> elements must have a <code title="attr-area-coords"><a href="#attr-area-coords">coords</a></code> attribute present, with three
+  integers, the last of which must be non-negative. The first integer
+  must be the distance in CSS pixels from the left edge of the image
+  to the center of the circle, the second integer must be the distance
+  in CSS pixels from the top edge of the image to the center of the
+  circle, and the third integer must be the radius of the circle,
+  again in CSS pixels.</p>
+
+  <p>In the <dfn id="attr-area-shape-default" title="attr-area-shape-default">default state</dfn>
+  state, <code>area</code> elements must not have a <code title="attr-area-coords"><a href="#attr-area-coords">coords</a></code> attribute. (The area is the
+  whole image.)</p>
+
+  <p>In the <dfn id="attr-area-shape-poly" title="attr-area-shape-poly">polygon state</dfn>,
+  <code>area</code> elements must have a <code title="attr-area-coords"><a href="#attr-area-coords">coords</a></code> attribute with at least six
+  integers, and the number of integers must be even. Each pair of
+  integers must represent a coordinate given as the distances from the
+  left and the top of the image in CSS pixels respectively, and all
+  the coordinates together must represent the points of the polygon,
+  in order.</p>
+
+  <p>In the <dfn id="attr-area-shape-rect" title="attr-area-shape-rect">rectangle state</dfn>,
+  <code>area</code> elements must have a <code title="attr-area-coords"><a href="#attr-area-coords">coords</a></code> attribute with exactly four
+  integers, the first of which must be less than the third, and the
+  second of which must be less than the fourth. The four points must
+  represent, respectively, the distance from the left edge of the
+  image to the left side of the rectangle, the distance from the
+  top edge to the top side, the distance from the left edge to the
+  right side, and the distance from the top edge to the bottom side,
+  all in CSS pixels.</p>
 
   <div class="impl">
 
-  <h5 id="color-spaces-and-color-correction"><span class="secno">4.8.11.1 </span>Color spaces and color correction</h5>
+  <p>When user agents allow users to <a href="links.html#following-hyperlinks-0" title="following
+  hyperlinks">follow hyperlinks</a>
+<!--DOWNLOAD-->
+  created using the <code>area</code> element, as described in the
+  next section, the
+  <code title="attr-hyperlink-href"><a href="links.html#attr-hyperlink-href">href</a></code>,
+  <code title="attr-hyperlink-target"><a href="links.html#attr-hyperlink-target">target</a></code>,
+<!--DOWNLOAD--><!--PING-->
+  attributes decide how the link is followed.
+  The <code title="attr-hyperlink-rel"><a href="links.html#attr-hyperlink-rel">rel</a></code>,
+  <code title="attr-hyperlink-media"><a href="links.html#attr-hyperlink-media">media</a></code>, <code title="attr-hyperlink-hreflang"><a href="links.html#attr-hyperlink-hreflang">hreflang</a></code>, and <code title="attr-hyperlink-type"><a href="links.html#attr-hyperlink-type">type</a></code> attributes may be used to
+  indicate to the user the likely nature of the target resource before
+  the user follows the link.</p>
 
-  <p>The <code><a href="#the-canvas-element">canvas</a></code> APIs must perform color correction at
-  only two points: when rendering images with their own gamma
-  correction and color space information onto the canvas, to convert
-  the image to the color space used by the canvas (e.g. using the 2D
-  Context's <code title="dom-context-2d-drawImage">drawImage()</code>
-  method with an <code><a href="the-img-element.html#htmlimageelement">HTMLImageElement</a></code> object), and when
-  rendering the actual canvas bitmap to the output device.</p>
+  </div>
 
-  <p class="note">Thus, in the 2D context, colors used to draw shapes
-  onto the canvas will exactly match colors obtained through the <code title="dom-context-2d-getImageData">getImageData()</code>
-  method.</p>
+  <p>The <code title="attr-hyperlink-target"><a href="links.html#attr-hyperlink-target">target</a></code>,
+<!--DOWNLOAD--><!--PING-->
+  <code title="attr-hyperlink-rel"><a href="links.html#attr-hyperlink-rel">rel</a></code>, <code title="attr-hyperlink-media"><a href="links.html#attr-hyperlink-media">media</a></code>, <code title="attr-hyperlink-hreflang"><a href="links.html#attr-hyperlink-hreflang">hreflang</a></code>, and <code title="attr-hyperlink-type"><a href="links.html#attr-hyperlink-type">type</a></code> attributes must be omitted
+  if the <code title="attr-hyperlink-href"><a href="links.html#attr-hyperlink-href">href</a></code> attribute is
+  not present.</p>
 
-  <p>The <code title="dom-canvas-toDataURL"><a href="#dom-canvas-todataurl">toDataURL()</a></code> method
-  must not include color space information in the resource
-  returned. Where the output format allows it, the color of pixels in
-  resources created by <code title="dom-canvas-toDataURL"><a href="#dom-canvas-todataurl">toDataURL()</a></code> must match those
-  returned by the <code title="dom-context-2d-getImageData">getImageData()</code>
-  method.</p>
+<!--MD-->
 
-  <p>In user agents that support CSS, the color space used by a
-  <code><a href="#the-canvas-element">canvas</a></code> element must match the color space used for
-  processing any colors for that element in CSS.</p>
+  <div class="impl">
 
-  <p>The gamma correction and color space information of images must
-  be handled in such a way that an image rendered directly using an
-  <code><a href="the-img-element.html#the-img-element">img</a></code> element would use the same colors as one painted on
-  a <code><a href="#the-canvas-element">canvas</a></code> element that is then itself
-  rendered. Furthermore, the rendering of images that have no color
-  correction information (such as those returned by the <code title="dom-canvas-toDataURL"><a href="#dom-canvas-todataurl">toDataURL()</a></code> method) must be
-  rendered with no color correction.</p>
+  <p>The <a href="content-models.html#activation-behavior">activation behavior</a> of <code>area</code>
+  elements is to run the following steps:</p>
 
-  <p class="note">Thus, in the 2D context, calling the <code title="dom-context-2d-drawImage">drawImage()</code> method to render
-  the output of the <code title="dom-canvas-toDataURL"><a href="#dom-canvas-todataurl">toDataURL()</a></code> method to the
-  canvas, given the appropriate dimensions, has no visible effect.</p>
+  <ol><li><p>If the <code title="event-click"><a href="infrastructure.html#event-click">click</a></code> event in
+   question is not <a href="infrastructure.html#concept-events-trusted" title="concept-events-trusted">trusted</a>
+   (i.e. a <code title="dom-click"><a href="editing.html#dom-click">click()</a></code> method call was the
+   reason for the event being dispatched), and the <code>area</code>
+<!--DOWNLOAD-->
+   element's <code title="attr-hyperlink-target"><a href="links.html#attr-hyperlink-target">target</a></code>
+   attribute is present and applying <a href="browsers.html#the-rules-for-choosing-a-browsing-context-given-a-browsing-context-name">the rules for choosing a
+   browsing context given a browsing context name</a>, using the
+   value of the <code title="attr-hyperlink-target"><a href="links.html#attr-hyperlink-target">target</a></code>
+   attribute as the browsing context name, would result in there not
+   being a chosen browsing context, then throw an
+   <code><a href="infrastructure.html#invalidaccesserror">InvalidAccessError</a></code> exception and abort these
+   steps.</p></li>
+
+   <li><p>Otherwise, the user agent must <a href="links.html#following-hyperlinks-0" title="following
+   hyperlinks">follow the hyperlink</a>
+<!--DOWNLOAD-->
+   created by the <code>area</code> element, if any, and as determined by
+<!--DOWNLOAD-->
+   any expressed user preference.</p></li>
+
+  </ol><p>The IDL attributes <dfn id="dom-area-alt" title="dom-area-alt"><code>alt</code></dfn>, <dfn id="dom-area-coords" title="dom-area-coords"><code>coords</code></dfn>, <dfn id="dom-area-href" title="dom-area-href"><code>href</code></dfn>, <dfn id="dom-area-target" title="dom-area-target"><code>target</code></dfn>,
+<!--DOWNLOAD--><!--PING-->
+  <dfn id="dom-area-rel" title="dom-area-rel"><code>rel</code></dfn>, <dfn id="dom-area-media" title="dom-area-media"><code>media</code></dfn>, <dfn id="dom-area-hreflang" title="dom-area-hreflang"><code>hreflang</code></dfn>, and <dfn id="dom-area-type" title="dom-area-type"><code>type</code></dfn>, each must
+  <a href="common-dom-interfaces.html#reflect">reflect</a> the respective content attributes of the same
+  name.</p>
+
+  <p>The IDL attribute <dfn id="dom-area-shape" title="dom-area-shape"><code>shape</code></dfn> must
+  <a href="common-dom-interfaces.html#reflect">reflect</a> the <code title="attr-area-shape"><a href="#attr-area-shape">shape</a></code>
+  content attribute.</p>
+
+  <p>The IDL attribute <dfn id="dom-area-rellist" title="dom-area-rellist"><code>relList</code></dfn> must
+  <a href="common-dom-interfaces.html#reflect">reflect</a> the <code title="attr-hyperlink-rel"><a href="links.html#attr-hyperlink-rel">rel</a></code>
+  content attribute.</p>
+
+  <p>The <code>area</code> element also supports the complement of
+  <a href="urls.html#url-decomposition-idl-attributes">URL decomposition IDL attributes</a>, <dfn id="dom-area-protocol" title="dom-area-protocol"><code>protocol</code></dfn>, <dfn id="dom-area-host" title="dom-area-host"><code>host</code></dfn>, <dfn id="dom-area-port" title="dom-area-port"><code>port</code></dfn>, <dfn id="dom-area-hostname" title="dom-area-hostname"><code>hostname</code></dfn>, <dfn id="dom-area-pathname" title="dom-area-pathname"><code>pathname</code></dfn>, <dfn id="dom-area-search" title="dom-area-search"><code>search</code></dfn>, and <dfn id="dom-area-hash" title="dom-area-hash"><code>hash</code></dfn>. These must follow the
+  rules given for <a href="urls.html#url-decomposition-idl-attributes">URL decomposition IDL attributes</a>, with
+  the <a href="urls.html#concept-uda-input" title="concept-uda-input">input</a> being the result of
+  <a href="urls.html#resolve-a-url" title="resolve a url">resolving</a> the element's <code title="attr-hyperlink-href"><a href="links.html#attr-hyperlink-href">href</a></code> attribute relative to the
+  element, if there is such an attribute and resolving it is
+  successful, or the empty string otherwise; and the <a href="urls.html#concept-uda-setter" title="concept-uda-setter">common setter action</a> being the
+  same as setting the element's <code title="attr-hyperlink-href"><a href="links.html#attr-hyperlink-href">href</a></code> attribute to the new output
+  value.</p>
 
   </div>
 
 
-<!--ADD-TOPIC:Security-->
-  <div class="impl">
 
-  <h5 id="security-with-canvas-elements"><span class="secno">4.8.11.2 </span>Security with <code><a href="#the-canvas-element">canvas</a></code> elements</h5>
-
-  <p><strong>Information leakage</strong> can occur if scripts from
-  one <a href="browsers.html#origin-0">origin</a> can access information (e.g. read pixels)
-  from images from another origin (one that isn't the <a href="browsers.html#same-origin" title="same origin">same</a>).</p>
-
-  <p>To mitigate this, <code><a href="#the-canvas-element">canvas</a></code> elements are defined to
-  have a flag indicating whether they are <i>origin-clean</i>. All
-  <code><a href="#the-canvas-element">canvas</a></code> elements must start with their
-  <i>origin-clean</i> set to true. The flag must be set to false if
-  any of the following actions occur:</p>
-
-  <ul><li><p>The element's 2D context's <code title="dom-context-2d-drawImage">drawImage()</code> method is
-   called with an <code><a href="the-img-element.html#htmlimageelement">HTMLImageElement</a></code> or an
-   <code><a href="the-video-element.html#htmlvideoelement">HTMLVideoElement</a></code> whose <a href="browsers.html#origin-0">origin</a> is not the
-   <a href="browsers.html#same-origin" title="same origin">same</a> as that of the
-   <code><a href="dom.html#document">Document</a></code> object that owns the <code><a href="#the-canvas-element">canvas</a></code>
-   element.</p></li>
-
-   <li><p>The element's 2D context's <code title="dom-context-2d-drawImage">drawImage()</code> method is
-   called with an <code><a href="#htmlcanvaselement">HTMLCanvasElement</a></code> whose
-   <i>origin-clean</i> flag is false.</p></li>
-
-   <li><p>The element's 2D context's <code title="dom-context-2d-fillStyle">fillStyle</code> attribute is set
-   to a <code>CanvasPattern</code> object that was created from an
-   <code><a href="the-img-element.html#htmlimageelement">HTMLImageElement</a></code> or an <code><a href="the-video-element.html#htmlvideoelement">HTMLVideoElement</a></code>
-   whose <a href="browsers.html#origin-0">origin</a> was not the <a href="browsers.html#same-origin" title="same
-   origin">same</a> as that of the <code><a href="dom.html#document">Document</a></code> object
-   that owns the <code><a href="#the-canvas-element">canvas</a></code> element when the pattern was
-   created.</p></li>
-
-   <li><p>The element's 2D context's <code title="dom-context-2d-fillStyle">fillStyle</code> attribute is set
-   to a <code>CanvasPattern</code> object that was created from an
-   <code><a href="#htmlcanvaselement">HTMLCanvasElement</a></code> whose <i>origin-clean</i> flag was
-   false when the pattern was created.</p></li>
-
-   <li><p>The element's 2D context's <code title="dom-context-2d-strokeStyle">strokeStyle</code> attribute is
-   set to a <code>CanvasPattern</code> object that was created from an
-   <code><a href="the-img-element.html#htmlimageelement">HTMLImageElement</a></code> or an <code><a href="the-video-element.html#htmlvideoelement">HTMLVideoElement</a></code>
-   whose <a href="browsers.html#origin-0">origin</a> was not the <a href="browsers.html#same-origin" title="same
-   origin">same</a> as that of the <code><a href="dom.html#document">Document</a></code> object
-   that owns the <code><a href="#the-canvas-element">canvas</a></code> element when the pattern was
-   created.</p></li>
-
-   <li><p>The element's 2D context's <code title="dom-context-2d-strokeStyle">strokeStyle</code> attribute is
-   set to a <code>CanvasPattern</code> object that was created from an
-   <code><a href="#htmlcanvaselement">HTMLCanvasElement</a></code> whose <i>origin-clean</i> flag was
-   false when the pattern was created.</p></li>
-
-   <li><p>The element's 2D context's <code title="dom-context-2d-fillText">fillText()</code> or <code title="dom-context-2d-fillText">strokeText()</code> methods are
-   invoked and consider using a font that has an <a href="browsers.html#origin-0">origin</a>
-   that is not the <a href="browsers.html#same-origin" title="same origin">same</a> as that of
-   the <code><a href="dom.html#document">Document</a></code> object that owns the <code><a href="#the-canvas-element">canvas</a></code>
-   element. (The font doesn't even have to be used; all that matters
-   is whether the font was considered for any of the glyphs
-   drawn.)</p></li> <!-- because fonts could consider sensitive
-   material, I guess; and because that sensitivity could extend to
-   whether or not a particular glyph is in the font in the first
-   place. -->
-
-  </ul><p>The <code title="dom-canvas-toDataURL"><a href="#dom-canvas-todataurl">toDataURL()</a></code>, <code title="dom-canvas-toBlob"><a href="#dom-canvas-toblob">toBlob()</a></code>, and <code title="dom-context-2d-getImageData">getImageData()</code> methods
-  check the flag and will throw a <code><a href="infrastructure.html#securityerror">SecurityError</a></code> exception
-  rather than leak cross-origin data.</p>
-
-  <p class="note">Even resetting the canvas state by changing its
-  <code title="attr-canvas-width"><a href="#attr-canvas-width">width</a></code> or <code title="attr-canvas-height"><a href="#attr-canvas-height">height</a></code> attributes doesn't reset
-  the <i>origin-clean</i> flag.</p>
-
-  </div>
-<!--REMOVE-TOPIC:Security-->
-
-
-<!--TOPIC:HTML-->
   </body></html>
