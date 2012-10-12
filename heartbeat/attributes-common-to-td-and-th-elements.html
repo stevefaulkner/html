@@ -1,0 +1,1480 @@
+<!DOCTYPE html>
+<html lang="en-US-x-Hixie"><head><meta charset="utf-8"><title>4.9.11 Attributes common to td and th elements &#8212; HTML5</title><style type="text/css">
+
+   .applies thead th > * { display: block; }
+   .applies thead code { display: block; }
+   .applies tbody th { white-space: nowrap; }
+   .applies td { text-align: center; }
+   .applies .yes { background: yellow; }
+
+   .matrix, .matrix td { border: hidden; text-align: right; }
+   .matrix { margin-left: 2em; }
+
+   .dice-example { border-collapse: collapse; border-style: hidden solid solid hidden; border-width: thin; margin-left: 3em; }
+   .dice-example caption { width: 30em; font-size: smaller; font-style: italic; padding: 0.75em 0; text-align: left; }
+   .dice-example td, .dice-example th { border: solid thin; width: 1.35em; height: 1.05em; text-align: center; padding: 0; }
+
+   td.eg { border-width: thin; text-align: center; }
+
+   #table-example-1 { border: solid thin; border-collapse: collapse; margin-left: 3em; }
+   #table-example-1 * { font-family: "Essays1743", serif; line-height: 1.01em; }
+   #table-example-1 caption { padding-bottom: 0.5em; }
+   #table-example-1 thead, #table-example-1 tbody { border: none; }
+   #table-example-1 th, #table-example-1 td { border: solid thin; }
+   #table-example-1 th { font-weight: normal; }
+   #table-example-1 td { border-style: none solid; vertical-align: top; }
+   #table-example-1 th { padding: 0.5em; vertical-align: middle; text-align: center; }
+   #table-example-1 tbody tr:first-child td { padding-top: 0.5em; }
+   #table-example-1 tbody tr:last-child td { padding-bottom: 1.5em; }
+   #table-example-1 tbody td:first-child { padding-left: 2.5em; padding-right: 0; width: 9em; }
+   #table-example-1 tbody td:first-child::after { content: leader(". "); }
+   #table-example-1 tbody td { padding-left: 2em; padding-right: 2em; }
+   #table-example-1 tbody td:first-child + td { width: 10em; }
+   #table-example-1 tbody td:first-child + td ~ td { width: 2.5em; }
+   #table-example-1 tbody td:first-child + td + td + td ~ td { width: 1.25em; }
+
+   .apple-table-examples { border: none; border-collapse: separate; border-spacing: 1.5em 0em; width: 40em; margin-left: 3em; }
+   .apple-table-examples * { font-family: "Times", serif; }
+   .apple-table-examples td, .apple-table-examples th { border: none; white-space: nowrap; padding-top: 0; padding-bottom: 0; }
+   .apple-table-examples tbody th:first-child { border-left: none; width: 100%; }
+   .apple-table-examples thead th:first-child ~ th { font-size: smaller; font-weight: bolder; border-bottom: solid 2px; text-align: center; }
+   .apple-table-examples tbody th::after, .apple-table-examples tfoot th::after { content: leader(". ") }
+   .apple-table-examples tbody th, .apple-table-examples tfoot th { font: inherit; text-align: left; }
+   .apple-table-examples td { text-align: right; vertical-align: top; }
+   .apple-table-examples.e1 tbody tr:last-child td { border-bottom: solid 1px; }
+   .apple-table-examples.e1 tbody + tbody tr:last-child td { border-bottom: double 3px; }
+   .apple-table-examples.e2 th[scope=row] { padding-left: 1em; }
+   .apple-table-examples sup { line-height: 0; }
+
+   .details-example img { vertical-align: top; }
+
+   #base64-table {
+     white-space: nowrap;
+     font-size: 0.6em;
+     column-width: 6em;
+     column-count: 5;
+     column-gap: 1em;
+     -moz-column-width: 6em;
+     -moz-column-count: 5;
+     -moz-column-gap: 1em;
+     -webkit-column-width: 6em;
+     -webkit-column-count: 5;
+     -webkit-column-gap: 1em;
+   }
+   #base64-table thead { display: none; }
+   #base64-table * { border: none; }
+   #base64-table tbody td:first-child:after { content: ':'; }
+   #base64-table tbody td:last-child { text-align: right; }
+
+   #named-character-references-table {
+     white-space: nowrap;
+     font-size: 0.6em;
+     column-width: 30em;
+     column-gap: 1em;
+     -moz-column-width: 30em;
+     -moz-column-gap: 1em;
+     -webkit-column-width: 30em;
+     -webkit-column-gap: 1em;
+   }
+   #named-character-references-table > table > tbody > tr > td:first-child + td,
+   #named-character-references-table > table > tbody > tr > td:last-child { text-align: center; }
+   #named-character-references-table > table > tbody > tr > td:last-child:hover > span { position: absolute; top: auto; left: auto; margin-left: 0.5em; line-height: 1.2; font-size: 5em; border: outset; padding: 0.25em 0.5em; background: white; width: 1.25em; height: auto; text-align: center; }
+   #named-character-references-table > table > tbody > tr#entity-CounterClockwiseContourIntegral > td:first-child { font-size: 0.5em; }
+
+   .glyph.control { color: red; }
+
+   @font-face {
+     font-family: 'Essays1743';
+     src: url('fonts/Essays1743.ttf');
+   }
+   @font-face {
+     font-family: 'Essays1743';
+     font-weight: bold;
+     src: url('fonts/Essays1743-Bold.ttf');
+   }
+   @font-face {
+     font-family: 'Essays1743';
+     font-style: italic;
+     src: url('fonts/Essays1743-Italic.ttf');
+   }
+   @font-face {
+     font-family: 'Essays1743';
+     font-style: italic;
+     font-weight: bold;
+     src: url('fonts/Essays1743-BoldItalic.ttf');
+   }
+
+  </style><link href="data:text/css," id="complete" rel="stylesheet" title="Complete specification"><link href="data:text/css,.impl%20%7B%20display:%20none;%20%7D%0Ahtml%20%7B%20border:%20solid%20yellow;%20%7D%20.domintro:before%20%7B%20display:%20none;%20%7D" id="author" rel="alternate stylesheet" title="Author documentation only"><link href="data:text/css,.impl%20%7B%20background:%20%23FFEEEE;%20%7D%20.domintro:before%20%7B%20background:%20%23FFEEEE;%20%7D" id="highlight" rel="alternate stylesheet" title="Highlight implementation requirements"><style type="text/css">
+   pre { margin-left: 2em; white-space: pre-wrap; }
+   h2 { margin: 3em 0 1em 0; }
+   h3 { margin: 2.5em 0 1em 0; }
+   h4 { margin: 2.5em 0 0.75em 0; }
+   h5, h6 { margin: 2.5em 0 1em; }
+   h1 + h2, h1 + h2 + h2 { margin: 0.75em 0 0.75em; }
+   h2 + h3, h3 + h4, h4 + h5, h5 + h6 { margin-top: 0.5em; }
+   p { margin: 1em 0; }
+   hr:not(.top) { display: block; background: none; border: none; padding: 0; margin: 2em 0; height: auto; }
+   dl, dd { margin-top: 0; margin-bottom: 0; }
+   dt { margin-top: 0.75em; margin-bottom: 0.25em; clear: left; }
+   dt + dt { margin-top: 0; }
+   dd dt { margin-top: 0.25em; margin-bottom: 0; }
+   dd p { margin-top: 0; }
+   dd dl + p { margin-top: 1em; }
+   dd table + p { margin-top: 1em; }
+   p + * > li, dd li { margin: 1em 0; }
+   dt, dfn { font-weight: bold; font-style: normal; }
+   i, em { font-style: italic; }
+   dt dfn { font-style: italic; }
+   pre, code { font-size: inherit; font-family: monospace; font-variant: normal; }
+   pre strong { color: black; font: inherit; font-weight: bold; background: yellow; }
+   pre em { font-weight: bolder; font-style: normal; }
+   @media screen { code { color: orangered; } code :link, code :visited { color: inherit; } }
+   var sub { vertical-align: bottom; font-size: smaller; position: relative; top: 0.1em; }
+   table { border-collapse: collapse; border-style: hidden hidden none hidden; }
+   table thead, table tbody { border-bottom: solid; }
+   table tbody th:first-child { border-left: solid; }
+   table tbody th { text-align: left; }
+   table td, table th { border-left: solid; border-right: solid; border-bottom: solid thin; vertical-align: top; padding: 0.2em; }
+   blockquote { margin: 0 0 0 2em; border: 0; padding: 0; font-style: italic; }
+
+   .bad, .bad *:not(.XXX) { color: gray; border-color: gray; background: transparent; }
+   .matrix, .matrix td { border: none; text-align: right; }
+   .matrix { margin-left: 2em; }
+   .dice-example { border-collapse: collapse; border-style: hidden solid solid hidden; border-width: thin; margin-left: 3em; }
+   .dice-example caption { width: 30em; font-size: smaller; font-style: italic; padding: 0.75em 0; text-align: left; }
+   .dice-example td, .dice-example th { border: solid thin; width: 1.35em; height: 1.05em; text-align: center; padding: 0; }
+
+   .toc dfn, h1 dfn, h2 dfn, h3 dfn, h4 dfn, h5 dfn, h6 dfn { font: inherit; }
+   img.extra, p.overview { float: right; }
+   pre.idl { border: solid thin; background: #EEEEEE; color: black; padding: 0.5em 1em; position: relative; }
+   pre.idl :link, pre.idl :visited { color: inherit; background: transparent; }
+   pre.idl::before { content: "IDL"; font: bold small sans-serif; padding: 0.5em; background: white; position: absolute; top: 0; margin: -1px 0 0 -4em; width: 1.5em; border: thin solid; border-radius: 0 0 0 0.5em }
+   pre.css { border: solid thin; background: #FFFFEE; color: black; padding: 0.5em 1em; }
+   pre.css:first-line { color: #AAAA50; }
+   dl.domintro { color: green; margin: 2em 0 2em 2em; padding: 0.5em 1em; border: none; background: #DDFFDD; }
+   hr + dl.domintro, div.impl + dl.domintro { margin-top: 2.5em; margin-bottom: 1.5em; }
+   dl.domintro dt, dl.domintro dt * { color: black; text-decoration: none; }
+   dl.domintro dd { margin: 0.5em 0 1em 2em; padding: 0; }
+   dl.domintro dd p { margin: 0.5em 0; }
+   dl.domintro:before { display: table; margin: -1em -0.5em -0.5em auto; width: auto; content: 'This box is non-normative. Implementation requirements are given below this box.'; color: black; font-style: italic; border: solid 2px; background: white; padding: 0 0.25em; }
+   dl.switch { padding-left: 2em; }
+   dl.switch > dt { text-indent: -1.5em; }
+   dl.switch > dt:before { content: '\21AA'; padding: 0 0.5em 0 0; display: inline-block; width: 1em; text-align: right; line-height: 0.5em; }
+   dl.triple { padding: 0 0 0 1em; }
+   dl.triple dt, dl.triple dd { margin: 0; display: inline }
+   dl.triple dt:after { content: ':'; }
+   dl.triple dd:after { content: '\A'; white-space: pre; }
+   .diff-old { text-decoration: line-through; color: silver; background: transparent; }
+   .diff-chg, .diff-new { text-decoration: underline; color: green; background: transparent; }
+   a .diff-new { border-bottom: 1px blue solid; }
+
+   figure.diagrams { border: double black; background: white; padding: 1em; }
+   figure.diagrams img { display: block; margin: 1em auto; } 
+
+   h2 { page-break-before: always; }
+   h1, h2, h3, h4, h5, h6 { page-break-after: avoid; }
+   h1 + h2, hr + h2.no-toc { page-break-before: auto; }
+
+   p  > span:not([title=""]):not([class="XXX"]):not([class="impl"]):not([class="note"]),
+   li > span:not([title=""]):not([class="XXX"]):not([class="impl"]):not([class="note"]) { border-bottom: solid #9999CC; }
+
+   div.head { margin: 0 0 1em; padding: 1em 0 0 0; }
+   div.head p { margin: 0; }
+   div.head h1 { margin: 0; }
+   div.head .logo { float: right; margin: 0 1em; }
+   div.head .logo img { border: none } /* remove border from top image */
+   div.head dl { margin: 1em 0; }
+   div.head p.copyright, div.head p.alt { font-size: x-small; font-style: oblique; margin: 0; }
+
+   body > .toc > li { margin-top: 1em; margin-bottom: 1em; }
+   body > .toc.brief > li { margin-top: 0.35em; margin-bottom: 0.35em; }
+   body > .toc > li > * { margin-bottom: 0.5em; }
+   body > .toc > li > * > li > * { margin-bottom: 0.25em; }
+   .toc, .toc li { list-style: none; }
+
+   .brief { margin-top: 1em; margin-bottom: 1em; line-height: 1.1; }
+   .brief li { margin: 0; padding: 0; }
+   .brief li p { margin: 0; padding: 0; }
+
+   .category-list { margin-top: -0.75em; margin-bottom: 1em; line-height: 1.5; }
+   .category-list::before { content: '\21D2\A0'; font-size: 1.2em; font-weight: 900; }
+   .category-list li { display: inline; }
+   .category-list li:not(:last-child)::after { content: ', '; }
+   .category-list li > span, .category-list li > a { text-transform: lowercase; }
+   .category-list li * { text-transform: none; } /* don't affect <code> nested in <a> */
+
+   .XXX { color: #E50000; background: white; border: solid red; padding: 0.5em; margin: 1em 0; }
+   .XXX > :first-child { margin-top: 0; }
+   p .XXX { line-height: 3em; }
+   .annotation { border: solid thin black; background: #0C479D; color: white; position: relative; margin: 8px 0 20px 0; }
+   .annotation:before { position: absolute; left: 0; top: 0; width: 100%; height: 100%; margin: 6px -6px -6px 6px; background: #333333; z-index: -1; content: ''; }
+   .annotation :link, .annotation :visited { color: inherit; }
+   .annotation :link:hover, .annotation :visited:hover { background: transparent; }
+   .annotation span { border: none ! important; }
+   .note { color: green; background: transparent; font-family: sans-serif; }
+   .warning { color: red; background: transparent; }
+   .note, .warning { font-weight: bolder; font-style: italic; }
+   .note em, .warning em, .note i, .warning i { font-style: normal; }
+   p.note, div.note { padding: 0.5em 2em; }
+   span.note { padding: 0 2em; }
+   .note p:first-child, .warning p:first-child { margin-top: 0; }
+   .note p:last-child, .warning p:last-child { margin-bottom: 0; }
+   .warning:before { font-style: normal; }
+   p.note:before { content: 'Note: '; }
+   p.warning:before { content: '\26A0 Warning! '; }
+
+   .bookkeeping:before { display: block; content: 'Bookkeeping details'; font-weight: bolder; font-style: italic; }
+   .bookkeeping { font-size: 0.8em; margin: 2em 0; }
+   .bookkeeping p { margin: 0.5em 2em; display: list-item; list-style: square; }
+   .bookkeeping dt { margin: 0.5em 2em 0; }
+   .bookkeeping dd { margin: 0 3em 0.5em; }
+
+   h4 { position: relative; z-index: 3; }
+   h4 + .element, h4 + div + .element { margin-top: -2.5em; padding-top: 2em; }
+   .element {
+     background: #EEEEFF;
+     color: black;
+     margin: 0 0 1em 0.15em;
+     padding: 0 1em 0.25em 0.75em;
+     border-left: solid #9999FF 0.25em;
+     position: relative;
+     z-index: 1;
+   }
+   .element:before {
+     position: absolute;
+     z-index: 2;
+     top: 0;
+     left: -1.15em;
+     height: 2em;
+     width: 0.9em;
+     background: #EEEEFF;
+     content: ' ';
+     border-style: none none solid solid;
+     border-color: #9999FF;
+     border-width: 0.25em;
+   }
+
+   .example { display: block; color: #222222; background: #FCFCFC; border-left: double; margin-left: 2em; padding-left: 1em; }
+   td > .example:only-child { margin: 0 0 0 0.1em; }
+
+   ul.domTree, ul.domTree ul { padding: 0 0 0 1em; margin: 0; }
+   ul.domTree li { padding: 0; margin: 0; list-style: none; position: relative; }
+   ul.domTree li li { list-style: none; }
+   ul.domTree li:first-child::before { position: absolute; top: 0; height: 0.6em; left: -0.75em; width: 0.5em; border-style: none none solid solid; content: ''; border-width: 0.1em; }
+   ul.domTree li:not(:last-child)::after { position: absolute; top: 0; bottom: -0.6em; left: -0.75em; width: 0.5em; border-style: none none solid solid; content: ''; border-width: 0.1em; }
+   ul.domTree span { font-style: italic; font-family: serif; }
+   ul.domTree .t1 code { color: purple; font-weight: bold; }
+   ul.domTree .t2 { font-style: normal; font-family: monospace; }
+   ul.domTree .t2 .name { color: black; font-weight: bold; }
+   ul.domTree .t2 .value { color: blue; font-weight: normal; }
+   ul.domTree .t3 code, .domTree .t4 code, .domTree .t5 code { color: gray; }
+   ul.domTree .t7 code, .domTree .t8 code { color: green; }
+   ul.domTree .t10 code { color: teal; }
+
+   body.dfnEnabled dfn { cursor: pointer; }
+   .dfnPanel {
+     display: inline;
+     position: absolute;
+     z-index: 10;
+     height: auto;
+     width: auto;
+     padding: 0.5em 0.75em;
+     font: small sans-serif, Droid Sans Fallback;
+     background: #DDDDDD;
+     color: black;
+     border: outset 0.2em;
+   }
+   .dfnPanel * { margin: 0; padding: 0; font: inherit; text-indent: 0; }
+   .dfnPanel :link, .dfnPanel :visited { color: black; }
+   .dfnPanel p { font-weight: bolder; }
+   .dfnPanel * + p { margin-top: 0.25em; }
+   .dfnPanel li { list-style-position: inside; }
+
+   #configUI { position: absolute; z-index: 20; top: 10em; right: 1em; width: 11em; font-size: small; }
+   #configUI p { margin: 0.5em 0; padding: 0.3em; background: #EEEEEE; color: black; border: inset thin; }
+   #configUI p label { display: block; }
+   #configUI #updateUI, #configUI .loginUI { text-align: center; }
+   #configUI input[type=button] { display: block; margin: auto; }
+
+   fieldset { margin: 1em; padding: 0.5em 1em; }
+   fieldset > legend + * { margin-top: 0; }
+   fieldset > :last-child { margin-bottom: 0; }
+   fieldset p { margin: 0.5em 0; }
+
+   .stability {
+     position: fixed;
+     bottom: 0;
+     left: 0; right: 0;
+     margin: 0 auto 0 auto;
+     width: 50%;
+     background: maroon; color: yellow;
+     -webkit-border-radius: 1em 1em 0 0;
+     -moz-border-radius: 1em 1em 0 0;
+     border-radius: 1em 1em 0 0;
+     -moz-box-shadow: 0 0 1em #500;
+     -webkit-box-shadow: 0 0 1em #500;
+     box-shadow: 0 0 1em red;
+     padding: 0.5em 1em;
+     text-align: center;
+   }
+   .stability strong {
+     display: block;
+   }
+   .stability input {
+     -moz-appearance: none; -webkit-appearance: none; margin: 0; 
+     border: 0; padding: 0.25em 0.5em; background: transparent; color: black;
+     position: absolute; top: -0.5em; right: 0; font: 1.25em sans-serif; text-align: center;
+   }
+   .stability input:hover {
+     color: white;
+     text-shadow: 0 0 2px black;
+   }
+   .stability input:active {
+     padding: 0.3em 0.45em 0.2em 0.55em;
+   }
+   .stability :link, .stability :visited,
+   .stability :link:hover, .stability :visited:hover {
+     background: transparent;
+     color: white;
+   }
+
+  </style><link href="http://www.w3.org/StyleSheets/TR/W3C-WD" rel="stylesheet" type="text/css"><meta content="noindex" name="robots"><script>
+   function getCookie(name) {
+     var params = location.search.substr(1).split("&");
+     for (var index = 0; index < params.length; index++) {
+       if (params[index] == name)
+         return "1";
+       var data = params[index].split("=");
+       if (data[0] == name)
+         return unescape(data[1]);
+     }
+     var cookies = document.cookie.split("; ");
+     for (var index = 0; index < cookies.length; index++) {
+       var data = cookies[index].split("=");
+       if (data[0] == name)
+         return unescape(data[1]);
+     }
+     return null;
+   }
+  </script><link href="the-th-element.html" title="4.9.10 The th element" rel="prev">
+  <link href="index.html#contents" title="Table of contents" rel="contents">
+  <link href="examples.html" title="4.9.13 Examples" rel="next">
+  </head><body onload="fixBrokenLink();" class="split chapter"><div class="head" id="head">
+   <p><a href="http://www.w3.org/"><img alt="W3C" height="48" src="http://www.w3.org/Icons/w3c_home" width="72"></a></p>
+
+   <h1>HTML5</h1>
+   <h2 class="no-num no-toc" id="a-vocabulary-and-associated-apis-for-html-and-xhtml">A vocabulary and associated APIs for HTML and XHTML</h2>
+   <h2 class="no-num no-toc" id="w3c-working-draft-11-october-2012">W3C Working Draft 11 October 2012</h2>
+   </div>
+  
+
+  <div class="prev_next">
+   <a href="the-th-element.html">&#8592; 4.9.10 The th element</a> &#8211;
+   <a href="index.html#contents">Table of contents</a> &#8211;
+   <a href="examples.html">4.9.13 Examples &#8594;</a>
+  <ol class="toc"><li><ol><li><ol><li><a href="attributes-common-to-td-and-th-elements.html#attributes-common-to-td-and-th-elements"><span class="secno">4.9.11 </span>Attributes common to <code>td</code> and <code>th</code> elements</a></li><li><a href="attributes-common-to-td-and-th-elements.html#processing-model-1"><span class="secno">4.9.12 </span>Processing model</a>
+      <ol><li><a href="attributes-common-to-td-and-th-elements.html#forming-a-table"><span class="secno">4.9.12.1 </span>Forming a table</a></li><li><a href="attributes-common-to-td-and-th-elements.html#header-and-data-cell-semantics"><span class="secno">4.9.12.2 </span>Forming relationships between data cells and header cells</a></li></ol></li></ol></li></ol></li></ol></div>
+
+  <h4 id="attributes-common-to-td-and-th-elements"><span class="secno">4.9.11 </span>Attributes common to <code><a href="the-td-element.html#the-td-element">td</a></code> and <code><a href="the-th-element.html#the-th-element">th</a></code> elements</h4>
+
+  <p>The <code><a href="the-td-element.html#the-td-element">td</a></code> and <code><a href="the-th-element.html#the-th-element">th</a></code> elements may have a <dfn id="attr-tdth-colspan" title="attr-tdth-colspan"><code>colspan</code></dfn> content
+  attribute specified, whose value must be a <a href="common-microsyntaxes.html#valid-non-negative-integer">valid non-negative
+  integer</a> greater than zero.</p>
+
+  <p>The <code><a href="the-td-element.html#the-td-element">td</a></code> and <code><a href="the-th-element.html#the-th-element">th</a></code> elements may also have a
+  <dfn id="attr-tdth-rowspan" title="attr-tdth-rowspan"><code>rowspan</code></dfn> content
+  attribute specified, whose value must be a <a href="common-microsyntaxes.html#valid-non-negative-integer">valid non-negative
+  integer</a>.</p>
+
+  <p>These attributes give the number of columns and rows respectively
+  that the cell is to span. These attributes must not be used to
+  overlap cells<span class="impl">, as described in the description of
+  the <a href="#table-model">table model</a></span>.</p> <!-- conformance criteria
+  for determining when this is violated are given in the processing
+  model -->
+
+  <hr><p>The <code><a href="the-td-element.html#the-td-element">td</a></code> and <code><a href="the-th-element.html#the-th-element">th</a></code> element may have a <dfn id="attr-tdth-headers" title="attr-tdth-headers"><code>headers</code></dfn> content
+  attribute specified. The <code title="attr-tdth-headers"><a href="#attr-tdth-headers">headers</a></code> attribute, if specified,
+  must contain a string consisting of an <a href="common-microsyntaxes.html#unordered-set-of-unique-space-separated-tokens">unordered set of unique
+  space-separated tokens</a> that are <a href="infrastructure.html#case-sensitive">case-sensitive</a>,
+  each of which must have the value of an <a href="infrastructure.html#concept-id" title="concept-id">ID</a> of a <code><a href="the-th-element.html#the-th-element">th</a></code> element taking
+  part in the same <a href="#concept-table" title="concept-table">table</a> as the
+  <code><a href="the-td-element.html#the-td-element">td</a></code> or <code><a href="the-th-element.html#the-th-element">th</a></code> element<span class="impl"> (as
+  defined by the <a href="#table-model">table model</a>)</span>.</p>
+
+  <p>A <code><a href="the-th-element.html#the-th-element">th</a></code> element with <a href="infrastructure.html#concept-id" title="concept-id">ID</a> <var title="">id</var> is said
+  to be <i>directly targeted</i> by all <code><a href="the-td-element.html#the-td-element">td</a></code> and
+  <code><a href="the-th-element.html#the-th-element">th</a></code> elements in the same <a href="#concept-table" title="concept-table">table</a> that have <code title="attr-tdth-headers"><a href="#attr-tdth-headers">headers</a></code> attributes whose values
+  include as one of their tokens the <a href="infrastructure.html#concept-id" title="concept-id">ID</a> <var title="">id</var>. A
+  <code><a href="the-th-element.html#the-th-element">th</a></code> element <var title="">A</var> is said to be
+  <i>targeted</i> by a <code><a href="the-th-element.html#the-th-element">th</a></code> or <code><a href="the-td-element.html#the-td-element">td</a></code> element
+  <var title="">B</var> if either <var title="">A</var> is <i>directly
+  targeted</i> by <var title="">B</var> or if there exists an element
+  <var title="">C</var> that is itself <i>targeted</i> by the element
+  <var title="">B</var> and <var title="">A</var> is <i>directly
+  targeted</i> by <var title="">C</var>.</p>
+
+  <p>A <code><a href="the-th-element.html#the-th-element">th</a></code> element must not be <i>targeted</i> by
+  itself.</p>
+
+  <div class="impl">
+
+  <p>The <code title="attr-tdth-colspan"><a href="#attr-tdth-colspan">colspan</a></code>, <code title="attr-tdth-rowspan"><a href="#attr-tdth-rowspan">rowspan</a></code>, and <code title="attr-tdth-headers"><a href="#attr-tdth-headers">headers</a></code> attributes take part in the
+  <a href="#table-model">table model</a>.</p>
+
+  </div>
+
+  <hr><p>The <code><a href="the-td-element.html#the-td-element">td</a></code> and <code><a href="the-th-element.html#the-th-element">th</a></code> elements implement
+  interfaces that inherit from the <code><a href="#htmltablecellelement">HTMLTableCellElement</a></code>
+  interface:</p>
+
+  <pre class="idl">interface <dfn id="htmltablecellelement">HTMLTableCellElement</dfn> : <a href="elements.html#htmlelement">HTMLElement</a> {
+           attribute unsigned long <a href="#dom-tdth-colspan" title="dom-tdth-colSpan">colSpan</a>;
+           attribute unsigned long <a href="#dom-tdth-rowspan" title="dom-tdth-rowSpan">rowSpan</a>;
+  [PutForwards=<span title="dom-DOMSettableTokenList-value">value</span>] readonly attribute <a href="infrastructure.html#domsettabletokenlist">DOMSettableTokenList</a> <a href="#dom-tdth-headers" title="dom-tdth-headers">headers</a>;
+  readonly attribute long <a href="#dom-tdth-cellindex" title="dom-tdth-cellIndex">cellIndex</a>;
+};</pre>
+
+<!--TOPIC:DOM APIs-->
+  <dl class="domintro"><dt><var title="">cell</var> . <code title="dom-tdth-cellIndex"><a href="#dom-tdth-cellindex">cellIndex</a></code></dt>
+
+   <dd>
+
+    <p>Returns the position of the cell in the row's <code title="dom-tr-cells"><a href="the-tr-element.html#dom-tr-cells">cells</a></code> list. This does not necessarily
+    correspond to the <var title="">x</var>-position of the cell in
+    the table, since earlier cells might cover multiple rows or
+    columns.</p>
+
+    <p>Returns &#8722;1 if the element isn't in a row.</p>
+
+   </dd>
+
+  </dl><div class="impl">
+
+  <p>The <dfn id="dom-tdth-colspan" title="dom-tdth-colSpan"><code>colSpan</code></dfn> IDL
+  attribute must <a href="common-dom-interfaces.html#reflect">reflect</a> the <code title="attr-tdth-colspan"><a href="#attr-tdth-colspan">colspan</a></code> content attribute. The
+  value must be <a href="common-dom-interfaces.html#limited-to-only-non-negative-numbers-greater-than-zero">limited to only non-negative numbers greater
+  than zero</a>.</p>
+
+  <p>The <dfn id="dom-tdth-rowspan" title="dom-tdth-rowSpan"><code>rowSpan</code></dfn> IDL
+  attribute must <a href="common-dom-interfaces.html#reflect">reflect</a> the <code title="attr-tdth-rowspan"><a href="#attr-tdth-rowspan">rowspan</a></code> content attribute. Its
+  default value, which must be used if <a href="common-microsyntaxes.html#rules-for-parsing-non-negative-integers" title="rules for parsing
+  non-negative integers">parsing the attribute as a non-negative
+  integer</a> returns an error, is 1.</p>
+
+  <p>The <dfn id="dom-tdth-headers" title="dom-tdth-headers"><code>headers</code></dfn> IDL
+  attribute must <a href="common-dom-interfaces.html#reflect">reflect</a> the content attribute of the
+  same name.</p>
+
+  <p>The <dfn id="dom-tdth-cellindex" title="dom-tdth-cellIndex"><code>cellIndex</code></dfn>
+  IDL attribute must, if the element has a parent <code><a href="the-tr-element.html#the-tr-element">tr</a></code>
+  element, return the index of the cell's element in the parent
+  element's <code title="dom-tr-cells"><a href="the-tr-element.html#dom-tr-cells">cells</a></code> collection. If
+  there is no such parent element, then the attribute must return
+  &#8722;1.</p>
+
+  </div>
+<!--TOPIC:HTML-->
+
+
+  <div class="impl">
+
+  <h4 id="processing-model-1"><span class="secno">4.9.12 </span>Processing model</h4>
+
+  <p>The various table elements and their content attributes together
+  define the <dfn id="table-model">table model</dfn>.</p>
+
+  <p>A <dfn id="concept-table" title="concept-table">table</dfn> consists of cells
+  aligned on a two-dimensional grid of <dfn id="concept-slots" title="concept-slots">slots</dfn> with coordinates (<var title="">x</var>, <var title="">y</var>). The grid is finite, and is
+  either empty or has one or more slots. If the grid has one or more
+  slots, then the <var title="">x</var> coordinates are always in the
+  range <span title="">0&#160;&#8804;&#160;<var title="">x</var>&#160;&lt;&#160;<var title="">x<sub title="">width</sub></var></span>, and the <var title="">y</var>
+  coordinates are always in the range <span title="">0&#160;&#8804;&#160;<var title="">y</var>&#160;&lt;&#160;<var title="">y<sub title="">height</sub></var></span>. If one or both of <var title="">x<sub title="">width</sub></var> and <var title="">y<sub title="">height</sub></var> are zero, then the table is empty (has
+  no slots). Tables correspond to <code><a href="the-table-element.html#the-table-element">table</a></code> elements.</p>
+
+  <p>A <dfn id="concept-cell" title="concept-cell">cell</dfn> is a set of slots anchored
+  at a slot (<var title="">cell<sub title="">x</sub></var>, <var title="">cell<sub title="">y</sub></var>), and with a particular
+  <var title="">width</var> and <var title="">height</var> such that
+  the cell covers all the slots with coordinates (<var title="">x</var>, <var title="">y</var>) where <span title=""><var title="">cell<sub title="">x</sub></var>&#160;&#8804;&#160;<var title="">x</var>&#160;&lt;&#160;<var title="">cell<sub title="">x</sub></var>+<var title="">width</var></span> and
+  <span title=""><var title="">cell<sub title="">y</sub></var>&#160;&#8804;&#160;<var title="">y</var>&#160;&lt;&#160;<var title="">cell<sub title="">y</sub></var>+<var title="">height</var></span>. Cells can
+  either be <em>data cells</em> or <em>header cells</em>. Data cells
+  correspond to <code><a href="the-td-element.html#the-td-element">td</a></code> elements, and header cells correspond
+  to <code><a href="the-th-element.html#the-th-element">th</a></code> elements. Cells of both types can have zero or
+  more associated header cells.</p>
+
+  <p>It is possible, in certain error cases, for two cells to occupy
+  the same slot.</p>
+
+  <p>A <dfn id="concept-row" title="concept-row">row</dfn> is a complete set of slots
+  from <span title=""><var title="">x</var>=0</span> to <span title=""><var title="">x</var>=<var title="">x<sub title="">width</sub></var>-1</span>, for a particular value of <var title="">y</var>. Rows correspond to <code><a href="the-tr-element.html#the-tr-element">tr</a></code> elements.</p>
+
+  <p>A <dfn id="concept-column" title="concept-column">column</dfn> is a complete set of
+  slots from <span title=""><var title="">y</var>=0</span> to <span title=""><var title="">y</var>=<var title="">y<sub title="">height</sub></var>-1</span>, for a particular value of <var title="">x</var>. Columns can correspond to <code><a href="the-col-element.html#the-col-element">col</a></code>
+  elements. In the absence of <code><a href="the-col-element.html#the-col-element">col</a></code> elements, columns are
+  implied.</p>
+
+  <p>A <dfn id="concept-row-group" title="concept-row-group">row group</dfn> is a set of
+  <a href="#concept-row" title="concept-row">rows</a> anchored at a slot (0, <var title="">group<sub title="">y</sub></var>) with a particular <var title="">height</var> such that the row group covers all the slots
+  with coordinates (<var title="">x</var>, <var title="">y</var>)
+  where <span title="">0&#160;&#8804;&#160;<var title="">x</var>&#160;&lt;&#160;<var title="">x<sub title="">width</sub></var></span> and <span title=""><var title="">group<sub title="">y</sub></var>&#160;&#8804;&#160;<var title="">y</var>&#160;&lt;&#160;<var title="">group<sub title="">y</sub></var>+<var title="">height</var></span>. Row groups
+  correspond to <code><a href="the-tbody-element.html#the-tbody-element">tbody</a></code>, <code><a href="the-thead-element.html#the-thead-element">thead</a></code>, and
+  <code><a href="the-tfoot-element.html#the-tfoot-element">tfoot</a></code> elements. Not every row is necessarily in a row
+  group.</p>
+
+  <p>A <dfn id="concept-column-group" title="concept-column-group">column group</dfn> is a set
+  of <a href="#concept-column" title="concept-column">columns</a> anchored at a slot
+  (<var title="">group<sub title="">x</sub></var>, 0) with a
+  particular <var title="">width</var> such that the column group
+  covers all the slots with coordinates (<var title="">x</var>, <var title="">y</var>) where <span title=""><var title="">group<sub title="">x</sub></var>&#160;&#8804;&#160;<var title="">x</var>&#160;&lt;&#160;<var title="">group<sub title="">x</sub></var>+<var title="">width</var></span> and
+  <span title="">0&#160;&#8804;&#160;<var title="">y</var>&#160;&lt;&#160;<var title="">y<sub title="">height</sub></var></span>. Column groups
+  correspond to <code><a href="the-colgroup-element.html#the-colgroup-element">colgroup</a></code> elements. Not every column is
+  necessarily in a column group.</p>
+
+  <p><a href="#concept-row-group" title="concept-row-group">Row groups</a> cannot overlap
+  each other. Similarly, <a href="#concept-column-group" title="concept-column-group">column
+  groups</a> cannot overlap each other.</p>
+
+  <p>A <a href="#concept-cell" title="concept-cell">cell</a> cannot cover slots that
+  are from two or more <a href="#concept-row-group" title="concept-row-group">row
+  groups</a>. It is, however, possible for a cell to be in multiple
+  <a href="#concept-column-group" title="concept-column-group">column groups</a>. All the
+  slots that form part of one cell are part of zero or one <a href="#concept-row-group" title="concept-row-group">row groups</a> and zero or more <a href="#concept-column-group" title="concept-column-group">column groups</a>.</p>
+
+  <p>In addition to <a href="#concept-cell" title="concept-cell">cells</a>, <a href="#concept-column" title="concept-column">columns</a>, <a href="#concept-row" title="concept-row">rows</a>, <a href="#concept-row-group" title="concept-row-group">row
+  groups</a>, and <a href="#concept-column-group" title="concept-column-group">column
+  groups</a>, <a href="#concept-table" title="concept-table">tables</a> can have a
+  <code><a href="the-caption-element.html#the-caption-element">caption</a></code> element associated with them. This gives the
+  table a heading, or legend.</p>
+
+  <p>A <dfn id="table-model-error">table model error</dfn> is an error with the data
+  represented by <code><a href="the-table-element.html#the-table-element">table</a></code> elements and their
+  descendants. Documents must not have table model errors.</p>
+
+
+  <h5 id="forming-a-table"><span class="secno">4.9.12.1 </span>Forming a table</h5>
+
+  <p>To determine which elements correspond to which slots in a <a href="#concept-table" title="concept-table">table</a> associated with a
+  <code><a href="the-table-element.html#the-table-element">table</a></code> element, to determine the dimensions of the table
+  (<var title="">x<sub title="">width</sub></var> and <var title="">y<sub title="">height</sub></var>), and to determine if
+  there are any <a href="#table-model-error" title="table model error">table model
+  errors</a>, user agents must use the following algorithm:</p>
+
+  <ol><li>
+    <p>Let <var title="">x<sub title="">width</sub></var> be zero.</p>
+   </li>
+
+   <li>
+    <p>Let <var title="">y<sub title="">height</sub></var> be zero.</p>
+   </li>
+
+   <li>
+
+    <p>Let <var title="">pending <code><a href="the-tfoot-element.html#the-tfoot-element">tfoot</a></code> elements</var> be
+    a list of <code><a href="the-tfoot-element.html#the-tfoot-element">tfoot</a></code> elements, initially empty.</p>
+
+   </li>
+
+   <li>
+    <p>Let <var title="">the table</var> be the <a href="#concept-table" title="concept-table">table</a> represented by the
+    <code><a href="the-table-element.html#the-table-element">table</a></code> element. The <var title="">x<sub title="">width</sub></var> and <var title="">y<sub title="">height</sub></var> variables give <var title="">the
+    table</var>'s dimensions. <var title="">The table</var> is
+    initially empty.</p>
+   </li>
+
+   <li>
+
+    <!-- this step is here just so that we can be sure to have a first
+    element in the next step, so that we can set up the "advance"
+    exception-handling thingy below; otherwise it'd be more
+    complicated. it's not a perf optimization per se. -->
+
+    <p>If the <code><a href="the-table-element.html#the-table-element">table</a></code> element has no children elements,
+    then return <var title="">the table</var> (which will be empty),
+    and abort these steps.</p>
+
+   </li>
+
+   <li>
+
+    <p>Associate the first <code><a href="the-caption-element.html#the-caption-element">caption</a></code> element child of the
+    <code><a href="the-table-element.html#the-table-element">table</a></code> element with <var title="">the table</var>. If
+    there are no such children, then it has no associated
+    <code><a href="the-caption-element.html#the-caption-element">caption</a></code> element.</p>
+
+   </li>
+
+   <li>
+
+    <p>Let the <var title="">current element</var> be the first
+    element child of the <code><a href="the-table-element.html#the-table-element">table</a></code> element.</p>
+
+    <p>If a step in this algorithm ever requires the <var title="">current element</var> to be <dfn id="concept-table-advance" title="concept-table-advance">advanced to the next child of the
+    <code>table</code></dfn> when there is no such next child, then
+    the user agent must jump to the step labeled <i>end</i>, near the
+    end of this algorithm.</p>
+
+   </li>
+
+   <li>
+
+    <p>While the <var title="">current element</var> is not one of the
+    following elements, <a href="#concept-table-advance" title="concept-table-advance">advance</a> the <var title="">current element</var> to the next child of the
+    <code><a href="the-table-element.html#the-table-element">table</a></code>:</p>
+
+    <ul class="brief"><li><code><a href="the-colgroup-element.html#the-colgroup-element">colgroup</a></code></li>
+     <li><code><a href="the-thead-element.html#the-thead-element">thead</a></code></li>
+     <li><code><a href="the-tbody-element.html#the-tbody-element">tbody</a></code></li>
+     <li><code><a href="the-tfoot-element.html#the-tfoot-element">tfoot</a></code></li>
+     <li><code><a href="the-tr-element.html#the-tr-element">tr</a></code></li>
+    </ul></li>
+
+   <li>
+
+    <p>If the <var title="">current element</var> is a
+    <code><a href="the-colgroup-element.html#the-colgroup-element">colgroup</a></code>, follow these substeps:</p>
+
+    <ol><li>
+
+      <p><i>Column groups</i>: Process the <var title="">current
+      element</var> according to the appropriate case below:</p>
+
+      <dl class="switch"><dt>If the <var title="">current element</var> has any
+       <code><a href="the-col-element.html#the-col-element">col</a></code> element children</dt>
+
+       <dd>
+
+        <p>Follow these steps:</p>
+
+        <ol><li>
+
+          <p>Let <var title="">x<sub title="">start</sub></var> have
+          the value of <span title=""><var title="">x<sub title="">width</sub></var></span>.</p>
+
+         </li>
+
+         <li>
+
+          <p>Let the <var title="">current column</var> be the first
+          <code><a href="the-col-element.html#the-col-element">col</a></code> element child of the <code><a href="the-colgroup-element.html#the-colgroup-element">colgroup</a></code>
+          element.</p>
+
+         </li>
+
+         <li>
+
+          <p><i>Columns</i>: If the <var title="">current column</var>
+          <code><a href="the-col-element.html#the-col-element">col</a></code> element has a <code title="attr-col-span"><a href="the-col-element.html#attr-col-span">span</a></code> attribute, then parse its
+          value using the <a href="common-microsyntaxes.html#rules-for-parsing-non-negative-integers">rules for parsing non-negative
+          integers</a>.</p>
+
+          <p>If the result of parsing the value is not an error or
+          zero, then let <var title="">span</var> be that value.</p>
+
+          <p>Otherwise, if the <code><a href="the-col-element.html#the-col-element">col</a></code> element has no <code title="attr-col-span"><a href="the-col-element.html#attr-col-span">span</a></code> attribute, or if trying to
+          parse the attribute's value resulted in an error or zero,
+          then let <var title="">span</var> be 1.</p>
+
+         </li>
+
+         <li>
+
+          <p>Increase <var title="">x<sub title="">width</sub></var> by
+          <var title="">span</var>.</p>
+
+         </li>
+
+         <li>
+
+          <p>Let the last <var title="">span</var> <a href="#concept-column" title="concept-column">columns</a> in <var title="">the
+          table</var> correspond to the <var title="">current
+          column</var> <code><a href="the-col-element.html#the-col-element">col</a></code> element.</p>
+
+         </li>
+
+         <li>
+
+          <p>If <var title="">current column</var> is not the last
+          <code><a href="the-col-element.html#the-col-element">col</a></code> element child of the <code><a href="the-colgroup-element.html#the-colgroup-element">colgroup</a></code>
+          element, then let the <var title="">current column</var> be
+          the next <code><a href="the-col-element.html#the-col-element">col</a></code> element child of the
+          <code><a href="the-colgroup-element.html#the-colgroup-element">colgroup</a></code> element, and return to the step
+          labeled <i>columns</i>.</p>
+
+         </li>
+
+         <li>
+
+          <p>Let all the last <a href="#concept-column" title="concept-column">columns</a> in <var title="">the
+          table</var> from <span title="">x=<var title="">x<sub title="">start</sub></var></span> to <span title="">x=<var title="">x<sub title="">width</sub></var>-1</span> form a
+          new <a href="#concept-column-group" title="concept-column-group">column group</a>,
+          anchored at the slot (<var title="">x<sub title="">start</sub></var>, 0), with width <span title=""><var title="">x<sub title="">width</sub></var>-<var title="">x<sub title="">start</sub></var></span>,
+          corresponding to the <code><a href="the-colgroup-element.html#the-colgroup-element">colgroup</a></code> element.</p>
+
+         </li>
+
+        </ol></dd>
+
+
+       <dt>If the <var title="">current element</var> has no
+       <code><a href="the-col-element.html#the-col-element">col</a></code> element children</dt>
+
+       <dd>
+
+        <ol><li>
+
+          <p>If the <code><a href="the-colgroup-element.html#the-colgroup-element">colgroup</a></code> element has a <code title="attr-colgroup-span"><a href="the-colgroup-element.html#attr-colgroup-span">span</a></code> attribute, then parse
+          its value using the <a href="common-microsyntaxes.html#rules-for-parsing-non-negative-integers">rules for parsing non-negative
+          integers</a>.</p>
+
+          <p>If the result of parsing the value is not an error or
+          zero, then let <var title="">span</var> be that value.</p>
+
+          <p>Otherwise, if the <code><a href="the-colgroup-element.html#the-colgroup-element">colgroup</a></code> element has no
+          <code title="attr-colgroup-span"><a href="the-colgroup-element.html#attr-colgroup-span">span</a></code> attribute, or
+          if trying to parse the attribute's value resulted in an
+          error or zero, then let <var title="">span</var> be 1.</p>
+
+         </li>
+
+         <li>
+
+          <p>Increase <var title="">x<sub title="">width</sub></var> by
+          <var title="">span</var>.</p>
+
+         </li>
+
+         <li>
+
+          <p>Let the last <var title="">span</var> <a href="#concept-column" title="concept-column">columns</a> in <var title="">the
+          table</var> form a new <a href="#concept-column-group" title="concept-column-group">column group</a>, anchored
+          at the slot (<span title=""><var title="">x<sub title="">width</sub></var>-<var title="">span</var></span>,
+          0), with width <var title="">span</var>, corresponding to
+          the <code><a href="the-colgroup-element.html#the-colgroup-element">colgroup</a></code> element.</p>
+
+         </li>
+
+        </ol></dd>
+
+      </dl></li>
+
+     <li>
+
+      <p><a href="#concept-table-advance" title="concept-table-advance">Advance</a> the <var title="">current element</var> to the next child of the
+      <code><a href="the-table-element.html#the-table-element">table</a></code>.</p>
+
+     </li>
+
+     <li>
+
+      <p>While the <var title="">current element</var> is not one of
+      the following elements, <a href="#concept-table-advance" title="concept-table-advance">advance</a> the <var title="">current element</var> to the next child of the
+      <code><a href="the-table-element.html#the-table-element">table</a></code>:</p>
+
+      <ul class="brief"><li><code><a href="the-colgroup-element.html#the-colgroup-element">colgroup</a></code></li>
+       <li><code><a href="the-thead-element.html#the-thead-element">thead</a></code></li>
+       <li><code><a href="the-tbody-element.html#the-tbody-element">tbody</a></code></li>
+       <li><code><a href="the-tfoot-element.html#the-tfoot-element">tfoot</a></code></li>
+       <li><code><a href="the-tr-element.html#the-tr-element">tr</a></code></li>
+      </ul></li>
+
+     <li>
+
+      <p>If the <var title="">current element</var> is a
+      <code><a href="the-colgroup-element.html#the-colgroup-element">colgroup</a></code> element, jump to the step labeled
+      <i>column groups</i> above.</p>
+
+     </li>
+
+    </ol></li>
+
+   <li>
+
+    <p>Let <var title="">y<sub title="">current</sub></var> be
+    zero.</p>
+
+   </li>
+
+   <li>
+
+    <p>Let the <var title="">list of downward-growing cells</var> be
+    an empty list.</p>
+
+   </li>
+
+   <li>
+
+    <p><i>Rows</i>: While the <var title="">current element</var> is
+    not one of the following elements, <a href="#concept-table-advance" title="concept-table-advance">advance</a> the <var title="">current element</var> to the next child of the
+    <code><a href="the-table-element.html#the-table-element">table</a></code>:</p>
+
+    <ul class="brief"><li><code><a href="the-thead-element.html#the-thead-element">thead</a></code></li>
+     <li><code><a href="the-tbody-element.html#the-tbody-element">tbody</a></code></li>
+     <li><code><a href="the-tfoot-element.html#the-tfoot-element">tfoot</a></code></li>
+     <li><code><a href="the-tr-element.html#the-tr-element">tr</a></code></li>
+    </ul></li>
+
+   <li>
+
+    <p>If the <var title="">current element</var> is a
+    <code><a href="the-tr-element.html#the-tr-element">tr</a></code>, then run the <a href="#algorithm-for-processing-rows">algorithm for processing
+    rows</a>, <a href="#concept-table-advance" title="concept-table-advance">advance</a>
+    the <var title="">current element</var> to the next child of the
+    <code><a href="the-table-element.html#the-table-element">table</a></code>, and return to the step labeled
+    <i>rows</i>.</p>
+
+   </li>
+
+   <li>
+
+    <p>Run the <a href="#algorithm-for-ending-a-row-group">algorithm for ending a row group</a>.</p>
+
+   </li>
+
+   <li>
+
+    <p>If the <var title="">current element</var> is a
+    <code><a href="the-tfoot-element.html#the-tfoot-element">tfoot</a></code>, then add that element to the list of <var title="">pending <code><a href="the-tfoot-element.html#the-tfoot-element">tfoot</a></code> elements</var>, <a href="#concept-table-advance" title="concept-table-advance">advance</a> the <var title="">current element</var> to the next child of the
+    <code><a href="the-table-element.html#the-table-element">table</a></code>, and return to the step labeled
+    <i>rows</i>.</p>
+
+   </li>
+
+   <li>
+
+    <p>The <var title="">current element</var> is either a
+    <code><a href="the-thead-element.html#the-thead-element">thead</a></code> or a <code><a href="the-tbody-element.html#the-tbody-element">tbody</a></code>.</p>
+
+    <p>Run the <a href="#algorithm-for-processing-row-groups">algorithm for processing row groups</a>.</p>
+
+   </li>
+
+   <li>
+
+    <p><a href="#concept-table-advance" title="concept-table-advance">Advance</a> the <var title="">current element</var> to the next child of the
+    <code><a href="the-table-element.html#the-table-element">table</a></code>.</p>
+
+   </li>
+
+   <li>
+
+    <p>Return to the step labeled <i>rows</i>.</p>
+
+   </li>
+
+   <li>
+
+    <p><i>End</i>: For each <code><a href="the-tfoot-element.html#the-tfoot-element">tfoot</a></code> element in the list of
+    <var title="">pending <code><a href="the-tfoot-element.html#the-tfoot-element">tfoot</a></code> elements</var>, in tree
+    order, run the <a href="#algorithm-for-processing-row-groups">algorithm for processing row
+    groups</a>.</p>
+
+   </li>
+
+   <li>
+
+    <p>If there exists a <a href="#concept-row" title="concept-row">row</a> or <a href="#concept-column" title="concept-column">column</a> in <var title="">the
+    table</var> containing only <a href="#concept-slots" title="concept-slots">slots</a> that do not have a <a href="#concept-cell" title="concept-cell">cell</a> anchored to them, then this is a
+    <a href="#table-model-error">table model error</a>.</p>
+
+   </li>
+
+   <li>
+
+    <p>Return <var title="">the table</var>.</p>
+
+   </li>
+
+  </ol><p>The <dfn id="algorithm-for-processing-row-groups">algorithm for processing row groups</dfn>, which is
+  invoked by the set of steps above for processing
+  <code><a href="the-thead-element.html#the-thead-element">thead</a></code>, <code><a href="the-tbody-element.html#the-tbody-element">tbody</a></code>, and <code><a href="the-tfoot-element.html#the-tfoot-element">tfoot</a></code>
+  elements, is:</p>
+
+  <ol><li>
+
+    <p>Let <var title="">y<sub title="">start</sub></var> have the
+    value of <var title="">y<sub title="">height</sub></var>.</p>
+
+   </li>
+
+   <li>
+
+    <p>For each <code><a href="the-tr-element.html#the-tr-element">tr</a></code> element that is a child of the element
+    being processed, in tree order, run the <a href="#algorithm-for-processing-rows">algorithm for
+    processing rows</a>.</p>
+
+   </li>
+
+   <li>
+
+    <!-- if we added any rows, make them part of a row group -->
+    <p>If <span title=""><var title="">y<sub title="">height</sub></var>&#160;&gt;&#160;<var title="">y<sub title="">start</sub></var></span>, then let all the last <a href="#concept-row" title="concept-row">rows</a> in <var title="">the table</var>
+    from <span title="">y=<var title="">y<sub title="">start</sub></var></span>
+    to <span title="">y=<var title="">y<sub title="">height</sub></var>-1</span> form a new <a href="#concept-row-group" title="concept-row-group">row group</a>, anchored at the slot
+    with coordinate (0, <var title="">y<sub title="">start</sub></var>), with height <span title=""><var title="">y<sub title="">height</sub></var>-<var title="">y<sub title="">start</sub></var></span>, corresponding to the element
+    being processed.</p>
+
+   </li>
+
+   <li>
+
+    <p>Run the <a href="#algorithm-for-ending-a-row-group">algorithm for ending a row group</a>.</p>
+
+   </li>
+
+  </ol><p>The <dfn id="algorithm-for-ending-a-row-group">algorithm for ending a row group</dfn>, which is invoked
+  by the set of steps above when starting and ending a block of rows,
+  is:</p>
+
+  <ol><li>
+
+    <p>While <var title="">y<sub title="">current</sub></var> is less
+    than <var title="">y<sub title="">height</sub></var>, follow these
+    steps:</p>
+
+    <ol><li>
+
+      <p>Run the <a href="#algorithm-for-growing-downward-growing-cells">algorithm for growing downward-growing
+      cells</a>.</p>
+
+     </li>
+
+     <li>
+
+      <p>Increase <var title="">y<sub title="">current</sub></var> by
+      1.</p>
+
+     </li>
+
+    </ol></li>
+
+   <li>
+
+    <p>Empty the <var title="">list of downward-growing
+    cells</var>.</p>
+
+   </li>
+
+  </ol><p>The <dfn id="algorithm-for-processing-rows">algorithm for processing rows</dfn>, which is invoked by
+  the set of steps above for processing <code><a href="the-tr-element.html#the-tr-element">tr</a></code> elements,
+  is:</p>
+
+  <ol><li>
+
+    <p>If <var title="">y<sub title="">height</sub></var> is equal to
+    <var title="">y<sub title="">current</sub></var>, then increase
+    <var title="">y<sub title="">height</sub></var> by 1. (<var title="">y<sub title="">current</sub></var> is never
+    <em>greater</em> than <var title="">y<sub title="">height</sub></var>.)</p>
+
+   </li>
+
+   <li>
+
+    <p>Let <var title="">x<sub title="">current</sub></var> be 0.</p>
+
+   </li>
+
+   <li>
+
+    <p>Run the <a href="#algorithm-for-growing-downward-growing-cells">algorithm for growing downward-growing
+    cells</a>.</p>
+
+   </li>
+
+   <li>
+
+    <p>If the <code><a href="the-tr-element.html#the-tr-element">tr</a></code> element being processed has no
+    <code><a href="the-td-element.html#the-td-element">td</a></code> or <code><a href="the-th-element.html#the-th-element">th</a></code> element children, then increase
+    <var title="">y<sub title="">current</sub></var> by 1, abort this
+    set of steps, and return to the algorithm above.</p>
+
+   </li>
+
+   <li>
+
+    <p>Let <var title="">current cell</var> be the first
+    <code><a href="the-td-element.html#the-td-element">td</a></code> or <code><a href="the-th-element.html#the-th-element">th</a></code> element in the <code><a href="the-tr-element.html#the-tr-element">tr</a></code>
+    element being processed.</p>
+
+   </li>
+
+   <li>
+
+    <p><i>Cells</i>: While <var title="">x<sub title="">current</sub></var> is less than <var title="">x<sub title="">width</sub></var> and the slot with coordinate (<var title="">x<sub title="">current</sub></var>, <var title="">y<sub title="">current</sub></var>) already has a cell assigned to it,
+    increase <var title="">x<sub title="">current</sub></var> by
+    1.</p>
+
+   </li>
+
+   <li>
+
+    <p>If <var title="">x<sub title="">current</sub></var> is equal to
+    <var title="">x<sub title="">width</sub></var>, increase <var title="">x<sub title="">width</sub></var> by 1. (<var title="">x<sub title="">current</sub></var> is never
+    <em>greater</em> than <var title="">x<sub title="">width</sub></var>.)</p>
+
+   </li>
+
+   <li>
+
+    <p>If the <var title="">current cell</var> has a <code title="attr-tdth-colspan"><a href="#attr-tdth-colspan">colspan</a></code> attribute, then <a href="common-microsyntaxes.html#rules-for-parsing-non-negative-integers" title="rules for parsing non-negative integers">parse that
+    attribute's value</a>, and let <var title="">colspan</var> be
+    the result.</p>
+
+    <p>If parsing that value failed, or returned zero, or if the
+    attribute is absent, then let <var title="">colspan</var> be 1,
+    instead.</p>
+
+   </li>
+
+   <li>
+
+    <p>If the <var title="">current cell</var> has a <code title="attr-tdth-rowspan"><a href="#attr-tdth-rowspan">rowspan</a></code> attribute, then <a href="common-microsyntaxes.html#rules-for-parsing-non-negative-integers" title="rules for
+    parsing non-negative integers">parse that attribute's
+    value</a>, and let <var title="">rowspan</var> be the
+    result.</p>
+
+    <p>If parsing that value failed or if the attribute is absent,
+    then let <var title="">rowspan</var> be 1, instead.</p>
+
+   </li>
+
+   <li>
+
+    <p>If <var title="">rowspan</var> is zero, then let <var title="">cell grows downward</var> be true, and set <var title="">rowspan</var> to 1. Otherwise, let <var title="">cell
+    grows downward</var> be false.</p>
+
+   </li>
+
+   <li>
+
+    <p>If <span title=""><var title="">x<sub title="">width</sub></var>&#160;&lt;&#160;<var title="">x<sub title="">current</sub></var>+<var title="">colspan</var></span>,
+    then let <var title="">x<sub title="">width</sub></var> be
+    <span title=""><var title="">x<sub title="">current</sub></var>+<var title="">colspan</var></span>.</p>
+
+   </li>
+
+   <li>
+
+    <p>If <span title=""><var title="">y<sub title="">height</sub></var>&#160;&lt;&#160;<var title="">y<sub title="">current</sub></var>+<var title="">rowspan</var></span>,
+    then let <var title="">y<sub title="">height</sub></var> be
+    <span title=""><var title="">y<sub title="">current</sub></var>+<var title="">rowspan</var></span>.</p>
+
+   </li>
+
+   <li>
+
+    <p>Let the slots with coordinates (<var title="">x</var>, <var title="">y</var>) such that <span title=""><var title="">x<sub title="">current</sub></var>&#160;&#8804;&#160;<var title="">x</var>&#160;&lt;&#160;<var title="">x<sub title="">current</sub></var>+<var title="">colspan</var></span>
+    and <span title=""><var title="">y<sub title="">current</sub></var>&#160;&#8804;&#160;<var title="">y</var>&#160;&lt;&#160;<var title="">y<sub title="">current</sub></var>+<var title="">rowspan</var></span> be
+    covered by a new <a href="#concept-cell" title="concept-cell">cell</a> <var title="">c</var>, anchored at (<var title="">x<sub title="">current</sub></var>, <var title="">y<sub title="">current</sub></var>), which has width <var title="">colspan</var> and height <var title="">rowspan</var>,
+    corresponding to the <var title="">current cell</var> element.</p>
+
+    <p>If the <var title="">current cell</var> element is a
+    <code><a href="the-th-element.html#the-th-element">th</a></code> element, let this new cell <var title="">c</var>
+    be a header cell; otherwise, let it be a data cell.</p>
+
+    <p>To establish which header cells apply to the <var title="">current cell</var> element, use the <a href="#algorithm-for-assigning-header-cells">algorithm for
+    assigning header cells</a> described in the next section.</p>
+
+    <p>If any of the slots involved already had a <a href="#concept-cell" title="concept-cell">cell</a> covering them, then this is a
+    <a href="#table-model-error">table model error</a>. Those slots now have two cells
+    overlapping.</p>
+
+   </li>
+
+   <li>
+
+    <p>If <var title="">cell grows downward</var> is true, then add
+    the tuple {<var title="">c</var>, <var title="">x<sub title="">current</sub></var>, <var title="">colspan</var>} to the
+    <var title="">list of downward-growing cells</var>.</p>
+
+   </li>
+
+   <li>
+
+    <p>Increase <var title="">x<sub title="">current</sub></var> by
+    <var title="">colspan</var>.</p>
+
+   </li>
+
+   <li>
+
+    <p>If <var title="">current cell</var> is the last <code><a href="the-td-element.html#the-td-element">td</a></code>
+    or <code><a href="the-th-element.html#the-th-element">th</a></code> element in the <code><a href="the-tr-element.html#the-tr-element">tr</a></code> element being
+    processed, then increase <var title="">y<sub title="">current</sub></var> by 1, abort this set of steps, and
+    return to the algorithm above.</p>
+
+   </li>
+
+   <li>
+
+    <p>Let <var title="">current cell</var> be the next
+    <code><a href="the-td-element.html#the-td-element">td</a></code> or <code><a href="the-th-element.html#the-th-element">th</a></code> element in the <code><a href="the-tr-element.html#the-tr-element">tr</a></code>
+    element being processed.</p>
+
+   </li>
+
+   <li>
+
+    <p>Return to the step labelled <i>cells</i>.</p>
+
+   </li>
+
+  </ol><p>When the algorithms above require the user agent to run the
+  <dfn id="algorithm-for-growing-downward-growing-cells">algorithm for growing downward-growing cells</dfn>, the user
+  agent must, for each {<var title="">cell</var>, <var title="">cell<sub title="">x</sub></var>, <var title="">width</var>}
+  tuple in the <var title="">list of downward-growing cells</var>, if
+  any, extend the <a href="#concept-cell" title="concept-cell">cell</a> <var title="">cell</var> so that it also covers the slots with
+  coordinates (<var title="">x</var>, <var title="">y<sub title="">current</sub></var>), where <span title=""><var title="">cell<sub title="">x</sub></var>&#160;&#8804;&#160;<var title="">x</var>&#160;&lt;&#160;<var title="">cell<sub title="">x</sub></var>+<var title="">width</var></span>.</p>
+
+
+
+
+  <h5 id="header-and-data-cell-semantics"><span class="secno">4.9.12.2 </span>Forming relationships between data cells and header cells</h5>
+
+  <p>Each cell can be assigned zero or more header cells. The
+  <dfn id="algorithm-for-assigning-header-cells">algorithm for assigning header cells</dfn> to a cell <var title="">principal cell</var> is as follows.</p>
+
+  <ol><!-- INITIALIZATION --><li>
+
+    <p>Let <var title="">header list</var> be an empty list of
+    cells.</p>
+
+   </li>
+
+   <li>
+
+    <p>Let (<var title="">principal<sub title="">x</sub></var>, <var title="">principal<sub title="">y</sub></var>) be the coordinate
+    of the slot to which the <var title="">principal cell</var> is
+    anchored.</p>
+
+   </li>
+
+   <li>
+
+    <dl class="switch"><dt>If the <var title="">principal cell</var> has a <code title="attr-tdth-headers"><a href="#attr-tdth-headers">headers</a></code> attribute specified</dt>
+
+     <dd>
+
+      <!-- HEADERS="" -->
+
+      <ol><li>
+
+        <p>Take the value of the <var title="">principal cell</var>'s
+        <code title="attr-tdth-headers"><a href="#attr-tdth-headers">headers</a></code> attribute and
+        <a href="common-microsyntaxes.html#split-a-string-on-spaces" title="split a string on spaces">split it on
+        spaces</a>, letting <var title="">id list</var> be the list
+        of tokens obtained.</p>
+
+       </li>
+
+       <li>
+
+        <!-- support headers="" to <td> for legacy compat -->
+        <!-- note that it's not conforming though -->
+        <p>For each token in the <var title="">id list</var>, if the
+        first element in the <code><a href="dom.html#document">Document</a></code> with an <a href="infrastructure.html#concept-id" title="concept-id">ID</a> equal to
+        the token is a cell in the same <a href="#concept-table" title="concept-table">table</a>, and that cell is not the
+        <var title="">principal cell</var>, then add that cell to <var title="">header list</var>.</p>
+
+       </li>
+
+      </ol></dd>
+
+
+     <dt>If <var title="">principal cell</var> does not have a <code title="attr-tdth-headers"><a href="#attr-tdth-headers">headers</a></code> attribute specified</dt>
+
+     <dd>
+
+      <ol><li>
+
+        <p>Let <var title="">principal<sub title="">width</sub></var>
+        be the width of the <var title="">principal cell</var>.</p>
+
+       </li>
+
+       <li>
+
+        <p>Let <var title="">principal<sub title="">height</sub></var>
+        be the height of the <var title="">principal cell</var>.</p>
+
+       </li>
+
+
+       <!-- HORIZONTAL -->
+
+       <li>
+
+        <p>For each value of <var title="">y</var> from <var title="">principal<sub title="">y</sub></var> to <span title=""><var title="">principal<sub title="">y</sub></var>+<var title="">principal<sub title="">height</sub></var>-1</span>,
+        run the <a href="#internal-algorithm-for-scanning-and-assigning-header-cells">internal algorithm for scanning and assigning
+        header cells</a>, with the <var title="">principal
+        cell</var>, the <var title="">header list</var>, the initial
+        coordinate (<var title="">principal<sub title="">x</sub></var>,<var title="">y</var>), and the
+        increments <span title="">&#916;<var title="">x</var>=&#8722;1</span>
+        and <span title="">&#916;<var title="">y</var>=0</span>.</p>
+
+       </li>
+
+
+       <!-- VERTICAL -->
+
+       <li>
+
+        <p>For each value of <var title="">x</var> from <var title="">principal<sub title="">x</sub></var> to <span title=""><var title="">principal<sub title="">x</sub></var>+<var title="">principal<sub title="">width</sub></var>-1</span>,
+        run the <a href="#internal-algorithm-for-scanning-and-assigning-header-cells">internal algorithm for scanning and assigning
+        header cells</a>, with the <var title="">principal
+        cell</var>, the <var title="">header list</var>, the initial
+        coordinate (<var title="">x</var>,<var title="">principal<sub title="">y</sub></var>), and the increments <span title="">&#916;<var title="">x</var>=0</span> and <span title="">&#916;<var title="">y</var>=&#8722;1</span>.</p>
+
+       </li>
+
+
+       <!-- ROW GROUP HEADERS -->
+
+       <li>
+
+        <p>If the <var title="">principal cell</var> is anchored in a
+        <a href="#concept-row-group" title="concept-row-group">row group</a>, then add all
+        header cells that are <a href="#row-group-header" title="row group header">row group
+        headers</a> and are anchored in the same row group with an
+        <var title="">x</var>-coordinate less than or equal to
+        <span title=""><var title="">principal<sub title="">x</sub></var>+<var title="">principal<sub title="">width</sub></var>-1</span> and
+        a <var title="">y</var>-coordinate less than or equal to
+        <span title=""><var title="">principal<sub title="">y</sub></var>+<var title="">principal<sub title="">height</sub></var>-1</span> to
+        <var title="">header list</var>.</p>
+
+        <!-- this might introduce principal accidentally; fixed below -->
+
+       </li>
+
+
+       <!-- COLUMN GROUP HEADERS -->
+
+       <li>
+
+        <p>If the <var title="">principal cell</var> is anchored in a
+        <a href="#concept-column-group" title="concept-column-group">column group</a>, then
+        add all header cells that are <a href="#column-group-header" title="column group
+        header">column group headers</a> and are anchored in the
+        same column group with an <var title="">x</var>-coordinate
+        less than or equal to <span title=""><var title="">principal<sub title="">x</sub></var>+<var title="">principal<sub title="">width</sub></var>-1</span> and a <var title="">y</var>-coordinate less than or equal to <span title=""><var title="">principal<sub title="">y</sub></var>+<var title="">principal<sub title="">height</sub></var>-1</span> to
+        <var title="">header list</var>.</p>
+
+        <!-- this might introduce principal accidentally; fixed below -->
+
+       </li>
+
+      </ol></dd>
+
+    </dl></li>
+
+
+   <!-- CLEANUP -->
+
+   <li>
+
+    <p>Remove all the <a href="#empty-cell" title="empty cell">empty cells</a> from
+    the <var title="">header list</var>.</p>
+
+   </li>
+
+   <li>
+
+    <p>Remove any duplicates from the <var title="">header
+    list</var>.</p>
+
+   </li>
+
+   <li>
+
+    <p>Remove <var title="">principal cell</var> from the <var title="">header list</var> if it is there.</p> <!-- see "might
+    introduce principal accidentally" above -->
+
+   </li>
+
+   <li>
+
+    <p>Assign the headers in the <var title="">header list</var> to
+    the <var title="">principal cell</var>.</p>
+
+   </li>
+
+  </ol><p>The <dfn id="internal-algorithm-for-scanning-and-assigning-header-cells">internal algorithm for scanning and assigning header
+  cells</dfn>, given a <var title="">principal cell</var>, a <var title="">header list</var>, an initial coordinate (<var title="">initial<sub title="">x</sub></var>, <var title="">initial<sub title="">y</sub></var>), and &#916;<var title="">x</var> and &#916;<var title="">y</var> increments, is as
+  follows:</p>
+
+  <ol><li>
+
+    <p>Let <var title="">x</var> equal <var title="">initial<sub title="">x</sub></var>.</p>
+
+   </li>
+
+   <li>
+
+    <p>Let <var title="">y</var> equal <var title="">initial<sub title="">y</sub></var>.</p>
+
+   </li>
+
+   <li>
+
+    <p>Let <var title="">opaque headers</var> be an empty list of
+    cells.</p>
+
+   </li>
+
+   <li>
+
+    <dl class="switch"><dt>If <var title="">principal cell</var> is a header cell</dt>
+
+     <dd><p>Let <var title="">in header block</var> be true, and let
+     <var title="">headers from current header block</var> be a list
+     of cells containing just the <var title="">principal
+     cell</var>.</p></dd>
+
+     <dt>Otherwise</dt>
+
+     <dd><p>Let <var title="">in header block</var> be false and let
+     <var title="">headers from current header block</var> be an
+     empty list of cells.</p>
+
+    </dd></dl></li>
+
+   <li>
+
+    <p><i>Loop</i>: Increment <var title="">x</var> by &#916;<var title="">x</var>; increment <var title="">y</var> by &#916;<var title="">y</var>.</p>
+
+    <p class="note">For each invocation of this algorithm, one of
+    &#916;<var title="">x</var> and &#916;<var title="">y</var> will
+    be &#8722;1, and the other will be 0.</p>
+
+   </li>
+
+   <li>
+
+    <p>If either <var title="">x</var> or <var title="">y</var> is
+    less than 0, then abort this internal algorithm.</p>
+
+   </li>
+
+   <li>
+
+    <p>If there is no cell covering slot (<var title="">x</var>,
+    <var title="">y</var>), or if there is more than one cell
+    covering slot (<var title="">x</var>, <var title="">y</var>),
+    return to the substep labeled <i>loop</i>.</p>
+
+   </li>
+
+   <li>
+
+    <p>Let <var title="">current cell</var> be the cell covering
+    slot (<var title="">x</var>, <var title="">y</var>).</p>
+
+   </li>
+
+   <li>
+
+    <dl class="switch"><dt>If <var title="">current cell</var> is a header cell</dt>
+
+     <dd>
+
+      <ol><li><p>Set <var title="">in header block</var> to
+       true.</p></li>
+
+       <li><p>Add <var title="">current cell</var> to <var title="">headers from current header block</var>.</p></li>
+
+       <li><p>Let <var title="">blocked</var> be false.</p></li>
+
+       <li>
+
+        <dl class="switch"><dt>If &#916;<var title="">x</var> is 0</dt>
+
+         <dd>
+
+          <p>If there are any cells in the <var title="">opaque
+          headers</var> list anchored with the same <var title="">x</var>-coordinate as the <var title="">current
+          cell</var>, and with the same width as <var title="">current
+          cell</var>, then let <var title="">blocked</var> be
+          true.</p>
+
+          <p>If the <var title="">current cell</var> is not a
+          <a href="#column-header">column header</a>, then let <var title="">blocked</var> be true.</p>
+
+         </dd>
+
+         <dt>If &#916;<var title="">y</var> is 0</dt>
+
+         <dd>
+
+          <p>If there are any cells in the <var title="">opaque
+          headers</var> list anchored with the same <var title="">y</var>-coordinate as the <var title="">current
+          cell</var>, and with the same height as <var title="">current cell</var>, then let <var title="">blocked</var> be true.</p>
+
+          <p>If the <var title="">current cell</var> is not a
+          <a href="#row-header">row header</a>, then let <var title="">blocked</var> be true.</p>
+
+         </dd>
+
+        </dl></li>
+
+       <li><p>If <var title="">blocked</var> is false, then add the
+       <var title="">current cell</var> to the <var title="">headers
+       list</var>.</p></li>
+
+      </ol></dd>
+
+     <dt>If <var title="">current cell</var> is a data cell and <var title="">in header block</var> is true</dt>
+
+     <dd><p>Set <var title="">in header block</var> to false. Add
+     all the cells in <var title="">headers from current header
+     block</var> to the <var title="">opaque headers</var> list, and
+     empty the <var title="">headers from current header block</var>
+     list.</p>
+
+    </dd></dl></li>
+
+   <li>
+
+    <p>Return to the step labeled <i>loop</i>.</p>
+
+   </li>
+
+  </ol><p>A header cell anchored at the slot with coordinate (<var title="">x</var>, <var title="">y</var>) with width <var title="">width</var> and height <var title="">height</var> is said
+  to be a <dfn id="column-header">column header</dfn> if any of the following conditions
+  are true:</p>
+
+  <ul><li>The cell's <code title="attr-th-scope"><a href="the-th-element.html#attr-th-scope">scope</a></code> attribute
+   is in the <a href="the-th-element.html#attr-th-scope-col" title="attr-th-scope-col">column</a> state, or</li>
+
+   <li>The cell's <code title="attr-th-scope"><a href="the-th-element.html#attr-th-scope">scope</a></code> attribute
+   is in the <a href="the-th-element.html#attr-th-scope-auto" title="attr-th-scope-auto">auto</a> state, and
+   there are no data cells in any of the cells covering slots with
+   <var title="">y</var>-coordinates <var title="">y</var>
+   .. <span title=""><var title="">y</var>+<var title="">height</var>-1</span>.</li>
+
+  </ul><p>A header cell anchored at the slot with coordinate (<var title="">x</var>, <var title="">y</var>) with width <var title="">width</var> and height <var title="">height</var> is said
+  to be a <dfn id="row-header">row header</dfn> if any of the following conditions
+  are true:</p>
+
+  <ul><li>The cell's <code title="attr-th-scope"><a href="the-th-element.html#attr-th-scope">scope</a></code> attribute
+   is in the <a href="the-th-element.html#attr-th-scope-row" title="attr-th-scope-row">row</a> state, or</li>
+
+   <li>The cell's <code title="attr-th-scope"><a href="the-th-element.html#attr-th-scope">scope</a></code> attribute
+   is in the <a href="the-th-element.html#attr-th-scope-auto" title="attr-th-scope-auto">auto</a> state, the
+   cell is not a <a href="#column-header">column header</a>, and there are no data
+   cells in any of the cells covering slots with <var title="">x</var>-coordinates <var title="">x</var> .. <span title=""><var title="">x</var>+<var title="">width</var>-1</span>.</li>
+
+  </ul><p>A header cell is said to be a <dfn id="column-group-header">column group header</dfn> if
+  its <code title="attr-th-scope"><a href="the-th-element.html#attr-th-scope">scope</a></code> attribute is in the
+  <a href="the-th-element.html#attr-th-scope-colgroup" title="attr-th-scope-colgroup">column group</a> state.</p>
+
+  <p>A header cell is said to be a <dfn id="row-group-header">row group header</dfn> if
+  its <code title="attr-th-scope"><a href="the-th-element.html#attr-th-scope">scope</a></code> attribute is in the
+  <a href="the-th-element.html#attr-th-scope-rowgroup" title="attr-th-scope-rowgroup">row group</a> state.</p>
+
+  <p>A cell is said to be an <dfn id="empty-cell">empty cell</dfn> if it contains no
+  elements and its text content, if any, consists only of
+  <a href="common-microsyntaxes.html#white_space">White_Space</a> characters.</p>
+
+  </div>
+
+
+  </body></html>

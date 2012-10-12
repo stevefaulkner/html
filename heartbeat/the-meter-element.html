@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en-US-x-Hixie"><head><meta charset="utf-8"><title>4.10.17 The meter element &#8212; HTML5</title><style type="text/css">
+
+   .applies thead th > * { display: block; }
+   .applies thead code { display: block; }
+   .applies tbody th { white-space: nowrap; }
+   .applies td { text-align: center; }
+   .applies .yes { background: yellow; }
+
+   .matrix, .matrix td { border: hidden; text-align: right; }
+   .matrix { margin-left: 2em; }
+
+   .dice-example { border-collapse: collapse; border-style: hidden solid solid hidden; border-width: thin; margin-left: 3em; }
+   .dice-example caption { width: 30em; font-size: smaller; font-style: italic; padding: 0.75em 0; text-align: left; }
+   .dice-example td, .dice-example th { border: solid thin; width: 1.35em; height: 1.05em; text-align: center; padding: 0; }
+
+   td.eg { border-width: thin; text-align: center; }
+
+   #table-example-1 { border: solid thin; border-collapse: collapse; margin-left: 3em; }
+   #table-example-1 * { font-family: "Essays1743", serif; line-height: 1.01em; }
+   #table-example-1 caption { padding-bottom: 0.5em; }
+   #table-example-1 thead, #table-example-1 tbody { border: none; }
+   #table-example-1 th, #table-example-1 td { border: solid thin; }
+   #table-example-1 th { font-weight: normal; }
+   #table-example-1 td { border-style: none solid; vertical-align: top; }
+   #table-example-1 th { padding: 0.5em; vertical-align: middle; text-align: center; }
+   #table-example-1 tbody tr:first-child td { padding-top: 0.5em; }
+   #table-example-1 tbody tr:last-child td { padding-bottom: 1.5em; }
+   #table-example-1 tbody td:first-child { padding-left: 2.5em; padding-right: 0; width: 9em; }
+   #table-example-1 tbody td:first-child::after { content: leader(". "); }
+   #table-example-1 tbody td { padding-left: 2em; padding-right: 2em; }
+   #table-example-1 tbody td:first-child + td { width: 10em; }
+   #table-example-1 tbody td:first-child + td ~ td { width: 2.5em; }
+   #table-example-1 tbody td:first-child + td + td + td ~ td { width: 1.25em; }
+
+   .apple-table-examples { border: none; border-collapse: separate; border-spacing: 1.5em 0em; width: 40em; margin-left: 3em; }
+   .apple-table-examples * { font-family: "Times", serif; }
+   .apple-table-examples td, .apple-table-examples th { border: none; white-space: nowrap; padding-top: 0; padding-bottom: 0; }
+   .apple-table-examples tbody th:first-child { border-left: none; width: 100%; }
+   .apple-table-examples thead th:first-child ~ th { font-size: smaller; font-weight: bolder; border-bottom: solid 2px; text-align: center; }
+   .apple-table-examples tbody th::after, .apple-table-examples tfoot th::after { content: leader(". ") }
+   .apple-table-examples tbody th, .apple-table-examples tfoot th { font: inherit; text-align: left; }
+   .apple-table-examples td { text-align: right; vertical-align: top; }
+   .apple-table-examples.e1 tbody tr:last-child td { border-bottom: solid 1px; }
+   .apple-table-examples.e1 tbody + tbody tr:last-child td { border-bottom: double 3px; }
+   .apple-table-examples.e2 th[scope=row] { padding-left: 1em; }
+   .apple-table-examples sup { line-height: 0; }
+
+   .details-example img { vertical-align: top; }
+
+   #base64-table {
+     white-space: nowrap;
+     font-size: 0.6em;
+     column-width: 6em;
+     column-count: 5;
+     column-gap: 1em;
+     -moz-column-width: 6em;
+     -moz-column-count: 5;
+     -moz-column-gap: 1em;
+     -webkit-column-width: 6em;
+     -webkit-column-count: 5;
+     -webkit-column-gap: 1em;
+   }
+   #base64-table thead { display: none; }
+   #base64-table * { border: none; }
+   #base64-table tbody td:first-child:after { content: ':'; }
+   #base64-table tbody td:last-child { text-align: right; }
+
+   #named-character-references-table {
+     white-space: nowrap;
+     font-size: 0.6em;
+     column-width: 30em;
+     column-gap: 1em;
+     -moz-column-width: 30em;
+     -moz-column-gap: 1em;
+     -webkit-column-width: 30em;
+     -webkit-column-gap: 1em;
+   }
+   #named-character-references-table > table > tbody > tr > td:first-child + td,
+   #named-character-references-table > table > tbody > tr > td:last-child { text-align: center; }
+   #named-character-references-table > table > tbody > tr > td:last-child:hover > span { position: absolute; top: auto; left: auto; margin-left: 0.5em; line-height: 1.2; font-size: 5em; border: outset; padding: 0.25em 0.5em; background: white; width: 1.25em; height: auto; text-align: center; }
+   #named-character-references-table > table > tbody > tr#entity-CounterClockwiseContourIntegral > td:first-child { font-size: 0.5em; }
+
+   .glyph.control { color: red; }
+
+   @font-face {
+     font-family: 'Essays1743';
+     src: url('fonts/Essays1743.ttf');
+   }
+   @font-face {
+     font-family: 'Essays1743';
+     font-weight: bold;
+     src: url('fonts/Essays1743-Bold.ttf');
+   }
+   @font-face {
+     font-family: 'Essays1743';
+     font-style: italic;
+     src: url('fonts/Essays1743-Italic.ttf');
+   }
+   @font-face {
+     font-family: 'Essays1743';
+     font-style: italic;
+     font-weight: bold;
+     src: url('fonts/Essays1743-BoldItalic.ttf');
+   }
+
+  </style><link href="data:text/css," id="complete" rel="stylesheet" title="Complete specification"><link href="data:text/css,.impl%20%7B%20display:%20none;%20%7D%0Ahtml%20%7B%20border:%20solid%20yellow;%20%7D%20.domintro:before%20%7B%20display:%20none;%20%7D" id="author" rel="alternate stylesheet" title="Author documentation only"><link href="data:text/css,.impl%20%7B%20background:%20%23FFEEEE;%20%7D%20.domintro:before%20%7B%20background:%20%23FFEEEE;%20%7D" id="highlight" rel="alternate stylesheet" title="Highlight implementation requirements"><style type="text/css">
+   pre { margin-left: 2em; white-space: pre-wrap; }
+   h2 { margin: 3em 0 1em 0; }
+   h3 { margin: 2.5em 0 1em 0; }
+   h4 { margin: 2.5em 0 0.75em 0; }
+   h5, h6 { margin: 2.5em 0 1em; }
+   h1 + h2, h1 + h2 + h2 { margin: 0.75em 0 0.75em; }
+   h2 + h3, h3 + h4, h4 + h5, h5 + h6 { margin-top: 0.5em; }
+   p { margin: 1em 0; }
+   hr:not(.top) { display: block; background: none; border: none; padding: 0; margin: 2em 0; height: auto; }
+   dl, dd { margin-top: 0; margin-bottom: 0; }
+   dt { margin-top: 0.75em; margin-bottom: 0.25em; clear: left; }
+   dt + dt { margin-top: 0; }
+   dd dt { margin-top: 0.25em; margin-bottom: 0; }
+   dd p { margin-top: 0; }
+   dd dl + p { margin-top: 1em; }
+   dd table + p { margin-top: 1em; }
+   p + * > li, dd li { margin: 1em 0; }
+   dt, dfn { font-weight: bold; font-style: normal; }
+   i, em { font-style: italic; }
+   dt dfn { font-style: italic; }
+   pre, code { font-size: inherit; font-family: monospace; font-variant: normal; }
+   pre strong { color: black; font: inherit; font-weight: bold; background: yellow; }
+   pre em { font-weight: bolder; font-style: normal; }
+   @media screen { code { color: orangered; } code :link, code :visited { color: inherit; } }
+   var sub { vertical-align: bottom; font-size: smaller; position: relative; top: 0.1em; }
+   table { border-collapse: collapse; border-style: hidden hidden none hidden; }
+   table thead, table tbody { border-bottom: solid; }
+   table tbody th:first-child { border-left: solid; }
+   table tbody th { text-align: left; }
+   table td, table th { border-left: solid; border-right: solid; border-bottom: solid thin; vertical-align: top; padding: 0.2em; }
+   blockquote { margin: 0 0 0 2em; border: 0; padding: 0; font-style: italic; }
+
+   .bad, .bad *:not(.XXX) { color: gray; border-color: gray; background: transparent; }
+   .matrix, .matrix td { border: none; text-align: right; }
+   .matrix { margin-left: 2em; }
+   .dice-example { border-collapse: collapse; border-style: hidden solid solid hidden; border-width: thin; margin-left: 3em; }
+   .dice-example caption { width: 30em; font-size: smaller; font-style: italic; padding: 0.75em 0; text-align: left; }
+   .dice-example td, .dice-example th { border: solid thin; width: 1.35em; height: 1.05em; text-align: center; padding: 0; }
+
+   .toc dfn, h1 dfn, h2 dfn, h3 dfn, h4 dfn, h5 dfn, h6 dfn { font: inherit; }
+   img.extra, p.overview { float: right; }
+   pre.idl { border: solid thin; background: #EEEEEE; color: black; padding: 0.5em 1em; position: relative; }
+   pre.idl :link, pre.idl :visited { color: inherit; background: transparent; }
+   pre.idl::before { content: "IDL"; font: bold small sans-serif; padding: 0.5em; background: white; position: absolute; top: 0; margin: -1px 0 0 -4em; width: 1.5em; border: thin solid; border-radius: 0 0 0 0.5em }
+   pre.css { border: solid thin; background: #FFFFEE; color: black; padding: 0.5em 1em; }
+   pre.css:first-line { color: #AAAA50; }
+   dl.domintro { color: green; margin: 2em 0 2em 2em; padding: 0.5em 1em; border: none; background: #DDFFDD; }
+   hr + dl.domintro, div.impl + dl.domintro { margin-top: 2.5em; margin-bottom: 1.5em; }
+   dl.domintro dt, dl.domintro dt * { color: black; text-decoration: none; }
+   dl.domintro dd { margin: 0.5em 0 1em 2em; padding: 0; }
+   dl.domintro dd p { margin: 0.5em 0; }
+   dl.domintro:before { display: table; margin: -1em -0.5em -0.5em auto; width: auto; content: 'This box is non-normative. Implementation requirements are given below this box.'; color: black; font-style: italic; border: solid 2px; background: white; padding: 0 0.25em; }
+   dl.switch { padding-left: 2em; }
+   dl.switch > dt { text-indent: -1.5em; }
+   dl.switch > dt:before { content: '\21AA'; padding: 0 0.5em 0 0; display: inline-block; width: 1em; text-align: right; line-height: 0.5em; }
+   dl.triple { padding: 0 0 0 1em; }
+   dl.triple dt, dl.triple dd { margin: 0; display: inline }
+   dl.triple dt:after { content: ':'; }
+   dl.triple dd:after { content: '\A'; white-space: pre; }
+   .diff-old { text-decoration: line-through; color: silver; background: transparent; }
+   .diff-chg, .diff-new { text-decoration: underline; color: green; background: transparent; }
+   a .diff-new { border-bottom: 1px blue solid; }
+
+   figure.diagrams { border: double black; background: white; padding: 1em; }
+   figure.diagrams img { display: block; margin: 1em auto; } 
+
+   h2 { page-break-before: always; }
+   h1, h2, h3, h4, h5, h6 { page-break-after: avoid; }
+   h1 + h2, hr + h2.no-toc { page-break-before: auto; }
+
+   p  > span:not([title=""]):not([class="XXX"]):not([class="impl"]):not([class="note"]),
+   li > span:not([title=""]):not([class="XXX"]):not([class="impl"]):not([class="note"]) { border-bottom: solid #9999CC; }
+
+   div.head { margin: 0 0 1em; padding: 1em 0 0 0; }
+   div.head p { margin: 0; }
+   div.head h1 { margin: 0; }
+   div.head .logo { float: right; margin: 0 1em; }
+   div.head .logo img { border: none } /* remove border from top image */
+   div.head dl { margin: 1em 0; }
+   div.head p.copyright, div.head p.alt { font-size: x-small; font-style: oblique; margin: 0; }
+
+   body > .toc > li { margin-top: 1em; margin-bottom: 1em; }
+   body > .toc.brief > li { margin-top: 0.35em; margin-bottom: 0.35em; }
+   body > .toc > li > * { margin-bottom: 0.5em; }
+   body > .toc > li > * > li > * { margin-bottom: 0.25em; }
+   .toc, .toc li { list-style: none; }
+
+   .brief { margin-top: 1em; margin-bottom: 1em; line-height: 1.1; }
+   .brief li { margin: 0; padding: 0; }
+   .brief li p { margin: 0; padding: 0; }
+
+   .category-list { margin-top: -0.75em; margin-bottom: 1em; line-height: 1.5; }
+   .category-list::before { content: '\21D2\A0'; font-size: 1.2em; font-weight: 900; }
+   .category-list li { display: inline; }
+   .category-list li:not(:last-child)::after { content: ', '; }
+   .category-list li > span, .category-list li > a { text-transform: lowercase; }
+   .category-list li * { text-transform: none; } /* don't affect <code> nested in <a> */
+
+   .XXX { color: #E50000; background: white; border: solid red; padding: 0.5em; margin: 1em 0; }
+   .XXX > :first-child { margin-top: 0; }
+   p .XXX { line-height: 3em; }
+   .annotation { border: solid thin black; background: #0C479D; color: white; position: relative; margin: 8px 0 20px 0; }
+   .annotation:before { position: absolute; left: 0; top: 0; width: 100%; height: 100%; margin: 6px -6px -6px 6px; background: #333333; z-index: -1; content: ''; }
+   .annotation :link, .annotation :visited { color: inherit; }
+   .annotation :link:hover, .annotation :visited:hover { background: transparent; }
+   .annotation span { border: none ! important; }
+   .note { color: green; background: transparent; font-family: sans-serif; }
+   .warning { color: red; background: transparent; }
+   .note, .warning { font-weight: bolder; font-style: italic; }
+   .note em, .warning em, .note i, .warning i { font-style: normal; }
+   p.note, div.note { padding: 0.5em 2em; }
+   span.note { padding: 0 2em; }
+   .note p:first-child, .warning p:first-child { margin-top: 0; }
+   .note p:last-child, .warning p:last-child { margin-bottom: 0; }
+   .warning:before { font-style: normal; }
+   p.note:before { content: 'Note: '; }
+   p.warning:before { content: '\26A0 Warning! '; }
+
+   .bookkeeping:before { display: block; content: 'Bookkeeping details'; font-weight: bolder; font-style: italic; }
+   .bookkeeping { font-size: 0.8em; margin: 2em 0; }
+   .bookkeeping p { margin: 0.5em 2em; display: list-item; list-style: square; }
+   .bookkeeping dt { margin: 0.5em 2em 0; }
+   .bookkeeping dd { margin: 0 3em 0.5em; }
+
+   h4 { position: relative; z-index: 3; }
+   h4 + .element, h4 + div + .element { margin-top: -2.5em; padding-top: 2em; }
+   .element {
+     background: #EEEEFF;
+     color: black;
+     margin: 0 0 1em 0.15em;
+     padding: 0 1em 0.25em 0.75em;
+     border-left: solid #9999FF 0.25em;
+     position: relative;
+     z-index: 1;
+   }
+   .element:before {
+     position: absolute;
+     z-index: 2;
+     top: 0;
+     left: -1.15em;
+     height: 2em;
+     width: 0.9em;
+     background: #EEEEFF;
+     content: ' ';
+     border-style: none none solid solid;
+     border-color: #9999FF;
+     border-width: 0.25em;
+   }
+
+   .example { display: block; color: #222222; background: #FCFCFC; border-left: double; margin-left: 2em; padding-left: 1em; }
+   td > .example:only-child { margin: 0 0 0 0.1em; }
+
+   ul.domTree, ul.domTree ul { padding: 0 0 0 1em; margin: 0; }
+   ul.domTree li { padding: 0; margin: 0; list-style: none; position: relative; }
+   ul.domTree li li { list-style: none; }
+   ul.domTree li:first-child::before { position: absolute; top: 0; height: 0.6em; left: -0.75em; width: 0.5em; border-style: none none solid solid; content: ''; border-width: 0.1em; }
+   ul.domTree li:not(:last-child)::after { position: absolute; top: 0; bottom: -0.6em; left: -0.75em; width: 0.5em; border-style: none none solid solid; content: ''; border-width: 0.1em; }
+   ul.domTree span { font-style: italic; font-family: serif; }
+   ul.domTree .t1 code { color: purple; font-weight: bold; }
+   ul.domTree .t2 { font-style: normal; font-family: monospace; }
+   ul.domTree .t2 .name { color: black; font-weight: bold; }
+   ul.domTree .t2 .value { color: blue; font-weight: normal; }
+   ul.domTree .t3 code, .domTree .t4 code, .domTree .t5 code { color: gray; }
+   ul.domTree .t7 code, .domTree .t8 code { color: green; }
+   ul.domTree .t10 code { color: teal; }
+
+   body.dfnEnabled dfn { cursor: pointer; }
+   .dfnPanel {
+     display: inline;
+     position: absolute;
+     z-index: 10;
+     height: auto;
+     width: auto;
+     padding: 0.5em 0.75em;
+     font: small sans-serif, Droid Sans Fallback;
+     background: #DDDDDD;
+     color: black;
+     border: outset 0.2em;
+   }
+   .dfnPanel * { margin: 0; padding: 0; font: inherit; text-indent: 0; }
+   .dfnPanel :link, .dfnPanel :visited { color: black; }
+   .dfnPanel p { font-weight: bolder; }
+   .dfnPanel * + p { margin-top: 0.25em; }
+   .dfnPanel li { list-style-position: inside; }
+
+   #configUI { position: absolute; z-index: 20; top: 10em; right: 1em; width: 11em; font-size: small; }
+   #configUI p { margin: 0.5em 0; padding: 0.3em; background: #EEEEEE; color: black; border: inset thin; }
+   #configUI p label { display: block; }
+   #configUI #updateUI, #configUI .loginUI { text-align: center; }
+   #configUI input[type=button] { display: block; margin: auto; }
+
+   fieldset { margin: 1em; padding: 0.5em 1em; }
+   fieldset > legend + * { margin-top: 0; }
+   fieldset > :last-child { margin-bottom: 0; }
+   fieldset p { margin: 0.5em 0; }
+
+   .stability {
+     position: fixed;
+     bottom: 0;
+     left: 0; right: 0;
+     margin: 0 auto 0 auto;
+     width: 50%;
+     background: maroon; color: yellow;
+     -webkit-border-radius: 1em 1em 0 0;
+     -moz-border-radius: 1em 1em 0 0;
+     border-radius: 1em 1em 0 0;
+     -moz-box-shadow: 0 0 1em #500;
+     -webkit-box-shadow: 0 0 1em #500;
+     box-shadow: 0 0 1em red;
+     padding: 0.5em 1em;
+     text-align: center;
+   }
+   .stability strong {
+     display: block;
+   }
+   .stability input {
+     -moz-appearance: none; -webkit-appearance: none; margin: 0; 
+     border: 0; padding: 0.25em 0.5em; background: transparent; color: black;
+     position: absolute; top: -0.5em; right: 0; font: 1.25em sans-serif; text-align: center;
+   }
+   .stability input:hover {
+     color: white;
+     text-shadow: 0 0 2px black;
+   }
+   .stability input:active {
+     padding: 0.3em 0.45em 0.2em 0.55em;
+   }
+   .stability :link, .stability :visited,
+   .stability :link:hover, .stability :visited:hover {
+     background: transparent;
+     color: white;
+   }
+
+  </style><link href="http://www.w3.org/StyleSheets/TR/W3C-WD" rel="stylesheet" type="text/css"><meta content="noindex" name="robots"><script>
+   function getCookie(name) {
+     var params = location.search.substr(1).split("&");
+     for (var index = 0; index < params.length; index++) {
+       if (params[index] == name)
+         return "1";
+       var data = params[index].split("=");
+       if (data[0] == name)
+         return unescape(data[1]);
+     }
+     var cookies = document.cookie.split("; ");
+     for (var index = 0; index < cookies.length; index++) {
+       var data = cookies[index].split("=");
+       if (data[0] == name)
+         return unescape(data[1]);
+     }
+     return null;
+   }
+  </script><link href="the-progress-element.html" title="4.10.16 The progress element" rel="prev">
+  <link href="index.html#contents" title="Table of contents" rel="contents">
+  <link href="association-of-controls-and-forms.html" title="4.10.18 Association of controls and forms" rel="next">
+  </head><body onload="fixBrokenLink();" class="split chapter"><div class="head" id="head">
+   <p><a href="http://www.w3.org/"><img alt="W3C" height="48" src="http://www.w3.org/Icons/w3c_home" width="72"></a></p>
+
+   <h1>HTML5</h1>
+   <h2 class="no-num no-toc" id="a-vocabulary-and-associated-apis-for-html-and-xhtml">A vocabulary and associated APIs for HTML and XHTML</h2>
+   <h2 class="no-num no-toc" id="w3c-working-draft-11-october-2012">W3C Working Draft 11 October 2012</h2>
+   </div>
+  
+
+  <div class="prev_next">
+   <a href="the-progress-element.html">&#8592; 4.10.16 The progress element</a> &#8211;
+   <a href="index.html#contents">Table of contents</a> &#8211;
+   <a href="association-of-controls-and-forms.html">4.10.18 Association of controls and forms &#8594;</a>
+  </div>
+
+  <h4 id="the-meter-element"><span class="secno">4.10.17 </span>The <dfn><code>meter</code></dfn> element</h4>
+  <!-- Keep this after <progress> and NOT close to <time> -->
+
+  <dl class="element"><dt><a href="element-definitions.html#element-dfn-categories" title="element-dfn-categories">Categories</a>:</dt>
+   <dd><a href="content-models.html#flow-content-1">Flow content</a>.</dd>
+   <dd><a href="content-models.html#phrasing-content-1">Phrasing content</a>.</dd>
+   <dd><a href="forms.html#category-label" title="category-label">Labelable element</a>.</dd>
+   <dd><a href="content-models.html#palpable-content-0">Palpable content</a>.</dd>
+   <dt><a href="element-definitions.html#element-dfn-contexts" title="element-dfn-contexts">Contexts in which this element can be used</a>:</dt>
+   <dd>Where <a href="content-models.html#phrasing-content-1">phrasing content</a> is expected.</dd>
+   <dt><a href="element-definitions.html#element-dfn-content-model" title="element-dfn-content-model">Content model</a>:</dt>
+   <dd><a href="content-models.html#phrasing-content-1">Phrasing content</a>, but there must be no <code><a href="#the-meter-element">meter</a></code> element descendants.</dd>
+   <dt><a href="element-definitions.html#element-dfn-attributes" title="element-dfn-attributes">Content attributes</a>:</dt>
+   <dd><a href="global-attributes.html#global-attributes">Global attributes</a></dd>
+   <dd><code title="attr-meter-value"><a href="#attr-meter-value">value</a></code></dd>
+   <dd><code title="attr-meter-min"><a href="#attr-meter-min">min</a></code></dd>
+   <dd><code title="attr-meter-max"><a href="#attr-meter-max">max</a></code></dd>
+   <dd><code title="attr-meter-low"><a href="#attr-meter-low">low</a></code></dd>
+   <dd><code title="attr-meter-high"><a href="#attr-meter-high">high</a></code></dd>
+   <dd><code title="attr-meter-optimum"><a href="#attr-meter-optimum">optimum</a></code></dd>
+   <dt><a href="element-definitions.html#element-dfn-dom" title="element-dfn-dom">DOM interface</a>:</dt><!--TOPIC:DOM APIs-->
+   <dd>
+<pre class="idl">interface <dfn id="htmlmeterelement">HTMLMeterElement</dfn> : <a href="elements.html#htmlelement">HTMLElement</a> {
+           attribute double <a href="#dom-meter-value" title="dom-meter-value">value</a>;
+           attribute double <a href="#dom-meter-min" title="dom-meter-min">min</a>;
+           attribute double <a href="#dom-meter-max" title="dom-meter-max">max</a>;
+           attribute double <a href="#dom-meter-low" title="dom-meter-low">low</a>;
+           attribute double <a href="#dom-meter-high" title="dom-meter-high">high</a>;
+           attribute double <a href="#dom-meter-optimum" title="dom-meter-optimum">optimum</a>;
+  readonly attribute <a href="infrastructure.html#nodelist">NodeList</a> <a href="the-label-element.html#dom-lfe-labels" title="dom-lfe-labels">labels</a>;
+};</pre>
+   </dd>
+  </dl><!--TOPIC:HTML--><p>The <code><a href="#the-meter-element">meter</a></code> element <a href="rendering.html#represents">represents</a> a scalar
+  measurement within a known range, or a fractional value; for example
+  disk usage, the relevance of a query result, or the fraction of a
+  voting population to have selected a particular candidate.</p>
+
+  <p>This is also known as a gauge.</p>
+
+  <p class="note">The <code><a href="#the-meter-element">meter</a></code> element should not be used to
+  indicate progress (as in a progress bar). For that role, HTML
+  provides a separate <code><a href="the-progress-element.html#the-progress-element">progress</a></code> element.</p>
+
+  <p class="note">The <code><a href="#the-meter-element">meter</a></code> element also does not
+  represent a scalar value of arbitrary range &#8212; for example, it
+  would be wrong to use this to report a weight, or height, unless
+  there is a known maximum value.</p>
+
+  <p>There are six attributes that determine the semantics of the
+  gauge represented by the element.</p>
+
+  <p>The <dfn id="attr-meter-min" title="attr-meter-min"><code>min</code></dfn> attribute
+  specifies the lower bound of the range, and the <dfn id="attr-meter-max" title="attr-meter-max"><code>max</code></dfn> attribute specifies
+  the upper bound. The <dfn id="attr-meter-value" title="attr-meter-value"><code>value</code></dfn> attribute
+  specifies the value to have the gauge indicate as the "measured"
+  value.</p>
+
+  <p>The other three attributes can be used to segment the gauge's
+  range into "low", "medium", and "high" parts, and to indicate which
+  part of the gauge is the "optimum" part. The <dfn id="attr-meter-low" title="attr-meter-low"><code>low</code></dfn> attribute specifies
+  the range that is considered to be the "low" part, and the <dfn id="attr-meter-high" title="attr-meter-high"><code>high</code></dfn> attribute specifies
+  the range that is considered to be the "high" part. The <dfn id="attr-meter-optimum" title="attr-meter-optimum"><code>optimum</code></dfn> attribute
+  gives the position that is "optimum"; if that is higher than the
+  "high" value  then this indicates that the higher the value, the
+  better; if it's lower than the "low" mark then it indicates that
+  lower values are better, and naturally if it is in between then it
+  indicates that neither high nor low values are good.</p>
+
+  <p><span class="impl"><strong>Authoring
+  requirements</strong>:</span> The <code title="attr-meter-value"><a href="#attr-meter-value">value</a></code> attribute must be
+  specified. The <code title="attr-meter-value"><a href="#attr-meter-value">value</a></code>, <code title="attr-meter-min"><a href="#attr-meter-min">min</a></code>, <code title="attr-meter-low"><a href="#attr-meter-low">low</a></code>, <code title="attr-meter-high"><a href="#attr-meter-high">high</a></code>, <code title="attr-meter-max"><a href="#attr-meter-max">max</a></code>, and <code title="attr-meter-optimum"><a href="#attr-meter-optimum">optimum</a></code> attributes, when present,
+  must have values that are <a href="common-microsyntaxes.html#valid-floating-point-number" title="valid floating-point
+  number">valid floating-point numbers</a>.</p>
+
+  <p>In addition, the attributes' values are further constrained:</p>
+
+  <p>Let <var title="">value</var> be the <code title="attr-meter-value"><a href="#attr-meter-value">value</a></code> attribute's number.</p>
+
+  <p>If the <code title="attr-meter-min"><a href="#attr-meter-min">min</a></code> attribute
+  attribute is specified, then let <var title="">minimum</var> be that
+  attribute's value; otherwise, let it be zero.</p>
+
+  <p>If the <code title="attr-meter-max"><a href="#attr-meter-max">max</a></code> attribute
+  attribute is specified, then let <var title="">maximum</var> be that
+  attribute's value; otherwise, let it be 1.0.</p>
+
+  <p>The following inequalities must hold, as applicable:</p>
+
+  <ul class="brief"><li><var title="">minimum</var> &#8804; <var title="">value</var> &#8804; <var title="">maximum</var></li>
+   <li><var title="">minimum</var> &#8804; <code title="attr-meter-low"><a href="#attr-meter-low">low</a></code> &#8804; <var title="">maximum</var> (if <code title="attr-meter-low"><a href="#attr-meter-low">low</a></code> is specified)</li>
+   <li><var title="">minimum</var> &#8804; <code title="attr-meter-high"><a href="#attr-meter-high">high</a></code> &#8804; <var title="">maximum</var> (if <code title="attr-meter-high"><a href="#attr-meter-high">high</a></code> is specified)</li>
+   <li><var title="">minimum</var> &#8804; <code title="attr-meter-optimum"><a href="#attr-meter-optimum">optimum</a></code> &#8804; <var title="">maximum</var> (if <code title="attr-meter-optimum"><a href="#attr-meter-optimum">optimum</a></code> is specified)</li>
+   <li><code title="attr-meter-low"><a href="#attr-meter-low">low</a></code> &#8804; <code title="attr-meter-high"><a href="#attr-meter-high">high</a></code> (if both <code title="attr-meter-low"><a href="#attr-meter-low">low</a></code> and <code title="attr-meter-high"><a href="#attr-meter-high">high</a></code> are specified)</li>
+  </ul><p class="note">If no minimum or maximum is specified, then the
+  range is assumed to be 0..1, and the value thus has to be within
+  that range.</p>
+
+  <p>Authors are encouraged to include a textual representation of the
+  gauge's state in the element's contents, for users of user agents
+  that do not support the <code><a href="#the-meter-element">meter</a></code> element.</p>
+
+  <div class="example">
+
+   <p>The following examples show three gauges that would all be
+   three-quarters full:</p>
+
+   <pre>Storage space usage: &lt;meter value=6 max=8&gt;6 blocks used (out of 8 total)&lt;/meter&gt;
+Voter turnout: &lt;meter value=0.75&gt;&lt;img alt="75%" src="graph75.png"&gt;&lt;/meter&gt;
+Tickets sold: &lt;meter min="0" max="100" value="75"&gt;&lt;/meter&gt;</pre>
+
+   <p>The following example is incorrect use of the element, because
+   it doesn't give a range (and since the default maximum is 1, both
+   of the gauges would end up looking maxed out):</p>
+
+   <pre class="bad">&lt;p&gt;The grapefruit pie had a radius of &lt;meter value=12&gt;12cm&lt;/meter&gt;
+and a height of &lt;meter value=2&gt;2cm&lt;/meter&gt;.&lt;/p&gt; &lt;!-- <strong>BAD!</strong> --&gt;</pre>
+
+   <p>Instead, one would either not include the meter element, or use
+   the meter element with a defined range to give the dimensions in
+   context compared to other pies:</p>
+
+   <pre>&lt;p&gt;The grapefruit pie had a radius of 12cm and a height of
+2cm.&lt;/p&gt;
+&lt;dl&gt;
+ &lt;dt&gt;Radius: &lt;dd&gt; &lt;meter min=0 max=20 value=12&gt;12cm&lt;/meter&gt;
+ &lt;dt&gt;Height: &lt;dd&gt; &lt;meter min=0 max=10 value=2&gt;2cm&lt;/meter&gt;
+&lt;/dl&gt;</pre>
+
+  </div>
+
+  <p>There is no explicit way to specify units in the
+  <code><a href="#the-meter-element">meter</a></code> element, but the units may be specified in the
+  <code title="attr-title"><a href="global-attributes.html#attr-title">title</a></code> attribute in free-form text.</p>
+
+  <div class="example">
+
+   <p>The example above could be extended to mention the units:</p>
+
+   <pre>&lt;dl&gt;
+ &lt;dt&gt;Radius: &lt;dd&gt; &lt;meter min=0 max=20 value=12 title="centimeters"&gt;12cm&lt;/meter&gt;
+ &lt;dt&gt;Height: &lt;dd&gt; &lt;meter min=0 max=10 value=2 title="centimeters"&gt;2cm&lt;/meter&gt;
+&lt;/dl&gt;</pre>
+
+  </div>
+
+  <div class="impl">
+
+  <p><strong>User agent requirements</strong>: User agents must parse
+  the <code title="attr-meter-min"><a href="#attr-meter-min">min</a></code>, <code title="attr-meter-max"><a href="#attr-meter-max">max</a></code>, <code title="attr-meter-value"><a href="#attr-meter-value">value</a></code>, <code title="attr-meter-low"><a href="#attr-meter-low">low</a></code>, <code title="attr-meter-high"><a href="#attr-meter-high">high</a></code>, and <code title="attr-meter-optimum"><a href="#attr-meter-optimum">optimum</a></code> attributes using the
+  <a href="common-microsyntaxes.html#rules-for-parsing-floating-point-number-values">rules for parsing floating-point number values</a>.</p>
+
+  <p>User agents must then use all these numbers to obtain values for
+  six points on the gauge, as follows. (The order in which these are
+  evaluated is important, as some of the values refer to earlier
+  ones.)</p>
+
+  <dl><dt>The <dfn id="concept-meter-minimum" title="concept-meter-minimum">minimum value</dfn></dt>
+
+   <dd>
+    <p>If the <code title="attr-meter-min"><a href="#attr-meter-min">min</a></code> attribute is
+    specified and a value could be parsed out of it, then the minimum
+    value is that value. Otherwise, the minimum value is zero.</p>
+   </dd>
+
+   <dt>The <dfn id="concept-meter-maximum" title="concept-meter-maximum">maximum value</dfn></dt>
+
+   <dd>
+
+    <p>If the <code title="attr-meter-max"><a href="#attr-meter-max">max</a></code> attribute is
+    specified and a value could be parsed out of it, then the
+    candidate maximum value is that value. Otherwise, the candidate
+    maximum value is 1.0.</p>
+
+    <p>If the candidate maximum value is greater than or equal to the
+    minimum value, then the maximum value is the candidate maximum
+    value. Otherwise, the maximum value is the same as the minimum
+    value.</p>
+
+   </dd>
+
+   <dt>The <dfn id="concept-meter-actual" title="concept-meter-actual">actual value</dfn></dt>
+
+   <dd>
+
+    <p>If the <code title="attr-meter-value"><a href="#attr-meter-value">value</a></code> attribute is
+    specified and a value could be parsed out of it, then that value
+    is the candidate actual value. Otherwise, the candidate actual
+    value is zero.</p>
+
+    <p>If the candidate actual value is less than the minimum value,
+    then the actual value is the minimum value.</p>
+
+    <p>Otherwise, if the candidate actual value is greater than the
+    maximum value, then the actual value is the maximum value.</p>
+
+    <p>Otherwise, the actual value is the candidate actual value.</p>
+
+   </dd>
+
+   <dt>The <dfn id="concept-meter-low" title="concept-meter-low">low boundary</dfn></dt>
+
+   <dd>
+
+    <p>If the <code title="attr-meter-low"><a href="#attr-meter-low">low</a></code> attribute is
+    specified and a value could be parsed out of it, then the
+    candidate low boundary is that value. Otherwise, the candidate low
+    boundary is the same as the minimum value.</p>
+
+    <p>If the candidate low boundary is less than the minimum value,
+    then the low boundary is the minimum value.</p>
+
+    <p>Otherwise, if the candidate low boundary is greater than the
+    maximum value, then the low boundary is the maximum value.</p>
+
+    <p>Otherwise, the low boundary is the candidate low boundary.</p>
+
+   </dd>
+
+   <dt>The <dfn id="concept-meter-high" title="concept-meter-high">high boundary</dfn></dt>
+
+   <dd>
+
+    <p>If the <code title="attr-meter-high"><a href="#attr-meter-high">high</a></code> attribute is
+    specified and a value could be parsed out of it, then the
+    candidate high boundary is that value. Otherwise, the candidate
+    high boundary is the same as the maximum value.</p>
+
+    <p>If the candidate high boundary is less than the low boundary,
+    then the high boundary is the low boundary.</p>
+
+    <p>Otherwise, if the candidate high boundary is greater than the
+    maximum value, then the high boundary is the maximum value.</p>
+
+    <p>Otherwise, the high boundary is the candidate high boundary.</p>
+
+   </dd>
+
+   <dt>The <dfn id="concept-meter-optimum" title="concept-meter-optimum">optimum point</dfn></dt>
+
+   <dd>
+
+    <p>If the <code title="attr-meter-optimum"><a href="#attr-meter-optimum">optimum</a></code>
+    attribute is specified and a value could be parsed out of it, then
+    the candidate optimum point is that value. Otherwise, the
+    candidate optimum point is the midpoint between the minimum value
+    and the maximum value.</p>
+
+    <p>If the candidate optimum point is less than the minimum value,
+    then the optimum point is the minimum value.</p>
+
+    <p>Otherwise, if the candidate optimum point is greater than the
+    maximum value, then the optimum point is the maximum value.</p>
+
+    <p>Otherwise, the optimum point is the candidate optimum
+    point.</p>
+
+   </dd>
+
+  </dl><p>All of which will result in the following inequalities all being
+  true:</p>
+
+  <ul class="brief"><li>minimum value &#8804; actual value &#8804; maximum value</li>
+   <li>minimum value &#8804; low boundary &#8804; high boundary &#8804; maximum value</li>
+   <li>minimum value &#8804; optimum point &#8804; maximum value</li>
+  </ul><p><strong>UA requirements for regions of the gauge</strong>: If the
+  optimum point is equal to the low boundary or the high boundary, or
+  anywhere in between them, then the region between the low and high
+  boundaries of the gauge must be treated as the optimum region, and
+  the low and high parts, if any, must be treated as suboptimal.
+  Otherwise, if the optimum point is less than the low boundary, then
+  the region between the minimum value and the low boundary must be
+  treated as the optimum region, the region from the low boundary up
+  to the high boundary must be treated as a suboptimal region, and the
+  remaining region must be treated as an even less good region.
+  Finally, if the optimum point is higher than the high boundary, then
+  the situation is reversed; the region between the high boundary and
+  the maximum value must be treated as the optimum region, the region
+  from the high boundary down to the low boundary must be treated as a
+  suboptimal region, and the remaining region must be treated as an
+  even less good region.</p>
+
+  <p><strong>UA requirements for showing the gauge</strong>: When
+  representing a <code><a href="#the-meter-element">meter</a></code> element to the user, the UA should
+  indicate the relative position of the actual value to the minimum
+  and maximum values, and the relationship between the actual value
+  and the three regions of the gauge.</p>
+
+  </div>
+
+  <div class="example">
+   <p>The following markup:</p>
+   <pre>&lt;h3&gt;Suggested groups&lt;/h3&gt;
+&lt;menu type="toolbar"&gt;
+ &lt;a href="?cmd=hsg" onclick="hideSuggestedGroups()"&gt;Hide suggested groups&lt;/a&gt;
+&lt;/menu&gt;
+&lt;ul&gt;
+ &lt;li&gt;
+  &lt;p&gt;&lt;a href="/group/comp.infosystems.www.authoring.stylesheets/view"&gt;comp.infosystems.www.authoring.stylesheets&lt;/a&gt; -
+     &lt;a href="/group/comp.infosystems.www.authoring.stylesheets/subscribe"&gt;join&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;Group description: &lt;strong&gt;Layout/presentation on the WWW.&lt;/strong&gt;&lt;/p&gt;
+  &lt;p&gt;<strong>&lt;meter value="0.5"&gt;Moderate activity,&lt;/meter&gt;</strong> Usenet, 618 subscribers&lt;/p&gt;
+ &lt;/li&gt;
+ &lt;li&gt;
+  &lt;p&gt;&lt;a href="/group/netscape.public.mozilla.xpinstall/view"&gt;netscape.public.mozilla.xpinstall&lt;/a&gt; -
+     &lt;a href="/group/netscape.public.mozilla.xpinstall/subscribe"&gt;join&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;Group description: &lt;strong&gt;Mozilla XPInstall discussion.&lt;/strong&gt;&lt;/p&gt;
+  &lt;p&gt;<strong>&lt;meter value="0.25"&gt;Low activity,&lt;/meter&gt;</strong> Usenet, 22 subscribers&lt;/p&gt;
+ &lt;/li&gt;
+ &lt;li&gt;
+  &lt;p&gt;&lt;a href="/group/mozilla.dev.general/view"&gt;mozilla.dev.general&lt;/a&gt; -
+     &lt;a href="/group/mozilla.dev.general/subscribe"&gt;join&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;<strong>&lt;meter value="0.25"&gt;Low activity,&lt;/meter&gt;</strong> Usenet, 66 subscribers&lt;/p&gt;
+ &lt;/li&gt;
+&lt;/ul&gt;</pre>
+   <p>Might be rendered as follows:</p>
+   <p><img alt="With the &lt;meter&gt; elements rendered as inline green bars of varying lengths." height="178" src="images/sample-meter.png" width="332"></p>
+  </div>
+
+  <p>User agents <span class="impl">may</span> combine the value of
+  the <code title="attr-title"><a href="global-attributes.html#attr-title">title</a></code> attribute and the other
+  attributes to provide context-sensitive help or inline text
+  detailing the actual values.</p>
+
+  <div class="example">
+   <p>For example, the following snippet:</p>
+   <pre>&lt;meter min=0 max=60 value=23.2 title=seconds&gt;&lt;/meter&gt;</pre>
+   <p>...might cause the user agent to display a gauge with a tooltip
+   saying "Value: 23.2 out of 60." on one line and "seconds" on a
+   second line.</p>
+  </div>
+
+  <div class="impl">
+
+  <p>The <dfn id="dom-meter-value" title="dom-meter-value"><code>value</code></dfn> IDL
+  attribute, on getting, must return the <a href="#concept-meter-actual" title="concept-meter-actual">actual value</a>. On setting, the
+  given value must be converted to the <a href="common-microsyntaxes.html#best-representation-of-the-number-as-a-floating-point-number">best representation of
+  the number as a floating-point number</a> and then the <code title="dom-meter-value"><a href="#dom-meter-value">value</a></code> content attribute must be set
+  to that string.</p>
+
+  <p>The <dfn id="dom-meter-min" title="dom-meter-min"><code>min</code></dfn> IDL
+  attribute, on getting, must return the <a href="#concept-meter-minimum" title="concept-meter-minimum">minimum value</a>. On setting, the
+  given value must be converted to the <a href="common-microsyntaxes.html#best-representation-of-the-number-as-a-floating-point-number">best representation of
+  the number as a floating-point number</a> and then the <code title="dom-meter-min"><a href="#dom-meter-min">min</a></code> content attribute must be set to
+  that string.</p>
+
+  <p>The <dfn id="dom-meter-max" title="dom-meter-max"><code>max</code></dfn> IDL
+  attribute, on getting, must return the <a href="#concept-meter-maximum" title="concept-meter-maximum">maximum value</a>. On setting, the
+  given value must be converted to the <a href="common-microsyntaxes.html#best-representation-of-the-number-as-a-floating-point-number">best representation of
+  the number as a floating-point number</a> and then the <code title="dom-meter-max"><a href="#dom-meter-max">max</a></code> content attribute must be set to
+  that string.</p>
+
+  <p>The <dfn id="dom-meter-low" title="dom-meter-low"><code>low</code></dfn> IDL
+  attribute, on getting, must return the <a href="#concept-meter-low" title="concept-meter-low">low boundary</a>. On setting, the given
+  value must be converted to the <a href="common-microsyntaxes.html#best-representation-of-the-number-as-a-floating-point-number">best representation of the
+  number as a floating-point number</a> and then the <code title="dom-meter-low"><a href="#dom-meter-low">low</a></code> content attribute must be set to
+  that string.</p>
+
+  <p>The <dfn id="dom-meter-high" title="dom-meter-high"><code>high</code></dfn> IDL
+  attribute, on getting, must return the <a href="#concept-meter-high" title="concept-meter-high">high boundary</a>. On setting, the
+  given value must be converted to the <a href="common-microsyntaxes.html#best-representation-of-the-number-as-a-floating-point-number">best representation of
+  the number as a floating-point number</a> and then the <code title="dom-meter-high"><a href="#dom-meter-high">high</a></code> content attribute must be set to
+  that string.</p>
+
+  <p>The <dfn id="dom-meter-optimum" title="dom-meter-optimum"><code>optimum</code></dfn> IDL
+  attribute, on getting, must return the <a href="#concept-meter-optimum" title="concept-meter-optimum">optimum value</a>. On setting, the
+  given value must be converted to the <a href="common-microsyntaxes.html#best-representation-of-the-number-as-a-floating-point-number">best representation of
+  the number as a floating-point number</a> and then the <code title="dom-meter-optimum"><a href="#dom-meter-optimum">optimum</a></code> content attribute must be
+  set to that string.</p>
+
+  <p>The <code title="dom-lfe-labels"><a href="the-label-element.html#dom-lfe-labels">labels</a></code> IDL attribute
+  provides a list of the element's <code><a href="the-label-element.html#the-label-element">label</a></code>s.</p>
+
+  </div>
+
+  <div class="example">
+
+   <p>The following example shows how a gauge could fall back to
+   localized or pretty-printed text.</p>
+
+   <pre>&lt;p&gt;Disk usage: &lt;meter min=0 value=170261928 max=233257824&gt;170&#8201;261&#8201;928 bytes used
+out of 233&#8201;257&#8201;824 bytes available&lt;/meter&gt;&lt;/p&gt;</pre>
+
+  </div>
+
+
+
+
+  </body></html>
