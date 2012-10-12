@@ -1,0 +1,8 @@
+RedirectMatch permanent /TR/html5/author        http://www.w3.org/TR/html5-author/
+RedirectMatch permanent /TR/html5/video.html    http://www.w3.org/TR/html5/the-video-element.html
+RedirectMatch permanent /TR/html5/Overview.html http://www.w3.org/TR/html5/single-page.html
+RedirectMatch permanent /TR/2012/WD-html5-20120329/video.html    http://www.w3.org/TR/2012/WD-html5-20120329/the-video-element.html
+RedirectMatch permanent /TR/2012/WD-html5-20120329/Overview.html http://www.w3.org/TR/2012/WD-html5-20120329/single-page.html
+# DirectoryIndex spec.html
+ErrorDocument 404 /TR/html5/404.html
+AddDefaultCharset utf-8
