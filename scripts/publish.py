@@ -40,7 +40,7 @@ opts = {
   'newline_char': u'\n',
   'omit_optional_tags': False,
   'output_encoding': 'utf-8',
-  'parser': 'lxml.html',
+  'parser': 'htlm5lib',
   'processes': set(['toc', 'xref', 'sub']),
   'profile': False,
   'quote_attr_values': True,
