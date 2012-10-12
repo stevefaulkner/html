@@ -1,4 +1,7 @@
-<!DOCTYPE html><html lang="en-US-x-Hixie"><head><meta charset="utf-8"><title>HTML Canvas 2D Context</title><style type="text/css">
+<!DOCTYPE html><html lang="en-US-x-Hixie"><head>
+  <meta charset="utf-8">
+  <title>HTML Canvas 2D Context</title>
+    <style type="text/css">
 
    .applies thead th > * { display: block; }
    .applies thead code { display: block; }
@@ -103,7 +106,13 @@
      src: url('fonts/Essays1743-BoldItalic.ttf');
    }
 
-  </style><link href="data:text/css," id="complete" rel="stylesheet" title="Complete specification"><link href="data:text/css,.impl%20{%20display:%20none;%20}%0Ahtml%20{%20border:%20solid%20yellow;%20}%20.domintro:before%20{%20display:%20none;%20}" id="author" rel="alternate stylesheet" title="Author documentation only"><link href="data:text/css,.impl%20{%20background:%20%23FFEEEE;%20}%20.domintro:before%20{%20background:%20%23FFEEEE;%20}" id="highlight" rel="alternate stylesheet" title="Highlight implementation requirements"><style type="text/css">
+  </style>
+
+  <link href="data:text/css," id="complete" rel="stylesheet" title="Complete specification">
+<link href="data:text/css,.impl%20{%20display:%20none;%20}%0Ahtml%20{%20border:%20solid%20yellow;%20}%20.domintro:before%20{%20display:%20none;%20}" id="author" rel="alternate stylesheet" title="Author documentation only">
+<link href="data:text/css,.impl%20{%20background:%20%23FFEEEE;%20}%20.domintro:before%20{%20background:%20%23FFEEEE;%20}" id="highlight" rel="alternate stylesheet" title="Highlight implementation requirements">
+
+    <style type="text/css">
    pre { margin-left: 2em; white-space: pre-wrap; }
    h2 { margin: 3em 0 1em 0; }
    h3 { margin: 2.5em 0 1em 0; }
@@ -337,7 +346,11 @@
      color: white;
    }
 
-  </style><link href="http://www.w3.org/StyleSheets/TR/W3C-WD" rel="stylesheet" type="text/css"><meta content="noindex" name="robots"><script>
+  </style>
+  <link href="http://www.w3.org/StyleSheets/TR/W3C-WD" rel="stylesheet" type="text/css">
+  <meta content="noindex" name="robots">
+
+    <script>
    function getCookie(name) {
      var params = location.search.substr(1).split("&");
      for (var index = 0; index < params.length; index++) {
@@ -355,14 +368,17 @@
      }
      return null;
    }
-  </script></head><body>
+  </script>
+ </head>
+ <body>
   <div class="head" id="head">
    <p><a href="http://www.w3.org/"><img alt="W3C" height="48" src="http://www.w3.org/Icons/w3c_home" width="72"></a></p>
 
    <h1>HTML Canvas 2D Context</h1>
    <h2 class="no-num no-toc" id="generatedID"></h2>
    <h2 class="no-num no-toc" id="w3c-working-draft-11-october-2012">W3C Working Draft 11 October 2012</h2>
-   <dl><dt>This Version:</dt>
+   <dl>
+    <dt>This Version:</dt>
     <dd><a href="http://www.w3.org/TR/2012/WD-2dcontext-20121011/">http://www.w3.org/TR/2012/WD-2dcontext-20121011/</a></dd>
     <dt>Latest Published Version:</dt>
     <dd><a href="http://www.w3.org/TR/2dcontext/">http://www.w3.org/TR/2dcontext/</a></dd>
@@ -389,7 +405,8 @@
     <dd><a href="mailto:wiltzius@google.com">Tom Wiltzius</a>, Google, Inc.</dd>
    <dt>Previous Editor:</dt>
     <dd><a href="mailto:ian@hixie.ch">Ian Hickson</a>, Google, Inc.</dd>
-   </dl><p class="copyright"><a href="http://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a>
+   </dl>
+     <p class="copyright"><a href="http://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a>
    © 2012 <a href="http://www.w3.org/"><abbr title="World Wide
    Web Consortium">W3C</abbr></a><sup>®</sup> (<a href="http://www.csail.mit.edu/"><abbr title="Massachusetts
    Institute of Technology">MIT</abbr></a>, <a href="http://www.ercim.eu/"><abbr title="European Research
@@ -402,7 +419,10 @@
 </div>
   
 
-  <hr class="top"><h2 class="no-num no-toc" id="abstract">Abstract</h2>
+  <hr class="top">
+
+
+  <h2 class="no-num no-toc" id="abstract">Abstract</h2>
 
   <p>This specification defines the 2D Context for the HTML
   <code>canvas</code> element. The 2D Context provides
@@ -461,7 +481,8 @@
   <p class="stability" id="wip"><strong>This is a work in
   progress!</strong> For the latest updates from the HTML WG, possibly
   including important bug fixes, please look at the <a href="http://dev.w3.org/html5/2dcontext/">editor's draft</a> instead.
-  <input onclick="closeWarning(this.parentNode)" type="button" value="X"></p>
+  <input onclick="closeWarning(this.parentNode)" type="button" value="X">
+  </p>
   <script>
    function closeWarning(element) {
      element.parentNode.removeChild(element);
@@ -471,14 +492,16 @@
    }
    if (getCookie('hide-obsolescence-warning') == '1')
      setTimeout(function () { document.getElementById('wip').parentNode.removeChild(document.getElementById('wip')); }, 2000);
-  </script><!--
+  </script>
+  <!--
   <script>
    if (location == 'http://dev.w3.org/html5/2dcontext/') {
      var wip = document.getElementById('wip');
      wip.parentNode.removeChild(wip);
    }
   </script>
-  --></div>
+  -->
+  </div>
 
 
   <p>Publication as a Working Draft does not imply endorsement by the W3C Membership.
@@ -492,12 +515,17 @@
   specification is always available on <a href="http://dev.w3.org/html5/">the W3C CVS server</a>.
   There are various ways to follow the change history for this specification:
   </p>
-  <dl><dt>Browsable version-control record of all changes:</dt>
+  <dl>
+   <dt>Browsable version-control record of all changes:</dt>
    <dd>Github repository (real-time updates): <a href="https://github.com/w3c/html/commits/master">https://github.com/w3c/html/commits/master</a></dd>
    <dd>CVSWeb interface (hourly updates): <a href="http://dev.w3.org/cvsweb/html5/spec/">http://dev.w3.org/cvsweb/html5/spec/</a></dd>
    <dt>E-mail notifications of changes:</dt>
    <dd>HTML-Commits mailing list (commit notifications for dev.w3.org/html5): <a href="http://lists.w3.org/Archives/Public/public-html-commits/latest">http://lists.w3.org/Archives/Public/public-html-commits/latest</a></dd>
-  </dl><!-- UNDER NO CIRCUMSTANCES IS THE PRECEDING LIST TO BE REMOVED OR EDITED WITHOUT TALKING TO IAN FIRST --><!-- status of document, group responsible (required) --><p>The W3C <a href="http://www.w3.org/html/wg/">HTML Working
+  </dl>
+  <!-- UNDER NO CIRCUMSTANCES IS THE PRECEDING LIST TO BE REMOVED OR EDITED WITHOUT TALKING TO IAN FIRST -->
+
+  <!-- status of document, group responsible (required) -->
+  <p>The W3C <a href="http://www.w3.org/html/wg/">HTML Working
   Group</a> is the W3C working group responsible for this
   specification's progress along the W3C Recommendation
   track.
@@ -510,10 +538,18 @@
   <p>Work on this specification is also done at the <a href="http://www.whatwg.org/">WHATWG</a>. The W3C HTML working group
   actively pursues convergence with the WHATWG, as required by the <a href="http://www.w3.org/2007/03/HTML-WG-charter">W3C HTML working
   group charter</a>. There are various ways to follow this work at the WHATWG:</p>
-  <ul><li>Commit-Watchers mailing list (complete source diffs): <a href="http://lists.whatwg.org/listinfo.cgi/commit-watchers-whatwg.org">http://lists.whatwg.org/listinfo.cgi/commit-watchers-whatwg.org</a></li>
+  <ul>
+      <li>Commit-Watchers mailing list (complete source diffs): <a href="http://lists.whatwg.org/listinfo.cgi/commit-watchers-whatwg.org">http://lists.whatwg.org/listinfo.cgi/commit-watchers-whatwg.org</a></li>
       <li>Annotated summary with unified diffs: <a href="http://html5.org/tools/web-apps-tracker">http://html5.org/tools/web-apps-tracker</a></li>
       <li>Raw Subversion interface: <code>svn checkout http://svn.whatwg.org/webapps/</code></li>
-  </ul><!-- UNDER NO CIRCUMSTANCES IS THE FOLLOWING PARAGRAPH TO BE REMOVED OR EDITED WITHOUT TALKING TO IAN FIRST --><!-- UNDER NO CIRCUMSTANCES IS THE PRECEDING PARAGRAPH TO BE REMOVED OR EDITED WITHOUT TALKING TO IAN FIRST --><!-- context and rationale (required) --><!-- (this text is from the RDFa+HTML spec --><p>This specification is an extension to the HTML5 language. All
+  </ul>
+  <!-- UNDER NO CIRCUMSTANCES IS THE FOLLOWING PARAGRAPH TO BE REMOVED OR EDITED WITHOUT TALKING TO IAN FIRST -->
+
+  
+  <!-- UNDER NO CIRCUMSTANCES IS THE PRECEDING PARAGRAPH TO BE REMOVED OR EDITED WITHOUT TALKING TO IAN FIRST -->
+  <!-- context and rationale (required) -->
+  <!-- (this text is from the RDFa+HTML spec -->
+  <p>This specification is an extension to the HTML5 language. All
   normative content in the HTML5 specification, unless specifically
   overridden by this specification, is intended to be the basis for
   this specification.</p>
@@ -553,14 +589,16 @@
    <li><a href="#hit-regions"><span class="secno">1.13 </span>Hit regions</a></li>
    <li><a href="#pixel-manipulation"><span class="secno">1.14 </span>Pixel manipulation</a></li>
    <li><a href="#compositing"><span class="secno">1.15 </span>Compositing</a></li>
-   <li><a href="#image-smoothing"><span class="secno">1.16 </span>Image smoothing</a></li>
-   <li><a href="#shadows"><span class="secno">1.17 </span>Shadows</a></li>
-   <li><a href="#drawing-model"><span class="secno">1.18 </span>Drawing model</a></li>
-   <li><a href="#best-practices"><span class="secno">1.19 </span>Best practices</a></li>
-   <li><a href="#examples"><span class="secno">1.20 </span>Examples</a></li></ol></li>
+   <li><a href="#shadows"><span class="secno">1.16 </span>Shadows</a></li>
+   <li><a href="#drawing-model"><span class="secno">1.17 </span>Drawing model</a></li>
+   <li><a href="#best-practices"><span class="secno">1.18 </span>Best practices</a></li>
+   <li><a href="#examples"><span class="secno">1.19 </span>Examples</a></li></ol></li>
  <li><a class="no-num" href="#references">References</a></li></ol>
 <!--end-toc-->
-  <hr><h2 id="conformance-requirements"><span class="secno">1 </span>Conformance requirements</h2>
+  <hr>
+
+  
+  <h2 id="conformance-requirements"><span class="secno">1 </span>Conformance requirements</h2>
 
   <p>This specification is an HTML specification. All the conformance
   requirements, conformance classes, definitions, dependencies,
@@ -618,9 +656,6 @@
   // compositing
            attribute unrestricted double <a href="#dom-context-2d-globalalpha" title="dom-context-2d-globalAlpha">globalAlpha</a>; // (default 1.0)
            attribute DOMString <a href="#dom-context-2d-globalcompositeoperation" title="dom-context-2d-globalCompositeOperation">globalCompositeOperation</a>; // (default source-over)
-
-  // image smoothing
-           attribute boolean <a href="#dom-context-2d-imagesmoothingenabled" title="dom-context-2d-imageSmoothingEnabled">imageSmoothingEnabled</a>; // (default true)
 <!--
   // v7 we've also received requests for:
   - turning off antialiasing to avoid seams when patterns are painted next to each other
@@ -638,10 +673,6 @@
   <a href="#canvasgradient">CanvasGradient</a> <a href="#dom-context-2d-createradialgradient" title="dom-context-2d-createRadialGradient">createRadialGradient</a>(double x0, double y0, double r0, double x1, double y1, double r1);
   <a href="#canvaspattern">CanvasPattern</a> <a href="#dom-context-2d-createpattern" title="dom-context-2d-createPattern">createPattern</a>((<span>HTMLImageElement</span> or <span>HTMLCanvasElement</span> or <span>HTMLVideoElement</span>) image, [TreatNullAs=Emptytring]DOMString repetition);
 
-<!--
-  // v8 we received one request from Ralf Richard G&oml;bel for a new kind of pattern: a hatch.
-  // basically it would be a series of dash styles, angles, line widths, and offsets
--->
   // shadows
            attribute unrestricted double <a href="#dom-context-2d-shadowoffsetx" title="dom-context-2d-shadowOffsetX">shadowOffsetX</a>; // (default 0)
            attribute unrestricted double <a href="#dom-context-2d-shadowoffsety" title="dom-context-2d-shadowOffsetY">shadowOffsetY</a>; // (default 0)
@@ -683,8 +714,8 @@
   void <a href="#dom-context-2d-drawimage" title="dom-context-2d-drawImage">drawImage</a>((<span>HTMLImageElement</span> or <span>HTMLCanvasElement</span> or <span>HTMLVideoElement</span>) image, unrestricted double sx, unrestricted double sy, unrestricted double sw, unrestricted double sh, unrestricted double dx, unrestricted double dy, unrestricted double dw, unrestricted double dh);
 
   // hit regions
-  void <a href="#dom-context-2d-addhitregion" title="dom-context-2d-addHitRegion">addHitRegion</a>(<a href="#hitregionoptions-0">HitRegionOptions</a> options);
-  void <a href="#dom-context-2d-removehitregion" title="dom-context-2d-removeHitRegion">removeHitRegion</a>(<a href="#hitregionoptions-0">HitRegionOptions</a> options);
+  void <a href="#dom-context-2d-addhitregion" title="dom-context-2d-addHitRegion">addHitRegion</a>(<a href="#hitregionoptions">HitRegionOptions</a> options);
+  void <a href="#dom-context-2d-removehitregion" title="dom-context-2d-removeHitRegion">removeHitRegion</a>(<a href="#hitregionoptions">HitRegionOptions</a> options);
 
   // pixel manipulation
   <a href="#imagedata">ImageData</a> <a href="#dom-context-2d-createimagedata" title="dom-context-2d-createImageData">createImageData</a>(unrestricted double sw, unrestricted double sh);
@@ -731,46 +762,18 @@ interface <dfn id="canvaspathmethods">CanvasPathMethods</dfn> {
 
 interface <dfn id="canvasgradient">CanvasGradient</dfn> {
   // opaque object
-  void <a href="#dom-canvasgradient-addcolorstop" title="dom-canvasgradient-addColorStop">addColorStop</a>(unrestricted double offset, DOMString color);
+  void <a href="#dom-canvasgradient-addcolorstop" title="dom-canvasgradient-addColorStop">addColorStop</a>(double offset, DOMString color);
 };
 
 interface <dfn id="canvaspattern">CanvasPattern</dfn> {
   // opaque object
-  void <a href="#dom-canvaspattern-settransform" title="dom-canvaspattern-setTransform">setTransform</a>(<span>SVGMatrix</span> transform);
 };
 
 interface <dfn id="textmetrics">TextMetrics</dfn> {
-  // x-direction
-  readonly attribute double <a href="#dom-textmetrics-width" title="dom-textmetrics-width">width</a>; // advance width
-  readonly attribute double <a href="#dom-textmetrics-actualboundingboxleft" title="dom-textmetrics-actualBoundingBoxLeft">actualBoundingBoxLeft</a>;
-  readonly attribute double <a href="#dom-textmetrics-actualboundingboxright" title="dom-textmetrics-actualBoundingBoxRight">actualBoundingBoxRight</a>;
-
-  // y-direction
-  readonly attribute double <a href="#dom-textmetrics-fontboundingboxascent" title="dom-textmetrics-fontBoundingBoxAscent">fontBoundingBoxAscent</a>;
-  readonly attribute double <a href="#dom-textmetrics-fontboundingboxdescent" title="dom-textmetrics-fontBoundingBoxDescent">fontBoundingBoxDescent</a>;
-  readonly attribute double <a href="#dom-textmetrics-actualboundingboxascent" title="dom-textmetrics-actualBoundingBoxAscent">actualBoundingBoxAscent</a>;
-  readonly attribute double <a href="#dom-textmetrics-actualboundingboxdescent" title="dom-textmetrics-actualBoundingBoxDescent">actualBoundingBoxDescent</a>;
-  readonly attribute double <a href="#dom-textmetrics-emheightascent" title="dom-textmetrics-emHeightAscent">emHeightAscent</a>;
-  readonly attribute double <a href="#dom-textmetrics-emheightdescent" title="dom-textmetrics-emHeightDescent">emHeightDescent</a>;
-  readonly attribute double <a href="#dom-textmetrics-hangingbaseline" title="dom-textmetrics-hangingBaseline">hangingBaseline</a>;
-  readonly attribute double <a href="#dom-textmetrics-alphabeticbaseline" title="dom-textmetrics-alphabeticBaseline">alphabeticBaseline</a>;
-  readonly attribute double <a href="#dom-textmetrics-ideographicbaseline" title="dom-textmetrics-ideographicBaseline">ideographicBaseline</a>;
+  readonly attribute double <a href="#dom-textmetrics-width" title="dom-textmetrics-width">width</a>;
 };
 
 dictionary <dfn id="hitregionoptions">HitRegionOptions</dfn> {
-  <a href="#path">Path</a>? <span title="dom-HitRegionOptions-path">path</span> = null;
-<!--  <span>SVGMatrix</span>? <span title="dom-HitRegionOptions-transform">transform</span> = null;
--->  <span>DOMString</span> <span title="dom-HitRegionOptions-id">id</span> = "";
-  <span>DOMString</span>? <span title="dom-HitRegionOptions-parentID">parentID</span> = null;
-  <span>DOMString</span> <span title="dom-HitRegionOptions-cursor">cursor</span> = "inherit";
-  // for control-backed regions:
-  <span>Element</span>? <span title="dom-HitRegionOptions-control">control</span> = null;
-  // for unbacked regions:
-  <span>DOMString</span>? <span title="dom-HitRegionOptions-label">label</span> = null;
-  <span>DOMString</span>? <span title="dom-HitRegionOptions-role">role</span> = null;
-};
-
-dictionary <dfn id="hitregionoptions-0">HitRegionOptions</dfn> {
   <a href="#path">Path</a>? <span title="dom-HitRegionOptions-path">path</span> = null;
 <!--  <span>SVGMatrix</span>? <span title="dom-HitRegionOptions-transform">transform</span> = null;
 -->  <span>DOMString</span> <span title="dom-HitRegionOptions-id">id</span> = "";
@@ -810,7 +813,9 @@ interface <dfn id="path">Path</dfn> {
       methods, see https://bugzilla.mozilla.org/show_bug.cgi?id=623437
       for an example, and its duplicates for more -->
 
-  <dl class="domintro"><dt><var title="">context</var> . <code title="dom-context-2d-canvas"><a href="#dom-context-2d-canvas">canvas</a></code></dt>
+  <dl class="domintro">
+
+   <dt><var title="">context</var> . <code title="dom-context-2d-canvas"><a href="#dom-context-2d-canvas">canvas</a></code></dt>
 
    <dd>
 
@@ -818,7 +823,9 @@ interface <dfn id="path">Path</dfn> {
 
    </dd>
 
-  </dl><div class="impl">
+  </dl>
+
+  <div class="impl">
 
   <p>The <dfn id="dom-context-2d-canvas" title="dom-context-2d-canvas"><code>canvas</code></dfn>
   attribute must return the <code>canvas</code> element that the
@@ -878,17 +885,21 @@ interface <dfn id="path">Path</dfn> {
 
   <p>Each context maintains a stack of drawing states. <dfn id="drawing-state" title="drawing state">Drawing states</dfn> consist of:</p>
 
-  <ul class="brief"><li>The current <a href="#transformations" title="dom-context-2d-transformation">transformation matrix</a>.</li>
+  <ul class="brief">
+   <li>The current <a href="#transformations" title="dom-context-2d-transformation">transformation matrix</a>.</li>
    <li>The current <a href="#clipping-region">clipping region</a>.</li>
-   <li>The current values of the following attributes: <code title="dom-context-2d-strokeStyle"><a href="#dom-context-2d-strokestyle">strokeStyle</a></code>, <code title="dom-context-2d-fillStyle"><a href="#dom-context-2d-fillstyle">fillStyle</a></code>, <code title="dom-context-2d-globalAlpha"><a href="#dom-context-2d-globalalpha">globalAlpha</a></code>, <code title="dom-context-2d-lineWidth"><a href="#dom-context-2d-linewidth">lineWidth</a></code>, <code title="dom-context-2d-lineCap"><a href="#dom-context-2d-linecap">lineCap</a></code>, <code title="dom-context-2d-lineJoin"><a href="#dom-context-2d-linejoin">lineJoin</a></code>, <code title="dom-context-2d-miterLimit"><a href="#dom-context-2d-miterlimit">miterLimit</a></code>, <code title="dom-context-2d-lineDashOffset">lineDashOffset</code>, <code title="dom-context-2d-shadowOffsetX"><a href="#dom-context-2d-shadowoffsetx">shadowOffsetX</a></code>, <code title="dom-context-2d-shadowOffsetY"><a href="#dom-context-2d-shadowoffsety">shadowOffsetY</a></code>, <code title="dom-context-2d-shadowBlur"><a href="#dom-context-2d-shadowblur">shadowBlur</a></code>, <code title="dom-context-2d-shadowColor"><a href="#dom-context-2d-shadowcolor">shadowColor</a></code>, <code title="dom-context-2d-globalCompositeOperation"><a href="#dom-context-2d-globalcompositeoperation">globalCompositeOperation</a></code>, <code title="dom-context-2d-font"><a href="#dom-context-2d-font">font</a></code>, <code title="dom-context-2d-textAlign"><a href="#dom-context-2d-textalign">textAlign</a></code>, <code title="dom-context-2d-textBaseline"><a href="#dom-context-2d-textbaseline">textBaseline</a></code>, <code title="dom-context-2d-imageSmoothingEnabled"><a href="#dom-context-2d-imagesmoothingenabled">imageSmoothingEnabled</a></code>.</li>
-   <li>The current <span>dash list</span>.</li>
-  </ul><p class="note">The <a href="#current-default-path">current default path</a> and the
+   <li>The current values of the following attributes: <code title="dom-context-2d-strokeStyle"><a href="#dom-context-2d-strokestyle">strokeStyle</a></code>, <code title="dom-context-2d-fillStyle"><a href="#dom-context-2d-fillstyle">fillStyle</a></code>, <code title="dom-context-2d-globalAlpha"><a href="#dom-context-2d-globalalpha">globalAlpha</a></code>, <code title="dom-context-2d-lineWidth"><a href="#dom-context-2d-linewidth">lineWidth</a></code>, <code title="dom-context-2d-lineCap"><a href="#dom-context-2d-linecap">lineCap</a></code>, <code title="dom-context-2d-lineJoin"><a href="#dom-context-2d-linejoin">lineJoin</a></code>, <code title="dom-context-2d-miterLimit"><a href="#dom-context-2d-miterlimit">miterLimit</a></code>, <code title="dom-context-2d-shadowOffsetX"><a href="#dom-context-2d-shadowoffsetx">shadowOffsetX</a></code>, <code title="dom-context-2d-shadowOffsetY"><a href="#dom-context-2d-shadowoffsety">shadowOffsetY</a></code>, <code title="dom-context-2d-shadowBlur"><a href="#dom-context-2d-shadowblur">shadowBlur</a></code>, <code title="dom-context-2d-shadowColor"><a href="#dom-context-2d-shadowcolor">shadowColor</a></code>, <code title="dom-context-2d-globalCompositeOperation"><a href="#dom-context-2d-globalcompositeoperation">globalCompositeOperation</a></code>, <code title="dom-context-2d-font"><a href="#dom-context-2d-font">font</a></code>, <code title="dom-context-2d-textAlign"><a href="#dom-context-2d-textalign">textAlign</a></code>, <code title="dom-context-2d-textBaseline"><a href="#dom-context-2d-textbaseline">textBaseline</a></code>.</li>
+  </ul>
+
+  <p class="note">The <a href="#current-default-path">current default path</a> and the
   current bitmap are not part of the drawing state. The <a href="#current-default-path">current
   default path</a> is persistent, and can only be reset using the
   <code title="dom-context-2d-beginPath"><a href="#dom-context-2d-beginpath">beginPath()</a></code> method.
   The current bitmap is a property of the canvas, not the context.</p>
 
-  <dl class="domintro"><dt><var title="">context</var> . <code title="dom-context-2d-save"><a href="#dom-context-2d-save">save</a></code>()</dt>
+  <dl class="domintro">
+
+   <dt><var title="">context</var> . <code title="dom-context-2d-save"><a href="#dom-context-2d-save">save</a></code>()</dt>
 
    <dd>
 
@@ -904,7 +915,9 @@ interface <dfn id="path">Path</dfn> {
 
    </dd>
 
-  </dl><div class="impl">
+  </dl>
+
+  <div class="impl">
 
   <p>The <dfn id="dom-context-2d-save" title="dom-context-2d-save"><code>save()</code></dfn>
   method must push a copy of the current drawing state onto the
@@ -946,7 +959,9 @@ idea from Mihai:
   object is then used by methods on <code><a href="#path">Path</a></code> objects to
   control how text and paths are rasterised and stroked.</p>
 
-  <dl class="domintro"><dt><var title="">styles</var> = new <code title="dom-DrawingStyle"><a href="#dom-drawingstyle">DrawingStyle</a></code>( [ <var title="">element</var> ] )</dt>
+  <dl class="domintro">
+
+   <dt><var title="">styles</var> = new <code title="dom-DrawingStyle"><a href="#dom-drawingstyle">DrawingStyle</a></code>([ <var title="">element</var> ])</dt>
 
    <dd>
 
@@ -956,7 +971,9 @@ idea from Mihai:
 
    </dd>
 
-  </dl><div class="impl">
+  </dl>
+
+  <div class="impl">
 
   <p>Each <code><a href="#drawingstyle">DrawingStyle</a></code> object has a <dfn id="styles-scope-node">styles scope
   node</dfn>.</p>
@@ -976,7 +993,9 @@ idea from Mihai:
 
   <h6 id="line-styles"><span class="secno">1.3 </span>Line styles</h6>
 
-  <dl class="domintro"><dt><var title="">context</var> . <code title="dom-context-2d-lineWidth"><a href="#dom-context-2d-linewidth">lineWidth</a></code> [ = <var title="">value</var> ]</dt>
+  <dl class="domintro">
+
+   <dt><var title="">context</var> . <code title="dom-context-2d-lineWidth"><a href="#dom-context-2d-linewidth">lineWidth</a></code> [ = <var title="">value</var> ]</dt>
    <dt><var title="">styles</var> . <code title="dom-context-2d-lineWidth"><a href="#dom-context-2d-linewidth">lineWidth</a></code> [ = <var title="">value</var> ]</dt>
 
    <dd>
@@ -1067,7 +1086,9 @@ idea from Mihai:
 
    </dd>
 -->
-  </dl><div class="impl">
+  </dl>
+
+  <div class="impl">
 
   <p>Objects that implement the <code><a href="#canvasdrawingstyles">CanvasDrawingStyles</a></code>
   interface have attributes and methods (defined in this section) that
@@ -1084,7 +1105,9 @@ idea from Mihai:
   interface is created, the <code title="dom-context-2d-lineWidth"><a href="#dom-context-2d-linewidth">lineWidth</a></code> attribute must
   initially have the value <code>1.0</code>.</p>
 
-  <hr><p>The <dfn id="dom-context-2d-linecap" title="dom-context-2d-lineCap"><code>lineCap</code></dfn> attribute
+  <hr>
+
+  <p>The <dfn id="dom-context-2d-linecap" title="dom-context-2d-lineCap"><code>lineCap</code></dfn> attribute
   defines the type of endings that UAs will place on the end of lines.
   The three valid values are <code>butt</code>, <code>round</code>,
   and <code>square</code>.</p>
@@ -1099,7 +1122,9 @@ idea from Mihai:
   interface is created, the <code title="dom-context-2d-lineCap"><a href="#dom-context-2d-linecap">lineCap</a></code> attribute must
   initially have the value <code>butt</code>.</p>
 
-  <hr><p>The <dfn id="dom-context-2d-linejoin" title="dom-context-2d-lineJoin"><code>lineJoin</code></dfn>
+  <hr>
+
+  <p>The <dfn id="dom-context-2d-linejoin" title="dom-context-2d-lineJoin"><code>lineJoin</code></dfn>
   attribute defines the type of corners that UAs will place where two
   lines meet. The three valid values are <code>bevel</code>,
   <code>round</code>, and <code>miter</code>.</p>
@@ -1114,7 +1139,9 @@ idea from Mihai:
   interface is created, the <code title="dom-context-2d-lineJoin"><a href="#dom-context-2d-linejoin">lineJoin</a></code> attribute must
   initially have the value <code>miter</code>.</p>
 
-  <hr><p>When the <code title="dom-context-2d-lineJoin"><a href="#dom-context-2d-linejoin">lineJoin</a></code>
+  <hr>
+
+  <p>When the <code title="dom-context-2d-lineJoin"><a href="#dom-context-2d-linejoin">lineJoin</a></code>
   attribute has the value <code>miter</code>, strokes use the miter
   limit ratio to decide how to render joins. The miter limit ratio can
   be explicitly set using the <dfn id="dom-context-2d-miterlimit" title="dom-context-2d-miterLimit"><code>miterLimit</code></dfn>
@@ -1129,7 +1156,8 @@ idea from Mihai:
   interface is created, the <code title="dom-context-2d-miterLimit"><a href="#dom-context-2d-miterlimit">miterLimit</a></code> attribute must
   initially have the value <code>10.0</code>.</p>
 
-  <hr><!-- per Frank Oliver, issue 201 --><!-- 
+  <hr>
+<!-- per Frank Oliver, issue 201 --><!-- 
   <hr><p>Each <code><a href=#canvasdrawingstyles>CanvasDrawingStyles</a></code> object has a <dfn id=dash-list>dash
   list</dfn>, which is either empty or consists of an even number of
   positive non-zero numbers. Initially, the <a href=#dash-list>dash list</a>
@@ -1180,12 +1208,16 @@ idea from Mihai:
   attribute must initially have the value <code>0.0</code>.</p>
 
   <hr>
-  --><p>When a user agent is to <dfn id="trace-a-path">trace a <span>path</span></dfn>,
+  -->
+
+  <p>When a user agent is to <dfn id="trace-a-path">trace a <span>path</span></dfn>,
   given an object <var title="">style</var> that implements the
   <code><a href="#canvasdrawingstyles">CanvasDrawingStyles</a></code> interface, it must run the following
   algorithm. This algorithm returns a new <a href="#path">path</a>.</p>
 
-  <ol><li><p>Let <var title="">path</var> be a copy of the path being
+  <ol>
+
+   <li><p>Let <var title="">path</var> be a copy of the path being
    traced.</p></li>
 
    <li><p>Remove from <var title="">path</var> any subpaths containing
@@ -1490,13 +1522,19 @@ idea from Mihai:
 
    <li><p>Return the newly created path.</p></li>
 
-  </ol><!--v6: Another request has been for hairline width lines, that remain
-hairline width with transform. ack Shaun Morris.  --></div>
+  </ol>
+
+<!--v6: Another request has been for hairline width lines, that remain
+hairline width with transform. ack Shaun Morris.  -->
+
+  </div>
 
 
   <h6 id="text-styles"><span class="secno">1.4 </span>Text styles</h6>
 
-  <dl class="domintro"><dt><var title="">context</var> . <code title="dom-context-2d-font"><a href="#dom-context-2d-font">font</a></code> [ = <var title="">value</var> ]</dt>
+  <dl class="domintro">
+
+   <dt><var title="">context</var> . <code title="dom-context-2d-font"><a href="#dom-context-2d-font">font</a></code> [ = <var title="">value</var> ]</dt>
    <dt><var title="">styles</var> . <code title="dom-context-2d-font"><a href="#dom-context-2d-font">font</a></code> [ = <var title="">value</var> ]</dt>
 
    <dd>
@@ -1538,7 +1576,9 @@ hairline width with transform. ack Shaun Morris.  --></div>
 
    </dd>
 
-  </dl><div class="impl">
+  </dl>
+
+  <div class="impl">
 
   <p>Objects that implement the <code><a href="#canvasdrawingstyles">CanvasDrawingStyles</a></code>
   interface have attributes (defined in this section) that control how
@@ -1643,7 +1683,9 @@ hairline width with transform. ack Shaun Morris.  --></div>
 
   <p>The keywords map to these alignment points as follows:</p>
 
-  <dl><dt><dfn id="dom-context-2d-textbaseline-top" title="dom-context-2d-textBaseline-top"><code>top</code></dfn>
+  <dl>
+
+   <dt><dfn id="dom-context-2d-textbaseline-top" title="dom-context-2d-textBaseline-top"><code>top</code></dfn>
    </dt><dd>The top of the em square</dd>
 
    <dt><dfn id="dom-context-2d-textbaseline-hanging" title="dom-context-2d-textBaseline-hanging"><code>hanging</code></dfn>
@@ -1661,7 +1703,9 @@ hairline width with transform. ack Shaun Morris.  --></div>
    <dt><dfn id="dom-context-2d-textbaseline-bottom" title="dom-context-2d-textBaseline-bottom"><code>bottom</code></dfn>
    </dt><dd>The bottom of the em square</dd>
 
-  </dl><p>The <dfn id="text-preparation-algorithm">text preparation algorithm</dfn> is as follows. It takes
+  </dl>
+
+  <p>The <dfn id="text-preparation-algorithm">text preparation algorithm</dfn> is as follows. It takes
   as input a string <var title="">text</var>, a
   <code><a href="#canvasdrawingstyles">CanvasDrawingStyles</a></code> object <var title="">target</var>,
   and an optional length <var title="">maxWidth</var>. It returns an
@@ -1670,7 +1714,9 @@ hairline width with transform. ack Shaun Morris.  --></div>
   <i>left</i>, <i>right</i>, and <i title="">center</i>. (Most callers of this
   algorithm ignore the <var title="">physical alignment</var>.)</p>
 
-  <ol><li><p>If <var title="">maxWidth</var> was provided but is less
+  <ol>
+
+   <li><p>If <var title="">maxWidth</var> was provided but is less
    than or equal to zero, return an empty array.</p></li>
 
    <li><p>Replace all the <span title="space character">space
@@ -1684,7 +1730,9 @@ hairline width with transform. ack Shaun Morris.  --></div>
     <p>Apply the appropriate step from the following list to determine
     the value of <var title="">direction</var>:</p>
 
-    <dl class="switch"><dt>If the <var title="">target</var> object's <a href="#font-style-source-node">font style
+    <dl class="switch">
+
+     <dt>If the <var title="">target</var> object's <a href="#font-style-source-node">font style
      source node</a> is an element</dt>
 
      <dd>Let <var title="">direction</var> be <span>the
@@ -1705,7 +1753,9 @@ hairline width with transform. ack Shaun Morris.  --></div>
 
      <dd>Let <var title="">direction</var> be '<span title="concept-ltr">ltr</span>'.</dd>
 
-    </dl></li>
+    </dl>
+
+   </li>
 
    <li><p>Form a hypothetical infinitely-wide CSS line box containing
    a single inline box containing the text <var title="">text</var>,
@@ -1735,7 +1785,9 @@ hairline width with transform. ack Shaun Morris.  --></div>
 
     <p>Horizontal position:</p>
 
-    <dl><dt>If <code title="dom-context-2d-textAlign"><a href="#dom-context-2d-textalign">textAlign</a></code> is
+    <dl>
+
+     <dt>If <code title="dom-context-2d-textAlign"><a href="#dom-context-2d-textalign">textAlign</a></code> is
      <code title="">left</code></dt>
 
      <dt>If <code title="dom-context-2d-textAlign"><a href="#dom-context-2d-textalign">textAlign</a></code> is
@@ -1773,9 +1825,13 @@ hairline width with transform. ack Shaun Morris.  --></div>
      inline box, and let <var title="">physical alignment</var> be
      <i title="">center</i>.</dd>
 
-    </dl><p>Vertical position:</p>
+    </dl>
 
-    <dl><dt>If <code title="dom-context-2d-textBaseline"><a href="#dom-context-2d-textbaseline">textBaseline</a></code> is <code title="dom-context-2d-textBaseline-top"><a href="#dom-context-2d-textbaseline-top">top</a></code></dt>
+    <p>Vertical position:</p>
+
+    <dl>
+
+     <dt>If <code title="dom-context-2d-textBaseline"><a href="#dom-context-2d-textbaseline">textBaseline</a></code> is <code title="dom-context-2d-textBaseline-top"><a href="#dom-context-2d-textbaseline-top">top</a></code></dt>
 
      <dd>Let the <var title="">anchor point</var>'s vertical position
      be the top of the em box of the first available font of the
@@ -1816,7 +1872,9 @@ hairline width with transform. ack Shaun Morris.  --></div>
      be the bottom of the em box of the first available font of the
      inline box.</dd>
 
-    </dl></li>
+    </dl>
+
+   </li>
 
    <li>
 
@@ -1833,7 +1891,10 @@ hairline width with transform. ack Shaun Morris.  --></div>
    need it, <var title="">physical alignment</var> as the alignment
    value.</p></li>
 
-  </ol><h6 id="building-paths"><span class="secno">1.5 </span>Building paths</h6>
+  </ol>
+
+
+  <h6 id="building-paths"><span class="secno">1.5 </span>Building paths</h6>
 
   <p>Each object implementing the <code><a href="#canvaspathmethods">CanvasPathMethods</a></code>
   interface has a <a href="#concept-path" title="concept-path">path</a>. A <dfn id="concept-path" title="concept-path">path</dfn> has a list of zero or more subpaths.
@@ -1848,7 +1909,9 @@ hairline width with transform. ack Shaun Morris.  --></div>
   interface is created, its <a href="#concept-path" title="concept-path">path</a>
   must be initialized to zero subpaths.</p>
 
-  <dl class="domintro"><dt><var title="">context</var> . <code title="dom-context-2d-moveTo"><a href="#dom-context-2d-moveto">moveTo</a></code>(<var title="">x</var>, <var title="">y</var>)</dt>
+  <dl class="domintro">
+
+   <dt><var title="">context</var> . <code title="dom-context-2d-moveTo"><a href="#dom-context-2d-moveto">moveTo</a></code>(<var title="">x</var>, <var title="">y</var>)</dt>
    <dt><var title="">path</var> . <code title="dom-context-2d-moveTo"><a href="#dom-context-2d-moveto">moveTo</a></code>(<var title="">x</var>, <var title="">y</var>)</dt>
 
    <dd>
@@ -1905,7 +1968,12 @@ hairline width with transform. ack Shaun Morris.  --></div>
     <p>Throws an <code>IndexSizeError</code> exception if the given
     radius is negative.</p>
 
-    <figure class="diagrams"><!-- if anyone wants to try writing alternative text for this, be my guest. I can't work out how to describe it. --><img alt="" src="images/arc1.png"></figure></dd>
+    <figure class="diagrams">
+     <!-- if anyone wants to try writing alternative text for this, be my guest. I can't work out how to describe it. -->
+     <img alt="" src="images/arc1.png">
+    </figure>
+
+   </dd>
 
    <dt><var title="">context</var> . <code title="dom-context-2d-arc"><a href="#dom-context-2d-arc">arc</a></code>(<var title="">x</var>, <var title="">y</var>, <var title="">radius</var>, <var title="">startAngle</var>, <var title="">endAngle</var> [, <var title="">anticlockwise</var> ] )</dt>
    <dt><var title="">path</var> . <code title="dom-context-2d-arc"><a href="#dom-context-2d-arc">arc</a></code>(<var title="">x</var>, <var title="">y</var>, <var title="">radius</var>, <var title="">startAngle</var>, <var title="">endAngle</var> [, <var title="">anticlockwise</var> ] )</dt>
@@ -2062,7 +2130,9 @@ try {
 
    </dd>
 
-  </dl><div class="impl">
+  </dl>
+
+  <div class="impl">
 
   <p>The following methods allow authors to manipulate the <a href="#concept-path" title="concept-path">paths</a> of objects implementing the
   <code><a href="#canvaspathmethods">CanvasPathMethods</a></code> interface.</p>
@@ -2126,7 +2196,9 @@ try {
   connect the last point in the subpath to the given point (<var title="">x</var>, <var title="">y</var>) using a cubic Bézier
   curve with control points (<var title="">cp1x</var>, <var title="">cp1y</var>) and (<var title="">cp2x</var>, <var title="">cp2y</var>). Then, it must add the point (<var title="">x</var>, <var title="">y</var>) to the subpath. <a href="#refsBEZIER">[BEZIER]</a></p>
 
-  <hr><p>The <dfn id="dom-context-2d-arcto" title="dom-context-2d-arcTo"><code>arcTo(<var title="">x1</var>, <var title="">y1</var>, <var title="">x2</var>,
+  <hr>
+
+  <p>The <dfn id="dom-context-2d-arcto" title="dom-context-2d-arcTo"><code>arcTo(<var title="">x1</var>, <var title="">y1</var>, <var title="">x2</var>,
   <var title="">y2</var>, <var title="">radius</var>)</code></dfn>
   method must first <a href="#ensure-there-is-a-subpath">ensure there is a subpath</a> for <span title="">(<var title="">x1</var>, <var title="">y1</var>)</span>.
   Then, the behavior depends on the arguments and the last point in
@@ -2165,7 +2237,9 @@ try {
   end tangent point by <var title="">The Arc</var>, adding the end
   tangent point to the subpath.</p>
 
-  <hr><p>The <dfn id="dom-context-2d-arc" title="dom-context-2d-arc"><code>arc(<var title="">x</var>, <var title="">y</var>, <var title="">radius</var>,
+  <hr>
+
+  <p>The <dfn id="dom-context-2d-arc" title="dom-context-2d-arc"><code>arc(<var title="">x</var>, <var title="">y</var>, <var title="">radius</var>,
   <var title="">startAngle</var>, <var title="">endAngle</var>, <var title="">anticlockwise</var>)</code></dfn> method draws an arc. If
   the object's path has any subpaths, then the method must add a
   straight line from the last point in the subpath to the start point
@@ -2199,7 +2273,9 @@ try {
   implementation to throw an <code>IndexSizeError</code>
   exception.</p>
   
-  <hr><p>The <dfn id="dom-context-2d-rect" title="dom-context-2d-rect"><code>rect(<var title="">x</var>, <var title="">y</var>, <var title="">w</var>, <var title="">h</var>)</code></dfn> method must create a new subpath
+  <hr>
+
+  <p>The <dfn id="dom-context-2d-rect" title="dom-context-2d-rect"><code>rect(<var title="">x</var>, <var title="">y</var>, <var title="">w</var>, <var title="">h</var>)</code></dfn> method must create a new subpath
   containing just the four points (<var title="">x</var>, <var title="">y</var>), (<var title="">x</var>+<var title="">w</var>,
   <var title="">y</var>), (<var title="">x</var>+<var title="">w</var>, <var title="">y</var>+<var title="">h</var>),
   (<var title="">x</var>, <var title="">y</var>+<var title="">h</var>), with those four points connected by straight
@@ -2224,7 +2300,9 @@ try {
   <code><a href="#path">Path</a></code> objects have methods to combine paths, and to add
   text to paths.</p>
 
-  <dl class="domintro"><dt><var title="">path</var> = new <code title="dom-Path"><a href="#dom-path">Path</a></code>()</dt>
+  <dl class="domintro">
+
+   <dt><var title="">path</var> = new <code title="dom-Path"><a href="#dom-path">Path</a></code>()</dt>
 
    <dd>
 
@@ -2256,16 +2334,22 @@ try {
 
    </dd>
 
-  </dl><div class="impl">
+  </dl>
+
+  <div class="impl">
 
   <p>The <dfn id="dom-path" title="dom-Path"><code>Path()</code></dfn> constructor,
   when invoked, must return a newly created <code><a href="#path">Path</a></code>
   object.</p>
 
-  <hr><p>The <dfn id="dom-path-addpath" title="dom-path-addPath"><code>addPath(<var title="">b</var>, <var title="">transform</var>)</code></dfn>
+  <hr>
+
+  <p>The <dfn id="dom-path-addpath" title="dom-path-addPath"><code>addPath(<var title="">b</var>, <var title="">transform</var>)</code></dfn>
   method, when invoked on a <code><a href="#path">Path</a></code> object <var title="">a</var>, must run the following steps:</p>
 
-  <ol><li><p>If the <code><a href="#path">Path</a></code> object <var title="">b</var> has
+  <ol>
+
+   <li><p>If the <code><a href="#path">Path</a></code> object <var title="">b</var> has
    no subpaths, abort these steps.</p></li>
 
    <li><p>Create a copy of all the subpaths in <var title="">b</var>.
@@ -2281,7 +2365,10 @@ try {
    <li><p>Create a new subpath in <var title="">a</var> with (<var title="">x</var>, <var title="">y</var>) as the only point in the
    subpath.</p></li>
 
-  </ol><hr><!-- per Frank Oliver, issue 201 --><!--
+  </ol>
+
+  <hr>
+<!-- per Frank Oliver, issue 201 --><!--
   <p>The <dfn
   title="dom-path-addPathByStrokingPath"><code>addPathByStrokingPath(<var
   title="">b</var>, <var title="">styles</var>, <var
@@ -2525,7 +2612,8 @@ try {
    subpath.</p></li>
 
   </ol>
---><!-- per Frank Oliver, issue 201 --></div>
+--><!-- per Frank Oliver, issue 201 -->
+  </div>
 
 
 
@@ -2562,15 +2650,7 @@ try {
 
   </div>
 
-  <dl class="domintro"><dt><var title="">context</var> . <code title="dom-context-2d-currentTransform"><a href="#dom-context-2d-currenttransform">currentTransform</a></code> [ = <var title="">value</var> ]</dt>
-
-   <dd>
-
-    <p>Returns the transformation matrix, as an <code>SVGMatrix</code> object.</p>
-
-    <p>Can be set, to change the transformation matrix.</p>
-
-   </dd>
+  <dl class="domintro">
 
    <dt><var title="">context</var> . <code title="dom-context-2d-scale"><a href="#dom-context-2d-scale">scale</a></code>(<var title="">x</var>, <var title="">y</var>)</dt>
 
@@ -2612,27 +2692,9 @@ try {
 
    </dd>
 
-   <dt><var title="">context</var> . <code title="dom-context-2d-resetTransform"><a href="#dom-context-2d-resettransform">resetTransform</a></code>()</dt>
+  </dl>
 
-   <dd>
-
-    <p>Changes the transformation matrix to the identity transform.</p>
-
-   </dd>
-
-  </dl><div class="impl">
-
-  <p>The <dfn id="dom-context-2d-currenttransform" title="dom-context-2d-currentTransform"><code>currentTransform</code></dfn>,
-  on getting, must return the last object that it was set to. On
-  setting, its value must be changed to the new value, and the
-  transformation matrix must be updated to match the matrix described
-  by the new value. When the <code><a href="#canvasrenderingcontext2d">CanvasRenderingContext2D</a></code>
-  object is created, the <code title="dom-context-2d-currentTransform"><a href="#dom-context-2d-currenttransform">currentTransform</a></code>
-  attribute must be set a newly created <code>SVGMatrix</code> object.
-  When the transformation matrix is mutated by the methods described
-  in this section, the last <code>SVGMatrix</code> object to which the
-  attribute has been set must be mutated in a corresponding
-  fashion.</p>
+  <div class="impl">
 
   <p>The <dfn id="dom-context-2d-scale" title="dom-context-2d-scale"><code>scale(<var title="">x</var>, <var title="">y</var>)</code></dfn> method must
   add the scaling transformation described by the arguments to the
@@ -2657,16 +2719,25 @@ try {
 
   </div>
 
-  <table class="matrix"><tr><td><var title="">a</var></td>
+  <table class="matrix">
+   <tbody><tr>
+    <td><var title="">a</var></td>
     <td><var title="">c</var></td>
     <td><var title="">e</var></td>
-   </tr><tr><td><var title="">b</var></td>
+   </tr>
+   <tr>
+    <td><var title="">b</var></td>
     <td><var title="">d</var></td>
     <td><var title="">f</var></td>
-   </tr><tr><td>0</td>
+   </tr>
+   <tr>
+    <td>0</td>
     <td>0</td>
     <td>1</td>
-   </tr></table><p class="note">The arguments <var title="">a</var>, <var title="">b</var>, <var title="">c</var>, <var title="">d</var>, <var title="">e</var>, and <var title="">f</var> are sometimes called
+   </tr>
+  </tbody></table>
+
+  <p class="note">The arguments <var title="">a</var>, <var title="">b</var>, <var title="">c</var>, <var title="">d</var>, <var title="">e</var>, and <var title="">f</var> are sometimes called
   <var title="">m11</var>, <var title="">m12</var>, <var title="">m21</var>, <var title="">m22</var>, <var title="">dx</var>,
   and <var title="">dy</var> or <var title="">m11</var>, <var title="">m21</var>, <var title="">m12</var>, <var title="">m22</var>, <var title="">dx</var>, and <var title="">dy</var>. Care should be taken in particular with the order
   of the second and third arguments (<var title="">b</var> and <var title="">c</var>) as their order varies from API to API and APIs
@@ -2679,9 +2750,6 @@ try {
   transform to the identity matrix, and then invoke the <code><a href="#dom-context-2d-transform" title="dom-context-2d-transform">transform</a>(<var title="">a</var>, <var title="">b</var>, <var title="">c</var>, <var title="">d</var>, <var title="">e</var>,
   <var title="">f</var>)</code> method with the same arguments.</p>
 
-  <p>The <dfn id="dom-context-2d-resettransform" title="dom-context-2d-resetTransform"><code>resetTransform()</code></dfn>
-  method must reset the current transform to the identity matrix.</p>
-
   </div>
 
 
@@ -2689,7 +2757,9 @@ try {
 
   <h6 id="fill-and-stroke-styles"><span class="secno">1.8 </span>Fill and stroke styles</h6>
 
-  <dl class="domintro"><dt><var title="">context</var> . <code title="dom-context-2d-fillStyle"><a href="#dom-context-2d-fillstyle">fillStyle</a></code> [ = <var title="">value</var> ]</dt>
+  <dl class="domintro">
+
+   <dt><var title="">context</var> . <code title="dom-context-2d-fillStyle"><a href="#dom-context-2d-fillstyle">fillStyle</a></code> [ = <var title="">value</var> ]</dt>
 
    <dd>
 
@@ -2717,7 +2787,9 @@ try {
 
    </dd>
 
-  </dl><div class="impl">
+  </dl>
+
+  <div class="impl">
 
   <!-- v6 feature requests:
 
@@ -2810,7 +2882,9 @@ try {
 
   </div>
 
-  <hr><p>There are two types of gradients, linear gradients and radial
+  <hr>
+
+  <p>There are two types of gradients, linear gradients and radial
   gradients, both represented by objects implementing the opaque
   <code><a href="#canvasgradient">CanvasGradient</a></code> interface.</p>
 
@@ -2825,7 +2899,9 @@ try {
   stop, the color must be the color of the last stop. When there are
   no stops, the gradient is transparent black.</span></p>
 
-  <dl class="domintro"><dt><var title="">gradient</var> . <code title="dom-canvasgradient-addColorStop"><a href="#dom-canvasgradient-addcolorstop">addColorStop</a></code>(<var title="">offset</var>, <var title="">color</var>)</dt>
+  <dl class="domintro">
+
+   <dt><var title="">gradient</var> . <code title="dom-canvasgradient-addColorStop"><a href="#dom-canvasgradient-addcolorstop">addColorStop</a></code>(<var title="">offset</var>, <var title="">color</var>)</dt>
 
    <dd>
 
@@ -2862,16 +2938,9 @@ try {
 
    </dd>
 
-   <dt><var title="">pattern</var> . <code title="dom-canvaspattern-setTransform"><a href="#dom-canvaspattern-settransform">setTransform</a></code>(<var title="">transform</var>)</dt>
+  </dl>
 
-   <dd>
-
-    <p>Sets the transformation matrix that will be used when rendering
-    the pattern during a fill or stroke painting operation.</p>
-
-   </dd>
-
-  </dl><div class="impl">
+  <div class="impl">
 
   <p>The <dfn id="dom-canvasgradient-addcolorstop" title="dom-canvasgradient-addColorStop"><code>addColorStop(<var title="">offset</var>, <var title="">color</var>)</code></dfn>
   method on the <code><a href="#canvasgradient">CanvasGradient</a></code> interface adds a new stop
@@ -2917,7 +2986,9 @@ try {
 
   <p>Radial gradients must be rendered by following these steps:</p>
 
-  <ol><li><p>If <span title=""><var title="">x<sub>0</sub></var> = <var title="">x<sub>1</sub></var></span> and <span title=""><var title="">y<sub>0</sub></var> = <var title="">y<sub>1</sub></var></span> and <span title=""><var title="">r<sub>0</sub></var> = <var title="">r<sub>1</sub></var></span>, then the radial gradient must
+  <ol>
+
+   <li><p>If <span title=""><var title="">x<sub>0</sub></var> = <var title="">x<sub>1</sub></var></span> and <span title=""><var title="">y<sub>0</sub></var> = <var title="">y<sub>1</sub></var></span> and <span title=""><var title="">r<sub>0</sub></var> = <var title="">r<sub>1</sub></var></span>, then the radial gradient must
    paint nothing. Abort these steps.</p></li>
 
    <li>
@@ -2941,7 +3012,9 @@ try {
    canvas that have not yet been painted on by earlier circles in this
    step for this rendering of the gradient.</p></li>
 
-  </ol><p class="note">This effectively creates a cone, touched by the two
+  </ol>
+
+  <p class="note">This effectively creates a cone, touched by the two
   circles defined in the creation of the gradient, with the part of
   the cone before the start circle (0.0) using the color of the first
   offset, the part of the cone after the end circle (1.0) using the
@@ -2957,10 +3030,14 @@ try {
 
   </div>
 
-  <hr><p>Patterns are represented by objects implementing the opaque
+  <hr>
+
+  <p>Patterns are represented by objects implementing the opaque
   <code><a href="#canvaspattern">CanvasPattern</a></code> interface.</p>
 
-  <dl class="domintro"><dt><var title="">pattern</var> = <var title="">context</var> . <code title="dom-context-2d-createPattern"><a href="#dom-context-2d-createpattern">createPattern</a></code>(<var title="">image</var>, <var title="">repetition</var>)</dt>
+  <dl class="domintro">
+
+   <dt><var title="">pattern</var> = <var title="">context</var> . <code title="dom-context-2d-createPattern"><a href="#dom-context-2d-createpattern">createPattern</a></code>(<var title="">image</var>, <var title="">repetition</var>)</dt>
 
    <dd>
 
@@ -2977,7 +3054,9 @@ try {
 
    </dd>
 
-  </dl><div class="impl">
+  </dl>
+
+  <div class="impl">
 
   <p>To create objects of this type, the <dfn id="dom-context-2d-createpattern" title="dom-context-2d-createPattern"><code>createPattern(<var title="">image</var>, <var title="">repetition</var>)</code></dfn>
   method is used. The first argument gives the image to use as the
@@ -3031,58 +3110,18 @@ try {
   pattern (if the <code>repeat</code> string was not specified) must
   be transparent black.</p>
 
-  <p>When the <dfn id="dom-canvaspattern-settransform" title="dom-canvaspattern-setTransform"><code>setTransform()</code></dfn>
-  method is invoked on the pattern, the user agent must replace the
-  pattern's transformation matrix with the one described by the
-  <code>SVGMatrix</code> object provided as an argument to the
-  method.</p>
+  <p>If the original image data is a bitmap image, the value painted
+  at a point in the area of the repetitions is computed by filtering
+  the original image data. The user agent may use any filtering
+  algorithm (for example bilinear interpolation or nearest-neighbor).
+  When the filtering algorithm requires a pixel value from outside the
+  original image data, it must instead use the value from wrapping the
+  pixel's coordinates to the original image's dimensions. (That is,
+  the filter uses 'repeat' behavior, regardless of the value of
+  <var title="">repetition</var>.)
+  <!-- drawImage() has a similar paragraph with different rules -->
 
-  <p>When a pattern is to be rendered within an area, the user agent
-  must run the following steps to determine what is rendered:</p>
-
-  <ol><li><p>Create an infinite transparent black bitmap.</p></li>
-
-   <li>
-
-    <p>Place a copy of the image on the bitmap, anchored such that its
-    top left corner is at the origin of the coordinate space, with one
-    coordinate space unit per CSS pixel of the image, then place
-    repeated copies of this image horizontally to the left and right,
-    if the <code>repeat-x</code> string was specified, or vertically
-    up and down, if the <code>repeat-y</code> string was specified, or
-    in all four directions all over the bitmap, if the
-    <code>repeat</code> string was specified.</p>
-
-    <p>If the original image data is a bitmap image, the value painted
-    at a point in the area of the repetitions is computed by filtering
-    the original image data. If the <code title="dom-context-2d-imageSmoothingEnabled"><a href="#dom-context-2d-imagesmoothingenabled">imageSmoothingEnabled</a></code>
-    attribute is set to true, then the user agent may use any
-    filtering algorithm (for example bilinear interpolation or
-    nearest-neighbor). If the <code title="dom-context-2d-imageSmoothingEnabled"><a href="#dom-context-2d-imagesmoothingenabled">imageSmoothingEnabled</a></code>
-    attribute is set to false, the image must be rendered using
-    nearest-neighbor interpolation. When such a filtering algorithm
-    requires a pixel value from outside the original image data, it
-    must instead use the value from wrapping the pixel's coordinates
-    to the original image's dimensions. (That is, the filter uses
-    'repeat' behavior, regardless of the value of <var title="">repetition</var>.)
-    <!-- drawImage() has similar paragraphs with different rules -->
-
-   </p></li>
-
-   <li><p>Transform the resulting bitmap according to the pattern's
-   transformation matrix.</p></li>
-
-   <li><p>Transform the resulting bitmap again, this time according to
-   the <a href="#transformations" title="dom-context-2d-transformation">current
-   transformation matrix</a>.</p></li>
-
-   <li><p>Replace any part of the image outside the area in which the
-   pattern is to be rendered with transparent black.</p></li>
-
-   <li><p>The resulting bitmap is what is to be rendered, with the
-   same origin and same scale.</p></li>
-
-  </ol><p>When the <code title="dom-context-2d-createPattern"><a href="#dom-context-2d-createpattern">createPattern()</a></code> method
+  </p><p>When the <code title="dom-context-2d-createPattern"><a href="#dom-context-2d-createpattern">createPattern()</a></code> method
   is passed an animated image as its <var title="">image</var>
   argument, the user agent must use the poster frame of the animation,
   or, if there is no poster frame, the first frame of the
@@ -3098,11 +3137,20 @@ try {
   correction has been applied).</p>
   <!-- drawImage() has an equivalent paragraph -->
 
+  <!--
+   Requests for v5 features:
+    * apply transforms to patterns, so you don't have to create
+      transformed patterns manually by rendering them to an off-screen
+      canvas then using that canvas as the pattern.
+  -->
+
   </div>
 
   <div class="impl">
 
-  <hr><p>If a radial gradient or repeated pattern is used when the
+  <hr>
+
+  <p>If a radial gradient or repeated pattern is used when the
   transformation matrix is singular, the resulting style must be
   transparent black (otherwise the gradient or pattern would be
   collapsed to a point or line, leaving the other pixels undefined).
@@ -3132,13 +3180,15 @@ try {
   <span title="">(<var title="">x</var>, <span title=""><var title="">y</var>+<var title="">h</var></span>)</span>.</p>
 
   <p>Shapes are painted without affecting the <a href="#current-default-path">current default
-  path</a>, and are subject to the <a href="#clipping-region">clipping region</a>,
-  and, with the exception of <code title="dom-context-2d-clearRect"><a href="#dom-context-2d-clearrect">clearRect()</a></code>, also <a href="#shadows" title="shadows">shadow effects</a>, <a href="#dom-context-2d-globalalpha" title="dom-context-2d-globalAlpha">global alpha</a>, and <a href="#dom-context-2d-globalcompositeoperation" title="dom-context-2d-globalCompositeOperation">global composition
+  path</a>, and are subject to the <a href="#clipping-region" title="clipping
+  region">clipping region</a>, and, with the exception of <code title="dom-context-2d-clearRect"><a href="#dom-context-2d-clearrect">clearRect()</a></code>, also <a href="#shadows" title="shadows">shadow effects</a>, <a href="#dom-context-2d-globalalpha" title="dom-context-2d-globalAlpha">global alpha</a>, and <a href="#dom-context-2d-globalcompositeoperation" title="dom-context-2d-globalCompositeOperation">global composition
   operators</a>.</p>
 
   </div>
 
-  <dl class="domintro"><dt><var title="">context</var> . <code title="dom-context-2d-clearRect"><a href="#dom-context-2d-clearrect">clearRect</a></code>(<var title="">x</var>, <var title="">y</var>, <var title="">w</var>, <var title="">h</var>)</dt>
+  <dl class="domintro">
+
+   <dt><var title="">context</var> . <code title="dom-context-2d-clearRect"><a href="#dom-context-2d-clearrect">clearRect</a></code>(<var title="">x</var>, <var title="">y</var>, <var title="">w</var>, <var title="">h</var>)</dt>
 
    <dd>
 
@@ -3162,11 +3212,15 @@ try {
 
    </dd>
 
-  </dl><div class="impl">
+  </dl>
+
+  <div class="impl">
 
   <p>The <dfn id="dom-context-2d-clearrect" title="dom-context-2d-clearRect"><code>clearRect(<var title="">x</var>, <var title="">y</var>, <var title="">w</var>, <var title="">h</var>)</code></dfn> method must run the following steps:</p>
 
-  <ol><li><p>Let <var title="">pixels</var> be the set of pixels in
+  <ol>
+
+   <li><p>Let <var title="">pixels</var> be the set of pixels in
    the specified rectangle that also intersect the current clipping
    region.</p></li>
 
@@ -3175,7 +3229,9 @@ try {
 
    <li><p><a href="#clear-regions-that-cover-the-pixels">Clear regions that cover the pixels</a> in <var title="">pixels</var> in the <code>canvas</code> element.</p></li>
 
-  </ol><p class="note">If either height or width are zero, this method has
+  </ol>
+
+  <p class="note">If either height or width are zero, this method has
   no effect, since the set of pixels would be empty.</p>
 
   <p>The <dfn id="dom-context-2d-fillrect" title="dom-context-2d-fillRect"><code>fillRect(<var title="">x</var>, <var title="">y</var>, <var title="">w</var>, <var title="">h</var>)</code></dfn> method must paint the specified
@@ -3205,7 +3261,9 @@ try {
 
   <h6 id="drawing-text-to-the-canvas"><span class="secno">1.10 </span>Drawing text to the canvas</h6>
 
-  <dl class="domintro"><dt><var title="">context</var> . <code title="dom-context-2d-fillText"><a href="#dom-context-2d-filltext">fillText</a></code>(<var title="">text</var>, <var title="">x</var>, <var title="">y</var> [, <var title="">maxWidth</var> ] )</dt>
+  <dl class="domintro">
+
+   <dt><var title="">context</var> . <code title="dom-context-2d-fillText"><a href="#dom-context-2d-filltext">fillText</a></code>(<var title="">text</var>, <var title="">x</var>, <var title="">y</var> [, <var title="">maxWidth</var> ] )</dt>
    <dt><var title="">context</var> . <code title="dom-context-2d-strokeText"><a href="#dom-context-2d-stroketext">strokeText</a></code>(<var title="">text</var>, <var title="">x</var>, <var title="">y</var> [, <var title="">maxWidth</var> ] )</dt>
 
    <dd>
@@ -3225,25 +3283,18 @@ try {
    </dd>
 
    <dt><var title="">metrics</var> . <code title="dom-textmetrics-width"><a href="#dom-textmetrics-width">width</a></code></dt>
-   <dt><var title="">metrics</var> . <code title="dom-textmetrics-actualBoundingBoxLeft"><a href="#dom-textmetrics-actualboundingboxleft">actualBoundingBoxLeft</a></code></dt>
-   <dt><var title="">metrics</var> . <code title="dom-textmetrics-actualBoundingBoxRight"><a href="#dom-textmetrics-actualboundingboxright">actualBoundingBoxRight</a></code></dt>
-   <dt><var title="">metrics</var> . <code title="dom-textmetrics-fontBoundingBoxAscent"><a href="#dom-textmetrics-fontboundingboxascent">fontBoundingBoxAscent</a></code></dt>
-   <dt><var title="">metrics</var> . <code title="dom-textmetrics-fontBoundingBoxDescent"><a href="#dom-textmetrics-fontboundingboxdescent">fontBoundingBoxDescent</a></code></dt>
-   <dt><var title="">metrics</var> . <code title="dom-textmetrics-actualBoundingBoxAscent"><a href="#dom-textmetrics-actualboundingboxascent">actualBoundingBoxAscent</a></code></dt>
-   <dt><var title="">metrics</var> . <code title="dom-textmetrics-actualBoundingBoxDescent"><a href="#dom-textmetrics-actualboundingboxdescent">actualBoundingBoxDescent</a></code></dt>
-   <dt><var title="">metrics</var> . <code title="dom-textmetrics-emHeightAscent"><a href="#dom-textmetrics-emheightascent">emHeightAscent</a></code></dt>
-   <dt><var title="">metrics</var> . <code title="dom-textmetrics-emHeightDescent"><a href="#dom-textmetrics-emheightdescent">emHeightDescent</a></code></dt>
-   <dt><var title="">metrics</var> . <code title="dom-textmetrics-hangingBaseline"><a href="#dom-textmetrics-hangingbaseline">hangingBaseline</a></code></dt>
-   <dt><var title="">metrics</var> . <code title="dom-textmetrics-alphabeticBaseline"><a href="#dom-textmetrics-alphabeticbaseline">alphabeticBaseline</a></code></dt>
-   <dt><var title="">metrics</var> . <code title="dom-textmetrics-ideographicBaseline"><a href="#dom-textmetrics-ideographicbaseline">ideographicBaseline</a></code></dt>
 
    <dd>
 
-    <p>Returns the measurement described below.</p>
+    <p>Returns the advance width of the text that was passed to the
+    <code title="dom-context-2d-measureText"><a href="#dom-context-2d-measuretext">measureText()</a></code>
+    method.</p>
 
    </dd>
 
-  </dl><div class="impl">
+  </dl>
+
+  <div class="impl">
 
   <p>The <code><a href="#canvasrenderingcontext2d">CanvasRenderingContext2D</a></code> interface provides the
   following methods for rendering text directly to the canvas.</p>
@@ -3256,7 +3307,9 @@ try {
   values. Specifically, when the methods are called, the user agent
   must run the following steps:</p>
 
-  <ol><li><p>Run the <a href="#text-preparation-algorithm">text preparation algorithm</a>, passing it
+  <ol>
+
+   <li><p>Run the <a href="#text-preparation-algorithm">text preparation algorithm</a>, passing it
    <var title="">text</var>, the <code><a href="#canvasrenderingcontext2d">CanvasRenderingContext2D</a></code>
    object, and, if the <var title="">maxWidth</var> argument was
    provided, that argument. Let <var title="">glyphs</var> be the
@@ -3285,12 +3338,14 @@ try {
     <p>These shapes are painted without affecting the current path,
     and are subject to <a href="#shadows" title="shadows">shadow effects</a>,
     <a href="#dom-context-2d-globalalpha" title="dom-context-2d-globalAlpha">global alpha</a>, the
-    <a href="#clipping-region">clipping region</a>, and <a href="#dom-context-2d-globalcompositeoperation" title="dom-context-2d-globalCompositeOperation">global composition
+    <a href="#clipping-region" title="clipping region">clipping region</a>, and <a href="#dom-context-2d-globalcompositeoperation" title="dom-context-2d-globalCompositeOperation">global composition
     operators</a>.</p>
 
    </li>
 
-  </ol><!--v6DVT - this is commented out until CSS can get its act together
+  </ol>
+
+<!--v6DVT - this is commented out until CSS can get its act together
 enough to actual specify vertical text rendering (how long have we
 been waiting now?)
 
@@ -3434,8 +3489,8 @@ HAVE REJIGGED HOW TEXT WORKS IN v5
 
     <p>Text is painted without affecting the current path, and is
     subject to <span title="shadows">shadow effects</span>, <span
-    title="dom-context-2d-globalAlpha">global alpha</span>, the
-    <span>clipping region</span>, and <span
+    title="dom-context-2d-globalAlpha">global alpha</span>, the <span
+    title="clipping region">clipping region</span>, and <span
     title="dom-context-2d-globalCompositeOperation">global composition
     operators</span>.</p>
 
@@ -3443,7 +3498,9 @@ HAVE REJIGGED HOW TEXT WORKS IN v5
 
   </ol>
 
-v6DVT (also check for '- -' bits in the part above) --><p>The <dfn id="dom-context-2d-measuretext" title="dom-context-2d-measureText"><code>measureText()</code></dfn>
+v6DVT (also check for '- -' bits in the part above) -->
+
+  <p>The <dfn id="dom-context-2d-measuretext" title="dom-context-2d-measureText"><code>measureText()</code></dfn>
   method takes one argument, <var title="">text</var>. When the method
   is invoked, the user agent must replace all the <span title="space
   character">space characters</span> in <var title="">text</var> with
@@ -3455,7 +3512,8 @@ v6DVT (also check for '- -' bits in the part above) --><p>The <dfn id="dom-conte
   inline element set to the current font of the context as given by
   the <code title="dom-context-2d-font"><a href="#dom-context-2d-font">font</a></code> attribute, and
   must then create a new <code><a href="#textmetrics">TextMetrics</a></code> object with its
-  attributes set as described in the following list.
+  <code title="dom-textmetrics-width"><a href="#dom-textmetrics-width">width</a></code> attribute set to
+  the width of that inline box, in CSS pixels.
 <!--ADD-TOPIC:Security-->
   If doing these measurements requires using a font that has an
   <span>origin</span> that is not the <span title="same
@@ -3470,73 +3528,22 @@ v6DVT (also check for '- -' bits in the part above) --><p>The <dfn id="dom-conte
   <!--INSERT FINGERPRINT-->
   </p>
 
-  </div>
+  <p>The <code><a href="#textmetrics">TextMetrics</a></code> interface is used for the objects
+  returned from <code title="dom-context-2d-measureText"><a href="#dom-context-2d-measuretext">measureText()</a></code>. It has one
+  attribute, <dfn id="dom-textmetrics-width" title="dom-textmetrics-width"><code>width</code></dfn>, which is set
+  by the <code title="dom-context-2d-measureText"><a href="#dom-context-2d-measuretext">measureText()</a></code>
+  method.</p>
 
-  <dl><dt><dfn id="dom-textmetrics-width" title="dom-textmetrics-width"><code>width</code></dfn> attribute</dt>
-
-   <dd><p>The width of that inline box, in CSS pixels. (The text's advance width.)</p></dd>
-
-   <dt><dfn id="dom-textmetrics-actualboundingboxleft" title="dom-textmetrics-actualBoundingBoxLeft"><code>actualBoundingBoxLeft</code></dfn> attribute</dt>
-
-   <dd>
-    <p>The distance parallel to the baseline from the alignment point given by the <code title="dom-context-2d-textAlign"><a href="#dom-context-2d-textalign">textAlign</a></code> attribute to the left side of the bounding rectangle of the given text, in CSS pixels; positive numbers indicating a distance going left from the given alignment point.
-    </p><p class="note">The sum of this value and the next (<code title="dom-textmetrics-actualBoundingBoxRight"><a href="#dom-textmetrics-actualboundingboxright">actualBoundingBoxRight</a></code>) can be wider than the width of the inline box (<code title="dom-textmetrics-width"><a href="#dom-textmetrics-width">width</a></code>), in particular with slanted fonts where characters overhang their advance width.</p>
-
-   </dd>
-
-   <dt><dfn id="dom-textmetrics-actualboundingboxright" title="dom-textmetrics-actualBoundingBoxRight"><code>actualBoundingBoxRight</code></dfn> attribute</dt>
-
-   <dd>
-    <p>The distance parallel to the baseline from the alignment point given by the <code title="dom-context-2d-textAlign"><a href="#dom-context-2d-textalign">textAlign</a></code> attribute to the right side of the bounding rectangle of the given text, in CSS pixels; positive numbers indicating a distance going right from the given alignment point.</p>
-   </dd>
-
-   <dt><dfn id="dom-textmetrics-fontboundingboxascent" title="dom-textmetrics-fontBoundingBoxAscent"><code>fontBoundingBoxAscent</code></dfn> attribute</dt>
-
-   <dd>
-    <p>The distance from the horizontal line indicated by the <code title="dom-context-2d-textBaseline"><a href="#dom-context-2d-textbaseline">textBaseline</a></code> attribute to the top of the highest bounding rectangle of all the fonts used to render the text, in CSS pixels; positive numbers indicating a distance going up from the given baseline.</p>
-    <p class="note">This value and the next are useful when rendering a background that must have a consistent height even if the exact text being rendered changes. The <code title="dom-textmetrics-actualBoundingBoxAscent"><a href="#dom-textmetrics-actualboundingboxascent">actualBoundingBoxAscent</a></code> attribute (and its corresponding attribute for the descent) are useful when drawing a bounding box around specific text.</p>
-   </dd>
-
-   <dt><dfn id="dom-textmetrics-fontboundingboxdescent" title="dom-textmetrics-fontBoundingBoxDescent"><code>fontBoundingBoxDescent</code></dfn> attribute</dt>
-
-   <dd><p>The distance from the horizontal line indicated by the <code title="dom-context-2d-textBaseline"><a href="#dom-context-2d-textbaseline">textBaseline</a></code> attribute to the bottom of the lowest bounding rectangle of all the fonts used to render the text, in CSS pixels; positive numbers indicating a distance going down from the given baseline.</p></dd>
-
-   <dt><dfn id="dom-textmetrics-actualboundingboxascent" title="dom-textmetrics-actualBoundingBoxAscent"><code>actualBoundingBoxAscent</code></dfn> attribute</dt>
-
-   <dd>
-    <p>The distance from the horizontal line indicated by the <code title="dom-context-2d-textBaseline"><a href="#dom-context-2d-textbaseline">textBaseline</a></code> attribute to the top of the bounding rectangle of the given text, in CSS pixels; positive numbers indicating a distance going up from the given baseline.
-    </p><p class="note">This number can vary greatly based on the input text, even if the first font specified covers all the characters in the input. For example, the <code title="dom-textmetrics-actualBoundingBoxAscent"><a href="#dom-textmetrics-actualboundingboxascent">actualBoundingBoxAscent</a></code> of a lowercase "o" from an alphabetic baseline would be less than that of an uppercase "F". The value can easily be negative; for example, the distance from the top of the em box (<code title="dom-context-2d-textBaseline"><a href="#dom-context-2d-textbaseline">textBaseline</a></code> value "<code title="dom-context-2d-textBaseline-top"><a href="#dom-context-2d-textbaseline-top">top</a></code>") to the top of the bounding rectangle when the given text is just a single comma "<code title="">,</code>" would likely (unless the font is quite unusual) be negative.</p>
-   </dd>
-
-   <dt><dfn id="dom-textmetrics-actualboundingboxdescent" title="dom-textmetrics-actualBoundingBoxDescent"><code>actualBoundingBoxDescent</code></dfn> attribute</dt>
-
-   <dd><p>The distance from the horizontal line indicated by the <code title="dom-context-2d-textBaseline"><a href="#dom-context-2d-textbaseline">textBaseline</a></code> attribute to the bottom of the bounding rectangle of the given text, in CSS pixels; positive numbers indicating a distance going down from the given baseline.</p></dd>
-
-   <dt><dfn id="dom-textmetrics-emheightascent" title="dom-textmetrics-emHeightAscent"><code>emHeightAscent</code></dfn> attribute</dt>
-
-   <dd><p>The distance from the horizontal line indicated by the <code title="dom-context-2d-textBaseline"><a href="#dom-context-2d-textbaseline">textBaseline</a></code> attribute to the top of the em square in the line box, in CSS pixels; positive numbers indicating that the given baseline is below the top of the em square (so this value will usually be positive). Zero if the given baseline is the top of the em square; half the font size if the given baseline is the middle of the em square.</p></dd>
-
-   <dt><dfn id="dom-textmetrics-emheightdescent" title="dom-textmetrics-emHeightDescent"><code>emHeightDescent</code></dfn> attribute</dt>
-
-   <dd><p>The distance from the horizontal line indicated by the <code title="dom-context-2d-textBaseline"><a href="#dom-context-2d-textbaseline">textBaseline</a></code> attribute to the bottom of the em square in the line box, in CSS pixels; positive numbers indicating that the given baseline is below the bottom of the em square (so this value will usually be negative). (Zero if the given baseline is the top of the em square.)</p></dd>
-
-   <dt><dfn id="dom-textmetrics-hangingbaseline" title="dom-textmetrics-hangingBaseline"><code>hangingBaseline</code></dfn> attribute</dt>
-
-   <dd><p>The distance from the horizontal line indicated by the <code title="dom-context-2d-textBaseline"><a href="#dom-context-2d-textbaseline">textBaseline</a></code> attribute to the hanging baseline of the line box, in CSS pixels; positive numbers indicating that the given baseline is below the hanging baseline. (Zero if the given baseline is the hanging baseline.)</p></dd>
-
-   <dt><dfn id="dom-textmetrics-alphabeticbaseline" title="dom-textmetrics-alphabeticBaseline"><code>alphabeticBaseline</code></dfn> attribute</dt>
-
-   <dd><p>The distance from the horizontal line indicated by the <code title="dom-context-2d-textBaseline"><a href="#dom-context-2d-textbaseline">textBaseline</a></code> attribute to the alphabetic baseline of the line box, in CSS pixels; positive numbers indicating that the given baseline is below the alphabetic baseline. (Zero if the given baseline is the alphabetic baseline.)</p></dd>
-
-   <dt><dfn id="dom-textmetrics-ideographicbaseline" title="dom-textmetrics-ideographicBaseline"><code>ideographicBaseline</code></dfn> attribute</dt>
-
-   <dd><p>The distance from the horizontal line indicated by the <code title="dom-context-2d-textBaseline"><a href="#dom-context-2d-textbaseline">textBaseline</a></code> attribute to the ideographic baseline of the line box, in CSS pixels; positive numbers indicating that the given baseline is below the ideographic baseline. (Zero if the given baseline is the ideographic baseline.)</p></dd>
-
-  </dl><p class="note">Glyphs rendered using <code title="dom-context-2d-fillText"><a href="#dom-context-2d-filltext">fillText()</a></code> and <code title="dom-context-2d-strokeText"><a href="#dom-context-2d-stroketext">strokeText()</a></code> can spill out
+  <p class="note">Glyphs rendered using <code title="dom-context-2d-fillText"><a href="#dom-context-2d-filltext">fillText()</a></code> and <code title="dom-context-2d-strokeText"><a href="#dom-context-2d-stroketext">strokeText()</a></code> can spill out
   of the box given by the font size (the em square size) and the width
   returned by <code title="dom-context-2d-measureText"><a href="#dom-context-2d-measuretext">measureText()</a></code> (the text
-  width). Authors are encouraged to use the bounding box values
-  described above if this is an issue.</p>
+  width). This version of the specification does not provide a way to
+  obtain the bounding box dimensions of the text. If the text is to be
+  rendered and removed, care needs to be taken to replace the entire
+  area of the canvas that the clipping region covers, not just the box
+  given by the em square height and measured text width.</p>
+
+  </div>
 
   <p class="note">A future version of the 2D context API may provide a
   way to render fragments of documents, rendered using CSS, straight
@@ -3552,7 +3559,9 @@ v6DVT (also check for '- -' bits in the part above) --><p>The <dfn id="dom-conte
   <a href="#drawing-state">drawing state</a>. The <a href="#current-default-path">current default path</a> is
   a <a href="#concept-path" title="concept-path">path</a>, as described above.</p>
 
-  <dl class="domintro"><dt><var title="">context</var> . <code title="dom-context-2d-beginPath"><a href="#dom-context-2d-beginpath">beginPath</a></code>()</dt>
+  <dl class="domintro">
+
+   <dt><var title="">context</var> . <code title="dom-context-2d-beginPath"><a href="#dom-context-2d-beginpath">beginPath</a></code>()</dt>
 
    <dd>
 
@@ -3600,8 +3609,7 @@ v6DVT (also check for '- -' bits in the part above) --><p>The <dfn id="dom-conte
     <p>If the given element is focused, and the user has configured
     his system to draw focus rings in a particular manner (for
     example, high contrast focus rings), draws a focus ring around the
-    <a href="#current-default-path">current default path</a> or the given path and returns
-    false.</p>
+    <a href="#current-default-path">current default path</a> or the given path and returns false.</p>
 
     <p>Otherwise, returns true if the given element is focused, and
     false otherwise. This can thus be used to determine when to draw a
@@ -3616,9 +3624,9 @@ v6DVT (also check for '- -' bits in the part above) --><p>The <dfn id="dom-conte
 
    <dd>
 
-    <p>Scrolls the <a href="#current-default-path">current default path</a> or the given path
-    into view. This is especially useful on devices with small
-    screens, where the whole canvas might not be visible at once.</p>
+    <p>Scrolls the <a href="#current-default-path">current default path</a> into view. This is especially
+    useful on devices with small screens, where the whole canvas might
+    not be visible at once.</p>
 
    </dd>
 
@@ -3628,17 +3636,7 @@ v6DVT (also check for '- -' bits in the part above) --><p>The <dfn id="dom-conte
 
    <dd>
 
-    <p>Further constrains the clipping region to the <a href="#current-default-path">current
-    default path</a> or the given path.</p>
-
-   </dd>
-
-
-   <dt><var title="">context</var> . <code title="dom-context-2d-resetClip"><a href="#dom-context-2d-resetclip">resetClip</a></code>()</dt>
-
-   <dd>
-
-    <p>Unconstrains the clipping region.</p>
+    <p>Further constrains the clipping region to the <a href="#current-default-path">current default path</a>.</p>
 
    </dd>
 
@@ -3652,7 +3650,9 @@ v6DVT (also check for '- -' bits in the part above) --><p>The <dfn id="dom-conte
 
    </dd>
 
-  </dl><div class="impl">
+  </dl>
+
+  <div class="impl">
 
   <p>The <dfn id="dom-context-2d-beginpath" title="dom-context-2d-beginPath"><code>beginPath()</code></dfn>
   method must empty the list of subpaths in the context's
@@ -3702,17 +3702,22 @@ v6DVT (also check for '- -' bits in the part above) --><p>The <dfn id="dom-conte
   the <a href="#current-default-path">current default path</a> or any <code><a href="#path">Path</a></code>
   objects, and must be subject to <a href="#shadows" title="shadows">shadow
   effects</a>, <a href="#dom-context-2d-globalalpha" title="dom-context-2d-globalAlpha">global
-  alpha</a>, the <a href="#clipping-region">clipping region</a>, and <a href="#dom-context-2d-globalcompositeoperation" title="dom-context-2d-globalCompositeOperation">global composition
+  alpha</a>, the <a href="#clipping-region" title="clipping region">clipping
+  region</a>, and <a href="#dom-context-2d-globalcompositeoperation" title="dom-context-2d-globalCompositeOperation">global composition
   operators</a>. (The effect of transformations is described above
   and varies based on which path is being used.)</p>
 
   <p>Zero-length line segments must be pruned before stroking a path.
   Empty subpaths must be ignored.</p>
 
-  <hr><p id="dom-context-2d-drawosfocusring">The <dfn id="dom-context-2d-drawsystemfocusring" title="dom-context-2d-drawSystemFocusRing"><code>drawSystemFocusRing(<var title="">element</var>)</code></dfn> method, when invoked, must run
+  <hr>
+
+  <p id="dom-context-2d-drawosfocusring">The <dfn id="dom-context-2d-drawsystemfocusring" title="dom-context-2d-drawSystemFocusRing"><code>drawSystemFocusRing(<var title="">element</var>)</code></dfn> method, when invoked, must run
   the following steps:</p>
 
-  <ol><li><p>If <var title="">element</var> is not focused or is not a
+  <ol>
+
+   <li><p>If <var title="">element</var> is not focused or is not a
    descendant of the element with whose context the method is
    associated, then abort these steps.</p></li>
 
@@ -3737,9 +3742,9 @@ v6DVT (also check for '- -' bits in the part above) --><p>The <dfn id="dom-conte
     <p>The focus ring should not be subject to the <a href="#shadows" title="shadows">shadow effects</a>, the <a href="#dom-context-2d-globalalpha" title="dom-context-2d-globalAlpha">global alpha</a>, or the
     <a href="#dom-context-2d-globalcompositeoperation" title="dom-context-2d-globalCompositeOperation">global
     composition operators</a>, but <em>should</em> be subject to
-    the <a href="#clipping-region">clipping region</a>. (The effect of transformations
-    is described above and varies based on which path is being
-    used.)</p>
+    the <a href="#clipping-region" title="clipping region">clipping region</a>. (The
+    effect of transformations is described above and varies based on
+    which path is being used.)</p>
 
    </li>
 
@@ -3752,10 +3757,14 @@ v6DVT (also check for '- -' bits in the part above) --><p>The <dfn id="dom-conte
 
    </li>
 
-  </ol><p>The <dfn id="dom-context-2d-drawcustomfocusring" title="dom-context-2d-drawCustomFocusRing"><code>drawCustomFocusRing(<var title="">element</var>)</code></dfn> method, when invoked, must run
+  </ol>
+
+  <p>The <dfn id="dom-context-2d-drawcustomfocusring" title="dom-context-2d-drawCustomFocusRing"><code>drawCustomFocusRing(<var title="">element</var>)</code></dfn> method, when invoked, must run
   the following steps:</p>
 
-  <ol><li><p>If <var title="">element</var> is not focused or is not a
+  <ol>
+
+   <li><p>If <var title="">element</var> is not focused or is not a
    descendant of the element with whose context the method is
    associated, then return false and abort these steps.</p></li>
 
@@ -3770,9 +3779,9 @@ v6DVT (also check for '- -' bits in the part above) --><p>The <dfn id="dom-conte
     <p>The focus ring should not be subject to the <a href="#shadows" title="shadows">shadow effects</a>, the <a href="#dom-context-2d-globalalpha" title="dom-context-2d-globalAlpha">global alpha</a>, or the
     <a href="#dom-context-2d-globalcompositeoperation" title="dom-context-2d-globalCompositeOperation">global
     composition operators</a>, but <em>should</em> be subject to
-    the <a href="#clipping-region">clipping region</a>. (The effect of transformations
-    is described above and varies based on which path is being
-    used.)</p>
+    the <a href="#clipping-region" title="clipping region">clipping region</a>. (The
+    effect of transformations is described above and varies based on
+    which path is being used.)</p>
 
    </li>
 
@@ -3787,10 +3796,14 @@ v6DVT (also check for '- -' bits in the part above) --><p>The <dfn id="dom-conte
 
    <li><p>Return <var title="">result</var>.</p></li>
 
-  </ol><p>The <dfn id="dom-context-2d-scrollpathintoview" title="dom-context-2d-scrollPathIntoView"><code>scrollPathIntoView()</code></dfn>
+  </ol>
+
+  <p>The <dfn id="dom-context-2d-scrollpathintoview" title="dom-context-2d-scrollPathIntoView"><code>scrollPathIntoView()</code></dfn>
   method, when invoked, must run the following steps:</p>
 
-  <ol><li><p>Let <var title="">the specified rectangle</var> be the
+  <ol>
+
+   <li><p>Let <var title="">the specified rectangle</var> be the
    rectangle of the bounding box of the intended path.</p></li>
 
    <li><p>Let <var title="">notional child</var> be a hypothetical
@@ -3806,7 +3819,9 @@ v6DVT (also check for '- -' bits in the part above) --><p>The <dfn id="dom-conte
    time the <span>event loop</span> reaches its "update the rendering"
    step to optionally inform the user.</p></li>
 
-  </ol><p class="note" id="inform">"Inform the user", as used in this
+  </ol>
+
+  <p class="note" id="inform">"Inform the user", as used in this
   section, could mean calling a system accessibility API, which would
   notify assistive technologies such as magnification tools. To
   properly drive magnification based on a focus change, a system
@@ -3818,7 +3833,9 @@ v6DVT (also check for '- -' bits in the part above) --><p>The <dfn id="dom-conte
   user agent is scrolling as the bounding box of the current
   selection.</p>
 
-  <hr><p>The <dfn id="dom-context-2d-clip" title="dom-context-2d-clip"><code>clip()</code></dfn>
+  <hr>
+
+  <p>The <dfn id="dom-context-2d-clip" title="dom-context-2d-clip"><code>clip()</code></dfn>
   method must create a new <dfn id="clipping-region">clipping region</dfn> by calculating
   the intersection of the current clipping region and the area
   described by the intended path, using the non-zero winding number
@@ -3836,14 +3853,14 @@ v6DVT (also check for '- -' bits in the part above) --><p>The <dfn id="dom-conte
        - also "add", "subtract", "replace", "intersect" and "xor"
        - maybe just support creating unions, intersections, and other -ions of paths
   -->
+  <!-- v5
+   Jordan OSETE suggests:
+    * support ways of resetting the clipping region without save/restore
+  -->
 
-  <p>The <dfn id="dom-context-2d-resetclip" title="dom-context-2d-resetClip"><code>resetClip()</code></dfn>
-  method must create a new <a href="#clipping-region">clipping region</a> that is the
-  rectangle with the top left corner at (0,0) and the width and height
-  of the coordinate space. The new clipping region replaces the
-  current clipping region.</p>
+  <hr>
 
-  <hr><p>The <dfn id="dom-context-2d-ispointinpath" title="dom-context-2d-isPointInPath"><code>isPointInPath()</code></dfn>
+  <p>The <dfn id="dom-context-2d-ispointinpath" title="dom-context-2d-isPointInPath"><code>isPointInPath()</code></dfn>
   method must return true if the point given by the <var title="">x</var> and <var title="">y</var> coordinates passed to the
   method, when treated as coordinates in the canvas coordinate space
   unaffected by the current transformation, is inside the intended
@@ -3852,7 +3869,9 @@ v6DVT (also check for '- -' bits in the part above) --><p>The <dfn id="dom-conte
   to be inside the path. If either of the arguments is infinite or
   NaN, then the method must return false.</p>
 
-  <hr></div>
+  <hr>
+
+  </div>
 
   <div class="example" id="drawCustomFocusRingExample">
 
@@ -3943,15 +3962,22 @@ v6DVT (also check for '- -' bits in the part above) --><p>The <dfn id="dom-conte
 
   <p>This method can be invoked with three different sets of arguments:</p>
 
-  <ul class="brief"><li><code title="">drawImage(<var title="">image</var>, <var title="">dx</var>, <var title="">dy</var>)</code>
+  <ul class="brief">
+   <li><code title="">drawImage(<var title="">image</var>, <var title="">dx</var>, <var title="">dy</var>)</code>
    </li><li><code title="">drawImage(<var title="">image</var>, <var title="">dx</var>, <var title="">dy</var>, <var title="">dw</var>, <var title="">dh</var>)</code>
    </li><li><code title="">drawImage(<var title="">image</var>, <var title="">sx</var>, <var title="">sy</var>, <var title="">sw</var>, <var title="">sh</var>, <var title="">dx</var>, <var title="">dy</var>, <var title="">dw</var>, <var title="">dh</var>)</code>
-  </li></ul><!-- v3: drawImage() of an ImageData object might make sense (when resizing as well as filtering) - ack Charles Pritchard --><p>Each of those three can take either an
+  </li></ul>
+
+  <!-- v3: drawImage() of an ImageData object might make sense (when resizing as well as filtering) - ack Charles Pritchard -->
+
+  <p>Each of those three can take either an
   <code>HTMLImageElement</code>, an <code>HTMLCanvasElement</code>, or
   an <code>HTMLVideoElement</code> for the <var title="">image</var>
   argument.</p>
 
-  <dl class="domintro"><dt><var title="">context</var> . <code title="dom-context-2d-drawImage"><a href="#dom-context-2d-drawimage">drawImage</a></code>(<var title="">image</var>, <var title="">dx</var>, <var title="">dy</var>)</dt>
+  <dl class="domintro">
+
+   <dt><var title="">context</var> . <code title="dom-context-2d-drawImage"><a href="#dom-context-2d-drawimage">drawImage</a></code>(<var title="">image</var>, <var title="">dx</var>, <var title="">dy</var>)</dt>
    <dt><var title="">context</var> . <code title="dom-context-2d-drawImage"><a href="#dom-context-2d-drawimage">drawImage</a></code>(<var title="">image</var>, <var title="">dx</var>, <var title="">dy</var>, <var title="">dw</var>, <var title="">dh</var>)</dt>
    <dt><var title="">context</var> . <code title="dom-context-2d-drawImage"><a href="#dom-context-2d-drawimage">drawImage</a></code>(<var title="">image</var>, <var title="">sx</var>, <var title="">sy</var>, <var title="">sw</var>, <var title="">sh</var>, <var title="">dx</var>, <var title="">dy</var>, <var title="">dw</var>, <var title="">dh</var>)</dt>
 
@@ -3972,7 +3998,9 @@ v6DVT (also check for '- -' bits in the part above) --><p>The <dfn id="dom-conte
 
    </dd>
 
-  </dl><div class="impl">
+  </dl>
+
+  <div class="impl">
 
   <p>If not specified, the <var title="">dw</var> and <var title="">dh</var> arguments must default to the values of <var title="">sw</var> and <var title="">sh</var>, interpreted such that
   one CSS pixel in the image is treated as one unit in the canvas
@@ -4035,15 +4063,8 @@ v6DVT (also check for '- -' bits in the part above) --><p>The <dfn id="dom-conte
   suggested that 5,5,-2,-2 was different than 3,3,2,2; this is trying
   to clarify that this is no the case. --></p>
 
-  <p>If the <code title="dom-context-2d-imageSmoothingEnabled"><a href="#dom-context-2d-imagesmoothingenabled">imageSmoothingEnabled</a></code>
-  attribute is set to true, then the user agent should attempt to
-  apply a smoothing algorithm to the image data when it is scaled.
-  Otherwise, the image must be rendered using nearest-neighbor
-  interpolation.</p>
-
-  <p class="note">This specification does not define the precise
-  algorithm to use when scaling an image when the <code title="dom-context-2d-imageSmoothingEnabled"><a href="#dom-context-2d-imagesmoothingenabled">imageSmoothingEnabled</a></code>
-  attribute is set to true.</p>
+  <p class="note">This specification does not define the algorithm to
+  use when scaling the image, if necessary.</p>
 
   <p class="note">When a canvas is drawn onto itself, the <a href="#drawing-model">drawing
   model</a> requires the source to be copied before the image is drawn
@@ -4080,8 +4101,7 @@ v6DVT (also check for '- -' bits in the part above) --><p>The <dfn id="dom-conte
   <!-- createPattern() has an equivalent paragraph -->
 
   <p>Images are painted without affecting the current path, and are
-  subject to <a href="#shadows" title="shadows">shadow effects</a>, <a href="#dom-context-2d-globalalpha" title="dom-context-2d-globalAlpha">global alpha</a>, the
-  <a href="#clipping-region">clipping region</a>, and <a href="#dom-context-2d-globalcompositeoperation" title="dom-context-2d-globalCompositeOperation">global composition
+  subject to <a href="#shadows" title="shadows">shadow effects</a>, <a href="#dom-context-2d-globalalpha" title="dom-context-2d-globalAlpha">global alpha</a>, the <a href="#clipping-region" title="clipping region">clipping region</a>, and <a href="#dom-context-2d-globalcompositeoperation" title="dom-context-2d-globalCompositeOperation">global composition
   operators</a>.</p>
 
   </div>
@@ -4100,7 +4120,9 @@ v6DVT (also check for '- -' bits in the part above) --><p>The <dfn id="dom-conte
   <p>Each <dfn id="hit-region">hit region</dfn> consists of the following
   information:</p>
 
-  <ul><li><p>A <dfn id="hit-region's-set-of-pixels" title="hit region's set of pixels">set of
+  <ul>
+
+   <li><p>A <dfn id="hit-region's-set-of-pixels" title="hit region's set of pixels">set of
    pixels</dfn> on the <code>canvas</code> element's bitmap for which
    this region is responsible.</p></li>
 
@@ -4142,7 +4164,9 @@ v6DVT (also check for '- -' bits in the part above) --><p>The <dfn id="dom-conte
     description">unbacked region description</dfn> consists of the
     following:</p>
 
-    <ul class="brief"><li><p>Optionally, a <dfn id="hit-region's-label" title="hit region's
+    <ul class="brief">
+
+     <li><p>Optionally, a <dfn id="hit-region's-label" title="hit region's
      label">label</dfn>.</p>
 
      </li><li><p>An <dfn id="hit-region's-aria-role" title="hit region's ARIA role">ARIA role</dfn>,
@@ -4150,16 +4174,24 @@ v6DVT (also check for '- -' bits in the part above) --><p>The <dfn id="dom-conte
      description">unbacked region description</a> also has a label,
      could be the empty string.</p></li>
 
-    </ul></li>
+    </ul>
 
-  </ul><dl class="domintro"><dt><var title="">context</var> . <code title="dom-context-2d-addHitRegion"><a href="#dom-context-2d-addhitregion">addHitRegion</a></code>(<var title="">options</var>)</dt>
+   </li>
+
+  </ul>
+
+  <dl class="domintro">
+
+   <dt><var title="">context</var> . <code title="dom-context-2d-addHitRegion"><a href="#dom-context-2d-addhitregion">addHitRegion</a></code>(<var title="">options</var>)</dt>
 
    <dd>
 
     <p>Adds a hit region to the canvas bitmap. The argument is an
     object with the following members:</p>
 
-    <dl><dt><code title="dom-HitRegionOptions-path">path</code> (default null)
+    <dl>
+
+     <dt><code title="dom-HitRegionOptions-path">path</code> (default null)
 
      </dt><dd>A <code><a href="#path">Path</a></code> object that describes the pixels that
      form part of the region. If this member is not provided or is set
@@ -4209,9 +4241,13 @@ v6DVT (also check for '- -' bits in the part above) --><p>The <dfn id="dom-conte
      </dt><dd>An ARIA role for accessibility tools to use to determine how
      to represent this region, if there is no control.</dd>
 
-    </dl><p>Hit regions can be used for a variety of purposes:</p>
+    </dl>
 
-    <ul><li>With an ID, they can make hit detection easier by having the
+    <p>Hit regions can be used for a variety of purposes:</p>
+
+    <ul>
+
+     <li>With an ID, they can make hit detection easier by having the
      user agent check which region the mouse is over and include the
      ID in the mouse events.</li>
 
@@ -4227,7 +4263,9 @@ v6DVT (also check for '- -' bits in the part above) --><p>The <dfn id="dom-conte
      of the canvas to have different cursors, with the user agent
      automatically switching between them.</li>
 -->
-    </ul></dd>
+    </ul>
+
+   </dd>
 
    <dt><var title="">context</var> . <code title="dom-context-2d-removeHitRegion"><a href="#dom-context-2d-removehitregion">removeHitRegion</a></code>(<var title="">options</var>)</dt>
 
@@ -4244,7 +4282,9 @@ v6DVT (also check for '- -' bits in the part above) --><p>The <dfn id="dom-conte
 
    </dd>
 
-  </dl><div class="impl">
+  </dl>
+
+  <div class="impl">
 
   <p>A <a href="#hit-region">hit region</a> <var title="">A</var> is an
   <dfn id="ancestor-region">ancestor region</dfn> of a <a href="#hit-region">hit region</a> <var title="">B</var> if <var title="">B</var> has a <a href="#hit-region's-parent" title="hit
@@ -4257,7 +4297,9 @@ v6DVT (also check for '- -' bits in the part above) --><p>The <dfn id="dom-conte
   algorithm (which can return a <a href="#hit-region">hit region</a> or
   nothing):</p>
 
-  <ol><li><p>If <var title="">ID</var> is null, return nothing and abort
+  <ol>
+
+   <li><p>If <var title="">ID</var> is null, return nothing and abort
    these steps.</p></li>
 
    <li><p>Let <var title="">list</var> be the <a href="#hit-region-list">hit region
@@ -4271,11 +4313,15 @@ v6DVT (also check for '- -' bits in the part above) --><p>The <dfn id="dom-conte
 
    <li><p>Otherwise, return nothing.</p></li>
 
-  </ol><p><dfn id="the-region-representing-the-control">The region representing the control</dfn> <var title="">control</var> for a <code>canvas</code> element <var title="">ancestor</var> is the value returned by the following
+  </ol>
+
+  <p><dfn id="the-region-representing-the-control">The region representing the control</dfn> <var title="">control</var> for a <code>canvas</code> element <var title="">ancestor</var> is the value returned by the following
   algorithm (which can return a <a href="#hit-region">hit region</a> or
   nothing):</p>
 
-  <ol><li><p>If <var title="">control</var> is not a descendant of <var title="">ancestor</var>, then return nothing and abort these
+  <ol>
+
+   <li><p>If <var title="">control</var> is not a descendant of <var title="">ancestor</var>, then return nothing and abort these
    steps.</p></li>
 
    <li><p>Let <var title="">list</var> be the <a href="#hit-region-list">hit region
@@ -4289,10 +4335,14 @@ v6DVT (also check for '- -' bits in the part above) --><p>The <dfn id="dom-conte
 
    <li><p>Otherwise, return nothing.</p></li>
 
-  </ol><p><dfn id="the-control-represented-by-a-region">The control represented by a region</dfn> <var title="">region</var> for a <code>canvas</code> element <var title="">ancestor</var> is the value returned by the following
+  </ol>
+
+  <p><dfn id="the-control-represented-by-a-region">The control represented by a region</dfn> <var title="">region</var> for a <code>canvas</code> element <var title="">ancestor</var> is the value returned by the following
   algorithm (which can return an element or nothing):</p>
 
-  <ol><li><p>If <var title="">region</var> has no <a href="#hit-region's-control" title="hit
+  <ol>
+
+   <li><p>If <var title="">region</var> has no <a href="#hit-region's-control" title="hit
    region's control">control</a>, return nothing and abort these
    steps.</p></li>
 
@@ -4304,7 +4354,8 @@ v6DVT (also check for '- -' bits in the part above) --><p>The <dfn id="dom-conte
 
    <li><p>Otherwise, return <var title="">control</var>.</p></li>
 
-  </ol><!-- per Frank Oliver, issue 201 --><!--
+  </ol>
+<!-- per Frank Oliver, issue 201 --> <!--
   <p><dfn>The cursor for a hit region</dfn> <var
   title="">region</var> of a <code>canvas</code> element <var
   title="">ancestor</var> is the value returned by the following
@@ -4328,12 +4379,15 @@ v6DVT (also check for '- -' bits in the part above) --><p>The <dfn id="dom-conte
    href="#refsCSSUI">[CSSUI]</a></p></li>
 
   </ol>
---><p><dfn id="the-region-for-a-pixel">The region for a pixel</dfn> <var title="">pixel</var> on a
+-->
+  <p><dfn id="the-region-for-a-pixel">The region for a pixel</dfn> <var title="">pixel</var> on a
   <code>canvas</code> element <var title="">ancestor</var> is the
   value returned by the following algorithm (which can return a
   <a href="#hit-region">hit region</a> or nothing):</p>
 
-  <ol><li><p>Let <var title="">list</var> be the <a href="#hit-region-list">hit region
+  <ol>
+
+   <li><p>Let <var title="">list</var> be the <a href="#hit-region-list">hit region
    list</a> associated with <var title="">ancestor</var>'s
    bitmap.</p></li>
 
@@ -4344,10 +4398,14 @@ v6DVT (also check for '- -' bits in the part above) --><p>The <dfn id="dom-conte
 
    <li><p>Otherwise, return nothing.</p></li>
 
-  </ol><p>To <dfn id="clear-regions-that-cover-the-pixels">clear regions that cover the pixels</dfn> <var title="">pixels</var> on a <code>canvas</code> element <var title="">ancestor</var>, the user agent must run the following
+  </ol>
+
+  <p>To <dfn id="clear-regions-that-cover-the-pixels">clear regions that cover the pixels</dfn> <var title="">pixels</var> on a <code>canvas</code> element <var title="">ancestor</var>, the user agent must run the following
   steps:</p>
 
-  <ol><li><p>Let <var title="">list</var> be the <a href="#hit-region-list">hit region
+  <ol>
+
+   <li><p>Let <var title="">list</var> be the <a href="#hit-region-list">hit region
    list</a> associated with <var title="">ancestor</var>'s
    bitmap.</p></li>
 
@@ -4357,11 +4415,15 @@ v6DVT (also check for '- -' bits in the part above) --><p>The <dfn id="dom-conte
 
    <li><p><a href="#garbage-collect-the-regions">Garbage-collect the regions</a> of <var title="">ancestor</var>.</p></li>
 
-  </ol><p>To <dfn id="garbage-collect-the-regions">garbage-collect the regions</dfn> of a
+  </ol>
+
+  <p>To <dfn id="garbage-collect-the-regions">garbage-collect the regions</dfn> of a
   <code>canvas</code> element <var title="">ancestor</var>, the user
   agent must run the following steps:</p>
 
-  <ol><li><p>Let <var title="">list</var> be the <a href="#hit-region-list">hit region
+  <ol>
+
+   <li><p>Let <var title="">list</var> be the <a href="#hit-region-list">hit region
    list</a> associated with <var title="">ancestor</var>'s
    bitmap.</p></li>
 
@@ -4380,15 +4442,21 @@ v6DVT (also check for '- -' bits in the part above) --><p>The <dfn id="dom-conte
 
    <li><p>Jump back to the step labeled <i>loop</i>.</p></li>
 
-  </ol><p class="note">Adding a new region and calling <code title="dom-context-2d-clearRect"><a href="#dom-context-2d-clearrect">clearRect()</a></code> are the two ways
+  </ol>
+
+  <p class="note">Adding a new region and calling <code title="dom-context-2d-clearRect"><a href="#dom-context-2d-clearrect">clearRect()</a></code> are the two ways
   this clearing algorithm can be invoked. Resizing the canvas also
   clears the <a href="#hit-region-list">hit region list</a> (since it clears the canvas
   back to its initial state).</p>
 
-  <hr><p>When the <dfn id="dom-context-2d-addhitregion" title="dom-context-2d-addHitRegion"><code>addHitRegion()</code></dfn>
+  <hr>
+
+  <p>When the <dfn id="dom-context-2d-addhitregion" title="dom-context-2d-addHitRegion"><code>addHitRegion()</code></dfn>
   method is invoked, the user agent must run the following steps:</p>
 
-  <ol><li><p>Let <var title="">arguments</var> be the dictionary object
+  <ol>
+
+   <li><p>Let <var title="">arguments</var> be the dictionary object
    provided as the method's argument.</p></li>
 
    <li><p>If the <var title="">arguments</var> object's <code title="dom-HitRegionOptions-path">path</code> member is not null,
@@ -4441,12 +4509,14 @@ v6DVT (also check for '- -' bits in the part above) --><p>The <dfn id="dom-conte
     <code>NotSupportedError</code> exception and abort these
     steps.</p>
 
-    <ul class="brief"><!--
+    <ul class="brief">
+<!--
      <li>The <var title="">arguments</var> object's <code
      title="dom-HitRegionOptions-path">path</code> member is null, but
      its <code title="dom-HitRegionOptions-transform">transform</code>
      member is not.</li>
---><li>The <var title="">arguments</var> object's <code title="dom-HitRegionOptions-control">control</code> and <code title="dom-HitRegionOptions-label">label</code> members are both
+-->
+     <li>The <var title="">arguments</var> object's <code title="dom-HitRegionOptions-control">control</code> and <code title="dom-HitRegionOptions-label">label</code> members are both
      non-null.</li>
 
      <li>The <var title="">arguments</var> object's <code title="dom-HitRegionOptions-control">control</code> and <code title="dom-HitRegionOptions-role">role</code> members are both
@@ -4474,7 +4544,9 @@ v6DVT (also check for '- -' bits in the part above) --><p>The <dfn id="dom-conte
      <a href="#ancestor-region">ancestor region</a> of the <var title="">parent
      region</var>.</li>
 
-    </ul></li>
+    </ul>
+
+   </li>
 
    <li><p>If the <code title="dom-HitRegionOptions-parent">parent</code> member is not
    null but <var title="">parent region</var> is null, then throw a
@@ -4487,26 +4559,32 @@ v6DVT (also check for '- -' bits in the part above) --><p>The <dfn id="dom-conte
     <code>SyntaxError</code> exception and abort these
     steps.</p>
 
-    <ul class="brief"><!-- per Frank Oliver, issue 201 --><!--
+    <ul class="brief">
+<!-- per Frank Oliver, issue 201 --> <!--
      <li>The <var title="">arguments</var> object's <code
      title="dom-HitRegionOptions-cursor">cursor</code> member is not
      null but is neither an <span>ASCII case-insensitive</span> match
      for the string "<code title="">inherit</code>", nor a valid CSS
      'cursor' property value. <a href="#refsCSSUI">[CSSUI]</a></li>
---><li>The <var title="">arguments</var> object's <code title="dom-HitRegionOptions-role">role</code> member is not null
+-->
+     <li>The <var title="">arguments</var> object's <code title="dom-HitRegionOptions-role">role</code> member is not null
      but its value is not an <span>ordered set of unique
      space-separated tokens</span> whose tokens are all
      <span>case-sensitive</span> matches for names of non-abstract
      WAI-ARIA roles. <a href="#refsARIA">[ARIA]</a></li>
 
-    </ul></li>
+    </ul>
+
+   </li>
 
    <li>
 
     <p>Let <var title="">region</var> be a newly created <a href="#hit-region">hit
     region</a>, with its information configured as follows:</p>
 
-    <dl><dt><a href="#hit-region's-set-of-pixels">Hit region's set of pixels</a>
+    <dl>
+
+     <dt><a href="#hit-region's-set-of-pixels">Hit region's set of pixels</a>
 
      </dt><dd><p>The pixels contained in <var title="">source path</var>.
 
@@ -4568,7 +4646,9 @@ v6DVT (also check for '- -' bits in the part above) --><p>The <dfn id="dom-conte
      no <a href="#hit-region's-aria-role" title="hit region's ARIA role">ARIA role</a>.
 
 
-    </p></dd></dl></li>
+    </p></dd></dl>
+
+   </li>
 <!-- per Frank Oliver, issue 201 --> <!--
    <li>
 
@@ -4630,7 +4710,8 @@ v6DVT (also check for '- -' bits in the part above) --><p>The <dfn id="dom-conte
    <li><p>Add <var title="">region</var> to the <code>canvas</code>
    element's <a href="#hit-region-list">hit region list</a>.</p></li>
 
-  </ol><p>If the <a href="#hit-region" title="hit region">hitregion</a> is interactive 
+  </ol>
+  <p>If the <a href="#hit-region" title="hit region">hitregion</a> is interactive 
   or requires the use of WAI-ARIA states or properties (in addition to
   role or label), authors must not use an unbacked <var title="">
   region</var> description (as there is no method to attach WAI-ARIA 
@@ -4654,7 +4735,9 @@ v6DVT (also check for '- -' bits in the part above) --><p>The <dfn id="dom-conte
   <p>When the <dfn id="dom-context-2d-removehitregion" title="dom-context-2d-removeHitRegion"><code>removeHitRegion()</code></dfn>
   method is invoked, the user agent must run the following steps:</p>
 
-  <ol><li><p>Let <var title="">region</var> be <a href="#the-region-identified-by-the-id">the region
+  <ol>
+
+   <li><p>Let <var title="">region</var> be <a href="#the-region-identified-by-the-id">the region
    identified by the ID</a> given by the method's argument in this
    <code>canvas</code> element, if any. If no such region currently
    exists, abort these steps.</p></li>
@@ -4669,9 +4752,13 @@ v6DVT (also check for '- -' bits in the part above) --><p>The <dfn id="dom-conte
 
    <li><p><a href="#garbage-collect-the-regions">Garbage-collect the regions</a> of <var title="">ancestor</var>.</p></li>
 
-  </ol></div>
+  </ol>
 
-  <hr><p>The <code>MouseEvent</code> interface is extended to support hit
+  </div>
+
+  <hr>
+
+  <p>The <code>MouseEvent</code> interface is extended to support hit
   regions:</p>
 
   <pre class="idl">partial interface <span>MouseEvent</span> {
@@ -4682,7 +4769,9 @@ partial dictionary <span>MouseEventInit</span> {
   DOMString? region;
 };</pre>
 
-  <dl class="domintro"><dt><var title="">event</var> . <code title="dom-MouseEvent-region"><a href="#dom-mouseevent-region">region</a></code></dt>
+  <dl class="domintro">
+
+   <dt><var title="">event</var> . <code title="dom-MouseEvent-region"><a href="#dom-mouseevent-region">region</a></code></dt>
 
    <dd>
 
@@ -4692,7 +4781,9 @@ partial dictionary <span>MouseEventInit</span> {
 
    </dd>
 
-  </dl><div class="impl">
+  </dl>
+
+  <div class="impl">
 
   <p>The <dfn id="dom-mouseevent-region" title="dom-MouseEvent-region"><code>region</code></dfn>
   attribute on <code>MouseEvent</code> objects must return the value
@@ -4708,7 +4799,9 @@ partial dictionary <span>MouseEventInit</span> {
   the event must be fired as it would have had these requirements not
   been applied.</p>
 
-  <ol><li><p>If the pointing device is not indicating a pixel on the
+  <ol>
+
+   <li><p>If the pointing device is not indicating a pixel on the
    <code>canvas</code>, act as normal and abort these steps.</p></li>
 
    <li><p>Let <var title="">pixel</var> be the pixel indicated by the
@@ -4739,7 +4832,10 @@ partial dictionary <span>MouseEventInit</span> {
    <li><p>Continue dispatching the event, but with the updated event
    object and target as given in the above steps.</p></li>
 
-  </ol><hr><!-- per Frank Oliver, issue 201 --><!--
+  </ol>
+
+  <hr>
+<!-- per Frank Oliver, issue 201 --><!--
   <p>When a user's pointing device cursor is positioned over a
   <code>canvas</code> element, user agents should render the pointing
   device cursor according to the cursor specification described by
@@ -4748,7 +4844,8 @@ partial dictionary <span>MouseEventInit</span> {
   region for the pixel</span> that the pointing device designates.</p>
 
   <hr>
---><p>User agents are encouraged to make use of the information present
+-->
+  <p>User agents are encouraged to make use of the information present
   in a <code>canvas</code> element's <a href="#hit-region-list">hit region list</a> to
   improve the accessibility of <code>canvas</code> elements.</p>
 
@@ -4802,7 +4899,9 @@ partial dictionary <span>MouseEventInit</span> {
 
   <h6 id="pixel-manipulation"><span class="secno">1.14 </span><dfn>Pixel manipulation</dfn></h6>
 
-  <dl class="domintro"><dt><var title="">imagedata</var> = <var title="">context</var> . <code title="dom-context-2d-createImageData"><a href="#dom-context-2d-createimagedata">createImageData</a></code>(<var title="">sw</var>, <var title="">sh</var>)</dt>
+  <dl class="domintro">
+
+   <dt><var title="">imagedata</var> = <var title="">context</var> . <code title="dom-context-2d-createImageData"><a href="#dom-context-2d-createimagedata">createImageData</a></code>(<var title="">sw</var>, <var title="">sh</var>)</dt>
 
    <dd>
 
@@ -4875,7 +4974,9 @@ partial dictionary <span>MouseEventInit</span> {
 
    </dd>
 
-  </dl><div class="impl">
+  </dl>
+
+  <div class="impl">
 
   <p>The <dfn id="dom-context-2d-createimagedata" title="dom-context-2d-createImageData"><code>createImageData()</code></dfn>
   method is used to instantiate new blank <code><a href="#imagedata">ImageData</a></code>
@@ -4946,7 +5047,9 @@ partial dictionary <span>MouseEventInit</span> {
   paragraphs, cause an exception to be thrown, the <code title="dom-context-2d-putImageData"><a href="#dom-context-2d-putimagedata">putImageData()</a></code> method
   must act as follows:</p>
 
-  <ol><li>
+  <ol>
+
+   <li>
 
     <p>Let <var title="">dx<sub>device</sub></var> be the x-coordinate
     of the device pixel in the underlying pixel data of the canvas
@@ -5006,7 +5109,9 @@ partial dictionary <span>MouseEventInit</span> {
    <span title=""><var title="">dy<sub>device</sub></var>+<var title="">y</var></span>) in the underlying pixel data of the
    canvas.</p></li>
 
-  </ol><p>The handling of pixel rounding when the specified coordinates do
+  </ol>
+
+  <p>The handling of pixel rounding when the specified coordinates do
   not exactly map to the device coordinate space is not defined by
   this specification, except that the following must result in no
   visible changes to the rendering:</p>
@@ -5041,8 +5146,7 @@ context.getImageData(0, 0, w, h);</pre>
   different values.</p>
 
   <p>The current path, <a href="#transformations" title="dom-context-2d-transformation">transformation matrix</a>,
-  <a href="#shadows" title="shadows">shadow attributes</a>, <a href="#dom-context-2d-globalalpha" title="dom-context-2d-globalAlpha">global alpha</a>, the
-  <a href="#clipping-region">clipping region</a>, and <a href="#dom-context-2d-globalcompositeoperation" title="dom-context-2d-globalCompositeOperation">global composition
+  <a href="#shadows" title="shadows">shadow attributes</a>, <a href="#dom-context-2d-globalalpha" title="dom-context-2d-globalAlpha">global alpha</a>, the <a href="#clipping-region" title="clipping region">clipping region</a>, and <a href="#dom-context-2d-globalcompositeoperation" title="dom-context-2d-globalCompositeOperation">global composition
   operator</a> must not affect the <code title="dom-context-2d-getImageData"><a href="#dom-context-2d-getimagedata">getImageData()</a></code> and <code title="dom-context-2d-putImageData"><a href="#dom-context-2d-putimagedata">putImageData()</a></code>
   methods.</p>
 
@@ -5140,7 +5244,9 @@ function AddCloud(data, x, y) { ... }</pre>
 
   <h6 id="compositing"><span class="secno">1.15 </span>Compositing</h6>
 
-  <dl class="domintro"><dt><var title="">context</var> . <code title="dom-context-2d-globalAlpha"><a href="#dom-context-2d-globalalpha">globalAlpha</a></code> [ = <var title="">value</var> ]</dt>
+  <dl class="domintro">
+
+   <dt><var title="">context</var> . <code title="dom-context-2d-globalAlpha"><a href="#dom-context-2d-globalalpha">globalAlpha</a></code> [ = <var title="">value</var> ]</dt>
 
    <dd>
 
@@ -5163,7 +5269,9 @@ function AddCloud(data, x, y) { ... }</pre>
 
    </dd>
 
-  </dl><div class="impl">
+  </dl>
+
+  <div class="impl">
 
   <p>All drawing operations are affected by the global compositing
   attributes, <code title="dom-context-2d-globalAlpha"><a href="#dom-context-2d-globalalpha">globalAlpha</a></code> and <code title="dom-context-2d-globalCompositeOperation"><a href="#dom-context-2d-globalcompositeoperation">globalCompositeOperation</a></code>.</p>
@@ -5192,7 +5300,9 @@ function AddCloud(data, x, y) { ... }</pre>
 
   </div>
 
-  <dl><dt><dfn id="gcop-source-atop" title="gcop-source-atop"><code>source-atop</code></dfn></dt>
+  <dl>
+
+   <dt><dfn id="gcop-source-atop" title="gcop-source-atop"><code>source-atop</code></dfn></dt>
 
    <dd><var title="">A</var> atop <var title="">B</var>. <span class="note">Display the
    source image wherever both images are opaque. Display the
@@ -5272,7 +5382,9 @@ function AddCloud(data, x, y) { ... }</pre>
    <dd class="impl">Vendor-specific extensions to the list of
    composition operators should use this syntax.</dd>
 
-  </dl><div class="impl">
+  </dl>
+
+  <div class="impl">
 
   <p>The operators in the above list must be treated as described by
   the Porter-Duff operator given at the start of their description
@@ -5299,38 +5411,15 @@ function AddCloud(data, x, y) { ... }</pre>
 
 
 
-  <h6 id="image-smoothing"><span class="secno">1.16 </span>Image smoothing</h6>
 
-  <dl class="domintro"><dt><var title="">context</var> . <code title="dom-context-2d-imageSmoothingEnabled"><a href="#dom-context-2d-imagesmoothingenabled">imageSmoothingEnabled</a></code> [ = <var title="">value</var> ]</dt>
-
-   <dd>
-
-    <p>Returns whether pattern fills and the <code title="dom-context-2d-drawImage"><a href="#dom-context-2d-drawimage">drawImage()</a></code> method will
-    attempt to smooth images if they have to rescale them (as opposed
-    to just rendering the images with "big pixels").</p>
-
-    <p>Can be set, to change whether images are smoothed (true) or not
-    (false).</p>
-
-   </dd>
-
-  </dl><div class="impl">
-
-  <p>The <dfn id="dom-context-2d-imagesmoothingenabled" title="dom-context-2d-imageSmoothingEnabled"><code>imageSmoothingEnabled</code></dfn>
-  attribute, on getting, must return the last value it was set to. On
-  setting, it must be set to the new value. When the
-  <code><a href="#canvasrenderingcontext2d">CanvasRenderingContext2D</a></code> object is created, the
-  attribute must be set to true.</p>
-
-  </div>
-
-
-  <h6 id="shadows"><span class="secno">1.17 </span><dfn>Shadows</dfn></h6>
+  <h6 id="shadows"><span class="secno">1.16 </span><dfn>Shadows</dfn></h6>
 
   <p>All drawing operations are affected by the four global shadow
   attributes.</p>
 
-  <dl class="domintro"><dt><var title="">context</var> . <code title="dom-context-2d-shadowColor"><a href="#dom-context-2d-shadowcolor">shadowColor</a></code> [ = <var title="">value</var> ]</dt>
+  <dl class="domintro">
+
+   <dt><var title="">context</var> . <code title="dom-context-2d-shadowColor"><a href="#dom-context-2d-shadowcolor">shadowColor</a></code> [ = <var title="">value</var> ]</dt>
 
    <dd>
 
@@ -5361,7 +5450,9 @@ function AddCloud(data, x, y) { ... }</pre>
 
    </dd>
 
-  </dl><div class="impl">
+  </dl>
+
+  <div class="impl">
 
   <p>The <dfn id="dom-context-2d-shadowcolor" title="dom-context-2d-shadowColor"><code>shadowColor</code></dfn>
   attribute sets the color of the shadow.</p>
@@ -5421,7 +5512,9 @@ function AddCloud(data, x, y) { ... }</pre>
 
   <p><a href="#when-shadows-are-drawn">When shadows are drawn</a>, they must be rendered as follows:</p>
 
-  <ol><li> <p>Let <var title="">A</var> be an infinite transparent black
+  <ol>
+
+   <li> <p>Let <var title="">A</var> be an infinite transparent black
    bitmap on which the source image for which a shadow is being
    created has been rendered.</p> </li>
 
@@ -5435,14 +5528,18 @@ function AddCloud(data, x, y) { ... }</pre>
    <li> <p>If <code title="dom-context-2d-shadowBlur"><a href="#dom-context-2d-shadowblur">shadowBlur</a></code> is greater than
    0:</p>
 
-    <ol><li> <p>Let <var title="">σ</var> be half the value of
+    <ol>
+
+     <li> <p>Let <var title="">σ</var> be half the value of
      <code title="dom-context-2d-shadowBlur"><a href="#dom-context-2d-shadowblur">shadowBlur</a></code>.</p></li>
 
      <li> <p>Perform a 2D Gaussian Blur on <var title="">B</var>,
      using <var title="">σ</var> as the standard deviation.</p>
      <!-- wish i could find a reference for this --> </li>
 
-    </ol><p>User agents may limit values of <var title="">σ</var> to
+    </ol>
+
+    <p>User agents may limit values of <var title="">σ</var> to
     an implementation-specific maximum value to avoid exceeding
     hardware limitations during the Gaussian blur operation.</p>
 
@@ -5457,7 +5554,9 @@ function AddCloud(data, x, y) { ... }</pre>
    <li> <p>The shadow is in the bitmap <var title="">B</var>, and is
    rendered as part of the <a href="#drawing-model">drawing model</a> described below.</p> </li>
 
-  </ol></div>
+  </ol>
+
+  </div>
 
   <p>If the current composition operation is <code title="gcop-copy"><a href="#gcop-copy">copy</a></code>, shadows effectively won't render
   (since the shape will overwrite the shadow).</p>
@@ -5466,12 +5565,14 @@ function AddCloud(data, x, y) { ... }</pre>
 
   <div class="impl">
 
-  <h6 id="drawing-model"><span class="secno">1.18 </span><dfn>Drawing model</dfn></h6>
+  <h6 id="drawing-model"><span class="secno">1.17 </span><dfn>Drawing model</dfn></h6>
 
   <p>When a shape or image is painted, user agents must follow these
   steps, in the order given (or act as if they do):</p>
 
-  <ol><li><p>Render the shape or image onto an infinite transparent black
+  <ol>
+
+   <li><p>Render the shape or image onto an infinite transparent black
    bitmap, creating image <var title="">A</var>, as described in the
    previous sections. For shapes, the current fill, stroke, and line
    styles must be honored, and the stroke must itself also be
@@ -5494,10 +5595,12 @@ function AddCloud(data, x, y) { ... }</pre>
    region</a> over the current canvas bitmap using the current
    composition operator.</p></li>
 
-  </ol></div>
+  </ol>
+
+  </div>
 
 
-  <h6 id="best-practices"><span class="secno">1.19 </span>Best practices</h6>
+  <h6 id="best-practices"><span class="secno">1.18 </span>Best practices</h6>
 
   <p><i>This section is non-normative.</i></p>
   <p>When a canvas is interactive, authors should include focusable
@@ -5515,7 +5618,9 @@ function AddCloud(data, x, y) { ... }</pre>
   <code>canvas</code> element. Doing so has a large number of
   disadvantages:</p>
 
-  <ul><li>Mouse placement of the caret has to be reimplemented.</li>
+  <ul>
+
+   <li>Mouse placement of the caret has to be reimplemented.</li>
 
    <li>Keyboard movement of the caret has to be reimplemented (possibly across lines, for multiline text input).</li>
 
@@ -5551,14 +5656,16 @@ function AddCloud(data, x, y) { ... }</pre>
    <li>Accessibility features such as magnification following the
    caret or selection have to be reimplemented.</li>
 
-  </ul><p>This is a huge amount of work, and authors are most strongly
+  </ul>
+
+  <p>This is a huge amount of work, and authors are most strongly
   encouraged to avoid doing any of it by instead using the
   <code>input</code> element, the <code>textarea</code> element, or
   the <code title="attr-contenteditable">contenteditable</code>
   attribute.</p>
 
 
-  <h6 id="examples"><span class="secno">1.20 </span>Examples</h6>
+  <h6 id="examples"><span class="secno">1.19 </span>Examples</h6>
 
   <p><i>This section is non-normative.</i></p>
   <div class="example">
@@ -5615,7 +5722,10 @@ function AddCloud(data, x, y) { ... }</pre>
 
   <!-- Dates are only included for standards older than the Web, because the newer ones keep changing. -->
 
-  <dl><!--REFERENCES ON--><dt id="refs2DCONTEXT">[2DCONTEXT]</dt>
+  <dl>
+<!--REFERENCES ON-->
+
+   <dt id="refs2DCONTEXT">[2DCONTEXT]</dt>
    <dd><cite><a href="http://dev.w3.org/html5/2dcontext/">HTML Canvas
    2D Context</a></cite>, I. Hickson. W3C.</dd>
 
@@ -5723,11 +5833,10 @@ function AddCloud(data, x, y) { ... }</pre>
    such, but there's a western bias to these references for
    consistency. sorry. -->
 
-   <dt id="refsCSP">[CSP]</dt>
-   <dd>(Non-normative) <cite><a href="http://dvcs.w3.org/hg/content-security-policy/raw-file/tip/csp-specification.dev.html">Content Security Policy</a></cite>, B. Sterne, A. Barth. W3C.</dd>
-
    <dt id="refsCSS">[CSS]</dt>
-   <dd><cite><a href="http://www.w3.org/TR/CSS2/">Cascading Style Sheets Level 2 Revision 1</a></cite>, B. Bos, T. Çelik, I. Hickson, H. Lie. W3C.</dd>
+   <dd><cite><a href="http://www.w3.org/TR/CSS/">Cascading Style Sheets Level 2
+   Revision 1</a></cite>, B. Bos, T. Çelik, I.
+   Hickson, H. Lie. W3C.</dd>
 
    <dt id="refsCSSATTR">[CSSATTR]</dt>
    <dd><cite><a href="http://dev.w3.org/csswg/css-style-attr/">CSS Styling Attribute Syntax</a></cite>, T. Çelik, E. Etemad. W3C.</dd>
@@ -5760,19 +5869,24 @@ function AddCloud(data, x, y) { ... }</pre>
    Module</a></cite>, A. van Kesteren. W3C.</dd>
 
    <dt id="refsCSSRUBY">[CSSRUBY]</dt>
-   <dd><cite><a href="http://dev.w3.org/csswg/css3-ruby/">CSS3 Ruby Module</a></cite>, R. Ishida. W3C.</dd>
+   <dd><cite><a href="http://dev.w3.org/csswg/css3-ruby/">CSS3 Ruby
+   Module</a></cite>, R. Ishida. W3C.</dd>
 
    <dt id="refsCSSUI">[CSSUI]</dt>
-   <dd><cite><a href="http://dev.w3.org/csswg/css3-ui/">CSS3 Basic User Interface Module</a></cite>, T. Çelik. W3C.</dd>
+   <dd><cite><a href="http://dev.w3.org/csswg/css3-ui/">CSS3 Basic User
+   Interface Module</a></cite>, T. Çelik. W3C.</dd>
 
    <dt id="refsCSSVALUES">[CSSVALUES]</dt>
-   <dd><cite><a href="http://dev.w3.org/csswg/css3-values/">CSS3 Values and Units</a></cite>, H. Lie, T. Atkins, E. Etemad. W3C.</dd>
+   <dd><cite><a href="http://dev.w3.org/csswg/css3-values/">CSS3
+   Values and Units</a></cite>, H. Lie, C. Lilley. W3C.</dd>
 
    <dt id="refsDASH">[DASH]</dt>
    <dd><cite><a href="http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=57623">Dynamic adaptive streaming over HTTP (DASH)</a></cite>. ISO.</dd>
 
    <dt id="refsDOM2HTML">[DOM2HTML]</dt>
-   <dd>(Non-normative) <cite><a href="http://www.w3.org/TR/DOM-Level-2-HTML/">Document Object Model (DOM) Level 2 HTML Specification</a></cite>, J. Stenback, P. Le Hégaret, A. Le Hors. W3C.</dd>
+   <dd>(Non-normative) <cite><a href="http://www.w3.org/TR/DOM-Level-2-HTML/">Document Object Model
+   (DOM) Level 2 HTML Specification</a></cite>, J. Stenback, P. Le
+   Hegaret, A. Le Hors. W3C.</dd>
 
    <dt id="refsDOMCORE">[DOMCORE]</dt>
    <dd><cite><a href="http://dvcs.w3.org/hg/domcore/raw-file/tip/Overview.html">Web DOM Core</a></cite>, A. van Kesteren. W3C.</dd>
@@ -5789,25 +5903,30 @@ function AddCloud(data, x, y) { ... }</pre>
    T. Leithead. W3C.</dd>
 
    <dt id="refsDOMPARSING">[DOMPARSING]</dt>
-   <dd><cite><a href="http://dvcs.w3.org/hg/innerhtml/raw-file/tip/index.html">DOM Parsing and Serialization</a></cite>, T. Leithead. Work in Progress. W3C.</dd>
+   <dd><cite><a href="http://html5.org/specs/dom-parsing.html">DOM Parsing and Serialization</a></cite>, Ms2ger. html5.org.</dd>
 
    <dt id="refsDOT">[DOT]</dt>
    <dd>(Non-normative) <cite><a href="http://www.graphviz.org/content/dot-language">The DOT Language</a></cite>. Graphviz.</dd>
 
    <dt id="refsE163">[E163]</dt>
-   <dd><cite>Recommendation E.163 — Numbering Plan for The International Telephone Service</cite>, CCITT Blue Book, Fascicle II.2, pp. 128-134, November 1988.</dd>
+   <dd><cite>Recommendation E.163 — Numbering Plan for The International
+   Telephone Service</cite>, CCITT Blue Book, Fascicle II.2, pp. 128-134, November
+   1988.</dd>
 
    <dt id="refsECMA262">[ECMA262]</dt>
-   <dd><cite><a href="http://www.ecma-international.org/publications/standards/Ecma-262.htm">ECMAScript Language Specification</a></cite>. ECMA.</dd>
-
-   <dt id="refsECMA357">[ECMA357]</dt>
-   <dd>(Non-normative) <cite><a href="http://www.ecma-international.org/publications/standards/Ecma-357.htm">ECMAScript for XML (E4X) Specification</a></cite>. ECMA.</dd>
+   <dd><cite><a href="http://www.ecma-international.org/publications/standards/Ecma-262.htm">ECMAScript
+   Language Specification</a></cite>. ECMA.</dd>
 
    <dt id="refsEDITING">[EDITING]</dt>
    <dd><cite><a href="http://aryeh.name/spec/editing/editing.html">HTML Editing APIs</a></cite>, A. Gregor.</dd>
 
+   <dt id="refsECMA357">[ECMA357]</dt>
+   <dd>(Non-normative) <cite><a href="http://www.ecma-international.org/publications/standards/Ecma-357.htm">ECMAScript
+   for XML (E4X) Specification</a></cite>. ECMA.</dd>
+
    <dt id="refsEUCKR">[EUCKR]</dt>
-   <dd><cite>Hangul Unix Environment</cite>. Korea Industrial Standards Association. Ref. No. KS C 5861-1992.</dd>
+   <dd><cite>Hangul Unix Environment</cite>. Korea Industrial
+   Standards Association. Ref. No. KS C 5861-1992.</dd>
 
    <dt id="refsEUCJP">[EUCJP]</dt>
    <dd><cite>Definition and Notes of Japanese EUC</cite>. UI-OSF-USLP. In English in the abridged translation of the <a href="http://home.m05.itscom.net/numa/uocjleE.pdf">UI-OSF Application Platform Profile for Japanese Environment</a>, Appendix C.</dd>
@@ -5827,9 +5946,6 @@ function AddCloud(data, x, y) { ... }</pre>
    <dt id="refsFILESYSTEMAPI">[FILESYSTEMAPI]</dt>
    <dd><cite><a href="http://dev.w3.org/2009/dap/file-system/file-dir-sys.html">File
    API: Directories and System</a></cite>, E. Uhrhane. W3C.</dd>
-
-   <dt id="refsFULLSCREEN">[FULLSCREEN]</dt>
-   <dd><cite><a href="http://dvcs.w3.org/hg/fullscreen/raw-file/tip/Overview.html">Fullscreen</a></cite>, A. van Kesteren, T. Çelik.</dd>
 
    <dt id="refsGBK">[GBK]</dt>
    <dd><cite>Chinese Internal Code Specification</cite>. Chinese IT
@@ -5851,7 +5967,7 @@ function AddCloud(data, x, y) { ... }</pre>
 
    <dt id="refsGREGORIAN">[GREGORIAN]</dt>
    <dd>(Non-normative) <cite>Inter Gravissimas</cite>, A. Lilius,
-   C. Clavius. Gregory XIII Papal Bull, February 1582.</dd>
+   C. Clavius. Gregory XIII Papal Bulls, February 1582.</dd>
 
    <dt id="refsHATOM">[HATOM]</dt>
    <dd>(Non-normative) <cite><a href="http://microformats.org/wiki/hatom">hAtom</a></cite>, D
@@ -5921,9 +6037,6 @@ function AddCloud(data, x, y) { ... }</pre>
    character sets — Part 11: Latin/Thai
    alphabet</a></cite>. ISO.</dd>
 
-   <dt id="refsJLREQ">[JLREQ]</dt>
-   <dd><cite><a href="http://www.w3.org/TR/jlreq/">Requirements for Japanese Text Layout</a></cite>. W3C.</dd> <!-- too many editors to list -->
-
    <dt id="refsJPEG">[JPEG]</dt>
    <dd><cite><a href="http://www.w3.org/Graphics/JPEG/jfif3.pdf">JPEG File Interchange Format</a></cite>, E. Hamilton.</dd>
 
@@ -5956,14 +6069,6 @@ function AddCloud(data, x, y) { ... }</pre>
    <dt id="refsMIMESNIFF">[MIMESNIFF]</dt>
    <dd><cite><a href="http://mimesniff.spec.whatwg.org/">MIME Sniffing</a></cite>, A. Barth, I. Hickson. WHATWG.</dd>
 
-   <dt id="refsMPEG2">[MPEG2]</dt>
-   <dd><cite>ISO/IEC 13818-1: Information technology — Generic coding of moving pictures and associated audio information: Systems</cite>. ISO/IEC.</dd>
-   <!-- search for ["bytes are removed from this buffer at a rate defined by sb_leak_rate"] to find it -->
-
-   <dt id="refsMPEG4">[MPEG4]</dt>
-   <dd><cite>ISO/IEC 14496-12: ISO base media file format</cite>. ISO/IEC.</dd>
-   <!-- search for ["Box Structure was and subsequent clauses were re-organized"] to find it -->
-
    <dt id="refsMQ">[MQ]</dt>
    <!--
    <dd><cite><a href="http://www.w3.org/TR/css3-mediaqueries/">Media
@@ -5983,7 +6088,7 @@ function AddCloud(data, x, y) { ... }</pre>
    Work in progress. <!--!-->
    </dd>
 
-   <dt id="refsOGGSKELETONHEADERS">[OGGSKELETONHEADERS]</dt>
+   <dt id="refsOGGROLE">[OGGROLE]</dt>
    <dd><cite><a href="http://wiki.xiph.org/SkeletonHeaders">SkeletonHeaders</a></cite>. Xiph.Org.</dd>
 
    <dt id="refsOPENSEARCH">[OPENSEARCH]</dt>
@@ -6020,7 +6125,10 @@ function AddCloud(data, x, y) { ... }</pre>
    1984.</dd>
 
    <dt id="refsPPUTF8">[PPUTF8]</dt>
-   <dd>(Non-normative) <cite><a href="http://www.sw.it.aoyama.ac.jp/2012/pub/IUC11-UTF-8.pdf">The Properties and Promises <!-- Promizes (sic) --> of UTF-8</a></cite>, M. Dürst. University of Zürich. In <cite>Proceedings of the 11th International Unicode Conference</cite>.</dd>
+   <dd>(Non-normative) <cite><a href="http://www.ifi.uzh.ch/mml/mduerst/papers/PDF/IUC11-UTF-8.pdf">The
+   Properties and Promises <!-- Promizes (sic) --> of
+   UTF-8</a></cite>, M. Dürst. University of Zürich. In <cite>Proceedings of the 11th International
+   Unicode Conference</cite>.</dd>
 
    <dt id="refsPROGRESS">[PROGRESS]</dt>
    <dd><cite><a href="http://dev.w3.org/2006/webapi/progress/">Progress
@@ -6263,10 +6371,6 @@ function AddCloud(data, x, y) { ... }</pre>
    <dt id="refsTURN">[TURN]</dt>
    <dd><cite><a href="http://tools.ietf.org/html/rfc5766">Traversal Using Relays around NAT (TURN): Relay Extensions to Session Traversal Utilities for NAT (STUN)</a></cite>, R. Mahy, P. Matthews, J. Rosenberg. IETF.</dd>
 
-   <dt id="refsTIMEZONES">[TIMEZONES]</dt>
-   <dd>(Non-normative) <cite><a href="http://www.w3.org/TR/timezone/">Working with Time Zones</a></cite>, A. Phillips, N. Lindenberg, M. Davis, M.J. Dürst, F. Sasaki, R. Ishida. W3C.</dd>
-
-
    <dt id="refsTYPEDARRAY">[TYPEDARRAY]</dt>
    <dd><cite><a href="http://www.khronos.org/registry/typedarray/specs/latest/">Typed Array Specification</a></cite>, D. Herman, K. Russell. Khronos.</dd>
 
@@ -6363,7 +6467,7 @@ function AddCloud(data, x, y) { ... }</pre>
    <dd><cite><a href="http://www.unicode.org/Public/MAPPINGS/VENDORS/MICSFT/WINDOWS/CP949.TXT">Windows Codepage 949</a></cite>. Microsoft.</dd>
 
    <dt id="refsWSP">[WSP]</dt>
-   <dd><cite><a href="http://tools.ietf.org/html/rfc6455">The WebSocket protocol</a></cite>, I. Fette, A. Melnikov. IETF.</dd>
+   <dd><cite><a href="http://tools.ietf.org/html/rfc6455">The WebSocket protocol</a></cite>, I. Fette. IETF.</dd>
 
    <dt id="refsX121">[X121]</dt>
    <dd><cite>Recommendation X.121 — International Numbering Plan for
@@ -6446,4 +6550,7 @@ function AddCloud(data, x, y) { ... }</pre>
 
 
 <!--REFERENCES OFF-->
-  </dl></body></html>
+  </dl>
+
+
+</body></html>
