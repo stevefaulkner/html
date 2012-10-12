@@ -31,9 +31,6 @@
     <dt>Derived from the HTML Living Standard edited by:</dt>
     <dd><a href="mailto:ian@hixie.ch">Ian Hickson</a>, Google, Inc.</dd>
    </dl>
-   <p>This specification is available in the following formats:
-    <a href="Overview.html">single page HTML</a>.
-   </p> 
   <!--BOILERPLATE middle-w3c-copyright-->
 
   <h2 class="no-num no-toc">Abstract</h2>
@@ -46,6 +43,7 @@
 
   <h2 class="no-num no-toc">Status of This document</h2>
   <!--BOILERPLATE middle-w3c-feedback-->
+  <!--BOILERPLATE middle-whatwg-pointer-->
   <!--BOILERPLATE middle-w3c-feedback-srcset-->
   <!--BOILERPLATE middle-w3c-html-pp-->
 
