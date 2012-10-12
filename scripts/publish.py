@@ -4,7 +4,7 @@ from StringIO import StringIO
 from anolislib import generator, utils
 
 if len(sys.argv)>1 and sys.argv[1] == 'html':
-  select = 'w3c-html' 
+  select = 'w3c-html'
   spec = 'html'
 elif len(sys.argv)>1 and sys.argv[1] == 'microdata':
   select = spec = 'microdata'
