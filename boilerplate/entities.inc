@@ -869,7 +869,7 @@
      <tr id="entity-Lambda"> <td> <code title="">Lambda;</code> </td> <td> U+0039B </td> <td> <span title="" class="glyph">Λ</span> </td> </tr>
      <tr id="entity-lambda"> <td> <code title="">lambda;</code> </td> <td> U+003BB </td> <td> <span title="" class="glyph">λ</span> </td> </tr>
      <tr id="entity-Lang"> <td> <code title="">Lang;</code> </td> <td> U+027EA </td> <td> <span title="" class="glyph">⟪</span> </td> </tr>
-     <tr id="entity-lang"> <td> <code title="">lang;</code> </td> <td> U+027E8 </td> <td> <span title="" class="glyph">〈</span> </td> </tr>
+     <tr id="entity-lang"> <td> <code title="">lang;</code> </td> <td> U+027E8 </td> <td> <span title="" class="glyph">⟨</span> </td> </tr>
      <tr id="entity-langd"> <td> <code title="">langd;</code> </td> <td> U+02991 </td> <td> <span title="" class="glyph">⦑</span> </td> </tr>
      <tr id="entity-langle"> <td> <code title="">langle;</code> </td> <td> U+027E8 </td> <td> <span title="" class="glyph">〈</span> </td> </tr>
      <tr id="entity-lap"> <td> <code title="">lap;</code> </td> <td> U+02A85 </td> <td> <span title="" class="glyph">⪅</span> </td> </tr>
@@ -1565,7 +1565,7 @@
      <tr id="entity-radic"> <td> <code title="">radic;</code> </td> <td> U+0221A </td> <td> <span title="" class="glyph">√</span> </td> </tr>
      <tr id="entity-raemptyv"> <td> <code title="">raemptyv;</code> </td> <td> U+029B3 </td> <td> <span title="" class="glyph">⦳</span> </td> </tr>
      <tr id="entity-Rang"> <td> <code title="">Rang;</code> </td> <td> U+027EB </td> <td> <span title="" class="glyph">⟫</span> </td> </tr>
-     <tr id="entity-rang"> <td> <code title="">rang;</code> </td> <td> U+027E9 </td> <td> <span title="" class="glyph">〉</span> </td> </tr>
+     <tr id="entity-rang"> <td> <code title="">rang;</code> </td> <td> U+027E9 </td> <td> <span title="" class="glyph">⟩</span> </td> </tr>
      <tr id="entity-rangd"> <td> <code title="">rangd;</code> </td> <td> U+02992 </td> <td> <span title="" class="glyph">⦒</span> </td> </tr>
      <tr id="entity-range"> <td> <code title="">range;</code> </td> <td> U+029A5 </td> <td> <span title="" class="glyph">⦥</span> </td> </tr>
      <tr id="entity-rangle"> <td> <code title="">rangle;</code> </td> <td> U+027E9 </td> <td> <span title="" class="glyph">〉</span> </td> </tr>
