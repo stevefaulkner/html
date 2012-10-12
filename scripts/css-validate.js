@@ -9,7 +9,7 @@ var fs  = require("fs")
 
 // where are we?
 var rootDir = pth.join(__dirname, "..")
-,   hbDir = pth.join(rootDir, "heartbeat")
+,   hbDir = process.argv[2] ? process.argv[2] : pth.join(rootDir, "heartbeat")
 ,   files
 ,   total = 0
 ;
@@ -20,8 +20,8 @@ function pubrules () {
     console.log("Processing " + file + ", " + (total - files.length) + "/" + total);
     if (!/\.html$/.test(file)) return pubrules();
     
-    // validate HTML
-    var url = "http://berjon.com/TR/html5/" + file
+    // validate CSS
+    var url = (process.argv[3] ? process.argv[3] : "http://berjon.com/TR/html5/") + file
     // ,   css = "http://jigsaw.w3.org/css-validator/validator?profile=css3&output=json&uri=" + encodeURIComponent(url)
     ,   css = "http://jigsaw.w3.org/css-validator/validator?profile=css3&output=ucn&uri=" + encodeURIComponent(url)
     ;
