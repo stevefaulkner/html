@@ -8,17 +8,18 @@
 <!--SET URLSTATUS=ED-->
 <!--SET LONGSTATUS=Editor's Draft-->
 <!--SET YEAR=2012-->
-<!--SET SHORTDAY=0329-->
-<!--SET LONGDAY=29 March-->
+<!--SET SHORTDAY=1011-->
+<!--SET LONGDAY=11 October-->
 <!--SET TRNAME=html5-->
 <!--SET DEVURL=http://dev.w3.org/html5/spec/Overview.html-->
 <!--SET COMPONENT=HTML5 spec (editor: Ian Hickson)-->
 <html lang="en-US-x-Hixie">
  <head>
+  <meta charset='utf-8'>
   <title>HTML5</title>
-  <!--BOILERPLATE middle-w3c-styles-->
   <!--BOILERPLATE middle-override-styles-->
   <!--BOILERPLATE middle-author-mode-links-->
+  <!--BOILERPLATE middle-whatwg-pointer-->
   <!--BOILERPLATE middle-w3c-html-magic-->
    <h1>HTML5</h1>
    <h2 class="no-num no-toc">A vocabulary and associated APIs for HTML and XHTML</h2>
@@ -67,6 +68,7 @@
 
   <h2 class="no-num no-toc">Status of This document</h2>
   <!--BOILERPLATE middle-w3c-feedback-->
+  <!--BOILERPLATE middle-whatwg-pointer-->
   <!--BOILERPLATE middle-w3c-feedback-html-->
   <!--BOILERPLATE middle-w3c-html-pp-->
 
