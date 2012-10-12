@@ -6,10 +6,12 @@ from anolislib import generator, utils
 if len(sys.argv)>1 and sys.argv[1] == 'html':
   select = 'w3c-html' 
   spec = 'html'
+elif len(sys.argv)>1 and sys.argv[1] == 'microdata':
+  select = spec = 'microdata'
 elif len(sys.argv)>1 and sys.argv[1] == '2dcontext':
   spec = select = '2dcontext'
 else:
-  sys.stderr.write("Usage: python %s [html|2dcontext]\n" % sys.argv[0])
+  sys.stderr.write("Usage: python %s [html|2dcontext|microdata]\n" % sys.argv[0])
   exit()
 
 print 'parsing'
@@ -38,10 +40,10 @@ opts = {
   'newline_char': u'\n',
   'omit_optional_tags': False,
   'output_encoding': 'utf-8',
-  'parser': 'lxml.html',
+  'parser': 'html5lib',
   'processes': set(['toc', 'xref', 'sub']),
   'profile': False,
-  'quote_attr_values': False,
+  'quote_attr_values': True,
   'serializer': 'html5lib',
   'space_before_trailing_solidus': False,
   'strip_whitespace': None,
@@ -94,7 +96,7 @@ if spec == 'html':
   print 'splitting'
   import spec_splitter
   spec_splitter.w3c = True
-  spec_splitter.main('output/html/single-page.html', 'output/html')
+  spec_splitter.main('output/%s/single-page.html' % spec, 'output/%s' % spec)
 
   entities = open('boilerplate/entities.inc')
   json = open('output/html/entities.json', 'w')
