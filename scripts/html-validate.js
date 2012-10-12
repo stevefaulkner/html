@@ -2,7 +2,6 @@
 
 var fs  = require("fs")
 ,   pth = require("path")
-,   exec = require("child_process").exec
 ,   request = require("request")
 ;
 
