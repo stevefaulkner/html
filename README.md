@@ -22,7 +22,7 @@ Checking out the HTML spec
 
 Pull the code from GitHub:
 
-    $ git clone ssh://git@github.com/w3c/html.git
+    $ git clone https://git@github.com/w3c/html.git
     $ cd html
     $ git checkout -b whatwg origin/feature/whatwg
 
