@@ -3,13 +3,6 @@ html
 
 Deliverables of the HTML Working Group
 
----
-
-Build instructions:
-
-    make [html|2dcontext|all]
-
-Output is placed in `output/[html|2dcontext]`.
 
 Spec Editing Cheatsheet
 ===
