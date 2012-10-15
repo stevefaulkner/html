@@ -12,7 +12,6 @@ var fs = require("fs")
 // in history (of course, stupid Robin)
 ,   path = pth.join(__dirname, /\/scripts/.test(__dirname) ? "../source" : "../html/source" )
 ;
-console.log(__dirname);
 
 // To use this standalone:
 //      node scripts/check-split-markers.js
