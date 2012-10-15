@@ -14,9 +14,9 @@ output/html/single-page.html: source
 
 output/2dcontext/single-page.html: source
 	python scripts/publish.py 2dcontext
-	cp -R images output/html/
-	cp -R fonts output/html/
+	cp -R images output/2dcontext/
+	cp -R fonts output/2dcontext/
 
 output/microdata/single-page.html: source
 	python scripts/publish.py microdata
-	cp -R fonts output/html/
+	cp -R fonts output/microdata/
