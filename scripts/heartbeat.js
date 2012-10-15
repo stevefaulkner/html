@@ -129,7 +129,7 @@ exec("make " + conf.make, { cwd: rootDir }, function (err, stdout, stderr) {
         fs.writeFileSync(file, content, "utf-8");
     }
     if (target === "microdata") {
-        // bunch of brute-force fixes to make this look like a real document
+        // move HTMLPropsCol section around
         var file = pth.join(hbDir, "Overview.html");
         jsdom.env(
             file
@@ -145,6 +145,7 @@ exec("make " + conf.make, { cwd: rootDir }, function (err, stdout, stderr) {
                 ,   $apiLI = $toc.find("a[href=#microdata-dom-api]").parent()
                 ;
                 $apiLI.append($mdOL);
+                
                 //  - also move the actual section
                 var $hpTit = $("#htmlpropertiescollection")
                 ,   sectionContent = [$hpTit]
@@ -158,55 +159,14 @@ exec("make " + conf.make, { cwd: rootDir }, function (err, stdout, stderr) {
                 var $other = $("#other-changes-to-html5");
                 for (var i = 0, n = sectionContent.length; i < n; i++) $other.before(sectionContent[i]);
                 
-                //  - move all other 0.x to top-level
-                var $li1 = $toc.find("li").first();
-                $toc.prepend($li1.find("ol").first().contents());
-                $li1.remove();
+                // fixing the numbering, HARDCODED in the hope that we'll get a fix
+                var fixNum = function ($target) {
+                    $target.find(".secno").first().text("6.1 ");
+                };
+                fixNum($mdOL);
+                fixNum($hpTit);
+                console.log("WARNING: applying hardcoded section numbering fix, please check.");
                 
-                //  - update all toc to have the right numbers
-                function numberToc ($parent, current, level) {
-                    var $secs = $parent.children("li");
-                    if ($secs.length === 0) return null;
-                    for (var i = 0; i < $secs.length; i++) {
-                        current[current.length - 1]++;
-                        var $sec = $($secs[i], doc)
-                        ,   secnos = current.slice()
-                        ,   secno = secnos.join(".");
-                        if (secnos.length === 1) secno = secno + ".";
-                        $sec.find("span.secno").first().text(secno + " ");
-                        if ($sec.find("ol").length) {
-                            current.push(0);
-                            numberToc($sec.find("ol").first(), current, level + 1);
-                            current.pop();
-                        }
-                    }
-                }
-                numberToc($toc, [0], 1);
-                
-                //  - for each toc item, go to link
-                //      - update html of title to match
-                //      - upgrade hN to the correct level if required
-                $toc.find("a[href^=#]").each(function () {
-                    var $a = $(this)
-                    //  some of the weirder IDs don't "just work" with jQ
-                    ,   $target = $(doc.getElementById($a.attr("href").replace("#", "")))
-                    ,   depth = $a.parents("ol").length + 1
-                    ;
-                    if ($target.is("h" + depth)) {
-                        $target.html($a.html());
-                    }
-                    else {
-                        var $h = $(doc.createElement("h" + depth));
-                        for (var i = 0, n = $target[0].attributes.length; i < n; i++) {
-                            var at = $target[0].attributes[i];
-                            $h.attr(at.name, at.value);
-                        }
-                        $h.html($a.html());
-                        $target.replaceWith($h);
-                    }
-                });
-
-
                 // serialise back to disk...
                 $(".jsdom").remove();
                 fs.writeFileSync(file, doc.doctype.toString() + doc.innerHTML, "utf8");
@@ -214,7 +174,7 @@ exec("make " + conf.make, { cwd: rootDir }, function (err, stdout, stderr) {
                 finalise();
             }
         );
-
+    
     }
     else {
         finalise();

@@ -1,3 +1,7 @@
 scripts/*.pyc
 output
 scripts/node_modules
+
+heartbeat
+heartbeat-2d
+heartbeat-md
