@@ -3,11 +3,11 @@ import re
 from lxml import etree # requires lxml 2.0
 from copy import deepcopy
 
-verbose = False
+verbose = True
 absolute_uris = False
 w3c = False
 use_html5lib_parser = False
-use_html5lib_serialiser = False
+use_html5lib_serialiser = True
 make_index_of_terms = False
 
 def main(input, output):
@@ -16,10 +16,11 @@ def main(input, output):
       import html5lib.serializer
       import html5lib.treewalkers
 
-  if w3c:
-      index_page = 'spec'
-  else:
-      index_page = 'index'
+  # if w3c:
+  #     index_page = 'spec'
+  # else:
+  #     index_page = 'index'
+  index_page = 'index'
 
   # The document is split on all <h2> elements, plus the following specific elements
   # (which were chosen to split any pages that were larger than about 100-200KB, and
@@ -169,11 +170,11 @@ def main(input, output):
   extract_toc_items(toc_items, original_body.find('.//ol[@class="toc"]'), 0)
 
   # Prepare the link-fixup script
-  if not w3c:
-      link_fixup_script = etree.XML('<script src="link-fixup.js"/>')
-      doc.find('head')[-1].tail = '\n  '
-      doc.find('head').append(link_fixup_script)
-      link_fixup_script.tail = '\n  '
+  # if not w3c:
+  #     link_fixup_script = etree.XML('<script src="link-fixup.js"/>')
+  #     doc.find('head')[-1].tail = '\n  '
+  #     doc.find('head').append(link_fixup_script)
+  #     link_fixup_script.tail = '\n  '
 
   # Stuff for fixing up references:
 
@@ -290,10 +291,11 @@ def main(input, output):
 
       head = doc.find('head')
 
-      if w3c:
-          nav = etree.Element('div') # HTML 4 compatibility
-      else:
-          nav = etree.Element('nav')
+      # if w3c:
+      #     nav = etree.Element('div') # HTML 4 compatibility
+      # else:
+      #     nav = etree.Element('nav')
+      nav = etree.Element('nav')
       nav.set('class', 'prev_next')
       nav.text = '\n   '
       nav.tail = '\n\n  '
