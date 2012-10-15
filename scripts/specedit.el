@@ -126,16 +126,16 @@ Helpful for when there are lots of START and END directives nearby.")
      (1 font-lock-keyword-face)
      (2 font-lock-variable-name-face)
      (3 font-lock-string-face))
+    ("<!--\\(FIXUP\\) \\([A-Za-z0-9-]+\\) \\([+-][0-9]+\\)-->"
+     (1 font-lock-keyword-face)
+     (2 font-lock-function-name-face)
+     (3 font-lock-constant-face))
 
     ;; Commands that our editing infrastructure doesn't support get
     ;; highlighted in `font-lock-warning-face'.
     ("<!--\\(DEFER\\)\\(\\( +[A-Za-z0-9-]+\\)+\\)-->"
      (1 font-lock-warning-face)
      (2 font-lock-function-name-face))
-    ("<!--\\(FIXUP\\) \\([A-Za-z0-9-]+\\) \\([+-][0-9]+\\)-->"
-     (1 font-lock-warning-face)
-     (2 font-lock-function-name-face)
-     (3 font-lock-constant-face))
     ("<!--\\(REFERENCES\\) \\(ON\\|OFF\\)-->"
      (1 font-lock-warning-face)
      (2 font-lock-constant-face))
