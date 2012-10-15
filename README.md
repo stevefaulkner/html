@@ -3,14 +3,6 @@ html
 
 Deliverables of the HTML Working Group
 
----
-
-Build instructions:
-
-    make [html|2dcontext|srcset|all]
-
-Output is placed in `output/[html|2dcontext|srcset]`.
-
 Spec Editing Cheatsheet
 ===
 
@@ -22,7 +14,7 @@ Checking out the HTML spec
 
 Pull the code from GitHub:
 
-    $ git clone ssh://git@github.com/w3c/html.git
+    $ git clone https://git@github.com/w3c/html.git
     $ cd html
     $ git checkout -b whatwg origin/feature/whatwg
 
