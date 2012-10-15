@@ -31,33 +31,10 @@ var target = process.argv[2] || "html"
 ,   hbDir = pth.join(rootDir, conf.outDir)
 ;
 
-function rename (src, to) {
-    try {
-        fs.renameSync(src, to);
-    }
-    catch (e) {
-        console.log("Error renaming " + src + " to " + to);
-    }
-}
+if (target !== "microdata") console.log("WARNING: This script is now only required for microdata. Use make instead.");
 
 if (fs.existsSync(hbDir)) wrench.rmdirSyncRecursive(hbDir);
 fs.mkdirSync(hbDir);
-
-function finalise () {
-    // copy the images
-    var imgDir = pth.join(hbDir, "images")
-    ,   fontDir = pth.join(hbDir, "fonts")
-    ;
-    if (target !== "microdata") fs.mkdirSync(imgDir);
-    fs.mkdirSync(fontDir);
-    if (target !== "microdata") wrench.copyDirSyncRecursive(pth.join(rootDir, "images/"), imgDir);
-    wrench.copyDirSyncRecursive(pth.join(rootDir, "fonts/"), fontDir);
-    
-    console.log([   "The specification has been generated. You may now wish to:"
-                ,   "\t\u2022 Run the link checker on everything (link-checker.js)"
-                ,   "\t\u2022 Run pubrules on everything (pubrules.js)"
-                 ].join("\n"));
-}
 
 // build the spec
 exec("make " + conf.make, { cwd: rootDir }, function (err, stdout, stderr) {
@@ -65,37 +42,6 @@ exec("make " + conf.make, { cwd: rootDir }, function (err, stdout, stderr) {
     console.log(stderr);
     if (err) throw err;
     wrench.copyDirSyncRecursive(pth.join(rootDir, conf.makeDir), hbDir);
-    // file renames
-    if (target === "html") {
-        // in every single file in there, replace spec.html with index.html
-        var files = fs.readdirSync(hbDir)
-        ,   notFoundDir = pth.join(rootDir, "404/")
-        ,   files404 = fs.readdirSync(notFoundDir)
-        ;
-        for (var i = 0, n = files404.length; i < n; i++) {
-            var f4 = files404[i];
-            fs.copy(pth.join(notFoundDir, f4), pth.join(hbDir, f4));
-        }
-
-        for (var i = 0, n = files.length; i < n; i++) {
-            var file = pth.join(hbDir, files[i]);
-            if (!file.match(/\.html$/)) continue;
-            var content = fs.readFileSync(file, "utf-8");
-            // the below looks weird because for reasons beyond human understanding,
-            // JS does not support zero-width negative lookbehinds
-            content = content
-                        .replace(/src: url\('..\/fonts\/Essays1743/g, "src: url('fonts/Essays1743")
-                        ;
-            fs.writeFileSync(file, content, "utf-8");
-        }
-    }
-    else if (target === "2d" || target === "microdata") {
-        var file = pth.join(hbDir, "Overview.html")
-        ,   content = fs.readFileSync(file, "utf-8");
-        content = content
-                    .replace(/src: url\('..\/fonts\/Essays1743/g, "src: url('fonts/Essays1743");
-        fs.writeFileSync(file, content, "utf-8");
-    }
     if (target === "microdata") {
         // move HTMLPropsCol section around
         var file = pth.join(hbDir, "Overview.html");
@@ -138,13 +84,8 @@ exec("make " + conf.make, { cwd: rootDir }, function (err, stdout, stderr) {
                 // serialise back to disk...
                 $(".jsdom").remove();
                 fs.writeFileSync(file, doc.doctype.toString() + doc.innerHTML, "utf8");
-                
-                finalise();
             }
         );
     
-    }
-    else {
-        finalise();
     }
 });
