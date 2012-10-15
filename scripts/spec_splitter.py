@@ -3,7 +3,7 @@ import re
 from lxml import etree # requires lxml 2.0
 from copy import deepcopy
 
-verbose = True
+verbose = False
 absolute_uris = False
 w3c = False
 use_html5lib_parser = False

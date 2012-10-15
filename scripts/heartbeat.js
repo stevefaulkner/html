@@ -52,30 +52,6 @@ function finalise () {
     fs.mkdirSync(fontDir);
     if (target !== "microdata") wrench.copyDirSyncRecursive(pth.join(rootDir, "images/"), imgDir);
     wrench.copyDirSyncRecursive(pth.join(rootDir, "fonts/"), fontDir);
-    // copy entities stuff
-    if (target === "html") {
-        fs.copy(pth.join(rootDir, "entities.json"), pth.join(hbDir, "entities.json"));
-        // link to author doc
-        var index = fs.readFileSync(pth.join(hbDir, "index.html"), "utf-8")
-        ,   findDate = /<dt>This Version:<\/dt>\s*<dd><a href="http:\/\/www.w3.org\/TR\/(\d{4})\/(\w+)-html5-(\d+)/
-        ,   res = findDate.exec(index)
-        ;
-        if (res) {
-            var year = res[1]
-            ,   status = res[2]
-            ,   date = res[3]
-            ,   fixAuthorLinks = ["index", "single-page"]
-            ;
-            for (var i = 0, n = fixAuthorLinks.length; i < n; i++) {
-                var page = fixAuthorLinks[i]
-                ,   file = pth.join(hbDir, page + ".html")
-                ,   content = fs.readFileSync(file, "utf-8")
-                ;
-                content = content.replace(/href=(?:")?author\/(?:")?>/, "href='http://www.w3.org/TR/" + year + "/" + status + "-html5-author-" + date + "/'>");
-                fs.writeFileSync(file, content, "utf-8");
-            }
-        }
-    }
     
     console.log([   "The specification has been generated. You may now wish to:"
                 ,   "\t\u2022 Run the link checker on everything (link-checker.js)"
@@ -91,8 +67,6 @@ exec("make " + conf.make, { cwd: rootDir }, function (err, stdout, stderr) {
     wrench.copyDirSyncRecursive(pth.join(rootDir, conf.makeDir), hbDir);
     // file renames
     if (target === "html") {
-        rename(pth.join(hbDir, "index.html"), pth.join(hbDir, "section-index.html"));
-        rename(pth.join(hbDir, "spec.html"), pth.join(hbDir, "index.html"));
         // in every single file in there, replace spec.html with index.html
         var files = fs.readdirSync(hbDir)
         ,   notFoundDir = pth.join(rootDir, "404/")
@@ -111,10 +85,6 @@ exec("make " + conf.make, { cwd: rootDir }, function (err, stdout, stderr) {
             // JS does not support zero-width negative lookbehinds
             content = content
                         .replace(/src: url\('..\/fonts\/Essays1743/g, "src: url('fonts/Essays1743")
-                        .replace(/\bsection-index\.html/g, "REPLACE-ME-SECTION-INDEX")
-                        .replace(/\"index\.html\b/g, "\"section-index.html")
-                        .replace(/REPLACE-ME-SECTION-INDEX/g, "section-index.html")
-                        .replace(/\bspec\.html\b/g, "index.html")
                         ;
             fs.writeFileSync(file, content, "utf-8");
         }
