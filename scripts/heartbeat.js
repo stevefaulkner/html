@@ -92,7 +92,6 @@ exec("make " + conf.make, { cwd: rootDir }, function (err, stdout, stderr) {
         rename(pth.join(hbDir, "spec.html"), pth.join(hbDir, "index.html"));
         // in every single file in there, replace spec.html with index.html
         var files = fs.readdirSync(hbDir)
-        ,   entContent = fs.readFileSync(pth.join(rootDir, "boilerplate/entities-dtd.url"))
         ,   notFoundDir = pth.join(rootDir, "404/")
         ,   files404 = fs.readdirSync(notFoundDir)
         ;
@@ -109,14 +108,10 @@ exec("make " + conf.make, { cwd: rootDir }, function (err, stdout, stderr) {
             // JS does not support zero-width negative lookbehinds
             content = content
                         .replace(/src: url\('..\/fonts\/Essays1743/g, "src: url('fonts/Essays1743")
-                        .replace(/&lt;!--BOILERPLATE%20entities-dtd\.url--&gt;/g, entContent)
-                        .replace(/<!--BOILERPLATE entities-dtd\.url-->/g, entContent)
                         .replace(/\bsection-index\.html/g, "REPLACE-ME-SECTION-INDEX")
                         .replace(/\"index\.html\b/g, "\"section-index.html")
                         .replace(/REPLACE-ME-SECTION-INDEX/g, "section-index.html")
                         .replace(/\bspec\.html\b/g, "index.html")
-                        .replace(/(?:<\/dt>){2,}/g, "")
-                        .replace(/(?:<\/dd>){2,}/g, "")
                         ;
             fs.writeFileSync(file, content, "utf-8");
         }
