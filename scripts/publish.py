@@ -85,14 +85,28 @@ if spec == 'html':
   for name in glob('output/html/*.html'):
     os.remove(name)
 
-  output = open('output/html/single-page.html', 'wb')
+  output = StringIO()
 else:
   output = open('output/%s/Overview.html' % spec, 'wb')
 
 generator.toFile(tree, output, **opts)
-output.close()
 
-if spec == 'html':
+if spec != 'html':
+  output.close()
+else:
+  value = output.getvalue()
+  if "<!--INTERFACES-->\n" in value:
+    from interface_index import interface_index
+    output.seek(0)
+    index = StringIO()
+    interface_index(output, index)
+    value = value.replace("<!--INTERFACES-->\n", index.getvalue(), 1)
+    index.close()
+  output = open('output/html/single-page.html', 'wb')
+  output.write(value)
+  output.close()
+  value = ''
+
   print 'splitting'
   import spec_splitter
   spec_splitter.w3c = True

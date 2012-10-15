@@ -3,10 +3,10 @@
      ZZZ: Set PUB to 1 for TR/ drafts, 0 for dev drafts; PUB-Y lines are used if it's 1 and PUB-N lines if it's 0.
      ZZZ: Set YEAR, SHORTDAY (month/day), and LONGDAY accordingly. They are used by the INSERT FOO bits below.
   -->
-<!--SET PUB=0-->
-<!--SET SHORTSTATUS=ED-->
-<!--SET URLSTATUS=ED-->
-<!--SET LONGSTATUS=Editor's Draft-->
+<!--SET PUB=1-->
+<!--SET SHORTSTATUS=WD-->
+<!--SET URLSTATUS=WD-->
+<!--SET LONGSTATUS=Working Draft-->
 <!--SET YEAR=2012-->
 <!--SET SHORTDAY=1011-->
 <!--SET LONGDAY=11 October-->
@@ -42,16 +42,17 @@
 	<dt>Editors:</dt>
 	<dd><a href="http://berjon.com/">Robin Berjon</a>, W3C</dd>
 	<dd><a href="mailto:travil@microsoft.com">Travis Leithead</a>, Microsoft</dd>
-	<dd><a href="mailto:silviapfeiffer1@gmail.com">Silvia Pfeiffer</a></dd>
 	<dd><a href="mailto:Erika.Doyle@microsoft.com">Erika Doyle Navara</a>, Microsoft</dd>
 	<dd><a href="mailto:eoconnor@apple.com">Edward O'Connor</a>, Apple Inc.</dd>
+	<dd><a href="mailto:silviapfeiffer1@gmail.com">Silvia Pfeiffer</a></dd>
 	<dt>Previous Editor:</dt>
     <dd><a href="mailto:ian@hixie.ch">Ian Hickson</a>, Google, Inc.</dd>
    </dl>
    <p>This specification is available in the following formats: 
-    <a href="Overview.html">single page HTML</a>,
-    <a href="spec.html">multipage HTML</a>,
-    <a href="author/">web developer edition</a>.
+    <a href="single-page.html">single page HTML</a>,
+    <a href="index.html">multipage HTML</a>,
+<!--PUB-N-->    <a href="author/">web developer edition</a>.
+<!--PUB-Y-->    <a href="http://www.w3.org/TR/<!--INSERT YEAR-->/<!--INSERT URLSTATUS-->-html5-author-<!--INSERT YEAR--><!--INSERT SHORTDAY-->/">web developer edition</a>.
     This is revision $Revision: 1.16 $.
    </p> 
   <!--BOILERPLATE middle-w3c-copyright-->
