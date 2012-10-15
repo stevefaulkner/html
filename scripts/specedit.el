@@ -62,7 +62,8 @@ Rationale: %r")
   '("ACKS"
     "EN"
     "INTERFACES"
-    "REFS")
+    "REFS"
+    "toc")
   "Keywords that I think get used by the preprocessor.")
 
 (defvar specedit-w3c-but-not-html5
