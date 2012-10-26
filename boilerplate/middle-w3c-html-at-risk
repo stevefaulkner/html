@@ -1,0 +1,57 @@
+
+<div>
+  <p>
+    The following features are <strong>at risk</strong> and may be removed due to lack of
+    implementation.
+  </p>
+  <ul>
+    <li>
+      <a href="the-hgroup-element.html#the-hgroup-element">&lt;hgroup&gt;</a>
+    </li>
+    <li>
+      <a href="the-command-element.html#the-command-element">&lt;command&gt;</a> and 
+      <a href="commands.html#commands">commands API</a>
+    </li>
+    <li>
+      <a href="the-menu-element.html#the-menu-element">&lt;menu&gt;</a> and 
+      <a href="the-menu-element.html#context-menus">context menus feature (“contextmenu” attribute)</a>
+    </li>
+    <li>
+      <a href="commands.html#the-dialog-element">&lt;dialog&gt;</a>
+    </li>
+    <li>
+      <a href="the-details-element.html#the-details-element">&lt;details&gt;</a> and 
+      <a href="the-summary-element.html#the-summary-element">&lt;summary&gt;</a>
+    </li>
+    <li>
+      <a href="states-of-the-type-attribute.html#color-state-(type=color)">&lt;input type=color&gt;</a>
+    </li>
+    <li>
+      <a href="states-of-the-type-attribute.html#date-and-time-state-type-datetime">&lt;input type=datetime&gt;</a>, 
+      <a href="states-of-the-type-attribute.html#month-state-(type=month)">&lt;input type=month&gt;</a>, 
+      <a href="states-of-the-type-attribute.html#week-state-(type=week)">&lt;input type=week&gt;</a>, 
+      <a href="states-of-the-type-attribute.html#time-state-(type=time)">&lt;input type=time&gt;</a>, 
+      <a href="states-of-the-type-attribute.html#local-date-and-time-state-(type=datetime-local)">&lt;input type=datetime-local&gt;</a>
+    </li>
+    <li>
+      <a href="the-output-element.html#the-output-element">&lt;output&gt;</a>
+    </li>
+    <li>
+      <a href="the-style-element.html#attr-style-scoped">&lt;style scoped&gt;</a>
+    </li>
+    <li>
+      <a href="the-iframe-element.html#attr-iframe-seamless">&lt;iframe seamless&gt;</a>
+    </li>
+    <li>
+      <a href="system-state-and-capabilities.html#custom-handlers">Custom scheme and content handlers 
+      (registerProtocolHandler and registerContentHandler)</a>
+    </li>
+    <li>
+      <a href="headings-and-sections.html#outlines">Outline algorithm</a>
+    </li>
+    <li>
+      <a href="rendering.html#links,-forms,-and-navigation">UA mechanism for navigating to resources 
+      linked to in cite=""</a>, see <a href="https://www.w3.org/Bugs/Public/show_bug.cgi?id=18915">Bug 18915</a> for more.
+    </li>
+  </ul>
+</div>
