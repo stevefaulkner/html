@@ -1,0 +1,14 @@
+<div>
+  <p>
+    The following features are <strong>at risk</strong> and may be removed due to lack of
+    implementation.
+  </p>
+  <ul>
+    <li>
+      <a href="#path-objects">Path objects</a>
+    </li>
+    <li>
+      <a href="#hit-regions">Hit regions</a>
+    </li>
+  </ul>
+</div>
