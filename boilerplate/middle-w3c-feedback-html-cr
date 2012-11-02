@@ -2,6 +2,12 @@
   <p>Publication as a Candidate Recommendation does not imply endorsement by the W3C Membership.
   This is a draft document and may be updated, replaced or obsoleted by other documents at
   any time. It is inappropriate to cite this document as other than work in progress.</p>
+  
+  <p>
+    For this specification to exit the CR stage, the conditions detailed in the 
+    <a href='http://dev.w3.org/html5/decision-policy/public-permissive-exit-criteria.html'>CR Exit 
+    Criteria (Public Permissive version 3)</a> document will have to be met.
+  </p>
 
   <!-- UNDER NO CIRCUMSTANCES IS THE FOLLOWING PARAGRAPH TO BE REMOVED OR EDITED WITHOUT TALKING TO IAN FIRST -->
   <!-- version history or list of changes (required) -->
