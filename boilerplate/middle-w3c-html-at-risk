@@ -17,6 +17,9 @@
       <a href="the-menu-element.html#context-menus">context menus feature (“contextmenu” attribute)</a>
     </li>
     <li>
+      <a href='http://htmlwg.org/cr/html/offline.html#appcache'>Application Cache</a>
+    </li>
+    <li>
       <a href="commands.html#the-dialog-element">&lt;dialog&gt;</a>
     </li>
     <li>
