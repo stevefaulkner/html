@@ -1,0 +1,21 @@
+<!-- Version: $Id: bugs2html-specinfo.dtd,v 1.2 2007/03/06 02:59:24 fsasaki Exp $-->
+ <!-- Adapt the following for your specification (mandatory)-->
+<!ENTITY specTitle "HTML5">
+<!ENTITY specPubDate "25 May 2011">
+<!ENTITY specStatus "Last Call Working Draft">
+<!ENTITY specLink "<a href='http://www.w3.org/TR/2011/WD-html5-20110525/'>HTML5</a> specification"><!ENTITY wg "<a href='http://www.w3.org/html/wg/'>HTML WG</a>">
+
+<!-- Adapt the following for your specification (optional)-->
+<!ENTITY externalComments ""> <!-- (or keyword externalComment)-->
+<!ENTITY resolutionsWithoutResponse ""> <!-- (or keyword noResponse)-->
+<!ENTITY reviewerNotSatisfied ""> <!--(or keyword reviewerNotSatisfied)-->
+<!ENTITY nonEditorialChange ""> <!--(or keyword nonEditorialChange)-->
+
+<!-- Touch the following only if you know what you are doing -->
+<!ENTITY wgAcceptsCommentXPath '//bug[resolution[.="FIXED" or .="WORKSFORME"]]'>
+<!ENTITY wgRejectsCommentXPath '//bug[resolution[.="WONTFIX" or .="DUPLICATE" or .="INVALID" or .="LATER" or .="NEEDSINFO" or .=""]]'>
+<!ENTITY reviewerSatisfiedXPath '//bug[not(contains("&reviewerNotSatisfied;",bug_id)) and not(contains(keywords,"reviewerNotSatisfied"))  and not(contains("&resolutionsWithoutResponse;",bug_id)) and not(contains(keywords,"noResponse"))]'>
+<!ENTITY reviewerNotSatisfiedXPath '//bug[contains("&reviewerNotSatisfied;",bug_id) or contains(keywords,"reviewerNotSatisfied")]'>
+<!ENTITY noResponseXPath '//bug[contains("&resolutionsWithoutResponse;",bug_id) or contains(keywords,"noResponse")]'>
+<!ENTITY nonEditorialChangeXPath '//bug[contains(keywords,"nonEditorialChange") or bug_id[contains("&nonEditorialChange;",.)]]'>
+<!ENTITY externalCommentsXPath '//bug[bug_id[contains("&externalComments;",.)]]'>
