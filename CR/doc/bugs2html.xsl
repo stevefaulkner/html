@@ -6,8 +6,8 @@
 <xsl:transform version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs">
     <xsl:output method="xhtml" encoding="UTF-8" omit-xml-declaration="no"
-        doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
-        doctype-public="-//W3C//DTD XHTML 1.0 Transitional//EN"/>
+        doctype-system="about:legacy-compat"
+        />
 
     <xsl:variable name="comments-total" select="count(//bug)"/>
     <xsl:variable name="wgAcceptsComment" select="&wgAcceptsCommentXPath;"/>
