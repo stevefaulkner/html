@@ -1,0 +1,3505 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <link rel="stylesheet" href="http://htmlwg.org/css/htmlwg.css" />
+      <title>HTML Canvas 2D Context Disposition of Comments</title><style type="text/css"> body { font-family: sans-serif;} th { text-align: left; }
+                  td, th { padding: 4px; } tr {background: #ddd;} table { width: 75% } table.issue {}
+                  *.noResponse { background: #bbf; border: 2px solid #f33 }
+                  *.changeDeclined { background: #fdc; border: 3px dotted #f33 } </style></head>
+   <body>
+      <h1>HTML Canvas 2D Context Last Call Disposition of Comments</h1>
+      <div>
+         <p>This is the Disposition of Comments for the 25 May 2011
+            Last Call Working Draft of the <a href="http://htmlwg.org/cr/2dcontext/Overview.html">HTML Canvas 2D Context</a> specification. This document lists the comments
+            received during the Last Call Working Draft period and the extent to which the
+            <a href="http://www.w3.org/html/wg/">HTML WG</a> believes they have been addressed. 
+         </p>
+      </div>
+      <p>Total number of comments: 89</p>
+      <table width="100%">
+         <tr>
+            <th> </th>
+            <th>Reviewer satisfied</th>
+            <th>Reviewer not satisfied</th>
+         </tr>
+         <tr>
+            <td>WG accepted comment
+                (29.21%)
+            </td>
+            <td>26</td>
+            <td>0</td>
+         </tr>
+         <tr>
+            <td>WG rejected comment
+                (70.79%)
+            </td>
+            <td>63</td>
+            <td>0</td>
+         </tr>
+      </table>
+      <h2>Detailed Description of Comments</h2>
+      <table class="issue" id="issue-10930" width="100%">
+         <tr>
+            <td><b>10930</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=10930#c0">CanvasPixelArray out of range behavior needs clarification</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2010-10-01</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-06</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  Checked in as WHATWG revision r6382.
+                  Check-in comment: Update previous checkin to actually be in the real WebIDL world
+                  instead of some crazy meaningless nonsense. Oops.
+                  http://html5.org/tools/web-apps-tracker?from=6381&amp;to=6382
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="proposalAccepted">Working Group
+                  accepted proposal.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-11066" width="100%">
+         <tr>
+            <td><b>11066</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=11066#c0">Notice of 'out of date' documentation links to same page</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2010-10-15</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-04</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  When visiting http://dev.w3.org/html5/2dcontext/ (dated W3C Working
+                  Draft 12 October 2010), a large red notice floats at the bottom, reading, "This is
+                  an out-of-date copy of this specification. For the up-to-date version, please view
+                  the latest editor's draft by following this link." The link points to the same page.
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="proposalAccepted">Working Group
+                  accepted proposal.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-11172" width="100%">
+         <tr>
+            <td><b>11172</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=11172#c0">wouldn't it be better to return the context handler instead of void, making "context.moveTo(x1,y1).lineTo(x2,y2).lineTo..."
+                  possible and easier?</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2010-10-29</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-04</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  EDITOR'S RESPONSE: This is an Editor's Response to your comment.
+                  If you are satisfied with this response, please change the state of this bug to CLOSED.
+                  If you have additional information and would like the editor to reconsider, please
+                  reopen this bug. If you would like to escalate the issue to the full HTML Working
+                  Group, please add the TrackerRequest keyword to this bug, and suggest title and text
+                  for the tracker issue; or you may create a tracker issue yourself, if you are able
+                  to do so. For more details, see this document:
+                  http://dev.w3.org/html5/decision-policy/decision-policy.html
+                  
+                  Status: Rejected
+                  Change Description: no spec change
+                  Rationale: Returning self isn't a good design pattern IMHO. It leads to very odd APIs
+                  that favour syntactic sugar over conveying logic.
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="changeDeclined">Change declined.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-11173" width="100%">
+         <tr>
+            <td><b>11173</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=11173#c0">wouldn't it be better to return the context handler instead of void, making "context.moveTo(x1,y1).lineTo(x2,y2).lineTo..."
+                  possible and easier?</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2010-10-29</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-04</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  
+                  
+                  *** This bug has been marked as a duplicate of bug 11172 ***
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="changeDeclined">Change declined.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-11203" width="100%">
+         <tr>
+            <td><b>11203</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=11203#c0">Canvas security model does not allow for same-origin relaxation</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2010-11-02</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-11-01</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  EDITOR'S RESPONSE: This is an Editor's Response to your comment.
+                  If you are satisfied with this response, please change the state of this bug to CLOSED.
+                  If you have additional information and would like the editor to reconsider, please
+                  reopen this bug. If you would like to escalate the issue to the full HTML Working
+                  Group, please add the TrackerRequest keyword to this bug, and suggest title and text
+                  for the tracker issue; or you may create a tracker issue yourself, if you are able
+                  to do so. For more details, see this document:
+                  http://dev.w3.org/html5/decision-policy/decision-policy.html
+                  
+                  Status: Accepted
+                  Change Description: &lt;img crossorigin&gt;
+                  Rationale: Concurred with reporter's comments.
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="proposalAccepted">Working Group
+                  accepted proposal.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-11217" width="100%">
+         <tr>
+            <td><b>11217</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=11217#c0">Footnotes I find it hard to believe, that even today, HTML does not include a specific
+                  element for including notes within the text. Notes are necessary for the full argumentation
+                  in the text without still belonging to the main text itself, and they includ</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2010-11-04</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-04</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  EDITOR'S RESPONSE: This is an Editor's Response to your comment.
+                  If you are satisfied with this response, please change the state of this bug to CLOSED.
+                  If you have additional information and would like the editor to reconsider, please
+                  reopen this bug. If you would like to escalate the issue to the full HTML Working
+                  Group, please add the TrackerRequest keyword to this bug, and suggest title and text
+                  for the tracker issue; or you may create a tracker issue yourself, if you are able
+                  to do so. For more details, see this document:
+                  http://dev.w3.org/html5/decision-policy/decision-policy.html
+                  
+                  Status: Rejected
+                  Change Description: no spec change
+                  Rationale: The spec lists a variety of ways of including inline notes already. It's
+                  not clear why they're not sufficient.
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="changeDeclined">Change declined.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-11239" width="100%">
+         <tr>
+            <td><b>11239</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=11239#c0">Canvas support accessible caret tracking independent of Focus Ring tracking</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2010-11-05</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-05</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  Marking FIXED since chair decision was applied.</p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="proposalAccepted">Working Group
+                  accepted proposal.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-11241" width="100%">
+         <tr>
+            <td><b>11241</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=11241#c0">Canvas support accessible Focus Ring tracking independent of caret or selection tracking</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2010-11-05</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-04</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  Richard, it seems this bug is already covered by ISSUE-131:
+                  
+                  http://www.w3.org/html/wg/tracker/issues/131
+                  
+                  More generally, if the editor has given a disposition and someone else wants to provide
+                  new information in the future, it's correct for the bug to stay resolved in the meantime.
+                  
+                  For these reasons, I'm making the following changes:
+                  
+                  1) Moving bug back to RESOLVED/WORKSFORME
+                  2) Adding TrackerIssue keyword
+                  3) Moving to pre-LC component, since this is covered by a pre-LC issue resulting from
+                  older bugs
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="proposalAccepted">Working Group
+                  accepted proposal.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-11245" width="100%">
+         <tr>
+            <td><b>11245</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=11245#c0">I cannot find an explicit statement about XML compatibility of empty attributes. In
+                  former XHTML standards, the syntax used to be &lt;input checked="checked".../&gt; Now with
+                  the implied value "" of empty attributes, the syntax is &lt;input checked=""/&gt; as I under</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2010-11-05</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-04</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  http://www.whatwg.org/html/#boolean-attributes
+                  
+                  WFM
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="proposalAccepted">Working Group
+                  accepted proposal.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-11263" width="100%">
+         <tr>
+            <td><b>11263</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=11263#c0">Most browsers seem to clear to transparent -white- by default, since this results
+                  in much nicer blended edges in antialiased-graphics.</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2010-11-08</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-04</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  EDITOR'S RESPONSE: This is an Editor's Response to your comment.
+                  If you are satisfied with this response, please change the state of this bug to CLOSED.
+                  If you have additional information and would like the editor to reconsider, please
+                  reopen this bug. If you would like to escalate the issue to the full HTML Working
+                  Group, please add the TrackerRequest keyword to this bug, and suggest title and text
+                  for the tracker issue; or you may create a tracker issue yourself, if you are able
+                  to do so. For more details, see this document:
+                  http://dev.w3.org/html5/decision-policy/decision-policy.html
+                  
+                  Status: Did Not Understand Request
+                  Change Description: no spec change
+                  Rationale: Short a testcase demonstrating the issue, I'm at a loss as to how to evaluate
+                  this proposal, and my go-to guy for &lt;canvas&gt; was unable to divine the reporter's intent
+                  either.
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="changeDeclined">Change declined.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-11275" width="100%">
+         <tr>
+            <td><b>11275</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=11275#c0">ikjljjpñpñopñiñklñklñklñ djdjfjd djfd kf e elr e kdf dsfj df iasjd asdlk wejied kjsd
+                  ijkjqwe ijwq sad iasjd oasjdoasjd asodjqowd</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2010-11-09</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-04</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  Specification: http://dev.w3.org/html5/spec/Overview.html
+                  Section: http://www.whatwg.org/specs/web-apps/current-work/complete.html#top
+                  
+                  Comment:
+                  ikjljjpñpñopñiñklñklñklñ djdjfjd djfd kf e elr e kdf dsfj df iasjd
+                  asdlk wejied kjsd ijkjqwe ijwq
+                  sad iasjd oasjdoasjd asodjqowd
+                  
+                  Posted from: 152.74.121.178
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="changeDeclined">Change declined.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-11281" width="100%">
+         <tr>
+            <td><b>11281</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=11281#c0">It work very well. But it have any problem about SVN .  If you have some help please
+                  suggested me. Thank you very much.</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2010-11-10</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-04</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  Specification: http://dev.w3.org/html5/spec/Overview.html
+                  Section: http://www.whatwg.org/specs/web-apps/current-work/complete.html#top
+                  
+                  Comment:
+                  It work very well. But it have any problem about SVN .	If you have some help
+                  please suggested me. Thank you very much.
+                  
+                  Posted from: 1.47.159.92
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="changeDeclined">Change declined.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-11291" width="100%">
+         <tr>
+            <td><b>11291</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=11291#c0">fuck you bitch suck my cock</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2010-11-11</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-04</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  WONTFIX</p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="changeDeclined">Change declined.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-11308" width="100%">
+         <tr>
+            <td><b>11308</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=11308#c0">$(function() {     $('.rollover').hover(function() {         var currentImg = $(this).attr('src');
+                  $(this).attr('src', $(this).attr('hover'));         $(this).attr('hover', currentImg);
+                  }, function() {         var currentImg = $(this).attr('sr</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2010-11-12</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-04</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  Specification: http://dev.w3.org/html5/spec/
+                  Section: http://www.whatwg.org/specs/web-apps/current-work/complete.html#top
+                  
+                  Comment:
+                  $(function() {
+                  $('.rollover').hover(function() {
+                  	var currentImg = $(this).attr('src');
+                  	$(this).attr('src', $(this).attr('hover'));
+                  	$(this).attr('hover', currentImg);
+                  }, function() {
+                  	var currentImg = $(this).attr('src');
+                  	$(this).attr('src', $(this).attr('hover'));
+                  	$(this).attr('hover', currentImg);
+                  });
+                  });
+                  
+                  
+                  Posted from: 122.116.92.103
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="changeDeclined">Change declined.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-11316" width="100%">
+         <tr>
+            <td><b>11316</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=11316#c0">&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt; &lt;head&gt; &lt;/head&gt; &lt;body leftmargin="0" margin="0"
+                  topmargin="0" marginheight="0" offset="0" bgcolor='#ffffff' &gt; &lt;table width="100%"
+                  cellpadding="10" cellspacing="0" bgcolor='#ffffff' &gt; &lt;tr&gt; &lt;td valign="top" align="</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2010-11-14</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-04</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  Specification: http://dev.w3.org/html5/spec/Overview.html
+                  Section: http://www.whatwg.org/specs/web-apps/current-work/complete.html#top
+                  
+                  Comment:
+                  &lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
+                  &lt;head&gt;
+                  
+                  &lt;/head&gt;
+                  
+                  &lt;body leftmargin="0" margin="0" topmargin="0" marginheight="0" offset="0"
+                  bgcolor='#ffffff' &gt;
+                  
+                  &lt;table width="100%" cellpadding="10" cellspacing="0" bgcolor='#ffffff' &gt;
+                  &lt;tr&gt;
+                  &lt;td valign="top" align="center"&gt;
+                  
+                  &lt;table width="612" cellpadding="0" cellspacing="0" bgcolor='#C6D92C'
+                  style="padding-bottom:20px;"&gt;
+                  &lt;tr&gt;
+                  &lt;td align="left" valign="middle" style="border-bottom:30px solid #C6D92C;
+                  border-top:30px solid #C6D92C; padding-left: 26px;"&gt;&lt;a
+                  href="http://www.artasiafair.com"&gt;&lt;img
+                  src="https://origin.ih.constantcontact.com/fs095/1102808931010/img/23.png"
+                  border="0" alt="Art Asia Fair Logo" titel="Art Asia Fair Logo" width="560"
+                  height="87"/&gt;&lt;/a&gt;&lt;/td&gt;
+                  &lt;/tr&gt;
+                  
+                  &lt;tr&gt;&lt;td&gt;
+                  
+                  &lt;table width="560" align="center" bgcolor="#444446"&gt;
+                  &lt;tr&gt;
+                  &lt;td style = "height: 30px; font-family: Impact,'Arial Black',sans-serif;
+                  font-size:24px; color:#ffffff; padding:0px 20px; text-align:center"&gt;Vernissage
+                  November 30&lt;/td&gt;&lt;/tr&gt;
+                  &lt;/table&gt;&lt;/td&gt;&lt;/tr&gt;
+                  
+                  &lt;tr&gt;&lt;td&gt;&lt;table width = "560" align="center" bgcolor='#ffffff'&gt;
+                  
+                  &lt;tr&gt;&lt;td&gt;
+                  
+                  &lt;table width="514" align="center" style="padding-top:10px;"&gt;
+                  &lt;tr&gt;
+                  
+                  &lt;td valign="top" style ="width: 330px; text-align:left; font-size:10px;
+                  font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif; color:#444446;"&gt;
+                  &lt;h1 style="margin:0px; font-weight:bold; font-size: 17px; line-height:
+                  105%;"&gt;DIALOGUE SPACE&lt;br /&gt;CORDIALLY INVITES YOU TO&lt;/h1&gt;
+                  &lt;h1 style="margin: 0px; font-family: Impact, 'Arial Black', sans-serif; color:
+                  #C6D92C; font-size: 22px; font-weight: 400; line-height: 105%;"&gt;Art Asia Miami
+                  2010&lt;br /&gt;December 1-5 2010&lt;/h1&gt;
+                  &lt;p style="margin:0px; font-size: 15px;"&gt;2901 North Miami Avenue&lt;/p&gt;
+                  &lt;p style="margin: 0px; font-size: 12px;"&gt;&lt;a style="text-decoration: none;
+                  color: #444446;" href="http://www.artasiafair.com"&gt;www.artasiafair.com&lt;/a&gt;&lt;/p&gt;
+                  
+                  &lt;p style="margin: 0px; font-size: 10px;"&gt;Entrance is located on the Midtown
+                  Boulevard&lt;/p&gt;
+                  &lt;h1 style="margin-top:8px; margin-right: 0px; margin-left: 0px; margin-bottom:
+                  0px; font-weight:bold; font-size: 17px; line-height: 105%;"&gt;DIALOGUE SPACE&lt;br
+                  /&gt;BOOTH C14&lt;/h1&gt;
+                  &lt;p style="margin: 0; font-size: 12px;"&gt;For further information, inquiries,
+                  or&lt;br /&gt;to RSVP please contact Dialogue Space: &lt;a style="text-decoration:
+                  none; color: #444446;" href="mailto:
+                  dialoguespace@gmail.com"&gt;dialoguespace@gmail.com&lt;/a&gt;&lt;/p&gt;
+                  &lt;h1 style="margin-top:8px; margin-right: 0px; margin-left: 0px; margin-bottom:
+                  0px; font-weight:bold; font-size: 17px; line-height: 105%;"&gt;VERNISSAGE&lt;br
+                  /&gt;NOVEMBER 30, 2010&lt;/h1&gt;
+                  &lt;table cellspacing ="0" cellpadding ="0" border ="0" style="margin: 0;
+                  font-size: 12px; color: #444446;"&gt;&lt;tr&gt;&lt;td style="width: 100px; text-align:
+                  left; padding: 0;"&gt;Tuesday&lt;/td&gt;&lt;td style="width: 230px; text-align: right;
+                  padding: 0;"&gt;3 pm - 9 pm&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+                  &lt;h1 style="margin-top:4px; margin-right: 0px; margin-left: 0px; margin-bottom:
+                  0px; font-weight:bold; font-size: 17px;"&gt;DECEMBER 1 - 5, 2010&lt;/h1&gt;
+                  &lt;table cellspacing ="0" cellpadding ="0" border ="0" style="margin: 0;
+                  font-size: 12px; color: #444446;"&gt;&lt;tr&gt;&lt;td style="width: 200px; text-align:
+                  left; padding: 0;"&gt;Wednesday&lt;/td&gt;&lt;td style="width: 130px; text-align: right;
+                  padding: 0;"&gt;11 am - 6 pm&lt;/td&gt;&lt;/tr&gt;
+                  &lt;tr&gt;&lt;td style="width: 200px; text-align: left; padding: 0;"&gt;Thursday -
+                  Saturday&lt;/td&gt;&lt;td style="width: 130px; text-align: right; padding: 0;"&gt;11 am -
+                  7 pm&lt;/td&gt;&lt;/tr&gt;
+                  &lt;tr&gt;&lt;td style="width: 200px; text-align: left; padding: 0;"&gt;Sunday&lt;/td&gt;&lt;td
+                  style="width: 130px; text-align: right; padding: 0;"&gt;11 am - 6
+                  pm&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+                  
+                  &lt;/td&gt;
+                  &lt;td valign="top"  style = "width: 250px; text-align: right; "&gt;&lt;img
+                  src="https://origin.ih.constantcontact.com/fs095/1102808931010/img/22.jpg"
+                  alt="Dialogue Space" width="247" height="320" /&gt;&lt;/td&gt;
+                  &lt;/tr&gt;
+                  &lt;/table&gt;
+                  
+                  &lt;/td&gt;&lt;/tr&gt;
+                  
+                  &lt;tr&gt;&lt;td&gt;
+                  &lt;table width="514" align="center"&gt;&lt;tr&gt;&lt;td style = "font-size:12px;
+                  font-family:'Trebuchet MS', Arial, Helvetica, sans-serif; color:#444446;
+                  line-height: 120%;" &gt;
+                  &lt;p&gt;To purchase tickets in advance please visit: &lt;a style="text-decoration:
+                  none; color: #444446;"
+                  href="http://www.artasiafair.com/ticketing"&gt;www.artasiafair.com/ticketing&lt;/a&gt;.
+                  Tickets will also be available for purchase at the fair.&lt;/p&gt;
+                  
+                  &lt;p&gt;The premier Asian contemporary art fair in America, ART ASIA is a platform
+                  for galleries from 
+                  around the world to showcase the best of both established and emerging Asian
+                  contemporary 
+                  artists.&lt;/p&gt;
+                  
+                  &lt;p&gt;Over the past several years, the fair has positioned itself as a forum for
+                  international galleries, 
+                  curators, artists, collectors and educators to exchange ideas and enable new
+                  audiences from the 
+                  international art scene to see innovate and exciting works by contemporary
+                  Asian artists.&lt;/p&gt;
+                  
+                  &lt;p&gt;ART ASIA was established in 2008 and has hosted fairs in Miami and Basel.
+                  In only  its third edition, 
+                  ART ASIA has welcomed more than 30,000 visitors, including top collectors,
+                  curators, critics, and 
+                  artists.&lt;/p&gt;
+                  
+                  &lt;p&gt;For press inquiries please contact Vicki Paloympis at &lt;a
+                  style="text-decoration: none; color: #444446;"
+                  href="mailto:vpaloympis@artasiafair.com"&gt;vpaloympis@artasiafair.com&lt;/a&gt;&lt;/p&gt;
+                  
+                  &lt;p&gt;For real-time updates on ART ASIA Miami 2010 please visit &lt;a
+                  style="text-decoration: none; color: #444446;"
+                  href="http://www.twitter.com/artasia"&gt;www.twitter.com/artasia&lt;/a&gt;&lt;/p&gt;
+                  
+                  &lt;p&gt;&lt;forward style="text-decoration:none; color: #444446;"&gt;Forward this
+                  email&lt;/forward&gt;&lt;/p&gt;
+                  &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+                  &lt;/td&gt;&lt;/tr&gt;
+                  
+                  &lt;tr&gt;&lt;td&gt;&lt;table width = "530" align="center"&gt;&lt;tr&gt;&lt;td style = "border-top: solid
+                  #dedfe0 2px;"&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/td&gt;&lt;/tr&gt;
+                  
+                  &lt;/table&gt;
+                  
+                  &lt;/td&gt;&lt;/tr&gt;
+                  &lt;tr&gt;&lt;td&gt;
+                  
+                  &lt;table width="560" align="center" bgcolor="#444446"&gt;
+                  &lt;tr&gt;
+                  &lt;td style = "height: 20px; font-family:Arial, Helvetica, sans-serif;
+                  font-size:12px; font-weight:bold;color:#fff; padding:0px 20px;
+                  text-align:center"&gt;&lt;/td&gt;&lt;/tr&gt;
+                  &lt;/table&gt;&lt;/td&gt;&lt;/tr&gt;
+                  
+                  &lt;/table&gt;
+                  
+                  &lt;/td&gt;&lt;/tr&gt;
+                  &lt;/table&gt;
+                  
+                  
+                  
+                  
+                  
+                  &lt;/body&gt;
+                  &lt;/html&gt;
+                  
+                  Posted from: 218.241.231.98
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="changeDeclined">Change declined.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-11318" width="100%">
+         <tr>
+            <td><b>11318</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=11318#c0">Get rid of the obnoxious "This is a word in progress"</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2010-11-14</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-04</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  
+                  
+                  *** This bug has been marked as a duplicate of bug 11324 ***
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="changeDeclined">Change declined.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-11332" width="100%">
+         <tr>
+            <td><b>11332</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=11332#c0">The term "streaming user agent" is used in several places throughout the spec but
+                  its meaning is not defined and not immediately clear. Would be good to define it.</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2010-11-17</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-04</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  Checked in as WHATWG revision r5727.
+                  Check-in comment: clarify 'streaming'
+                  http://html5.org/tools/web-apps-tracker?from=5726&amp;to=5727
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="proposalAccepted">Working Group
+                  accepted proposal.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-11333" width="100%">
+         <tr>
+            <td><b>11333</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=11333#c0">The usage of the title tag is outdated. Please update with a new name for the tag.</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2010-11-17</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-04</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  Specification: http://dev.w3.org/html5/spec/Overview.html
+                  Section: http://www.whatwg.org/specs/web-apps/current-work/complete.html#top
+                  
+                  Comment:
+                  The usage of the title tag is outdated. Please update with a new name for the
+                  tag.
+                  
+                  Posted from: 81.6.225.20
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="proposalAccepted">Working Group
+                  accepted proposal.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-11339" width="100%">
+         <tr>
+            <td><b>11339</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=11339#c0">hola queria decir que chupas poyas a raudales</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2010-11-18</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-04</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  Specification: http://dev.w3.org/html5/spec/Overview.html
+                  Section: http://www.whatwg.org/specs/web-apps/current-work/complete.html#top
+                  
+                  Comment:
+                  hola queria decir que chupas poyas a raudales
+                  
+                  Posted from: 80.26.15.175
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="changeDeclined">Change declined.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-11342" width="100%">
+         <tr>
+            <td><b>11342</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=11342#c0">TextMetrics should include distance from textBaseline to each of the baselines in
+                  the text</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2010-11-18</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2012-11-27</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  (In reply to comment #17)
+                  &gt; Comment via Rich Schwerdtfeger:
+                  &gt; 
+                  &gt; This does not appear to have been addressed by the chairs. We have focus
+                  &gt; rings functions but it would be valuable to have this addition to text
+                  &gt; metrics in order to compute the path for drawing the focus rings. At one
+                  &gt; point they had asked for additional information and it was provided.
+                  &gt; 
+                  &gt; http://www.w3.org/html/wg/wiki/ChangeProposals/FocusRingTextBaseline
+                  
+                  The current textmetrics API returns a set of baselines.
+                  Does this API not fulfill your use=case?
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="changeDeclined">Change declined.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-11374" width="100%">
+         <tr>
+            <td><b>11374</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=11374#c0">i want to do it web..can u teach me..</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2010-11-22</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-04</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  Specification: http://dev.w3.org/html5/spec/Overview.html
+                  Section: http://www.whatwg.org/specs/web-apps/current-work/complete.html#top
+                  
+                  Comment:
+                  i want to do it web..can u teach me..
+                  
+                  Posted from: 60.52.64.92
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="changeDeclined">Change declined.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-11377" width="100%">
+         <tr>
+            <td><b>11377</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=11377#c0">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
+                  &lt;!-- vim:ts=2: --&gt; &lt;html&gt; &lt;head&gt; &lt;title&gt;Angelo Arrifano :: Home Page&lt;/title&gt; &lt;link
+                  rel="stylesheet" type="text/css" href="global.css"</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2010-11-22</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-04</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  Specification: http://dev.w3.org/html5/spec/Overview.html
+                  Section: http://www.whatwg.org/specs/web-apps/current-work/complete.html#top
+                  
+                  Comment:
+                  &lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
+                  &lt;!-- vim:ts=2:
+                  --&gt;
+                  &lt;html&gt;
+                  &lt;head&gt;
+                  	&lt;title&gt;Angelo Arrifano :: Home Page&lt;/title&gt;
+                  	&lt;link rel="stylesheet" type="text/css" href="global.css" /&gt;
+                  &lt;/head&gt;
+                  &lt;body&gt;
+                  
+                  &lt;div id="header"&gt;
+                  	&lt;img src="images/header.png" /&gt;
+                  &lt;/div&gt;
+                  
+                  &lt;div id="menubar"&gt;&lt;div id="menu"&gt;
+                  	&lt;a href="index.php"&gt;
+                  		&lt;div&gt;&lt;img src="images/menu-home.png" /&gt;&lt;br /&gt;Home&lt;/div&gt;
+                  	&lt;/a&gt;
+                  	&lt;a href="index.php?t=about"&gt;
+                  		&lt;div&gt;&lt;img src="images/menu-about.png" /&gt;&lt;br /&gt;About Me&lt;/div&gt;
+                  	&lt;/a&gt;
+                  	&lt;a href="index.php?t=projs"&gt;
+                  
+                  		&lt;div&gt;&lt;img src="images/menu-projs.png" /&gt;&lt;br /&gt;Projects&lt;/div&gt;
+                  	&lt;/a&gt;
+                  	&lt;a href="index.php?t=media"&gt;
+                  		&lt;div&gt;&lt;img src="images/menu-media.png" /&gt;&lt;br /&gt;Media&lt;/div&gt;
+                  	&lt;/a&gt;
+                  &lt;/div&gt;&lt;/div&gt;
+                  
+                  &lt;div id="body"&gt;
+                  &lt;/div&gt;
+                  
+                  &lt;div id="footer"&gt;
+                  Homepage of &lt;a href="mailto:miknix@gmail.com"&gt;Angelo M. Arrifano&lt;/a&gt; ::
+                  Copyright (C) 2010 Angelo Arrifano :: Last Updated on 22 Nov. 2010
+                  &lt;/div&gt;
+                  
+                  &lt;/body&gt;
+                  &lt;/html&gt;
+                  
+                  
+                  Posted from: 188.80.122.111
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="changeDeclined">Change declined.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-11397" width="100%">
+         <tr>
+            <td><b>11397</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=11397#c0">Additional compositing operations such as 'max-alpha' and 'min-alpha' would make it
+                  much easier to make soft brush and eraser tools in painting applications.</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2010-11-24</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2012-02-29</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  EDITOR'S RESPONSE: This is an Editor's Response to your comment.
+                  If you are satisfied with this response, please change the state of this bug to CLOSED.
+                  If you have additional information and would like the editor to reconsider, please
+                  reopen this bug. If you would like to escalate the issue to the full HTML Working
+                  Group, please add the TrackerRequest keyword to this bug, and suggest title and text
+                  for the tracker issue; or you may create a tracker issue yourself, if you are able
+                  to do so. For more details, see this document:
+                  http://dev.w3.org/html5/decision-policy/decision-policy.html
+                  
+                  Status: Did Not Understand Request
+                  Change Description: no spec change
+                  Rationale: see comment 5
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="changeDeclined">Change declined.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-11405" width="100%">
+         <tr>
+            <td><b>11405</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=11405#c0">Why You Guys Taking So Much Time for HTML5....</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2010-11-25</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-04</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  Specification: http://dev.w3.org/html5/spec/
+                  Section: http://www.whatwg.org/specs/web-apps/current-work/complete.html#top
+                  
+                  Comment:
+                  Why You Guys Taking So Much Time for HTML5.... 
+                  
+                  Posted from: 202.164.34.114
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="changeDeclined">Change declined.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-11449" width="100%">
+         <tr>
+            <td><b>11449</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=11449#c0">The current specification and implementation of &lt;input type="date"&gt; using yyyy-mm-dd
+                  format will be unacceptable to many of our corporate customers. Also, only allowing
+                  times in &lt;input type="date"&gt; to be in 24 hour clock will cause serious delays in our
+                  b</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2010-12-01</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-04</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  EDITOR'S RESPONSE: This is an Editor's Response to your comment.
+                  If you are satisfied with this response, please change the state of this bug to CLOSED.
+                  If you have additional information and would like the editor to reconsider, please
+                  reopen this bug. If you would like to escalate the issue to the full HTML Working
+                  Group, please add the TrackerRequest keyword to this bug, and suggest title and text
+                  for the tracker issue; or you may create a tracker issue yourself, if you are able
+                  to do so. For more details, see this document:
+                  http://dev.w3.org/html5/decision-policy/decision-policy.html
+                  
+                  Status: Did Not Understand Request
+                  Change Description: see above.
+                  Rationale: I've tried to clarify the spec as suggested in comment 2, but beyond that
+                  I don't understand exactly what is being requested here.
+                  
+                  Original poster: please feel free to reopen the bug as described in the "EDITOR'S
+                  RESPONSE" paragraph above.
+                  
+                  Others: please file new bugs if you have specific ideas or suggestions stemming from
+                  the discussion above.
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="changeDeclined">Change declined.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-11459" width="100%">
+         <tr>
+            <td><b>11459</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=11459#c0">"If the image argument is an HTMLImageElement object that is not fully decodable ...
+                  then the implementation must return without drawing anything." This is terrible! 
+                  It completely prohibits displaying images incrementally.  When I'm loading a 5 MB
+                  3000x3</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2010-12-02</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-04</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  EDITOR'S RESPONSE: This is an Editor's Response to your comment.
+                  If you are satisfied with this response, please change the state of this bug to CLOSED.
+                  If you have additional information and would like the editor to reconsider, please
+                  reopen this bug. If you would like to escalate the issue to the full HTML Working
+                  Group, please add the TrackerRequest keyword to this bug, and suggest title and text
+                  for the tracker issue; or you may create a tracker issue yourself, if you are able
+                  to do so. For more details, see this document:
+                  http://dev.w3.org/html5/decision-policy/decision-policy.html
+                  
+                  Status: Did Not Understand Request
+                  Change Description: no spec change
+                  Rationale: Could you elaborate on how you would do progressive loading with &lt;canvas&gt;?
+                  An example showing how this would work would be great. I'm not sure I follow.
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="changeDeclined">Change declined.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-11472" width="100%">
+         <tr>
+            <td><b>11472</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=11472#c0">Add height property for TextMetrics</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2010-12-04</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-04</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  
+                  
+                  *** This bug has been marked as a duplicate of bug 7798 ***
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="changeDeclined">Change declined.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-11488" width="100%">
+         <tr>
+            <td><b>11488</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=11488#c0">drawImage(img), where img is SVG image with % height/width</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2010-12-07</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-04</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  Checked in as WHATWG revision r6044.
+                  Check-in comment: Define how an SVG image gets sized in drawImage()
+                  http://html5.org/tools/web-apps-tracker?from=6043&amp;to=6044
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="proposalAccepted">Working Group
+                  accepted proposal.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-11494" width="100%">
+         <tr>
+            <td><b>11494</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=11494#c0">I would like a simple direct way to say that a table, or all tables in a document,
+                  should be drawn using single lines.  I produce puzzles as a business, so the tables
+                  that I have on my webpages are crossword diagrams, Sudoku diagrams, chess diagrams,
+                  and</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2010-12-07</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-04</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  This is a CSS issue.  It can be trivially achieved with code similar
+                  to the following:
+                  
+                  table {
+                  border-collapse: collapse;
+                  border: 1px solid black;
+                  }
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="proposalAccepted">Working Group
+                  accepted proposal.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-11543" width="100%">
+         <tr>
+            <td><b>11543</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=11543#c0">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
+                  &lt;html xmlns="http://www.w3.org/1999/xhtml"&gt; &lt;head&gt; &lt;meta http-equiv="Content-Type"
+                  content="text/html; charset=iso-8859-1" /&gt; &lt;title&gt;</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2010-12-13</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-04</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  Given the lack of vim mode line, this is not a dupe of bug 11377.</p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="changeDeclined">Change declined.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-11546" width="100%">
+         <tr>
+            <td><b>11546</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=11546#c0">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
+                  &lt;html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"&gt; &lt;!-- 30:47 GMT --&gt; &lt;head&gt;
+                  &lt;title&gt;Ð&#x9d;Ð°Ñ&#x80;Ð¾Ð´Ð½Ñ&#x8b;Ðµ Ñ&#x80;ÐµÑ&#x86;ÐµÐ¿Ñ&#x82;Ñ&#x8b;, Ð¼ÐµÐ´Ð¸ï</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2010-12-14</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-04</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  Specification: http://dev.w3.org/html5/spec/
+                  Section: http://www.whatwg.org/specs/web-apps/current-work/complete.html#top
+                  
+                  Comment:
+                  &lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
+                  &lt;html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"&gt;
+                  
+                  
+                  &lt;!-- 30:47 GMT --&gt;
+                  &lt;head&gt;
+                  
+                  &lt;title&gt;Народные рецепты, медицина,&lt;/title&gt;
+                  &lt;meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /&gt;
+                  &lt;meta name='yandex-verification' content='7d991eeb642db786' /&gt;
+                  &lt;meta name="description" content="Народные рецепты,
+                  медицина" /&gt;
+                  &lt;meta name="keywords" content="рецепт, народный,
+                  медицина, болезнь, помочь, целебный,
+                  заболевание, поставить, раздел, излечение,
+                  растение, кожный, природа, женщина,
+                  эффективный, рака, недуг" /&gt;
+                  &lt;meta name="subject" content="Рецепты народной
+                  медицины, справочники. Задать вопрос к
+                  специалистам" /&gt;
+                  &lt;meta name="robots" content="all" /&gt;
+                  &lt;meta name="revisit-after" content="1 days" /&gt;
+                  
+                  &lt;meta http-equiv="Content-Type" content="text/html; charset=windows-1251" /&gt; 
+                  
+                  &lt;link rel="stylesheet" href="templates/travnik/css/engine.css" type="text/css"
+                  /&gt;
+                  &lt;link rel="stylesheet" href="templates/travnik/css/style.css" type="text/css"
+                  /&gt;
+                  
+                  &lt;link rel="icon" href="favicon.ico" type="image/x-icon" /&gt;
+                  &lt;link rel="shortcut icon" href="favicon.ico" type="image/x-icon" /&gt;
+                  &lt;?php @include_once $_SERVER['DOCUMENT_ROOT'].'/include/head.php'; ?&gt; 
+                  &lt;/head&gt;
+                  &lt;body&gt;
+                  &lt;?php @include_once $_SERVER['DOCUMENT_ROOT'].'/include/body.php'; ?&gt; 
+                  
+                  &lt;div id="wrapper"&gt;
+                  
+                  	&lt;div id="header"&gt;
+                  		&lt;img src="templates/travnik/images/leaf.gif" class="leaf"
+                  alt="Народные рецепты, медицина," /&gt;
+                  		&lt;h2&gt;Народные  &lt;span&gt; рецепты&lt;/span&gt;&lt;/h2&gt;&lt;h3&gt;&lt;a
+                  href="http://fitohealth-nsp.ru/forum/"&gt; Задать вопрос на
+                  форуме &lt;/h3&gt;
+                  	&lt;/div&gt;
+                  	
+                  	&lt;div id="container"&gt;
+                  		&lt;div id="content"&gt;
+                  			&lt;div id="left"&gt;
+                  &lt;?php @include_once $_SERVER['DOCUMENT_ROOT'].'/include/left.php'; ?&gt;	      
+                  	 
+                  &lt;/div&gt;
+                  			
+                  		&lt;div id="main"&gt;&lt;div class="inside1"&gt;&lt;div class="inside2"&gt;&lt;div
+                  class="inside3"&gt;&lt;div class="inside4"&gt;&lt;div class="inside5"&gt;&lt;div
+                  class="inside6"&gt;&lt;div class="inside7"&gt;
+                  				&lt;span id='dle-speedbar'&gt;&lt;a
+                  href="index.html"&gt;Народные рецепты &lt;/a&gt;&lt;/span&gt;
+                  			&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+                  				
+                  				
+                  
+                  				&lt;div id="main"&gt;&lt;div class="inside1"&gt;&lt;div
+                  class="inside2"&gt;&lt;div class="inside3"&gt;&lt;div class="inside4"&gt;&lt;div
+                  class="inside5"&gt;&lt;div class="inside6"&gt;&lt;div class="inside7"&gt;
+                  				&lt;span id='dle-info'&gt;&lt;/span&gt;
+                  				&lt;div id='dle-content'&gt;&lt;h1&gt;Доброго
+                  дня!&lt;/h1&gt;
+                  &lt;br&gt;
+                  &lt;!-- perviy1 --&gt;
+                  &lt;br&gt;
+                  &lt;div class="news"&gt;
+                  	&lt;div id='news-id-48'&gt;&lt;p class="news"&gt;&lt;b&gt;Народные
+                  рецепты, медицина, &lt;/b&gt; в данное время вполне
+                  заслуженно находится на пике своей
+                  популярности, как и во времена наших
+                  предков. Ведь современный человек
+                  отдалился от природы. Мы повсеместно
+                  используем достижения науки и техники,
+                  перестаем активно двигаться, едим генно
+                  модифицированные продукты, дышим
+                  загрязненным вредными веществами
+                  воздухом. В результате мы приобретаем
+                  новые болезни. Официальная терапия, подняв
+                  1-но заболевание, увечит иное, потому, что
+                  банкет синтетических средств,
+                  антибиотиков, способствует развитию
+                  аллергии, кожных болезней, рушит печень а
+                  также почки.	Но что же делать? Лечиться то
+                  нужно… 
+                  &lt;/p&gt;&lt;p class="news"&gt;Отличный  медицинский работник,
+                  все-таки учитывая то, то что грызть
+                  доступная, однако вмести с этим
+                  &lt;b&gt;эффективная  медицина - народная,
+                  народные рецепты,&lt;/b&gt;, ставит больному,
+                  кроме медикаментозного излечению,
+                  проверенные «бабушкины» рецепты. Как бы то
+                  ни было, не взирая на техно развитие,
+                  мужчина — маленького ребенка Природы. А
+                  также, выдайся несчастье с самочуаствием,
+                  Народные рецепты, медицина, любезно
+                  выскажет инициативу прибегнуть  дарами
+                  природы —  растениями, минералами а также
+                  камнями,  целебными глинами а также
+                  грязями, природными водами, солнечным
+                  световыми лучами а также запахами.
+                  Необходимо лишь уметь сведуще этим всем
+                  употреблять а также в данном, мы не
+                  сомневаются, вам может помочь новость,
+                  изображенного у нас на портале. Любые
+                  рекомендации а также советы вполне можно
+                  применять в домохозяек условиях, &lt;/p&gt;
+                  &lt;br&gt;&lt;br&gt;&lt;div align="center"&gt;&lt;h1&gt;Разделы сайта:&lt;/h1&gt;&lt;/div&gt;&lt;br&gt;
+                  &lt;table width="100%"&gt;
+                  &lt;tr&gt;
+                  &lt;td width="49%" valign="top"&gt;
+                  &lt;div class="glava"&gt;
+                  &lt;div align="center"&gt;&lt;h3&gt;справочник
+                  заболеваний&lt;/h3&gt;&lt;/div&gt;&lt;/br&gt;
+                  &lt;p class="news"&gt;   Не стоит забывать про то, то что
+                  поставленный диагноз все же обязан
+                  назначать медицинский работник, и лишь уже
+                  после вынесения вердикта врачей Народные
+                  рецепты, медицина, довольно не только лишь
+                  не опасна, но также может быть полезна а
+                  также эффективна. В области веб-сайта
+                  «Команда хвороб» изображенная новость
+                  насчет крупнейшую компаний недугов. В
+                  частности, псориаз должно шарить в кожных
+                  хворостях, напротив, бронхит — в болезнях
+                  учреждений дыхания. Нежели может помочь
+                  Народные рецепты, медицина,, ежели
+                  поставлен чертов поставленный диагноз —
+                  рак, которые травяные подготовка притащат
+                  поправка а также облегчение лезь болезнях
+                  желудочно-кишечного шляха, добро
+                  сосудистой организации, дыхательных колей
+                  — данный отрасль довольно может быть
+                  полезен а также представителям сильного
+                  пола а также представительницам слабого
+                  пола.  &lt;/p&gt;
+                  &lt;/td&gt;
+                  &lt;td width="2%" valign="top"&gt;
+                  &amp;nbsp
+                  &lt;/td&gt;
+                  &lt;td width="49%" valign="top"&gt;
+                  &lt;div class="glava"&gt;
+                  &lt;div align="center"&gt;&lt;h3&gt;женская колонка&lt;/h3&gt;&lt;/div&gt;&lt;/br&gt;
+                  &lt;p class="news"&gt;   Из-под «Женской колонки»,
+                  заботливо написанной ради женщин
+                  населения вселенной, любознательные
+                  женщины спросят, то что советует Народные
+                  рецепты, медицина, ради профилактики
+                  мастопатии, мастита а также молочницы.
+                  Отрасль довольно может быть полезен а
+                  также лезь досадных кожных проблемах: тут
+                  приведены подробные советы, точно 
+                  спастись от перхоти, прыщей, угрей, а еще
+                  точно излечить себорею.	  Ради
+                  продолжательниц семейства
+                  любопытствовать освещена вопрос
+                  бесплодия а также вполне вероятные
+                  технологии а также технологии излечению.
+                  Выявление опухолей, в том количестве а
+                  также белых желез, на ранних этапах
+                  болезни — заклад эффективного
+                  выздоровления а также излечению: в области
+                  подробно описаны признаки рака белой
+                  оковы.  &lt;/p&gt;
+                  &lt;/td&gt;
+                  &lt;/tr&gt;
+                  &lt;tr&gt;
+                  &lt;td width="49%" valign="top"&gt;
+                  &lt;div class="glava"&gt;
+                  &lt;div align="center"&gt;&lt;h3&gt;истории читателей&lt;/h3&gt;&lt;/div&gt;&lt;/br&gt;
+                  &lt;p class="news"&gt;   «События из-под существования»
+                  сообщат о бытовавших в реальной
+                  существования происшествиях исцеления
+                  человек,  что предпочли на себе
+                  испробовать то, нежели богата Народные
+                  рецепты, медицина,. Точно спастись от
+                  ненужными килограммов, которую мазь
+                  принимать на вооружение лезь ожогах,
+                  которые частицы могут помочь излечить
+                  катаракту, точно одолеть диабет а также
+                  нежели сделать ниже артериальное нажим —
+                  вот вдалеке не полный список 3, с
+                  какими-нибудь любезно поделились в
+                  прошлом пациенты.      Ежели какой-нибудь
+                  рецепт либо методика ограниченнее
+                  кому-нибудь можно помогли, то отчего ее бы
+                  не испробовать на себе. Вполне вероятно, а
+                  также вы обретете волшебство эксперимент
+                  исцеления. Не забывайте, то что каждое
+                  целебный тем действенней, нежели вяще
+                  вероисповедание в его триумф. Твердость
+                  дядьки, подкрепленная народной мудростью
+                  а также знаниями, вечно может помочь
+                  победить хвори, обрести здоровье а также
+                  умиротворение.    &lt;/p&gt;
+                  &lt;/td&gt;
+                  &lt;td width="2%" valign="top"&gt;
+                  &amp;nbsp
+                  &lt;/td&gt;
+                  &lt;td width="49%" valign="top"&gt;
+                  &lt;div class="glava"&gt;
+                  &lt;div align="center"&gt;&lt;h3&gt;лекарственные
+                  растения&lt;/h3&gt;&lt;/div&gt;&lt;/br&gt;
+                  &lt;p class="news"&gt;   Целебный травками на Руси
+                  находилось широко распространено снова с
+                  языческих пор. С давних времен в деревнях
+                  избавление от хворей а также недугов люд
+                  имел возможность одержать только лишь у
+                  народных знахарей а также целителей,  что
+                  приумножали а также сохраняли накопленный
+                  почти всеми поколениями эксперимент а
+                  также бесценные рецепты травяных сборов.
+                  Различные травники  существовали известны
+                  снова со пор Владимира Мономаха.  При
+                  правлении  Петра 1  возделывались спец.
+                  огороды с лечебными травками,	что уже
+                  после них созыва попадались в «зелийную
+                  лавку» — предшественницу этой аптеки. В
+                  «Травнике», изображенному у нас на
+                  портале, переданы показа больше всего
+                  пользующихся популярностью а также широко
+                  употребляемых лекарственных растений в
+                  алфавитном строе от Напротив, до Я. В наше
+                  время целебные муравы а также коренья в
+                  превеликом ассортименте продаются в
+                  аптеках либо же возможно сделать попытку
+                  заняться них сбором собственны &lt;/p&gt;
+                  &lt;/td&gt;
+                  &lt;/tr&gt;
+                  &lt;/table&gt;&lt;/div&gt;
+                  &lt;/div&gt;
+                  
+                  &lt;p class="postfooter"&gt;
+                  	
+                  &lt;/p&gt;
+                  &lt;/div&gt;
+                  
+                  
+                  				 
+                  			&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt; 
+                  
+                  
+                  		
+                  			
+                  		&lt;/div&gt;&lt;/div&gt;
+                  	
+                  	
+                  		
+                  
+                  		
+                  
+                  
+                  &lt;div id="sidebar"&gt;&lt;div class="right-block"&gt;&lt;div class="inside1"&gt;
+                  &lt;h3&gt;&lt;a
+                  href="news/1217-infekcii-mochevyvodjashhikh-putejj.html"&gt;Инфекции
+                  мочевыводящих путей&lt;/a&gt;&lt;/h3&gt;
+                  
+                  &lt;div class="news_right"&gt;
+                  
+                  &lt;div class="image"&gt;&lt;a
+                  href="news/1217-infekcii-mochevyvodjashhikh-putejj.html"&gt;
+                  &lt;img src="uploads/thumbs/1286968446_mochevyvod.jpg" alt="Инфекции
+                  мочевыводящих путей" width="100" height="100"&gt;&lt;/a&gt;&lt;/div&gt;
+                  
+                  
+                  &lt;p&gt;  Почувствовав жжение в период
+                  мочеиспускания, вы здесь же предполагаете,
+                  то что вас настигла еще одна инфекция
+                  мочевыводящих путей. У любой 5-й ...	
+                  &lt;/div&gt;
+                  
+                  
+                  &lt;h3&gt;&lt;a href="news/1216-razdrazhenie-i-rez-v-glazakh.html"&gt;Резь и
+                  раздражение	в глазах&lt;/a&gt;&lt;/h3&gt;
+                  
+                  &lt;div class="news_right"&gt;
+                  
+                  &lt;div class="image"&gt;&lt;a href="news/1216-razdrazhenie-i-rez-v-glazakh.html"&gt;
+                  &lt;img src="uploads/thumbs/1282050225_gaza.jpg" alt="Раздражение и
+                  резь в глазах" width="100" height="100"&gt;&lt;/a&gt;&lt;/div&gt;
+                  
+                  
+                  &lt;p&gt;Когда нашим глазам что-то мешает, Вы
+                  сразу почувствуете , они дадут о себе
+                  знать. Пылинка размером не больше точечки,
+                  попав под веко, ощущается как ...
+                  &lt;/div&gt;
+                  
+                  
+                  &lt;h3&gt;&lt;a href="news/1215-skrezhet-zubami-vo-sne.html"&gt;Когда слышно
+                  скрежет зубами во сне&lt;/a&gt;&lt;/h3&gt;
+                  
+                  &lt;div class="news_right"&gt;
+                  
+                  &lt;div class="image"&gt;&lt;a href="news/1215-skrezhet-zubami-vo-sne.html"&gt;
+                  &lt;img src="uploads/thumbs/1281948139_bruxism.jpg" alt="Скрежет
+                  зубами во сне" width="100" height="100"&gt;&lt;/a&gt;&lt;/div&gt;
+                  
+                  
+                  &lt;p&gt;День почти как всегда был полон стрессов,
+                  и, чтобы снять невероятное напряжение, мы
+                  начинаем скрежетать ночью своими зубками -
+                  порой очень громко, что даже будим ничего
+                  рядом  не понимающих ...
+                  &lt;/div&gt;
+                  
+                  
+                  &lt;h3&gt;&lt;a href="news/1214-rozovye-ugri.html"&gt;Розовые угри на
+                  теле&lt;/a&gt;&lt;/h3&gt;
+                  
+                  &lt;div class="news_right"&gt;
+                  
+                  &lt;div class="image"&gt;&lt;a href="news/1214-rozovye-ugri.html"&gt;
+                  &lt;img src="uploads/thumbs/1281590715_clip.dn.ua-66067_14.jpg"
+                  alt="Розовые угри" width="100" height="100"&gt;&lt;/a&gt;&lt;/div&gt;
+                  
+                  
+                  &lt;p&gt;Ваше лицо выглядит не совсем хорошо,
+                  словно вы постоянно стесняетесь, сгораете
+                  от стыда? Или еще хуже - как лицо юного
+                  подростка, страдающего запущенной угревой
+                  сыпью. Мужайтесь! ...
+                  &lt;/div&gt;
+                  
+                  
+                  &lt;h3&gt;&lt;a href="news/1213-vetrjanka.html"&gt;Ветрянка&lt;/a&gt;&lt;/h3&gt;
+                  
+                  &lt;div class="news_right"&gt;
+                  
+                  &lt;div class="image"&gt;&lt;a href="news/1213-vetrjanka.html"&gt;
+                  &lt;img src="uploads/thumbs/1281361735_vetrjanka.jpg" alt="Ветрянка"
+                  width="100" height="100"&gt;&lt;/a&gt;&lt;/div&gt;
+                  
+                  
+                  &lt;p&gt;Ветрянка проходит за одну неделю,
+                  максимум две недели, но успевает изрядно
+                  намучить идосадить. Если ребенка мучают
+                  боли, снимайте их лекарством,
+                  парацетамолом, но ни в коем случае не ...
+                  &lt;/div&gt;
+                  
+                  
+                  
+                  &lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+                  &lt;div id="sidebar"&gt;&lt;div class="right-block"&gt;&lt;div class="inside1"&gt;
+                  &lt;h3 align="center" style="color:#666666;"&gt;&lt;b&gt;Бесплатная
+                  консультация специалиста&lt;/b&gt;&lt;/h3&gt;
+                  			
+                  &lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;a
+                  href="consultation_allergo_immunolog.html"&gt;Аллерго-Иммунолог&lt;/
+                  a&gt;&lt;br&gt;&lt;a 
+                  
+                  href="consultation_androlog.html"&gt;Андролог&lt;/a&gt;&lt;br&gt;&lt;a 
+                  
+                  href="consultation_venerolog.html"&gt;Венеролог&lt;/a&gt;&lt;br&gt;&lt;a
+                  href="consultation_lfk.html"&gt;Врач ЛФК&lt;/a&gt;&lt;br&gt; &lt;a 
+                  
+                  href="consultation_gastroenterolog.html"&gt;Гастроэнтеролог&lt;/a&gt;
+                  &lt;br&gt;&lt;a 
+                  
+                  href="consultation_gepatolog.html"&gt;Гепатолог&lt;/a&gt;&lt;br&gt; &lt;a 
+                  
+                  href="consultation_ginekolog.html"&gt;Гинеколог&lt;/a&gt;&lt;br&gt;&lt;a 
+                  
+                  href="consultation_dermotolog.html"&gt;Дерматолог&lt;/a&gt;&lt;br&gt;&lt;a 
+                  
+                  href="consultation_dietolog.html"&gt;Диетолог&lt;/a&gt;&lt;br&gt;&lt;a 
+                  
+                  href="consultation_kardiolog.html"&gt;Кардиолог&lt;/a&gt;&lt;br&gt;&lt;a 
+                  
+                  href="consultation_mammolog.html"&gt;Маммолог&lt;/a&gt;&lt;br&gt;&lt;a
+                  href="consultation_manual.html"&gt;Мануальный 
+                  
+                  терапевт&lt;/a&gt;&lt;br&gt;&lt;a
+                  href="consultation_narkolog.html"&gt;Нарколог&lt;/a&gt;&lt;br&gt;&lt;a 
+                  
+                  href="consultation_nevrolog.html"&gt;Невролог&lt;/a&gt;&lt;br&gt;&lt;a
+                  href="consultation_onkolog.html"&gt;Онколог&lt;/a&gt;&lt;br&gt;&lt;a 
+                  
+                  href="consultation_ortoped.html"&gt;Ортопед&lt;/a&gt;&lt;br&gt;&lt;/td&gt;&lt;td
+                  style="padding-left:8px;"&gt;&lt;a 
+                  
+                  href="consultation_otolaringolog.html"&gt;Отоларинголог&lt;/a&gt;&lt;br&gt;&lt;a 
+                  
+                  href="consultation_oftalmolog.html"&gt;Офтальмолог&lt;/a&gt;&lt;br&gt;&lt;a 
+                  
+                  href="consultation_plast_hirurg.html"&gt;Пластический
+                  хирург&lt;/a&gt;&lt;br&gt;&lt;a 
+                  
+                  href="consultation_proktolog.html"&gt;Проктолог&lt;/a&gt;&lt;br&gt;&lt;a 
+                  
+                  href="consultation_refleksoterapevt.html"&gt;Рефлексотерапевт&lt;/a&gt;
+                  &lt;br&gt;&lt;a 
+                  
+                  href="consultation_psihoterapevt.html"&gt;Психотерапевт&lt;/a&gt;&lt;br&gt;&lt;a 
+                  
+                  href="consultation_klet_tehn.html"&gt;Клеточные
+                  технологии&lt;/a&gt;&lt;br&gt;&lt;a 
+                  
+                  href="consultation_sexolog.html"&gt;Сексолог&lt;/a&gt; &lt;br&gt;&lt;a 
+                  
+                  href="consultation_stomatolog.html"&gt;Стоматолог&lt;/a&gt;&lt;br&gt;
+                  	   &lt;a href="consultation_terapevt.html"&gt;Терапевт&lt;/a&gt;&lt;br&gt;&lt;a 
+                  
+                  href="consultation_urolog.html"&gt;Уролог&lt;/a&gt;&lt;br&gt;&lt;a 
+                  
+                  href="consultation_fizioterapevt.html"&gt;Физиотерапевт&lt;/a&gt;&lt;br&gt;&lt;a 
+                  
+                  href="consultation_flebolog.html"&gt;Флеболог&lt;/a&gt;&lt;br&gt;&lt;a
+                  href="consultation_hirurg.html"&gt;Хирург&lt;/a&gt;&lt;br&gt;&lt;a 
+                  
+                  href="consultation_endokrinolog.html"&gt;Эндокринолог&lt;/a&gt;&lt;br&gt;&lt;a
+                  href="consultation_drugoi.html"&gt;Другой 
+                  
+                  врач&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+                  
+                  
+                  &lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+                  
+                  
+                  
+                  
+                  	&lt;div class="clearing"&gt;&lt;/div&gt;
+                  
+                  	&lt;div id="footer"&gt;&lt;div class="inside1"&gt;
+                  		&lt;?php @include_once
+                  $_SERVER['DOCUMENT_ROOT'].'/include/copyraid.php'; ?&gt; 
+                  
+                  	&lt;/div&gt;&lt;/div&gt;
+                  
+                  &lt;/div&gt;
+                  
+                  
+                  &lt;?php @include_once $_SERVER['DOCUMENT_ROOT'].'/include/footer.php'; ?&gt; 
+                  &lt;/body&gt;
+                  
+                  &lt;!-- 31:26 GMT --&gt;
+                  &lt;/html&gt;
+                  
+                  
+                  Posted from: 193.110.115.237
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="changeDeclined">Change declined.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-11565" width="100%">
+         <tr>
+            <td><b>11565</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=11565#c0">Add drawImage(in ImageData image, ...) functions to context2d</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2010-12-17</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-04</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  
+                  
+                  *** This bug has been marked as a duplicate of bug 11517 ***
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="changeDeclined">Change declined.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-11575" width="100%">
+         <tr>
+            <td><b>11575</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=11575#c0">i dont understand why people hate me</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2010-12-18</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-04</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  Me neither, Shelley.</p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="changeDeclined">Change declined.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-11628" width="100%">
+         <tr>
+            <td><b>11628</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=11628#c0">What I want to know is where to find the software so that I may experiment with learning
+                  how to utilize it and create stuff with it.  Do you know where I might find a website
+                  to download this software to develop stuff in HTML5 with might be?  Thanks!</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2010-12-31</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-04</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  This is not a help forum.</p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="changeDeclined">Change declined.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-11657" width="100%">
+         <tr>
+            <td><b>11657</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=11657#c0">More text and font control</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2011-01-04</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2012-02-29</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  EDITOR'S RESPONSE: This is an Editor's Response to your comment.
+                  If you are satisfied with this response, please change the state of this bug to CLOSED.
+                  If you have additional information and would like the editor to reconsider, please
+                  reopen this bug. If you would like to escalate the issue to the full HTML Working
+                  Group, please add the TrackerRequest keyword to this bug, and suggest title and text
+                  for the tracker issue; or you may create a tracker issue yourself, if you are able
+                  to do so. For more details, see this document:
+                  http://dev.w3.org/html5/decision-policy/decision-policy.html
+                  
+                  Status: Did Not Understand Request
+                  Change Description: no spec change
+                  Rationale: I'm going to add the ability to draw text to a path, which gives you some
+                  more control. I'm not sure what specifically else should be added; text spacing is
+                  the only other thing listed in this bug but you can fake that with just drawing each
+                  character at a time if you're willing to lose kerning information. (We might want
+                  to add kerning metrics to TextMetrics, file a separate bug if you want that.) In short,
+                  I'm not really sure what to do here. See also comment 8.
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="changeDeclined">Change declined.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-11670" width="100%">
+         <tr>
+            <td><b>11670</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=11670#c0">"The setTransform(a, b, c, d, e, f) method must [...] invoke the transform(a, b, c,
+                  d, e, f) method" - so if I set CanvasRenderingContext2D.prototype.transform=function(){alert()},
+                  then calling setTransform would trigger the alert? Probably this shouldn't</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2011-01-05</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-04</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  EDITOR'S RESPONSE: This is an Editor's Response to your comment.
+                  If you are satisfied with this response, please change the state of this bug to CLOSED.
+                  If you have additional information and would like the editor to reconsider, please
+                  reopen this bug. If you would like to escalate the issue to the full HTML Working
+                  Group, please add the TrackerRequest keyword to this bug, and suggest title and text
+                  for the tracker issue; or you may create a tracker issue yourself, if you are able
+                  to do so. For more details, see this document:
+                  http://dev.w3.org/html5/decision-policy/decision-policy.html
+                  
+                  Status: Rejected
+                  Change Description: no spec change
+                  Rationale: The spec says to invoke the transform() method, and links to the definition
+                  of that method; it doesn't say to [[Call]] the Function object currently assigned
+                  to the 'transform' property.
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="changeDeclined">Change declined.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-11695" width="100%">
+         <tr>
+            <td><b>11695</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=11695#c0">import java.util.*; public class GeneralCalculation { static Scanner reader = new
+                  Scanner(System.in); public static void main(String[] args) { int Spearman, Slinger,
+                  Swordman, Planx, Archer, Sniper, Giro, Giant, Bomber, Ram, Catapult, Mortar, Doctor,
+                  Cook</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2011-01-07</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-04</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  Specification: http://dev.w3.org/html5/spec/Overview.html
+                  Section: http://www.whatwg.org/specs/web-apps/current-work/complete.html#top
+                  
+                  Comment:
+                  import java.util.*;
+                  public class GeneralCalculation
+                  {
+                  static Scanner reader = new Scanner(System.in);
+                  public static void main(String[] args)
+                  {
+                  int Spearman, Slinger, Swordman, Planx, Archer, Sniper, Giro, Giant, Bomber,
+                  Ram, Catapult, Mortar, Doctor, Cook;
+                  int RamShip, PaddleWheelRam, BallistaShip, FireShip, MortarShip, CatapultShip,
+                  DivingShip;
+                  double totalLand, totalSea, total;
+                  System.out.println("כמה נושאי חנית יש לך?");
+                  Spearman = reader.nextInt();
+                  System.out.println("כמה קלעים יש לך?");
+                  Slinger = reader.nextInt();
+                  System.out.println("כמה נושאי חרב יש לך?");
+                  Swordman = reader.nextInt();
+                  System.out.println("כמה פלנקסים יש לך?");
+                  Planx = reader.nextInt();
+                  System.out.println("כמה קשתים יש לך?");
+                  Archer = reader.nextInt();
+                  System.out.println("כמה רובאים יש לך?");
+                  Sniper = reader.nextInt();
+                  System.out.println("כמה גירוקוטפרים יש לך?");
+                  Giro = reader.nextInt();
+                  System.out.println("כמה ענקי קיטור יש לך?");
+                  Giant = reader.nextInt();
+                  System.out.println("כמה מפציצים יש לך?");
+                  Bomber = reader.nextInt();
+                  System.out.println("כמה איילי ניגוח יש לך?");
+                  Ram = reader.nextInt();
+                  System.out.println("כמה קטפולות יש לך?");
+                  Catapult = reader.nextInt();
+                  System.out.println("כמה מרגמות יש לך?");
+                  Mortar = reader.nextInt();
+                  System.out.println("כמה רופאים יש לך?");
+                  Doctor = reader.nextInt();
+                  System.out.println("כמה טבחים יש לך?");
+                  Cook = reader.nextInt();
+                  totalLand = Spearman*0.6 + Slinger*0.4 + Swordman*1.2 + Planx*1.4 + Archer*1.1
+                  + Sniper*4 + Giro*2.5 + Giant*6.2 + Bomber*5.8 + Ram*4.4 + Catapult*10.2 +
+                  Mortar*31 + Doctor*10 + Cook*4;
+                  System.out.println("החיילים שלך שווים " + totalLand + "
+                  גנרלים.");
+                  System.out.println("~~~~~~~~~~");
+                  System.out.println("כמה ספינות אייל ברזל יש לך?");
+                  RamShip = reader.nextInt();
+                  System.out.println("כמה ספינות אייל ברזל מושט יש
+                  לך?");
+                  PaddleWheelRam = reader.nextInt();
+                  System.out.println("כמה ספינות בליסטרה יש לך?");
+                  BallistaShip = reader.nextInt();
+                  System.out.println("כמה ספינות להביור יש לך?");
+                  FireShip = reader.nextInt();
+                  System.out.println("כמה ספינות מרגמה יש לך?");
+                  MortarShip = reader.nextInt();
+                  System.out.println("כמה ספינות קטפולה יש לך?");
+                  CatapultShip = reader.nextInt();
+                  System.out.println("כמה צוללות יש לך?");
+                  DivingShip = reader.nextInt();
+                  totalSea = RamShip*5.4 + PaddleWheelRam*36 + BallistaShip*6.8 + FireShip*6.2 +
+                  MortarShip*22.4 + CatapultShip*6.4 + DivingShip*18.2 ;
+                  System.out.println("הצי הימי שלך שווה " + totalSea + "
+                  גנרלים.");
+                  System.out.println("~~~~~~~~~~");
+                  total = totalLand + totalSea;
+                  System.out.println("הצבא שלך שווה בסך הכל " + total + "
+                  גנרלים." );
+                  System.out.println(" ");
+                  System.out.println("קרדיט ל-eliranisrael, יוצר הקוד.");
+                  }
+                  
+                  } 
+                  
+                  __________________
+                  
+                  
+                  Posted from: 109.65.203.17
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="changeDeclined">Change declined.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-11705" width="100%">
+         <tr>
+            <td><b>11705</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=11705#c0">Why does the definition of "middle" differ from the one in SVG 1.1 10.9.2?</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2011-01-09</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-04</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  boogyman helped out. IE9 also does it per spec. So I think it's
+                  probably too late to change.
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="changeDeclined">Change declined.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-11744" width="100%">
+         <tr>
+            <td><b>11744</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=11744#c0">setPixel (x,y, color)and getPixel(x,y)  should be implemented. getPixel should return
+                  color value</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2011-01-12</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-04</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  EDITOR'S RESPONSE: This is an Editor's Response to your comment.
+                  If you are satisfied with this response, please change the state of this bug to CLOSED.
+                  If you have additional information and would like the editor to reconsider, please
+                  reopen this bug. If you would like to escalate the issue to the full HTML Working
+                  Group, please add the TrackerRequest keyword to this bug, and suggest title and text
+                  for the tracker issue; or you may create a tracker issue yourself, if you are able
+                  to do so. For more details, see this document:
+                  http://dev.w3.org/html5/decision-policy/decision-policy.html
+                  
+                  Status: Rejected
+                  Change Description: no spec change
+                  Rationale: Use getImageData() and then setImageData() with a dirty region.
+                  
+                  If there's a compelling use case for which the above is insufficient, please let me
+                  know.
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="changeDeclined">Change declined.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-11819" width="100%">
+         <tr>
+            <td><b>11819</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=11819#c0">var c = document.getElementById('canvas'); var ctx = c.getContext('2d'); ctx.drawSvg(SVG_XML_OR_PATH_TO_SVG,
+                  dx, dy, dw, dh);</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2011-01-20</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-04</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  EDITOR'S RESPONSE: This is an Editor's Response to your comment.
+                  If you are satisfied with this response, please change the state of this bug to CLOSED.
+                  If you have additional information and would like the editor to reconsider, please
+                  reopen this bug. If you would like to escalate the issue to the full HTML Working
+                  Group, please add the TrackerRequest keyword to this bug, and suggest title and text
+                  for the tracker issue; or you may create a tracker issue yourself, if you are able
+                  to do so. For more details, see this document:
+                  http://dev.w3.org/html5/decision-policy/decision-policy.html
+                  
+                  Status: Did Not Understand Request
+                  Change Description: no spec change
+                  Rationale: Without solid answers to the questions in comment 5, I'm not sure what
+                  to do here.
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="changeDeclined">Change declined.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-11890" width="100%">
+         <tr>
+            <td><b>11890</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=11890#c0">Sometimes we need a pixel(x,y) method. createImageData(1,1) anj put it is slow. javascript
+                  is not as fast as c/c++</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2011-01-27</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-04</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  EDITOR'S RESPONSE: This is an Editor's Response to your comment.
+                  If you are satisfied with this response, please change the state of this bug to CLOSED.
+                  If you have additional information and would like the editor to reconsider, please
+                  reopen this bug. If you would like to escalate the issue to the full HTML Working
+                  Group, please add the TrackerRequest keyword to this bug, and suggest title and text
+                  for the tracker issue; or you may create a tracker issue yourself, if you are able
+                  to do so. For more details, see this document:
+                  http://dev.w3.org/html5/decision-policy/decision-policy.html
+                  
+                  Status: Did Not Understand Request
+                  Change Description: no spec change
+                  Rationale: What is the use case?
+                  
+                  See also bug 11744.
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="changeDeclined">Change declined.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-11900" width="100%">
+         <tr>
+            <td><b>11900</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=11900#c0">it would be nice to specify a range for the lineWidth, eg, [1, 5], which means that
+                  the line starts at width 1, and gradually moves to width 5 at the end point</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2011-01-28</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-04</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  EDITOR'S RESPONSE: This is an Editor's Response to your comment.
+                  If you are satisfied with this response, please change the state of this bug to CLOSED.
+                  If you have additional information and would like the editor to reconsider, please
+                  reopen this bug. If you would like to escalate the issue to the full HTML Working
+                  Group, please add the TrackerRequest keyword to this bug, and suggest title and text
+                  for the tracker issue; or you may create a tracker issue yourself, if you are able
+                  to do so. For more details, see this document:
+                  http://dev.w3.org/html5/decision-policy/decision-policy.html
+                  
+                  Status: Partially Accepted
+                  Change Description: none yet
+                  Rationale: I'm marking proposals for new features as LATER so that we can examine
+                  them when we next go through adding new features.
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="proposalAccepted">Working Group
+                  accepted proposal.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-11924" width="100%">
+         <tr>
+            <td><b>11924</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=11924#c0">"The ImageData object return must be filled with transparent black.": s/return/returned/</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2011-01-30</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-04</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  Checked in as WHATWG revision r5872.
+                  Check-in comment: typo
+                  http://html5.org/tools/web-apps-tracker?from=5871&amp;to=5872
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="proposalAccepted">Working Group
+                  accepted proposal.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-11955" width="100%">
+         <tr>
+            <td><b>11955</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=11955#c0">The canvas should be tainted when drawing text with a cross-origin font (unless CORS
+                  was used to allow it)</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2011-02-02</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-04</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  Disclaimer: The outcome of this bug doesn't matter to gecko one
+                  way or another since we don't allow cross-origin fonts at all unless CORS is used.
+                  So fixing our code to align with this change is a no-op.
+                  
+                  This seems to close the window when the door is already opened. As you point out,
+                  you can get lots of information using CSSOM, and likely more as time goes on. Additionally,
+                  using things like pointer-events and SVG filters, you can get the actual pixel data
+                  in the font too.
+                  
+                  So the result of this bug seems to be solely to require implementations to add code.
+                  No actual security or privacy improvements are archived.
+                  
+                  The only benefit I can see is if is there is a long term plan to close the other holes
+                  too. Is that the case?
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="proposalAccepted">Working Group
+                  accepted proposal.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-11994" width="100%">
+         <tr>
+            <td><b>11994</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=11994#c0">lulwut? i am 12 year old and what isthis?</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2011-02-07</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-04</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  Specification: http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html
+                  Section: http://www.whatwg.org/specs/web-apps/current-work/complete.html#images
+                  
+                  Comment:
+                  lulwut? i am 12 year old and what isthis? 
+                  
+                  Posted from: 71.65.4.84
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="changeDeclined">Change declined.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-12018" width="100%">
+         <tr>
+            <td><b>12018</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=12018#c0">hello world !!</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2011-02-09</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-04</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  *** Bug 12019 has been marked as a duplicate of this bug. ***</p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="changeDeclined">Change declined.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-12019" width="100%">
+         <tr>
+            <td><b>12019</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=12019#c0">hello world !!</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2011-02-09</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-04</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  
+                  
+                  *** This bug has been marked as a duplicate of bug 12018 ***
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="changeDeclined">Change declined.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-12044" width="100%">
+         <tr>
+            <td><b>12044</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=12044#c0">Feature request: Give developers an option to disable a context's image smoothing</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2011-02-12</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2012-03-28</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  EDITOR'S RESPONSE: This is an Editor's Response to your comment.
+                  If you are satisfied with this response, please change the state of this bug to CLOSED.
+                  If you have additional information and would like the editor to reconsider, please
+                  reopen this bug. If you would like to escalate the issue to the full HTML Working
+                  Group, please add the TrackerRequest keyword to this bug, and suggest title and text
+                  for the tracker issue; or you may create a tracker issue yourself, if you are able
+                  to do so. For more details, see this document:
+                  http://dev.w3.org/html5/decision-policy/decision-policy.html
+                  
+                  Status: Accepted
+                  Change Description: imageSmoothingEnabled for drawImage
+                  Rationale: Concurred with reporter's comments.
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="proposalAccepted">Working Group
+                  accepted proposal.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-12088" width="100%">
+         <tr>
+            <td><b>12088</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=12088#c0">Under 4.8.11.1.2, Transformations, the specification reads: The transformations must
+                  be performed in reverse order. For instance, if a scale transformation that doubles
+                  the width is applied, followed by a rotation transformation that rotates drawing opera</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2011-02-15</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-04</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  
+                  
+                  *** This bug has been marked as a duplicate of bug 12089 ***
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="changeDeclined">Change declined.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-12089" width="100%">
+         <tr>
+            <td><b>12089</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=12089#c0">Under 4.8.11.1.2, Transformations, the specification reads: The transformations must
+                  be performed in reverse order. For instance, if a scale transformation that doubles
+                  the width is applied, followed by a rotation transformation that rotates drawing opera</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2011-02-15</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-04</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  EDITOR'S RESPONSE: This is an Editor's Response to your comment.
+                  If you are satisfied with this response, please change the state of this bug to CLOSED.
+                  If you have additional information and would like the editor to reconsider, please
+                  reopen this bug. If you would like to escalate the issue to the full HTML Working
+                  Group, please add the TrackerRequest keyword to this bug, and suggest title and text
+                  for the tracker issue; or you may create a tracker issue yourself, if you are able
+                  to do so. For more details, see this document:
+                  http://dev.w3.org/html5/decision-policy/decision-policy.html
+                  
+                  Status: Rejected
+                  Change Description: no spec change
+                  Rationale: see comment 2
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="changeDeclined">Change declined.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-12134" width="100%">
+         <tr>
+            <td><b>12134</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=12134#c0">Supporting dotted/dashed lines is definitely necessary</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2011-02-19</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-04</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  
+                  
+                  *** This bug has been marked as a duplicate of bug 9301 ***
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="changeDeclined">Change declined.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-12140" width="100%">
+         <tr>
+            <td><b>12140</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=12140#c0">Why is there no getTransform() method?</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2011-02-19</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2012-03-28</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  EDITOR'S RESPONSE: This is an Editor's Response to your comment.
+                  If you are satisfied with this response, please change the state of this bug to CLOSED.
+                  If you have additional information and would like the editor to reconsider, please
+                  reopen this bug. If you would like to escalate the issue to the full HTML Working
+                  Group, please add the TrackerRequest keyword to this bug, and suggest title and text
+                  for the tracker issue; or you may create a tracker issue yourself, if you are able
+                  to do so. For more details, see this document:
+                  http://dev.w3.org/html5/decision-policy/decision-policy.html
+                  
+                  Status: Accepted
+                  Change Description: I've used SVGMatrix for now.
+                  Rationale: Concurred with reporter's comments.
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="proposalAccepted">Working Group
+                  accepted proposal.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-12187" width="100%">
+         <tr>
+            <td><b>12187</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=12187#c0">should drawImage throw for dw/dh==0?</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2011-02-25</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-04</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  Checked in as WHATWG revision r6107.
+                  Check-in comment: fix domintro block
+                  http://html5.org/tools/web-apps-tracker?from=6106&amp;to=6107
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="proposalAccepted">Working Group
+                  accepted proposal.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-12239" width="100%">
+         <tr>
+            <td><b>12239</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=12239#c0">DrawImage() typographic error</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2011-03-04</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-04</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  Nope, according to WebIDL, any arguments following an optional argument
+                  are optional as well.
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="proposalAccepted">Working Group
+                  accepted proposal.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-12260" width="100%">
+         <tr>
+            <td><b>12260</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=12260#c0">a a a a a a a</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2011-03-07</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-04</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  http://uncyclopedia.wikia.com/wiki/AAAAAAAAA!</p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="changeDeclined">Change declined.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-12309" width="100%">
+         <tr>
+            <td><b>12309</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=12309#c0">Need to taint canvas when a non-CORS cross-site font is in the .font</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2011-03-15</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-04</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  Checked in as WHATWG revision r6105.
+                  Check-in comment: taint canvas if we even _consider_ a cross-site font
+                  http://html5.org/tools/web-apps-tracker?from=6104&amp;to=6105
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="proposalAccepted">Working Group
+                  accepted proposal.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-12394" width="100%">
+         <tr>
+            <td><b>12394</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=12394#c0">THis is good here</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2011-03-29</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-04</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  Very.</p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="changeDeclined">Change declined.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-12410" width="100%">
+         <tr>
+            <td><b>12410</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=12410#c0">fillText needs stricter definitions so that it's 100% uniform</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2011-04-02</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-12-02</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  EDITOR'S RESPONSE: This is an Editor's Response to your comment.
+                  If you are satisfied with this response, please change the state of this bug to CLOSED.
+                  If you have additional information and would like the editor to reconsider, please
+                  reopen this bug. If you would like to escalate the issue to the full HTML Working
+                  Group, please add the TrackerRequest keyword to this bug, and suggest title and text
+                  for the tracker issue; or you may create a tracker issue yourself, if you are able
+                  to do so. For more details, see this document:
+                  http://dev.w3.org/html5/decision-policy/decision-policy.html
+                  
+                  Status: Rejected
+                  Change Description: no spec change
+                  Rationale: I don't really see why this is a canvas problem and not a TrueType problem.
+                  As far as Canvas goes, we don't define the anti-aliasing-level rendering detail, because
+                  that would be insane and would preclude optimisations for specific display types.
+                  If this makes for illegible text, please file bugs with the browsers.
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="changeDeclined">Change declined.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-12441" width="100%">
+         <tr>
+            <td><b>12441</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=12441#c0">Can arg1 of drawImage be just Element? If so, it can capture some of rendered subtree
+                  elements.</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2011-04-06</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-04</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  EDITOR'S RESPONSE: This is an Editor's Response to your comment.
+                  If you are satisfied with this response, please change the state of this bug to CLOSED.
+                  If you have additional information and would like the editor to reconsider, please
+                  reopen this bug. If you would like to escalate the issue to the full HTML Working
+                  Group, please add the TrackerRequest keyword to this bug, and suggest title and text
+                  for the tracker issue; or you may create a tracker issue yourself, if you are able
+                  to do so. For more details, see this document:
+                  http://dev.w3.org/html5/decision-policy/decision-policy.html
+                  
+                  Status: Did Not Understand Request
+                  Change Description: no spec change
+                  Rationale: see comment 2
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="changeDeclined">Change declined.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-12444" width="100%">
+         <tr>
+            <td><b>12444</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=12444#c0">Canvas rendering should be done in linear color space (gamma 1) and the result displayed
+                  in sRGB color space (approximately gamma 2.2)</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2011-04-07</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-09-21</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  EDITOR'S RESPONSE: This is an Editor's Response to your comment.
+                  If you are satisfied with this response, please change the state of this bug to CLOSED.
+                  If you have additional information and would like the editor to reconsider, please
+                  reopen this bug. If you would like to escalate the issue to the full HTML Working
+                  Group, please add the TrackerRequest keyword to this bug, and suggest title and text
+                  for the tracker issue; or you may create a tracker issue yourself, if you are able
+                  to do so. For more details, see this document:
+                  http://dev.w3.org/html5/decision-policy/decision-policy.html
+                  
+                  Status: Rejected
+                  Change Description: no spec change
+                  Rationale: 
+                  
+                  &lt;canvas&gt; has to use the same colour space as the rest of the Web, and that's already
+                  pretty much been resolved to be sRGB.
+                  
+                  The spec does cover this:
+                  
+                  http://www.whatwg.org/specs/web-apps/current-work/complete.html#color-spaces-and-color-correction
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="changeDeclined">Change declined.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-12520" width="100%">
+         <tr>
+            <td><b>12520</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=12520#c0">Why the word dirty for the arguments to putImageData? Normally, dirty refers to something
+                  that has changed, and I think that connotation infers that the rectangle may not be
+                  copied if it hasn't changed. However, that is not the case, as far as I can tell</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2011-04-18</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-04</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  EDITOR'S RESPONSE: This is an Editor's Response to your comment.
+                  If you are satisfied with this response, please change the state of this bug to CLOSED.
+                  If you have additional information and would like the editor to reconsider, please
+                  reopen this bug. If you would like to escalate the issue to the full HTML Working
+                  Group, please add the TrackerRequest keyword to this bug, and suggest title and text
+                  for the tracker issue; or you may create a tracker issue yourself, if you are able
+                  to do so. For more details, see this document:
+                  http://dev.w3.org/html5/decision-policy/decision-policy.html
+                  
+                  Status: Rejected
+                  Change Description: no spec change
+                  Rationale: The idea is you're telling the browser what parts have changed, so that
+                  the browser knows which parts to copy.
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="changeDeclined">Change declined.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-12524" width="100%">
+         <tr>
+            <td><b>12524</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=12524#c0">It would be nice if you could see the pretty glowing lines</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2011-04-19</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-04</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  Um.  Well, okay, that's true.</p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="proposalAccepted">Working Group
+                  accepted proposal.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-12536" width="100%">
+         <tr>
+            <td><b>12536</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=12536#c0">measureText() needs to return the height as well as the width.</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2011-04-20</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-04</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  
+                  
+                  *** This bug has been marked as a duplicate of bug 7798 ***
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="changeDeclined">Change declined.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-12580" width="100%">
+         <tr>
+            <td><b>12580</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=12580#c0">This sentence is a comma splice</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2011-05-02</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-04</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  EDITOR'S RESPONSE: This is an Editor's Response to your comment.
+                  If you are satisfied with this response, please change the state of this bug to CLOSED.
+                  If you have additional information and would like the editor to reconsider, please
+                  reopen this bug. If you would like to escalate the issue to the full HTML Working
+                  Group, please add the TrackerRequest keyword to this bug, and suggest title and text
+                  for the tracker issue; or you may create a tracker issue yourself, if you are able
+                  to do so. For more details, see this document:
+                  http://dev.w3.org/html5/decision-policy/decision-policy.html
+                  
+                  Status: Did Not Understand Request
+                  Change Description: no spec change
+                  Rationale: Which sentence?
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="changeDeclined">Change declined.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-12583" width="100%">
+         <tr>
+            <td><b>12583</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=12583#c0">(sx, sy), (sx+sw, sy), (sx+sw, sy+sh), (sx, sy+sh) -&gt; should this not be (sx + sw
+                  - 1) etc?</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2011-05-02</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-04</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  EDITOR'S RESPONSE: This is an Editor's Response to your comment.
+                  If you are satisfied with this response, please change the state of this bug to CLOSED.
+                  If you have additional information and would like the editor to reconsider, please
+                  reopen this bug. If you would like to escalate the issue to the full HTML Working
+                  Group, please add the TrackerRequest keyword to this bug, and suggest title and text
+                  for the tracker issue; or you may create a tracker issue yourself, if you are able
+                  to do so. For more details, see this document:
+                  http://dev.w3.org/html5/decision-policy/decision-policy.html
+                  
+                  Status: Rejected
+                  Change Description: no spec change
+                  Rationale: No. The points are points, not pixels. They're giving the precise coordinates
+                  of the rectangle to copy; they're not giving pixel coordinates of the data in that
+                  rectangle. In fact there might be more or less than one pixel per unit coordinate.
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="changeDeclined">Change declined.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-12586" width="100%">
+         <tr>
+            <td><b>12586</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=12586#c0">Suggest using Typed Array for ImageData pixels. Add a new 'buffer' attribute that
+                  references ArrayBuffer of the pixel data. Convert 'data' (CanvasPixelArray) to Uint8Array
+                  view of 'buffer'.</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2011-05-03</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2012-02-29</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  (In reply to comment #14)
+                  &gt; Yeah, IDL [Clamp] does the right thing.  If the typed array spec is defined via
+                  &gt; WebIDL, then we're probably all set.  (Though if it does, it needs various
+                  &gt; verbiage about sets of supported indices and such that it seems to be missing.)
+                  
+                  Sorry for letting this go so long, but the editor's draft of the typed array spec
+                  now defines the supported indexed properties. https://www.khronos.org/registry/typedarray/specs/latest/#7
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="proposalAccepted">Working Group
+                  accepted proposal.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-12705" width="100%">
+         <tr>
+            <td><b>12705</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=12705#c0">setTransform spec silent on what to do with singular matrices</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2011-05-19</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-12-09</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  EDITOR'S RESPONSE: This is an Editor's Response to your comment.
+                  If you are satisfied with this response, please change the state of this bug to CLOSED.
+                  If you have additional information and would like the editor to reconsider, please
+                  reopen this bug. If you would like to escalate the issue to the full HTML Working
+                  Group, please add the TrackerRequest keyword to this bug, and suggest title and text
+                  for the tracker issue; or you may create a tracker issue yourself, if you are able
+                  to do so. For more details, see this document:
+                  http://dev.w3.org/html5/decision-policy/decision-policy.html
+                  
+                  Status: Accepted
+                  Change Description: see recent diffs (sorry I don't have a specific revision to point
+                  to at this time)
+                  Rationale: Concurred with reporter's comments.
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="proposalAccepted">Working Group
+                  accepted proposal.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-12716" width="100%">
+         <tr>
+            <td><b>12716</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=12716#c0">Porter duff names are confusing and currently not implemented consistently. Suggest
+                  using A*B + C*D formula. Where A,B,C,D can be Source, Destination, Source Alpha, DestAlpha,
+                  0, 1, Inverse Source Alpha, Inverse Dest Alpha, and so on, similar to OpenGL/We</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2011-05-22</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-11</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  EDITOR'S RESPONSE: This is an Editor's Response to your comment.
+                  If you are satisfied with this response, please change the state of this bug to CLOSED.
+                  If you have additional information and would like the editor to reconsider, please
+                  reopen this bug. If you would like to escalate the issue to the full HTML Working
+                  Group, please add the TrackerRequest keyword to this bug, and suggest title and text
+                  for the tracker issue; or you may create a tracker issue yourself, if you are able
+                  to do so. For more details, see this document:
+                  http://dev.w3.org/html5/decision-policy/decision-policy.html
+                  
+                  Status: Did Not Understand Request
+                  Change Description: no spec change
+                  Rationale: Please provide exact suggested replacement text. I'm not qualified to write
+                  it.
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="changeDeclined">Change declined.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-12824" width="100%">
+         <tr>
+            <td><b>12824</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=12824#c0">This doesn't say how to serialize non-zero alpha values: how many digits should be
+                  used?  The correct answer is the minimum number necessary so that the resulting string
+                  evaluates to the same floating-point number as you started with.</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2011-05-30</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-10</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  Checked in as WHATWG revision r6411.
+                  Check-in comment: Try to tighten up the definition of how to serialise rgba() in canvas.
+                  http://html5.org/tools/web-apps-tracker?from=6410&amp;to=6411
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="proposalAccepted">Working Group
+                  accepted proposal.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-12826" width="100%">
+         <tr>
+            <td><b>12826</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=12826#c0">Changes the transformation matrix to apply a scaling transformation with the given
+                  characteristics.</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2011-05-31</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-10</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  EDITOR'S RESPONSE: This is an Editor's Response to your comment.
+                  If you are satisfied with this response, please change the state of this bug to CLOSED.
+                  If you have additional information and would like the editor to reconsider, please
+                  reopen this bug. If you would like to escalate the issue to the full HTML Working
+                  Group, please add the TrackerRequest keyword to this bug, and suggest title and text
+                  for the tracker issue; or you may create a tracker issue yourself, if you are able
+                  to do so. For more details, see this document:
+                  http://dev.w3.org/html5/decision-policy/decision-policy.html
+                  
+                  Status: Did Not Understand Request
+                  Change Description: no spec change
+                  Rationale: I don't understand. Could you elaborate?
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="changeDeclined">Change declined.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-12920" width="100%">
+         <tr>
+            <td><b>12920</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=12920#c0">Move caretBlinkRate from canvas context to a navigator interface</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2011-06-09</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-12-09</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  EDITOR'S RESPONSE: This is an Editor's Response to your comment.
+                  If you are satisfied with this response, please change the state of this bug to CLOSED.
+                  If you have additional information and would like the editor to reconsider, please
+                  reopen this bug. If you would like to escalate the issue to the full HTML Working
+                  Group, please add the TrackerRequest keyword to this bug, and suggest title and text
+                  for the tracker issue; or you may create a tracker issue yourself, if you are able
+                  to do so. For more details, see this document:
+                  http://dev.w3.org/html5/decision-policy/decision-policy.html
+                  
+                  Status: Rejected
+                  Change Description: no spec change
+                  Rationale: dropped it entirely
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="changeDeclined">Change declined.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-12921" width="100%">
+         <tr>
+            <td><b>12921</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=12921#c0">Make caretBlinkRate a property not a method</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2011-06-09</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-12-09</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  EDITOR'S RESPONSE: This is an Editor's Response to your comment.
+                  If you are satisfied with this response, please change the state of this bug to CLOSED.
+                  If you have additional information and would like the editor to reconsider, please
+                  reopen this bug. If you would like to escalate the issue to the full HTML Working
+                  Group, please add the TrackerRequest keyword to this bug, and suggest title and text
+                  for the tracker issue; or you may create a tracker issue yourself, if you are able
+                  to do so. For more details, see this document:
+                  http://dev.w3.org/html5/decision-policy/decision-policy.html
+                  
+                  Status: Rejected
+                  Change Description: no spec change
+                  Rationale: dropped it entirely
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="changeDeclined">Change declined.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-12922" width="100%">
+         <tr>
+            <td><b>12922</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=12922#c0">Allow privacy exemption for caretBlinkRate</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2011-06-09</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-12-09</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  EDITOR'S RESPONSE: This is an Editor's Response to your comment.
+                  If you are satisfied with this response, please change the state of this bug to CLOSED.
+                  If you have additional information and would like the editor to reconsider, please
+                  reopen this bug. If you would like to escalate the issue to the full HTML Working
+                  Group, please add the TrackerRequest keyword to this bug, and suggest title and text
+                  for the tracker issue; or you may create a tracker issue yourself, if you are able
+                  to do so. For more details, see this document:
+                  http://dev.w3.org/html5/decision-policy/decision-policy.html
+                  
+                  Status: Partially Accepted
+                  Change Description: no spec change
+                  Rationale: dropped it entirely
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="proposalAccepted">Working Group
+                  accepted proposal.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-12932" width="100%">
+         <tr>
+            <td><b>12932</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=12932#c0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In molestie sagittis nisl,
+                  eu porttitor magna lacinia ac. Suspendisse bibendum mattis massa, pulvinar sodales
+                  ante rhoncus a. Praesent semper, nisl sed ullamcorper vestibulum, ante ipsum posuere
+                  leo</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2011-06-10</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-04</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  Specification: http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html
+                  Section: http://www.whatwg.org/specs/web-apps/current-work/complete.html#dom-context-2d-beginpath
+                  
+                  Comment:
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In molestie sagittis
+                  nisl, eu porttitor magna lacinia ac. Suspendisse bibendum mattis massa,
+                  pulvinar sodales ante rhoncus a. Praesent semper, nisl sed ullamcorper
+                  vestibulum, ante ipsum posuere leo, nec blandit augue urna eu risus.
+                  Pellentesque feugiat neque ac nunc pulvinar a sodales diam pretium. Maecenas
+                  quis ullamcorper nibh. Pellentesque eu libero lorem, sed vestibulum nunc.
+                  Donec id nisi tempus massa consequat ultrices consectetur fringilla risus.
+                  Nullam sit amet nisi lacus, ac lacinia tellus. Class aptent taciti sociosqu ad
+                  litora torquent per conubia nostra, per inceptos himenaeos. Vivamus sapien
+                  neque, porttitor quis fringilla vel, pretium ac quam. Nunc aliquet accumsan
+                  augue vitae posuere. Ut pharetra mauris sit amet lacus convallis id vehicula
+                  arcu placerat. Donec sit amet erat arcu. Pellentesque a ligula velit.
+                  Vestibulum dignissim mi nec arcu ornare sed rhoncus quam mollis. Cras turpis
+                  libero, pharetra eget cursus vel, condimentum in velit. Nunc placerat mauris
+                  sed massa consectetur sagittis.  Cras elit nibh, adipiscing sed elementum ac,
+                  hendrerit vel nibh. Cras tempor ante id turpis vestibulum et varius tortor
+                  tincidunt. Fusce convallis tempus arcu, quis placerat mi rutrum vel. Fusce
+                  auctor est in mauris adipiscing vel commodo ligula vehicula. Cras vitae elit
+                  purus. Cras vitae fermentum urna. Aliquam posuere faucibus ultrices. Proin
+                  luctus venenatis ullamcorper. Cras ultrices vulputate mauris, quis dictum
+                  purus blandit eget. Suspendisse risus orci, vestibulum sed vestibulum in,
+                  dapibus id lacus. In sed rutrum turpis. Cras sit amet enim nisi, quis sagittis
+                  sem. Donec id libero vel massa rutrum faucibus facilisis quis tellus.
+                  Pellentesque in tincidunt erat. Integer sed placerat felis. Morbi vitae
+                  tincidunt tortor.  Aenean sit amet tempus mi. In hac habitasse platea
+                  dictumst. Mauris in molestie risus. Phasellus pharetra quam a lectus faucibus
+                  ullamcorper. Ut convallis, sapien eu interdum sollicitudin, metus leo luctus
+                  elit, quis scelerisque arcu est suscipit tortor. Proin et lorem vitae lectus
+                  cursus condimentum. In metus tellus, mollis at fringilla vitae, accumsan id
+                  sem. Cras nec quam lacus, sit amet feugiat tellus. Sed ac ligula elit. Nulla
+                  vitae lorem orci, nec pulvinar est. Ut ultrices purus a erat gravida nec
+                  molestie purus hendrerit. Vestibulum imperdiet commodo erat a tempor.
+                  Phasellus a libero lectus. Vestibulum ante ipsum primis in faucibus orci
+                  luctus et ultrices posuere cubilia Curae; Curabitur suscipit mi eget tortor
+                  tempor pulvinar. Nam pharetra porta rhoncus. Nullam dolor nibh, ornare quis
+                  elementum nec, commodo in tellus. Ut aliquet mollis facilisis. Vestibulum vel
+                  arcu quam.  Aliquam vestibulum, tortor eget hendrerit semper, mauris leo
+                  vehicula nulla, sed congue lacus magna in arcu. Praesent et lectus eu dui
+                  bibendum tempor at et lacus. Ut ac ullamcorper tellus. Curabitur vestibulum
+                  pellentesque purus, non facilisis turpis mattis molestie. Donec egestas
+                  imperdiet purus ac tincidunt. Vestibulum euismod vehicula sollicitudin.
+                  Aliquam in purus quis augue aliquet bibendum et eu dui. Quisque euismod leo
+                  sed lectus tincidunt volutpat. Nullam sed pretium justo. In hac habitasse
+                  platea dictumst. Sed semper, magna sed tempus sodales, lacus magna dapibus
+                  nisl, et congue nisl mauris ut ipsum.  Sed a risus sapien, quis ullamcorper
+                  risus. In cursus nunc vel nisi malesuada ultricies. Aliquam sit amet enim et
+                  lectus ornare vehicula. Vivamus rutrum mollis erat in elementum. In hac
+                  habitasse platea dictumst. Etiam porta egestas fermentum. Cras a enim nisl,
+                  vel rhoncus mauris. Pellentesque viverra dolor augue, eu posuere nisl.
+                  Maecenas tempor metus vel ante viverra blandit. Nullam eget est et metus
+                  mattis rutrum. Ut rhoncus egestas urna vitae egestas. 
+                  
+                  Posted from: 113.21.69.221
+                  User agent: Mozilla/5.0 (Windows NT 5.1; rv:2.0.1) Gecko/20100101 Firefox/4.0.1
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="changeDeclined">Change declined.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-12960" width="100%">
+         <tr>
+            <td><b>12960</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=12960#c0">Self-referential annoyance</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2011-06-15</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-04</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  Works fine here.</p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="proposalAccepted">Working Group
+                  accepted proposal.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-12987" width="100%">
+         <tr>
+            <td><b>12987</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=12987#c0">u hb  h  jhu uu.</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2011-06-18</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-04</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  Specification: http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html
+                  Multipage: http://www.whatwg.org/C#2dcontext
+                  Complete: http://www.whatwg.org/c#2dcontext
+                  
+                  Comment:
+                  u hb  h  jhu uu.
+                  
+                  Posted from: 59.145.221.50
+                  User agent: Mozilla/5.0 (Windows NT 6.1) AppleWebKit/534.30 (KHTML, like Gecko) Chrome/12.0.742.100
+                  Safari/534.30
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="changeDeclined">Change declined.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-13022" width="100%">
+         <tr>
+            <td><b>13022</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=13022#c0">The whitespace formatting of the interface is really inconsistent (tabs vs spaces?)</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2011-06-23</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-04</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  EDITOR'S RESPONSE: This is an Editor's Response to your comment.
+                  If you are
+                  satisfied with this response, please change the state of this bug to CLOSED. If
+                  you have additional information and would like the Editor to reconsider, please
+                  reopen this bug. If you would like to escalate the issue to the full HTML
+                  Working Group, please add the TrackerRequest keyword to this bug, and suggest
+                  title and text for the Tracker Issue; or you may create a Tracker Issue
+                  yourself, if you are able to do so. For more details, see this document:
+                  
+                  http://dev.w3.org/html5/decision-policy/decision-policy.html
+                  
+                  Status: Rejected
+                  Change Description: no spec change
+                  Rationale: See comment 2.  It's meant to have the word "attribute" line up when there
+                  are both readonly attributes and non-readonly attributes.  Looks weird, but it's intentional.
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="changeDeclined">Change declined.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-13085" width="100%">
+         <tr>
+            <td><b>13085</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=13085#c0">Enhancement: Set component for whole image?</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2011-06-29</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-12-02</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  EDITOR'S RESPONSE: This is an Editor's Response to your comment.
+                  If you are satisfied with this response, please change the state of this bug to CLOSED.
+                  If you have additional information and would like the editor to reconsider, please
+                  reopen this bug. If you would like to escalate the issue to the full HTML Working
+                  Group, please add the TrackerRequest keyword to this bug, and suggest title and text
+                  for the tracker issue; or you may create a tracker issue yourself, if you are able
+                  to do so. For more details, see this document:
+                  http://dev.w3.org/html5/decision-policy/decision-policy.html
+                  
+                  Status: Did Not Understand Request
+                  Change Description: no spec change
+                  Rationale: Is there a specific change request here? I don't really understand what
+                  the problem is.
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="changeDeclined">Change declined.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-13176" width="100%">
+         <tr>
+            <td><b>13176</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=13176#c0">The bounds of canvas fallback content, as rendered on the canvas, are not provided
+                  by the user agent to an assistive technology.</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2011-07-07</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2012-10-23</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  I am satisfied with the response. I have closed the bug. Thank you.</p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="proposalAccepted">Working Group
+                  accepted proposal.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-13181" width="100%">
+         <tr>
+            <td><b>13181</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=13181#c0">Canvas does not allow mouse events to be directed to keyboard accessible objects in
+                  fallback content</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2011-07-07</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2012-11-15</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  Comment via Rich Schwerdtfeger:
+                  
+                  We have a hit testing proposal that includes paths that have been applied to canvas
+                  under the section Hit Regions. This allows an author to route mouse events to fallback
+                  content where the fallback element is bound to a closed path on canvas. Specifically,
+                  the addHitRegion has a control argument which refers to a fallback content element
+                  to which the events would be routed.
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="changeDeclined">Change declined.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-13261" width="100%">
+         <tr>
+            <td><b>13261</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=13261#c0">Canvas Clipping</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2011-07-14</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-11</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  EDITOR'S RESPONSE: This is an Editor's Response to your comment.
+                  If you are satisfied with this response, please change the state of this bug to CLOSED.
+                  If you have additional information and would like the editor to reconsider, please
+                  reopen this bug. If you would like to escalate the issue to the full HTML Working
+                  Group, please add the TrackerRequest keyword to this bug, and suggest title and text
+                  for the tracker issue; or you may create a tracker issue yourself, if you are able
+                  to do so. For more details, see this document:
+                  http://dev.w3.org/html5/decision-policy/decision-policy.html
+                  
+                  Status: Did Not Understand Request
+                  Change Description: no spec change
+                  Rationale: see comment 1
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="changeDeclined">Change declined.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-13367" width="100%">
+         <tr>
+            <td><b>13367</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=13367#c0">The non-normative part says "throws an INVALID_STATE_ERR" but the normative part says
+                  "must return", not mentioning any exceptions.</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2011-07-26</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-04</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  EDITOR'S RESPONSE: This is an Editor's Response to your comment.
+                  If you are
+                  satisfied with this response, please change the state of this bug to CLOSED. If
+                  you have additional information and would like the Editor to reconsider, please
+                  reopen this bug. If you would like to escalate the issue to the full HTML
+                  Working Group, please add the TrackerRequest keyword to this bug, and suggest
+                  title and text for the Tracker Issue; or you may create a Tracker Issue
+                  yourself, if you are able to do so. For more details, see this document:
+                  
+                  http://dev.w3.org/html5/decision-policy/decision-policy.html
+                  
+                  Status: Additional Information Needed
+                  Change Description: no spec change
+                  Rationale:
+                  
+                  The non-normative text says: "If the image has no image data, throws an INVALID_STATE_ERR
+                  exception."
+                  
+                  The normative text says: "If the image argument is an HTMLCanvasElement object with
+                  either a horizontal dimension or a vertical dimension equal to zero, then the implementation
+                  must raise an INVALID_STATE_ERR exception."
+                  
+                  So I don't see the problem.  Please clarify.
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="changeDeclined">Change declined.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-13368" width="100%">
+         <tr>
+            <td><b>13368</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=13368#c0">The non-normative part says "throws an INVALID_STATE_ERR" but the normative part says
+                  "must return", not mentioning any exceptions.</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2011-07-26</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-04</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  
+                  
+                  *** This bug has been marked as a duplicate of bug 13367 ***
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="changeDeclined">Change declined.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-13391" width="100%">
+         <tr>
+            <td><b>13391</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=13391#c0">Add a ScrollElementIntoView function</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2011-07-27</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-09-22</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  (In reply to comment #10)
+                  &gt; Status: Did Not Understand Request
+                  &gt; Change Description: no spec change
+                  &gt; Rationale: Marking closed per reporter.
+                  
+                  
+                  The request is similar to the WHATWG proposed method scrollPathIntoView():
+                  http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#dom-context-2d-scrollpathintoview
+                  
+                  scrollPathIntoView() works with the current path. scrollIntoView(element) would work
+                  with an element present in the Canvas subtree. This is already covered by CSSOM, we
+                  simply need to improve UA handling of DOM elements in the Canvas subtree. That work
+                  will likely move forward as development of Web Components (and the shadow tree) moves
+                  forward.
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="changeDeclined">Change declined.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-13501" width="100%">
+         <tr>
+            <td><b>13501</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=13501#c0">werwerwer werew w erwe we r</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2011-08-01</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-04</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  Specification: http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html
+                  Multipage: http://www.whatwg.org/C#2dcontext
+                  Complete: http://www.whatwg.org/c#2dcontext
+                  
+                  Comment:
+                  werwerwer werew w erwe we r
+                  
+                  Posted from: 213.108.35.158
+                  User agent: Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_8; en-us) AppleWebKit/533.21.1
+                  (KHTML, like Gecko) Version/5.0.5 Safari/533.21.1
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="changeDeclined">Change declined.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-13517" width="100%">
+         <tr>
+            <td><b>13517</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=13517#c0">Not 'type=checkbox' but 'type="checkbox"'</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2011-08-02</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-04</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  Unquoted attributes are perfectly valid.</p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="changeDeclined">Change declined.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-13646" width="100%">
+         <tr>
+            <td><b>13646</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=13646#c0">left unanswered is what happens with 0-length lines</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2011-08-03</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-08-06</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  EDITOR'S RESPONSE: This is an Editor's Response to your comment.
+                  If you are satisfied with this response, please change the state of this bug to CLOSED.
+                  If you have additional information and would like the editor to reconsider, please
+                  reopen this bug. If you would like to escalate the issue to the full HTML Working
+                  Group, please add the TrackerRequest keyword to this bug, and suggest title and text
+                  for the tracker issue; or you may create a tracker issue yourself, if you are able
+                  to do so. For more details, see this document:
+                  http://dev.w3.org/html5/decision-policy/decision-policy.html
+                  
+                  Status: Did Not Understand Request
+                  Change Description: no spec change
+                  Rationale: I don't understand. Could you elaborate?
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="changeDeclined">Change declined.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-13732" width="100%">
+         <tr>
+            <td><b>13732</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=13732#c0">canvas accessibility</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2011-08-10</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2011-12-09</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  EDITOR'S RESPONSE: This is an Editor's Response to your comment.
+                  If you are satisfied with this response, please change the state of this bug to CLOSED.
+                  If you have additional information and would like the editor to reconsider, please
+                  reopen this bug. If you would like to escalate the issue to the full HTML Working
+                  Group, please add the TrackerRequest keyword to this bug, and suggest title and text
+                  for the tracker issue; or you may create a tracker issue yourself, if you are able
+                  to do so. For more details, see this document:
+                  http://dev.w3.org/html5/decision-policy/decision-policy.html
+                  
+                  Status: Did Not Understand Request
+                  Change Description: no spec change
+                  Rationale: please see comment 1
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="changeDeclined">Change declined.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+      <table class="issue" id="issue-7798" width="100%">
+         <tr>
+            <td><b>7798</b>: <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=7798#c0">More data from TextMetrics API</a></td>
+         </tr>
+         <tr>
+            <td>First recorded: 2009-10-03</td>
+         </tr>
+         <tr>
+            <td>Last modified: 2012-03-28</td>
+         </tr>
+         <tr>
+            <td>Last modification: 
+               <p style="white-space: pre-wrap">                  Hi there,
+                  
+                  I was just wondering. From the Spec here: http://dev.w3.org/html5/2dcontext/#textmetrics
+                  the TextMetrics object contains a readonly width property which is missing on the
+                  whatwg wiki you linked to above: http://wiki.whatwg.org/wiki/Canvas#TextMetrics_-_DONE
+                  That confuses me a little, is that property now dropped or are these sources only
+                  out of sync?
+                  
+                  Thanks for the job guys.
+               </p>
+            </td>
+         </tr>
+         <tr>
+            <td>Review Status: <span class="proposalAccepted">Working Group
+                  accepted proposal.</span>  
+            </td>
+         </tr>
+      </table>
+      <hr />
+   </body>
+</html>
