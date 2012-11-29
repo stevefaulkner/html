@@ -18,6 +18,7 @@
  <head>
   <meta charset='utf-8'>
   <title>HTML5.1</title>
+  <script src='link-fixup.js'></script>
   <!--BOILERPLATE middle-override-styles-->
   <!--BOILERPLATE middle-author-mode-links-->
   <!--BOILERPLATE middle-w3c-styles-->
