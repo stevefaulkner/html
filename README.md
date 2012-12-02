@@ -40,7 +40,7 @@ To commit and push code to GitHub:
 
 How the branches fit together
 ---
-![Branches for 5.0 CR, 5.1 WD, extension specs](http://www.gliffy.com/pubdoc/4126915/M.png)
+![Branches for 5.0 CR, 5.1 WD, extension specs](http://www.gliffy.com/pubdoc/4126915/L.png)
 
 
 Configuring git
