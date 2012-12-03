@@ -2,7 +2,7 @@
 
 The source file has a number of markers that are used to split it into the different specs and perform a number of other functions such as validation and segmenting.
 
-## 1. The following markers start with <!--START xxx--> , end with <!--END xxx-->.
+## 1. The following markers start with &lt;!--START xxx--> , end with &lt;!--END xxx-->.
 
 ### W3C Specifications
 
@@ -32,7 +32,7 @@ The source file has a number of markers that are used to split it into the diffe
 * validation : IDL validation
 
 
-## 2. The following markers start with <!--xxx--> and serve different purposes:
+## 2. The following markers start with &lt;!--xxx--> and serve different purposes:
 
 ### Processing instructions
 
