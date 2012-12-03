@@ -67,5 +67,6 @@ The source file has a number of markers that are used to split it into the diffe
 * SYNCLOAD : synchronous load
 * INERT : inert attribute
 * MD : microdata
-* 2DCANVAS : 2D canvas spec
+* 2DCONTEXT : 2D canvas context
+* 2DCANVAS : 2D canvas spec (a typo?)
 * INSERT FINGERPRINT : insert fingerprint spec
