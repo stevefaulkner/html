@@ -36,7 +36,7 @@ The source file has a number of markers that are used to split it into the diffe
 
 ### Processing instructions
 
-* FIXUP : adjust the heading levels of <h1>-<h6> elements
+* FIXUP : adjust the heading levels of &lt;h1>-&lt;h6> elements
 * BOILERPLATE : add specific boilerplate for spec creation
 * TOPIC:XXX : start new topic (ADD-TOPIC:xxx , REMOVE-TOPIC:xxx)
 
