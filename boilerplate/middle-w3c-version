@@ -3,7 +3,9 @@
    <dl>
 <!--PUB-Y-->    <dt>This Version:</dt>
 <!--PUB-Y-->    <dd><a href="http://www.w3.org/TR/<!--INSERT YEAR-->/<!--INSERT URLSTATUS-->-<!--INSERT TRNAME-->-<!--INSERT YEAR--><!--INSERT SHORTDAY-->/">http://www.w3.org/TR/<!--INSERT YEAR-->/<!--INSERT URLSTATUS-->-<!--INSERT TRNAME-->-<!--INSERT YEAR--><!--INSERT SHORTDAY-->/</a></dd>
+<!--END srcset-->
     <dt>Latest Published Version:</dt>
     <dd><a href="http://www.w3.org/TR/<!--INSERT TRNAME-->/">http://www.w3.org/TR/<!--INSERT TRNAME-->/</a></dd>
+<!--START srcset-->
     <dt>Latest Editor's Draft:</dt>
     <dd><a class="latest-link" href="<!--INSERT DEVURL-->"><!--INSERT DEVURL--></a></dd>

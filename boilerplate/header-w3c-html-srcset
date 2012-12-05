@@ -10,9 +10,9 @@
 <!--SET YEAR=2012-->
 <!--SET SHORTDAY=0329-->
 <!--SET LONGDAY=29 March-->
-<!--SET TRNAME=html5-->
-<!--SET DEVURL=http://dev.w3.org/html5/spec/Overview.html-->
-<!--SET COMPONENT=HTML5 spec (editor: Ian Hickson)-->
+<!--SET TRNAME=srcset-->
+<!--SET DEVURL=http://dev.w3.org/html5/srcset/-->
+<!--SET COMPONENT=The srcset attribute-->
 <html lang="en-US-x-Hixie">
  <head>
   <meta charset="UTF-8">
