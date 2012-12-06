@@ -17,13 +17,13 @@
 <html lang="en-US-x-Hixie">
  <head>
   <meta charset='utf-8'>
-  <title>HTML5.1</title>
+  <title>HTML 5.1</title>
   <script src='link-fixup.js'></script>
   <!--BOILERPLATE middle-override-styles-->
   <!--BOILERPLATE middle-author-mode-links-->
   <!--BOILERPLATE middle-w3c-styles-->
   <!--BOILERPLATE middle-w3c-html-magic-->
-   <h1>HTML5.1</h1>
+   <h1>HTML 5.1</h1>
    <h2 class="no-num no-toc">A vocabulary and associated APIs for HTML and XHTML</h2>
 <!--BOILERPLATE middle-w3c-version-->
 <!-- ZZZ: add the new version after it has shipped -->
