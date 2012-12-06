@@ -6,7 +6,8 @@
 <!--SET PUB=0-->
 <!--SET SHORTSTATUS=WD-->
 <!--SET URLSTATUS=WD-->
-<!--SET LONGSTATUS=Working Draft-->
+<!--SET LONGSTATUS=Editors' Draft-->
+<!--SET FULLLONGSTATUS=Editors' Draft-->
 <!--SET YEAR=2012-->
 <!--SET SHORTDAY=1011-->
 <!--SET LONGDAY=11 October-->
@@ -39,7 +40,7 @@
     <dd><a href="http://www.w3.org/TR/2008/WD-html5-20080610/">http://www.w3.org/TR/2008/WD-html5-20080610/</a></dd>
     <dd><a href="http://www.w3.org/TR/2008/WD-html5-20080122/">http://www.w3.org/TR/2008/WD-html5-20080122/</a></dd>
 <!-- :ZZZ -->
-    <dt>Editor:</dt>
+    <dt>Editors:</dt>
     <dd><a href="mailto:cabanier@adobe.com">Rik Cabanier</a>, Adobe Systems, Inc.</dd>
     <dd><a href="mailto:eliot.graff@microsoft.com">Eliot Graff</a>, Microsoft Corporation</dd>
     <dd><a href="mailto:jaymunro@microsoft.com">Jay Munro</a>, Microsoft Corporation</dd>

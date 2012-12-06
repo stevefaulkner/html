@@ -6,7 +6,8 @@
 <!--SET PUB=0-->
 <!--SET SHORTSTATUS=WD-->
 <!--SET URLSTATUS=WD-->
-<!--SET LONGSTATUS=Working Draft-->
+<!--SET LONGSTATUS=Editors' Draft-->
+<!--SET FULLLONGSTATUS=Editors' Draft-->
 <!--SET YEAR=2012-->
 <!--SET SHORTDAY=1011-->
 <!--SET LONGDAY=11 October-->
@@ -16,13 +17,13 @@
 <html lang="en-US-x-Hixie">
  <head>
   <meta charset='utf-8'>
-  <title>HTML5</title>
+  <title>HTML5.1</title>
   <script src='link-fixup.js'></script>
   <!--BOILERPLATE middle-override-styles-->
   <!--BOILERPLATE middle-author-mode-links-->
   <!--BOILERPLATE middle-w3c-styles-->
   <!--BOILERPLATE middle-w3c-html-magic-->
-   <h1>HTML5</h1>
+   <h1>HTML5.1</h1>
    <h2 class="no-num no-toc">A vocabulary and associated APIs for HTML and XHTML</h2>
 <!--BOILERPLATE middle-w3c-version-->
 <!-- ZZZ: add the new version after it has shipped -->
@@ -59,11 +60,11 @@
 
   <h2 class="no-num no-toc">Abstract</h2>
 
-  <p>This specification defines the 5th major revision of the core
+  <p>This specification defines the 5th major version, first minor revision of the core
   language of the World Wide Web: the Hypertext Markup Language
-  (HTML). In this version, new features are introduced to help Web
-  application authors, new elements are introduced based on research
-  into prevailing authoring practices, and special attention has been
+  (HTML). In this version, new features continue to be introduced to help Web
+  application authors, new elements continue to be introduced based on research
+  into prevailing authoring practices, and special attention continues to be
   given to defining clear conformance criteria for user agents in an
   effort to improve interoperability.</p>
 

@@ -7,7 +7,8 @@
 <!--SET PUB=1-->
 <!--SET SHORTSTATUS=WD-->
 <!--SET URLSTATUS=WD-->
-<!--SET LONGSTATUS=Working Draft-->
+<!--SET LONGSTATUS=Editors' Draft-->
+<!--SET FULLLONGSTATUS=Editors' Draft-->
 <!--SET YEAR=2012-->
 <!--SET SHORTDAY=1011-->
 <!--SET LONGDAY=11 October-->
