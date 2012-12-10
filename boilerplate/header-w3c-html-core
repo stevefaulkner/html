@@ -55,7 +55,7 @@
     <a href="single-page.html">single page HTML</a>,
     <a href="index.html">multipage HTML</a>,
 <!--PUB-N-->    <a href="author/">web developer edition</a>.
-<!--PUB-Y-->    <a href="http://www.w3.org/TR/<!--INSERT YEAR-->/<!--INSERT URLSTATUS-->-html5-author-<!--INSERT YEAR--><!--INSERT SHORTDAY-->/">web developer edition</a>.
+<!--PUB-Y-->    <a href="http://www.w3.org/TR/html5-author/">web developer edition</a>.
    </p> 
   <!--BOILERPLATE middle-w3c-copyright-->
 
