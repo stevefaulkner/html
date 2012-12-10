@@ -4,9 +4,9 @@
      ZZZ: Set YEAR, SHORTDAY, and LONGDAY accordingly. They are used by the INSERT FOO bits below.
      bits marked YYY are for not depending on HTML5 (also see working-copy).
   -->
-<!--SET PUB=1-->
-<!--SET SHORTSTATUS=WD-->
-<!--SET URLSTATUS=WD-->
+<!--SET PUB=0-->
+<!--SET SHORTSTATUS=ED-->
+<!--SET URLSTATUS=ED-->
 <!--SET LONGSTATUS=Editors' Draft-->
 <!--SET FULLLONGSTATUS=Editors' Draft-->
 <!--SET YEAR=2012-->
@@ -18,12 +18,12 @@
 <html lang="en-US-x-Hixie">
  <head>
   <meta charset='utf-8'>
-  <title>HTML Microdata</title>
+  <title>HTML Microdata Nightly</title>
   <!--BOILERPLATE middle-override-styles-->
   <!--BOILERPLATE middle-author-mode-links-->
   <!--BOILERPLATE middle-w3c-styles-->
   <!--BOILERPLATE middle-w3c-html-magic-->
-   <h1>HTML Microdata</h1>
+   <h1>HTML Microdata Nightly</h1>
    <h2 class="no-num no-toc"></h2>
 <!--BOILERPLATE middle-w3c-version-->
 <!-- ZZZ: add the new version after it has shipped -->
