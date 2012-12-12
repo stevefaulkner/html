@@ -30,7 +30,7 @@
       <a href="#color-state-(type=color)">&lt;input type=color&gt;</a>
     </li>
     <li>
-      <a href="#date-and-time-state-type-datetime">&lt;input type=datetime&gt;</a>, 
+      <a href="#date-and-time-state-(type=datetime)">&lt;input type=datetime&gt;</a>, 
       <a href="#month-state-(type=month)">&lt;input type=month&gt;</a>, 
       <a href="#week-state-(type=week)">&lt;input type=week&gt;</a>, 
       <a href="#time-state-(type=time)">&lt;input type=time&gt;</a>, 
