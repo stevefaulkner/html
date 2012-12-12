@@ -8,10 +8,10 @@
 <!--SET URLSTATUS=CR-->
 <!--SET LONGSTATUS=Candidate Recommendation-->
 <!--SET YEAR=2012-->
-<!--SET SHORTDAY=1108-->
-<!--SET LONGDAY=08 November-->
+<!--SET SHORTDAY=1217-->
+<!--SET LONGDAY=17 December-->
 <!--SET TRNAME=2dcontext-->
-<!--SET DEVURL=http://dev.w3.org/html5/2dcontext/-->
+<!--SET DEVURL=http://www.w3.org/html/wg/drafts/2dcontext/html5_canvas_CR/-->
 <!--SET COMPONENT=HTML Canvas 2D Context (editor: Ian Hickson)-->
 <html lang="en-US-x-Hixie">
  <head>
