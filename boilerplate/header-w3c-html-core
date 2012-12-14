@@ -30,7 +30,7 @@
     <dt>Previous HTML Version:</dt>
     <dd><a href="http://www.w3.org/TR/2012/CR-html5-20121217/">http://www.w3.org/TR/2012/CR-html5-20121217/</a></dd>
 <!-- :ZZZ -->
-	<dt>Editors:</dt>
+	<dt id='specification-editors'>Editors:</dt>
 	<dd><a href="http://berjon.com/">Robin Berjon</a>, W3C</dd>
 	<dd><a href="mailto:travil@microsoft.com">Travis Leithead</a>, Microsoft</dd>
 	<dd><a href="mailto:Erika.Doyle@microsoft.com">Erika Doyle Navara</a>, Microsoft</dd>
